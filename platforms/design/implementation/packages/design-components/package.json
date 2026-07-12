@@ -1,0 +1,10 @@
+{
+  "name": "@menq/design-components",
+  "version": "0.0.0-development",
+  "private": true,
+  "type": "module",
+  "description": "Reusable public components.",
+  "dependencies": {
+    "@menq/design-primitives": "workspace:*"
+  }
+}
