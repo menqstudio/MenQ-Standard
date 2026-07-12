@@ -54,6 +54,15 @@ Philosophy
 - Վերջնական որոշումն ու պատասխանատվությունը մարդունն են։
 - Հաստատված որոշումները, գիտելիքը և կանոնները պահպանվում են Standard-ում։
 
+### Design Philosophy — Locked
+
+1. Դիզայնը ծառայում է հասկանալիությանը և գործողությանը, ոչ միայն գեղեցկությանը։
+2. Կառուցվածքը գալիս է ոճից առաջ։
+3. Հետևողականությունը կառուցվում է համակարգով, ոչ պատճենելով։
+4. Յուրաքանչյուր MenQ product պահպանում է ընդհանուր ինքնությունը, բայց կարող է ունենալ իր product-specific design layer-ը։
+5. Animation-ը, պատկերները և visual effects-ը օգտագործվում են նպատակով, ոչ աղմուկ ստեղծելու համար։
+6. Լավ դիզայնը հասանելի, responsive և երկարաժամկետ պահպանելի է։
+
 ### Համապատասխանության կանոն
 
 MenQ Standard-ի յուրաքանչյուր կարևոր որոշում պետք է ստուգվի հետևյալ հարցով՝
@@ -115,6 +124,15 @@ In practice:
 - AI analyzes, proposes, and assists execution.
 - Final decisions and responsibility remain human.
 - Approved decisions, knowledge, and rules are preserved in the Standard.
+
+### Design Philosophy — Locked
+
+1. Design serves clarity and action, not beauty alone.
+2. Structure comes before style.
+3. Consistency is built through systems, not copying.
+4. Every MenQ product preserves the shared identity while retaining its own product-specific design layer.
+5. Animation, imagery, and visual effects are used with purpose, not to create noise.
+6. Good design is accessible, responsive, and maintainable over time.
 
 ### Alignment rule
 
