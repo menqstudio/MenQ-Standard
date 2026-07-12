@@ -39,6 +39,13 @@
 - Ավելացվել և lock է արվել `foundation/decision-system/README.md`՝ որպես Decision System v1.0։
 - Decision System v1-ը գրանցվել է `D-020` որոշմամբ և կապվել Foundation index-ին։
 - Decision System-ը lock է արել `C0–C4` decision classes-ը, `R0–R4` risk levels-ը, lifecycle-ը, seven gates-ը, `GREEN/YELLOW/RED` outcomes-ը և history-preserving change rule-ը։
+- Ավելացվել և lock է արվել `foundation/documentation/README.md`՝ որպես Documentation Standard v1.0։
+- Documentation Standard v1-ը գրանցվել է `D-021` որոշմամբ և կապվել Foundation index-ին։
+- Lock են արվել core documentation file roles-ը, bilingual equality-ն, single-source rule-ը, safe replacement-ը և post-write integrity verification-ը։
+- Ավելացվել է root `ROADMAP.md`։
+- Ավելացվել է `foundation/PROJECT_CONTEXT.md`։
+- Նախկինում կիսատ դարձած `AI_WORKING_CONTEXT.md`-ը ամբողջությամբ վերականգնվել և synchronized է ընթացիկ canonical վիճակի հետ։
+- Canonical documentation write-երի համար պարտադիր է դարձել post-write re-read և beginning/end integrity verification-ը։
 
 ### English
 
@@ -77,3 +84,10 @@
 - Added and locked `foundation/decision-system/README.md` as Decision System v1.0.
 - Recorded Decision System v1 as decision `D-020` and linked it from the Foundation index.
 - Locked the `C0–C4` decision classes, `R0–R4` risk levels, lifecycle, seven gates, `GREEN/YELLOW/RED` outcomes, and history-preserving change rule.
+- Added and locked `foundation/documentation/README.md` as Documentation Standard v1.0.
+- Recorded Documentation Standard v1 as decision `D-021` and linked it from the Foundation index.
+- Locked the core documentation file roles, bilingual equality, the single-source rule, safe replacement, and post-write integrity verification.
+- Added the root `ROADMAP.md`.
+- Added `foundation/PROJECT_CONTEXT.md`.
+- Fully restored the previously truncated `AI_WORKING_CONTEXT.md` and synchronized it with the current canonical state.
+- Made post-write re-reading and beginning/end integrity verification mandatory for canonical documentation writes.
