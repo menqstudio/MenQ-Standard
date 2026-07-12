@@ -49,8 +49,7 @@ REQUIRED_TERMS = {
         "Component",
         "Pattern",
         "Product Extension",
-        "Technical and adoption readiness:** GREEN",
-        "Owner authority:** PENDING",
+        "two distinct real MenQ consumers",
     ],
     "platforms/design/D-025_COMPLETENESS_AUDIT.md": [
         "Architecture GREEN — Technical/Adoption GREEN — Authority Pending",
