@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the MenQ Design Platform Phase A registry without external dependencies."""
+"""Validate the MenQ Design Platform Phase A registry and workspace skeleton."""
 
 from __future__ import annotations
 
@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 REGISTRY = ROOT / "platforms/design/specifications/design-platform-registry.json"
 SCHEMA = ROOT / "platforms/design/specifications/design-platform-registry.schema.json"
+WORKSPACE = ROOT / "platforms/design/implementation"
 
 REQUIRED_TOP_LEVEL = {
     "schemaVersion",
@@ -66,6 +67,46 @@ def detect_cycle(graph: dict[str, list[str]]) -> list[str] | None:
         if cycle:
             return cycle
     return None
+
+
+def validate_workspace(packages: list[dict], errors: list[str]) -> None:
+    root_manifest = load_json(WORKSPACE / "package.json", errors)
+    if root_manifest:
+        if root_manifest.get("private") is not True:
+            errors.append("workspace root package.json must be private")
+        if root_manifest.get("version") != "0.0.0-development":
+            errors.append("workspace root version must remain 0.0.0-development")
+
+    workspace_map = WORKSPACE / "pnpm-workspace.yaml"
+    if not workspace_map.is_file():
+        errors.append("missing workspace map: platforms/design/implementation/pnpm-workspace.yaml")
+    elif '"packages/*"' not in workspace_map.read_text(encoding="utf-8"):
+        errors.append("pnpm workspace map must include packages/*")
+
+    for package in packages:
+        name = package.get("name")
+        if not isinstance(name, str) or not name.startswith("@menq/design-"):
+            continue
+        directory = name.removeprefix("@menq/")
+        manifest_path = WORKSPACE / "packages" / directory / "package.json"
+        manifest = load_json(manifest_path, errors)
+        if not manifest:
+            continue
+        if manifest.get("name") != name:
+            errors.append(f"workspace package name mismatch for {name}")
+        if manifest.get("version") != "0.0.0-development":
+            errors.append(f"workspace package {name} must use 0.0.0-development")
+        if manifest.get("private") is not True:
+            errors.append(f"workspace package {name} must remain private during Phase A")
+        actual_dependencies = set((manifest.get("dependencies") or {}).keys())
+        expected_dependencies = set(package.get("dependsOn", []))
+        if actual_dependencies != expected_dependencies:
+            errors.append(
+                f"workspace dependency drift for {name}: expected {sorted(expected_dependencies)}, actual {sorted(actual_dependencies)}"
+            )
+        for dependency, version in (manifest.get("dependencies") or {}).items():
+            if dependency in expected_dependencies and version != "workspace:*":
+                errors.append(f"workspace dependency {dependency} in {name} must use workspace:*")
 
 
 def main() -> int:
@@ -172,6 +213,8 @@ def main() -> int:
         if any(package.get("status") == "Stable" for package in packages if isinstance(package, dict)):
             errors.append("Phase A may not claim Stable packages")
 
+        validate_workspace(packages, errors)
+
     if errors:
         print("DESIGN PLATFORM PHASE A VALIDATION: RED")
         for error in errors:
@@ -179,8 +222,11 @@ def main() -> int:
         return 1
 
     print("DESIGN PLATFORM PHASE A VALIDATION: GREEN")
-    print(f"Validated {len(registry['owners'])} owners, {len(registry['specifications'])} specifications, and {len(registry['packages'])} package boundaries.")
-    print("Implementation/package readiness: YELLOW (expected until package and consumer evidence exist).")
+    print(
+        f"Validated {len(registry['owners'])} owners, {len(registry['specifications'])} specifications, "
+        f"{len(registry['packages'])} package boundaries, and the workspace skeleton."
+    )
+    print("Implementation/package readiness: YELLOW (expected until runtime and consumer evidence exist).")
     return 0
 
 
