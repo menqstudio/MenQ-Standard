@@ -8,6 +8,11 @@ on:
       - "**/*.md"
       - "scripts/generate_markdown_inventory.py"
       - ".github/workflows/markdown-inventory-bootstrap.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "scripts/generate_markdown_inventory.py"
+      - ".github/workflows/markdown-inventory-bootstrap.yml"
   workflow_dispatch:
 
 permissions:
@@ -41,6 +46,7 @@ jobs:
           print(f"Generated inventory for {data['file_count']} tracked Markdown files")
           PY
       - name: Commit canonical manifest when changed
+        if: github.event_name == 'push'
         run: |
           if git diff --quiet -- foundation/ai-collaboration/MARKDOWN_INVENTORY.json; then
             echo "Markdown inventory is already current."
