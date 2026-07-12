@@ -14,7 +14,7 @@
 
 ## Status / Կարգավիճակ
 
-- **Status:** Active — Foundation v1 validated GREEN; release snapshot preparation active
+- **Status:** Active — Foundation v1 validated GREEN; Design Platform architecture implementation active
 - **Owner:** MenQ
 - **Applies to:** MenQ ecosystem
 - **Languages:** Armenian + English
@@ -47,6 +47,12 @@ MenQ Ecosystem
 
 **EN:** Foundation v1 passed real GitHub Actions validation. `Foundation Integrity` workflow run `#9` completed successfully. The final evidence is preserved in [`foundation/FOUNDATION_V1_VALIDATION_RUN.md`](foundation/FOUNDATION_V1_VALIDATION_RUN.md).
 
+## Mandatory AI session startup / AI session-ի պարտադիր մեկնարկ
+
+**HY:** Յուրաքանչյուր նոր MenQ Standard AI session մինչև substantive աշխատանք սկսելը պարտավոր է active branch/ref-ում enumerate անել և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` ֆայլերը։ Պարտադիր օրենքը՝ [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md), որոշումը՝ [`D-026`](foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md)։
+
+**EN:** Before substantive work begins, every new MenQ Standard AI session must enumerate and completely read every tracked `.md` file on the active branch or ref. The mandatory law is [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md), with decision [`D-026`](foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md).
+
 ## Canonical navigation / Canonical նավիգացիա
 
 - [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) — stable project and AI context
@@ -64,6 +70,7 @@ MenQ Ecosystem
 - [`foundation/FOUNDATION_V1_VALIDATION_RUN.md`](foundation/FOUNDATION_V1_VALIDATION_RUN.md) — final GREEN validation record
 - [`foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md`](foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md) — normalized chapter metadata
 - [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md) — mandatory write integrity law
+- [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md) — mandatory all-Markdown session read law
 - [`scripts/validate_foundation.py`](scripts/validate_foundation.py) — automated validator
 
 ## Canonical rule / Canonical կանոն
