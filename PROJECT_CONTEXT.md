@@ -4,7 +4,7 @@
 **Document class / Փաստաթղթի դաս:** Informative  
 **Owner / Պատասխանատու:** Gevorg Ohanyan  
 **Canonical repository:** `https://github.com/menqstudio/MenQ-Standard`  
-**Last synchronized / Վերջին համաժամեցում:** 2026-07-12
+**Last synchronized / Վերջին համաժամեցում:** 2026-07-13
 
 ## Հայերեն
 
@@ -14,7 +14,7 @@ MenQ Standard-ի միակ canonical source of truth-ը GitHub repository-ն է։
 
 ### Պարտադիր startup workflow
 
-Յուրաքանչյուր նոր AI session, մինչև որևէ substantive աշխատանք սկսելը, պարտավոր է active branch/ref-ում enumerate անել և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` ֆայլերը՝ ըստ [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md)-ի։ Startup subset-ը, handoff-ը, summary-ն, partial range-ը կամ previous-session memory-ն complete-read evidence չեն։ Active PR-ի դեպքում նաև կարդացվում են metadata-ն, changed files-ը, diff-ը, review threads-ը և checks-ը։
+Յուրաքանչյուր նոր AI session մինչև substantive աշխատանք պարտավոր է active branch/ref-ում enumerate և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` files-ը՝ ըստ [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md)-ի։ Active PR-ի դեպքում նաև կարդացվում են metadata-ն, changed files-ը, diff-ը, review threads-ը և checks-ը։
 
 ### Human–AI և authority
 
@@ -29,31 +29,26 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 Յուրաքանչյուր write, update, replacement, move կամ delete ենթարկվում է `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`-ին՝ complete read → SHA preserve → write → beginning/end re-read → synchronization verification → GREEN։ Tool success-ը evidence չէ։
 
-### Decision registry
-
-- `DECISIONS.md` պահպանում է historical `D-001–D-021` registry-ն և մեծ full replacement չի ստանում։
-- `DECISION_INDEX.md` active append-only registry է։
-- Dedicated decisions-ը պահպանում են `D-022+` records-ը։
-
 ### Ընթացիկ canonical վիճակ
 
 - Foundation v1 — Locked և GREEN։
 - D-024 Platforms Architecture v1 — merged և canonical։
-- D-025 MenQ Design Platform Architecture v1 — `Approved — Implementing`, ոչ `Locked`։
+- D-025 MenQ Design Platform Architecture v1 — PR #3-ով merge է եղել, բայց `Locked` չէ։
 - D-026 Canonical Session Read Law — Locked և machine-enforced։
-- Working branch — `d-025-design-platform-architecture-v1`։
-- Draft PR — `#3`, merge չի արվում մինչև architecture completeness, canonical synchronization, validator evidence, real consumer validation և Owner approval։
-- Parts 1–11 baseline-ը պահպանված է `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`-ում։
-- Part 12 validation/CI/conformance/quality-gates architecture-ը canonical է։
-- Part 13 documentation portal/component catalog/design-tool integration architecture-ը canonical է։
-- Part 14 governance/contribution/ownership/change-request lifecycle architecture-ը canonical է։
-- Unowned canonical asset-ը RED governance defect է։ High-risk կամ breaking change-ի self-approval-ը արգելված է։
-- Merge-ը առանձին authority action է, ոչ GREEN CI-ի ավտոմատ հետևանք։
-- Armenian և English canonical languages են։ Additional languages-ը on-demand locale packs են։
+- PR #3 merge commit — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
+- Merged implementation head — `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`։
+- Closure branch — `d-025-post-merge-closure`։
+- Parts 1–16 architecture, implementation package set, private preview candidate և two-consumer evidence-ը GREEN են։
+- Post-merge canonical synchronization և `main` validation evidence-ը closure transaction-ի scope-ն են։
+- D-025 lock-ը պահանջում է առանձին explicit Owner decision։
 
 ### Հաջորդ աշխատանք
 
-Ուղիղ շարունակել Design Platform Part 15-ից՝ Product Adoption, Maturity Model, and Two-Consumer Validation Plan, հետո specification index, implementation package plan, completeness audit, validator և Owner review։
+1. Ավարտել `d-025-post-merge-closure` branch-ի canonical synchronization-ը։
+2. Ստանալ closure PR-ի GREEN checks։
+3. Merge-ից հետո ստանալ GREEN `main` push checks։
+4. Final closure record-ը դարձնել GREEN։
+5. Owner-ին ներկայացնել առանձին D-025 lock որոշում։
 
 ---
 
@@ -65,7 +60,7 @@ The GitHub repository is the single canonical source of truth for MenQ Standard.
 
 ### Required startup workflow
 
-Every new AI session must, before beginning substantive work, enumerate and completely read every tracked `.md` file on the active branch or ref in accordance with [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md). A startup subset, handoff, summary, partial range, or previous-session memory is not complete-read evidence. When an active PR is involved, its metadata, changed files, diff, review threads, and checks must also be read.
+Before substantive work, every AI session must enumerate and completely read every tracked `.md` file on the active branch/ref under [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md). For an active PR, metadata, changed files, diff, review threads, and checks must also be read.
 
 ### Human–AI and authority
 
@@ -80,30 +75,25 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 
 Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`: complete read → preserve SHA → write → re-read beginning and ending → verify synchronization → GREEN. Tool success is not evidence.
 
-### Decision registry
-
-- `DECISIONS.md` preserves the historical `D-001–D-021` registry and is not subject to large full replacement.
-- `DECISION_INDEX.md` is the active append-only registry.
-- Dedicated decisions preserve `D-022+` records.
-
 ### Current canonical state
 
 - Foundation v1 is Locked and GREEN.
 - D-024 Platforms Architecture v1 is merged and canonical.
-- D-025 MenQ Design Platform Architecture v1 is `Approved — Implementing`, not `Locked`.
+- D-025 MenQ Design Platform Architecture v1 was merged through PR #3 but is not `Locked`.
 - D-026 Canonical Session Read Law is Locked and machine-enforced.
-- Working branch: `d-025-design-platform-architecture-v1`.
-- Draft PR: `#3`; it remains unmerged until architecture completeness, canonical synchronization, validator evidence, real consumer validation, and Owner approval.
-- Parts 1–11 are preserved in `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
-- Part 12 validation, CI, conformance, and quality-gates architecture is canonical.
-- Part 13 documentation portal, component catalog, and design-tool integration architecture is canonical.
-- Part 14 governance, contribution, ownership, and change-request lifecycle architecture is canonical. Part 15 product adoption/maturity/two-consumer validation architecture and Part 16 specification index/package plan are canonical.
-- An unowned canonical asset is a RED governance defect. Self-approval is prohibited for high-risk or breaking changes.
-- Merge is a separate authority action, not an automatic consequence of green CI.
-- Armenian and English are canonical languages. Additional languages are on-demand locale packs.
+- PR #3 merge commit: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- Merged implementation head: `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`.
+- Closure branch: `d-025-post-merge-closure`.
+- Parts 1–16 architecture, the implementation package set, the private preview candidate, and two-consumer evidence are GREEN.
+- Post-merge canonical synchronization and `main` validation evidence are the scope of the closure transaction.
+- D-025 lock requires a separate explicit Owner decision.
 
 ### Next work
 
-Continue directly with Design Platform Part 15: Product Adoption, Maturity Model, and Two-Consumer Validation Plan, followed by the specification index, implementation package plan, completeness audit, validator work, and Owner review.
+1. Complete canonical synchronization on `d-025-post-merge-closure`.
+2. Obtain GREEN closure PR checks.
+3. After merge, obtain GREEN `main` push checks.
+4. Mark the final closure record GREEN.
+5. Present a separate D-025 lock decision to the Owner.
 
 <!-- END: MENQ_STANDARD_PROJECT_CONTEXT -->
