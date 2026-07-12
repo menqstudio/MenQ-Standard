@@ -22,6 +22,7 @@ REQUIRED_MARKERS = {
     "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md": "<!-- END: DESIGN_PLATFORM_CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1 -->",
     "platforms/design/D-025_COMPLETENESS_AUDIT.md": "<!-- END: D-025_COMPLETENESS_AUDIT -->",
     "platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md": "<!-- END: D-025_DRAFT_PR_REVIEW_RECORD -->",
+    "platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md": "<!-- END: D-025_POST_MERGE_CLOSURE_RECORD -->",
     "platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md": "<!-- END: D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1 -->",
     "platforms/design/ROADMAP.md": "<!-- END: MENQ_DESIGN_PLATFORM_ROADMAP -->",
     "platforms/design/CHANGELOG.md": "<!-- END: MENQ_DESIGN_PLATFORM_CHANGELOG -->",
@@ -38,6 +39,7 @@ BILINGUAL_SECTION_FILES = [
     "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md",
     "platforms/design/D-025_COMPLETENESS_AUDIT.md",
     "platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md",
+    "platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md",
     "platforms/design/NEXT_CHAT_HANDOFF.md",
 ]
 
@@ -64,16 +66,24 @@ REQUIRED_TERMS = {
         "open, Draft, and unmerged",
     ],
     "platforms/design/PROJECT_CONTEXT.md": [
-        "Parts 12–16",
+        "Parts 1–16",
         "0.1.0-next.0",
         "MenQ Design Catalog",
         "MenQ Release Evidence Console",
-        "Owner authority pending",
+        "PR #3 merge commit",
+        "D-025 was merged through PR #3",
+    ],
+    "platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md": [
+        "2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc",
+        "9c10c288c16ef319ce4d5aa91000f7b0a46ecf60",
+        "PR #3 merge — COMPLETE",
+        "D-025 lock authority — PENDING",
     ],
     "platforms/design/ROADMAP.md": [
         "Cross-consumer validation",
         "M4 operational",
-        "Owner ready-for-review and merge decision",
+        "post-merge validation on `main`",
+        "separate explicit Owner lock decision",
     ],
 }
 
@@ -111,6 +121,7 @@ except (OSError, json.JSONDecodeError) as exc:
 
 if record:
     evidence = record.get("evidenceSnapshot", {})
+    merge_evidence = record.get("mergeEvidence", {})
     authority = record.get("authority", {})
     consumers = record.get("consumers", [])
     maturity = {item.get("consumerId"): item.get("maturity") for item in consumers}
@@ -122,10 +133,18 @@ if record:
         errors.append("Design Catalog consumer is not M3")
     if maturity.get("menq.design.consumer.release-console") != "M4":
         errors.append("Release Evidence Console consumer is not M4")
-    if any(authority.get(key) is not False for key in ("readyForReviewAuthorized", "mergeAuthorized", "lockAuthorized")):
-        errors.append("D-025 authority record grants an unauthorized action")
-    if authority.get("ownerApprovalStatus") != "pending":
-        errors.append("D-025 Owner approval must remain pending before explicit Owner action")
+    if merge_evidence.get("merged") is not True:
+        errors.append("D-025 merge evidence does not confirm merge")
+    if merge_evidence.get("pullRequest") != 3:
+        errors.append("D-025 merge evidence does not identify PR #3")
+    if merge_evidence.get("mergeCommit") != "2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc":
+        errors.append("D-025 merge commit evidence is incorrect")
+    if authority.get("readyForReviewAuthorized") is not True or authority.get("mergeAuthorized") is not True:
+        errors.append("D-025 readiness record does not preserve Owner ready/merge authority")
+    if authority.get("lockAuthorized") is not False:
+        errors.append("D-025 readiness record grants unauthorized lock authority")
+    if authority.get("ownerApprovalStatus") != "merge-approved-lock-pending":
+        errors.append("D-025 Owner approval state is not synchronized with post-merge closure")
 
 if errors:
     print("PLATFORMS VALIDATION: RED")
@@ -137,4 +156,5 @@ print("PLATFORMS VALIDATION: GREEN")
 print(f"Validated {len(REQUIRED_MARKERS)} required Platforms and D-025 canonical files.")
 print("D-025 architecture: GREEN")
 print("D-025 technical and adoption readiness: GREEN")
-print("D-025 ready-for-review/merge/lock authority: PENDING OWNER DECISION")
+print("D-025 ready-for-review and merge authority: OWNER APPROVED AND EXECUTED")
+print("D-025 lock authority: PENDING OWNER DECISION")
