@@ -46,12 +46,14 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - Parts 1–11 baseline-ը պահպանված է `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`-ում։
 - Part 12 validation/CI/conformance/quality-gates architecture-ը canonical է։
 - Part 13 documentation portal/component catalog/design-tool integration architecture-ը canonical է։
-- Canonical token dependency layers՝ Reference → Semantic → Component → Pattern → Product Extension։ Theme/state/density/platform/locale/accessibility/motion-ը orthogonal dimensions են։ Controlled exceptions-ը governed bypass են։
+- Part 14 governance/contribution/ownership/change-request lifecycle architecture-ը canonical է։
+- Unowned canonical asset-ը RED governance defect է։ High-risk կամ breaking change-ի self-approval-ը արգելված է։
+- Merge-ը առանձին authority action է, ոչ GREEN CI-ի ավտոմատ հետևանք։
 - Armenian և English canonical languages են։ Additional languages-ը on-demand locale packs են։
 
 ### Հաջորդ աշխատանք
 
-Ուղիղ շարունակել Design Platform Part 14-ից՝ Governance, Contribution, Ownership և Change-Request Lifecycle, հետո product adoption/two-consumer validation, specification index, implementation package plan, completeness audit, validator և Owner review։
+Ուղիղ շարունակել Design Platform Part 15-ից՝ Product Adoption, Maturity Model, and Two-Consumer Validation Plan, հետո specification index, implementation package plan, completeness audit, validator և Owner review։
 
 ---
 
@@ -95,11 +97,13 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 - Parts 1–11 are preserved in `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
 - Part 12 validation, CI, conformance, and quality-gates architecture is canonical.
 - Part 13 documentation portal, component catalog, and design-tool integration architecture is canonical.
-- Canonical token dependency layers are Reference → Semantic → Component → Pattern → Product Extension. Theme, state, density, platform, locale, accessibility, and motion are orthogonal dimensions. Controlled exceptions are governed bypasses.
+- Part 14 governance, contribution, ownership, and change-request lifecycle architecture is canonical.
+- An unowned canonical asset is a RED governance defect. Self-approval is prohibited for high-risk or breaking changes.
+- Merge is a separate authority action, not an automatic consequence of green CI.
 - Armenian and English are canonical languages. Additional languages are on-demand locale packs.
 
 ### Next work
 
-Continue directly with Design Platform Part 14: Governance, Contribution, Ownership, and Change-Request Lifecycle, followed by product adoption and two-consumer validation, the specification index and implementation package plan, completeness audit, validator work, and Owner review.
+Continue directly with Design Platform Part 15: Product Adoption, Maturity Model, and Two-Consumer Validation Plan, followed by the specification index, implementation package plan, completeness audit, validator work, and Owner review.
 
 <!-- END: MENQ_STANDARD_PROJECT_CONTEXT -->
