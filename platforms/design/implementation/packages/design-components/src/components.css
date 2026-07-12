@@ -1,0 +1,24 @@
+@layer menq.components {
+  .menq-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--menq-semantic-space-inline);
+    border: 0;
+    border-radius: var(--menq-component-card-radius);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .menq-button:disabled,
+  .menq-button[aria-busy="true"] {
+    cursor: not-allowed;
+  }
+
+  .menq-card {
+    display: block;
+    border-radius: var(--menq-component-card-radius);
+    background: var(--menq-semantic-surface-canvas);
+    color: var(--menq-semantic-content-primary);
+  }
+}
