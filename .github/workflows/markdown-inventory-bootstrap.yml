@@ -1,4 +1,4 @@
-name: Markdown Inventory Integrity
+name: D-025 Validation Synchronization
 
 on:
   push:
@@ -6,33 +6,40 @@ on:
       - d-025-design-platform-architecture-v1
     paths:
       - "**/*.md"
-      - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
       - "scripts/generate_markdown_inventory.py"
       - "scripts/validate_foundation.py"
-      - ".github/workflows/markdown-inventory-bootstrap.yml"
-  pull_request:
-    paths:
-      - "**/*.md"
-      - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
-      - "scripts/generate_markdown_inventory.py"
-      - "scripts/validate_foundation.py"
+      - "scripts/validate_platforms.py"
       - ".github/workflows/markdown-inventory-bootstrap.yml"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  validate:
+  synchronize-and-validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: d-025-design-platform-architecture-v1
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate canonical Markdown inventory
-        run: python scripts/generate_markdown_inventory.py --check
+      - name: Regenerate canonical Markdown inventory
+        run: python scripts/generate_markdown_inventory.py --write
       - name: Validate Foundation and D-026 integrity
         run: python scripts/validate_foundation.py
+      - name: Validate Platforms and D-025 integrity
+        run: python scripts/validate_platforms.py
+      - name: Commit canonical manifest when changed
+        run: |
+          if git diff --quiet -- foundation/ai-collaboration/MARKDOWN_INVENTORY.json; then
+            echo "Markdown inventory is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add foundation/ai-collaboration/MARKDOWN_INVENTORY.json
+          git commit -m "Regenerate canonical Markdown inventory for D-025 audit"
+          git push origin HEAD:d-025-design-platform-architecture-v1
