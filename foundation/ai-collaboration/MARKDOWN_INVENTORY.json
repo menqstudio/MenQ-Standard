@@ -251,8 +251,8 @@
     },
     {
       "path": "platforms/design/NEXT_CHAT_HANDOFF.md",
-      "bytes": 9897,
-      "sha256": "7bcd32a273ebc800b3ee290ce2b5434b99dc89bde1ea7426d24e36f6a49505c0"
+      "bytes": 5674,
+      "sha256": "496bb285e59ecda113aeea6417768c854bef4e2a4e9713038c39bbda36d21f2c"
     },
     {
       "path": "platforms/design/PLATFORM_CHARTER.md",
