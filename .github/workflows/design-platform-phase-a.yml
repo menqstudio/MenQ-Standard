@@ -43,6 +43,16 @@ jobs:
           cp platforms/design/implementation/packages/design-tokens/generated/manifest.json /tmp/menq-token-manifest.json
           python platforms/design/implementation/scripts/build_tokens.py
           cmp /tmp/menq-token-manifest.json platforms/design/implementation/packages/design-tokens/generated/manifest.json
+      - name: Smoke-test Design Foundations public API
+        run: |
+          node --input-type=module -e "import('./platforms/design/implementation/packages/design-foundations/src/index.js').then((m) => { if (m.foundationClass('stack') !== 'menq-stack') process.exit(1); })"
+      - name: Build deterministic Design Foundations artifacts
+        run: python platforms/design/implementation/scripts/build_foundations.py
+      - name: Verify deterministic Design Foundations rebuild
+        run: |
+          cp platforms/design/implementation/packages/design-foundations/generated/manifest.json /tmp/menq-foundations-manifest.json
+          python platforms/design/implementation/scripts/build_foundations.py
+          cmp /tmp/menq-foundations-manifest.json platforms/design/implementation/packages/design-foundations/generated/manifest.json
       - name: Verify generated artifact checksums
         run: |
           python - <<'PY'
@@ -50,12 +60,18 @@ jobs:
           import json
           from pathlib import Path
 
-          root = Path('platforms/design/implementation/packages/design-tokens/generated')
-          manifest = json.loads((root / 'manifest.json').read_text(encoding='utf-8'))
-          for artifact in manifest['artifacts']:
-              path = root / artifact['path']
-              data = path.read_bytes()
-              assert len(data) == artifact['bytes'], artifact['path']
-              assert hashlib.sha256(data).hexdigest() == artifact['sha256'], artifact['path']
-          print(f"Verified {len(manifest['artifacts'])} generated artifact checksums.")
+          roots = [
+              Path('platforms/design/implementation/packages/design-tokens/generated'),
+              Path('platforms/design/implementation/packages/design-foundations/generated'),
+          ]
+          verified = 0
+          for root in roots:
+              manifest = json.loads((root / 'manifest.json').read_text(encoding='utf-8'))
+              for artifact in manifest['artifacts']:
+                  path = root / artifact['path']
+                  data = path.read_bytes()
+                  assert len(data) == artifact['bytes'], str(path)
+                  assert hashlib.sha256(data).hexdigest() == artifact['sha256'], str(path)
+                  verified += 1
+          print(f"Verified {verified} generated artifact checksums.")
           PY
