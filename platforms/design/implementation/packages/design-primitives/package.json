@@ -1,0 +1,10 @@
+{
+  "name": "@menq/design-primitives",
+  "version": "0.0.0-development",
+  "private": true,
+  "type": "module",
+  "description": "Low-level behavior-first primitives.",
+  "dependencies": {
+    "@menq/design-foundations": "workspace:*"
+  }
+}
