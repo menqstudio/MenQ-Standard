@@ -4,12 +4,6 @@
   "private": true,
   "type": "module",
   "description": "Motion contracts and utilities.",
-  "exports": {
-    ".": {
-      "types": "./src/index.d.ts",
-      "import": "./src/index.js"
-    }
-  },
   "files": [
     "src"
   ],
