@@ -2,10 +2,7 @@
   "schemaVersion": 1,
   "releaseId": "menq.design.platform.0.1.0-next.0",
   "decision": "D-025",
-  "displayName": {
-    "hy": "MenQ Design Platform 0.1.0-next.0 նախադիտման թեկնածու",
-    "en": "MenQ Design Platform 0.1.0-next.0 preview candidate"
-  },
+  "displayName": {"hy": "MenQ Design Platform 0.1.0-next.0 նախադիտման թեկնածու", "en": "MenQ Design Platform 0.1.0-next.0 preview candidate"},
   "status": "Preview Candidate",
   "version": "0.1.0-next.0",
   "releaseChannel": "next",
@@ -16,4 +13,9 @@
   "stableReleaseAuthorized": false,
   "ownerApprovalStatus": "pending",
   "publicApiBaseline": "platforms/design/implementation/release/public-api-baseline.json",
-  "compatibilityPolicy": "platforms/design
+  "compatibilityPolicy": "platforms/design/implementation/release/COMPATIBILITY_POLICY.md",
+  "migrationDeprecationGuide": "platforms/design/implementation/release/MIGRATION_DEPRECATION_GUIDE.md",
+  "rollbackContract": "platforms/design/implementation/release/ROLLBACK_CONTRACT.md",
+  "packages": ["@menq/design-contracts", "@menq/design-tokens", "@menq/design-foundations", "@menq/design-primitives", "@menq/design-components", "@menq/design-patterns", "@menq/design-assets", "@menq/design-motion", "@menq/design-locales", "@menq/design-validation"],
+  "releaseBlocks": ["two real consumer pilots", "at least one M4 operational path", "canonical documentation synchronization", "explicit Owner release approval"]
+}
