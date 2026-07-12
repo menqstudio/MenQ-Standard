@@ -1,5 +1,29 @@
 # MenQ Standard — Changelog
 
+## 2026-07-12 — D-025 Design Platform architecture baseline synchronization
+
+### Հայերեն
+
+- D-025 MenQ Design Platform Architecture v1-ը synchronized է Owner-approved workshop Parts 1–11 baseline-ի հետ։
+- Canonical token dependency model-ը սահմանվել է որպես Reference → Semantic → Component → Pattern → Product Extension։
+- Theme, state, density, platform, viewport/container, locale/script, accessibility, motion preference և product expression-ը սահմանվել են որպես orthogonal dimensions։
+- Controlled exceptions-ը սահմանվել են որպես governed temporary bypass, ոչ normal token layer։
+- Armenian և English լեզուները հաստատվել են որպես հավասար canonical languages, additional languages-ը՝ on-demand locale packs։
+- Թարմացվել են D-025 decision-ը, root և Design Platform contexts-ը, roadmaps-ը, changelog-ները, architecture/contracts-ը, AI working context-ը, handoff-ները և Draft PR #3 description-ը։
+- Ավելացվել է `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`։
+- D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը մնում է open, Draft և unmerged։
+
+### English
+
+- Synchronized D-025 MenQ Design Platform Architecture v1 with the Owner-approved workshop Parts 1–11 baseline.
+- Defined the canonical token dependency model as Reference → Semantic → Component → Pattern → Product Extension.
+- Defined theme, state, density, platform, viewport/container, locale/script, accessibility, motion preference, and product expression as orthogonal dimensions.
+- Defined controlled exceptions as governed temporary bypasses, not a normal token layer.
+- Confirmed Armenian and English as equal canonical languages and additional languages as on-demand locale packs.
+- Updated the D-025 decision, root and Design Platform contexts, roadmaps, changelogs, architecture/contracts, AI working context, handoffs, and Draft PR #3 description.
+- Added `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
+- D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
+
 ## 2026-07-12 — Foundation v1 validation and packaging
 
 ### Հայերեն
