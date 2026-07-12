@@ -23,6 +23,7 @@
 - [x] D-026 Canonical Session Read Law and strict Markdown inventory enforcement
 - [x] Part 12 — Validation, CI, Conformance, and Quality Gates Architecture
 - [x] Part 13 — Documentation Portal, Component Catalog, and Design-Tool Integration Architecture
+- [x] Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle Architecture
 
 ## Current / Ընթացիկ
 
@@ -34,11 +35,10 @@
 
 Current sequence:
 
-1. Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle.
-2. Product adoption, maturity model, and two-consumer validation plan.
-3. Canonical specification index and implementation package plan.
-4. D-025 completeness audit, validator design, and Draft PR #3 review.
-5. GREEN evidence and Owner review.
+1. Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
+2. Canonical specification index and implementation package plan.
+3. D-025 completeness audit, validator design, and Draft PR #3 review.
+4. GREEN evidence and Owner review.
 
 ## Next / Հաջորդը
 
@@ -46,7 +46,7 @@ Current sequence:
 2. Build the first versioned implementation package.
 3. Add Design Platform integrity validator and GitHub Actions workflow.
 4. Validate adoption with at least two distinct real MenQ products or systems.
-5. Record compatibility, migration, release, portal/catalog/design-tool parity, and consumer evidence.
+5. Record compatibility, migration, release, governance, portal/catalog/design-tool parity, and consumer evidence.
 6. Request explicit Owner decision on merge and later lock.
 7. Continue Operating Standards and Extensions architecture only after the active Platform transaction is properly closed.
 
