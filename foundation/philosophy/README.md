@@ -63,6 +63,12 @@ Philosophy
 5. Animation-ը, պատկերները և visual effects-ը օգտագործվում են նպատակով, ոչ աղմուկ ստեղծելու համար։
 6. Լավ դիզայնը հասանելի, responsive և երկարաժամկետ պահպանելի է։
 
+### Engineering Philosophy — Locked
+
+> **Ապացույցներ, ոչ պնդումներ։ Պատեր, ոչ խոստումներ։**
+
+Engineering Philosophy-ի ամբողջական 15 սկզբունքները պահվում են [`ENGINEERING_PHILOSOPHY.md`](ENGINEERING_PHILOSOPHY.md)-ում։
+
 ### Համապատասխանության կանոն
 
 MenQ Standard-ի յուրաքանչյուր կարևոր որոշում պետք է ստուգվի հետևյալ հարցով՝
@@ -133,6 +139,12 @@ In practice:
 4. Every MenQ product preserves the shared identity while retaining its own product-specific design layer.
 5. Animation, imagery, and visual effects are used with purpose, not to create noise.
 6. Good design is accessible, responsive, and maintainable over time.
+
+### Engineering Philosophy — Locked
+
+> **Evidence over assertion. Walls over promises.**
+
+The complete 15 principles of Engineering Philosophy are preserved in [`ENGINEERING_PHILOSOPHY.md`](ENGINEERING_PHILOSOPHY.md).
 
 ### Alignment rule
 
