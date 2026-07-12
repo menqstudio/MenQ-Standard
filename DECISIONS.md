@@ -245,3 +245,18 @@ Humans define the purpose and retain final authority. AI analyzes, proposes, and
 4. Every MenQ product preserves the shared identity while retaining its own product-specific design layer.
 5. Animation, imagery, and visual effects are used with purpose, not to create noise.
 6. Good design is accessible, responsive, and maintainable over time.
+
+---
+
+## D-015 — Engineering Philosophy / Ինժեներական փիլիսոփայություն
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+
+MenQ Engineering Philosophy-ի canonical ամբողջական տարբերակը պահվում է [`foundation/philosophy/ENGINEERING_PHILOSOPHY.md`](foundation/philosophy/ENGINEERING_PHILOSOPHY.md) ֆայլում։ Այն lock է անում հետևյալ առանցքը՝ architecture before implementation, enforcement over documentation-only rules, observable failure, validated tests, RED-first fixes, canonical sources of truth, controlled automation, traceability, explicit technical debt և system-preserved learning։
+
+### English
+
+The complete canonical MenQ Engineering Philosophy is maintained in [`foundation/philosophy/ENGINEERING_PHILOSOPHY.md`](foundation/philosophy/ENGINEERING_PHILOSOPHY.md). It locks the following backbone: architecture before implementation, enforcement over documentation-only rules, observable failure, validated tests, RED-first fixes, canonical sources of truth, controlled automation, traceability, explicit technical debt, and system-preserved learning.
