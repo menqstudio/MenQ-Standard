@@ -1,0 +1,22 @@
+{
+  "name": "@menq/consumer-design-catalog",
+  "version": "0.1.0-next.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "healthcheck": "node src/healthcheck.mjs"
+  },
+  "dependencies": {
+    "@menq/design-assets": "workspace:*",
+    "@menq/design-components": "workspace:*",
+    "@menq/design-contracts": "workspace:*",
+    "@menq/design-foundations": "workspace:*",
+    "@menq/design-locales": "workspace:*",
+    "@menq/design-motion": "workspace:*",
+    "@menq/design-patterns": "workspace:*",
+    "@menq/design-primitives": "workspace:*",
+    "@menq/design-tokens": "workspace:*",
+    "@menq/design-validation": "workspace:*"
+  }
+}
