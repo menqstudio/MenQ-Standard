@@ -6,11 +6,13 @@ on:
       - d-025-design-platform-architecture-v1
     paths:
       - "platforms/design/specifications/**"
+      - "platforms/design/implementation/**"
       - "platforms/design/validation/**"
       - ".github/workflows/design-platform-phase-a.yml"
   pull_request:
     paths:
       - "platforms/design/specifications/**"
+      - "platforms/design/implementation/**"
       - "platforms/design/validation/**"
       - ".github/workflows/design-platform-phase-a.yml"
   workflow_dispatch:
@@ -26,5 +28,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate Design Platform Phase A registry
+      - name: Validate Design Platform Phase A registry and workspace skeleton
         run: python platforms/design/validation/validate_phase_a.py
