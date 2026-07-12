@@ -17,7 +17,7 @@
 - Ավելացվել է `foundation/philosophy/README.md`։
 - Հստակ բաժանվել են MenQ Studio-ի company vision/mission-ը և MenQ Standard-ի standard vision/mission-ը։
 - MenQ Studio-ի company mission-ը գրանցվել է canonical ձևով։
-- MenQ Standard-ի mission-ը թողնվել է բաց՝ հետագա architecture աշխատանքի համար։
+- Lock է արվել MenQ Standard-ի mission-ը։
 
 ### English
 
@@ -34,4 +34,4 @@
 - Added `foundation/philosophy/README.md`.
 - Clearly separated MenQ Studio company vision/mission from MenQ Standard standard vision/mission.
 - Recorded the MenQ Studio company mission canonically.
-- Kept the MenQ Standard mission open for further architecture work.
+- Locked the MenQ Standard mission.
