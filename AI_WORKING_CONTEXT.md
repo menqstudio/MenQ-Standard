@@ -31,7 +31,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - D-026 — Locked և machine-enforced։
 - Working branch — `d-025-design-platform-architecture-v1`։
 - Draft PR #3 — open, Draft, unmerged։
-- Parts 1–11 baseline, Part 12 validation architecture և Part 13 documentation/catalog/design-tool architecture canonical են։
+- Parts 1–11 baseline, Part 12 validation architecture, Part 13 documentation/catalog/design-tool architecture և Part 14 governance/contribution/change-lifecycle architecture canonical են։
 
 ### Architecture invariants
 
@@ -40,15 +40,17 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - Theme, state, density, platform, locale, accessibility և motion preference-ը orthogonal dimensions են։
 - Controlled exceptions-ը governed bypass են, ոչ normal layer։
 - Portal, catalog և design-tool integration-ը generated/governed views են, ոչ source of truth։
+- Unowned canonical asset-ը RED governance defect է։
+- High-risk կամ breaking change-ի self-approval-ը արգելված է։
+- Merge-ը առանձին authority action է, ոչ GREEN CI-ի ավտոմատ հետևանք։
 - Armenian և English canonical languages են։
 
 ### Հաջորդ հստակ աշխատանք
 
-1. Part 14 — Governance, Contribution, Ownership և Change-Request Lifecycle։
-2. Product adoption, maturity model և two-consumer validation plan։
-3. Canonical specification index և implementation package plan։
-4. D-025 completeness audit, validator design և PR #3 review։
-5. GREEN evidence և Owner review։
+1. Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan։
+2. Canonical specification index և implementation package plan։
+3. D-025 completeness audit, validator design և PR #3 review։
+4. GREEN evidence և Owner review։
 
 ---
 
@@ -75,7 +77,7 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 - D-026 is Locked and machine-enforced.
 - Working branch: `d-025-design-platform-architecture-v1`.
 - Draft PR #3 is open, Draft, and unmerged.
-- Parts 1–11 baseline, Part 12 validation architecture, and Part 13 documentation/catalog/design-tool architecture are canonical.
+- Parts 1–11 baseline, Part 12 validation architecture, Part 13 documentation/catalog/design-tool architecture, and Part 14 governance/contribution/change-lifecycle architecture are canonical.
 
 ### Architecture invariants
 
@@ -84,14 +86,16 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 - Theme, state, density, platform, locale, accessibility, and motion preference are orthogonal dimensions.
 - Controlled exceptions are governed bypasses, not a normal layer.
 - The portal, catalog, and design-tool integration are generated/governed views, not sources of truth.
+- An unowned canonical asset is a RED governance defect.
+- Self-approval is prohibited for high-risk or breaking changes.
+- Merge is a separate authority action, not an automatic consequence of green CI.
 - Armenian and English are canonical languages.
 
 ### Exact next work
 
-1. Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle.
-2. Product adoption, maturity model, and two-consumer validation plan.
-3. Canonical specification index and implementation package plan.
-4. D-025 completeness audit, validator design, and PR #3 review.
-5. GREEN evidence and Owner review.
+1. Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
+2. Canonical specification index and implementation package plan.
+3. D-025 completeness audit, validator design, and PR #3 review.
+4. GREEN evidence and Owner review.
 
 <!-- END: MENQ_STANDARD_AI_WORKING_CONTEXT -->
