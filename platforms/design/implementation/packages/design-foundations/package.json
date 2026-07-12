@@ -4,6 +4,21 @@
   "private": true,
   "type": "module",
   "description": "Foundational runtime styles and utilities.",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./css": "./generated/foundations.css",
+    "./manifest": "./generated/manifest.json"
+  },
+  "files": [
+    "src",
+    "generated"
+  ],
+  "scripts": {
+    "build": "python ../../scripts/build_foundations.py"
+  },
   "dependencies": {
     "@menq/design-contracts": "workspace:*",
     "@menq/design-tokens": "workspace:*"
