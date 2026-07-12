@@ -57,7 +57,7 @@ def build_manifest() -> dict[str, object]:
 
 
 def serialized(data: dict[str, object]) -> str:
-    return json.dumps(data, ensure_ascii=False, indent=2, sort_keys=False) + "\n"
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":"), sort_keys=False)
 
 
 def report_drift(actual_text: str, expected_data: dict[str, object]) -> None:
