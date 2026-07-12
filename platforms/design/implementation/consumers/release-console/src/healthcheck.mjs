@@ -1,0 +1,11 @@
+import { readFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
+const here = path.dirname(fileURLToPath(import.meta.url));
+const dist = path.resolve(here, "../dist");
+const html = await readFile(path.join(dist, "index.html"), "utf8");
+const evidence = JSON.parse(await readFile(path.join(dist, "consumer-evidence.json"), "utf8"));
+const health = JSON.parse(await readFile(path.join(dist, "health.json"), "utf8"));
+for (const marker of ["<html lang=\"hy\"", "lang=\"en\"", "<table>", "Rollback readiness", "prefers-reduced-motion"]) if (!html.includes(marker)) throw new Error(`missing release-console marker: ${marker}`);
+if (evidence.maturity !== "M4" || evidence.conformanceVerdict !== "GREEN" || !evidence.productionEquivalent || !evidence.incidentReady || health.status !== "GREEN") throw new Error("release-console evidence invalid");
+console.log("RELEASE EVIDENCE CONSOLE HEALTHCHECK: GREEN");
