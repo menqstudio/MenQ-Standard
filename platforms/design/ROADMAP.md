@@ -13,33 +13,27 @@
 
 - [x] Design Platform canonical skeleton opened by `D-024`.
 - [x] D-025 architecture boundary approved.
-- [x] Six architecture planes defined.
-- [x] Product-neutral shared-core boundary defined.
-- [x] Corrected token dependency layers defined: Reference → Semantic → Component → Pattern → Product Extension.
-- [x] Theme, state, density, platform, viewport/container, locale/script, accessibility, motion preference, and product expression defined as orthogonal dimensions.
-- [x] Controlled exceptions defined as governed bypasses, not a normal token layer.
+- [x] Six architecture planes and product-neutral shared-core boundary defined.
+- [x] Corrected token dependency model and orthogonal dimensions defined.
 - [x] Canonical token source/build pipeline defined.
-- [x] Primitive, component, pattern, theming, accessibility, localization, content, asset, motion, package, release, versioning, migration, and compatibility architecture approved in workshop Parts 1–11.
-- [x] Armenian and English fixed as equal canonical languages.
-- [x] Additional languages fixed as on-demand locale packs.
-- [x] Architecture baseline and dedicated next-chat handoff created.
+- [x] Parts 1–11 architecture baseline approved and documented.
 - [x] Part 12 — Validation, CI, Conformance, and Quality Gates Architecture.
 - [x] Part 13 — Documentation Portal, Component Catalog, and Design-Tool Integration Architecture.
+- [x] Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle Architecture.
 
 ## Current / Ընթացիկ
 
-1. Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle.
-2. Product adoption, maturity model, and two-consumer validation plan.
-3. Canonical specification index and implementation package plan.
-4. D-025 completeness audit, validator design, and Draft PR #3 review.
+1. Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
+2. Canonical specification index and implementation package plan.
+3. D-025 completeness audit, validator design, and Draft PR #3 review.
 
 ## Next / Հաջորդը
 
-1. Create controlled bilingual specifications for tokens, foundations, UI primitives, components, patterns, theming, localization, content, assets, motion, packaging, validation, documentation, catalog, and design-tool integration.
+1. Create controlled bilingual specifications for every governed Design Platform domain.
 2. Build the first versioned implementation package.
 3. Add Design Platform integrity validator and GitHub Actions workflow.
 4. Validate adoption with at least two distinct real MenQ products or systems.
-5. Record release, compatibility, migration, and consumer evidence.
+5. Record release, compatibility, migration, governance, and consumer evidence.
 6. Request final Owner review; merge and lock remain separate explicit decisions.
 
 ## Later / Հետագայում
@@ -48,6 +42,6 @@
 - Expanded component and pattern inventory driven by demand.
 - Automated codemods and migration tooling.
 - Additional on-demand locale packs.
-- Design-tool integrations and documentation portal automation.
+- Documentation portal, catalog, and design-tool automation.
 
 <!-- END: MENQ_DESIGN_PLATFORM_ROADMAP -->
