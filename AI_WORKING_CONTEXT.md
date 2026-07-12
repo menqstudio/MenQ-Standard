@@ -5,7 +5,7 @@
 
 **Status / Կարգավիճակ:** Active / Գործող  
 **Document class / Փաստաթղթի դաս:** Working  
-**Last synchronized / Վերջին համաժամեցում:** 2026-07-12  
+**Last synchronized / Վերջին համաժամեցում:** 2026-07-13  
 **Canonical repository:** `https://github.com/menqstudio/MenQ-Standard`
 
 ## Հայերեն
@@ -27,30 +27,27 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 - Foundation v1 — Locked և GREEN։
 - D-024 — merged և canonical։
-- D-025 — `Approved — Implementing`, ոչ `Locked`։
+- D-025 — Locked և GREEN։
 - D-026 — Locked և machine-enforced։
-- Working branch — `d-025-design-platform-architecture-v1`։
-- Draft PR #3 — open, Draft, unmerged։
-- Parts 1–11 baseline, Part 12 validation architecture, Part 13 documentation/catalog/design-tool architecture և Part 14 governance/contribution/change-lifecycle architecture canonical են։
+- D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
+- D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
+- D-025 lock merge — `261f85e5b20d726a0ab1f05da84a4dc45a248873`։
+- Final audit — `platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`։
+- D-025 transaction-ը փակված է։
 
-### Architecture invariants
+### Locked invariants
 
 - Shared core-ը product-neutral է։
 - Canonical dependency model-ը՝ Reference → Semantic → Component → Pattern → Product Extension։
 - Theme, state, density, platform, locale, accessibility և motion preference-ը orthogonal dimensions են։
 - Controlled exceptions-ը governed bypass են, ոչ normal layer։
-- Portal, catalog և design-tool integration-ը generated/governed views են, ոչ source of truth։
-- Unowned canonical asset-ը RED governance defect է։
-- High-risk կամ breaking change-ի self-approval-ը արգելված է։
-- Merge-ը առանձին authority action է, ոչ GREEN CI-ի ավտոմատ հետևանք։
+- Generated portal/catalog/design-tool views-ը source of truth չեն։
 - Armenian և English canonical languages են։
+- D-025 փոփոխությունը պահանջում է governed change control և explicit Owner approval։
 
 ### Հաջորդ հստակ աշխատանք
 
-1. D-025 Completeness Audit, Validator Design, and Draft PR Review։
-2. Canonical specification index և implementation package plan։
-3. D-025 completeness audit, validator design և PR #3 review։
-4. GREEN evidence և Owner review։
+Owner-ը ընտրում է MenQ Standard-ի հաջորդ ecosystem priority-ն և բացում առանձին decision transaction։
 
 ---
 
@@ -58,7 +55,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 ### Required startup workflow
 
-Before substantive work, every AI session must enumerate and completely read all tracked `.md` files on the active branch/ref and, for the active PR, read metadata, changed files, diff, review threads, and checks. The mandatory law is `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`.
+Before substantive work, every AI session must enumerate and completely read all tracked `.md` files on the active branch/ref and, for an active PR, read metadata, changed files, diff, review threads, and checks. The mandatory law is `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`.
 
 ### Human–AI principle
 
@@ -73,29 +70,26 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 
 - Foundation v1 is Locked and GREEN.
 - D-024 is merged and canonical.
-- D-025 is `Approved — Implementing`, not `Locked`.
+- D-025 is Locked and GREEN.
 - D-026 is Locked and machine-enforced.
-- Working branch: `d-025-design-platform-architecture-v1`.
-- Draft PR #3 is open, Draft, and unmerged.
-- Parts 1–11 baseline, Part 12 validation architecture, Part 13 documentation/catalog/design-tool architecture, and Part 14 governance/contribution/change-lifecycle architecture are canonical.
+- D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
+- D-025 lock merge: `261f85e5b20d726a0ab1f05da84a4dc45a248873`.
+- Final audit: `platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`.
+- The D-025 transaction is closed.
 
-### Architecture invariants
+### Locked invariants
 
-- Shared core is product-neutral.
+- The shared core is product-neutral.
 - Canonical dependency model: Reference → Semantic → Component → Pattern → Product Extension.
 - Theme, state, density, platform, locale, accessibility, and motion preference are orthogonal dimensions.
 - Controlled exceptions are governed bypasses, not a normal layer.
-- The portal, catalog, and design-tool integration are generated/governed views, not sources of truth.
-- An unowned canonical asset is a RED governance defect.
-- Self-approval is prohibited for high-risk or breaking changes.
-- Merge is a separate authority action, not an automatic consequence of green CI.
+- Generated portal, catalog, and design-tool views are not sources of truth.
 - Armenian and English are canonical languages.
+- Changes to D-025 require governed change control and explicit Owner approval.
 
 ### Exact next work
 
-1. D-025 Completeness Audit, Validator Design, and Draft PR Review.
-2. Canonical specification index and implementation package plan.
-3. D-025 completeness audit, validator design, and PR #3 review.
-4. GREEN evidence and Owner review.
+The Owner selects the next MenQ Standard ecosystem priority and opens a separate decision transaction.
 
 <!-- END: MENQ_STANDARD_AI_WORKING_CONTEXT -->

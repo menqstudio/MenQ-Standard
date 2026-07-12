@@ -1,6 +1,6 @@
 # MenQ Design Platform — Project Context / MenQ Design Platform — Նախագծի կոնտեքստ
 
-**Status / Կարգավիճակ:** D-025 Locked and GREEN / D-025 Locked և GREEN  
+**Status / Կարգավիճակ:** Locked and GREEN / Locked և GREEN  
 **Document class / Փաստաթղթի դաս:** Informative  
 **Owner / Պատասխանատու:** MenQ Owner  
 **Parent architecture:** [`../D-024-PLATFORMS-ARCHITECTURE-V1.md`](../D-024-PLATFORMS-ARCHITECTURE-V1.md)  
@@ -16,31 +16,28 @@ MenQ Design Platform-ը ամբողջ MenQ ecosystem-ի reusable, product-neutral
 
 - Foundation v1 — Locked և GREEN։
 - D-024 — merged և canonical։
-- D-025 — Locked և machine-enforced։
+- D-025 — Locked և GREEN։
 - D-026 — Locked և machine-enforced։
-- PR #3 implementation merge commit — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
-- PR #4 closure merge commit — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
-- Validated closure head — `b16e0211bb29355df43257847fce818765a4a747`։
 - Parts 1–16 architecture set-ը canonical է։
 - Canonical registry, schemas, ownership, dependency graph և 10 package boundaries-ը implemented են։
-- Private preview release candidate-ը `0.1.0-next.0` է։
+- Private preview candidate-ը `0.1.0-next.0` է։
 - Deterministic build, checksums, public API, compatibility, migration և rollback evidence-ը GREEN են։
 - `MenQ Design Catalog` consumer-ը M3/GREEN է։
 - `MenQ Release Evidence Console` consumer-ը M4 operational/GREEN է։
 - Cross-consumer validation և quality/adoption evidence-ը GREEN են։
-- D-025 is Locked։
 
-### Evidence
+### Merge և lock evidence
 
-- Readiness record՝ `implementation/release/d-025-readiness-record.json`։
-- Post-merge closure record՝ [`D-025_POST_MERGE_CLOSURE_RECORD.md`](D-025_POST_MERGE_CLOSURE_RECORD.md)։
-- Lock record՝ [`D-025_LOCK_RECORD.md`](D-025_LOCK_RECORD.md)։
-- Audit՝ `D-025_COMPLETENESS_AUDIT.md`։
-- PR review՝ `D-025_DRAFT_PR_REVIEW_RECORD.md`։
+- Implementation merge՝ `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
+- Closure merge՝ `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
+- Lock merge՝ `261f85e5b20d726a0ab1f05da84a4dc45a248873`։
+- Validated lock head՝ `8ba2e987ff6dab2c25fda18744c7376953d0108f`։
+- Explicit Owner lock approval՝ 2026-07-13։
+- Final audit՝ [`D-025_FINAL_POST_LOCK_AUDIT.md`](D-025_FINAL_POST_LOCK_AUDIT.md)։
 
-### Locked change boundary
+### Authority boundary և հաջորդ քայլ
 
-D-025-ի հետագա փոփոխությունները պահանջում են governed change request, impact analysis, compatibility/migration evidence, validators և explicit Owner approval։ Lock-ը չի արգելում զարգացումը․ այն արգելում է silent drift-ը։
+D-025 transaction-ը փակված է։ Architecture-ի հետագա փոփոխությունը պահանջում է governed change request, impact analysis, compatibility/migration evidence, validators և explicit Owner approval։
 
 ---
 
@@ -54,30 +51,27 @@ The MenQ Design Platform is the reusable, product-neutral design capability syst
 
 - Foundation v1 is Locked and GREEN.
 - D-024 is merged and canonical.
-- D-025 is Locked and machine-enforced.
+- D-025 is Locked and GREEN.
 - D-026 is Locked and machine-enforced.
-- PR #3 implementation merge commit: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
-- PR #4 closure merge commit: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
-- Validated closure head: `b16e0211bb29355df43257847fce818765a4a747`.
 - The Parts 1–16 architecture set is canonical.
 - The canonical registry, schemas, ownership, dependency graph, and ten package boundaries are implemented.
-- The private preview release candidate is `0.1.0-next.0`.
+- The private preview candidate is `0.1.0-next.0`.
 - Deterministic build, checksums, public API, compatibility, migration, and rollback evidence are GREEN.
 - The `MenQ Design Catalog` consumer is M3/GREEN.
 - The `MenQ Release Evidence Console` consumer is M4 operational/GREEN.
 - Cross-consumer validation and quality/adoption evidence are GREEN.
-- D-025 is Locked.
 
-### Evidence
+### Merge and lock evidence
 
-- Readiness record: `implementation/release/d-025-readiness-record.json`.
-- Post-merge closure record: [`D-025_POST_MERGE_CLOSURE_RECORD.md`](D-025_POST_MERGE_CLOSURE_RECORD.md).
-- Lock record: [`D-025_LOCK_RECORD.md`](D-025_LOCK_RECORD.md).
-- Audit: `D-025_COMPLETENESS_AUDIT.md`.
-- PR review: `D-025_DRAFT_PR_REVIEW_RECORD.md`.
+- Implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- Closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
+- Lock merge: `261f85e5b20d726a0ab1f05da84a4dc45a248873`.
+- Validated lock head: `8ba2e987ff6dab2c25fda18744c7376953d0108f`.
+- Explicit Owner lock approval: 2026-07-13.
+- Final audit: [`D-025_FINAL_POST_LOCK_AUDIT.md`](D-025_FINAL_POST_LOCK_AUDIT.md).
 
-### Locked change boundary
+### Authority boundary and next step
 
-Future D-025 changes require a governed change request, impact analysis, compatibility and migration evidence, validators, and explicit Owner approval. Lock does not prevent evolution; it prevents silent drift.
+The D-025 transaction is closed. Future architecture changes require a governed change request, impact analysis, compatibility and migration evidence, validators, and explicit Owner approval.
 
 <!-- END: MENQ_DESIGN_PLATFORM_PROJECT_CONTEXT -->

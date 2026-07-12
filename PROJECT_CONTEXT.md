@@ -35,17 +35,19 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - D-024 Platforms Architecture v1 — merged և canonical։
 - D-025 MenQ Design Platform Architecture v1 — Locked և GREEN։
 - D-026 Canonical Session Read Law — Locked և machine-enforced։
-- D-025 implementation merge commit — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
-- D-025 closure merge commit — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
-- Validated closure head — `b16e0211bb29355df43257847fce818765a4a747`։
+- D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
+- D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
+- D-025 lock merge — `261f85e5b20d726a0ab1f05da84a4dc45a248873`։
+- Validated lock head — `8ba2e987ff6dab2c25fda18744c7376953d0108f`։
 - Parts 1–16 architecture, implementation packages, private preview candidate և two-consumer evidence-ը GREEN են։
 - Explicit Owner lock approval — 2026-07-13։
+- Final post-lock audit — [`platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`](platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md)։
 
 ### Հաջորդ աշխատանք
 
-1. Validate և merge անել D-025 lock transaction-ը։
+1. D-025 transaction-ը փակված է․ բաց implementation, closure կամ lock action չկա։
 2. Հետագա Design Platform փոփոխությունները կառավարել locked change-control կանոններով։
-3. Շարունակել MenQ Standard-ի հաջորդ ecosystem priority-ն առանձին decision transaction-ով։
+3. Owner-ը ընտրում է MenQ Standard-ի հաջորդ ecosystem priority-ն՝ առանձին decision transaction-ով։
 
 ---
 
@@ -78,16 +80,18 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 - D-024 Platforms Architecture v1 is merged and canonical.
 - D-025 MenQ Design Platform Architecture v1 is Locked and GREEN.
 - D-026 Canonical Session Read Law is Locked and machine-enforced.
-- D-025 implementation merge commit: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
-- D-025 closure merge commit: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
-- Validated closure head: `b16e0211bb29355df43257847fce818765a4a747`.
+- D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
+- D-025 lock merge: `261f85e5b20d726a0ab1f05da84a4dc45a248873`.
+- Validated lock head: `8ba2e987ff6dab2c25fda18744c7376953d0108f`.
 - Parts 1–16 architecture, implementation packages, the private preview candidate, and two-consumer evidence are GREEN.
 - Explicit Owner lock approval: 2026-07-13.
+- Final post-lock audit: [`platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`](platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md).
 
 ### Next work
 
-1. Validate and merge the D-025 lock transaction.
+1. The D-025 transaction is closed; no implementation, closure, or lock action remains open.
 2. Govern future Design Platform changes under locked change-control rules.
-3. Continue the next MenQ Standard ecosystem priority through a separate decision transaction.
+3. The Owner selects the next MenQ Standard ecosystem priority through a separate decision transaction.
 
 <!-- END: MENQ_STANDARD_PROJECT_CONTEXT -->

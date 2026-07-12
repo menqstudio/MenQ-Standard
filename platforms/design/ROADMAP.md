@@ -10,27 +10,27 @@
 
 ## Completed / Ավարտված
 
-- [x] Parts 12–16 architecture set.
-- [x] D-025 architecture boundary and Parts 1–16 canonical set.
-- [x] Product-neutral shared-core and dependency model.
-- [x] Implementation Phase A — registry, schemas, ownership, dependency graph, and package skeleton.
-- [x] Ten package boundaries and private `0.1.0-next.0` preview candidate.
+- [x] Parts 1–16 canonical architecture set.
+- [x] Product-neutral shared core and dependency model.
+- [x] Registry, schemas, ownership, dependency graph, and ten package boundaries.
+- [x] Private `0.1.0-next.0` preview candidate.
 - [x] Deterministic build, checksums, public API, compatibility, migration, rollback, and release evidence.
-- [x] `MenQ Design Catalog` M3 consumer validation.
-- [x] `MenQ Release Evidence Console` M4 operational validation.
-- [x] Cross-consumer validation, quality/adoption evidence, and rollback proof.
-- [x] D-025 completeness audit and PR review evidence.
+- [x] MenQ Design Catalog M3 consumer validation.
+- [x] MenQ Release Evidence Console M4 operational validation.
+- [x] Cross-consumer validation and quality/adoption evidence.
 - [x] PR #3 implementation merge.
 - [x] PR #4 post-merge closure.
+- [x] PR #5 lock transaction.
 - [x] Exact merge-tree equivalence evidence.
 - [x] Explicit Owner lock approval.
-- [x] D-025 Locked.
+- [x] D-025 Locked and GREEN.
+- [x] Final post-lock audit and continuity synchronization.
 
 ## Current / Ընթացիկ
 
-1. Validate and merge the D-025 lock transaction.
-2. Preserve `Locked` status through machine enforcement.
-3. Maintain change-control, compatibility, migration, and release evidence.
+1. Preserve D-025 `Locked` status through machine enforcement.
+2. Maintain compatibility, migration, release, and adoption evidence for future changes.
+3. No open implementation, closure, or lock action remains.
 
 ## Later / Հետագայում
 

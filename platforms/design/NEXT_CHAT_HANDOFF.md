@@ -4,7 +4,7 @@
 **Prepared / Պատրաստվել է:** 2026-07-13  
 **Owner / Պատասխանատու:** Gevorg Ohanyan  
 **Repository:** `https://github.com/menqstudio/MenQ-Standard`  
-**Working branch:** `d-025-post-merge-closure`
+**Canonical ref:** `main`
 
 ## Հայերեն
 
@@ -14,28 +14,25 @@
 
 ### Ընթացիկ վիճակ
 
-- D-025 architecture, implementation և two-consumer evidence — GREEN։
-- PR #3 — merge է եղել `main`։
-- Merge commit — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
-- Merged head — `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`։
-- Post-merge closure branch — `d-025-post-merge-closure`։
-- D-025 — `Approved — Implementing`, ոչ `Locked`։
-- Closure verdict — YELLOW մինչև canonical sync և automation evidence-ը GREEN լինեն։
+- D-025 architecture, implementation, two-consumer, closure և lock evidence — GREEN։
+- Implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
+- Closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
+- Lock merge — `261f85e5b20d726a0ab1f05da84a4dc45a248873`։
+- Validated lock head — `8ba2e987ff6dab2c25fda18744c7376953d0108f`։
+- D-025 — Locked և GREEN։
+- Final post-lock audit — `D-025_FINAL_POST_LOCK_AUDIT.md`։
+- D-025 transaction-ը փակված է։
 
 ### Շարունակելու ճշգրիտ կետը
 
-1. Ավարտել canonical documentation synchronization-ը։
-2. Regenerate անել Markdown inventory-ն։
-3. Ստանալ closure PR GREEN checks։
-4. Owner approval-ից հետո merge անել closure PR-ը։
-5. Ստանալ GREEN `main` push checks։
-6. Finalize անել post-merge closure record-ը։
-7. Առանձին խնդրել D-025 lock approval։
+1. D-025-ի բաց action չկա։
+2. Հետագա փոփոխությունները կատարել միայն governed change-control ճանապարհով։
+3. Owner-ը ընտրում է MenQ Standard-ի հաջորդ ecosystem priority-ն։
 
 ### Արգելված գործողություններ
 
-- D-025-ը `Locked` չանվանել առանց առանձին Owner approval-ի։
-- Post-merge YELLOW state-ը GREEN չներկայացնել։
+- Locked boundary-ն silently չփոխել։
+- Historical evidence-ը չջնջել կամ վերագրել։
 
 ---
 
@@ -47,27 +44,24 @@ Before substantive work, enumerate and completely read every tracked `.md` file 
 
 ### Current state
 
-- D-025 architecture, implementation, and two-consumer evidence are GREEN.
-- PR #3 was merged into `main`.
-- Merge commit: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
-- Merged head: `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`.
-- Post-merge closure branch: `d-025-post-merge-closure`.
-- D-025 is `Approved — Implementing`, not `Locked`.
-- Closure remains YELLOW until canonical synchronization and automation evidence are GREEN.
+- D-025 architecture, implementation, two-consumer, closure, and lock evidence are GREEN.
+- Implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- Closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
+- Lock merge: `261f85e5b20d726a0ab1f05da84a4dc45a248873`.
+- Validated lock head: `8ba2e987ff6dab2c25fda18744c7376953d0108f`.
+- D-025 is Locked and GREEN.
+- Final post-lock audit: `D-025_FINAL_POST_LOCK_AUDIT.md`.
+- The D-025 transaction is closed.
 
 ### Exact continuation point
 
-1. Complete canonical documentation synchronization.
-2. Regenerate the Markdown inventory.
-3. Obtain GREEN closure PR checks.
-4. Merge the closure PR after Owner approval.
-5. Obtain GREEN `main` push checks.
-6. Finalize the post-merge closure record.
-7. Request separate D-025 lock approval.
+1. No D-025 action remains open.
+2. Make future changes only through governed change control.
+3. The Owner selects the next MenQ Standard ecosystem priority.
 
 ### Prohibited actions
 
-- Do not describe D-025 as `Locked` without separate Owner approval.
-- Do not represent the post-merge YELLOW state as GREEN.
+- Do not silently change the locked boundary.
+- Do not delete or rewrite historical evidence.
 
 <!-- END: MENQ_DESIGN_PLATFORM_NEXT_CHAT_HANDOFF -->
