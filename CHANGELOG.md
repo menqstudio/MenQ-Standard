@@ -30,6 +30,8 @@
 - Ավելացվել և lock է արվել `foundation/principles/README.md`՝ 16 bilingual MenQ Principles-ով։
 - Ավելացվել է `Measurable Outcomes` principle-ը՝ baseline, KPI, target, owner և measurement cadence պարտադիր կառուցվածքով։
 - MenQ Principles-ը գրանցվել է `D-017` որոշմամբ և կապվել Foundation index-ին։
+- Ավելացվել և lock է արվել `foundation/terminology/README.md`՝ որպես Terminology v1.0 living glossary։
+- Terminology v1-ի evolution rule-ը սահմանում է traceable, bilingual և history-preserving թարմացումներ։
 
 ### English
 
@@ -59,3 +61,5 @@
 - Added and locked `foundation/principles/README.md` with 16 bilingual MenQ Principles.
 - Added the `Measurable Outcomes` principle with mandatory baseline, KPI, target, owner, and measurement cadence.
 - Recorded MenQ Principles as decision `D-017` and linked the chapter from the Foundation index.
+- Added and locked `foundation/terminology/README.md` as the Terminology v1.0 living glossary.
+- Defined the Terminology v1 evolution rule for traceable, bilingual, history-preserving updates.
