@@ -20,6 +20,7 @@ REQUIRED_MARKERS = {
     "platforms/design/PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1.md": "<!-- END: DESIGN_PLATFORM_PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1 -->",
     "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md": "<!-- END: DESIGN_PLATFORM_CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1 -->",
     "platforms/design/D-025_COMPLETENESS_AUDIT.md": "<!-- END: D-025_COMPLETENESS_AUDIT -->",
+    "platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md": "<!-- END: D-025_DRAFT_PR_REVIEW_RECORD -->",
     "platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md": "<!-- END: D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1 -->",
     "platforms/design/ROADMAP.md": "<!-- END: MENQ_DESIGN_PLATFORM_ROADMAP -->",
     "platforms/design/CHANGELOG.md": "<!-- END: MENQ_DESIGN_PLATFORM_CHANGELOG -->",
@@ -35,6 +36,7 @@ BILINGUAL_SECTION_FILES = [
     "platforms/design/PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1.md",
     "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md",
     "platforms/design/D-025_COMPLETENESS_AUDIT.md",
+    "platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md",
     "platforms/design/NEXT_CHAT_HANDOFF.md",
 ]
 
@@ -54,6 +56,12 @@ REQUIRED_TERMS = {
         "Architecture verdict:** GREEN",
         "Implementation/lock verdict:** YELLOW",
         "explicit MenQ Owner decision",
+    ],
+    "platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md": [
+        "Architecture:** GREEN",
+        "Implementation and consumer evidence:** YELLOW",
+        "open, Draft, and unmerged",
+        "Approved — Implementing",
     ],
     "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md": [
         "@menq/design-contracts",
@@ -97,11 +105,11 @@ for rel, terms in REQUIRED_TERMS.items():
 context_path = ROOT / "platforms/design/PROJECT_CONTEXT.md"
 if context_path.is_file():
     context = context_path.read_text(encoding="utf-8")
-    for part in ["Part 12", "Part 13", "Part 14", "Part 15", "Part 16"]:
+    for part in ["Parts 12–16", "D-025_COMPLETENESS_AUDIT.md", "D-025_DRAFT_PR_REVIEW_RECORD.md"]:
         if part not in context:
             errors.append(f"Design Platform context missing canonical state: {part}")
-    if "D-025 completeness audit and architecture gap analysis" not in context:
-        errors.append("Design Platform context missing current audit continuation point")
+    if "Implementation Phase A" not in context:
+        errors.append("Design Platform context missing Implementation Phase A continuation point")
 
 roadmap_path = ROOT / "platforms/design/ROADMAP.md"
 if roadmap_path.is_file():
@@ -109,6 +117,15 @@ if roadmap_path.is_file():
     for part in ["Part 12", "Part 13", "Part 14", "Part 15", "Part 16"]:
         if f"[x] {part}" not in roadmap:
             errors.append(f"Design Platform roadmap does not mark complete: {part}")
+    for completed in [
+        "D-025 completeness audit",
+        "D-025 conformance validator",
+        "Draft PR #3 architecture review record",
+    ]:
+        if completed not in roadmap:
+            errors.append(f"Design Platform roadmap missing completed audit item: {completed}")
+    if "Implementation Phase A" not in roadmap:
+        errors.append("Design Platform roadmap missing Implementation Phase A")
 
 audit_path = ROOT / "platforms/design/D-025_COMPLETENESS_AUDIT.md"
 if audit_path.is_file():
