@@ -10,6 +10,14 @@
 - Ֆիքսվել է ընկերական, հանգիստ և ուղիղ համագործակցության տոնը։
 - Ֆիքսվել է ամբողջական փաթեթների և հնարավորության դեպքում ZIP deliverable-ի նախընտրությունը։
 - Ավելացվել է `DECISIONS.md`՝ locked որոշումների համար։
+- Ավելացվել է `ECOSYSTEM_ARCHITECTURE.md`։
+- Lock է արվել MenQ Standard-ի core hierarchy-ն։
+- Lock է արվել Foundation և Philosophy hierarchy-ները։
+- Ավելացվել է `foundation/README.md`։
+- Ավելացվել է `foundation/philosophy/README.md`։
+- Հստակ բաժանվել են MenQ Studio-ի company vision/mission-ը և MenQ Standard-ի standard vision/mission-ը։
+- MenQ Studio-ի company mission-ը գրանցվել է canonical ձևով։
+- MenQ Standard-ի mission-ը թողնվել է բաց՝ հետագա architecture աշխատանքի համար։
 
 ### English
 
@@ -19,3 +27,11 @@
 - Recorded the friendly, calm, and direct collaboration tone.
 - Recorded the preference for complete packages and ZIP deliverables when possible.
 - Added `DECISIONS.md` for locked decisions.
+- Added `ECOSYSTEM_ARCHITECTURE.md`.
+- Locked the MenQ Standard core hierarchy.
+- Locked the Foundation and Philosophy hierarchies.
+- Added `foundation/README.md`.
+- Added `foundation/philosophy/README.md`.
+- Clearly separated MenQ Studio company vision/mission from MenQ Standard standard vision/mission.
+- Recorded the MenQ Studio company mission canonically.
+- Kept the MenQ Standard mission open for further architecture work.
