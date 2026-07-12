@@ -4,6 +4,16 @@
   "private": true,
   "type": "module",
   "description": "Reusable compositions.",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./css": "./src/patterns.css"
+  },
+  "files": [
+    "src"
+  ],
   "dependencies": {
     "@menq/design-components": "workspace:*"
   }
