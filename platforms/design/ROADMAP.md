@@ -22,21 +22,23 @@
 - [x] Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle Architecture.
 - [x] Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
 - [x] Part 16 — Canonical Specification Index and Implementation Package Plan.
+- [x] D-025 completeness audit and architecture gap analysis.
+- [x] Design Platform D-025 conformance validator and CI coverage.
+- [x] Draft PR #3 architecture review record.
 
 ## Current / Ընթացիկ
 
-1. D-025 completeness audit and architecture gap analysis.
-2. Design Platform validator and CI implementation.
-3. Draft PR #3 review and Owner review.
+1. Implementation Phase A — canonical specification registry, schemas, ownership, dependency graph, and package skeleton.
+2. Select two distinct real consumer candidates and define bounded pilot scopes.
+3. Preserve Architecture GREEN / Implementation YELLOW until real evidence exists.
 
 ## Next / Հաջորդը
 
-1. Create controlled bilingual specifications for every governed Design Platform domain.
-2. Build the first versioned implementation package.
-3. Add Design Platform integrity validator and GitHub Actions workflow.
-4. Validate adoption with at least two distinct real MenQ products or systems.
-5. Record release, compatibility, migration, governance, and consumer evidence.
-6. Request final Owner review; merge and lock remain separate explicit decisions.
+1. Build the token and foundation pipeline.
+2. Build the first versioned primitive and component package prototypes.
+3. Produce deterministic build, checksum, public API, compatibility, migration, and release-manifest evidence.
+4. Validate adoption with two distinct real MenQ consumers, including at least one M4 operational path.
+5. Request explicit Owner decisions for ready-for-review, merge, and later lock.
 
 ## Later / Հետագայում
 
