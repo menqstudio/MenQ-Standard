@@ -23,15 +23,16 @@
 - [x] Armenian and English fixed as equal canonical languages.
 - [x] Additional languages fixed as on-demand locale packs.
 - [x] Architecture baseline and dedicated next-chat handoff created.
+- [x] Part 12 validation, CI, conformance, and quality-gates architecture completed.
+- [x] D-026 session-read inventory and strict Markdown drift enforcement completed.
 
 ## Current / Ընթացիկ
 
-1. Part 12 — Validation, CI, Conformance, and Quality Gates Architecture.
-2. Documentation portal, catalog, and design-tool integration architecture.
-3. Governance, contribution, ownership, and change-request lifecycle.
-4. Product adoption, maturity model, and two-consumer validation plan.
-5. Canonical specification index and implementation package plan.
-6. D-025 completeness audit, validator design, and Draft PR #3 review.
+1. Documentation portal, component catalog, and design-tool integration architecture.
+2. Governance, contribution, ownership, and change-request lifecycle.
+3. Product adoption, maturity model, and two-consumer validation plan.
+4. Canonical specification index and implementation package plan.
+5. D-025 completeness audit, validator implementation, and Draft PR #3 review.
 
 ## Next / Հաջորդը
 
