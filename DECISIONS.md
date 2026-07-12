@@ -260,3 +260,18 @@ MenQ Engineering Philosophy-ի canonical ամբողջական տարբերակը
 ### English
 
 The complete canonical MenQ Engineering Philosophy is maintained in [`foundation/philosophy/ENGINEERING_PHILOSOPHY.md`](foundation/philosophy/ENGINEERING_PHILOSOPHY.md). It locks the following backbone: architecture before implementation, enforcement over documentation-only rules, observable failure, validated tests, RED-first fixes, canonical sources of truth, controlled automation, traceability, explicit technical debt, and system-preserved learning.
+
+---
+
+## D-016 — Product Philosophy / Պրոդուկտային փիլիսոփայություն
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+
+MenQ Product Philosophy-ի canonical ամբողջական տարբերակը պահվում է [`foundation/philosophy/PRODUCT_PHILOSOPHY.md`](foundation/philosophy/PRODUCT_PHILOSOPHY.md) ֆայլում։ Այն lock է անում հետևյալ առանցքը՝ real problem before solution, outcomes over features, coherent product systems, purposeful AI, smallest complete value, real-use validation, feature discipline, shared MenQ foundation with product-specific identity, built-in trust, viability, maintainability և documented product continuity։
+
+### English
+
+The complete canonical MenQ Product Philosophy is maintained in [`foundation/philosophy/PRODUCT_PHILOSOPHY.md`](foundation/philosophy/PRODUCT_PHILOSOPHY.md). It locks the following backbone: real problems before solutions, outcomes over features, coherent product systems, purposeful AI, smallest complete value, real-use validation, feature discipline, a shared MenQ foundation with product-specific identity, built-in trust, viability, maintainability, and documented product continuity.
