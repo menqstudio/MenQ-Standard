@@ -1,4 +1,4 @@
-name: Part 13 Synchronization Transaction
+name: Markdown Inventory Regeneration
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
       - "**/*.md"
       - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
       - "scripts/generate_markdown_inventory.py"
+      - "scripts/validate_foundation.py"
       - ".github/workflows/markdown-inventory-bootstrap.yml"
   workflow_dispatch:
 
@@ -15,7 +16,7 @@ permissions:
   contents: write
 
 jobs:
-  synchronize:
+  regenerate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,50 +26,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Record Part 13 in root changelog
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          path = Path("CHANGELOG.md")
-          text = path.read_text(encoding="utf-8")
-          marker = "## 2026-07-12 — Design Platform Part 13 architecture"
-          if marker not in text:
-              heading = "# MenQ Standard — Changelog\n\n"
-              if not text.startswith(heading):
-                  raise SystemExit("Unexpected CHANGELOG heading")
-              section = """## 2026-07-12 — Design Platform Part 13 architecture
-
-### Հայերեն
-
-- Ավելացվել է documentation portal, component catalog և design-tool integration architecture v1-ը։
-- Երեք surfaces-ը սահմանվել են որպես նույն canonical repository source-ի governed views, ոչ parallel truth systems։
-- Սահմանվել են bilingual parity, version/compatibility visibility, behavior-first catalog, public-API examples, stable canonical IDs և cross-surface drift detection։
-- Continuation point-ը տեղափոխվել է Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle։
-- D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը մնում է open, Draft և unmerged։
-
-### English
-
-- Added Documentation Portal, Component Catalog, and Design-Tool Integration Architecture v1.
-- Defined all three surfaces as governed views of the same canonical repository source, not parallel truth systems.
-- Defined bilingual parity, version/compatibility visibility, a behavior-first catalog, public-API examples, stable canonical IDs, and cross-surface drift detection.
-- Advanced the continuation point to Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle.
-- D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
-
-"""
-              path.write_text(heading + section + text[len(heading):], encoding="utf-8")
-          PY
       - name: Regenerate canonical Markdown inventory
         run: python scripts/generate_markdown_inventory.py --write
-      - name: Commit synchronization transaction
+      - name: Commit canonical manifest when changed
         run: |
-          if git diff --quiet -- CHANGELOG.md foundation/ai-collaboration/MARKDOWN_INVENTORY.json; then
-            echo "Part 13 synchronization is already current."
+          if git diff --quiet -- foundation/ai-collaboration/MARKDOWN_INVENTORY.json; then
+            echo "Markdown inventory is already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CHANGELOG.md foundation/ai-collaboration/MARKDOWN_INVENTORY.json
-          git commit -m "Synchronize Design Platform Part 13"
+          git add foundation/ai-collaboration/MARKDOWN_INVENTORY.json
+          git commit -m "Regenerate canonical Markdown inventory"
           git push origin HEAD:d-025-design-platform-architecture-v1
       - name: Validate Foundation and D-026 integrity
         run: python scripts/validate_foundation.py
