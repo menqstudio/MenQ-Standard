@@ -16,9 +16,9 @@ REQUIRED = [
 ]
 
 MARKERS = {
-    "platforms/README.md": "<!-- END: MENQ_PLATFORMS_README -->",
-    "platforms/PROJECT_CONTEXT.md": "<!-- END: MENQ_PLATFORMS_PROJECT_CONTEXT -->",
-    "platforms/PLATFORM_REGISTRY.md": "<!-- END: MENQ_PLATFORM_REGISTRY -->",
+    "platforms/README.md": "<!-- END: PLATFORMS_ROOT_README -->",
+    "platforms/PROJECT_CONTEXT.md": "<!-- END: PLATFORMS_PROJECT_CONTEXT -->",
+    "platforms/PLATFORM_REGISTRY.md": "<!-- END: PLATFORM_REGISTRY -->",
     "platforms/D-024-PLATFORMS-ARCHITECTURE-V1.md": "<!-- END: D-024-PLATFORMS-ARCHITECTURE-V1 -->",
     "platforms/design/README.md": "<!-- END: MENQ_DESIGN_PLATFORM_README -->",
     "platforms/design/PROJECT_CONTEXT.md": "<!-- END: MENQ_DESIGN_PLATFORM_PROJECT_CONTEXT -->",
