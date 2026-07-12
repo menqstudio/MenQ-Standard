@@ -1,5 +1,25 @@
 # MenQ Design Platform — Changelog / MenQ Design Platform — Փոփոխությունների պատմություն
 
+## 2026-07-12 — Part 12 validation architecture and D-026 enforcement synchronization
+
+### Հայերեն
+
+- Ավելացվել է `VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`։
+- Սահմանվել են յոթ sequential gates՝ Source Integrity, Build Integrity, Contract Conformance, Visual and Interaction Quality, Consumer Conformance, Package and Compatibility, Release Evidence։
+- Սահմանվել են GREEN/YELLOW/RED verdict semantics-ը, conformance profiles-ը, exception contract-ը և evidence contract-ը։
+- D-026 session-read infrastructure-ը դարձվել է enforceable՝ canonical Markdown inventory, path/size/SHA drift checks և strict GitHub Actions gate-ով։
+- Root և Design Platform contexts/roadmaps/handoffs-ը տեղափոխվել են Part 13 continuation point-ի վրա։
+- D-025-ը շարունակում է մնալ `Approved — Implementing`, PR #3-ը՝ Draft և unmerged։
+
+### English
+
+- Added `VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`.
+- Defined seven sequential gates: Source Integrity, Build Integrity, Contract Conformance, Visual and Interaction Quality, Consumer Conformance, Package and Compatibility, and Release Evidence.
+- Defined GREEN/YELLOW/RED verdict semantics, conformance profiles, the exception contract, and the evidence contract.
+- Made D-026 session-read infrastructure enforceable through a canonical Markdown inventory, path/size/SHA drift checks, and a strict GitHub Actions gate.
+- Advanced root and Design Platform contexts, roadmaps, and handoffs to the Part 13 continuation point.
+- D-025 remains `Approved — Implementing`; PR #3 remains Draft and unmerged.
+
 ## 2026-07-12 — D-025 architecture baseline synchronization
 
 ### Հայերեն
@@ -12,7 +32,6 @@
 - Հաստատվել են behavior-first component, reusable pattern, theming, accessibility, localization, content, asset, motion, package, release, versioning, migration և compatibility architecture-ները։
 - Armenian և English լեզուները հաստատվել են որպես հավասար canonical languages։ Additional languages-ը սահմանվել են որպես on-demand locale packs։
 - Ավելացվել են `DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md` և Design Platform-specific `NEXT_CHAT_HANDOFF.md`։
-- Թարմացվել են `AI_WORKING_CONTEXT.md`, `PROJECT_CONTEXT.md`, `ARCHITECTURE.md`, `CONTRACTS.md`, `ROADMAP.md`, D-025 decision-ը և Draft PR #3 description-ը։
 - D-025-ը մնում է `Approved — Implementing`, PR #3-ը մնում է Draft և unmerged։
 
 ### English
@@ -25,7 +44,6 @@
 - Approved behavior-first component, reusable pattern, theming, accessibility, localization, content, asset, motion, package, release, versioning, migration, and compatibility architecture.
 - Confirmed Armenian and English as equal canonical languages and additional languages as on-demand locale packs.
 - Added `DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md` and the Design Platform-specific `NEXT_CHAT_HANDOFF.md`.
-- Updated `AI_WORKING_CONTEXT.md`, `PROJECT_CONTEXT.md`, `ARCHITECTURE.md`, `CONTRACTS.md`, `ROADMAP.md`, the D-025 decision, and Draft PR #3 description.
 - D-025 remains `Approved — Implementing`; PR #3 remains Draft and unmerged.
 
 ## 2026-07-12 — Initial D-025 architecture implementation
