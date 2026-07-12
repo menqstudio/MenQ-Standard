@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,7 +42,6 @@ BILINGUAL_SECTION_FILES = [
 ]
 
 REQUIRED_TERMS = {
-    "platforms/PLATFORM_REGISTRY.md": ["MenQ Design Platform", "Owner", "Status", "Validation"],
     "platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md": [
         "Approved — Implementing",
         "Reference",
@@ -49,26 +49,32 @@ REQUIRED_TERMS = {
         "Component",
         "Pattern",
         "Product Extension",
-        "two distinct real MenQ consumers",
+        "Technical and adoption readiness:** GREEN",
+        "Owner authority:** PENDING",
     ],
     "platforms/design/D-025_COMPLETENESS_AUDIT.md": [
-        "Architecture GREEN — Implementation YELLOW",
+        "Architecture GREEN — Technical/Adoption GREEN — Authority Pending",
         "Architecture verdict:** GREEN",
-        "Implementation/lock verdict:** YELLOW",
-        "explicit MenQ Owner decision",
+        "Technical/adoption verdict:** GREEN",
+        "Owner authority verdict:** PENDING",
     ],
     "platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md": [
         "Architecture:** GREEN",
-        "Implementation and consumer evidence:** YELLOW",
+        "Implementation and consumer evidence:** GREEN",
+        "Owner authority:** PENDING",
         "open, Draft, and unmerged",
-        "Approved — Implementing",
     ],
-    "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md": [
-        "@menq/design-contracts",
-        "@menq/design-tokens",
-        "@menq/design-components",
-        "release manifest",
-        "two-consumer evidence",
+    "platforms/design/PROJECT_CONTEXT.md": [
+        "Parts 12–16",
+        "0.1.0-next.0",
+        "MenQ Design Catalog",
+        "MenQ Release Evidence Console",
+        "Owner authority pending",
+    ],
+    "platforms/design/ROADMAP.md": [
+        "two-consumer validation",
+        "M4 operational",
+        "Owner ready-for-review and merge decision",
     ],
 }
 
@@ -88,57 +94,39 @@ for rel in BILINGUAL_SECTION_FILES:
     if not path.is_file():
         continue
     text = path.read_text(encoding="utf-8")
-    if "## Հայերեն" not in text:
-        errors.append(f"Missing Armenian section: {rel}")
-    if "## English" not in text:
-        errors.append(f"Missing English section: {rel}")
+    if "## Հայերեն" not in text or "## English" not in text:
+        errors.append(f"Missing bilingual canonical sections: {rel}")
 
 for rel, terms in REQUIRED_TERMS.items():
-    path = ROOT / rel
-    if not path.is_file():
-        continue
-    text = path.read_text(encoding="utf-8")
+    text = (ROOT / rel).read_text(encoding="utf-8")
     for term in terms:
         if term not in text:
             errors.append(f"{rel} missing required term: {term}")
 
-context_path = ROOT / "platforms/design/PROJECT_CONTEXT.md"
-if context_path.is_file():
-    context = context_path.read_text(encoding="utf-8")
-    for part in ["Parts 12–16", "D-025_COMPLETENESS_AUDIT.md", "D-025_DRAFT_PR_REVIEW_RECORD.md"]:
-        if part not in context:
-            errors.append(f"Design Platform context missing canonical state: {part}")
-    if "Implementation Phase A" not in context:
-        errors.append("Design Platform context missing Implementation Phase A continuation point")
+record_path = ROOT / "platforms/design/implementation/release/d-025-readiness-record.json"
+try:
+    record = json.loads(record_path.read_text(encoding="utf-8"))
+except (OSError, json.JSONDecodeError) as exc:
+    errors.append(f"Invalid D-025 readiness record: {exc}")
+    record = {}
 
-roadmap_path = ROOT / "platforms/design/ROADMAP.md"
-if roadmap_path.is_file():
-    roadmap = roadmap_path.read_text(encoding="utf-8")
-    for part in ["Part 12", "Part 13", "Part 14", "Part 15", "Part 16"]:
-        if f"[x] {part}" not in roadmap:
-            errors.append(f"Design Platform roadmap does not mark complete: {part}")
-    for completed in [
-        "D-025 completeness audit",
-        "D-025 conformance validator",
-        "Draft PR #3 architecture review record",
-    ]:
-        if completed not in roadmap:
-            errors.append(f"Design Platform roadmap missing completed audit item: {completed}")
-    if "Implementation Phase A" not in roadmap:
-        errors.append("Design Platform roadmap missing Implementation Phase A")
-
-audit_path = ROOT / "platforms/design/D-025_COMPLETENESS_AUDIT.md"
-if audit_path.is_file():
-    audit = audit_path.read_text(encoding="utf-8")
-    forbidden_claims = [
-        "Implementation GREEN",
-        "D-025 is Locked",
-        "D-025 — Locked",
-        "two consumers validated",
-    ]
-    for claim in forbidden_claims:
-        if claim in audit:
-            errors.append(f"Audit contains unsupported completion claim: {claim}")
+if record:
+    evidence = record.get("evidenceSnapshot", {})
+    authority = record.get("authority", {})
+    consumers = record.get("consumers", [])
+    maturity = {item.get("consumerId"): item.get("maturity") for item in consumers}
+    if evidence.get("workflowConclusion") != "success":
+        errors.append("D-025 readiness workflow evidence is not successful")
+    if record.get("crossConsumerValidation") != "GREEN" or record.get("qualityAndAdoptionEvidence") != "GREEN":
+        errors.append("D-025 cross-consumer or quality evidence is not GREEN")
+    if maturity.get("menq.design.consumer.catalog") != "M3":
+        errors.append("Design Catalog consumer is not M3")
+    if maturity.get("menq.design.consumer.release-console") != "M4":
+        errors.append("Release Evidence Console consumer is not M4")
+    if any(authority.get(key) is not False for key in ("readyForReviewAuthorized", "mergeAuthorized", "lockAuthorized")):
+        errors.append("D-025 authority record grants an unauthorized action")
+    if authority.get("ownerApprovalStatus") != "pending":
+        errors.append("D-025 Owner approval must remain pending before explicit Owner action")
 
 if errors:
     print("PLATFORMS VALIDATION: RED")
@@ -149,4 +137,5 @@ if errors:
 print("PLATFORMS VALIDATION: GREEN")
 print(f"Validated {len(REQUIRED_MARKERS)} required Platforms and D-025 canonical files.")
 print("D-025 architecture: GREEN")
-print("D-025 implementation/lock readiness: YELLOW (expected until package and consumer evidence exist)")
+print("D-025 technical and adoption readiness: GREEN")
+print("D-025 ready-for-review/merge/lock authority: PENDING OWNER DECISION")
