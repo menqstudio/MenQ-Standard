@@ -226,9 +226,9 @@
     { "name": "@menq/design-components", "boundary": "Reusable public components", "ownerId": "owner.design-platform-maintainer", "status": "Preview", "dependsOn": ["@menq/design-primitives"], "publicApi": [".", "./css"] },
     { "name": "@menq/design-patterns", "boundary": "Reusable compositions", "ownerId": "owner.design-platform-maintainer", "status": "Preview", "dependsOn": ["@menq/design-components"], "publicApi": [".", "./css"] },
     { "name": "@menq/design-assets", "boundary": "Governed asset metadata and resolvers", "ownerId": "owner.design-platform-maintainer", "status": "Preview", "dependsOn": ["@menq/design-contracts"], "publicApi": ["."] },
-    { "name": "@menq/design-motion", "boundary": "Motion contracts and utilities", "ownerId": "owner.design-platform-maintainer", "status": "Planned", "dependsOn": ["@menq/design-contracts", "@menq/design-tokens"], "publicApi": [] },
-    { "name": "@menq/design-locales", "boundary": "Armenian/English canonical packs and locale adapters", "ownerId": "owner.design-platform-maintainer", "status": "Planned", "dependsOn": ["@menq/design-contracts"], "publicApi": [] },
-    { "name": "@menq/design-validation", "boundary": "Conformance schemas, validators, and evidence helpers", "ownerId": "owner.design-platform-maintainer", "status": "Skeleton", "dependsOn": ["@menq/design-contracts"], "publicApi": [] }
+    { "name": "@menq/design-motion", "boundary": "Motion contracts and utilities", "ownerId": "owner.design-platform-maintainer", "status": "Preview", "dependsOn": ["@menq/design-contracts", "@menq/design-tokens"], "publicApi": ["."] },
+    { "name": "@menq/design-locales", "boundary": "Armenian/English canonical packs and locale adapters", "ownerId": "owner.design-platform-maintainer", "status": "Preview", "dependsOn": ["@menq/design-contracts"], "publicApi": ["."] },
+    { "name": "@menq/design-validation", "boundary": "Conformance schemas, validators, and evidence helpers", "ownerId": "owner.design-platform-maintainer", "status": "Preview", "dependsOn": ["@menq/design-contracts"], "publicApi": ["."] }
   ],
   "constraints": {
     "productNeutralCore": true,
