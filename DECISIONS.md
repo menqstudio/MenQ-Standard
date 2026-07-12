@@ -1,25 +1,15 @@
 # MenQ Standard — Decisions
 
-## D-001 — Canonical repository / Canonical repository
+## D-001 — Canonical repository
 
 **Status:** Locked  
 **Date:** 2026-07-12
 
 ### Հայերեն
-
-MenQ Standard-ի միակ canonical source of truth-ը հետևյալ repository-ն է՝
-
-`https://github.com/menqstudio/MenQ-Standard`
-
-Նոր chat-երում repository-ի հասցեն Owner-ից կրկին չի հարցվում։ MenQ Standard-ի հետ կապված աշխատանքից առաջ AI-ն պարտադիր կարդում է canonical փաստաթղթերը։
+MenQ Standard-ի միակ canonical source of truth-ը `https://github.com/menqstudio/MenQ-Standard` repository-ն է։ Նոր chat-երում հասցեն Owner-ից կրկին չի հարցվում։
 
 ### English
-
-The single canonical source of truth for MenQ Standard is:
-
-`https://github.com/menqstudio/MenQ-Standard`
-
-The repository address must not be requested again from the Owner in new chats. Before MenQ Standard work begins, the AI must read the canonical documentation.
+The single canonical source of truth for MenQ Standard is `https://github.com/menqstudio/MenQ-Standard`. The repository address must not be requested again from the Owner in new chats.
 
 ---
 
@@ -29,12 +19,10 @@ The repository address must not be requested again from the Owner in new chats. 
 **Date:** 2026-07-12
 
 ### Հայերեն
-
-AI-ն աշխատում է որպես MenQ architect և engineering teammate։ Շփումը պետք է լինի ընկերական, հանգիստ, ուղիղ և հարգալից։ Բնական աշխատանքային շփման մեջ ընդունելի և նախընտրելի է «ընգեր» դիմելաձևը։
+AI-ն աշխատում է որպես MenQ architect և engineering teammate։ Շփումը ընկերական, հանգիստ, կարճ, հստակ և ուղիղ է։
 
 ### English
-
-The AI works as the MenQ architect and engineering teammate. Communication must be friendly, calm, direct, and respectful. In natural Armenian working conversation, the form of address “ընգեր” is accepted and preferred.
+The AI works as the MenQ architect and engineering teammate. Communication is friendly, calm, concise, clear, and direct.
 
 ---
 
@@ -44,9 +32,114 @@ The AI works as the MenQ architect and engineering teammate. Communication must 
 **Date:** 2026-07-12
 
 ### Հայերեն
-
-Owner-ի կողմից մեկ անգամ հաստատված ecosystem-level կամ մշտական կանոնները պետք է գրանցվեն canonical documentation-ում, որպեսզի նոր chat-երում դրանք կրկին հարցնելու կարիք չլինի։
+Owner-ի կողմից հաստատված ecosystem-level կամ մշտական կանոնները գրանցվում են canonical documentation-ում։
 
 ### English
+Ecosystem-level or persistent rules approved by the Owner are recorded in canonical documentation.
 
-Ecosystem-level or persistent rules confirmed once by the Owner must be recorded in canonical documentation so they do not need to be requested again in new chats.
+---
+
+## D-004 — MenQ ecosystem separation / MenQ ecosystem-ի բաժանում
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+MenQ Studio-ն ընկերությունն է։ MenQ Standard-ը MenQ ecosystem-ի operating standard-ն է։ Services-ը և Products-ը պատկանում են MenQ Studio-ին, ոչ MenQ Standard-ին։
+
+### English
+MenQ Studio is the company. MenQ Standard is the operating standard of the MenQ ecosystem. Services and Products belong to MenQ Studio, not to MenQ Standard.
+
+---
+
+## D-005 — MenQ Standard core hierarchy / MenQ Standard-ի հիմնական հիերարխիա
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+```text
+MenQ Standard
+├── Foundation
+├── Platforms
+├── Operating Standards
+└── Extensions
+```
+
+### Հայերեն
+Այս չորս մակարդակները MenQ Standard-ի հաստատված backbone-ն են։
+
+### English
+These four areas form the approved backbone of MenQ Standard.
+
+---
+
+## D-006 — Foundation hierarchy / Foundation-ի հիերարխիա
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+```text
+Foundation
+├── Philosophy
+├── Principles
+├── Terminology
+├── Governance
+├── Decision System
+├── Documentation
+└── AI Collaboration
+```
+
+---
+
+## D-007 — Philosophy hierarchy / Philosophy-ի հիերարխիա
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+```text
+Philosophy
+├── Vision
+├── Mission
+├── Core Beliefs
+├── Human–AI Philosophy
+├── Design Philosophy
+├── Engineering Philosophy
+└── Product Philosophy
+```
+
+---
+
+## D-008 — Vision / Տեսլական
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+**HY:** MenQ-ի տեսլականն է դառնալ Human–AI collaboration-ի reference standard։  
+**EN:** MenQ's vision is to become the reference standard for Human–AI collaboration.
+
+---
+
+## D-009 — Architecture workflow / Architecture-ի աշխատանքային հոսք
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+```text
+Idea
+↓
+Architecture
+↓
+Review
+↓
+Approve
+↓
+Lock
+↓
+Documentation
+```
+
+### Հայերեն
+Chat-ը workshop-ն է։ GitHub-ը canonical source-ն է։ GitHub գնում է միայն հաստատված architecture-ը և որոշումները։
+
+### English
+Chat is the workshop. GitHub is the canonical source. Only approved architecture and decisions enter GitHub.
