@@ -1,0 +1,61 @@
+name: Design Platform Preview Release Integrity
+
+on:
+  push:
+    branches:
+      - d-025-design-platform-architecture-v1
+    paths:
+      - "platforms/design/specifications/**"
+      - "platforms/design/implementation/packages/**"
+      - "platforms/design/implementation/release/**"
+      - "platforms/design/implementation/scripts/build_release_candidate.py"
+      - "platforms/design/validation/validate_release_candidate.py"
+      - ".github/workflows/design-platform-preview-release.yml"
+  pull_request:
+    paths:
+      - "platforms/design/specifications/**"
+      - "platforms/design/implementation/packages/**"
+      - "platforms/design/implementation/release/**"
+      - "platforms/design/implementation/scripts/build_release_candidate.py"
+      - "platforms/design/validation/validate_release_candidate.py"
+      - ".github/workflows/design-platform-preview-release.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release-candidate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild generated package inputs
+        run: |
+          python platforms/design/implementation/scripts/build_tokens.py
+          python platforms/design/implementation/scripts/build_foundations.py
+      - name: Build release candidate A
+        env:
+          MENQ_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python platforms/design/implementation/scripts/build_release_candidate.py --output /tmp/menq-release-a
+      - name: Build release candidate B independently
+        env:
+          MENQ_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python platforms/design/implementation/scripts/build_release_candidate.py --output /tmp/menq-release-b
+      - name: Validate manifests, checksums, public API and deterministic rebuild
+        run: >-
+          python platforms/design/validation/validate_release_candidate.py
+          --primary /tmp/menq-release-a
+          --comparison /tmp/menq-release-b
+          --write-evidence
+      - name: Upload release evidence bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: menq-design-platform-0.1.0-next.0
+          path: /tmp/menq-release-a
+          if-no-files-found: error
+          retention-days: 30
