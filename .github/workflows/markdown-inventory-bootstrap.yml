@@ -16,3 +16,28 @@ permissions:
   contents: write
 
 jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: d-025-design-platform-architecture-v1
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Regenerate canonical Markdown inventory
+        run: python scripts/generate_markdown_inventory.py --write
+      - name: Commit canonical manifest when changed
+        run: |
+          if git diff --quiet -- foundation/ai-collaboration/MARKDOWN_INVENTORY.json; then
+            echo "Markdown inventory is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add foundation/ai-collaboration/MARKDOWN_INVENTORY.json
+          git commit -m "Regenerate canonical Markdown inventory"
+          git push origin HEAD:d-025-design-platform-architecture-v1
+      - name: Validate Foundation and D-026 integrity
+        run: python scripts/validate_foundation.py
