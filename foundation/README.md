@@ -26,7 +26,7 @@ Foundation
 - [`Philosophy`](philosophy/README.md) — Locked
 - [`Principles`](principles/README.md) — Locked
 - [`Terminology`](terminology/README.md) — Locked v1, Living Standard
-- Governance — Pending
+- [`Governance`](governance/README.md) — Locked v1
 - Decision System — Pending
 - Documentation — Pending
 - AI Collaboration — Pending
@@ -71,7 +71,7 @@ Foundation
 - [`Philosophy`](philosophy/README.md) — Locked
 - [`Principles`](principles/README.md) — Locked
 - [`Terminology`](terminology/README.md) — Locked v1, Living Standard
-- Governance — Pending
+- [`Governance`](governance/README.md) — Locked v1
 - Decision System — Pending
 - Documentation — Pending
 - AI Collaboration — Pending
