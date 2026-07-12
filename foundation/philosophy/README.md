@@ -40,6 +40,20 @@ Philosophy
 5. Թափանցիկությունն ու վերահսկելիությունը պարտադիր են։
 6. MenQ-ը զարգանում է ապացույցով, ոչ hype-ով։
 
+### Human–AI Philosophy — Locked
+
+> Մարդը միտք է բերում։  
+> AI-ն օգնում է։  
+> Մարդը որոշում է։  
+> Ստանդարտը պահպանում է։
+
+Գործնական իմաստը՝
+
+- Մարդը սահմանում է նպատակը և պահում վերջնական իշխանությունը։
+- AI-ն վերլուծում, առաջարկում և օգնում է իրականացնել։
+- Վերջնական որոշումն ու պատասխանատվությունը մարդունն են։
+- Հաստատված որոշումները, գիտելիքը և կանոնները պահպանվում են Standard-ում։
+
 ### Համապատասխանության կանոն
 
 MenQ Standard-ի յուրաքանչյուր կարևոր որոշում պետք է ստուգվի հետևյալ հարցով՝
@@ -87,6 +101,20 @@ Philosophy
 4. Systems are preferred over one-time solutions.
 5. Transparency and controllability are mandatory.
 6. MenQ advances through evidence, not hype.
+
+### Human–AI Philosophy — Locked
+
+> Humans bring ideas.  
+> AI assists.  
+> Humans decide.  
+> Standards preserve.
+
+In practice:
+
+- Humans define the purpose and retain final authority.
+- AI analyzes, proposes, and assists execution.
+- Final decisions and responsibility remain human.
+- Approved decisions, knowledge, and rules are preserved in the Standard.
 
 ### Alignment rule
 
