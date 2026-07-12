@@ -19,13 +19,13 @@ MenQ Design Platform-ը ամբողջ MenQ ecosystem-ի reusable design capabilit
 - D-024 Platforms Architecture v1 — merged և canonical։
 - D-025 — `Approved — Implementing`, ոչ `Locked`։
 - Working branch — `d-025-design-platform-architecture-v1`։
-- Draft PR — `#3`, merge չի արվում մինչև completeness, synchronization, validation և Owner approval։
-- Parts 1–11 baseline-ը պահպանված է `DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`-ում։
-- Part 12 validation/CI/conformance/quality-gates architecture-ը canonical է։
-- Part 13 documentation portal/component catalog/design-tool integration architecture-ը canonical է։
-- Part 14 governance/contribution/ownership/change-request lifecycle architecture-ը canonical է։
-- Part 15 product adoption/maturity/two-consumer validation architecture-ը canonical է։
-- Part 16 canonical specification index/implementation package plan-ը canonical է։
+- Draft PR — `#3`, open, Draft և unmerged։
+- Parts 1–11 baseline-ը canonical է։
+- Parts 12–16 canonical architecture specifications-ը complete են։
+- `D-025_COMPLETENESS_AUDIT.md` և `D-025_DRAFT_PR_REVIEW_RECORD.md` canonical են։
+- Architecture verdict-ը GREEN է։
+- Implementation/lock readiness-ը YELLOW է՝ իրական package և consumer evidence-ի բացակայության պատճառով։
+- `scripts/validate_platforms.py`-ը D-025-aware conformance validator է։
 
 ### Հաստատված համակարգի սահման
 
@@ -47,7 +47,7 @@ Reference → Semantic → Component → Pattern → Product Extension։ Theme, 
 
 ### Հաստատված architecture scope
 
-Architecture scope-ը ներառում է token source/build pipeline, primitives, behavior-first components, reusable patterns, themes/modes/product expression separation, accessibility, Armenian + English canonical localization, on-demand locale packs, content, governed assets, motion, package/release/versioning/migration/compatibility, յոթ sequential validation gates, conformance/evidence/exception contracts, documentation portal, behavior-first catalog, governed design-tool mapping, authority model, ownership registry, contribution classes և change-request lifecycle։
+Architecture scope-ը ներառում է token source/build pipeline, primitives, behavior-first components, reusable patterns, themes/modes/product expression separation, accessibility, Armenian + English canonical localization, content, governed assets, motion, package/release/versioning/migration/compatibility, validation/conformance/evidence/exception contracts, documentation portal, component catalog, design-tool mapping, governance, ownership, change-request lifecycle, adoption maturity, two-consumer validation և canonical specification/package plan։
 
 ### Պարտադիր կանոններ
 
@@ -56,19 +56,17 @@ Architecture scope-ը ներառում է token source/build pipeline, primitive
 - Armenian և English canonical languages են՝ semantic equality-ով։
 - Accessibility-ը release condition է։
 - Generated outputs-ը source of truth չեն։
-- Portal, catalog և design-tool libraries-ը նույն canonical repository source-ի governed views են։
 - Unowned canonical asset-ը RED governance defect է։
 - High-risk կամ breaking change-ի self-approval-ը արգելված է։
 - Merge-ը առանձին authority action է, ոչ GREEN CI-ի ավտոմատ հետևանք։
 - Raw source copy/fork-ը standard adoption model չէ։
-- Detailed systems-ը առանձին canonical specifications են, D-025-ը architecture boundary-ն է։
 - Յուրաքանչյուր write ենթարկվում է Canonical Write Integrity Law-ին։
 
 ### Հաջորդ հստակ աշխատանք
 
-1. D-025 completeness audit and architecture gap analysis։
-2. Design Platform validator and CI implementation։
-3. Draft PR #3 review, canonical synchronization, GREEN evidence and Owner review։
+1. Implementation Phase A — canonical specification registry, schemas, ownership, dependency graph և package skeleton։
+2. Ընտրել երկու distinct real consumer candidates և սահմանել bounded pilot scopes։
+3. Պահպանել Architecture GREEN / Implementation YELLOW verdict-ը մինչև իրական implementation և consumer evidence։
 
 ---
 
@@ -84,13 +82,13 @@ The MenQ Design Platform is the reusable design capability system for the entire
 - D-024 Platforms Architecture v1 is merged and canonical.
 - D-025 is `Approved — Implementing`, not `Locked`.
 - Working branch: `d-025-design-platform-architecture-v1`.
-- Draft PR: `#3`; it remains unmerged until completeness, synchronization, validation, and Owner approval are complete.
-- Parts 1–11 are preserved in `DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
-- Part 12 validation, CI, conformance, and quality-gates architecture is canonical.
-- Part 13 documentation portal, component catalog, and design-tool integration architecture is canonical.
-- Part 14 governance, contribution, ownership, and change-request lifecycle architecture is canonical.
-- Part 15 product adoption, maturity, and two-consumer validation architecture is canonical.
-- Part 16 canonical specification index and implementation package plan is canonical.
+- Draft PR #3 is open, Draft, and unmerged.
+- The Parts 1–11 baseline is canonical.
+- Parts 12–16 canonical architecture specifications are complete.
+- `D-025_COMPLETENESS_AUDIT.md` and `D-025_DRAFT_PR_REVIEW_RECORD.md` are canonical.
+- The architecture verdict is GREEN.
+- Implementation and lock readiness remain YELLOW because real package and consumer evidence do not yet exist.
+- `scripts/validate_platforms.py` is a D-025-aware conformance validator.
 
 ### Approved system boundary
 
@@ -108,11 +106,11 @@ A product layer may consume, compose, theme, and contractually extend the Platfo
 
 ### Canonical dependency model
 
-Reference → Semantic → Component → Pattern → Product Extension. Theme, state, density, platform, viewport/container, locale/script, accessibility, and motion preference are orthogonal resolution dimensions, not token layers. Controlled exceptions are governed temporary bypasses, not a normal dependency layer.
+Reference → Semantic → Component → Pattern → Product Extension. Theme, state, density, platform, viewport/container, locale/script, accessibility, and motion preference are orthogonal dimensions, not token layers. Controlled exceptions are governed temporary bypasses, not a normal dependency layer.
 
 ### Approved architecture scope
 
-The architecture covers the token source/build pipeline, primitives, behavior-first components, reusable patterns, theme/mode/product-expression separation, accessibility, Armenian and English canonical localization, on-demand locale packs, content, governed assets, motion, package/release/versioning/migration/compatibility, seven sequential validation gates, conformance/evidence/exception contracts, a documentation portal, behavior-first catalog, governed design-tool mappings, the authority model, ownership registry, contribution classes, and change-request lifecycle.
+The architecture covers token source/build, primitives, behavior-first components, reusable patterns, theme/mode/product expression, accessibility, Armenian and English canonical localization, content, governed assets, motion, package/release/versioning/migration/compatibility, validation and evidence contracts, documentation and catalog surfaces, design-tool mappings, governance, ownership, change-request lifecycle, adoption maturity, two-consumer validation, and the canonical specification/package plan.
 
 ### Mandatory rules
 
@@ -121,18 +119,16 @@ The architecture covers the token source/build pipeline, primitives, behavior-fi
 - Armenian and English are canonical languages with semantic equality.
 - Accessibility is a release condition.
 - Generated outputs are not sources of truth.
-- Portal, catalog, and design-tool libraries are governed views of the same repository source.
 - An unowned canonical asset is a RED governance defect.
 - Self-approval is forbidden for high-risk or breaking changes.
 - Merge is a separate authority action, not an automatic consequence of green CI.
 - Raw source copying and forking are not the standard adoption model.
-- Detailed systems belong in separate canonical specifications; D-025 remains the architecture boundary.
 - Every write follows the Canonical Write Integrity Law.
 
 ### Exact next work
 
-1. D-025 completeness audit and architecture gap analysis.
-2. Design Platform validator and CI implementation.
-3. Draft PR #3 review, canonical synchronization, GREEN evidence, and Owner review.
+1. Implementation Phase A — canonical specification registry, schemas, ownership, dependency graph, and package skeleton.
+2. Select two distinct real consumer candidates and define bounded pilot scopes.
+3. Preserve Architecture GREEN / Implementation YELLOW until real implementation and consumer evidence exist.
 
 <!-- END: MENQ_DESIGN_PLATFORM_PROJECT_CONTEXT -->
