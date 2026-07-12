@@ -1,0 +1,44 @@
+@layer menq.reset, menq.foundation, menq.utilities;
+
+@layer menq.reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: light dark;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    min-block-size: 100dvh;
+    margin: 0;
+    background: var(--menq-semantic-surface-canvas);
+    color: var(--menq-semantic-content-primary);
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  img,
+  picture,
+  svg,
+  video,
+  canvas {
+    display: block;
+    max-inline-size: 100%;
+  }
+}
+
+@layer menq.foundation {
+  :where([data-menq-root]) {
+    isolation: isolate;
+  }
+}
