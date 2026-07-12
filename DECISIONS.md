@@ -294,3 +294,33 @@ MenQ Principles-ի canonical ամբողջական տարբերակը պահվո�
 The complete canonical MenQ Principles are maintained in [`foundation/principles/README.md`](foundation/principles/README.md). They include 16 mandatory principles: Human Authority, Purpose Before Action, Canonical Truth, Explicit Ownership, Evidence Before Assertion, Measurable Outcomes, Rules Require Mechanisms, Explicit Over Implicit, Architecture Before Implementation, Systems Over Patches, Complexity Must Earn Its Place, Controlled and Reversible Change, Trust by Design, Learn Once Preserve Permanently, Shared Foundation Local Freedom, and Bilingual Equality.
 
 The `Measurable Outcomes` principle requires every important goal, change, and performance claim to have a baseline, KPI, target, owner, and measurement cadence, while the KPI measures real value rather than activity alone.
+
+---
+
+## D-018 — MenQ Terminology v1 / MenQ տերմինաբանություն v1
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+
+MenQ Terminology-ի canonical v1.0 տարբերակը պահվում է [`foundation/terminology/README.md`](foundation/terminology/README.md) ֆայլում։ Այն authoritative living glossary է։ Նոր տերմինները, վերանվանումները և իմաստային փոփոխությունները թույլատրվում են միայն հստակ անհրաժեշտությամբ, bilingual semantic equality-ով և traceable decision-ով։ Նախորդ իմաստները չեն վերագրվում կամ լուռ ջնջվում։
+
+### English
+
+The canonical MenQ Terminology v1.0 is maintained in [`foundation/terminology/README.md`](foundation/terminology/README.md). It is an authoritative living glossary. New terms, renames, and semantic changes are permitted only through demonstrated need, bilingual semantic equality, and a traceable decision. Previous meanings are not rewritten or silently removed.
+
+---
+
+## D-019 — MenQ Governance v1 / MenQ կառավարում v1
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+
+MenQ Governance-ի canonical v1.0 տարբերակը պահվում է [`foundation/governance/README.md`](foundation/governance/README.md) ֆայլում։ Այն lock է անում հետևյալ առանցքը՝ human final authority, explicit and least-necessary authority, authority-accountability կապ, scoped delegation, no silent authority, independent challenge for critical decisions, AI cannot self-approve, revocable authority, governance traceability, G0–G4 authority levels, reserved Owner decisions, high-risk governance, conflict resolution, exceptions, emergency authority և governance records։
+
+### English
+
+The canonical MenQ Governance v1.0 is maintained in [`foundation/governance/README.md`](foundation/governance/README.md). It locks the following backbone: final human authority, explicit and least-necessary authority, the authority-accountability link, scoped delegation, no silent authority, independent challenge for critical decisions, AI cannot self-approve, revocable authority, governance traceability, G0–G4 authority levels, reserved Owner decisions, high-risk governance, conflict resolution, exceptions, emergency authority, and governance records.
