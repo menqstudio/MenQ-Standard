@@ -208,8 +208,13 @@ def main() -> int:
             if constraints.get(key) != expected:
                 errors.append(f"constraint {key} must equal {expected!r}")
 
-        if not any(package.get("status") == "Skeleton" for package in packages if isinstance(package, dict)):
-            errors.append("at least one package boundary must be in Skeleton state")
+        preview_packages = [
+            package.get("name")
+            for package in packages
+            if isinstance(package, dict) and package.get("status") == "Preview"
+        ]
+        if len(preview_packages) != len(packages):
+            errors.append("all package boundaries must be in Preview state after package family completion")
         if any(package.get("status") == "Stable" for package in packages if isinstance(package, dict)):
             errors.append("Phase A may not claim Stable packages")
 
