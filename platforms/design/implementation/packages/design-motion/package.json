@@ -4,9 +4,13 @@
   "private": true,
   "type": "module",
   "description": "Motion contracts and utilities.",
-  "files": [
-    "src"
-  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "files": ["src"],
   "dependencies": {
     "@menq/design-contracts": "workspace:*",
     "@menq/design-tokens": "workspace:*"
