@@ -72,10 +72,11 @@ jobs:
           if (disclosure.content.hidden !== true || disclosure.trigger['aria-controls'] !== 'content-a') process.exit(1);
           if (m.primitiveClass('visuallyHidden') !== 'menq-visually-hidden') process.exit(1);
           NODE
-      - name: Smoke-test internal Design Components contracts
+      - name: Smoke-test Design Components public package API
+        working-directory: platforms/design/implementation
         run: |
           node --input-type=module <<'NODE'
-          const m = await import('./platforms/design/implementation/packages/design-components/src/index.js');
+          const m = await import('@menq/design-components');
           const button = m.buttonComponentProps({ variant: 'primary', size: 'md', loading: true, controlsId: 'panel-a' });
           if (button.disabled !== true || button['aria-busy'] !== true || button['data-menq-component'] !== 'button') process.exit(1);
           const card = m.cardComponentProps({ variant: 'outlined', labelledBy: 'card-title' });
