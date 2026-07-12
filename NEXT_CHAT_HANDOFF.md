@@ -9,101 +9,69 @@
 
 ## Հայերեն
 
-### Պարտադիր startup gate
+### Պարտադիր հրահանգ
 
-Նոր session-ը մինչև substantive աշխատանք՝
+Նոր chat-ում repository-ի հասցեն, Owner-ի անունը, project-ի նպատակը, communication style-ը կամ continuation point-ը կրկին չհարցնել։ Մինչ substantive աշխատանք՝ active branch/ref-ում enumerate և ամբողջությամբ կարդալ բոլոր tracked `.md` files-ը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Active PR-ի դեպքում կարդալ metadata, changed files, diff, review threads և checks։
 
-1. active branch/ref-ում enumerate է անում բոլոր tracked `.md` files-ը,
-2. յուրաքանչյուր file ամբողջությամբ կարդում է,
-3. canonical manifest-ի path/size/SHA evidence-ը ստուգում է,
-4. PR #3 metadata, changed files, diff, review threads և checks-ը կարդում է,
-5. միայն unresolved failure-ի բացակայությունից հետո startup gate-ը GREEN է հայտարարում։
-
-Պարտադիր օրենքը՝ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`։ Repository address-ը, Owner-ը, project purpose-ը, communication style-ը կամ continuation point-ը նորից չհարցնել։
-
-### Ընթացիկ canonical վիճակ
+### Ընթացիկ վիճակ
 
 - Foundation v1 — Locked և GREEN։
-- D-024 Platforms Architecture v1 — merged և canonical։
-- D-025 MenQ Design Platform Architecture v1 — `Approved — Implementing`, ոչ `Locked`։
-- D-026 Canonical Session Read Law — Locked, enforcement infrastructure GREEN։
-- Canonical Markdown inventory — 57 tracked Markdown files strict path/size/SHA drift enforcement-ով։
+- D-024 — merged և canonical։
+- D-025 — `Approved — Implementing`, ոչ `Locked`։
+- D-026 — Locked և machine-enforced։
 - Draft PR #3 — open, Draft, unmerged։
-- PR-ը չի merge կամ ready-for-review արվում առանց explicit Owner instruction-ի։
+- Parts 1–11 baseline-ը canonical է։
+- Part 12 validation/CI/conformance/quality-gates architecture-ը canonical է։
+- Part 13 documentation portal/component catalog/design-tool integration architecture-ը canonical է։
 
-### Ավարտված architecture scope
+### Architecture invariants
 
-- Parts 1–11՝ `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`։
-- Part 12՝ `platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`։
-- Part 12-ը սահմանում է յոթ sequential gates, GREEN/YELLOW/RED semantics, conformance profiles, exception contract և evidence contract։
-
-### Canonical architecture rules
-
-- Dependency layers՝ Reference → Semantic → Component → Pattern → Product Extension։
-- Theme, state, density, platform, locale/script, accessibility և motion preference-ը token layers չեն։
-- Controlled exceptions-ը normal layer չեն։
+- Canonical dependency model՝ Reference → Semantic → Component → Pattern → Product Extension։
+- Theme/state/density/platform/locale/accessibility/motion preference-ը orthogonal dimensions են։
+- Controlled exceptions-ը governed bypass են։
 - Shared core-ը product-neutral է։
-- Armenian և English canonical languages են՝ semantic equality-ով։
-- Tool success-ը GREEN evidence չէ։
+- Portal, catalog և design-tool integration-ը նույն repository source-ի governed views են, ոչ parallel truth systems։
+- Armenian և English canonical languages են։
 
 ### Հստակ continuation point
 
 Ուղիղ սկսել՝
 
-**Part 13 — Documentation Portal, Component Catalog, and Design-Tool Integration Architecture**
+## Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle
 
-Հետո հերթով՝
-
-1. Governance, contribution, ownership և change-request lifecycle։
-2. Product adoption, maturity model և two-consumer validation plan։
-3. Canonical specification index և implementation package plan։
-4. D-025 completeness audit, validator implementation և Draft PR #3 review։
-5. Canonical synchronization, GREEN evidence և Owner review։
+Հետո՝ product adoption/two-consumer validation, canonical specification index, implementation package plan, completeness audit, validator design, GREEN evidence և Owner review։ Merge և lock-ը առանձին explicit decisions են։
 
 ### Արգելված գործողություններ
 
 - PR #3-ը չmerge անել և ready-for-review չդարձնել առանց Owner instruction-ի։
 - D-025-ը `Locked` չանվանել։
-- Product-specific identity, business logic կամ workflow shared core չմտցնել։
-- `DECISIONS.md` historical registry-ն մեծ full rewrite չանել։
-- Complete-read evidence չունենալով չասել, որ repository-ն ամբողջությամբ կարդացվել է։
+- Product-specific identity, business logic կամ workflows shared core չմտցնել։
+- Generated docs/catalog/design-tool outputs-ը canonical source չհամարել։
+- Tool success-ը GREEN evidence չհամարել։
 
 ---
 
 ## English
 
-### Mandatory startup gate
+### Mandatory instruction
 
-Before substantive work, a new session must enumerate and completely read every tracked Markdown file on the active branch/ref, verify canonical manifest path/size/SHA evidence, and read PR #3 metadata, changed files, diff, review threads, and checks. It may declare GREEN only when no unresolved failure remains.
+Do not ask again for the repository address, Owner identity, project purpose, communication style, or continuation point. Before substantive work, enumerate and completely read all tracked `.md` files on the active branch/ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For the active PR, read metadata, changed files, diff, review threads, and checks.
 
-The mandatory law is `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. Do not ask again for the repository address, Owner, project purpose, communication style, or continuation point.
-
-### Current canonical state
+### Current state
 
 - Foundation v1 is Locked and GREEN.
-- D-024 Platforms Architecture v1 is merged and canonical.
-- D-025 MenQ Design Platform Architecture v1 is `Approved — Implementing`, not `Locked`.
-- D-026 Canonical Session Read Law is Locked and its enforcement infrastructure is GREEN.
-- The canonical Markdown inventory contains 57 tracked files with strict path/size/SHA drift enforcement.
+- D-024 is merged and canonical.
+- D-025 is `Approved — Implementing`, not `Locked`.
+- D-026 is Locked and machine-enforced.
 - Draft PR #3 is open, Draft, and unmerged.
-- The PR must not be merged or marked ready without explicit Owner instruction.
-
-### Completed architecture scope
-
-- Parts 1–11: `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
-- Part 12: `platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`.
-- Part 12 defines seven sequential gates, GREEN/YELLOW/RED semantics, conformance profiles, the exception contract, and the evidence contract.
+- Parts 1–11 baseline, Part 12 validation architecture, and Part 13 documentation/catalog/design-tool architecture are canonical.
 
 ### Exact continuation point
 
-Start directly with:
+Start immediately with:
 
-**Part 13 — Documentation Portal, Component Catalog, and Design-Tool Integration Architecture**
+**Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle.**
 
-Then continue with governance/contribution, product adoption and two-consumer validation, the canonical specification index and package plan, the D-025 completeness audit and validator implementation, final synchronization, GREEN evidence, and Owner review.
-
-### Prohibited actions
-
-Do not merge or mark PR #3 ready, call D-025 Locked, move product-specific identity or business logic into shared core, rewrite the historical `DECISIONS.md` registry, or claim a complete repository read without complete-read evidence.
+Then continue product adoption and two-consumer validation, the canonical specification index, implementation package planning, completeness audit, validator design, GREEN evidence, and Owner review. Merge and lock remain separate explicit decisions.
 
 <!-- END: MENQ_STANDARD_NEXT_CHAT_HANDOFF -->
