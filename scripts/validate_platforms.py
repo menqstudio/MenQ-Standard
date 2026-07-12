@@ -26,11 +26,16 @@ REQUIRED_MARKERS = {
     "platforms/design/NEXT_CHAT_HANDOFF.md": "<!-- END: MENQ_DESIGN_PLATFORM_NEXT_CHAT_HANDOFF -->",
 }
 
-BILINGUAL_FILES = [
-    path for path in REQUIRED_MARKERS
-    if path.endswith(".md") and path not in {
-        "platforms/PLATFORM_REGISTRY.md",
-    }
+BILINGUAL_SECTION_FILES = [
+    "platforms/design/PROJECT_CONTEXT.md",
+    "platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md",
+    "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",
+    "platforms/design/DOCUMENTATION_PORTAL_COMPONENT_CATALOG_DESIGN_TOOL_INTEGRATION_ARCHITECTURE_V1.md",
+    "platforms/design/GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md",
+    "platforms/design/PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1.md",
+    "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md",
+    "platforms/design/D-025_COMPLETENESS_AUDIT.md",
+    "platforms/design/NEXT_CHAT_HANDOFF.md",
 ]
 
 REQUIRED_TERMS = {
@@ -70,7 +75,7 @@ for rel, marker in REQUIRED_MARKERS.items():
     if not text.rstrip().endswith(marker):
         errors.append(f"Missing or misplaced ending marker: {rel}")
 
-for rel in BILINGUAL_FILES:
+for rel in BILINGUAL_SECTION_FILES:
     path = ROOT / rel
     if not path.is_file():
         continue
@@ -105,7 +110,6 @@ if roadmap_path.is_file():
         if f"[x] {part}" not in roadmap:
             errors.append(f"Design Platform roadmap does not mark complete: {part}")
 
-# Honest-state guard: architecture may be GREEN while implementation remains YELLOW.
 audit_path = ROOT / "platforms/design/D-025_COMPLETENESS_AUDIT.md"
 if audit_path.is_file():
     audit = audit_path.read_text(encoding="utf-8")
