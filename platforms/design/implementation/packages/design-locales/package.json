@@ -4,6 +4,13 @@
   "private": true,
   "type": "module",
   "description": "Armenian/English canonical packs and locale adapters.",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "files": ["src"],
   "dependencies": {
     "@menq/design-contracts": "workspace:*"
   }
