@@ -2,6 +2,8 @@
 
 **Status / Կարգավիճակ:** Structure Locked, Content In Progress / Կառուցվածքը հաստատված է, բովանդակությունը մշակման փուլում է
 
+See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable AI and architecture context.
+
 ## Հայերեն
 
 ### Նպատակ
@@ -28,7 +30,7 @@ Foundation
 - [`Terminology`](terminology/README.md) — Locked v1, Living Standard
 - [`Governance`](governance/README.md) — Locked v1
 - [`Decision System`](decision-system/README.md) — Locked v1
-- Documentation — Pending
+- [`Documentation`](documentation/README.md) — Locked v1
 - AI Collaboration — Pending
 
 ### Սահման
@@ -44,6 +46,10 @@ Foundation-ը չի պարունակում product-specific կանոններ կա
 5. Decision System
 6. Documentation
 7. AI Collaboration
+
+### Հաջորդ քայլ
+
+Կառուցել `AI Collaboration v1`, ապա կատարել Foundation-ի ամբողջական consistency, bilingual parity, link և documentation integrity audit։
 
 ---
 
@@ -73,7 +79,7 @@ Foundation
 - [`Terminology`](terminology/README.md) — Locked v1, Living Standard
 - [`Governance`](governance/README.md) — Locked v1
 - [`Decision System`](decision-system/README.md) — Locked v1
-- Documentation — Pending
+- [`Documentation`](documentation/README.md) — Locked v1
 - AI Collaboration — Pending
 
 ### Boundary
@@ -89,3 +95,7 @@ Foundation does not contain product-specific rules or implementation details. Pl
 5. Decision System
 6. Documentation
 7. AI Collaboration
+
+### Next step
+
+Build `AI Collaboration v1`, then perform a complete Foundation consistency, bilingual parity, link, and documentation integrity audit.
