@@ -14,7 +14,7 @@ MenQ Standard-ի միակ canonical source of truth-ը GitHub repository-ն է։
 
 ### Պարտադիր startup workflow
 
-Յուրաքանչյուր նոր AI session մինչև substantive աշխատանք active branch/ref-ում enumerate և ամբողջությամբ կարդում է բոլոր tracked `.md` files-ը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Canonical manifest-ը enforce է անում path/size/SHA drift-ը։ Active PR-ի դեպքում նաև կարդացվում են metadata-ն, changed files-ը, diff-ը, review threads-ը և checks-ը։
+Յուրաքանչյուր նոր AI session, մինչև որևէ substantive աշխատանք սկսելը, պարտավոր է active branch/ref-ում enumerate անել և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` ֆայլերը՝ ըստ [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md)-ի։ Startup subset-ը, handoff-ը, summary-ն, partial range-ը կամ previous-session memory-ն complete-read evidence չեն։ Active PR-ի դեպքում նաև կարդացվում են metadata-ն, changed files-ը, diff-ը, review threads-ը և checks-ը։
 
 ### Human–AI և authority
 
@@ -27,7 +27,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 ### Canonical write integrity
 
-Յուրաքանչյուր write ենթարկվում է `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`-ին՝ complete read → SHA preserve → write → beginning/end re-read → synchronization verification → GREEN։ Tool success-ը evidence չէ։
+Յուրաքանչյուր write, update, replacement, move կամ delete ենթարկվում է `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`-ին՝ complete read → SHA preserve → write → beginning/end re-read → synchronization verification → GREEN։ Tool success-ը evidence չէ։
 
 ### Decision registry
 
@@ -40,16 +40,18 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - Foundation v1 — Locked և GREEN։
 - D-024 Platforms Architecture v1 — merged և canonical։
 - D-025 MenQ Design Platform Architecture v1 — `Approved — Implementing`, ոչ `Locked`։
-- D-026 Canonical Session Read Law — Locked, enforcement infrastructure GREEN։
-- Canonical Markdown inventory — 57 tracked files strict path/size/SHA drift enforcement-ով։
+- D-026 Canonical Session Read Law — Locked և machine-enforced։
 - Working branch — `d-025-design-platform-architecture-v1`։
-- Draft PR — `#3`, merge չի արվում մինչև architecture completeness, canonical synchronization, validator evidence, երկու իրական consumer validation և Owner approval։
+- Draft PR — `#3`, merge չի արվում մինչև architecture completeness, canonical synchronization, validator evidence, real consumer validation և Owner approval։
 - Parts 1–11 baseline-ը պահպանված է `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`-ում։
-- Part 12 validation architecture-ը պահպանված է `platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`-ում։
+- Part 12 validation/CI/conformance/quality-gates architecture-ը canonical է։
+- Part 13 documentation portal/component catalog/design-tool integration architecture-ը canonical է։
+- Canonical token dependency layers՝ Reference → Semantic → Component → Pattern → Product Extension։ Theme/state/density/platform/locale/accessibility/motion-ը orthogonal dimensions են։ Controlled exceptions-ը governed bypass են։
+- Armenian և English canonical languages են։ Additional languages-ը on-demand locale packs են։
 
 ### Հաջորդ աշխատանք
 
-Ուղիղ շարունակել Design Platform Part 13-ից՝ Documentation Portal, Component Catalog և Design-Tool Integration Architecture, հետո governance/contribution, adoption/two-consumer validation, specification index, implementation package, completeness audit, validator implementation և Owner review։
+Ուղիղ շարունակել Design Platform Part 14-ից՝ Governance, Contribution, Ownership և Change-Request Lifecycle, հետո product adoption/two-consumer validation, specification index, implementation package plan, completeness audit, validator և Owner review։
 
 ---
 
@@ -61,7 +63,7 @@ The GitHub repository is the single canonical source of truth for MenQ Standard.
 
 ### Required startup workflow
 
-Before substantive work, every new AI session enumerates and completely reads all tracked `.md` files on the active branch/ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. The canonical manifest enforces path/size/SHA drift. When an active PR is involved, its metadata, changed files, diff, review threads, and checks must also be read.
+Every new AI session must, before beginning substantive work, enumerate and completely read every tracked `.md` file on the active branch or ref in accordance with [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md). A startup subset, handoff, summary, partial range, or previous-session memory is not complete-read evidence. When an active PR is involved, its metadata, changed files, diff, review threads, and checks must also be read.
 
 ### Human–AI and authority
 
@@ -87,15 +89,17 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 - Foundation v1 is Locked and GREEN.
 - D-024 Platforms Architecture v1 is merged and canonical.
 - D-025 MenQ Design Platform Architecture v1 is `Approved — Implementing`, not `Locked`.
-- D-026 Canonical Session Read Law is Locked and its enforcement infrastructure is GREEN.
-- The canonical Markdown inventory contains 57 tracked files with strict path/size/SHA drift enforcement.
+- D-026 Canonical Session Read Law is Locked and machine-enforced.
 - Working branch: `d-025-design-platform-architecture-v1`.
-- Draft PR: `#3`; it remains unmerged until architecture completeness, canonical synchronization, validator evidence, two real consumer validations, and Owner approval.
+- Draft PR: `#3`; it remains unmerged until architecture completeness, canonical synchronization, validator evidence, real consumer validation, and Owner approval.
 - Parts 1–11 are preserved in `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
-- Part 12 validation architecture is preserved in `platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`.
+- Part 12 validation, CI, conformance, and quality-gates architecture is canonical.
+- Part 13 documentation portal, component catalog, and design-tool integration architecture is canonical.
+- Canonical token dependency layers are Reference → Semantic → Component → Pattern → Product Extension. Theme, state, density, platform, locale, accessibility, and motion are orthogonal dimensions. Controlled exceptions are governed bypasses.
+- Armenian and English are canonical languages. Additional languages are on-demand locale packs.
 
 ### Next work
 
-Continue directly with Design Platform Part 13: Documentation Portal, Component Catalog, and Design-Tool Integration Architecture, followed by governance/contribution, adoption and two-consumer validation, specification indexing, implementation packaging, completeness audit, validator implementation, and Owner review.
+Continue directly with Design Platform Part 14: Governance, Contribution, Ownership, and Change-Request Lifecycle, followed by product adoption and two-consumer validation, the specification index and implementation package plan, completeness audit, validator work, and Owner review.
 
 <!-- END: MENQ_STANDARD_PROJECT_CONTEXT -->
