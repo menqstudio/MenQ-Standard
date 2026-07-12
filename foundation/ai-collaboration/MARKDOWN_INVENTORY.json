@@ -2,7 +2,7 @@
   "schema_version": 1,
   "repository": "menqstudio/MenQ-Standard",
   "source": "git ls-files -- *.md *.MD",
-  "file_count": 56,
+  "file_count": 57,
   "files": [
     {
       "path": "AI_WORKING_CONTEXT.md",
@@ -273,6 +273,11 @@
       "path": "platforms/design/ROADMAP.md",
       "bytes": 2993,
       "sha256": "c6ea7e785b217dff4870c60152f0a9a7d516ce591c852689e5db00d843382b11"
+    },
+    {
+      "path": "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",
+      "bytes": 10213,
+      "sha256": "9e8e95f28803832ba16da5b318d6503d16f14b9cd3e1ead3f557058161095df1"
     },
     {
       "path": "platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md",
