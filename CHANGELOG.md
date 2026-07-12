@@ -20,6 +20,7 @@
 - Lock է արվել MenQ Standard-ի mission-ը։
 - Lock են արվել MenQ Standard-ի Core Beliefs-ը։
 - Lock է արվել MenQ Standard-ի Human–AI Philosophy-ն։
+- Lock է արվել MenQ Standard-ի Design Philosophy-ն։
 
 ### English
 
@@ -39,3 +40,4 @@
 - Locked the MenQ Standard mission.
 - Locked the MenQ Standard Core Beliefs.
 - Locked the MenQ Standard Human–AI Philosophy.
+- Locked the MenQ Standard Design Philosophy.
