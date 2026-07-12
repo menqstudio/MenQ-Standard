@@ -61,10 +61,11 @@ Canonical style-ը պահվում է [`COLLABORATION_STYLE.md`](COLLABORATION_ST
 - Approved ecosystem-level գաղափարը դառնում է canonical documentation։
 - Multi-file deliverable-ը տրվում է complete package-ով և հնարավորության դեպքում ZIP snapshot-ով։
 - ZIP-ը delivery snapshot է, ոչ canonical source։
+- Foundation v1 ZIP snapshot-ը պահվում է որպես GitHub Release asset, ոչ main branch binary file։
 
 ### Ընթացիկ վիճակ
 
-Foundation-ի բոլոր յոթ chapters-ը Locked v1 են։ Audit remediation files-ը կիրառված են։ Release gate-ը YELLOW է միայն validator execution-ի GREEN evidence-ի բացակայության պատճառով։ Հաջորդ chat-ը սկսում է `NEXT_CHAT_HANDOFF.md`-ից և անմիջապես ստուգում validator/CI result-ը։
+Foundation-ի բոլոր յոթ chapters-ը Locked v1 են։ Repository-side remediation-ը կիրառված է։ `Foundation Integrity` workflow run `#9`-ը `success` է, և validator-ը հաստատել է `FOUNDATION VALIDATION: GREEN`՝ յոթ chapter-ների ու root controls-ի համար։ Foundation v1 release gate-ը GREEN է։ Հաջորդ աշխատանքը Foundation v1 snapshot packaging-ն է, հետո Platforms architecture-ի formal Decision System proposal-ը և Owner approval-ը։
 
 ---
 
@@ -123,9 +124,10 @@ Every write, update, replacement, move, or deletion follows [`foundation/documen
 - Approved ecosystem-level ideas become canonical documentation.
 - Multi-file deliverables are delivered as complete packages and preferably as ZIP snapshots.
 - A ZIP is a delivery snapshot, not the canonical source.
+- The Foundation v1 ZIP snapshot is stored as a GitHub Release asset, not as a binary file in the main branch.
 
 ### Current state
 
-All seven Foundation chapters are Locked v1. Audit remediation files have been applied. The release gate remains YELLOW only because GREEN validator execution evidence is not yet available. The next chat starts from `NEXT_CHAT_HANDOFF.md` and immediately checks the validator or CI result.
+All seven Foundation chapters are Locked v1. Repository-side remediation is applied. `Foundation Integrity` workflow run `#9` completed with `success`, and the validator confirmed `FOUNDATION VALIDATION: GREEN` for seven chapters and root controls. The Foundation v1 release gate is GREEN. The next work is Foundation v1 snapshot packaging, followed by a formal Decision System proposal for Platforms architecture and Owner approval.
 
 <!-- END: MENQ_STANDARD_PROJECT_CONTEXT -->
