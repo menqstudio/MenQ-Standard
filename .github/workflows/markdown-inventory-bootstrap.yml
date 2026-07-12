@@ -1,0 +1,40 @@
+name: Markdown Inventory Bootstrap
+
+on:
+  push:
+    branches:
+      - d-025-design-platform-architecture-v1
+    paths:
+      - "**/*.md"
+      - "scripts/generate_markdown_inventory.py"
+      - ".github/workflows/markdown-inventory-bootstrap.yml"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate tracked Markdown inventory
+        run: python scripts/generate_markdown_inventory.py --write
+      - name: Validate generated inventory
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('foundation/ai-collaboration/MARKDOWN_INVENTORY.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          assert data['file_count'] == len(data['files'])
+          assert data['file_count'] > 0
+          assert [entry['path'] for entry in data['files']] == sorted(entry['path'] for entry in data['files'])
+          print(f"Generated inventory for {data['file_count']} tracked Markdown files")
+          PY
+      - name: Upload Markdown inventory artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdown-inventory
+          path: foundation/ai-collaboration/MARKDOWN_INVENTORY.json
+          if-no-files-found: error
