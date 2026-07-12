@@ -251,13 +251,13 @@
     },
     {
       "path": "platforms/design/D-025_COMPLETENESS_AUDIT.md",
-      "bytes": 5217,
-      "sha256": "0dcbe32858aba1c7c946e38d417354d90eaea17f934ea0e27f0d1068bddd9e1e"
+      "bytes": 5644,
+      "sha256": "2826e550bf1273be21b66962406326598ee7e71cdb03b669ba0d82f2b4e82fc0"
     },
     {
       "path": "platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md",
-      "bytes": 4700,
-      "sha256": "50e29987a83c1795b7776ab6e79907533bf246c0c1cfa2678708a9b52c50d33e"
+      "bytes": 4802,
+      "sha256": "56cb5a1658d5a4e2c3215c4b51ca01ee988e41c1d3f27753d5a7c63b92ee66ae"
     },
     {
       "path": "platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md",
@@ -291,8 +291,8 @@
     },
     {
       "path": "platforms/design/PROJECT_CONTEXT.md",
-      "bytes": 7450,
-      "sha256": "a54071a62f07fcfe6b151060df1d7db0bea89eb3761ddbd68d9f3153da6171dd"
+      "bytes": 5487,
+      "sha256": "6d0719c1cc0fdba603d182bdd0c680c2f9407b90145ce70bb202134a3f7424fd"
     },
     {
       "path": "platforms/design/README.md",
@@ -301,8 +301,8 @@
     },
     {
       "path": "platforms/design/ROADMAP.md",
-      "bytes": 2706,
-      "sha256": "78dea5de621ca1694c6aa918d812592f9e716464e919d6bbc50baffdf1eeeda9"
+      "bytes": 2001,
+      "sha256": "c92dc566e219dc8efad95a23604735d5d8da31f62dac7efb2e1dd95891c3e04f"
     },
     {
       "path": "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",
