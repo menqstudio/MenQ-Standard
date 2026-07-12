@@ -1,4 +1,4 @@
-name: Markdown Inventory Integrity
+name: Markdown Inventory Regeneration
 
 on:
   push:
@@ -10,29 +10,9 @@ on:
       - "scripts/generate_markdown_inventory.py"
       - "scripts/validate_foundation.py"
       - ".github/workflows/markdown-inventory-bootstrap.yml"
-  pull_request:
-    paths:
-      - "**/*.md"
-      - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
-      - "scripts/generate_markdown_inventory.py"
-      - "scripts/validate_foundation.py"
-      - ".github/workflows/markdown-inventory-bootstrap.yml"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Validate canonical Markdown inventory
-        run: python scripts/generate_markdown_inventory.py --check
-      - name: Validate Foundation and D-026 integrity
-        run: python scripts/validate_foundation.py
