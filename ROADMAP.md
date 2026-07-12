@@ -23,25 +23,26 @@
 - [x] Owner-approved Design Platform workshop Parts 1–11 baseline
 - [x] Corrected token dependency model and orthogonal resolution dimensions
 - [x] Armenian + English canonical localization and on-demand locale direction
-- [x] Design Platform baseline and dedicated next-chat handoff
+- [x] D-026 Canonical Session Read Law enforcement infrastructure
+- [x] Canonical 57-file Markdown inventory and strict drift gate
+- [x] Design Platform Part 12 validation, CI, conformance, and quality-gates architecture
 
 ## Current / Ընթացիկ
 
 ### MenQ Design Platform D-025 implementation
 
-**HY:** D-025-ը `Approved — Implementing` է։ Working branch-ը `d-025-design-platform-architecture-v1` է, Draft PR-ը՝ `#3`։ PR-ը չի merge արվում մինչև architecture completeness, canonical synchronization, validator evidence, real consumer validation և Owner approval։
+**HY:** D-025-ը `Approved — Implementing` է։ Working branch-ը `d-025-design-platform-architecture-v1` է, Draft PR-ը՝ `#3`։ PR-ը չի merge արվում մինչև architecture completeness, canonical synchronization, validator evidence, երկու իրական consumer validation և Owner approval։
 
-**EN:** D-025 is `Approved — Implementing`. The working branch is `d-025-design-platform-architecture-v1`, and Draft PR `#3` remains unmerged until architecture completeness, canonical synchronization, validator evidence, real consumer validation, and Owner approval.
+**EN:** D-025 is `Approved — Implementing`. The working branch is `d-025-design-platform-architecture-v1`, and Draft PR `#3` remains unmerged until architecture completeness, canonical synchronization, validator evidence, two real consumer validations, and Owner approval.
 
 Current sequence:
 
-1. Part 12 — Validation, CI, Conformance, and Quality Gates Architecture.
-2. Documentation portal, catalog, and design-tool integration.
-3. Governance, contribution, ownership, and change-request lifecycle.
-4. Product adoption, maturity model, and two-consumer validation plan.
-5. Canonical specification index and implementation package plan.
-6. D-025 completeness audit, validator design, and Draft PR #3 review.
-7. GREEN evidence and Owner review.
+1. Documentation portal, catalog, and design-tool integration architecture.
+2. Governance, contribution, ownership, and change-request lifecycle.
+3. Product adoption, maturity model, and two-consumer validation plan.
+4. Canonical specification index and implementation package plan.
+5. D-025 completeness audit, validator implementation, and Draft PR #3 review.
+6. GREEN evidence and Owner review.
 
 ## Next / Հաջորդը
 
