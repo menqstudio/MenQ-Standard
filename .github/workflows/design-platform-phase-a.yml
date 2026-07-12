@@ -1,0 +1,114 @@
+name: Design Platform Phase A Integrity
+
+on:
+  push:
+    branches:
+      - d-025-design-platform-architecture-v1
+    paths:
+      - "platforms/design/specifications/**"
+      - "platforms/design/implementation/**"
+      - "platforms/design/validation/**"
+      - ".github/workflows/design-platform-phase-a.yml"
+  pull_request:
+    paths:
+      - "platforms/design/specifications/**"
+      - "platforms/design/implementation/**"
+      - "platforms/design/validation/**"
+      - ".github/workflows/design-platform-phase-a.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-phase-a:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install workspace links
+        working-directory: platforms/design/implementation
+        run: pnpm install --no-frozen-lockfile --ignore-scripts
+      - name: Validate Phase A registry and workspace
+        run: python platforms/design/validation/validate_phase_a.py
+      - name: Build deterministic token artifacts
+        run: python platforms/design/implementation/scripts/build_tokens.py
+      - name: Build deterministic foundation artifacts
+        run: python platforms/design/implementation/scripts/build_foundations.py
+      - name: Validate registry and public API parity
+        run: python platforms/design/validation/validate_public_api.py
+      - name: Verify deterministic rebuilds
+        run: |
+          cp platforms/design/implementation/packages/design-tokens/generated/manifest.json /tmp/tokens.json
+          cp platforms/design/implementation/packages/design-foundations/generated/manifest.json /tmp/foundations.json
+          python platforms/design/implementation/scripts/build_tokens.py
+          python platforms/design/implementation/scripts/build_foundations.py
+          cmp /tmp/tokens.json platforms/design/implementation/packages/design-tokens/generated/manifest.json
+          cmp /tmp/foundations.json platforms/design/implementation/packages/design-foundations/generated/manifest.json
+      - name: Smoke-test contracts and primitives
+        run: |
+          node --input-type=module <<'NODE'
+          const contracts = await import('./platforms/design/implementation/packages/design-contracts/src/index.js');
+          contracts.assertCanonicalTokenId('menq.design.token.reference.color.neutral.0');
+          const primitives = await import('./platforms/design/implementation/packages/design-primitives/src/index.js');
+          if (primitives.buttonProps({ pressed: true })['aria-pressed'] !== true) process.exit(1);
+          NODE
+      - name: Smoke-test components
+        working-directory: platforms/design/implementation/packages/design-components
+        run: node --input-type=module -e "import('@menq/design-components').then((m)=>{if(!m.buttonComponentProps({loading:true}).disabled)process.exit(1)})"
+      - name: Smoke-test patterns
+        working-directory: platforms/design/implementation/packages/design-patterns
+        run: node --input-type=module -e "import('@menq/design-patterns').then((m)=>{if(m.actionGroupPatternProps().role!=='group')process.exit(1)})"
+      - name: Smoke-test assets
+        working-directory: platforms/design/implementation/packages/design-assets
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('@menq/design-assets');
+          const registry = m.createAssetRegistry([{id:'menq.design.asset.icon.save',kind:'icon',source:'./save.svg',description:{hy:'Պահպանել',en:'Save'},alt:{hy:'Պահպանել',en:'Save'},provenance:{owner:'MenQ',origin:'MenQ',license:'Internal'}}]);
+          if (registry.resolve('menq.design.asset.icon.save','hy').alt !== 'Պահպանել') process.exit(1);
+          NODE
+      - name: Smoke-test motion
+        working-directory: platforms/design/implementation/packages/design-motion
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('@menq/design-motion');
+          const recipe = m.resolveMotionRecipe({id:'menq.design.motion.enter.fade',intent:'enter',properties:['opacity','transform'],durationToken:'menq.design.token.semantic.motion.duration.standard',easingToken:'menq.design.token.semantic.motion.easing.standard',reducedMotion:'simplify'}, true);
+          if (!recipe.reduced || recipe.properties.includes('transform')) process.exit(1);
+          NODE
+      - name: Smoke-test locales and content parity
+        working-directory: platforms/design/implementation/packages/design-locales
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('@menq/design-locales');
+          const pack = m.createLocalePack([{id:'menq.design.content.action.save',message:{hy:'Պահպանել {name}',en:'Save {name}'}}]);
+          if (pack.resolve('menq.design.content.action.save','hy') !== 'Պահպանել {name}') process.exit(1);
+          NODE
+      - name: Smoke-test validation and documentation extraction
+        working-directory: platforms/design/implementation/packages/design-validation
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('@menq/design-validation');
+          const result = m.createConformanceResult({profile:'core-author',verdict:'GREEN',commitSha:'test',checks:[{id:'parity',passed:true}]});
+          const doc = m.extractDocumentationEntry({id:'component.button',title:{hy:'Կոճակ',en:'Button'},packageName:'@menq/design-components',publicApi:['.'],sourcePath:'platforms/design/CONTRACTS.md'});
+          if (result.verdict !== 'GREEN' || doc.title.hy !== 'Կոճակ' || m.validateDesignToolMapping({}).length === 0) process.exit(1);
+          NODE
+      - name: Verify generated artifact checksums
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          for root in [Path('platforms/design/implementation/packages/design-tokens/generated'), Path('platforms/design/implementation/packages/design-foundations/generated')]:
+              manifest = json.loads((root / 'manifest.json').read_text(encoding='utf-8'))
+              for artifact in manifest['artifacts']:
+                  data = (root / artifact['path']).read_bytes()
+                  assert len(data) == artifact['bytes']
+                  assert hashlib.sha256(data).hexdigest() == artifact['sha256']
+          PY

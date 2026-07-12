@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "menq.design.public-api.pre-release-empty.v1",
+  "status": "Pre-release baseline",
+  "coverage": ["package-export-map", "export-target-paths"],
+  "stableCompatibilityPromise": false,
+  "packages": {}
+}

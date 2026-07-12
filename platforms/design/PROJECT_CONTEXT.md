@@ -1,60 +1,89 @@
 # MenQ Design Platform — Project Context / MenQ Design Platform — Նախագծի կոնտեքստ
 
-**Status / Կարգավիճակ:** Active skeleton / Գործող skeleton  
+**Status / Կարգավիճակ:** Technical and adoption readiness GREEN — Owner authority pending / Տեխնիկական և որդեգրման պատրաստականություն GREEN — Owner լիազորումը սպասման մեջ  
 **Document class / Փաստաթղթի դաս:** Informative  
 **Owner / Պատասխանատու:** MenQ Owner  
-**Parent architecture:** [`../D-024-PLATFORMS-ARCHITECTURE-V1.md`](../D-024-PLATFORMS-ARCHITECTURE-V1.md)
+**Parent architecture:** [`../D-024-PLATFORMS-ARCHITECTURE-V1.md`](../D-024-PLATFORMS-ARCHITECTURE-V1.md)  
+**Current decision:** [`decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`](decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md)
 
 ## Հայերեն
 
 ### Նպատակ
 
-MenQ Design Platform-ը կառուցում է reusable design capability՝ MenQ products-ի և systems-ի համար։ Այն պետք է ապահովի shared foundations, contracts, primitives, components, assets, tooling, adoption guidance և validation՝ առանց product-specific identity-ն կամ logic-ը shared core-ի մեջ տեղափոխելու։
+MenQ Design Platform-ը ամբողջ MenQ ecosystem-ի reusable, product-neutral design capability system-ն է՝ contracts, tokens, foundations, primitives, components, patterns, assets, motion, locales, validation, delivery և adoption boundaries-ով։ Product-specific identity, business logic և domain workflow shared core չեն մտնում։
 
-### Ընթացիկ վիճակ
+### Ընթացիկ canonical վիճակ
 
-Platform-ը formally opened է `D-024`-ով, բայց detailed architecture-ը դեռ locked չէ։ Այս փուլում միայն canonical skeleton-ը, boundary-ն և հաջորդ աշխատանքների տեղերն են սահմանված։
+- Foundation v1 — Locked և GREEN։
+- D-024 — merged և canonical։
+- D-025 — `Approved — Implementing`, ոչ `Locked`։
+- D-026 — Locked և machine-enforced։
+- Working branch — `d-025-design-platform-architecture-v1`։
+- PR #3 — open, Draft և unmerged։
+- Parts 1–11 baseline և Parts 12–16 architecture set-ը canonical են։
+- Canonical registry, schemas, ownership, dependency graph և 10 package boundaries-ը implemented են։
+- Private preview release candidate-ը `0.1.0-next.0` է։
+- Deterministic build, checksums, public API diff, compatibility, migration և rollback evidence-ը GREEN են։
+- `MenQ Design Catalog` consumer-ը M3/GREEN է։
+- `MenQ Release Evidence Console` consumer-ը M4 operational/GREEN է։
+- Cross-consumer validation և quality/adoption evidence-ը GREEN են։
+- Owner authority pending է ready-for-review, merge և lock գործողությունների համար։
 
-### Պարտադիր կանոններ
+### Canonical dependency model
 
-- Foundation-ը սահմանափակում և ուղղորդում է Platform-ը։
-- Human Owner-ը final authority-ն է։
-- Shared core-ը product-specific business logic չի պարունակում։
-- Detailed contracts-ը և implementation standards-ը approval-ից առաջ canonical mandatory ուժ չունեն։
-- Յուրաքանչյուր write ենթարկվում է Canonical Write Integrity Law-ին։
+Reference → Semantic → Component → Pattern → Product Extension։ Theme, state, density, platform, viewport/container, locale/script, accessibility և motion preference-ը orthogonal resolution dimensions են։ Controlled exceptions-ը governed temporary bypass են։
 
-### Հաջորդ աշխատանք
+### Evidence
 
-1. Ուսումնասիրել Design Platform scope-ը և consumers-ը։
-2. Առաջարկել architecture planes և dependency direction։
-3. Սահմանել token, component, asset և tooling contracts-ը։
-4. Սահմանել adoption, conformance և versioning model-ը։
-5. Validate անել առնվազն երկու իրական product/system use case-ով։
+- Readiness record՝ `implementation/release/d-025-readiness-record.json`։
+- Release workflow՝ `Design Platform Preview Release Integrity`, run `#12`, conclusion `success`։
+- Artifact՝ `8265108086`, digest `sha256:54c736ed590ae521b24c0b0d58878ed72539a66f4edcdf5c1489996f176a8764`։
+- Audit՝ `D-025_COMPLETENESS_AUDIT.md`։
+- PR review՝ `D-025_DRAFT_PR_REVIEW_RECORD.md`։
+
+### Authority boundary և հաջորդ քայլ
+
+GREEN CI-ն merge կամ lock authorization չէ։ Հաջորդ գործողությունը MenQ Owner-ի explicit որոշումն է՝ նախ ready-for-review/merge, ապա merge-ից և post-merge validation-ից հետո առանձին lock որոշում։ Մինչ այդ D-025-ը մնում է `Approved — Implementing`։
+
+---
 
 ## English
 
 ### Purpose
 
-MenQ Design Platform builds reusable design capability for MenQ products and systems. It must provide shared foundations, contracts, primitives, components, assets, tooling, adoption guidance, and validation without moving product-specific identity or logic into the shared core.
+The MenQ Design Platform is the reusable, product-neutral design capability system for the MenQ ecosystem, with governed boundaries for contracts, tokens, foundations, primitives, components, patterns, assets, motion, locales, validation, delivery, and adoption. Product identity, business logic, and domain workflows do not enter the shared core.
 
-### Current state
+### Current canonical state
 
-The Platform is formally opened by `D-024`, but its detailed architecture is not yet locked. At this stage, only the canonical skeleton, boundary, and locations for future work are defined.
+- Foundation v1 is Locked and GREEN.
+- D-024 is merged and canonical.
+- D-025 is `Approved — Implementing`, not `Locked`.
+- D-026 is Locked and machine-enforced.
+- Working branch: `d-025-design-platform-architecture-v1`.
+- PR #3 is open, Draft, and unmerged.
+- The Parts 1–11 baseline and Parts 12–16 architecture set are canonical.
+- The canonical registry, schemas, ownership, dependency graph, and ten package boundaries are implemented.
+- The private preview release candidate is `0.1.0-next.0`.
+- Deterministic build, checksums, public API diff, compatibility, migration, and rollback evidence are GREEN.
+- The `MenQ Design Catalog` consumer is M3/GREEN.
+- The `MenQ Release Evidence Console` consumer is M4 operational/GREEN.
+- Cross-consumer validation and quality/adoption evidence are GREEN.
+- Owner authority pending applies to ready-for-review, merge, and lock actions.
 
-### Mandatory rules
+### Canonical dependency model
 
-- Foundation constrains and guides the Platform.
-- The human Owner holds final authority.
-- The shared core contains no product-specific business logic.
-- Detailed contracts and implementation standards have no mandatory canonical authority before approval.
-- Every write follows the Canonical Write Integrity Law.
+Reference → Semantic → Component → Pattern → Product Extension. Theme, state, density, platform, viewport/container, locale/script, accessibility, and motion preference are orthogonal resolution dimensions. Controlled exceptions are governed temporary bypasses.
 
-### Next work
+### Evidence
 
-1. Explore Design Platform scope and consumers.
-2. Propose architecture planes and dependency direction.
-3. Define token, component, asset, and tooling contracts.
-4. Define adoption, conformance, and versioning models.
-5. Validate with at least two real product or system use cases.
+- Readiness record: `implementation/release/d-025-readiness-record.json`.
+- Release workflow: `Design Platform Preview Release Integrity`, run `#12`, conclusion `success`.
+- Artifact: `8265108086`, digest `sha256:54c736ed590ae521b24c0b0d58878ed72539a66f4edcdf5c1489996f176a8764`.
+- Audit: `D-025_COMPLETENESS_AUDIT.md`.
+- PR review: `D-025_DRAFT_PR_REVIEW_RECORD.md`.
+
+### Authority boundary and next step
+
+GREEN CI is not merge or lock authorization. The next action is an explicit MenQ Owner decision for ready-for-review and merge, followed after merge and post-merge validation by a separate lock decision. Until then, D-025 remains `Approved — Implementing`.
 
 <!-- END: MENQ_DESIGN_PLATFORM_PROJECT_CONTEXT -->

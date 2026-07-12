@@ -14,22 +14,7 @@ MenQ Standard-ի միակ canonical source of truth-ը GitHub repository-ն է։
 
 ### Պարտադիր startup workflow
 
-MenQ Standard-ի հետ աշխատանքից առաջ կարդալ՝
-
-1. `README.md`
-2. `PROJECT_CONTEXT.md`
-3. `COLLABORATION_STYLE.md`
-4. `AI_WORKING_CONTEXT.md`
-5. `DECISION_INDEX.md`
-6. `DECISIONS.md`
-7. `CHANGELOG.md`
-8. `FOUNDATION_V1_REMEDIATION_CHANGELOG.md`
-9. `ROADMAP.md`
-10. `foundation/README.md`
-11. `foundation/PROJECT_CONTEXT.md`
-12. `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`
-13. համապատասխան chapter-ը և նրա `PROJECT_CONTEXT.md`
-14. `NEXT_CHAT_HANDOFF.md`, եթե այն current է
+Յուրաքանչյուր նոր AI session, մինչև որևէ substantive աշխատանք սկսելը, պարտավոր է active branch/ref-ում enumerate անել և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` ֆայլերը՝ ըստ [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md)-ի։ Startup subset-ը, handoff-ը, summary-ն, partial range-ը կամ previous-session memory-ն complete-read evidence չեն։ Active PR-ի դեպքում նաև կարդացվում են metadata-ն, changed files-ը, diff-ը, review threads-ը և checks-ը։
 
 ### Human–AI և authority
 
@@ -38,34 +23,37 @@ MenQ Standard-ի հետ աշխատանքից առաջ կարդալ՝
 > Մարդը որոշում է։  
 > Ստանդարտը պահպանում է։
 
-AI-ն աշխատում է որպես MenQ architect և engineering teammate։ Final authority-ն և accountability-ն մարդունն են։ AI-ն չի կարող self-approve անել, human approval հորինել կամ canonical truth-ը ինքնուրույն lock անել։
-
-### Communication style
-
-Canonical style-ը պահվում է [`COLLABORATION_STYLE.md`](COLLABORATION_STYLE.md)-ում։ Գևորգի հետ շփումը ընկերական, հանգիստ, ուղիղ, հարգալից և ոչ բյուրոկրատական է։ Բնական դիմելաձևը՝ «ընգեր»։ Չեն կրկնվում repository-ում կամ conversation-ում արդեն պատասխանված հարցերը։
+AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accountability-ն մարդունն են։ AI-ն չի կարող self-approve անել, human approval հորինել կամ canonical truth-ը ինքնուրույն lock անել։
 
 ### Canonical write integrity
 
-Յուրաքանչյուր write, update, replace, move կամ delete ենթարկվում է [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md)-ին։ Պարտադիր sequence-ը՝ complete source read → SHA preserve → write → beginning/end re-read → synchronization verification → GREEN։ Tool success-ը evidence չէ։ RED-ի դեպքում աշխատանքը կանգնում է, previous version-ը restore է արվում և կրկին verify է արվում։
+Յուրաքանչյուր write, update, replacement, move կամ delete ենթարկվում է `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`-ին՝ complete read → SHA preserve → write → beginning/end re-read → synchronization verification → GREEN։ Tool success-ը evidence չէ։
 
-### Decisions
+### Decision registry
 
-- `DECISIONS.md` պահպանում է historical `D-001–D-021` registry-ն։
+- `DECISIONS.md` պահպանում է historical `D-001–D-021` registry-ն և մեծ full replacement չի ստանում։
 - `DECISION_INDEX.md` active append-only registry է։
-- Dedicated files պահպանում են `D-022` և `D-023` decisions-ը։
-- Մեծ `DECISIONS.md` file-ը contents API-ով full replacement չի արվում։
+- Dedicated decisions-ը պահպանում են `D-022+` records-ը։
 
-### Documentation և packaging
+### Ընթացիկ canonical վիճակ
 
-- Important documentation-ը bilingual է՝ Armenian + English, semantic equality-ով։
-- Approved ecosystem-level գաղափարը դառնում է canonical documentation։
-- Multi-file deliverable-ը տրվում է complete package-ով և հնարավորության դեպքում ZIP snapshot-ով։
-- ZIP-ը delivery snapshot է, ոչ canonical source։
-- Foundation v1 ZIP snapshot-ը պահվում է որպես GitHub Release asset, ոչ main branch binary file։
+- Foundation v1 — Locked և GREEN։
+- D-024 Platforms Architecture v1 — merged և canonical։
+- D-025 MenQ Design Platform Architecture v1 — `Approved — Implementing`, ոչ `Locked`։
+- D-026 Canonical Session Read Law — Locked և machine-enforced։
+- Working branch — `d-025-design-platform-architecture-v1`։
+- Draft PR — `#3`, merge չի արվում մինչև architecture completeness, canonical synchronization, validator evidence, real consumer validation և Owner approval։
+- Parts 1–11 baseline-ը պահպանված է `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`-ում։
+- Part 12 validation/CI/conformance/quality-gates architecture-ը canonical է։
+- Part 13 documentation portal/component catalog/design-tool integration architecture-ը canonical է։
+- Part 14 governance/contribution/ownership/change-request lifecycle architecture-ը canonical է։
+- Unowned canonical asset-ը RED governance defect է։ High-risk կամ breaking change-ի self-approval-ը արգելված է։
+- Merge-ը առանձին authority action է, ոչ GREEN CI-ի ավտոմատ հետևանք։
+- Armenian և English canonical languages են։ Additional languages-ը on-demand locale packs են։
 
-### Ընթացիկ վիճակ
+### Հաջորդ աշխատանք
 
-Foundation-ի բոլոր յոթ chapters-ը Locked v1 են։ Repository-side remediation-ը կիրառված է։ `Foundation Integrity` workflow run `#9`-ը `success` է, և validator-ը հաստատել է `FOUNDATION VALIDATION: GREEN`՝ յոթ chapter-ների ու root controls-ի համար։ Foundation v1 release gate-ը GREEN է։ Հաջորդ աշխատանքը Foundation v1 snapshot packaging-ն է, հետո Platforms architecture-ի formal Decision System proposal-ը և Owner approval-ը։
+Ուղիղ շարունակել Design Platform Part 15-ից՝ Product Adoption, Maturity Model, and Two-Consumer Validation Plan, հետո specification index, implementation package plan, completeness audit, validator և Owner review։
 
 ---
 
@@ -73,26 +61,11 @@ Foundation-ի բոլոր յոթ chapters-ը Locked v1 են։ Repository-side rem
 
 ### Canonical source
 
-The GitHub repository is the single canonical source of truth for MenQ Standard. Conversation is the workshop, not the canonical source. Do not ask the Owner again for the repository address or documented persistent rules in a new chat.
+The GitHub repository is the single canonical source of truth for MenQ Standard. Conversation is the workshop, not the canonical source. Do not ask the Owner again for the repository address or documented persistent rules.
 
 ### Required startup workflow
 
-Before working on MenQ Standard, read:
-
-1. `README.md`
-2. `PROJECT_CONTEXT.md`
-3. `COLLABORATION_STYLE.md`
-4. `AI_WORKING_CONTEXT.md`
-5. `DECISION_INDEX.md`
-6. `DECISIONS.md`
-7. `CHANGELOG.md`
-8. `FOUNDATION_V1_REMEDIATION_CHANGELOG.md`
-9. `ROADMAP.md`
-10. `foundation/README.md`
-11. `foundation/PROJECT_CONTEXT.md`
-12. `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`
-13. the relevant chapter and its `PROJECT_CONTEXT.md`
-14. `NEXT_CHAT_HANDOFF.md` when current
+Every new AI session must, before beginning substantive work, enumerate and completely read every tracked `.md` file on the active branch or ref in accordance with [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md). A startup subset, handoff, summary, partial range, or previous-session memory is not complete-read evidence. When an active PR is involved, its metadata, changed files, diff, review threads, and checks must also be read.
 
 ### Human–AI and authority
 
@@ -103,31 +76,34 @@ Before working on MenQ Standard, read:
 
 AI works as the MenQ architect and engineering teammate. Final authority and accountability remain human. AI may not self-approve, invent human approval, or independently lock canonical truth.
 
-### Communication style
-
-The canonical style is maintained in [`COLLABORATION_STYLE.md`](COLLABORATION_STYLE.md). Communication with Gevorg is friendly, calm, direct, respectful, and non-bureaucratic. In Armenian, the natural form of address is “ընգեր”. Questions already answered in the repository or conversation are not repeated.
-
 ### Canonical write integrity
 
-Every write, update, replacement, move, or deletion follows [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md). The mandatory sequence is: read the complete source → preserve SHA → write → re-read beginning and ending → verify synchronization → GREEN. Tool success is not evidence. On RED, work stops, the previous version is restored, and verification is repeated.
+Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`: complete read → preserve SHA → write → re-read beginning and ending → verify synchronization → GREEN. Tool success is not evidence.
 
-### Decisions
+### Decision registry
 
-- `DECISIONS.md` preserves the historical `D-001–D-021` registry.
+- `DECISIONS.md` preserves the historical `D-001–D-021` registry and is not subject to large full replacement.
 - `DECISION_INDEX.md` is the active append-only registry.
-- Dedicated files preserve decisions `D-022` and `D-023`.
-- The large `DECISIONS.md` file is not replaced through a full contents-API rewrite.
+- Dedicated decisions preserve `D-022+` records.
 
-### Documentation and packaging
+### Current canonical state
 
-- Important documentation is bilingual Armenian + English with semantic equality.
-- Approved ecosystem-level ideas become canonical documentation.
-- Multi-file deliverables are delivered as complete packages and preferably as ZIP snapshots.
-- A ZIP is a delivery snapshot, not the canonical source.
-- The Foundation v1 ZIP snapshot is stored as a GitHub Release asset, not as a binary file in the main branch.
+- Foundation v1 is Locked and GREEN.
+- D-024 Platforms Architecture v1 is merged and canonical.
+- D-025 MenQ Design Platform Architecture v1 is `Approved — Implementing`, not `Locked`.
+- D-026 Canonical Session Read Law is Locked and machine-enforced.
+- Working branch: `d-025-design-platform-architecture-v1`.
+- Draft PR: `#3`; it remains unmerged until architecture completeness, canonical synchronization, validator evidence, real consumer validation, and Owner approval.
+- Parts 1–11 are preserved in `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
+- Part 12 validation, CI, conformance, and quality-gates architecture is canonical.
+- Part 13 documentation portal, component catalog, and design-tool integration architecture is canonical.
+- Part 14 governance, contribution, ownership, and change-request lifecycle architecture is canonical. Part 15 product adoption/maturity/two-consumer validation architecture and Part 16 specification index/package plan are canonical.
+- An unowned canonical asset is a RED governance defect. Self-approval is prohibited for high-risk or breaking changes.
+- Merge is a separate authority action, not an automatic consequence of green CI.
+- Armenian and English are canonical languages. Additional languages are on-demand locale packs.
 
-### Current state
+### Next work
 
-All seven Foundation chapters are Locked v1. Repository-side remediation is applied. `Foundation Integrity` workflow run `#9` completed with `success`, and the validator confirmed `FOUNDATION VALIDATION: GREEN` for seven chapters and root controls. The Foundation v1 release gate is GREEN. The next work is Foundation v1 snapshot packaging, followed by a formal Decision System proposal for Platforms architecture and Owner approval.
+Continue directly with Design Platform Part 15: Product Adoption, Maturity Model, and Two-Consumer Validation Plan, followed by the specification index, implementation package plan, completeness audit, validator work, and Owner review.
 
 <!-- END: MENQ_STANDARD_PROJECT_CONTEXT -->

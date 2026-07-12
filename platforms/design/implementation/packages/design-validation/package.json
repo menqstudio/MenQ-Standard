@@ -1,0 +1,17 @@
+{
+  "name": "@menq/design-validation",
+  "version": "0.0.0-development",
+  "private": true,
+  "type": "module",
+  "description": "Conformance schemas, validators, and evidence helpers.",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "files": ["src"],
+  "dependencies": {
+    "@menq/design-contracts": "workspace:*"
+  }
+}

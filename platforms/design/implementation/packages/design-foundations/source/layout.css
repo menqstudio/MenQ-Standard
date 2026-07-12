@@ -1,0 +1,40 @@
+@layer menq.utilities {
+  .menq-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--menq-semantic-space-inline);
+  }
+
+  .menq-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--menq-semantic-space-inline);
+  }
+
+  .menq-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--menq-semantic-space-inline);
+  }
+
+  .menq-surface {
+    background: var(--menq-semantic-surface-canvas);
+    color: var(--menq-semantic-content-primary);
+    border-radius: var(--menq-component-card-radius);
+  }
+
+  .menq-visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}

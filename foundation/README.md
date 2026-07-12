@@ -21,6 +21,8 @@ See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable context, [`FOUNDATION_
 - [`documentation/BILINGUAL_PARITY_ADDENDUM.md`](documentation/BILINGUAL_PARITY_ADDENDUM.md) — Documentation parity control
 - [`ai-collaboration/BILINGUAL_PARITY_ADDENDUM.md`](ai-collaboration/BILINGUAL_PARITY_ADDENDUM.md) — AI Collaboration parity control
 - [`documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](documentation/CANONICAL_WRITE_INTEGRITY_LAW.md) — mandatory safe-write law
+- [`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md) — mandatory all-Markdown session startup law
+- [`ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md`](ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md) — dedicated locked decision
 - [`../DECISION_INDEX.md`](../DECISION_INDEX.md) — active append-only decision registry
 - [`../scripts/validate_foundation.py`](../scripts/validate_foundation.py) — integrity validator
 - [`../.github/workflows/foundation-integrity.yml`](../.github/workflows/foundation-integrity.yml) — CI enforcement
@@ -35,14 +37,14 @@ See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable context, [`FOUNDATION_
 
 ## Current gate / Ընթացիկ gate
 
-**HY:** `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։ Validator-ը վերադարձրել է `FOUNDATION VALIDATION: GREEN` և հաստատել է յոթ Foundation chapter-ներն ու root controls-ը։ Foundation v1 release gate-ը GREEN է։
+**HY:** `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։ Validator-ը վերադարձրել է `FOUNDATION VALIDATION: GREEN` և հաստատել է յոթ Foundation chapter-ներն ու root controls-ը։ Foundation v1 release gate-ը GREEN է։ `D-026`-ով ավելացվել է նոր session-ի պարտադիր all-Markdown read gate-ը, որի automation validation-ը դեռ պետք է ավելացվի validator-ին։
 
-**EN:** `Foundation Integrity` workflow run `#9` completed with a `success` conclusion. The validator returned `FOUNDATION VALIDATION: GREEN` and confirmed seven Foundation chapters and root controls. The Foundation v1 release gate is GREEN.
+**EN:** `Foundation Integrity` workflow run `#9` completed with a `success` conclusion. The validator returned `FOUNDATION VALIDATION: GREEN` and confirmed seven Foundation chapters and root controls. The Foundation v1 release gate is GREEN. `D-026` adds the mandatory all-Markdown read gate for every new session; automation validation for this new control still needs to be added to the validator.
 
 ## Next / Հաջորդը
 
-1. Build and verify the complete Foundation v1 ZIP snapshot.
-2. Publish the ZIP as a GitHub Release asset; do not store it as a main-branch binary.
-3. Then open the formal Platforms architecture decision proposal for Owner approval.
+1. Extend the Foundation validator to check D-026 links and required startup references.
+2. Build and verify the complete Foundation v1 ZIP snapshot.
+3. Publish the ZIP as a GitHub Release asset; do not store it as a main-branch binary.
 
 <!-- END: FOUNDATION_README_V1 -->

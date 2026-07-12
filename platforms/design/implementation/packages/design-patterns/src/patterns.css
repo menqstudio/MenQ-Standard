@@ -1,0 +1,37 @@
+@layer menq.patterns {
+  .menq-pattern-action-group {
+    display: flex;
+    gap: var(--menq-reference-dimension-space-2);
+  }
+
+  .menq-pattern-action-group[data-direction="column"] {
+    flex-direction: column;
+  }
+
+  .menq-pattern-action-group[data-align="start"] {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .menq-pattern-action-group[data-align="center"] {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menq-pattern-action-group[data-align="end"] {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .menq-pattern-action-group[data-align="stretch"] {
+    align-items: stretch;
+  }
+
+  .menq-pattern-action-group[data-wrap="true"] {
+    flex-wrap: wrap;
+  }
+
+  .menq-pattern-section[data-variant="plain"] {
+    display: block;
+  }
+}

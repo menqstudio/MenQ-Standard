@@ -1,0 +1,55 @@
+name: Markdown Inventory Integrity
+
+on:
+  push:
+    branches:
+      - d-025-design-platform-architecture-v1
+    paths:
+      - "**/*.md"
+      - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
+      - "scripts/generate_markdown_inventory.py"
+      - "scripts/validate_foundation.py"
+      - "scripts/validate_platforms.py"
+      - ".github/workflows/markdown-inventory-bootstrap.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
+      - "scripts/generate_markdown_inventory.py"
+      - "scripts/validate_foundation.py"
+      - "scripts/validate_platforms.py"
+      - ".github/workflows/markdown-inventory-bootstrap.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate exact Markdown inventory diagnostic
+        run: |
+          cp foundation/ai-collaboration/MARKDOWN_INVENTORY.json /tmp/MARKDOWN_INVENTORY.committed.json
+          python scripts/generate_markdown_inventory.py --write
+          cp foundation/ai-collaboration/MARKDOWN_INVENTORY.json /tmp/MARKDOWN_INVENTORY.generated.json
+          cp /tmp/MARKDOWN_INVENTORY.committed.json foundation/ai-collaboration/MARKDOWN_INVENTORY.json
+      - name: Upload exact Markdown inventory diagnostic
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdown-inventory-diagnostic
+          path: /tmp/MARKDOWN_INVENTORY.generated.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Validate canonical Markdown inventory
+        run: python scripts/generate_markdown_inventory.py --check
+      - name: Validate Foundation and D-026 integrity
+        run: python scripts/validate_foundation.py
+      - name: Validate Platforms and D-025 integrity
+        run: python scripts/validate_platforms.py

@@ -16,6 +16,8 @@
 - `D-022` — [`foundation/documentation/D-022-CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/D-022-CANONICAL_WRITE_INTEGRITY_LAW.md)
 - `D-023` — [`foundation/ai-collaboration/D-023-MENQ-AI-COLLABORATION-STANDARD-V1.md`](foundation/ai-collaboration/D-023-MENQ-AI-COLLABORATION-STANDARD-V1.md)
 - `D-024` — [`platforms/D-024-PLATFORMS-ARCHITECTURE-V1.md`](platforms/D-024-PLATFORMS-ARCHITECTURE-V1.md)
+- `D-025` — [`platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`](platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md)
+- `D-026` — [`foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md`](foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md)
 
 ## Append Protocol / Ավելացման protocol
 

@@ -1,5 +1,103 @@
 # MenQ Standard — Changelog
 
+## 2026-07-12 — Design Platform Part 16 package architecture
+
+### Հայերեն
+
+- Ավելացվել է canonical specification index և implementation package plan v1-ը։
+- Սահմանվել են package boundaries, dependency direction, deterministic build graph, public API և release manifest contracts-ը։
+- Continuation point-ը տեղափոխվել է D-025 completeness audit, validator design և Draft PR review։
+- D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը՝ open, Draft և unmerged։
+
+### English
+
+- Added Canonical Specification Index and Implementation Package Plan v1.
+- Defined package boundaries, dependency direction, deterministic build graph, public API, and release-manifest contracts.
+- Advanced the continuation point to the D-025 completeness audit, validator design, and Draft PR review.
+- D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
+
+## 2026-07-12 — Design Platform Part 15 adoption architecture
+
+### Հայերեն
+
+- Ավելացվել է product adoption, maturity model և two-consumer validation architecture v1-ը։
+- Adoption-ը սահմանվել է որպես governed contract consumption և operational evidence, ոչ package install։
+- Continuation point-ը տեղափոխվել է Part 16 — Canonical Specification Index and Implementation Package Plan։
+- D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը՝ open, Draft և unmerged։
+
+### English
+
+- Added Product Adoption, Maturity Model, and Two-Consumer Validation Architecture v1.
+- Defined adoption as governed contract consumption and operational evidence, not package installation.
+- Advanced the continuation point to Part 16 — Canonical Specification Index and Implementation Package Plan.
+- D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
+
+## 2026-07-12 — Design Platform Part 14 governance architecture
+
+### Հայերեն
+
+- Ավելացվել է governance, contribution, ownership և change-request lifecycle architecture v1-ը։
+- Սահմանվել են authority model-ը, ownership registry-ն, contribution classes-ը, approval matrix-ը և lifecycle-ը։
+- Unowned canonical asset-ը սահմանվել է որպես RED governance defect։
+- High-risk կամ breaking change-ի self-approval-ը արգելվել է։
+- Merge-ը սահմանվել է որպես առանձին authority action, ոչ GREEN CI-ի ավտոմատ հետևանք։
+- Continuation point-ը տեղափոխվել է Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan։
+- D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը մնում է open, Draft և unmerged։
+
+### English
+
+- Added Governance, Contribution, Ownership, and Change-Request Lifecycle Architecture v1.
+- Defined the authority model, ownership registry, contribution classes, approval matrix, and lifecycle.
+- Defined an unowned canonical asset as a RED governance defect.
+- Prohibited self-approval for high-risk or breaking changes.
+- Defined merge as a separate authority action, not an automatic consequence of green CI.
+- Advanced the continuation point to Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
+- D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
+
+## 2026-07-12 — D-026 enforcement and Design Platform Part 12
+
+### Հայերեն
+
+- D-026 Canonical Session Read Law-ը դարձել է enforceable՝ canonical Markdown inventory, path/size/SHA drift validation և strict GitHub Actions gate-ով։
+- Ավելացվել է D-026 final GREEN validation record-ը՝ իրական workflow evidence-ով և truncation incident transparency-ով։
+- Ավելացվել է Design Platform Part 12 validation, CI, conformance և quality-gates architecture-ը։
+- Սահմանվել են յոթ sequential gates, GREEN/YELLOW/RED verdict semantics-ը, conformance profiles-ը, exception contract-ը և evidence contract-ը։
+- Root և Design Platform contexts, roadmaps, changelogs և handoffs-ը տեղափոխվել են Part 13 continuation point-ի վրա։
+- D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը մնում է open, Draft և unmerged։
+
+### English
+
+- Made D-026 Canonical Session Read Law enforceable through a canonical Markdown inventory, path/size/SHA drift validation, and a strict GitHub Actions gate.
+- Added the final GREEN D-026 validation record with real workflow evidence and transparent recording of the truncation incident.
+- Added Design Platform Part 12 validation, CI, conformance, and quality-gates architecture.
+- Defined seven sequential gates, GREEN/YELLOW/RED verdict semantics, conformance profiles, the exception contract, and the evidence contract.
+- Advanced root and Design Platform contexts, roadmaps, changelogs, and handoffs to the Part 13 continuation point.
+- D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
+
+## 2026-07-12 — D-025 Design Platform architecture baseline synchronization
+
+### Հայերեն
+
+- D-025 MenQ Design Platform Architecture v1-ը synchronized է Owner-approved workshop Parts 1–11 baseline-ի հետ։
+- Canonical token dependency model-ը սահմանվել է որպես Reference → Semantic → Component → Pattern → Product Extension։
+- Theme, state, density, platform, viewport/container, locale/script, accessibility, motion preference և product expression-ը սահմանվել են որպես orthogonal dimensions։
+- Controlled exceptions-ը սահմանվել են որպես governed temporary bypass, ոչ normal token layer։
+- Armenian և English լեզուները հաստատվել են որպես հավասար canonical languages, additional languages-ը՝ on-demand locale packs։
+- Թարմացվել են D-025 decision-ը, root և Design Platform contexts-ը, roadmaps-ը, changelog-ները, architecture/contracts-ը, AI working context-ը, handoff-ները և Draft PR #3 description-ը։
+- Ավելացվել է `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`։
+- D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը մնում է open, Draft և unmerged։
+
+### English
+
+- Synchronized D-025 MenQ Design Platform Architecture v1 with the Owner-approved workshop Parts 1–11 baseline.
+- Defined the canonical token dependency model as Reference → Semantic → Component → Pattern → Product Extension.
+- Defined theme, state, density, platform, viewport/container, locale/script, accessibility, motion preference, and product expression as orthogonal dimensions.
+- Defined controlled exceptions as governed temporary bypasses, not a normal token layer.
+- Confirmed Armenian and English as equal canonical languages and additional languages as on-demand locale packs.
+- Updated the D-025 decision, root and Design Platform contexts, roadmaps, changelogs, architecture/contracts, AI working context, handoffs, and Draft PR #3 description.
+- Added `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
+- D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
+
 ## 2026-07-12 — Foundation v1 validation and packaging
 
 ### Հայերեն

@@ -4,201 +4,101 @@
 **Prepared / Պատրաստվել է:** 2026-07-12  
 **Owner / Պատասխանատու:** Gevorg Ohanyan  
 **Repository:** `https://github.com/menqstudio/MenQ-Standard`  
-**Branch:** `main`
+**Working branch:** `d-025-design-platform-architecture-v1`  
+**Draft PR:** `https://github.com/menqstudio/MenQ-Standard/pull/3`
 
-## 1. Mandatory instruction / Պարտադիր հրահանգ
+## Հայերեն
 
-**HY:** Մի հարցրու repository-ի հասցեն, Owner-ի անունը, project-ի նպատակը, communication style-ը կամ որտեղից շարունակել։ Նախ կարդա canonical startup set-ը և ուղիղ շարունակիր validator verification-ից։  
-**EN:** Do not ask again for the repository address, Owner identity, project purpose, communication style, or continuation point. Read the canonical startup set and continue directly from validator verification.
+### Պարտադիր մեկնարկ
 
-## 2. Startup read order / Կարդալու հերթականություն
+Մինչև substantive աշխատանք՝ active branch/ref-ում enumerate և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` files-ը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Active PR-ի դեպքում կարդալ metadata, changed files, diff, review threads և checks։ Repository-ի հասցեն, Owner-ի անունը, project-ի նպատակը, communication style-ը կամ continuation point-ը կրկին չհարցնել։
 
-1. `README.md`
-2. `PROJECT_CONTEXT.md`
-3. `COLLABORATION_STYLE.md`
-4. `AI_WORKING_CONTEXT.md`
-5. `DECISION_INDEX.md`
-6. `DECISIONS.md`
-7. `CHANGELOG.md`
-8. `FOUNDATION_V1_REMEDIATION_CHANGELOG.md`
-9. `ROADMAP.md`
-10. `foundation/README.md`
-11. `foundation/PROJECT_CONTEXT.md`
-12. `foundation/FOUNDATION_V1_INTEGRITY_AUDIT.md`
-13. `foundation/FOUNDATION_V1_REAUDIT.md`
-14. `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`
-15. relevant chapter + its `PROJECT_CONTEXT.md`
+### Ընթացիկ վիճակ
 
-## 3. Identity and authority / Ինքնություն և authority
+- Foundation v1 — Locked, բայց current branch integrity gate-ը RED է մինչև truncation remediation-ի CI GREEN evidence-ը։
+- D-024 — merged և canonical։
+- D-025 — `Approved — Implementing`, ոչ `Locked`։
+- D-026 — Locked և machine-enforced։
+- Draft PR #3 — open, Draft և unmerged։
+- Parts 1–16 architecture set-ը canonical է։
+- `D-025_COMPLETENESS_AUDIT.md` և `D-025_DRAFT_PR_REVIEW_RECORD.md` canonical են։
+- Architecture verdict-ը GREEN է։
+- Implementation/lock readiness-ը YELLOW է։
+- Root `NEXT_CHAT_HANDOFF.md` և `foundation/terminology/PROJECT_CONTEXT.md` truncation defects-ը remediation transaction-ի scope-ն են։
 
-- MenQ Studio is the company.
-- MenQ Standard is the MenQ ecosystem operating standard.
-- GitHub is the single canonical source of truth; chat is the workshop.
-- Important documentation is bilingual Armenian + English with equal meaning.
-- Human authority is final; AI assists and may not self-approve.
+### Architecture invariants
 
-> Մարդը միտք է բերում։ AI-ն օգնում է։ Մարդը որոշում է։ Ստանդարտը պահպանում է։  
-> Humans bring ideas. AI assists. Humans decide. Standards preserve.
+- Shared core-ը product-neutral է։
+- Canonical dependency model-ը՝ Reference → Semantic → Component → Pattern → Product Extension։
+- Generated output-ը source of truth չէ։
+- Armenian և English canonical languages են։
+- Accessibility-ը release condition է։
+- Unowned canonical asset-ը RED governance defect է։
+- Merge-ը և lock-ը միայն explicit Owner decisions են։
 
-## 4. Communication with Gevorg / Գևորգի հետ շփում
+### Շարունակելու ճշգրիտ կետը
 
-Canonical source: `COLLABORATION_STYLE.md`.
+1. Ավարտել confirmed truncation defects-ի remediation-ը։
+2. Regenerate անել canonical Markdown inventory-ն։
+3. Ստանալ GREEN Foundation, Markdown Inventory, Platforms և Foundation Package workflow evidence։
+4. Միայն դրանից հետո շարունակել Implementation Phase A-ն՝ machine-readable specification registry, schemas, canonical IDs, ownership records, dependency graph և package/workspace skeleton։
+5. Ընտրել երկու distinct real consumer candidates և bounded pilot scopes՝ առանց fake evidence-ի։
 
-- Armenian natural address: «ընգեր».
-- Friendly, calm, direct, respectful, concise, structured, non-bureaucratic.
-- Do not repeat questions answered in repository or conversation.
-- Challenge weak architecture; preserve Owner authority.
-- Never present partial work as complete.
-- Do not promise background work without a real tool.
-- Prefer systems, reusable standards, complete packages, and ZIP snapshots.
-- On error: acknowledge, stop, restore, verify, report real state.
+### Արգելված գործողություններ
 
-## 5. Locked Foundation state / Foundation-ի locked վիճակ
+- PR #3-ը չmerge անել և ready-for-review չդարձնել առանց Owner instruction-ի։
+- D-025-ը `Locked` չանվանել։
+- RED integrity gate-ը GREEN չներկայացնել։
+- Product-specific identity, logic կամ workflows shared core չմտցնել։
+- Generated artifacts-ը canonical source չհամարել։
+- Fake consumer կամ implementation evidence չստեղծել։
 
-All seven chapters are Locked v1:
+---
 
-1. Philosophy
-2. Principles (`D-017`)
-3. Terminology, Living Standard (`D-018`)
-4. Governance (`D-019`)
-5. Decision System (`D-020`)
-6. Documentation Standard (`D-021`)
-7. AI Collaboration (`D-023`)
+## English
 
-Canonical Write Integrity Law is locked as `D-022`.
+### Mandatory startup
 
-## 6. Decision registry architecture / Decision registry architecture
+Before substantive work, enumerate and completely read every tracked `.md` file on the active branch/ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For the active PR, read metadata, changed files, diff, review threads, and checks. Do not ask again for the repository address, Owner identity, project purpose, communication style, or continuation point.
 
-- `DECISIONS.md` intentionally preserves historical `D-001–D-021`.
-- Two full contents-API rewrites truncated it; both bad commits were removed by restoring `main`.
-- Never perform another large full replacement of `DECISIONS.md`.
-- `DECISION_INDEX.md` is the active append-only registry.
-- Dedicated files preserve `D-022` and `D-023`.
-- Future decision flow: dedicated file → verify → append index entry → sync context/changelog/index references.
+### Current state
 
-## 7. Canonical write law / Canonical write-ի օրենք
+- Foundation v1 is Locked, but the current branch integrity gate is RED until truncation remediation has GREEN CI evidence.
+- D-024 is merged and canonical.
+- D-025 is `Approved — Implementing`, not `Locked`.
+- D-026 is Locked and machine-enforced.
+- Draft PR #3 is open, Draft, and unmerged.
+- The Parts 1–16 architecture set is canonical.
+- `D-025_COMPLETENESS_AUDIT.md` and `D-025_DRAFT_PR_REVIEW_RECORD.md` are canonical.
+- Architecture is GREEN.
+- Implementation and lock readiness remain YELLOW.
+- The root `NEXT_CHAT_HANDOFF.md` and `foundation/terminology/PROJECT_CONTEXT.md` truncation defects are the scope of the active remediation transaction.
 
-```text
-READ COMPLETE SOURCE
-→ PRESERVE SHA
-→ WRITE
-→ RE-READ BEGINNING
-→ RE-READ ENDING
-→ VERIFY CONTENT AND SYNCHRONIZATION
-→ GREEN
-```
+### Architecture invariants
 
-Tool success is not evidence. On RED: stop, restore, re-verify, report incident.
+- Shared core is product-neutral.
+- Canonical dependency model: Reference → Semantic → Component → Pattern → Product Extension.
+- Generated output is not a source of truth.
+- Armenian and English are canonical languages.
+- Accessibility is a release condition.
+- An unowned canonical asset is a RED governance defect.
+- Merge and lock require explicit Owner decisions.
 
-## 8. Original audit / Սկզբնական audit
+### Exact continuation point
 
-`foundation/FOUNDATION_V1_INTEGRITY_AUDIT.md` recorded:
+1. Complete remediation of the confirmed truncation defects.
+2. Regenerate the canonical Markdown inventory.
+3. Obtain GREEN evidence from Foundation, Markdown Inventory, Platforms, and Foundation Package workflows.
+4. Only then continue Implementation Phase A with the machine-readable specification registry, schemas, canonical IDs, ownership records, dependency graph, and package/workspace skeleton.
+5. Select two distinct real consumer candidates and bounded pilot scopes without fabricating evidence.
 
-- `R-01` missing chapter contexts
-- `R-02` stale Foundation context
-- `R-03` stale AI working context
-- `R-04` decision registry gap
-- `R-05` bilingual parity defects
-- `R-06` metadata inconsistency
-- `R-07` missing integrity automation
+### Prohibited actions
 
-## 9. Remediation applied / Կիրառված ուղղումներ
-
-Created chapter contexts:
-
-- `foundation/philosophy/PROJECT_CONTEXT.md`
-- `foundation/principles/PROJECT_CONTEXT.md`
-- `foundation/terminology/PROJECT_CONTEXT.md`
-- `foundation/governance/PROJECT_CONTEXT.md`
-- `foundation/decision-system/PROJECT_CONTEXT.md`
-- `foundation/documentation/PROJECT_CONTEXT.md`
-- AI Collaboration context already existed.
-
-Synchronized:
-
-- `README.md`
-- `PROJECT_CONTEXT.md`
-- `AI_WORKING_CONTEXT.md`
-- `ROADMAP.md`
-- `foundation/README.md`
-- `foundation/PROJECT_CONTEXT.md`
-
-Created controls:
-
-- `DECISION_INDEX.md`
-- `foundation/documentation/BILINGUAL_PARITY_ADDENDUM.md`
-- `foundation/ai-collaboration/BILINGUAL_PARITY_ADDENDUM.md`
-- `foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md`
-- `scripts/validate_foundation.py`
-- `.github/workflows/foundation-integrity.yml`
-- `COLLABORATION_STYLE.md`
-- `FOUNDATION_V1_REMEDIATION_CHANGELOG.md`
-- `foundation/FOUNDATION_V1_REAUDIT.md`
-
-## 10. Current gate / Ընթացիկ gate
-
-**Status: YELLOW.** Repository-side fixes are applied, but validator execution GREEN evidence is missing.
-
-Evidence status:
-
-- New/updated files were re-read after writes.
-- Critical markers were checked.
-- GitHub Actions returned no workflow run/status in the current session.
-- Local clone validation failed because the execution environment could not resolve `github.com` over DNS.
-- This is not validator success or failure evidence.
-
-Do not call Foundation v1 release-ready until actual GREEN execution evidence exists.
-
-## 11. Exact next action / Հստակ հաջորդ քայլ
-
-Immediately do one:
-
-### GitHub Actions
-
-Inspect the latest `Foundation Integrity` workflow run, result, and logs.
-
-### Local clone
-
-```bash
-python scripts/validate_foundation.py
-```
-
-PowerShell:
-
-```powershell
-python .\scripts\validate_foundation.py
-```
-
-Expected GREEN:
-
-```text
-FOUNDATION VALIDATION: GREEN
-Validated 7 Foundation chapters and root controls.
-```
-
-On RED, fix only reported defects and run again. Do not ask for confirmation.
-
-## 12. After validator GREEN / Validator GREEN-ից հետո
-
-1. Create a final GREEN validation record; preserve RED and YELLOW history.
-2. Synchronize README, contexts, roadmap, and changelog with evidence.
-3. Create complete Foundation v1 repository ZIP snapshot with README, version/date, manifest, and missing-file verification.
-4. Keep GitHub canonical; ZIP is a delivery snapshot.
-5. Then begin Platforms architecture only through formal Decision System proposal and Owner approval.
-
-## 13. Prohibited next-chat actions / Արգելված գործողություններ
-
-- Do not rewrite large `DECISIONS.md`.
-- Do not delete audit or incident history.
-- Do not rename YELLOW as GREEN without execution evidence.
-- Do not change locked Foundation meaning during remediation.
-- Do not ask Gevorg to repeat known context.
-- Do not begin Platforms architecture before validation GREEN unless Owner explicitly changes priority.
-
-## 14. First response in the new chat / Նոր chat-ի առաջին պատասխանը
-
-> Կարդացի canonical handoff-ը, ընգեր։ Foundation remediation-ը կիրառված է, release gate-ը YELLOW է միայն validator execution evidence-ի պատճառով։ Հիմա ստուգում եմ Foundation Integrity workflow-ը կամ validator result-ը, հետո միայն GREEN/RED verdict կտամ։
-
-Then execute verification immediately.
+- Do not merge PR #3 or mark it ready for review without Owner instruction.
+- Do not describe D-025 as Locked.
+- Do not represent a RED integrity gate as GREEN.
+- Do not move product-specific identity, logic, or workflows into shared core.
+- Do not treat generated artifacts as canonical source.
+- Do not fabricate consumer or implementation evidence.
 
 <!-- END: MENQ_STANDARD_NEXT_CHAT_HANDOFF -->

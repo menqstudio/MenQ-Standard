@@ -1,0 +1,103 @@
+name: Design Platform Preview Release Integrity
+
+on:
+  push:
+    branches:
+      - d-025-design-platform-architecture-v1
+    paths:
+      - "platforms/design/specifications/**"
+      - "platforms/design/implementation/packages/**"
+      - "platforms/design/implementation/consumers/**"
+      - "platforms/design/implementation/release/**"
+      - "platforms/design/implementation/scripts/build_release_candidate.py"
+      - "platforms/design/implementation/pnpm-workspace.yaml"
+      - "platforms/design/validation/validate_release_candidate.py"
+      - "platforms/design/validation/validate_consumers.py"
+      - ".github/workflows/design-platform-preview-release.yml"
+  pull_request:
+    paths:
+      - "platforms/design/specifications/**"
+      - "platforms/design/implementation/packages/**"
+      - "platforms/design/implementation/consumers/**"
+      - "platforms/design/implementation/release/**"
+      - "platforms/design/implementation/scripts/build_release_candidate.py"
+      - "platforms/design/implementation/pnpm-workspace.yaml"
+      - "platforms/design/validation/validate_release_candidate.py"
+      - "platforms/design/validation/validate_consumers.py"
+      - ".github/workflows/design-platform-preview-release.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release-candidate-and-consumers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install workspace links
+        working-directory: platforms/design/implementation
+        run: pnpm install --no-frozen-lockfile --ignore-scripts
+      - name: Rebuild generated package inputs
+        run: |
+          python platforms/design/implementation/scripts/build_tokens.py
+          python platforms/design/implementation/scripts/build_foundations.py
+      - name: Build release candidate A
+        env:
+          MENQ_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python platforms/design/implementation/scripts/build_release_candidate.py --output /tmp/menq-release-a
+      - name: Build release candidate B independently
+        env:
+          MENQ_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python platforms/design/implementation/scripts/build_release_candidate.py --output /tmp/menq-release-b
+      - name: Validate manifests, checksums, public API and deterministic rebuild
+        run: >-
+          python platforms/design/validation/validate_release_candidate.py
+          --primary /tmp/menq-release-a
+          --comparison /tmp/menq-release-b
+          --write-evidence
+      - name: Build Consumer A Design Catalog
+        working-directory: platforms/design/implementation/consumers/design-catalog
+        env:
+          MENQ_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          pnpm build
+          pnpm healthcheck
+      - name: Build Consumer B Release Evidence Console
+        working-directory: platforms/design/implementation/consumers/release-console
+        env:
+          MENQ_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+          MENQ_RELEASE_BUNDLE: /tmp/menq-release-a
+        run: |
+          pnpm build
+          pnpm healthcheck
+      - name: Validate M3, M4 and cross-consumer quality evidence
+        run: >-
+          python platforms/design/validation/validate_consumers.py
+          --catalog platforms/design/implementation/consumers/design-catalog/dist
+          --console platforms/design/implementation/consumers/release-console/dist
+          --release-bundle /tmp/menq-release-a
+          --output /tmp/menq-release-a/two-consumer-evidence.json
+      - name: Copy consumer evidence into release bundle
+        run: |
+          mkdir -p /tmp/menq-release-a/consumers/design-catalog /tmp/menq-release-a/consumers/release-console
+          cp -R platforms/design/implementation/consumers/design-catalog/dist/. /tmp/menq-release-a/consumers/design-catalog/
+          cp -R platforms/design/implementation/consumers/release-console/dist/. /tmp/menq-release-a/consumers/release-console/
+      - name: Upload release and consumer evidence bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: menq-design-platform-0.1.0-next.0
+          path: /tmp/menq-release-a
+          if-no-files-found: error
+          retention-days: 30
