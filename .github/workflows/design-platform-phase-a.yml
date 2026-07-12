@@ -53,6 +53,18 @@ jobs:
           cp platforms/design/implementation/packages/design-foundations/generated/manifest.json /tmp/menq-foundations-manifest.json
           python platforms/design/implementation/scripts/build_foundations.py
           cmp /tmp/menq-foundations-manifest.json platforms/design/implementation/packages/design-foundations/generated/manifest.json
+      - name: Smoke-test Design Primitives public API
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('./platforms/design/implementation/packages/design-primitives/src/index.js');
+          const button = m.buttonProps({ pressed: true, controlsId: 'panel-a' });
+          if (button.type !== 'button' || button['aria-pressed'] !== true || button['aria-controls'] !== 'panel-a') process.exit(1);
+          const link = m.linkProps({ href: 'https://example.com', external: true });
+          if (link.target !== '_blank' || link.rel !== 'noopener noreferrer') process.exit(1);
+          const disclosure = m.disclosureProps({ expanded: false, triggerId: 'trigger-a', contentId: 'content-a' });
+          if (disclosure.content.hidden !== true || disclosure.trigger['aria-controls'] !== 'content-a') process.exit(1);
+          if (m.primitiveClass('visuallyHidden') !== 'menq-visually-hidden') process.exit(1);
+          NODE
       - name: Verify generated artifact checksums
         run: |
           python - <<'PY'
