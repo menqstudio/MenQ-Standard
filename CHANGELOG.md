@@ -36,6 +36,9 @@
 - Ավելացվել և lock է արվել `foundation/governance/README.md`՝ որպես Governance v1.0։
 - Governance v1-ը գրանցվել է `D-019` որոշմամբ և կապվել Foundation index-ին։
 - Վերականգնվել է պատահաբար կիսատ դարձած `CHANGELOG.md` canonical history-ն Git history-ից։
+- Ավելացվել և lock է արվել `foundation/decision-system/README.md`՝ որպես Decision System v1.0։
+- Decision System v1-ը գրանցվել է `D-020` որոշմամբ և կապվել Foundation index-ին։
+- Decision System-ը lock է արել `C0–C4` decision classes-ը, `R0–R4` risk levels-ը, lifecycle-ը, seven gates-ը, `GREEN/YELLOW/RED` outcomes-ը և history-preserving change rule-ը։
 
 ### English
 
@@ -71,3 +74,6 @@
 - Added and locked `foundation/governance/README.md` as Governance v1.0.
 - Recorded Governance v1 as decision `D-019` and linked it from the Foundation index.
 - Restored the accidentally truncated `CHANGELOG.md` canonical history from Git history.
+- Added and locked `foundation/decision-system/README.md` as Decision System v1.0.
+- Recorded Decision System v1 as decision `D-020` and linked it from the Foundation index.
+- Locked the `C0–C4` decision classes, `R0–R4` risk levels, lifecycle, seven gates, `GREEN/YELLOW/RED` outcomes, and history-preserving change rule.
