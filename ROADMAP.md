@@ -23,23 +23,23 @@
 - [x] Governance v1
 - [x] Decision System v1
 - [x] Documentation Standard v1
-- [ ] AI Collaboration v1
+- [x] AI Collaboration v1
 
 ---
 
 ## Next / Հաջորդը
 
-### Foundation → AI Collaboration v1
-
-**HY:** Սահմանել մարդկանց և AI համակարգերի համագործակցության operating model-ը՝ authority, context loading, task execution, review, approval, memory, handoff, failure handling և safe automation boundaries։
-
-**EN:** Define the operating model for collaboration between humans and AI systems, including authority, context loading, task execution, review, approval, memory, handoff, failure handling, and safe automation boundaries.
-
 ### Foundation integrity review
 
-**HY:** AI Collaboration v1-ից հետո անցկացնել Foundation-ի ամբողջական consistency, link, bilingual parity և documentation integrity review։
+**HY:** Կատարել Foundation-ի ամբողջական consistency, link, bilingual parity և documentation integrity review՝ բոլոր յոթ chapter-ների, context files-ի, decisions-ի և indexes-ի համար։
 
-**EN:** After AI Collaboration v1, perform a complete Foundation consistency, link, bilingual parity, and documentation integrity review.
+**EN:** Perform a complete Foundation consistency, link, bilingual parity, and documentation integrity review across all seven chapters, context files, decisions, and indexes.
+
+### Foundation release readiness
+
+**HY:** Audit-ից հետո սահմանել Foundation v1 release status-ը և պատրաստել complete repository package/ZIP snapshot։
+
+**EN:** After the audit, define Foundation v1 release status and prepare a complete repository package/ZIP snapshot.
 
 ---
 
@@ -59,3 +59,5 @@
 **HY:** Ավարտված item-ը չի ջնջվում։ Այն նշվում է completed և համապատասխան locked decision-ի կամ canonical document-ի հետ կապվում է։
 
 **EN:** A completed item is not deleted. It is marked complete and linked to the relevant locked decision or canonical document.
+
+<!-- END: MENQ_STANDARD_ROADMAP -->
