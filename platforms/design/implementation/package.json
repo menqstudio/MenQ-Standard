@@ -8,6 +8,8 @@
     "pnpm": ">=10"
   },
   "scripts": {
-    "validate:phase-a": "python ../validation/validate_phase_a.py"
+    "validate:phase-a": "python ../validation/validate_phase_a.py",
+    "build:tokens": "python scripts/build_tokens.py",
+    "validate": "python ../validation/validate_phase_a.py && python scripts/build_tokens.py"
   }
 }
