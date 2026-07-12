@@ -1,0 +1,11 @@
+{
+  "name": "@menq/design-foundations",
+  "version": "0.0.0-development",
+  "private": true,
+  "type": "module",
+  "description": "Foundational runtime styles and utilities.",
+  "dependencies": {
+    "@menq/design-contracts": "workspace:*",
+    "@menq/design-tokens": "workspace:*"
+  }
+}
