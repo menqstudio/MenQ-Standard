@@ -14,7 +14,7 @@
 
 ## Status / Կարգավիճակ
 
-- **Status:** Active — Foundation v1 remediation applied; CI validation pending
+- **Status:** Active — Foundation v1 validated GREEN; release snapshot preparation active
 - **Owner:** MenQ
 - **Applies to:** MenQ ecosystem
 - **Languages:** Armenian + English
@@ -41,6 +41,12 @@ MenQ Ecosystem
 
 **EN:** MenQ Studio is the company. MenQ Standard is the operating standard of the MenQ ecosystem: how we think, decide, design, build, validate, document, and preserve systems.
 
+## Foundation v1 validation / Foundation v1 validation
+
+**HY:** Foundation v1-ը անցել է իրական GitHub Actions validation։ `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` արդյունքով։ Վերջնական evidence-ը պահվում է [`foundation/FOUNDATION_V1_VALIDATION_RUN.md`](foundation/FOUNDATION_V1_VALIDATION_RUN.md)-ում։
+
+**EN:** Foundation v1 passed real GitHub Actions validation. `Foundation Integrity` workflow run `#9` completed successfully. The final evidence is preserved in [`foundation/FOUNDATION_V1_VALIDATION_RUN.md`](foundation/FOUNDATION_V1_VALIDATION_RUN.md).
+
 ## Canonical navigation / Canonical նավիգացիա
 
 - [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) — stable project and AI context
@@ -50,11 +56,12 @@ MenQ Ecosystem
 - [`DECISION_INDEX.md`](DECISION_INDEX.md) — active append-only decision registry
 - [`DECISIONS.md`](DECISIONS.md) — historical `D-001–D-021` registry
 - [`CHANGELOG.md`](CHANGELOG.md) — historical changes
-- [`FOUNDATION_V1_REMEDIATION_CHANGELOG.md`](FOUNDATION_V1_REMEDIATION_CHANGELOG.md) — current remediation transaction
+- [`FOUNDATION_V1_REMEDIATION_CHANGELOG.md`](FOUNDATION_V1_REMEDIATION_CHANGELOG.md) — remediation transaction
 - [`ROADMAP.md`](ROADMAP.md) — future direction
 - [`foundation/README.md`](foundation/README.md) — Foundation index
 - [`foundation/FOUNDATION_V1_INTEGRITY_AUDIT.md`](foundation/FOUNDATION_V1_INTEGRITY_AUDIT.md) — original RED audit
-- [`foundation/FOUNDATION_V1_REAUDIT.md`](foundation/FOUNDATION_V1_REAUDIT.md) — remediation re-audit
+- [`foundation/FOUNDATION_V1_REAUDIT.md`](foundation/FOUNDATION_V1_REAUDIT.md) — YELLOW remediation re-audit
+- [`foundation/FOUNDATION_V1_VALIDATION_RUN.md`](foundation/FOUNDATION_V1_VALIDATION_RUN.md) — final GREEN validation record
 - [`foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md`](foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md) — normalized chapter metadata
 - [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md) — mandatory write integrity law
 - [`scripts/validate_foundation.py`](scripts/validate_foundation.py) — automated validator

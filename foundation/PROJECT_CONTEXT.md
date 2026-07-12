@@ -41,10 +41,13 @@ Foundation-ի հետ աշխատանքից առաջ կարդալ՝ root `README.m
 - `DECISION_INDEX.md`-ը active append-only registry է և կապում է dedicated `D-022`, `D-023` records-ը։
 - Canonical writes-ը ենթարկվում են `documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`-ին։
 - Integrity validator-ը պահվում է `scripts/validate_foundation.py`-ում և գործարկվում է CI workflow-ով։
+- `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։
+- Validator output-ը՝ `FOUNDATION VALIDATION: GREEN` և `Validated 7 Foundation chapters and root controls.`
+- Foundation v1 release gate-ը GREEN է։
 
 ### Հաջորդ քայլ
 
-Ավարտել final validation evidence-ը, պահել next-chat handoff-ը և հետո անցնել Foundation v1 release snapshot/ZIP-ին կամ Platforms architecture formal decision-ին։
+Ստեղծել և verify անել Foundation v1 complete repository ZIP snapshot-ը՝ release README, version/date, SHA-256 manifest և missing-file verification-ով։ ZIP-ը հրապարակվում է GitHub Release asset-ով և չի պահվում main branch-ում որպես binary։ Դրանից հետո Platforms architecture-ը բացվում է միայն formal Decision System proposal-ով և Owner approval-ով։
 
 ---
 
@@ -83,9 +86,12 @@ Before Foundation work, read the root `README.md`, `PROJECT_CONTEXT.md`, `DECISI
 - `DECISION_INDEX.md` is the active append-only registry and links dedicated `D-022` and `D-023` records.
 - Canonical writes follow `documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`.
 - The integrity validator is stored in `scripts/validate_foundation.py` and runs through CI.
+- `Foundation Integrity` workflow run `#9` completed with a `success` conclusion.
+- Validator output: `FOUNDATION VALIDATION: GREEN` and `Validated 7 Foundation chapters and root controls.`
+- The Foundation v1 release gate is GREEN.
 
 ### Next step
 
-Complete final validation evidence, preserve the next-chat handoff, and then proceed to the Foundation v1 release snapshot/ZIP or a formal Platforms architecture decision.
+Create and verify the complete Foundation v1 repository ZIP snapshot with a release README, version/date, SHA-256 manifest, and missing-file verification. Publish the ZIP as a GitHub Release asset and do not store it as a binary in the main branch. After that, open Platforms architecture only through a formal Decision System proposal and Owner approval.
 
 <!-- END: FOUNDATION_PROJECT_CONTEXT -->

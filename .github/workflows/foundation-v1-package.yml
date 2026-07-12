@@ -1,0 +1,90 @@
+name: Foundation v1 Package
+
+on:
+  pull_request:
+    paths:
+      - "README.md"
+      - "PROJECT_CONTEXT.md"
+      - "AI_WORKING_CONTEXT.md"
+      - "CHANGELOG.md"
+      - "ROADMAP.md"
+      - "foundation/**"
+      - "release/**"
+      - "scripts/validate_foundation.py"
+      - ".github/workflows/foundation-v1-package.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "README.md"
+      - "PROJECT_CONTEXT.md"
+      - "AI_WORKING_CONTEXT.md"
+      - "CHANGELOG.md"
+      - "ROADMAP.md"
+      - "foundation/**"
+      - "release/**"
+      - "scripts/validate_foundation.py"
+      - ".github/workflows/foundation-v1-package.yml"
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate Foundation
+        run: python scripts/validate_foundation.py
+
+      - name: Verify release inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            README.md
+            PROJECT_CONTEXT.md
+            AI_WORKING_CONTEXT.md
+            DECISION_INDEX.md
+            CHANGELOG.md
+            ROADMAP.md
+            foundation/README.md
+            foundation/PROJECT_CONTEXT.md
+            foundation/FOUNDATION_V1_VALIDATION_RUN.md
+            release/FOUNDATION_V1_RELEASE_README.md
+          )
+          for path in "${required[@]}"; do
+            test -f "$path" || { echo "Missing required release file: $path"; exit 1; }
+          done
+
+      - name: Build snapshot and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          package_root="MenQ-Standard-Foundation-v1.0.0"
+          mkdir -p "dist/$package_root"
+          git ls-files -z | while IFS= read -r -d '' path; do
+            mkdir -p "dist/$package_root/$(dirname "$path")"
+            cp "$path" "dist/$package_root/$path"
+          done
+          (
+            cd "dist/$package_root"
+            find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt
+          )
+          (
+            cd dist
+            zip -qr "MenQ-Standard-Foundation-v1.0.0.zip" "$package_root"
+          )
+          test -s "dist/MenQ-Standard-Foundation-v1.0.0.zip"
+          unzip -t "dist/MenQ-Standard-Foundation-v1.0.0.zip"
+
+      - name: Upload Foundation v1 snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: MenQ-Standard-Foundation-v1.0.0
+          path: dist/MenQ-Standard-Foundation-v1.0.0.zip
+          if-no-files-found: error
+          retention-days: 90

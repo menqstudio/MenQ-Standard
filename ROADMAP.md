@@ -29,23 +29,24 @@
 - [x] Foundation integrity validator and CI workflow
 - [x] MenQ collaboration style standard
 - [x] Current working context synchronization
+- [x] Foundation Integrity workflow run `#9` — GREEN
+- [x] Foundation v1 final validation record
 
 ## Current / Ընթացիկ
 
-### Final validation evidence
+### Foundation v1 release snapshot
 
-**HY:** Repository-side remediation-ը կիրառված է։ Պետք է ստանալ `python scripts/validate_foundation.py` կամ Foundation Integrity workflow-ի իրական GREEN result-ը։ Local clone փորձը չաշխատեց execution environment-ի DNS սահմանափակման պատճառով, իսկ GitHub Actions status-ը դեռ չի վերադարձել։
+**HY:** Foundation release gate-ը GREEN է։ Ընթացիկ աշխատանքը complete Foundation v1 ZIP snapshot-ի ստեղծումն է՝ release README, version/date, manifest և missing-file verification-ով։ ZIP-ը GitHub Release asset է, ոչ canonical editable source։
 
-**EN:** Repository-side remediation has been applied. A real GREEN result is still required from `python scripts/validate_foundation.py` or the Foundation Integrity workflow. The local clone attempt failed because of DNS restrictions in the execution environment, and GitHub Actions status has not yet been returned.
+**EN:** The Foundation release gate is GREEN. Current work is creation of the complete Foundation v1 ZIP snapshot with a release README, version/date, manifest, and missing-file verification. The ZIP is a GitHub Release asset, not an editable canonical source.
 
 ## Next / Հաջորդը
 
-1. Obtain validator GREEN evidence.
-2. Produce the complete Foundation v1 repository ZIP snapshot.
-3. Define Platforms architecture through a formal decision.
-4. Define Operating Standards architecture.
-5. Define Extensions architecture.
-6. Establish the MenQ Standard release/versioning model.
+1. Complete and publish the Foundation v1 repository ZIP snapshot.
+2. Define Platforms architecture through a formal Decision System proposal and Owner approval.
+3. Define Operating Standards architecture.
+4. Define Extensions architecture.
+5. Establish the MenQ Standard release/versioning model.
 
 ## History Rule / Պատմության կանոն
 
