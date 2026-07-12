@@ -1,9 +1,9 @@
 # Foundation / Հիմք
 
-**Status / Կարգավիճակ:** Locked v1 — Remediated, validation pending / Հաստատված v1 — ուղղումները կիրառված են, validation-ը սպասվում է  
+**Status / Կարգավիճակ:** Locked v1 — Validated GREEN / Հաստատված v1 — ստուգված GREEN  
 **Owner / Պատասխանատու:** MenQ Owner
 
-See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable context, [`FOUNDATION_V1_INTEGRITY_AUDIT.md`](FOUNDATION_V1_INTEGRITY_AUDIT.md) for the original RED audit, and [`FOUNDATION_V1_REAUDIT.md`](FOUNDATION_V1_REAUDIT.md) for the current YELLOW re-audit.
+See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable context, [`FOUNDATION_V1_INTEGRITY_AUDIT.md`](FOUNDATION_V1_INTEGRITY_AUDIT.md) for the original RED audit, [`FOUNDATION_V1_REAUDIT.md`](FOUNDATION_V1_REAUDIT.md) for the YELLOW remediation re-audit, and [`FOUNDATION_V1_VALIDATION_RUN.md`](FOUNDATION_V1_VALIDATION_RUN.md) for final GREEN execution evidence.
 
 ## Chapters / Chapter-ներ
 
@@ -24,6 +24,8 @@ See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable context, [`FOUNDATION_
 - [`../DECISION_INDEX.md`](../DECISION_INDEX.md) — active append-only decision registry
 - [`../scripts/validate_foundation.py`](../scripts/validate_foundation.py) — integrity validator
 - [`../.github/workflows/foundation-integrity.yml`](../.github/workflows/foundation-integrity.yml) — CI enforcement
+- [`../.github/workflows/foundation-v1-package.yml`](../.github/workflows/foundation-v1-package.yml) — validated snapshot packaging
+- [`../release/FOUNDATION_V1_RELEASE_README.md`](../release/FOUNDATION_V1_RELEASE_README.md) — release snapshot description
 
 ## Boundary / Սահման
 
@@ -33,14 +35,14 @@ See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable context, [`FOUNDATION_
 
 ## Current gate / Ընթացիկ gate
 
-**HY:** Repository-side remediation-ը կիրառված է։ Release gate-ը YELLOW է մինչև validator-ի իրական GREEN execution evidence-ը։
+**HY:** `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։ Validator-ը վերադարձրել է `FOUNDATION VALIDATION: GREEN` և հաստատել է յոթ Foundation chapter-ներն ու root controls-ը։ Foundation v1 release gate-ը GREEN է։
 
-**EN:** Repository-side remediation has been applied. The release gate remains YELLOW until real GREEN validator execution evidence exists.
+**EN:** `Foundation Integrity` workflow run `#9` completed with a `success` conclusion. The validator returned `FOUNDATION VALIDATION: GREEN` and confirmed seven Foundation chapters and root controls. The Foundation v1 release gate is GREEN.
 
 ## Next / Հաջորդը
 
-1. Run `python scripts/validate_foundation.py` locally or verify the Foundation Integrity workflow.
-2. On GREEN, create the complete Foundation v1 ZIP snapshot.
-3. Then open the formal Platforms architecture decision.
+1. Build and verify the complete Foundation v1 ZIP snapshot.
+2. Publish the ZIP as a GitHub Release asset; do not store it as a main-branch binary.
+3. Then open the formal Platforms architecture decision proposal for Owner approval.
 
 <!-- END: FOUNDATION_README_V1 -->
