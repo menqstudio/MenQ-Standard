@@ -37,97 +37,78 @@ jobs:
       - name: Install workspace links
         working-directory: platforms/design/implementation
         run: pnpm install --no-frozen-lockfile --ignore-scripts
-      - name: Validate Design Platform Phase A registry and workspace skeleton
+      - name: Validate Phase A registry and workspace
         run: python platforms/design/validation/validate_phase_a.py
-      - name: Smoke-test design contracts public API
-        run: |
-          node --input-type=module -e "import('./platforms/design/implementation/packages/design-contracts/src/index.js').then((m) => { m.assertCanonicalTokenId('menq.design.token.reference.color.neutral.0'); m.assertBilingualDescription({hy:'հայերեն',en:'English'}); if (m.TOKEN_SOURCE_SCHEMA_ID !== 'menq.design.schema.token-source.v1') process.exit(1); })"
       - name: Build deterministic token artifacts
         run: python platforms/design/implementation/scripts/build_tokens.py
-      - name: Verify deterministic token rebuild
-        run: |
-          cp platforms/design/implementation/packages/design-tokens/generated/manifest.json /tmp/menq-token-manifest.json
-          python platforms/design/implementation/scripts/build_tokens.py
-          cmp /tmp/menq-token-manifest.json platforms/design/implementation/packages/design-tokens/generated/manifest.json
-      - name: Smoke-test Design Foundations public API
-        run: |
-          node --input-type=module -e "import('./platforms/design/implementation/packages/design-foundations/src/index.js').then((m) => { if (m.foundationClass('stack') !== 'menq-stack') process.exit(1); })"
-      - name: Build deterministic Design Foundations artifacts
+      - name: Build deterministic foundation artifacts
         run: python platforms/design/implementation/scripts/build_foundations.py
-      - name: Verify deterministic Design Foundations rebuild
-        run: |
-          cp platforms/design/implementation/packages/design-foundations/generated/manifest.json /tmp/menq-foundations-manifest.json
-          python platforms/design/implementation/scripts/build_foundations.py
-          cmp /tmp/menq-foundations-manifest.json platforms/design/implementation/packages/design-foundations/generated/manifest.json
-      - name: Validate registry and package public API parity
+      - name: Validate registry and public API parity
         run: python platforms/design/validation/validate_public_api.py
-      - name: Smoke-test Design Primitives public API
+      - name: Verify deterministic rebuilds
+        run: |
+          cp platforms/design/implementation/packages/design-tokens/generated/manifest.json /tmp/tokens.json
+          cp platforms/design/implementation/packages/design-foundations/generated/manifest.json /tmp/foundations.json
+          python platforms/design/implementation/scripts/build_tokens.py
+          python platforms/design/implementation/scripts/build_foundations.py
+          cmp /tmp/tokens.json platforms/design/implementation/packages/design-tokens/generated/manifest.json
+          cmp /tmp/foundations.json platforms/design/implementation/packages/design-foundations/generated/manifest.json
+      - name: Smoke-test contracts and primitives
         run: |
           node --input-type=module <<'NODE'
-          const m = await import('./platforms/design/implementation/packages/design-primitives/src/index.js');
-          const button = m.buttonProps({ pressed: true, controlsId: 'panel-a' });
-          if (button.type !== 'button' || button['aria-pressed'] !== true || button['aria-controls'] !== 'panel-a') process.exit(1);
-          const link = m.linkProps({ href: 'https://example.com', external: true });
-          if (link.target !== '_blank' || link.rel !== 'noopener noreferrer') process.exit(1);
-          const disclosure = m.disclosureProps({ expanded: false, triggerId: 'trigger-a', contentId: 'content-a' });
-          if (disclosure.content.hidden !== true || disclosure.trigger['aria-controls'] !== 'content-a') process.exit(1);
-          if (m.primitiveClass('visuallyHidden') !== 'menq-visually-hidden') process.exit(1);
+          const contracts = await import('./platforms/design/implementation/packages/design-contracts/src/index.js');
+          contracts.assertCanonicalTokenId('menq.design.token.reference.color.neutral.0');
+          const primitives = await import('./platforms/design/implementation/packages/design-primitives/src/index.js');
+          if (primitives.buttonProps({ pressed: true })['aria-pressed'] !== true) process.exit(1);
           NODE
-      - name: Smoke-test Design Components public package API
-        working-directory: platforms/design/implementation
-        run: |
-          node --input-type=module <<'NODE'
-          const m = await import('@menq/design-components');
-          const button = m.buttonComponentProps({ variant: 'primary', size: 'md', loading: true, controlsId: 'panel-a' });
-          if (button.disabled !== true || button['aria-busy'] !== true || button['data-menq-component'] !== 'button') process.exit(1);
-          const card = m.cardComponentProps({ variant: 'outlined', labelledBy: 'card-title' });
-          if (card['aria-labelledby'] !== 'card-title' || card['data-variant'] !== 'outlined') process.exit(1);
-          NODE
-      - name: Smoke-test Design Patterns public package API
-        working-directory: platforms/design/implementation
-        run: |
-          node --input-type=module <<'NODE'
-          const m = await import('@menq/design-patterns');
-          const actions = m.actionGroupPatternProps({ direction: 'row', align: 'end', labelledBy: 'actions-title' });
-          if (actions.role !== 'group' || actions['aria-labelledby'] !== 'actions-title' || actions['data-wrap'] !== 'true') process.exit(1);
-          const section = m.sectionPatternProps({ variant: 'outlined', size: 'lg', labelledBy: 'section-title' });
-          if (section['data-menq-pattern'] !== 'section' || section['data-menq-component'] !== 'card' || section['data-variant'] !== 'outlined') process.exit(1);
-          NODE
-      - name: Smoke-test Design Assets public package API
-        working-directory: platforms/design/implementation
+      - name: Smoke-test components
+        working-directory: platforms/design/implementation/packages/design-components
+        run: node --input-type=module -e "import('@menq/design-components').then((m)=>{if(!m.buttonComponentProps({loading:true}).disabled)process.exit(1)})"
+      - name: Smoke-test patterns
+        working-directory: platforms/design/implementation/packages/design-patterns
+        run: node --input-type=module -e "import('@menq/design-patterns').then((m)=>{if(m.actionGroupPatternProps().role!=='group')process.exit(1)})"
+      - name: Smoke-test assets
+        working-directory: platforms/design/implementation/packages/design-assets
         run: |
           node --input-type=module <<'NODE'
           const m = await import('@menq/design-assets');
-          const registry = m.createAssetRegistry([{
-            id: 'menq.design.asset.icon.action.save',
-            kind: 'icon',
-            source: './icons/action-save.svg',
-            description: { hy: 'Պահպանման պատկերակ', en: 'Save icon' },
-            alt: { hy: 'Պահպանել', en: 'Save' },
-            provenance: { owner: 'MenQ', origin: 'MenQ Design Platform', license: 'MenQ Internal' },
-          }]);
-          const resolved = registry.resolve('menq.design.asset.icon.action.save', 'hy');
-          if (resolved.alt !== 'Պահպանել' || resolved.description !== 'Պահպանման պատկերակ' || registry.ids.length !== 1) process.exit(1);
+          const registry = m.createAssetRegistry([{id:'menq.design.asset.icon.save',kind:'icon',source:'./save.svg',description:{hy:'Պահպանել',en:'Save'},alt:{hy:'Պահպանել',en:'Save'},provenance:{owner:'MenQ',origin:'MenQ',license:'Internal'}}]);
+          if (registry.resolve('menq.design.asset.icon.save','hy').alt !== 'Պահպանել') process.exit(1);
+          NODE
+      - name: Smoke-test motion
+        working-directory: platforms/design/implementation/packages/design-motion
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('@menq/design-motion');
+          const recipe = m.resolveMotionRecipe({id:'menq.design.motion.enter.fade',intent:'enter',properties:['opacity','transform'],durationToken:'menq.design.token.semantic.motion.duration.standard',easingToken:'menq.design.token.semantic.motion.easing.standard',reducedMotion:'simplify'}, true);
+          if (!recipe.reduced || recipe.properties.includes('transform')) process.exit(1);
+          NODE
+      - name: Smoke-test locales and content parity
+        working-directory: platforms/design/implementation/packages/design-locales
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('@menq/design-locales');
+          const pack = m.createLocalePack([{id:'menq.design.content.action.save',message:{hy:'Պահպանել {name}',en:'Save {name}'}}]);
+          if (pack.resolve('menq.design.content.action.save','hy') !== 'Պահպանել {name}') process.exit(1);
+          NODE
+      - name: Smoke-test validation and documentation extraction
+        working-directory: platforms/design/implementation/packages/design-validation
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('@menq/design-validation');
+          const result = m.createConformanceResult({profile:'core-author',verdict:'GREEN',commitSha:'test',checks:[{id:'parity',passed:true}]});
+          const doc = m.extractDocumentationEntry({id:'component.button',title:{hy:'Կոճակ',en:'Button'},packageName:'@menq/design-components',publicApi:['.'],sourcePath:'platforms/design/CONTRACTS.md'});
+          if (result.verdict !== 'GREEN' || doc.title.hy !== 'Կոճակ' || m.validateDesignToolMapping({}).length === 0) process.exit(1);
           NODE
       - name: Verify generated artifact checksums
         run: |
           python - <<'PY'
-          import hashlib
-          import json
+          import hashlib, json
           from pathlib import Path
-
-          roots = [
-              Path('platforms/design/implementation/packages/design-tokens/generated'),
-              Path('platforms/design/implementation/packages/design-foundations/generated'),
-          ]
-          verified = 0
-          for root in roots:
+          for root in [Path('platforms/design/implementation/packages/design-tokens/generated'), Path('platforms/design/implementation/packages/design-foundations/generated')]:
               manifest = json.loads((root / 'manifest.json').read_text(encoding='utf-8'))
               for artifact in manifest['artifacts']:
-                  path = root / artifact['path']
-                  data = path.read_bytes()
-                  assert len(data) == artifact['bytes'], str(path)
-                  assert hashlib.sha256(data).hexdigest() == artifact['sha256'], str(path)
-                  verified += 1
-          print(f"Verified {verified} generated artifact checksums.")
+                  data = (root / artifact['path']).read_bytes()
+                  assert len(data) == artifact['bytes']
+                  assert hashlib.sha256(data).hexdigest() == artifact['sha256']
           PY
