@@ -87,3 +87,5 @@ jobs:
                   verified += 1
           print(f"Verified {verified} generated artifact checksums.")
           PY
+      - name: Validate registry and package public API parity
+        run: python platforms/design/validation/validate_public_api.py
