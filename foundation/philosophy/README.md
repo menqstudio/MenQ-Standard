@@ -25,9 +25,9 @@ Philosophy
 
 > MenQ Standard-ի տեսլականն է դառնալ Human–AI collaboration-ի reference standard։
 
-### Mission — Open
+### Mission — Locked
 
-MenQ Standard-ի mission-ը դեռ հաստատված չէ։ Այն պետք է բացատրի՝ ինչ է Standard-ը կառուցում այսօր, որպեսզի հասնի Vision-ին։
+> MenQ Standard-ի առաքելությունն է ստեղծել կիրառելի և զարգացող operating standard, որը մարդկանց ու AI համակարգերին օգնում է միասին մտածել, որոշել, կառուցել և պահպանել որակյալ համակարգեր։
 
 **Սահմանազատում:** MenQ Studio-ի company mission-ը առանձին է և չի պատկանում MenQ Standard-ի Philosophy chapter-ին։
 
@@ -64,9 +64,9 @@ Philosophy
 
 > MenQ Standard's vision is to become the reference standard for Human–AI collaboration.
 
-### Mission — Open
+### Mission — Locked
 
-The mission of MenQ Standard is not yet approved. It must explain what the Standard builds today in order to reach the Vision.
+> MenQ Standard's mission is to create a practical and evolving operating standard that helps people and AI systems think, decide, build, and preserve quality systems together.
 
 **Boundary:** MenQ Studio's company mission is separate and does not belong inside the Philosophy chapter of MenQ Standard.
 
