@@ -21,7 +21,7 @@ Owner-ը 2026-07-13-ին explicit հաստատել է D-025 lock-ը՝ post-merge
 6. Release, migration և rollback evidence-ը գրանցված է։
 7. Closure PR #4-ի բոլոր վեց required workflows-ը GREEN են `b16e0211bb29355df43257847fce818765a4a747` head-ի վրա։
 8. PR #4-ը merge է եղել `main`՝ commit `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
-9. GREEN synthetic merge tree-ի և իրական `main` merge tree-ի միջև file diff-ը զրո է։
+9. GREEN synthetic merge tree-ի և իրական `main` merge tree-ի միջև file diff-ը զրո է։ Machine key՝ `treeDifferenceCount: 0`։
 10. Human Owner-ը explicit հաստատել է lock-ը։
 
 ### Locked boundary
@@ -46,7 +46,7 @@ On 2026-07-13, the Owner explicitly approved locking D-025 after the post-merge 
 6. Release, migration, and rollback evidence is recorded.
 7. All six required workflows for closure PR #4 are GREEN on head `b16e0211bb29355df43257847fce818765a4a747`.
 8. PR #4 was merged into `main` as commit `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
-9. The GREEN synthetic merge tree and the real `main` merge tree have zero file differences.
+9. The GREEN synthetic merge tree and the real `main` merge tree have zero file differences. Machine key: `treeDifferenceCount: 0`.
 10. The human Owner explicitly approved lock.
 
 ### Locked boundary
