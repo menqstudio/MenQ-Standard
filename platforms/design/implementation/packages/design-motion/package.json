@@ -1,0 +1,11 @@
+{
+  "name": "@menq/design-motion",
+  "version": "0.0.0-development",
+  "private": true,
+  "type": "module",
+  "description": "Motion contracts and utilities.",
+  "dependencies": {
+    "@menq/design-contracts": "workspace:*",
+    "@menq/design-tokens": "workspace:*"
+  }
+}
