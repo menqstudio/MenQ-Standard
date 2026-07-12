@@ -1,0 +1,13 @@
+{
+  "name": "@menq/design-platform-workspace",
+  "version": "0.0.0-development",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "validate:phase-a": "python ../validation/validate_phase_a.py"
+  }
+}
