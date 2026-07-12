@@ -3,6 +3,7 @@
 **Status / Կարգավիճակ:** Active / Գործող  
 **Document class / Փաստաթղթի դաս:** Informative  
 **Canonical scope / Canonical scope:** `foundation/`  
+**Owner / Պատասխանատու:** MenQ Owner  
 **Last synchronized / Վերջին համաժամեցում:** 2026-07-12
 
 ## Հայերեն
@@ -11,58 +12,39 @@
 
 `Foundation`-ը MenQ Standard-ի կայուն և պարտադիր հիմքն է։ Այն սահմանում է Philosophy-ն, Principles-ը, Terminology-ն, Governance-ը, Decision System-ը, Documentation-ը և AI Collaboration-ը։ Platforms-ը, Operating Standards-ը և Extensions-ը պետք է բխեն Foundation-ից և չհակասեն դրան։
 
-### Canonical կառուցվածք
+### Canonical կառուցվածք և վիճակ
 
-```text
-Foundation
-├── Philosophy
-├── Principles
-├── Terminology
-├── Governance
-├── Decision System
-├── Documentation
-└── AI Collaboration
-```
-
-### Ընթացիկ canonical վիճակ
-
-- `philosophy/README.md` — Locked
-- `principles/README.md` — Locked
+- `philosophy/README.md` — Locked v1
+- `principles/README.md` — Locked v1
 - `terminology/README.md` — Locked v1, Living Standard
 - `governance/README.md` — Locked v1
 - `decision-system/README.md` — Locked v1
 - `documentation/README.md` — Locked v1
-- `ai-collaboration/README.md` — Pending
+- `ai-collaboration/README.md` — Locked v1
+
+Յուրաքանչյուր major chapter ունի `README.md` և `PROJECT_CONTEXT.md`։ Legacy metadata gaps-ը լրացվում են [`FOUNDATION_NORMATIVE_METADATA_REGISTRY.md`](FOUNDATION_NORMATIVE_METADATA_REGISTRY.md)-ով։ Documentation և AI Collaboration mixed-language legacy sections-ի semantic parity-ն լրացվում է իրենց `BILINGUAL_PARITY_ADDENDUM.md` files-ով։
 
 ### Authority
 
-- Foundation-level final approval authority՝ MenQ Owner։
-- AI-ն կարող է ուսումնասիրել, draft անել, challenge անել և documentation maintain անել, բայց չի կարող իրեն final approval տալ կամ Foundation truth-ը ինքնուրույն lock անել։
-- Foundation-ի material փոփոխությունը պահանջում է MenQ Decision System-ի formal lifecycle և Owner approval։
+- Foundation-level final approval authority-ն MenQ Owner-ինն է։
+- AI-ն կարող է ուսումնասիրել, draft, challenge, execute և verify անել միայն իր explicit scope-ի ներսում։
+- AI-ն չի կարող self-approve անել կամ Foundation truth-ը ինքնուրույն lock անել։
+- Material Foundation change-ը պահանջում է Decision System lifecycle և Owner approval։
 
 ### Startup workflow
 
-Foundation-ի հետ աշխատանքից առաջ պարտադիր կարդացվում են՝
+Foundation-ի հետ աշխատանքից առաջ կարդալ՝ root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, այս file-ը, Canonical Write Integrity Law-ը և համապատասխան chapter-ը։
 
-1. repository root `README.md`,
-2. root `PROJECT_CONTEXT.md`,
-3. `DECISIONS.md`,
-4. `CHANGELOG.md`,
-5. `foundation/README.md`,
-6. այս `PROJECT_CONTEXT.md`-ը,
-7. համապատասխան Foundation chapter-ը։
+### Integrity և decisions
 
-### Սահմաններ
-
-- Foundation-ը չի պարունակում product-specific implementation details։
-- Foundation term-ը կամ rule-ը product layer-ում չի վերասահմանվում։
-- Նոր Foundation chapter կամ hierarchy change չի կատարվում առանց Owner approval-ի։
-- Canonical history-ն չի ջնջվում կամ լուռ վերագրվում։
-- Հայերեն և անգլերեն տարբերակները պահպանում են semantic equality։
+- `DECISIONS.md` պահպանում է historical `D-001–D-021` registry-ն։
+- `DECISION_INDEX.md`-ը active append-only registry է և կապում է dedicated `D-022`, `D-023` records-ը։
+- Canonical writes-ը ենթարկվում են `documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`-ին։
+- Integrity validator-ը պահվում է `scripts/validate_foundation.py`-ում և գործարկվում է CI workflow-ով։
 
 ### Հաջորդ քայլ
 
-Կառուցել և հաստատել `AI Collaboration v1`, հետո կատարել Foundation-wide integrity և consistency review։
+Ավարտել final validation evidence-ը, պահել next-chat handoff-ը և հետո անցնել Foundation v1 release snapshot/ZIP-ին կամ Platforms architecture formal decision-ին։
 
 ---
 
@@ -72,55 +54,38 @@ Foundation-ի հետ աշխատանքից առաջ պարտադիր կարդաց
 
 `Foundation` is the stable and mandatory base of MenQ Standard. It defines Philosophy, Principles, Terminology, Governance, the Decision System, Documentation, and AI Collaboration. Platforms, Operating Standards, and Extensions must derive from Foundation and must not contradict it.
 
-### Canonical structure
+### Canonical structure and state
 
-```text
-Foundation
-├── Philosophy
-├── Principles
-├── Terminology
-├── Governance
-├── Decision System
-├── Documentation
-└── AI Collaboration
-```
-
-### Current canonical state
-
-- `philosophy/README.md` — Locked
-- `principles/README.md` — Locked
+- `philosophy/README.md` — Locked v1
+- `principles/README.md` — Locked v1
 - `terminology/README.md` — Locked v1, Living Standard
 - `governance/README.md` — Locked v1
 - `decision-system/README.md` — Locked v1
 - `documentation/README.md` — Locked v1
-- `ai-collaboration/README.md` — Pending
+- `ai-collaboration/README.md` — Locked v1
+
+Every major chapter contains `README.md` and `PROJECT_CONTEXT.md`. Legacy metadata gaps are supplied by [`FOUNDATION_NORMATIVE_METADATA_REGISTRY.md`](FOUNDATION_NORMATIVE_METADATA_REGISTRY.md). Semantic parity for mixed-language legacy sections in Documentation and AI Collaboration is supplied by their `BILINGUAL_PARITY_ADDENDUM.md` files.
 
 ### Authority
 
-- Final approval authority for Foundation-level changes belongs to the MenQ Owner.
-- AI may explore, draft, challenge, and maintain documentation, but it may not grant itself final approval or independently lock Foundation truth.
-- A material Foundation change requires the formal MenQ Decision System lifecycle and Owner approval.
+- Final Foundation-level approval authority belongs to the MenQ Owner.
+- AI may explore, draft, challenge, execute, and verify only within explicit scope.
+- AI may not self-approve or independently lock Foundation truth.
+- A material Foundation change requires the Decision System lifecycle and Owner approval.
 
 ### Startup workflow
 
-Before working on Foundation, read:
+Before Foundation work, read the root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, this file, the Canonical Write Integrity Law, and the relevant chapter.
 
-1. the repository root `README.md`,
-2. the root `PROJECT_CONTEXT.md`,
-3. `DECISIONS.md`,
-4. `CHANGELOG.md`,
-5. `foundation/README.md`,
-6. this `PROJECT_CONTEXT.md`,
-7. the relevant Foundation chapter.
+### Integrity and decisions
 
-### Boundaries
-
-- Foundation does not contain product-specific implementation details.
-- A Foundation term or rule is not redefined in a product layer.
-- No new Foundation chapter or hierarchy change is made without Owner approval.
-- Canonical history is not deleted or silently rewritten.
-- Armenian and English versions maintain semantic equality.
+- `DECISIONS.md` preserves the historical `D-001–D-021` registry.
+- `DECISION_INDEX.md` is the active append-only registry and links dedicated `D-022` and `D-023` records.
+- Canonical writes follow `documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`.
+- The integrity validator is stored in `scripts/validate_foundation.py` and runs through CI.
 
 ### Next step
 
-Build and approve `AI Collaboration v1`, then perform a Foundation-wide integrity and consistency review.
+Complete final validation evidence, preserve the next-chat handoff, and then proceed to the Foundation v1 release snapshot/ZIP or a formal Platforms architecture decision.
+
+<!-- END: FOUNDATION_PROJECT_CONTEXT -->
