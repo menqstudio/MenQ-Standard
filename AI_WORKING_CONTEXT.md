@@ -36,40 +36,25 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - Foundation v1 — Locked և GREEN։
 - `D-024 — Platforms Architecture v1` — merged և canonical։
 - `D-025 — MenQ Design Platform Architecture v1` — `Approved — Implementing`, ոչ `Locked`։
-- `D-026 — Canonical Session Read Law` — Locked։
+- `D-026 — Canonical Session Read Law` — Locked, enforcement infrastructure GREEN։
+- Canonical Markdown inventory — 57 tracked files, strict path/size/SHA drift enforcement։
 - Working branch — `d-025-design-platform-architecture-v1`։
 - Draft PR — `#3`, merge չի արվում մինչև completeness, synchronization, validation և Owner approval։
 
 ### Owner-approved Design Platform baseline
 
-Հաստատված workshop baseline-ը պահպանված է `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`-ում և ներառում է՝
+Parts 1–11-ը պահպանված են `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`-ում։ Part 12-ը պահպանված է `platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`-ում և սահմանում է յոթ sequential gates, verdict semantics, conformance profiles, exception contract և evidence contract։
 
-- Foundation → Brand Core → Design Platform Core → Product Design Layers սահմանը,
-- governed token concerns և orthogonal dimensions,
-- canonical token source և generation pipeline,
-- primitives,
-- behavior-first components,
-- reusable patterns,
-- themes/modes/product expression separation,
-- accessibility,
-- Armenian + English canonical localization և on-demand locale packs,
-- content architecture,
-- governed assets,
-- motion architecture,
-- package, release, versioning, migration և compatibility architecture։
-
-Theme, state, density, platform, locale, accessibility և motion preference-ը token layers չեն։ Controlled exceptions-ը normal token layer չեն։ Detailed systems-ը առանձին canonical specifications են, իսկ D-025-ը architecture boundary-ն է։
+Canonical token dependency layers-ը՝ Reference → Semantic → Component → Pattern → Product Extension։ Theme, state, density, platform, locale, accessibility և motion preference-ը token layers չեն։ Controlled exceptions-ը normal token layer չեն։
 
 ### Հաջորդ հստակ աշխատանք
 
-1. Extend Foundation validation for D-026 session-read references.
-2. Կտոր 12 — Validation, CI, Conformance և Quality Gates Architecture։
-3. Documentation portal, catalog և design-tool integration։
-4. Governance, contribution, ownership և change-request lifecycle։
-5. Product adoption, maturity model և two-consumer validation plan։
-6. Canonical specification index և implementation package plan։
-7. D-025 completeness audit, validator design և Draft PR #3 review։
-8. Canonical synchronization, GREEN evidence և Owner review։
+1. Part 13 — Documentation portal, component catalog և design-tool integration architecture։
+2. Governance, contribution, ownership և change-request lifecycle։
+3. Product adoption, maturity model և two-consumer validation plan։
+4. Canonical specification index և implementation package plan։
+5. D-025 completeness audit, validator implementation և Draft PR #3 review։
+6. Canonical synchronization, GREEN evidence և Owner review։
 
 ---
 
@@ -101,25 +86,24 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 - Foundation v1 is Locked and GREEN.
 - `D-024 — Platforms Architecture v1` is merged and canonical.
 - `D-025 — MenQ Design Platform Architecture v1` is `Approved — Implementing`, not `Locked`.
-- `D-026 — Canonical Session Read Law` is Locked.
+- `D-026 — Canonical Session Read Law` is Locked and its enforcement infrastructure is GREEN.
+- The canonical Markdown inventory contains 57 tracked files with strict path/size/SHA drift enforcement.
 - Working branch: `d-025-design-platform-architecture-v1`.
-- Draft PR: `#3`; it must remain unmerged until completeness, synchronization, validation, and Owner approval are complete.
+- Draft PR: `#3`; it remains unmerged until completeness, synchronization, validation, and Owner approval are complete.
 
 ### Owner-approved Design Platform baseline
 
-The approved workshop baseline is preserved in `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`. It covers the ecosystem boundary, governed token concerns and orthogonal dimensions, canonical token source and generation pipeline, primitives, behavior-first components, reusable patterns, themes/modes/product expression separation, accessibility, Armenian and English canonical localization plus on-demand locales, content architecture, governed assets, motion, and package/release/versioning/migration/compatibility architecture.
+Parts 1–11 are preserved in `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`. Part 12 is preserved in `platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md` and defines seven sequential gates, verdict semantics, conformance profiles, the exception contract, and the evidence contract.
 
-Theme, state, density, platform, locale, accessibility, and motion preference are not token layers. Controlled exceptions are not a normal token layer. Detailed systems belong in separate canonical specifications; D-025 remains the architecture boundary.
+Canonical token dependency layers are Reference → Semantic → Component → Pattern → Product Extension. Theme, state, density, platform, locale, accessibility, and motion preference are not token layers. Controlled exceptions are not a normal token layer.
 
 ### Exact next work
 
-1. Extend Foundation validation for D-026 session-read references.
-2. Part 12 — Validation, CI, Conformance, and Quality Gates Architecture.
-3. Documentation portal, catalog, and design-tool integration.
-4. Governance, contribution, ownership, and change-request lifecycle.
-5. Product adoption, maturity model, and two-consumer validation plan.
-6. Canonical specification index and implementation package plan.
-7. D-025 completeness audit, validator design, and Draft PR #3 review.
-8. Canonical synchronization, GREEN evidence, and Owner review.
+1. Part 13 — Documentation portal, component catalog, and design-tool integration architecture.
+2. Governance, contribution, ownership, and change-request lifecycle.
+3. Product adoption, maturity model, and two-consumer validation plan.
+4. Canonical specification index and implementation package plan.
+5. D-025 completeness audit, validator implementation, and Draft PR #3 review.
+6. Canonical synchronization, GREEN evidence, and Owner review.
 
 <!-- END: MENQ_STANDARD_AI_WORKING_CONTEXT -->
