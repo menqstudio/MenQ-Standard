@@ -23,6 +23,7 @@
 - Parts 1–11 baseline-ը canonical է։
 - Part 12 validation/CI/conformance/quality-gates architecture-ը canonical է։
 - Part 13 documentation portal/component catalog/design-tool integration architecture-ը canonical է։
+- Part 14 governance/contribution/ownership/change-request lifecycle architecture-ը canonical է։
 
 ### Architecture invariants
 
@@ -31,15 +32,18 @@
 - Controlled exceptions-ը governed bypass են։
 - Shared core-ը product-neutral է։
 - Portal, catalog և design-tool integration-ը նույն repository source-ի governed views են, ոչ parallel truth systems։
+- Unowned canonical asset-ը RED defect է։
+- High-risk կամ breaking change-ի self-approval-ը արգելված է։
+- Merge-ը առանձին authority action է, ոչ GREEN CI-ի ավտոմատ հետևանք։
 - Armenian և English canonical languages են։
 
 ### Հստակ continuation point
 
 Ուղիղ սկսել՝
 
-## Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle
+## Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan
 
-Հետո՝ product adoption/two-consumer validation, canonical specification index, implementation package plan, completeness audit, validator design, GREEN evidence և Owner review։ Merge և lock-ը առանձին explicit decisions են։
+Հետո՝ canonical specification index, implementation package plan, completeness audit, validator design, GREEN evidence և Owner review։ Merge և lock-ը առանձին explicit decisions են։
 
 ### Արգելված գործողություններ
 
@@ -47,6 +51,8 @@
 - D-025-ը `Locked` չանվանել։
 - Product-specific identity, business logic կամ workflows shared core չմտցնել։
 - Generated docs/catalog/design-tool outputs-ը canonical source չհամարել։
+- High-risk կամ breaking change-ը self-approve չանել։
+- GREEN CI-ն merge approval չհամարել։
 - Tool success-ը GREEN evidence չհամարել։
 
 ---
@@ -64,14 +70,14 @@ Do not ask again for the repository address, Owner identity, project purpose, co
 - D-025 is `Approved — Implementing`, not `Locked`.
 - D-026 is Locked and machine-enforced.
 - Draft PR #3 is open, Draft, and unmerged.
-- Parts 1–11 baseline, Part 12 validation architecture, and Part 13 documentation/catalog/design-tool architecture are canonical.
+- Parts 1–11 baseline, Part 12 validation architecture, Part 13 documentation/catalog/design-tool architecture, and Part 14 governance/contribution/change-lifecycle architecture are canonical.
 
 ### Exact continuation point
 
 Start immediately with:
 
-**Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle.**
+**Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.**
 
-Then continue product adoption and two-consumer validation, the canonical specification index, implementation package planning, completeness audit, validator design, GREEN evidence, and Owner review. Merge and lock remain separate explicit decisions.
+Then continue with the canonical specification index, implementation package planning, completeness audit, validator design, GREEN evidence, and Owner review. Merge and lock remain separate explicit decisions.
 
 <!-- END: MENQ_STANDARD_NEXT_CHAT_HANDOFF -->
