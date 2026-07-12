@@ -1,5 +1,27 @@
 # MenQ Design Platform — Changelog / MenQ Design Platform — Փոփոխությունների պատմություն
 
+## 2026-07-12 — Part 14 governance and change lifecycle architecture
+
+### Հայերեն
+
+- Ավելացվել է `GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md`։
+- Սահմանվել են authority model-ը, ownership registry-ն, contribution classes-ը, review/approval matrix-ը և change-request lifecycle-ը։
+- Unowned canonical asset-ը սահմանվել է որպես RED governance defect։
+- High-risk կամ breaking change-ի self-approval-ը արգելվել է։
+- Merge-ը սահմանվել է որպես առանձին authority action, ոչ GREEN CI-ի ավտոմատ հետևանք։
+- Emergency path-ը պահպանում է retrospective record, validation, synchronization և unresolved-risk ownership-ը։
+- Continuation point-ը տեղափոխվել է Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan։
+
+### English
+
+- Added `GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md`.
+- Defined the authority model, ownership registry, contribution classes, review and approval matrix, and change-request lifecycle.
+- Defined an unowned canonical asset as a RED governance defect.
+- Prohibited self-approval for high-risk or breaking changes.
+- Defined merge as a separate authority action rather than an automatic consequence of green CI.
+- Preserved retrospective recording, validation, synchronization, and unresolved-risk ownership in the emergency path.
+- Advanced the continuation point to Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
+
 ## 2026-07-12 — Part 13 documentation, catalog, and design-tool integration architecture
 
 ### Հայերեն
