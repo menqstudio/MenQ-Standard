@@ -1,4 +1,4 @@
-import { buttonProps } from "@menq/design-primitives";
+import { buttonProps } from "../../design-primitives/src/index.js";
 
 export const COMPONENT_CLASS_NAMES = Object.freeze({
   button: "menq-button",
