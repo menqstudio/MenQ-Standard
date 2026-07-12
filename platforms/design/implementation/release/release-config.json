@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "menq.design.platform.0.1.0-next.0",
+  "decision": "D-025",
+  "displayName": {
+    "hy": "MenQ Design Platform 0.1.0-next.0 նախադիտման թեկնածու",
+    "en": "MenQ Design Platform 0.1.0-next.0 preview candidate"
+  },
+  "status": "Preview Candidate",
+  "version": "0.1.0-next.0",
+  "releaseChannel": "next",
+  "sourcePackageVersion": "0.0.0-development",
+  "packageVersionPolicy": "synchronized",
+  "packageStatus": "Preview",
+  "publishAuthorized": false,
+  "stableReleaseAuthorized": false,
+  "ownerApprovalStatus": "pending",
+  "publicApiBaseline": "platforms/design/implementation/release/public-api-baseline.json",
+  "compatibilityPolicy": "platforms/design
