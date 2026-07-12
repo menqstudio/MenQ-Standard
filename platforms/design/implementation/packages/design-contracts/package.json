@@ -1,0 +1,7 @@
+{
+  "name": "@menq/design-contracts",
+  "version": "0.0.0-development",
+  "private": true,
+  "type": "module",
+  "description": "Schemas, canonical IDs, metadata, and shared contract types."
+}
