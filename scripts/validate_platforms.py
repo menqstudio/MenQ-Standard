@@ -24,6 +24,7 @@ REQUIRED_MARKERS = {
     "platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md": "<!-- END: D-025_DRAFT_PR_REVIEW_RECORD -->",
     "platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md": "<!-- END: D-025_POST_MERGE_CLOSURE_RECORD -->",
     "platforms/design/D-025_LOCK_RECORD.md": "<!-- END: D-025_LOCK_RECORD -->",
+    "platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md": "<!-- END: D-025_FINAL_POST_LOCK_AUDIT -->",
     "platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md": "<!-- END: D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1 -->",
     "platforms/design/ROADMAP.md": "<!-- END: MENQ_DESIGN_PLATFORM_ROADMAP -->",
     "platforms/design/CHANGELOG.md": "<!-- END: MENQ_DESIGN_PLATFORM_CHANGELOG -->",
@@ -42,6 +43,7 @@ BILINGUAL_SECTION_FILES = [
     "platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md",
     "platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md",
     "platforms/design/D-025_LOCK_RECORD.md",
+    "platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md",
     "platforms/design/NEXT_CHAT_HANDOFF.md",
 ]
 
@@ -61,7 +63,8 @@ REQUIRED_TERMS = {
         "0.1.0-next.0",
         "MenQ Design Catalog",
         "MenQ Release Evidence Console",
-        "D-025 is Locked",
+        "261f85e5b20d726a0ab1f05da84a4dc45a248873",
+        "D-025 transaction is closed",
     ],
     "platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md": [
         "9a833339b1d707d6cd8a792e031dd8ca2857d556",
@@ -69,13 +72,18 @@ REQUIRED_TERMS = {
     ],
     "platforms/design/D-025_LOCK_RECORD.md": [
         "Explicit Owner lock approval",
-        "D-025 is now the locked canonical boundary",
+        "261f85e5b20d726a0ab1f05da84a4dc45a248873",
         "treeDifferenceCount",
     ],
+    "platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md": [
+        "Status / Կարգավիճակ:** GREEN",
+        "No open D-025 implementation, closure, or lock action remains",
+        "261f85e5b20d726a0ab1f05da84a4dc45a248873",
+    ],
     "platforms/design/ROADMAP.md": [
-        "Cross-consumer validation",
         "M4 operational",
-        "D-025 Locked",
+        "D-025 Locked and GREEN",
+        "No open implementation, closure, or lock action remains",
     ],
 }
 
@@ -115,10 +123,11 @@ if record:
     evidence = record.get("evidenceSnapshot", {})
     merge_evidence = record.get("mergeEvidence", {})
     authority = record.get("authority", {})
+    final_audit = record.get("finalAudit", {})
     consumers = record.get("consumers", [])
     maturity = {item.get("consumerId"): item.get("maturity") for item in consumers}
-    if record.get("status") != "Locked":
-        errors.append("D-025 readiness record is not Locked")
+    if record.get("status") != "Locked and GREEN":
+        errors.append("D-025 readiness record is not Locked and GREEN")
     if evidence.get("workflowConclusion") != "success":
         errors.append("D-025 readiness workflow evidence is not successful")
     if record.get("crossConsumerValidation") != "GREEN" or record.get("qualityAndAdoptionEvidence") != "GREEN":
@@ -133,12 +142,18 @@ if record:
         errors.append("D-025 implementation merge evidence does not identify PR #3")
     if merge_evidence.get("closurePullRequest") != 4:
         errors.append("D-025 closure merge evidence does not identify PR #4")
+    if merge_evidence.get("lockPullRequest") != 5:
+        errors.append("D-025 lock merge evidence does not identify PR #5")
     if merge_evidence.get("implementationMergeCommit") != "2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc":
         errors.append("D-025 implementation merge commit evidence is incorrect")
     if merge_evidence.get("closureMergeCommit") != "9a833339b1d707d6cd8a792e031dd8ca2857d556":
         errors.append("D-025 closure merge commit evidence is incorrect")
+    if merge_evidence.get("lockMergeCommit") != "261f85e5b20d726a0ab1f05da84a4dc45a248873":
+        errors.append("D-025 lock merge commit evidence is incorrect")
+    if merge_evidence.get("validatedLockHead") != "8ba2e987ff6dab2c25fda18744c7376953d0108f":
+        errors.append("D-025 validated lock head evidence is incorrect")
     if merge_evidence.get("treeDifferenceCount") != 0:
-        errors.append("D-025 closure tree equivalence is not exact")
+        errors.append("D-025 lock tree equivalence is not exact")
     if authority.get("readyForReviewAuthorized") is not True or authority.get("mergeAuthorized") is not True:
         errors.append("D-025 readiness record does not preserve Owner ready/merge authority")
     if authority.get("lockAuthorized") is not True:
@@ -147,6 +162,8 @@ if record:
         errors.append("D-025 Owner approval state is not Locked")
     if authority.get("owner") != "Gevorg Ohanyan":
         errors.append("D-025 lock owner is not recorded")
+    if final_audit.get("verdict") != "GREEN" or final_audit.get("transactionClosed") is not True:
+        errors.append("D-025 final post-lock audit is not GREEN and closed")
 
 if errors:
     print("PLATFORMS VALIDATION: RED")
@@ -157,5 +174,5 @@ if errors:
 print("PLATFORMS VALIDATION: GREEN")
 print(f"Validated {len(REQUIRED_MARKERS)} required Platforms and D-025 canonical files.")
 print("D-025 architecture: LOCKED")
-print("D-025 technical and adoption readiness: GREEN")
-print("D-025 ready-for-review, merge, and lock authority: OWNER APPROVED AND EXECUTED")
+print("D-025 technical, adoption, closure, and lock evidence: GREEN")
+print("D-025 transaction: CLOSED")
