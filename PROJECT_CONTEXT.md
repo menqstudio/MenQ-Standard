@@ -10,7 +10,7 @@
 
 ### Canonical source
 
-MenQ Standard-ի միակ canonical source of truth-ը GitHub repository-ն է։ Chat-ը workshop է, ոչ canonical source։ Repository address-ը և documented persistent rules-ը Owner-ից նոր chat-ում կրկին չեն հարցվում։
+MenQ Standard-ի միակ canonical source of truth-ը GitHub repository-ն է։ Chat-ը workshop է, ոչ canonical source։
 
 ### Պարտադիր startup workflow
 
@@ -33,22 +33,19 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 - Foundation v1 — Locked և GREEN։
 - D-024 Platforms Architecture v1 — merged և canonical։
-- D-025 MenQ Design Platform Architecture v1 — PR #3-ով merge է եղել, բայց `Locked` չէ։
+- D-025 MenQ Design Platform Architecture v1 — Locked և GREEN։
 - D-026 Canonical Session Read Law — Locked և machine-enforced։
-- PR #3 merge commit — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
-- Merged implementation head — `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`։
-- Closure branch — `d-025-post-merge-closure`։
-- Parts 1–16 architecture, implementation package set, private preview candidate և two-consumer evidence-ը GREEN են։
-- Post-merge canonical synchronization և `main` validation evidence-ը closure transaction-ի scope-ն են։
-- D-025 lock-ը պահանջում է առանձին explicit Owner decision։
+- D-025 implementation merge commit — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
+- D-025 closure merge commit — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
+- Validated closure head — `b16e0211bb29355df43257847fce818765a4a747`։
+- Parts 1–16 architecture, implementation packages, private preview candidate և two-consumer evidence-ը GREEN են։
+- Explicit Owner lock approval — 2026-07-13։
 
 ### Հաջորդ աշխատանք
 
-1. Ավարտել `d-025-post-merge-closure` branch-ի canonical synchronization-ը։
-2. Ստանալ closure PR-ի GREEN checks։
-3. Merge-ից հետո ստանալ GREEN `main` push checks։
-4. Final closure record-ը դարձնել GREEN։
-5. Owner-ին ներկայացնել առանձին D-025 lock որոշում։
+1. Validate և merge անել D-025 lock transaction-ը։
+2. Հետագա Design Platform փոփոխությունները կառավարել locked change-control կանոններով։
+3. Շարունակել MenQ Standard-ի հաջորդ ecosystem priority-ն առանձին decision transaction-ով։
 
 ---
 
@@ -56,7 +53,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 ### Canonical source
 
-The GitHub repository is the single canonical source of truth for MenQ Standard. Conversation is the workshop, not the canonical source. Do not ask the Owner again for the repository address or documented persistent rules.
+The GitHub repository is the single canonical source of truth for MenQ Standard. Conversation is the workshop, not the canonical source.
 
 ### Required startup workflow
 
@@ -79,21 +76,18 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 
 - Foundation v1 is Locked and GREEN.
 - D-024 Platforms Architecture v1 is merged and canonical.
-- D-025 MenQ Design Platform Architecture v1 was merged through PR #3 but is not `Locked`.
+- D-025 MenQ Design Platform Architecture v1 is Locked and GREEN.
 - D-026 Canonical Session Read Law is Locked and machine-enforced.
-- PR #3 merge commit: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
-- Merged implementation head: `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`.
-- Closure branch: `d-025-post-merge-closure`.
-- Parts 1–16 architecture, the implementation package set, the private preview candidate, and two-consumer evidence are GREEN.
-- Post-merge canonical synchronization and `main` validation evidence are the scope of the closure transaction.
-- D-025 lock requires a separate explicit Owner decision.
+- D-025 implementation merge commit: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- D-025 closure merge commit: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
+- Validated closure head: `b16e0211bb29355df43257847fce818765a4a747`.
+- Parts 1–16 architecture, implementation packages, the private preview candidate, and two-consumer evidence are GREEN.
+- Explicit Owner lock approval: 2026-07-13.
 
 ### Next work
 
-1. Complete canonical synchronization on `d-025-post-merge-closure`.
-2. Obtain GREEN closure PR checks.
-3. After merge, obtain GREEN `main` push checks.
-4. Mark the final closure record GREEN.
-5. Present a separate D-025 lock decision to the Owner.
+1. Validate and merge the D-025 lock transaction.
+2. Govern future Design Platform changes under locked change-control rules.
+3. Continue the next MenQ Standard ecosystem priority through a separate decision transaction.
 
 <!-- END: MENQ_STANDARD_PROJECT_CONTEXT -->

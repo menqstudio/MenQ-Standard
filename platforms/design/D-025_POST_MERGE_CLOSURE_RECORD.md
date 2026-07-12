@@ -1,6 +1,6 @@
 # D-025 Post-Merge Closure Record / D-025 merge-ից հետո closure record
 
-**Status / Կարգավիճակ:** Closure in progress / Closure-ը ընթացքի մեջ է  
+**Status / Կարգավիճակ:** Closure GREEN / Closure GREEN  
 **Date / Ամսաթիվ:** 2026-07-13  
 **Decision / Որոշում:** D-025  
 **Owner / Պատասխանատու:** MenQ Owner
@@ -9,62 +9,54 @@
 
 ### Merge evidence
 
-- PR #3-ը `Ready for review` է դարձել Owner approval-ից հետո։
-- PR #3-ը merge է եղել `main` branch։
-- Merge commit՝ `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
+- PR #3-ը merge է եղել `main` branch՝ commit `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
 - Merged implementation head՝ `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`։
-- Merge-ը չի նշանակում D-025 lock։
+- PR #4 closure-ը merge է եղել `main`՝ commit `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
+- Validated closure head՝ `b16e0211bb29355df43257847fce818765a4a747`։
+- Closure PR-ի բոլոր վեց required workflows-ը GREEN են։
+- GREEN synthetic merge tree-ի և իրական `main` merge tree-ի միջև file diff-ը զրո է։
 
-### Closure scope
-
-Այս closure transaction-ը՝
-
-1. համաժամեցնում է stale current-state documentation-ը,
-2. պահպանում է merge evidence-ը,
-3. Design Platform և Markdown inventory workflows-ը դարձնում է `main`-aware,
-4. պահանջում է GREEN closure PR checks,
-5. merge-ից հետո պահանջում է GREEN `main` push evidence,
-6. D-025 lock-ը թողնում է առանձին explicit Owner decision-ի համար։
-
-### Current verdict
+### Final closure verdict
 
 - Architecture readiness — GREEN։
 - Technical and adoption readiness — GREEN։
-- PR #3 merge — COMPLETE։
-- Post-merge canonical synchronization — IN PROGRESS։
-- Post-merge automation evidence — PENDING։
-- D-025 lock authority — PENDING։
-- Overall closure verdict — YELLOW մինչև closure PR և post-merge `main` checks-ը GREEN լինեն։
+- PR #3 implementation merge — COMPLETE։
+- Canonical synchronization — COMPLETE։
+- Workflow validation — GREEN։
+- PR #4 closure merge — COMPLETE։
+- Exact merge-tree equivalence — GREEN։
+- Overall closure verdict — GREEN։
+
+### Lock handoff
+
+Post-merge closure-ը ավարտված է։ Owner-ը 2026-07-13-ին explicit հաստատել է D-025 lock-ը։ Lock evidence-ը պահպանվում է [`D-025_LOCK_RECORD.md`](D-025_LOCK_RECORD.md)-ում։
+
+---
 
 ## English
 
 ### Merge evidence
 
-- PR #3 was marked `Ready for review` after Owner approval.
-- PR #3 was merged into the `main` branch.
-- Merge commit: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- PR #3 was merged into `main` as commit `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
 - Merged implementation head: `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`.
-- Merge does not lock D-025.
+- Closure PR #4 was merged into `main` as commit `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
+- Validated closure head: `b16e0211bb29355df43257847fce818765a4a747`.
+- All six required closure PR workflows are GREEN.
+- The GREEN synthetic merge tree and the real `main` merge tree have zero file differences.
 
-### Closure scope
-
-This closure transaction:
-
-1. synchronizes stale current-state documentation,
-2. preserves merge evidence,
-3. makes the Design Platform and Markdown inventory workflows aware of `main`,
-4. requires GREEN closure PR checks,
-5. requires GREEN `main` push evidence after merge,
-6. reserves D-025 lock for a separate explicit Owner decision.
-
-### Current verdict
+### Final closure verdict
 
 - Architecture readiness — GREEN.
 - Technical and adoption readiness — GREEN.
-- PR #3 merge — COMPLETE.
-- Post-merge canonical synchronization — IN PROGRESS.
-- Post-merge automation evidence — PENDING.
-- D-025 lock authority — PENDING.
-- Overall closure verdict — YELLOW until the closure PR and post-merge `main` checks are GREEN.
+- PR #3 implementation merge — COMPLETE.
+- Canonical synchronization — COMPLETE.
+- Workflow validation — GREEN.
+- PR #4 closure merge — COMPLETE.
+- Exact merge-tree equivalence — GREEN.
+- Overall closure verdict — GREEN.
+
+### Lock handoff
+
+Post-merge closure is complete. On 2026-07-13, the Owner explicitly approved locking D-025. Lock evidence is preserved in [`D-025_LOCK_RECORD.md`](D-025_LOCK_RECORD.md).
 
 <!-- END: D-025_POST_MERGE_CLOSURE_RECORD -->

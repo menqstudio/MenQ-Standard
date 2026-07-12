@@ -16,11 +16,11 @@
 
 - **Foundation v1:** Locked and GREEN / Locked և GREEN
 - **D-024 Platforms Architecture v1:** merged and canonical / merged և canonical
-- **D-025 MenQ Design Platform Architecture v1:** merged; post-merge closure in progress; not Locked / merged է, post-merge closure-ը ընթացքի մեջ է, Locked չէ
+- **D-025 MenQ Design Platform Architecture v1:** Locked and GREEN / Locked և GREEN
 - **D-026 Canonical Session Read Law:** Locked and machine-enforced / Locked և machine-enforced
-- **PR #3:** merged into `main` / merge է եղել `main`
-- **Merge commit:** `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`
-- **Closure branch:** `d-025-post-merge-closure`
+- **D-025 implementation merge:** `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`
+- **D-025 closure merge:** `9a833339b1d707d6cd8a792e031dd8ca2857d556`
+- **D-025 lock date:** 2026-07-13
 - **Owner:** MenQ
 - **Languages:** Armenian + English
 
@@ -46,11 +46,11 @@ MenQ Ecosystem
 
 **EN:** MenQ Studio is the company. MenQ Standard is the operating standard of the MenQ ecosystem: how we think, decide, design, build, validate, document, and preserve systems.
 
-## MenQ Design Platform readiness / MenQ Design Platform պատրաստականություն
+## MenQ Design Platform status / MenQ Design Platform վիճակ
 
-**HY:** D-025-ի Parts 1–16 architecture-ը, canonical registry/schema/package implementation-ը, private `0.1.0-next.0` preview candidate-ը, deterministic release evidence-ը, երկու distinct consumers-ի M3/M4 evidence-ը և machine validation-ը GREEN են։ PR #3-ը merge է եղել։ Closure-ը մնում է YELLOW մինչև canonical synchronization-ը, closure PR checks-ը և post-merge `main` checks-ը GREEN լինեն։ Lock-ը պահանջում է առանձին explicit MenQ Owner decision։
+**HY:** D-025-ի Parts 1–16 architecture-ը, canonical registry/schema/package implementation-ը, private `0.1.0-next.0` preview candidate-ը, deterministic release evidence-ը, երկու distinct consumers-ի M3/M4 evidence-ը, post-merge closure-ը և machine validation-ը GREEN են։ Owner-ը 2026-07-13-ին explicit հաստատել է lock-ը։ D-025-ը Locked է։
 
-**EN:** D-025 Parts 1–16 architecture, the canonical registry/schema/package implementation, the private `0.1.0-next.0` preview candidate, deterministic release evidence, M3/M4 evidence from two distinct consumers, and machine validation are GREEN. PR #3 is merged. Closure remains YELLOW until canonical synchronization, closure PR checks, and post-merge `main` checks are GREEN. Lock requires a separate explicit MenQ Owner decision.
+**EN:** D-025 Parts 1–16 architecture, canonical registry/schema/package implementation, the private `0.1.0-next.0` preview candidate, deterministic release evidence, M3/M4 evidence from two distinct consumers, post-merge closure, and machine validation are GREEN. On 2026-07-13, the Owner explicitly approved lock. D-025 is Locked.
 
 ## Mandatory AI session startup / AI session-ի պարտադիր մեկնարկ
 
@@ -70,14 +70,15 @@ MenQ Ecosystem
 - [`ROADMAP.md`](ROADMAP.md) — future direction
 - [`foundation/README.md`](foundation/README.md) — Foundation index
 - [`platforms/design/PROJECT_CONTEXT.md`](platforms/design/PROJECT_CONTEXT.md) — Design Platform current state
-- [`platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md`](platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md) — post-merge closure evidence
-- [`platforms/design/implementation/release/d-025-readiness-record.json`](platforms/design/implementation/release/d-025-readiness-record.json) — machine-readable readiness evidence
+- [`platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md`](platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md) — closure evidence
+- [`platforms/design/D-025_LOCK_RECORD.md`](platforms/design/D-025_LOCK_RECORD.md) — lock evidence
+- [`platforms/design/implementation/release/d-025-readiness-record.json`](platforms/design/implementation/release/d-025-readiness-record.json) — machine-readable lock evidence
 - [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md) — mandatory write integrity law
 
 ## Canonical rule / Canonical կանոն
 
-**HY:** Չատերը workshop են։ Հաստատված architecture-ը և որոշումները պարտադիր տեղափոխվում են canonical documentation։ Tool success-ը verification evidence չէ։ AI-ն չի կարող Owner approval հորինել, PR merge անել կամ decision lock անել առանց explicit human authority-ի։
+**HY:** Չատերը workshop են։ Հաստատված architecture-ը և որոշումները պարտադիր տեղափոխվում են canonical documentation։ Tool success-ը verification evidence չէ։ AI-ն չի կարող Owner approval հորինել, PR merge անել կամ decision lock անել առանց explicit human authority-ի։ Locked decision-ի փոփոխությունը պահանջում է governed change control։
 
-**EN:** Conversations are the workshop. Approved architecture and decisions must be transferred into canonical documentation. Tool success is not verification evidence. AI may not invent Owner approval, merge a PR, or lock a decision without explicit human authority.
+**EN:** Conversations are the workshop. Approved architecture and decisions must be transferred into canonical documentation. Tool success is not verification evidence. AI may not invent Owner approval, merge a PR, or lock a decision without explicit human authority. Changes to a locked decision require governed change control.
 
 <!-- END: MENQ_STANDARD_ROOT_README -->

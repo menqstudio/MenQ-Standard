@@ -1,7 +1,8 @@
 # D-025 — MenQ Design Platform Architecture v1 / MenQ Design Platform ճարտարապետություն v1
 
-**Status / Կարգավիճակ:** Approved — Implementing / Հաստատված — իրականացվում է  
+**Status / Կարգավիճակ:** Locked / Locked  
 **Date / Ամսաթիվ:** 2026-07-12  
+**Locked / Lock-ի ամսաթիվ:** 2026-07-13  
 **Decision class / Որոշման դաս:** `C4 — Foundation or Ecosystem`  
 **Risk level / Ռիսկի մակարդակ:** `R2 — Moderate`  
 **Owner / Պատասխանատու:** MenQ Owner  
@@ -104,16 +105,16 @@ Shared component-ի առաջնային արժեքը behavior contract-ն է՝ an
 
 ## Validation and lock gate / Validation և lock gate
 
-D-025 reaches `Locked` only when all are true:
+D-025 reached `Locked` because all conditions are satisfied:
 
 1. Complete canonical specification set exists and is synchronized.
 2. At least one versioned implementation package or equivalent delivery exists.
-3. At least two distinct real MenQ consumers validate adoption, unless the Owner approves a documented strategic exception.
+3. At least two distinct real MenQ consumers validate adoption.
 4. Token, accessibility, localization, visual, interaction, package, migration, and compatibility checks pass in the approved scope.
 5. Armenian and English documentation have semantic parity.
 6. Release and migration evidence are recorded.
 7. Required validators and GitHub Actions are GREEN.
-8. The human Owner explicitly approves lock.
+8. The human Owner explicitly approved lock on 2026-07-13.
 
 ## Alternatives rejected / Մերժված alternatives
 
@@ -145,19 +146,22 @@ Mitigations՝ product-neutral boundaries, real consumer evidence, explicit token
 - `platforms/design/ROADMAP.md`
 - `platforms/design/CHANGELOG.md`
 - `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`
-- future detailed specifications, packages, validators, and evidence under `platforms/design/`
+- detailed specifications, packages, validators, and evidence under `platforms/design/`
 
 ## Evidence / Ապացույց
 
 - Owner approval in the MenQ Standard project conversation on 2026-07-12.
 - D-024 Platforms Architecture v1.
 - Owner approval of architecture workshop Parts 1–11.
-- Draft PR #3 remains open and unmerged.
+- PR #3 merged into `main` with commit `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- PR #4 post-merge closure merged into `main` with commit `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
+- All six required PR-head workflows completed successfully on `b16e0211bb29355df43257847fce818765a4a747`.
+- The validated synthetic merge tree and the real `main` merge tree had zero file differences.
+- Explicit Owner lock approval was given on 2026-07-13.
 
 ## Lock condition / Lock-ի պայման
 
-**HY:** Այս decision-ը approved architecture boundary է, բայց `Locked` չէ մինչև canonical synchronization-ը, implementation package-ը, multi-consumer validation-ը, migration/release evidence-ը, Owner approval-ը և GREEN automation evidence-ը ամբողջական չլինեն։
-
-**EN:** This decision is an approved architecture boundary, but it is not `Locked` until canonical synchronization, the implementation package, multi-consumer validation, migration and release evidence, Owner approval, and GREEN automation evidence are complete.
+**HY:** D-025-ը `Locked` է։ Հետագա փոփոխությունները ենթարկվում են MenQ change-control, compatibility, migration, validation և explicit Owner approval կանոններին։  
+**EN:** D-025 is `Locked`. Future changes are governed by MenQ change control, compatibility, migration, validation, and explicit Owner approval.
 
 <!-- END: D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1 -->
