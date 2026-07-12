@@ -71,7 +71,7 @@ REQUIRED_TERMS = {
         "Owner authority pending",
     ],
     "platforms/design/ROADMAP.md": [
-        "two-consumer validation",
+        "Cross-consumer validation",
         "M4 operational",
         "Owner ready-for-review and merge decision",
     ],
