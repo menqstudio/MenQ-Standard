@@ -41,7 +41,7 @@
 
 Ուղիղ սկսել՝
 
-## Part 16 — Canonical Specification Index and Implementation Package Plan
+## D-025 Completeness Audit, Validator Design, and Draft PR Review
 
 Հետո՝ canonical specification index, implementation package plan, completeness audit, validator design, GREEN evidence և Owner review։ Merge և lock-ը առանձին explicit decisions են։
 
@@ -76,7 +76,7 @@ Do not ask again for the repository address, Owner identity, project purpose, co
 
 Start immediately with:
 
-**Part 16 — Canonical Specification Index and Implementation Package Plan.**
+**D-025 Completeness Audit, Validator Design, and Draft PR Review.**
 
 Then continue with the canonical specification index, implementation package planning, completeness audit, validator design, GREEN evidence, and Owner review. Merge and lock remain separate explicit decisions.
 

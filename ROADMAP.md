@@ -35,9 +35,9 @@
 
 Current sequence:
 
-1. Part 16 — Canonical Specification Index and Implementation Package Plan.
-2. D-025 completeness audit, validator design, and Draft PR #3 review.
-3. GREEN evidence and Owner review.
+1. D-025 completeness audit and architecture gap analysis.
+2. Design Platform validator and CI implementation.
+3. Draft PR #3 review, GREEN evidence, and Owner review.
 
 ## Next / Հաջորդը
 

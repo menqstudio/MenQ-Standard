@@ -21,11 +21,13 @@
 - [x] Part 13 — Documentation Portal, Component Catalog, and Design-Tool Integration Architecture.
 - [x] Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle Architecture.
 - [x] Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
+- [x] Part 16 — Canonical Specification Index and Implementation Package Plan.
 
 ## Current / Ընթացիկ
 
-1. Part 16 — Canonical Specification Index and Implementation Package Plan.
-2. D-025 completeness audit, validator design, and Draft PR #3 review.
+1. D-025 completeness audit and architecture gap analysis.
+2. Design Platform validator and CI implementation.
+3. Draft PR #3 review and Owner review.
 
 ## Next / Հաջորդը
 

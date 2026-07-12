@@ -38,7 +38,7 @@
 
 Հաջորդ աշխատանքը՝
 
-## Part 16 — Canonical Specification Index and Implementation Package Plan
+## D-025 Completeness Audit, Validator Design, and Draft PR Review
 
 Այնուհետև՝
 
@@ -81,6 +81,7 @@ Before substantive work, enumerate and completely read every tracked `.md` file 
 - Part 13: `DOCUMENTATION_PORTAL_COMPONENT_CATALOG_DESIGN_TOOL_INTEGRATION_ARCHITECTURE_V1.md`.
 - Part 14: `GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md`.
 - Part 15: `PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1.md`.
+- Part 16: `CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md`.
 - Canonical dependency model: Reference → Semantic → Component → Pattern → Product Extension.
 - The portal, catalog, and design-tool integration are governed views of the same source.
 - An unowned canonical asset is a RED defect. Self-approval is prohibited for high-risk and breaking changes.
@@ -90,7 +91,7 @@ Before substantive work, enumerate and completely read every tracked `.md` file 
 
 Start immediately with:
 
-**Part 16 — Canonical Specification Index and Implementation Package Plan.**
+**D-025 Completeness Audit, Validator Design, and Draft PR Review.**
 
 Then continue with the canonical specification index and implementation package plan, completeness audit, validator design, synchronization, GREEN evidence, and Owner review. Merge and lock remain separate explicit decisions.
 

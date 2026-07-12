@@ -97,7 +97,7 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 - Parts 1–11 are preserved in `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
 - Part 12 validation, CI, conformance, and quality-gates architecture is canonical.
 - Part 13 documentation portal, component catalog, and design-tool integration architecture is canonical.
-- Part 14 governance, contribution, ownership, and change-request lifecycle architecture is canonical. Part 15 product adoption, maturity, and two-consumer validation architecture is also canonical.
+- Part 14 governance, contribution, ownership, and change-request lifecycle architecture is canonical. Part 15 product adoption/maturity/two-consumer validation architecture and Part 16 specification index/package plan are canonical.
 - An unowned canonical asset is a RED governance defect. Self-approval is prohibited for high-risk or breaking changes.
 - Merge is a separate authority action, not an automatic consequence of green CI.
 - Armenian and English are canonical languages. Additional languages are on-demand locale packs.

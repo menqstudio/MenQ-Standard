@@ -1,5 +1,23 @@
 # MenQ Design Platform — Changelog / MenQ Design Platform — Փոփոխությունների պատմություն
 
+## 2026-07-12 — Part 16 specification index and implementation package plan
+
+### Հայերեն
+
+- Ավելացվել է `CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md`։
+- Սահմանվել են canonical IDs, ownership, dependency graph, package/API mapping և release input contract-ը։
+- Սահմանվել է package topology-ը՝ contracts, tokens, foundations, primitives, components, patterns, assets, motion, locales և validation։
+- Սահմանվել են deterministic build graph-ը, public API contract-ը, release channels-ը և release manifest-ը։
+- Continuation point-ը տեղափոխվել է D-025 completeness audit, validator design և Draft PR review։
+
+### English
+
+- Added `CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md`.
+- Defined canonical IDs, ownership, dependency graph, package/API mapping, and release-input contracts.
+- Defined package topology for contracts, tokens, foundations, primitives, components, patterns, assets, motion, locales, and validation.
+- Defined the deterministic build graph, public API contract, release channels, and release manifest.
+- Advanced the continuation point to the D-025 completeness audit, validator design, and Draft PR review.
+
 ## 2026-07-12 — Part 15 product adoption and two-consumer validation architecture
 
 ### Հայերեն

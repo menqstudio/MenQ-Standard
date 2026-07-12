@@ -1,5 +1,21 @@
 # MenQ Standard — Changelog
 
+## 2026-07-12 — Design Platform Part 16 package architecture
+
+### Հայերեն
+
+- Ավելացվել է canonical specification index և implementation package plan v1-ը։
+- Սահմանվել են package boundaries, dependency direction, deterministic build graph, public API և release manifest contracts-ը։
+- Continuation point-ը տեղափոխվել է D-025 completeness audit, validator design և Draft PR review։
+- D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը՝ open, Draft և unmerged։
+
+### English
+
+- Added Canonical Specification Index and Implementation Package Plan v1.
+- Defined package boundaries, dependency direction, deterministic build graph, public API, and release-manifest contracts.
+- Advanced the continuation point to the D-025 completeness audit, validator design, and Draft PR review.
+- D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
+
 ## 2026-07-12 — Design Platform Part 15 adoption architecture
 
 ### Հայերեն

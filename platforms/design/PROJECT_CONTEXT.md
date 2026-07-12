@@ -25,6 +25,7 @@ MenQ Design Platform-ը ամբողջ MenQ ecosystem-ի reusable design capabilit
 - Part 13 documentation portal/component catalog/design-tool integration architecture-ը canonical է։
 - Part 14 governance/contribution/ownership/change-request lifecycle architecture-ը canonical է։
 - Part 15 product adoption/maturity/two-consumer validation architecture-ը canonical է։
+- Part 16 canonical specification index/implementation package plan-ը canonical է։
 
 ### Հաստատված համակարգի սահման
 
@@ -65,9 +66,9 @@ Architecture scope-ը ներառում է token source/build pipeline, primitive
 
 ### Հաջորդ հստակ աշխատանք
 
-1. Part 16 — Canonical Specification Index and Implementation Package Plan։
-2. D-025 completeness audit, validator design և Draft PR #3 review։
-3. Canonical synchronization, GREEN evidence և Owner review։
+1. D-025 completeness audit and architecture gap analysis։
+2. Design Platform validator and CI implementation։
+3. Draft PR #3 review, canonical synchronization, GREEN evidence and Owner review։
 
 ---
 
@@ -89,6 +90,7 @@ The MenQ Design Platform is the reusable design capability system for the entire
 - Part 13 documentation portal, component catalog, and design-tool integration architecture is canonical.
 - Part 14 governance, contribution, ownership, and change-request lifecycle architecture is canonical.
 - Part 15 product adoption, maturity, and two-consumer validation architecture is canonical.
+- Part 16 canonical specification index and implementation package plan is canonical.
 
 ### Approved system boundary
 
@@ -129,8 +131,8 @@ The architecture covers the token source/build pipeline, primitives, behavior-fi
 
 ### Exact next work
 
-1. Part 16 — Canonical Specification Index and Implementation Package Plan.
-2. D-025 completeness audit, validator design, and Draft PR #3 review.
-3. Canonical synchronization, GREEN evidence, and Owner review.
+1. D-025 completeness audit and architecture gap analysis.
+2. Design Platform validator and CI implementation.
+3. Draft PR #3 review, canonical synchronization, GREEN evidence, and Owner review.
 
 <!-- END: MENQ_DESIGN_PLATFORM_PROJECT_CONTEXT -->
