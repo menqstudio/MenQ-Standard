@@ -301,8 +301,8 @@
     },
     {
       "path": "platforms/design/ROADMAP.md",
-      "bytes": 2001,
-      "sha256": "c92dc566e219dc8efad95a23604735d5d8da31f62dac7efb2e1dd95891c3e04f"
+      "bytes": 2523,
+      "sha256": "1eee84eb7afa8ab5f4b086f57db7448650b17fdc22139ec35db7254b23e6bc2e"
     },
     {
       "path": "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",
