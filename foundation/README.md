@@ -1,6 +1,6 @@
 # Foundation / Հիմք
 
-**Status / Կարգավիճակ:** Structure Locked, Content In Progress / Կառուցվածքը հաստատված է, բովանդակությունը մշակման փուլում է
+**Status / Կարգավիճակ:** Locked v1 / Հաստատված v1
 
 See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable AI and architecture context.
 
@@ -8,7 +8,7 @@ See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable AI and architecture co
 
 ### Նպատակ
 
-`Foundation`-ը MenQ Standard-ի անփոփոխ հիմքն է։ Այն սահմանում է՝ ինչին ենք հավատում, ինչպես ենք մտածում, ինչ բառապաշար ենք օգտագործում, ով է որոշում, ինչպես են որոշումները ստանդարտ դառնում, ինչպես է պահպանվում canonical գիտելիքը և ինչպես են մարդիկ ու AI համակարգերը համագործակցում։
+`Foundation`-ը MenQ Standard-ի կայուն և պարտադիր հիմքն է։ Այն սահմանում է՝ ինչին ենք հավատում, ինչպես ենք մտածում, ինչ բառապաշար ենք օգտագործում, ով է որոշում, ինչպես են որոշումները ստանդարտ դառնում, ինչպես է պահպանվում canonical գիտելիքը և ինչպես են մարդիկ ու AI համակարգերը համագործակցում։
 
 ### Հիերարխիա
 
@@ -31,7 +31,7 @@ Foundation
 - [`Governance`](governance/README.md) — Locked v1
 - [`Decision System`](decision-system/README.md) — Locked v1
 - [`Documentation`](documentation/README.md) — Locked v1
-- AI Collaboration — Pending
+- [`AI Collaboration`](ai-collaboration/README.md) — Locked v1
 
 ### Սահման
 
@@ -47,9 +47,11 @@ Foundation-ը չի պարունակում product-specific կանոններ կա
 6. Documentation
 7. AI Collaboration
 
+Բոլոր յոթ chapter-ները կառուցված և locked են։
+
 ### Հաջորդ քայլ
 
-Կառուցել `AI Collaboration v1`, ապա կատարել Foundation-ի ամբողջական consistency, bilingual parity, link և documentation integrity audit։
+Կատարել Foundation-ի ամբողջական consistency, bilingual parity, link և documentation integrity audit։
 
 ---
 
@@ -57,7 +59,7 @@ Foundation-ը չի պարունակում product-specific կանոններ կա
 
 ### Purpose
 
-`Foundation` is the stable base of MenQ Standard. It defines what we believe, how we think, which terminology we use, who decides, how decisions become standards, how canonical knowledge is preserved, and how humans and AI systems collaborate.
+`Foundation` is the stable and mandatory base of MenQ Standard. It defines what we believe, how we think, which terminology we use, who decides, how decisions become standards, how canonical knowledge is preserved, and how humans and AI systems collaborate.
 
 ### Hierarchy
 
@@ -80,7 +82,7 @@ Foundation
 - [`Governance`](governance/README.md) — Locked v1
 - [`Decision System`](decision-system/README.md) — Locked v1
 - [`Documentation`](documentation/README.md) — Locked v1
-- AI Collaboration — Pending
+- [`AI Collaboration`](ai-collaboration/README.md) — Locked v1
 
 ### Boundary
 
@@ -96,6 +98,10 @@ Foundation does not contain product-specific rules or implementation details. Pl
 6. Documentation
 7. AI Collaboration
 
+All seven chapters are built and locked.
+
 ### Next step
 
-Build `AI Collaboration v1`, then perform a complete Foundation consistency, bilingual parity, link, and documentation integrity audit.
+Perform a complete Foundation consistency, bilingual parity, link, and documentation integrity audit.
+
+<!-- END: FOUNDATION_README_V1 -->
