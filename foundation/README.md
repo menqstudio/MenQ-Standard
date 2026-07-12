@@ -1,107 +1,46 @@
 # Foundation / Հիմք
 
-**Status / Կարգավիճակ:** Locked v1 / Հաստատված v1
+**Status / Կարգավիճակ:** Locked v1 — Remediated, validation pending / Հաստատված v1 — ուղղումները կիրառված են, validation-ը սպասվում է  
+**Owner / Պատասխանատու:** MenQ Owner
 
-See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable AI and architecture context.
+See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable context, [`FOUNDATION_V1_INTEGRITY_AUDIT.md`](FOUNDATION_V1_INTEGRITY_AUDIT.md) for the original RED audit, and [`FOUNDATION_V1_REAUDIT.md`](FOUNDATION_V1_REAUDIT.md) for the current YELLOW re-audit.
 
-## Հայերեն
+## Chapters / Chapter-ներ
 
-### Նպատակ
+- [`Philosophy`](philosophy/README.md) — Locked v1; [`context`](philosophy/PROJECT_CONTEXT.md)
+- [`Principles`](principles/README.md) — Locked v1; [`context`](principles/PROJECT_CONTEXT.md)
+- [`Terminology`](terminology/README.md) — Locked v1, Living Standard; [`context`](terminology/PROJECT_CONTEXT.md)
+- [`Governance`](governance/README.md) — Locked v1; [`context`](governance/PROJECT_CONTEXT.md)
+- [`Decision System`](decision-system/README.md) — Locked v1; [`context`](decision-system/PROJECT_CONTEXT.md)
+- [`Documentation`](documentation/README.md) — Locked v1; [`context`](documentation/PROJECT_CONTEXT.md)
+- [`AI Collaboration`](ai-collaboration/README.md) — Locked v1; [`context`](ai-collaboration/PROJECT_CONTEXT.md)
 
-`Foundation`-ը MenQ Standard-ի կայուն և պարտադիր հիմքն է։ Այն սահմանում է՝ ինչին ենք հավատում, ինչպես ենք մտածում, ինչ բառապաշար ենք օգտագործում, ով է որոշում, ինչպես են որոշումները ստանդարտ դառնում, ինչպես է պահպանվում canonical գիտելիքը և ինչպես են մարդիկ ու AI համակարգերը համագործակցում։
+## Supporting controls / Աջակցող controls
 
-### Հիերարխիա
+- [`FOUNDATION_NORMATIVE_METADATA_REGISTRY.md`](FOUNDATION_NORMATIVE_METADATA_REGISTRY.md) — normalized legacy metadata
+- [`documentation/BILINGUAL_PARITY_ADDENDUM.md`](documentation/BILINGUAL_PARITY_ADDENDUM.md) — Documentation parity control
+- [`ai-collaboration/BILINGUAL_PARITY_ADDENDUM.md`](ai-collaboration/BILINGUAL_PARITY_ADDENDUM.md) — AI Collaboration parity control
+- [`documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](documentation/CANONICAL_WRITE_INTEGRITY_LAW.md) — mandatory safe-write law
+- [`../DECISION_INDEX.md`](../DECISION_INDEX.md) — active append-only decision registry
+- [`../scripts/validate_foundation.py`](../scripts/validate_foundation.py) — integrity validator
+- [`../.github/workflows/foundation-integrity.yml`](../.github/workflows/foundation-integrity.yml) — CI enforcement
 
-```text
-Foundation
-├── Philosophy
-├── Principles
-├── Terminology
-├── Governance
-├── Decision System
-├── Documentation
-└── AI Collaboration
-```
+## Boundary / Սահման
 
-### Ընթացիկ կարգավիճակ
+**HY:** Foundation-ը product-specific implementation details չի պարունակում։ Platforms-ը, Operating Standards-ը և Extensions-ը պետք է բխեն Foundation-ից և չհակասեն դրան։
 
-- [`Philosophy`](philosophy/README.md) — Locked
-- [`Principles`](principles/README.md) — Locked
-- [`Terminology`](terminology/README.md) — Locked v1, Living Standard
-- [`Governance`](governance/README.md) — Locked v1
-- [`Decision System`](decision-system/README.md) — Locked v1
-- [`Documentation`](documentation/README.md) — Locked v1
-- [`AI Collaboration`](ai-collaboration/README.md) — Locked v1
+**EN:** Foundation does not contain product-specific implementation details. Platforms, Operating Standards, and Extensions must derive from Foundation and must not contradict it.
 
-### Սահման
+## Current gate / Ընթացիկ gate
 
-Foundation-ը չի պարունակում product-specific կանոններ կամ implementation details։ Platforms-ը, Operating Standards-ը և Extensions-ը պետք է բխեն Foundation-ից և չհակասեն դրան։
+**HY:** Repository-side remediation-ը կիրառված է։ Release gate-ը YELLOW է մինչև validator-ի իրական GREEN execution evidence-ը։
 
-### Կառուցման հերթականություն
+**EN:** Repository-side remediation has been applied. The release gate remains YELLOW until real GREEN validator execution evidence exists.
 
-1. Philosophy
-2. Principles
-3. Terminology
-4. Governance
-5. Decision System
-6. Documentation
-7. AI Collaboration
+## Next / Հաջորդը
 
-Բոլոր յոթ chapter-ները կառուցված և locked են։
-
-### Հաջորդ քայլ
-
-Կատարել Foundation-ի ամբողջական consistency, bilingual parity, link և documentation integrity audit։
-
----
-
-## English
-
-### Purpose
-
-`Foundation` is the stable and mandatory base of MenQ Standard. It defines what we believe, how we think, which terminology we use, who decides, how decisions become standards, how canonical knowledge is preserved, and how humans and AI systems collaborate.
-
-### Hierarchy
-
-```text
-Foundation
-├── Philosophy
-├── Principles
-├── Terminology
-├── Governance
-├── Decision System
-├── Documentation
-└── AI Collaboration
-```
-
-### Current status
-
-- [`Philosophy`](philosophy/README.md) — Locked
-- [`Principles`](principles/README.md) — Locked
-- [`Terminology`](terminology/README.md) — Locked v1, Living Standard
-- [`Governance`](governance/README.md) — Locked v1
-- [`Decision System`](decision-system/README.md) — Locked v1
-- [`Documentation`](documentation/README.md) — Locked v1
-- [`AI Collaboration`](ai-collaboration/README.md) — Locked v1
-
-### Boundary
-
-Foundation does not contain product-specific rules or implementation details. Platforms, Operating Standards, and Extensions must derive from Foundation and must not contradict it.
-
-### Build order
-
-1. Philosophy
-2. Principles
-3. Terminology
-4. Governance
-5. Decision System
-6. Documentation
-7. AI Collaboration
-
-All seven chapters are built and locked.
-
-### Next step
-
-Perform a complete Foundation consistency, bilingual parity, link, and documentation integrity audit.
+1. Run `python scripts/validate_foundation.py` locally or verify the Foundation Integrity workflow.
+2. On GREEN, create the complete Foundation v1 ZIP snapshot.
+3. Then open the formal Platforms architecture decision.
 
 <!-- END: FOUNDATION_README_V1 -->
