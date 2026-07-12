@@ -27,6 +27,9 @@
 - Ավելացվել և lock է արվել `foundation/philosophy/PRODUCT_PHILOSOPHY.md` ամբողջական bilingual chapter-ը։
 - Product Philosophy-ն գրանցվել է `D-016` որոշմամբ։
 - Philosophy chapter-ի ամբողջ բովանդակությունը ստացել է `Locked` կարգավիճակ։
+- Ավելացվել և lock է արվել `foundation/principles/README.md`՝ 16 bilingual MenQ Principles-ով։
+- Ավելացվել է `Measurable Outcomes` principle-ը՝ baseline, KPI, target, owner և measurement cadence պարտադիր կառուցվածքով։
+- MenQ Principles-ը գրանցվել է `D-017` որոշմամբ և կապվել Foundation index-ին։
 
 ### English
 
@@ -53,3 +56,6 @@
 - Added and locked the complete bilingual `foundation/philosophy/PRODUCT_PHILOSOPHY.md` chapter.
 - Recorded Product Philosophy as decision `D-016`.
 - Set the complete Philosophy chapter content status to `Locked`.
+- Added and locked `foundation/principles/README.md` with 16 bilingual MenQ Principles.
+- Added the `Measurable Outcomes` principle with mandatory baseline, KPI, target, owner, and measurement cadence.
+- Recorded MenQ Principles as decision `D-017` and linked the chapter from the Foundation index.
