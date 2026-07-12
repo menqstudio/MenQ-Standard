@@ -4,13 +4,6 @@
   "private": true,
   "type": "module",
   "description": "Reusable public components.",
-  "exports": {
-    ".": {
-      "types": "./src/index.d.ts",
-      "import": "./src/index.js"
-    },
-    "./css": "./src/components.css"
-  },
   "files": [
     "src"
   ],
