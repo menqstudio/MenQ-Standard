@@ -1,51 +1,49 @@
 # MenQ Design Platform — Roadmap / MenQ Design Platform — Ճանապարհային քարտեզ
 
-**Status / Կարգավիճակ:** Active / Գործող  
+**Status / Կարգավիճակ:** Owner decision gate / Owner որոշման gate  
 **Owner / Պատասխանատու:** MenQ Owner
 
 ## Rule / Կանոն
 
-**HY:** Roadmap item-ը ապագա աշխատանք է, ոչ locked contract։ Այն mandatory ուժ է ստանում միայն approval, canonical documentation և validation-ից հետո։
-
-**EN:** A roadmap item is future work, not a locked contract. It becomes mandatory only after approval, canonical documentation, and validation.
+**HY:** Roadmap item-ը mandatory authority չի ստեղծում։ Ready-for-review, merge և lock-ը միայն explicit Owner decisions են։  
+**EN:** A roadmap item does not create authority. Ready-for-review, merge, and lock require explicit Owner decisions.
 
 ## Completed / Ավարտված
 
-- [x] Design Platform canonical skeleton opened by `D-024`.
-- [x] D-025 architecture boundary approved.
-- [x] Six architecture planes and product-neutral shared-core boundary defined.
-- [x] Corrected token dependency model and orthogonal dimensions defined.
-- [x] Canonical token source/build pipeline defined.
-- [x] Parts 1–11 architecture baseline approved and documented.
 - [x] Part 12 — Validation, CI, Conformance, and Quality Gates Architecture.
 - [x] Part 13 — Documentation Portal, Component Catalog, and Design-Tool Integration Architecture.
 - [x] Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle Architecture.
 - [x] Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
 - [x] Part 16 — Canonical Specification Index and Implementation Package Plan.
-- [x] D-025 completeness audit and architecture gap analysis.
-- [x] Design Platform D-025 conformance validator and CI coverage.
-- [x] Draft PR #3 architecture review record.
+- [x] D-025 architecture boundary and Parts 1–16 canonical set.
+- [x] Product-neutral shared-core and dependency model.
+- [x] Implementation Phase A — canonical registry, schemas, ownership records, dependency graph, and package skeleton.
+- [x] Ten package boundaries and private `0.1.0-next.0` preview candidate.
+- [x] Deterministic build, checksums, public API, compatibility, migration, rollback, and release evidence.
+- [x] `MenQ Design Catalog` M3 consumer validation.
+- [x] `MenQ Release Evidence Console` M4 operational validation.
+- [x] Cross-consumer validation, quality/adoption evidence, and rollback proof.
+- [x] D-025 completeness audit and Draft PR #3 architecture review record update.
+- [x] D-025 conformance validator and machine-enforced readiness record.
 
 ## Current / Ընթացիկ
 
-1. Implementation Phase A — canonical specification registry, schemas, ownership, dependency graph, and package skeleton.
-2. Select two distinct real consumer candidates and define bounded pilot scopes.
-3. Preserve Architecture GREEN / Implementation YELLOW until real evidence exists.
+1. Final canonical documentation and Markdown inventory synchronization.
+2. Final GREEN workflow evidence on the synchronized head.
+3. Explicit Owner ready-for-review and merge decision.
 
-## Next / Հաջորդը
+## After merge / Merge-ից հետո
 
-1. Build the token and foundation pipeline.
-2. Build the first versioned primitive and component package prototypes.
-3. Produce deterministic build, checksum, public API, compatibility, migration, and release-manifest evidence.
-4. Validate adoption with two distinct real MenQ consumers, including at least one M4 operational path.
-5. Request explicit Owner decisions for ready-for-review, merge, and later lock.
+1. Run post-merge validation on `main`.
+2. Record the canonical merge commit and evidence.
+3. Request a separate explicit Owner lock decision.
+4. Only after that decision may D-025 become `Locked`.
 
 ## Later / Հետագայում
 
-- Optional visual-expression packages driven by proven reuse.
-- Expanded component and pattern inventory driven by demand.
-- Automated codemods and migration tooling.
-- Additional on-demand locale packs.
-- Documentation portal, catalog, and design-tool automation.
+- Broader real-product adoption and M5 evidence.
+- Expanded components and patterns driven by proven demand.
+- Documentation portal and design-tool automation.
+- Automated codemods and additional locale packs.
 
 <!-- END: MENQ_DESIGN_PLATFORM_ROADMAP -->
