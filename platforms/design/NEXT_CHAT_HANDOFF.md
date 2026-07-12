@@ -24,22 +24,24 @@
 
 ### Canonical architecture state
 
-1. Parts 1–11 baseline-ը պահպանված է `DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`-ում։
-2. Part 12-ը պահպանված է `VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`-ում։
-3. Part 13-ը պահպանված է `DOCUMENTATION_PORTAL_COMPONENT_CATALOG_DESIGN_TOOL_INTEGRATION_ARCHITECTURE_V1.md`-ում։
-4. Canonical dependency model-ը՝ Reference → Semantic → Component → Pattern → Product Extension։
-5. Theme, state, density, platform, locale, accessibility և motion preference-ը orthogonal dimensions են, ոչ token layers։
-6. Portal, catalog և design-tool integration-ը նույն canonical source-ի generated/governed views են, ոչ parallel truth systems։
+1. Parts 1–11 baseline — `DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`։
+2. Part 12 — `VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`։
+3. Part 13 — `DOCUMENTATION_PORTAL_COMPONENT_CATALOG_DESIGN_TOOL_INTEGRATION_ARCHITECTURE_V1.md`։
+4. Part 14 — `GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md`։
+5. Canonical dependency model՝ Reference → Semantic → Component → Pattern → Product Extension։
+6. Theme, state, density, platform, locale, accessibility և motion preference-ը orthogonal dimensions են, ոչ token layers։
+7. Portal, catalog և design-tool integration-ը նույն canonical source-ի governed views են։
+8. Unowned canonical asset-ը RED defect է։ High-risk/breaking change-ի self-approval-ը արգելված է։
+9. Merge-ը առանձին authority action է, ոչ GREEN CI-ի ավտոմատ հետևանք։
 
 ### Շարունակելու ճշգրիտ կետը
 
 Հաջորդ աշխատանքը՝
 
-## Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle
+## Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan
 
 Այնուհետև՝
 
-15. Product adoption, maturity model և two-consumer validation plan։
 16. Canonical specification index և implementation package plan։
 17. D-025 completeness audit, validator design և Draft PR #3 review։
 18. Canonical synchronization և GREEN evidence։
@@ -51,6 +53,8 @@
 - D-025-ը `Locked` չանվանել։
 - Product-specific identity, logic կամ workflows shared core չմտցնել։
 - Generated docs/catalog/design-tool library-ը canonical source չհամարել։
+- High-risk կամ breaking change-ը self-approve չանել։
+- GREEN CI-ն merge approval չհամարել։
 - Tool success-ը GREEN evidence չհամարել։
 
 ---
@@ -75,16 +79,18 @@ Before substantive work, enumerate and completely read every tracked `.md` file 
 - Parts 1–11: `DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
 - Part 12: `VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`.
 - Part 13: `DOCUMENTATION_PORTAL_COMPONENT_CATALOG_DESIGN_TOOL_INTEGRATION_ARCHITECTURE_V1.md`.
+- Part 14: `GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md`.
 - Canonical dependency model: Reference → Semantic → Component → Pattern → Product Extension.
-- Theme, state, density, platform, locale, accessibility, and motion preference are orthogonal dimensions.
-- The portal, catalog, and design-tool integration are governed views of the same canonical source, not parallel truth systems.
+- The portal, catalog, and design-tool integration are governed views of the same source.
+- An unowned canonical asset is a RED defect. Self-approval is prohibited for high-risk and breaking changes.
+- Merge is a separate authority action, not an automatic consequence of green CI.
 
 ### Exact continuation point
 
 Start immediately with:
 
-**Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle.**
+**Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.**
 
-Then continue product adoption and two-consumer validation, the canonical specification index and implementation package plan, completeness audit, validator design, synchronization, GREEN evidence, and Owner review. Merge and lock remain separate explicit decisions.
+Then continue with the canonical specification index and implementation package plan, completeness audit, validator design, synchronization, GREEN evidence, and Owner review. Merge and lock remain separate explicit decisions.
 
 <!-- END: MENQ_DESIGN_PLATFORM_NEXT_CHAT_HANDOFF -->
