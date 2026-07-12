@@ -1,4 +1,4 @@
-name: Canonical Synchronization Transaction
+name: Markdown Inventory Integrity
 
 on:
   push:
@@ -8,70 +8,31 @@ on:
       - "**/*.md"
       - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
       - "scripts/generate_markdown_inventory.py"
+      - "scripts/validate_foundation.py"
+      - ".github/workflows/markdown-inventory-bootstrap.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
+      - "scripts/generate_markdown_inventory.py"
+      - "scripts/validate_foundation.py"
       - ".github/workflows/markdown-inventory-bootstrap.yml"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  synchronize:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: d-025-design-platform-architecture-v1
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Record D-026 and Part 12 synchronization
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          path = Path("CHANGELOG.md")
-          text = path.read_text(encoding="utf-8")
-          marker = "## 2026-07-12 — D-026 enforcement and Design Platform Part 12"
-          if marker not in text:
-              section = """## 2026-07-12 — D-026 enforcement and Design Platform Part 12
-
-          ### Հայերեն
-
-          - D-026 Canonical Session Read Law-ը դարձել է enforceable՝ canonical Markdown inventory, path/size/SHA drift validation և strict GitHub Actions gate-ով։
-          - Ավելացվել է D-026 final GREEN validation record-ը՝ իրական workflow evidence-ով և truncation incident transparency-ով։
-          - Ավելացվել է Design Platform Part 12 validation, CI, conformance և quality-gates architecture-ը։
-          - Սահմանվել են յոթ sequential gates, GREEN/YELLOW/RED verdict semantics-ը, conformance profiles-ը, exception contract-ը և evidence contract-ը։
-          - Root և Design Platform contexts, roadmaps, changelogs և handoffs-ը տեղափոխվել են Part 13 continuation point-ի վրա։
-          - D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը մնում է open, Draft և unmerged։
-
-          ### English
-
-          - Made D-026 Canonical Session Read Law enforceable through a canonical Markdown inventory, path/size/SHA drift validation, and a strict GitHub Actions gate.
-          - Added the final GREEN D-026 validation record with real workflow evidence and transparent recording of the truncation incident.
-          - Added Design Platform Part 12 validation, CI, conformance, and quality-gates architecture.
-          - Defined seven sequential gates, GREEN/YELLOW/RED verdict semantics, conformance profiles, the exception contract, and the evidence contract.
-          - Advanced root and Design Platform contexts, roadmaps, changelogs, and handoffs to the Part 13 continuation point.
-          - D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
-
-          """
-              heading = "# MenQ Standard — Changelog\n\n"
-              if not text.startswith(heading):
-                  raise SystemExit("Unexpected CHANGELOG.md heading")
-              path.write_text(heading + section + text[len(heading):], encoding="utf-8")
-          PY
-      - name: Regenerate canonical Markdown inventory
-        run: python scripts/generate_markdown_inventory.py --write
-      - name: Commit synchronization transaction
-        run: |
-          if git diff --quiet -- CHANGELOG.md foundation/ai-collaboration/MARKDOWN_INVENTORY.json; then
-            echo "Canonical synchronization is already current."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CHANGELOG.md foundation/ai-collaboration/MARKDOWN_INVENTORY.json
-          git commit -m "Synchronize D-026 enforcement and Design Platform Part 12"
-          git push origin HEAD:d-025-design-platform-architecture-v1
+      - name: Validate canonical Markdown inventory
+        run: python scripts/generate_markdown_inventory.py --check
       - name: Validate Foundation and D-026 integrity
         run: python scripts/validate_foundation.py
