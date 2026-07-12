@@ -275,3 +275,22 @@ MenQ Product Philosophy-ի canonical ամբողջական տարբերակը պ�
 ### English
 
 The complete canonical MenQ Product Philosophy is maintained in [`foundation/philosophy/PRODUCT_PHILOSOPHY.md`](foundation/philosophy/PRODUCT_PHILOSOPHY.md). It locks the following backbone: real problems before solutions, outcomes over features, coherent product systems, purposeful AI, smallest complete value, real-use validation, feature discipline, a shared MenQ foundation with product-specific identity, built-in trust, viability, maintainability, and documented product continuity.
+
+---
+
+## D-017 — MenQ Principles / MenQ սկզբունքներ
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+
+MenQ Principles-ի canonical ամբողջական տարբերակը պահվում է [`foundation/principles/README.md`](foundation/principles/README.md) ֆայլում։ Այն ներառում է 16 պարտադիր principle՝ Human Authority, Purpose Before Action, Canonical Truth, Explicit Ownership, Evidence Before Assertion, Measurable Outcomes, Rules Require Mechanisms, Explicit Over Implicit, Architecture Before Implementation, Systems Over Patches, Complexity Must Earn Its Place, Controlled and Reversible Change, Trust by Design, Learn Once Preserve Permanently, Shared Foundation Local Freedom և Bilingual Equality։
+
+`Measurable Outcomes` principle-ը պահանջում է, որ յուրաքանչյուր կարևոր նպատակ, փոփոխություն և performance claim ունենա baseline, KPI, target, owner և measurement cadence, իսկ KPI-ն չափի իրական արժեքը, ոչ միայն ակտիվությունը։
+
+### English
+
+The complete canonical MenQ Principles are maintained in [`foundation/principles/README.md`](foundation/principles/README.md). They include 16 mandatory principles: Human Authority, Purpose Before Action, Canonical Truth, Explicit Ownership, Evidence Before Assertion, Measurable Outcomes, Rules Require Mechanisms, Explicit Over Implicit, Architecture Before Implementation, Systems Over Patches, Complexity Must Earn Its Place, Controlled and Reversible Change, Trust by Design, Learn Once Preserve Permanently, Shared Foundation Local Freedom, and Bilingual Equality.
+
+The `Measurable Outcomes` principle requires every important goal, change, and performance claim to have a baseline, KPI, target, owner, and measurement cadence, while the KPI measures real value rather than activity alone.
