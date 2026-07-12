@@ -83,6 +83,16 @@ jobs:
           const card = m.cardComponentProps({ variant: 'outlined', labelledBy: 'card-title' });
           if (card['aria-labelledby'] !== 'card-title' || card['data-variant'] !== 'outlined') process.exit(1);
           NODE
+      - name: Smoke-test Design Patterns public package API
+        working-directory: platforms/design/implementation
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('@menq/design-patterns');
+          const actions = m.actionGroupPatternProps({ direction: 'row', align: 'end', labelledBy: 'actions-title' });
+          if (actions.role !== 'group' || actions['aria-labelledby'] !== 'actions-title' || actions['data-wrap'] !== 'true') process.exit(1);
+          const section = m.sectionPatternProps({ variant: 'outlined', size: 'lg', labelledBy: 'section-title' });
+          if (section['data-menq-pattern'] !== 'section' || section['data-menq-component'] !== 'card' || section['data-variant'] !== 'outlined') process.exit(1);
+          NODE
       - name: Verify generated artifact checksums
         run: |
           python - <<'PY'
