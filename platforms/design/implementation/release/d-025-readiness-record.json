@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "recordId": "menq.design.d-025.readiness.2026-07-13",
   "decision": "D-025",
-  "status": "Locked",
+  "status": "Locked and GREEN",
   "displayName": {
-    "hy": "D-025 ներդրման, որդեգրման, merge և lock authority ապացույց",
-    "en": "D-025 implementation, adoption, merge, and lock-authority evidence"
+    "hy": "D-025 ներդրման, որդեգրման, closure, merge և lock authority ապացույց",
+    "en": "D-025 implementation, adoption, closure, merge, and lock-authority evidence"
   },
   "evidenceSnapshot": {
     "sourceCommit": "e98f44ccabcdd3294b254105235e5f3e08c28ba1",
@@ -26,6 +26,9 @@
     "closurePullRequest": 4,
     "closureMergeCommit": "9a833339b1d707d6cd8a792e031dd8ca2857d556",
     "validatedClosureHead": "b16e0211bb29355df43257847fce818765a4a747",
+    "lockPullRequest": 5,
+    "lockMergeCommit": "261f85e5b20d726a0ab1f05da84a4dc45a248873",
+    "validatedLockHead": "8ba2e987ff6dab2c25fda18744c7376953d0108f",
     "treeDifferenceCount": 0,
     "merged": true
   },
@@ -62,8 +65,13 @@
     "owner": "Gevorg Ohanyan",
     "approvedAt": "2026-07-13"
   },
+  "finalAudit": {
+    "record": "platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md",
+    "verdict": "GREEN",
+    "transactionClosed": true
+  },
   "remainingAction": {
-    "hy": "D-025 lock transaction-ի PR validation և merge evidence-ը վերջնականացնել, ապա փոփոխությունները կառավարել locked change-control կանոններով։",
-    "en": "Complete PR validation and merge evidence for the D-025 lock transaction, then govern future changes under locked change-control rules."
+    "hy": "D-025-ի բաց action չկա։ Հետագա փոփոխությունները կառավարել locked change-control կանոններով։",
+    "en": "No D-025 action remains open. Govern future changes under locked change-control rules."
   }
 }
