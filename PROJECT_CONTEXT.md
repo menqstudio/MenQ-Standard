@@ -14,9 +14,27 @@ AI օգնականը MenQ Standard-ի հետ կապված աշխատանք սկս
 2. `PROJECT_CONTEXT.md`
 3. `DECISIONS.md`
 4. `CHANGELOG.md`
-5. համապատասխան թեմատիկ փաստաթուղթը
+5. `ROADMAP.md`
+6. `foundation/README.md`
+7. `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`
+8. համապատասխան թեմատիկ փաստաթուղթը
 
-Repository-ի հասցեն, canonical source-ի ինքնությունը և արդեն փաստաթղթավորված մշտական կանոնները նոր chat-ում Owner-ից կրկին չեն հարցվում։ Repository-ն պետք է դիտարկվի որպես հիշողության և աշխատանքի շարունակականության հիմնական հիմք։
+Repository-ի հասցեն, canonical source-ի ինքնությունը և արդեն փաստաթղթավորված մշտական կանոնները նոր chat-ում Owner-ից կրկին չեն հարցվում։ Repository-ն հիշողության և աշխատանքի շարունակականության հիմնական հիմքն է։
+
+### Canonical Write Integrity Law
+
+Canonical file-ի ցանկացած write, update, replace, move կամ delete ենթարկվում է պարտադիր օրենքի՝ [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md)։
+
+Պարտադիր է՝
+
+- նախապես կարդալ ամբողջ file-ը,
+- պահպանել current SHA-ն,
+- արգելել partial read-ից full-file replacement-ը,
+- write-ից հետո re-read անել սկիզբն ու վերջը,
+- ստուգել truncation-ը, bilingual completeness-ը և unrelated content-ի պահպանումը,
+- RED-ի դեպքում անմիջապես կանգնել, վերականգնել և կրկին verify անել։
+
+Tool success-ը evidence չէ։ Verification-ը չի կարող անտեսվել կամ շրջանցվել որևէ պատճառաբանությամբ։
 
 ### Համագործակցության ձև
 
@@ -52,9 +70,27 @@ Before starting work related to MenQ Standard, the AI assistant must read the cu
 2. `PROJECT_CONTEXT.md`
 3. `DECISIONS.md`
 4. `CHANGELOG.md`
-5. the relevant topic-specific documentation
+5. `ROADMAP.md`
+6. `foundation/README.md`
+7. `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`
+8. the relevant topic-specific documentation
 
 The repository address, canonical source identity, and already documented persistent rules must not be asked again from the Owner in every new chat. The repository is the primary foundation for memory and work continuity.
+
+### Canonical Write Integrity Law
+
+Every canonical file write, update, replacement, move, or deletion is governed by the mandatory [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md).
+
+It is mandatory to:
+
+- read the complete file before writing,
+- preserve the current SHA,
+- prohibit full-file replacement from a partial read,
+- re-read the beginning and ending after writing,
+- verify truncation, bilingual completeness, and preservation of unrelated content,
+- stop immediately, restore, and re-verify when any required check is RED.
+
+Tool success is not evidence. Verification may not be ignored or bypassed for any reason.
 
 ### Collaboration style
 
@@ -73,3 +109,5 @@ When a deliverable contains multiple related files, provide it as one complete p
 ### Languages
 
 Important MenQ Standard documentation is written in Armenian and English. Both versions must carry the same complete meaning.
+
+<!-- END: MENQ_STANDARD_PROJECT_CONTEXT -->
