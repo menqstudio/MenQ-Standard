@@ -18,6 +18,7 @@
 - Հստակ բաժանվել են MenQ Studio-ի company vision/mission-ը և MenQ Standard-ի standard vision/mission-ը։
 - MenQ Studio-ի company mission-ը գրանցվել է canonical ձևով։
 - Lock է արվել MenQ Standard-ի mission-ը։
+- Lock են արվել MenQ Standard-ի Core Beliefs-ը։
 
 ### English
 
@@ -35,3 +36,4 @@
 - Clearly separated MenQ Studio company vision/mission from MenQ Standard standard vision/mission.
 - Recorded the MenQ Studio company mission canonically.
 - Locked the MenQ Standard mission.
+- Locked the MenQ Standard Core Beliefs.
