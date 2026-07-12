@@ -170,3 +170,28 @@ The approved company mission of MenQ Studio is to create practical digital and A
 
 **HY:** MenQ Standard-ի առաքելությունն է ստեղծել կիրառելի և զարգացող operating standard, որը մարդկանց ու AI համակարգերին օգնում է միասին մտածել, որոշել, կառուցել և պահպանել որակյալ համակարգեր։  
 **EN:** MenQ Standard's mission is to create a practical and evolving operating standard that helps people and AI systems think, decide, build, and preserve quality systems together.
+
+---
+
+## D-012 — Core Beliefs / Հիմնարար համոզմունքներ
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+
+1. Մարդը բերում է նպատակը և պահում վերջնական իշխանությունը։
+2. AI-ն ուժեղացնում է մարդուն, չի վերցնում պատասխանատվությունը։
+3. Ստանդարտը պահպանում է որոշումները, գիտելիքն ու շարունակականությունը։
+4. Համակարգերը գերադասելի են մեկանգամյա լուծումներից։
+5. Թափանցիկությունն ու վերահսկելիությունը պարտադիր են։
+6. MenQ-ը զարգանում է ապացույցով, ոչ hype-ով։
+
+### English
+
+1. Humans bring the purpose and retain final authority.
+2. AI strengthens humans; it does not take responsibility away from them.
+3. Standards preserve decisions, knowledge, and continuity.
+4. Systems are preferred over one-time solutions.
+5. Transparency and controllability are mandatory.
+6. MenQ advances through evidence, not hype.
