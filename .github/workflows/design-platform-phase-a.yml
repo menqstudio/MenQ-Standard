@@ -39,8 +39,6 @@ jobs:
         run: pnpm install --no-frozen-lockfile --ignore-scripts
       - name: Validate Design Platform Phase A registry and workspace skeleton
         run: python platforms/design/validation/validate_phase_a.py
-      - name: Validate registry and package public API parity
-        run: python platforms/design/validation/validate_public_api.py
       - name: Smoke-test design contracts public API
         run: |
           node --input-type=module -e "import('./platforms/design/implementation/packages/design-contracts/src/index.js').then((m) => { m.assertCanonicalTokenId('menq.design.token.reference.color.neutral.0'); m.assertBilingualDescription({hy:'հայերեն',en:'English'}); if (m.TOKEN_SOURCE_SCHEMA_ID !== 'menq.design.schema.token-source.v1') process.exit(1); })"
@@ -61,6 +59,8 @@ jobs:
           cp platforms/design/implementation/packages/design-foundations/generated/manifest.json /tmp/menq-foundations-manifest.json
           python platforms/design/implementation/scripts/build_foundations.py
           cmp /tmp/menq-foundations-manifest.json platforms/design/implementation/packages/design-foundations/generated/manifest.json
+      - name: Validate registry and package public API parity
+        run: python platforms/design/validation/validate_public_api.py
       - name: Smoke-test Design Primitives public API
         run: |
           node --input-type=module <<'NODE'
