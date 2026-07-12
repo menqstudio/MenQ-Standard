@@ -1,4 +1,4 @@
-name: Part 15 Synchronization
+name: Markdown Inventory Integrity
 
 on:
   push:
@@ -6,38 +6,33 @@ on:
       - d-025-design-platform-architecture-v1
     paths:
       - "**/*.md"
-      - "scripts/sync_part15_v2.py"
+      - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
       - "scripts/generate_markdown_inventory.py"
+      - "scripts/validate_foundation.py"
       - ".github/workflows/markdown-inventory-bootstrap.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
+      - "scripts/generate_markdown_inventory.py"
+      - "scripts/validate_foundation.py"
+      - ".github/workflows/markdown-inventory-bootstrap.yml"
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  synchronize:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: d-025-design-platform-architecture-v1
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Synchronize Part 15 documentation
-        run: python scripts/sync_part15_v2.py
-      - name: Regenerate canonical Markdown inventory
-        run: python scripts/generate_markdown_inventory.py --write
-      - name: Commit synchronization
-        run: |
-          if git diff --quiet -- CHANGELOG.md ROADMAP.md PROJECT_CONTEXT.md AI_WORKING_CONTEXT.md NEXT_CHAT_HANDOFF.md platforms/design/CHANGELOG.md platforms/design/ROADMAP.md platforms/design/PROJECT_CONTEXT.md platforms/design/NEXT_CHAT_HANDOFF.md foundation/ai-collaboration/MARKDOWN_INVENTORY.json; then
-            echo "Part 15 synchronization is already current."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CHANGELOG.md ROADMAP.md PROJECT_CONTEXT.md AI_WORKING_CONTEXT.md NEXT_CHAT_HANDOFF.md platforms/design/CHANGELOG.md platforms/design/ROADMAP.md platforms/design/PROJECT_CONTEXT.md platforms/design/NEXT_CHAT_HANDOFF.md foundation/ai-collaboration/MARKDOWN_INVENTORY.json
-          git commit -m "Synchronize Design Platform Part 15"
-          git push origin HEAD:d-025-design-platform-architecture-v1
+      - name: Validate canonical Markdown inventory
+        run: python scripts/generate_markdown_inventory.py --check
       - name: Validate Foundation and D-026 integrity
         run: python scripts/validate_foundation.py
