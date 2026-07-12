@@ -34,7 +34,7 @@ D-025-ը հիմա MenQ Design Platform Architecture v1-ի locked canonical bound
 
 ### Lock authority
 
-On 2026-07-13, the Owner explicitly approved locking D-025 after the post-merge closure reached a GREEN verdict. The AI did not create lock authority; it applied the Owner decision to the canonical repository.
+**Explicit Owner lock approval** was given on 2026-07-13 after the post-merge closure reached a GREEN verdict. The AI did not create lock authority; it applied the Owner decision to the canonical repository.
 
 ### Fulfilled lock gate
 
