@@ -324,3 +324,18 @@ MenQ Governance-ի canonical v1.0 տարբերակը պահվում է [`foundat
 ### English
 
 The canonical MenQ Governance v1.0 is maintained in [`foundation/governance/README.md`](foundation/governance/README.md). It locks the following backbone: final human authority, explicit and least-necessary authority, the authority-accountability link, scoped delegation, no silent authority, independent challenge for critical decisions, AI cannot self-approve, revocable authority, governance traceability, G0–G4 authority levels, reserved Owner decisions, high-risk governance, conflict resolution, exceptions, emergency authority, and governance records.
+
+---
+
+## D-020 — MenQ Decision System v1 / MenQ որոշումների համակարգ v1
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+
+MenQ Decision System-ի canonical v1.0 տարբերակը պահվում է [`foundation/decision-system/README.md`](foundation/decision-system/README.md) ֆայլում։ Այն lock է անում formal decision triggers-ը, `C0–C4` decision classes-ը, `R0–R4` risk levels-ը, ամբողջ lifecycle-ը, decision statuses-ը, approval matrix-ը, պարտադիր decision record-ը, evidence և alternatives կանոնները, assumptions-ը, reversibility-ն, յոթ decision gates-ը, `GREEN/YELLOW/RED` արդյունքները, dissent-ը, rejection-ը, history-preserving change rule-ը, exceptions-ը, emergency decisions-ը, AI participation-ի սահմանները, KPI-ները, review triggers-ը և sequential decision IDs-ը։
+
+### English
+
+The canonical MenQ Decision System v1.0 is maintained in [`foundation/decision-system/README.md`](foundation/decision-system/README.md). It locks formal decision triggers, `C0–C4` decision classes, `R0–R4` risk levels, the complete lifecycle, decision statuses, the approval matrix, the required decision record, evidence and alternatives rules, assumptions, reversibility, seven decision gates, `GREEN/YELLOW/RED` outcomes, dissent, rejection, the history-preserving change rule, exceptions, emergency decisions, AI participation boundaries, KPIs, review triggers, and sequential decision IDs.
