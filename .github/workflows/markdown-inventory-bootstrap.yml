@@ -1,4 +1,4 @@
-name: D-025 Validation Synchronization
+name: D-025 Audit Closure Synchronization
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - d-025-design-platform-architecture-v1
     paths:
       - "**/*.md"
+      - "scripts/sync_d025_audit_closure.py"
       - "scripts/generate_markdown_inventory.py"
       - "scripts/validate_foundation.py"
       - "scripts/validate_platforms.py"
@@ -26,20 +27,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Synchronize D-025 audit closure
+        run: python scripts/sync_d025_audit_closure.py
       - name: Regenerate canonical Markdown inventory
         run: python scripts/generate_markdown_inventory.py --write
       - name: Validate Foundation and D-026 integrity
         run: python scripts/validate_foundation.py
       - name: Validate Platforms and D-025 integrity
         run: python scripts/validate_platforms.py
-      - name: Commit canonical manifest when changed
+      - name: Commit audit closure synchronization
         run: |
-          if git diff --quiet -- foundation/ai-collaboration/MARKDOWN_INVENTORY.json; then
-            echo "Markdown inventory is already current."
+          if git diff --quiet -- CHANGELOG.md ROADMAP.md PROJECT_CONTEXT.md AI_WORKING_CONTEXT.md NEXT_CHAT_HANDOFF.md platforms/design/CHANGELOG.md platforms/design/ROADMAP.md platforms/design/PROJECT_CONTEXT.md platforms/design/NEXT_CHAT_HANDOFF.md foundation/ai-collaboration/MARKDOWN_INVENTORY.json; then
+            echo "D-025 audit closure is already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add foundation/ai-collaboration/MARKDOWN_INVENTORY.json
-          git commit -m "Regenerate canonical Markdown inventory for D-025 audit"
+          git add CHANGELOG.md ROADMAP.md PROJECT_CONTEXT.md AI_WORKING_CONTEXT.md NEXT_CHAT_HANDOFF.md platforms/design/CHANGELOG.md platforms/design/ROADMAP.md platforms/design/PROJECT_CONTEXT.md platforms/design/NEXT_CHAT_HANDOFF.md foundation/ai-collaboration/MARKDOWN_INVENTORY.json
+          git commit -m "Synchronize D-025 audit closure"
           git push origin HEAD:d-025-design-platform-architecture-v1
