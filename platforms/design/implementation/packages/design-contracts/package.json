@@ -3,5 +3,16 @@
   "version": "0.0.0-development",
   "private": true,
   "type": "module",
-  "description": "Schemas, canonical IDs, metadata, and shared contract types."
+  "description": "Schemas, canonical IDs, metadata, and shared contract types.",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./schemas/token-source": "./schemas/token-source.schema.json"
+  },
+  "files": [
+    "src",
+    "schemas"
+  ]
 }
