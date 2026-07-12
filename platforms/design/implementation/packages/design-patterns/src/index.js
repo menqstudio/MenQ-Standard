@@ -8,6 +8,7 @@ export const PATTERN_CLASS_NAMES = Object.freeze({
 const ALIGNMENTS = new Set(["start", "center", "end", "stretch"]);
 const DIRECTIONS = new Set(["row", "column"]);
 const SECTION_VARIANTS = new Set(["plain", "surface", "outlined", "elevated"]);
+const COMPONENT_SIZES = new Set(["sm", "md", "lg"]);
 
 function enumValue(value, allowed, name) {
   if (!allowed.has(value)) {
@@ -69,6 +70,10 @@ export function sectionPatternProps(options = {}) {
   } = options;
 
   enumValue(variant, SECTION_VARIANTS, "section variant");
+  enumValue(size, COMPONENT_SIZES, "section size");
+  if (className !== undefined && (typeof className !== "string" || className.trim() === "")) {
+    throw new TypeError("className must be a non-empty string when provided");
+  }
   const baseClass = className ? `${PATTERN_CLASS_NAMES.section} ${className}` : PATTERN_CLASS_NAMES.section;
 
   if (variant === "plain") {
