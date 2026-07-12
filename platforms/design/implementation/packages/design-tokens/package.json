@@ -1,0 +1,10 @@
+{
+  "name": "@menq/design-tokens",
+  "version": "0.0.0-development",
+  "private": true,
+  "type": "module",
+  "description": "Generated token artifacts and typed access.",
+  "dependencies": {
+    "@menq/design-contracts": "workspace:*"
+  }
+}
