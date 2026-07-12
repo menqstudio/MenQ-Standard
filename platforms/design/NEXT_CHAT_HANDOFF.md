@@ -11,51 +11,46 @@
 
 ### Պարտադիր մեկնարկ
 
-Մինչև substantive աշխատանք՝ active branch/ref-ում enumerate և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` files-ը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Active PR-ի դեպքում կարդալ metadata, changed files, diff, review threads և checks։ Startup subset-ը, այս handoff-ը կամ previous memory-ն complete-read evidence չեն։
+Մինչև substantive աշխատանք՝ active branch/ref-ում enumerate և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` files-ը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Active PR-ի դեպքում կարդալ metadata, changed files, diff, review threads և checks։
 
 ### Ընթացիկ վիճակ
 
 - Foundation v1 — GREEN և Locked։
-- D-024 Platforms Architecture v1 — merged և canonical։
-- D-025 MenQ Design Platform Architecture v1 — `Approved — Implementing`, ոչ `Locked`։
-- D-026 Canonical Session Read Law — Locked և machine-enforced։
-- Draft PR #3 — open, Draft, unmerged։
-- Shared core-ը product-neutral է։ Product identity, business logic և domain workflows shared core չեն մտնում։
+- D-024 — merged և canonical։
+- D-025 — `Approved — Implementing`, ոչ `Locked`։
+- D-026 — Locked և machine-enforced։
+- Draft PR #3 — open, Draft և unmerged։
+- Parts 1–16 architecture set-ը canonical է։
+- `D-025_COMPLETENESS_AUDIT.md` և `D-025_DRAFT_PR_REVIEW_RECORD.md` canonical են։
+- Architecture verdict-ը GREEN է։
+- Implementation/lock readiness-ը YELLOW է։
+- D-025-aware Platforms validator-ը GREEN evidence է տվել։
 
-### Canonical architecture state
+### Architecture invariants
 
-1. Parts 1–11 baseline — `DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`։
-2. Part 12 — `VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`։
-3. Part 13 — `DOCUMENTATION_PORTAL_COMPONENT_CATALOG_DESIGN_TOOL_INTEGRATION_ARCHITECTURE_V1.md`։
-4. Part 14 — `GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md`։
-5. Canonical dependency model՝ Reference → Semantic → Component → Pattern → Product Extension։
-6. Theme, state, density, platform, locale, accessibility և motion preference-ը orthogonal dimensions են, ոչ token layers։
-7. Portal, catalog և design-tool integration-ը նույն canonical source-ի governed views են։
-8. Unowned canonical asset-ը RED defect է։ High-risk/breaking change-ի self-approval-ը արգելված է։
-9. Merge-ը առանձին authority action է, ոչ GREEN CI-ի ավտոմատ հետևանք։
+- Shared core-ը product-neutral է։
+- Canonical dependency model-ը՝ Reference → Semantic → Component → Pattern → Product Extension։
+- Generated output-ը source of truth չէ։
+- Armenian և English canonical languages են։
+- Merge-ը և lock-ը միայն explicit Owner decisions են։
 
 ### Շարունակելու ճշգրիտ կետը
 
-Հաջորդ աշխատանքը՝
+## Implementation Phase A
 
-## D-025 Completeness Audit, Validator Design, and Draft PR Review
-
-Այնուհետև՝
-
-16. Canonical specification index և implementation package plan։
-17. D-025 completeness audit, validator design և Draft PR #3 review։
-18. Canonical synchronization և GREEN evidence։
-19. Owner review։ Merge և lock-ը առանձին explicit decisions են։
+1. Ստեղծել canonical specification registry-ի իրական machine-readable implementation-ը։
+2. Սահմանել schemas, canonical IDs, ownership records և dependency graph։
+3. Ստեղծել package/workspace skeleton-ը՝ contracts, tokens, foundations, primitives, components, patterns, assets, motion, locales և validation boundaries-ով։
+4. Ընտրել երկու distinct real consumer candidates և bounded pilot scopes։
+5. Չփոխել YELLOW implementation verdict-ը մինչև իրական package/consumer evidence։
 
 ### Արգելված գործողություններ
 
 - PR #3-ը չmerge անել և ready-for-review չդարձնել առանց Owner instruction-ի։
 - D-025-ը `Locked` չանվանել։
 - Product-specific identity, logic կամ workflows shared core չմտցնել։
-- Generated docs/catalog/design-tool library-ը canonical source չհամարել։
-- High-risk կամ breaking change-ը self-approve չանել։
-- GREEN CI-ն merge approval չհամարել։
-- Tool success-ը GREEN evidence չհամարել։
+- Generated artifacts-ը canonical source չհամարել։
+- Fake consumer կամ implementation evidence չստեղծել։
 
 ---
 
@@ -63,36 +58,45 @@
 
 ### Mandatory startup
 
-Before substantive work, enumerate and completely read every tracked `.md` file on the active branch/ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For the active PR, read metadata, changed files, diff, review threads, and checks. This handoff or previous memory is not complete-read evidence.
+Before substantive work, enumerate and completely read every tracked `.md` file on the active branch/ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For the active PR, read metadata, changed files, diff, review threads, and checks.
 
 ### Current state
 
 - Foundation v1 is GREEN and Locked.
-- D-024 Platforms Architecture v1 is merged and canonical.
+- D-024 is merged and canonical.
 - D-025 is `Approved — Implementing`, not `Locked`.
 - D-026 is Locked and machine-enforced.
 - Draft PR #3 is open, Draft, and unmerged.
+- The Parts 1–16 architecture set is canonical.
+- `D-025_COMPLETENESS_AUDIT.md` and `D-025_DRAFT_PR_REVIEW_RECORD.md` are canonical.
+- Architecture is GREEN.
+- Implementation and lock readiness remain YELLOW.
+- The D-025-aware Platforms validator has produced GREEN evidence.
+
+### Architecture invariants
+
 - Shared core is product-neutral.
-
-### Canonical architecture state
-
-- Parts 1–11: `DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`.
-- Part 12: `VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md`.
-- Part 13: `DOCUMENTATION_PORTAL_COMPONENT_CATALOG_DESIGN_TOOL_INTEGRATION_ARCHITECTURE_V1.md`.
-- Part 14: `GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md`.
-- Part 15: `PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1.md`.
-- Part 16: `CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md`.
 - Canonical dependency model: Reference → Semantic → Component → Pattern → Product Extension.
-- The portal, catalog, and design-tool integration are governed views of the same source.
-- An unowned canonical asset is a RED defect. Self-approval is prohibited for high-risk and breaking changes.
-- Merge is a separate authority action, not an automatic consequence of green CI.
+- Generated output is not a source of truth.
+- Armenian and English are canonical languages.
+- Merge and lock require explicit Owner decisions.
 
 ### Exact continuation point
 
-Start immediately with:
+## Implementation Phase A
 
-**D-025 Completeness Audit, Validator Design, and Draft PR Review.**
+1. Implement the machine-readable canonical specification registry.
+2. Define schemas, canonical IDs, ownership records, and the dependency graph.
+3. Create the package/workspace skeleton for contracts, tokens, foundations, primitives, components, patterns, assets, motion, locales, and validation.
+4. Select two distinct real consumer candidates and bounded pilot scopes.
+5. Preserve the YELLOW implementation verdict until real package and consumer evidence exists.
 
-Then continue with the canonical specification index and implementation package plan, completeness audit, validator design, synchronization, GREEN evidence, and Owner review. Merge and lock remain separate explicit decisions.
+### Prohibited actions
+
+- Do not merge PR #3 or mark it ready for review without Owner instruction.
+- Do not describe D-025 as Locked.
+- Do not move product-specific identity, logic, or workflows into shared core.
+- Do not treat generated artifacts as canonical source.
+- Do not fabricate implementation or consumer evidence.
 
 <!-- END: MENQ_DESIGN_PLATFORM_NEXT_CHAT_HANDOFF -->
