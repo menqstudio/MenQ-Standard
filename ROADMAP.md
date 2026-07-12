@@ -13,36 +13,32 @@
 
 ## Completed / Ավարտված
 
-- [x] Foundation v1 chapters and controls
-- [x] Foundation Integrity workflow run `#9` — GREEN
-- [x] Foundation v1 final validation record
+- [x] Foundation v1 chapters, controls, validation, and release packaging
 - [x] D-024 Platforms Architecture v1 merged and canonical
 - [x] D-025 MenQ Design Platform Architecture v1 approved for implementation
-- [x] Design Platform six-plane architecture boundary
-- [x] Product-neutral shared-core boundary
-- [x] Owner-approved Design Platform workshop Parts 1–11 baseline
+- [x] Design Platform six-plane and product-neutral shared-core boundary
+- [x] Owner-approved Parts 1–11 architecture baseline
 - [x] Corrected token dependency model and orthogonal resolution dimensions
 - [x] Armenian + English canonical localization and on-demand locale direction
-- [x] D-026 Canonical Session Read Law enforcement infrastructure
-- [x] Canonical 57-file Markdown inventory and strict drift gate
-- [x] Design Platform Part 12 validation, CI, conformance, and quality-gates architecture
+- [x] D-026 Canonical Session Read Law and strict Markdown inventory enforcement
+- [x] Part 12 — Validation, CI, Conformance, and Quality Gates Architecture
+- [x] Part 13 — Documentation Portal, Component Catalog, and Design-Tool Integration Architecture
 
 ## Current / Ընթացիկ
 
 ### MenQ Design Platform D-025 implementation
 
-**HY:** D-025-ը `Approved — Implementing` է։ Working branch-ը `d-025-design-platform-architecture-v1` է, Draft PR-ը՝ `#3`։ PR-ը չի merge արվում մինչև architecture completeness, canonical synchronization, validator evidence, երկու իրական consumer validation և Owner approval։
+**HY:** D-025-ը `Approved — Implementing` է։ Working branch-ը `d-025-design-platform-architecture-v1` է, Draft PR-ը՝ `#3`։ PR-ը չի merge արվում մինչև architecture completeness, canonical synchronization, validator evidence, real consumer validation և Owner approval։
 
-**EN:** D-025 is `Approved — Implementing`. The working branch is `d-025-design-platform-architecture-v1`, and Draft PR `#3` remains unmerged until architecture completeness, canonical synchronization, validator evidence, two real consumer validations, and Owner approval.
+**EN:** D-025 is `Approved — Implementing`. The working branch is `d-025-design-platform-architecture-v1`, and Draft PR `#3` remains unmerged until architecture completeness, canonical synchronization, validator evidence, real consumer validation, and Owner approval.
 
 Current sequence:
 
-1. Documentation portal, catalog, and design-tool integration architecture.
-2. Governance, contribution, ownership, and change-request lifecycle.
-3. Product adoption, maturity model, and two-consumer validation plan.
-4. Canonical specification index and implementation package plan.
-5. D-025 completeness audit, validator implementation, and Draft PR #3 review.
-6. GREEN evidence and Owner review.
+1. Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle.
+2. Product adoption, maturity model, and two-consumer validation plan.
+3. Canonical specification index and implementation package plan.
+4. D-025 completeness audit, validator design, and Draft PR #3 review.
+5. GREEN evidence and Owner review.
 
 ## Next / Հաջորդը
 
@@ -50,9 +46,9 @@ Current sequence:
 2. Build the first versioned implementation package.
 3. Add Design Platform integrity validator and GitHub Actions workflow.
 4. Validate adoption with at least two distinct real MenQ products or systems.
-5. Record compatibility, migration, release, and consumer evidence.
+5. Record compatibility, migration, release, portal/catalog/design-tool parity, and consumer evidence.
 6. Request explicit Owner decision on merge and later lock.
-7. Continue Operating Standards and Extensions architecture after the active Platform transaction is properly closed.
+7. Continue Operating Standards and Extensions architecture only after the active Platform transaction is properly closed.
 
 ## History Rule / Պատմության կանոն
 
