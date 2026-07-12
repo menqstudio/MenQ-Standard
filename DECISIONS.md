@@ -152,11 +152,21 @@ Chat is the workshop. GitHub is the canonical source. Only approved architecture
 **Date:** 2026-07-12
 
 ### Հայերեն
-MenQ Studio-ն և MenQ Standard-ը ունեն առանձին vision ու mission։ MenQ Studio-ի company mission-ը չի պատկանում MenQ Standard-ի Philosophy chapter-ին։ MenQ Standard-ի vision-ը հաստատված է, իսկ mission-ը դեռ բաց է։
+MenQ Studio-ն և MenQ Standard-ը ունեն առանձին vision ու mission։ MenQ Studio-ի company mission-ը չի պատկանում MenQ Standard-ի Philosophy chapter-ին։ MenQ Standard-ի vision-ը հաստատված է։
 
 MenQ Studio-ի հաստատված company mission-ն է՝ ստեղծել գործնական թվային և AI լուծումներ, որոնք օգնում են մարդկանց ու բիզնեսներին ավտոմատացնել աշխատանքը, կառուցել ավելի արդյունավետ համակարգեր և զարգանալ տեխնոլոգիայի միջոցով։
 
 ### English
-MenQ Studio and MenQ Standard have separate visions and missions. MenQ Studio's company mission does not belong inside the Philosophy chapter of MenQ Standard. The vision of MenQ Standard is approved, while its mission remains open.
+MenQ Studio and MenQ Standard have separate visions and missions. MenQ Studio's company mission does not belong inside the Philosophy chapter of MenQ Standard. The vision of MenQ Standard is approved.
 
 The approved company mission of MenQ Studio is to create practical digital and AI solutions that help people and businesses automate work, build more efficient systems, and grow through technology.
+
+---
+
+## D-011 — MenQ Standard Mission / MenQ Standard-ի առաքելություն
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+**HY:** MenQ Standard-ի առաքելությունն է ստեղծել կիրառելի և զարգացող operating standard, որը մարդկանց ու AI համակարգերին օգնում է միասին մտածել, որոշել, կառուցել և պահպանել որակյալ համակարգեր։  
+**EN:** MenQ Standard's mission is to create a practical and evolving operating standard that helps people and AI systems think, decide, build, and preserve quality systems together.
