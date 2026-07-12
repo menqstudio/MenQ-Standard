@@ -17,15 +17,16 @@
 1. `README.md`
 2. `PROJECT_CONTEXT.md`
 3. `COLLABORATION_STYLE.md`
-4. `DECISION_INDEX.md`
-5. `DECISIONS.md`
-6. `CHANGELOG.md`
-7. `ROADMAP.md`
-8. `foundation/README.md`
-9. `foundation/PROJECT_CONTEXT.md`
-10. `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`
-11. համապատասխան chapter-ը
-12. `NEXT_CHAT_HANDOFF.md`, եթե այն առկա է և ընթացիկ է
+4. `AI_WORKING_CONTEXT.md`
+5. `DECISION_INDEX.md`
+6. `DECISIONS.md`
+7. `CHANGELOG.md`
+8. `ROADMAP.md`
+9. `foundation/README.md`
+10. `foundation/PROJECT_CONTEXT.md`
+11. `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`
+12. համապատասխան platform/chapter context-ը
+13. `NEXT_CHAT_HANDOFF.md`, եթե current է
 
 Repository-ի հասցեն և արդեն documented persistent rules-ը Owner-ից կրկին չեն հարցվում։
 
@@ -36,36 +37,45 @@ Repository-ի հասցեն և արդեն documented persistent rules-ը Owner-ի
 > Մարդը որոշում է։  
 > Ստանդարտը պահպանում է։
 
-AI-ն աշխատում է որպես MenQ architect և engineering teammate։ Final authority-ն և accountability-ն մարդունն են։ AI-ն չի կարող self-approve անել կամ canonical truth-ը ինքնուրույն lock անել։
+AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accountability-ն մարդունն են։ AI-ն չի կարող self-approve անել կամ canonical truth-ը ինքնուրույն lock անել։
 
 ### Ընթացիկ canonical վիճակ
 
-- Philosophy — Locked v1
-- Principles — Locked v1 (`D-017`)
-- Terminology — Locked v1, Living Standard (`D-018`)
-- Governance — Locked v1 (`D-019`)
-- Decision System — Locked v1 (`D-020`)
-- Documentation Standard — Locked v1 (`D-021`)
-- Canonical Write Integrity Law — Locked (`D-022`)
-- AI Collaboration — Locked v1 (`D-023`)
+- Foundation v1 — Locked և GREEN։
+- `D-024 — Platforms Architecture v1` — merged և canonical։
+- `D-025 — MenQ Design Platform Architecture v1` — `Approved — Implementing`, ոչ `Locked`։
+- Working branch — `d-025-design-platform-architecture-v1`։
+- Draft PR — `#3`, merge չի արվում մինչև completeness, synchronization, validation և Owner approval։
 
-Բոլոր յոթ Foundation chapter-ները ունեն `README.md` և `PROJECT_CONTEXT.md`։
+### Owner-approved Design Platform baseline
 
-### Remediation և validation վիճակ
+Հաստատված workshop baseline-ը պահպանված է `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`-ում և ներառում է՝
 
-- Safe append-only `DECISION_INDEX.md`-ը պահպանում է `D-001–D-023` traceability-ն։
-- `DECISIONS.md`-ը historical `D-001–D-021` registry է և չի ենթարկվում մեծ full rewrite-ի։
-- Documentation և AI Collaboration bilingual parity addenda-ները առկա են։
-- Foundation normative metadata registry-ն, validator-ը և CI workflow-ը առկա են։
-- `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։
-- Validator output-ը՝ `FOUNDATION VALIDATION: GREEN` և `Validated 7 Foundation chapters and root controls.`
-- Foundation v1 release gate-ը GREEN է։
+- Foundation → Brand Core → Design Platform Core → Product Design Layers սահմանը,
+- governed token concerns և orthogonal dimensions,
+- canonical token source և generation pipeline,
+- primitives,
+- behavior-first components,
+- reusable patterns,
+- themes/modes/product expression separation,
+- accessibility,
+- Armenian + English canonical localization և on-demand locale packs,
+- content architecture,
+- governed assets,
+- motion architecture,
+- package, release, versioning, migration և compatibility architecture։
 
-### Հաջորդ քայլ
+Theme, state, density, platform, locale, accessibility և motion preference-ը token layers չեն։ Controlled exceptions-ը normal token layer չեն։ Detailed systems-ը առանձին canonical specifications են, իսկ D-025-ը architecture boundary-ն է։
 
-1. Ստեղծել և verify անել complete Foundation v1 repository ZIP snapshot-ը՝ release README, version/date, manifest և missing-file verification-ով։
-2. ZIP-ը պահել որպես GitHub Release asset, ոչ main branch binary file։
-3. Հետո բացել Platforms architecture formal Decision System proposal-ը և սպասել Owner approval-ին։
+### Հաջորդ հստակ աշխատանք
+
+1. Կտոր 12 — Validation, CI, Conformance և Quality Gates Architecture։
+2. Documentation portal, catalog և design-tool integration։
+3. Governance, contribution, ownership և change-request lifecycle։
+4. Product adoption, maturity model և two-consumer validation plan։
+5. Canonical specification index և implementation package plan։
+6. D-025 completeness audit, validator design և Draft PR #3 review։
+7. Canonical synchronization, GREEN evidence և Owner review։
 
 ---
 
@@ -73,22 +83,7 @@ AI-ն աշխատում է որպես MenQ architect և engineering teammate։ Fi
 
 ### Required startup workflow
 
-Before work, a new AI collaborator reads:
-
-1. `README.md`
-2. `PROJECT_CONTEXT.md`
-3. `COLLABORATION_STYLE.md`
-4. `DECISION_INDEX.md`
-5. `DECISIONS.md`
-6. `CHANGELOG.md`
-7. `ROADMAP.md`
-8. `foundation/README.md`
-9. `foundation/PROJECT_CONTEXT.md`
-10. `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`
-11. the relevant chapter
-12. `NEXT_CHAT_HANDOFF.md` when present and current
-
-Do not ask the Owner again for the repository address or persistent rules already documented in the repository.
+Before work, a new AI collaborator reads the root startup set, the relevant platform/chapter context, and the current `NEXT_CHAT_HANDOFF.md`. Do not ask the Owner again for the repository address or persistent rules already documented in the repository.
 
 ### Human–AI principle
 
@@ -101,31 +96,26 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 
 ### Current canonical state
 
-- Philosophy — Locked v1
-- Principles — Locked v1 (`D-017`)
-- Terminology — Locked v1, Living Standard (`D-018`)
-- Governance — Locked v1 (`D-019`)
-- Decision System — Locked v1 (`D-020`)
-- Documentation Standard — Locked v1 (`D-021`)
-- Canonical Write Integrity Law — Locked (`D-022`)
-- AI Collaboration — Locked v1 (`D-023`)
+- Foundation v1 is Locked and GREEN.
+- `D-024 — Platforms Architecture v1` is merged and canonical.
+- `D-025 — MenQ Design Platform Architecture v1` is `Approved — Implementing`, not `Locked`.
+- Working branch: `d-025-design-platform-architecture-v1`.
+- Draft PR: `#3`; it must remain unmerged until completeness, synchronization, validation, and Owner approval are complete.
 
-All seven Foundation chapters contain `README.md` and `PROJECT_CONTEXT.md`.
+### Owner-approved Design Platform baseline
 
-### Remediation and validation state
+The approved workshop baseline is preserved in `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`. It covers the ecosystem boundary, governed token concerns and orthogonal dimensions, canonical token source and generation pipeline, primitives, behavior-first components, reusable patterns, themes/modes/product expression separation, accessibility, Armenian and English canonical localization plus on-demand locales, content architecture, governed assets, motion, and package/release/versioning/migration/compatibility architecture.
 
-- The safe append-only `DECISION_INDEX.md` preserves `D-001–D-023` traceability.
-- `DECISIONS.md` is the historical `D-001–D-021` registry and is not subject to a large full rewrite.
-- Documentation and AI Collaboration bilingual parity addenda exist.
-- The Foundation normative metadata registry, validator, and CI workflow exist.
-- `Foundation Integrity` workflow run `#9` completed with a `success` conclusion.
-- Validator output: `FOUNDATION VALIDATION: GREEN` and `Validated 7 Foundation chapters and root controls.`
-- The Foundation v1 release gate is GREEN.
+Theme, state, density, platform, locale, accessibility, and motion preference are not token layers. Controlled exceptions are not a normal token layer. Detailed systems belong in separate canonical specifications; D-025 remains the architecture boundary.
 
-### Next step
+### Exact next work
 
-1. Create and verify the complete Foundation v1 repository ZIP snapshot with a release README, version/date, manifest, and missing-file verification.
-2. Store the ZIP as a GitHub Release asset, not as a binary file in the main branch.
-3. Then open the formal Decision System proposal for Platforms architecture and await Owner approval.
+1. Part 12 — Validation, CI, Conformance, and Quality Gates Architecture.
+2. Documentation portal, catalog, and design-tool integration.
+3. Governance, contribution, ownership, and change-request lifecycle.
+4. Product adoption, maturity model, and two-consumer validation plan.
+5. Canonical specification index and implementation package plan.
+6. D-025 completeness audit, validator design, and Draft PR #3 review.
+7. Canonical synchronization, GREEN evidence, and Owner review.
 
 <!-- END: MENQ_STANDARD_AI_WORKING_CONTEXT -->
