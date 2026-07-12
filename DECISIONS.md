@@ -109,13 +109,13 @@ Philosophy
 
 ---
 
-## D-008 — Vision / Տեսլական
+## D-008 — MenQ Standard Vision / MenQ Standard-ի տեսլական
 
 **Status:** Locked  
 **Date:** 2026-07-12
 
-**HY:** MenQ-ի տեսլականն է դառնալ Human–AI collaboration-ի reference standard։  
-**EN:** MenQ's vision is to become the reference standard for Human–AI collaboration.
+**HY:** MenQ Standard-ի տեսլականն է դառնալ Human–AI collaboration-ի reference standard։  
+**EN:** MenQ Standard's vision is to become the reference standard for Human–AI collaboration.
 
 ---
 
@@ -143,3 +143,20 @@ Chat-ը workshop-ն է։ GitHub-ը canonical source-ն է։ GitHub գնում է
 
 ### English
 Chat is the workshop. GitHub is the canonical source. Only approved architecture and decisions enter GitHub.
+
+---
+
+## D-010 — Vision and mission ownership / Vision-ի և mission-ի պատկանելիություն
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+MenQ Studio-ն և MenQ Standard-ը ունեն առանձին vision ու mission։ MenQ Studio-ի company mission-ը չի պատկանում MenQ Standard-ի Philosophy chapter-ին։ MenQ Standard-ի vision-ը հաստատված է, իսկ mission-ը դեռ բաց է։
+
+MenQ Studio-ի հաստատված company mission-ն է՝ ստեղծել գործնական թվային և AI լուծումներ, որոնք օգնում են մարդկանց ու բիզնեսներին ավտոմատացնել աշխատանքը, կառուցել ավելի արդյունավետ համակարգեր և զարգանալ տեխնոլոգիայի միջոցով։
+
+### English
+MenQ Studio and MenQ Standard have separate visions and missions. MenQ Studio's company mission does not belong inside the Philosophy chapter of MenQ Standard. The vision of MenQ Standard is approved, while its mission remains open.
+
+The approved company mission of MenQ Studio is to create practical digital and AI solutions that help people and businesses automate work, build more efficient systems, and grow through technology.
