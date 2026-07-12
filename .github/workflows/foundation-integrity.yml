@@ -1,0 +1,40 @@
+name: Foundation Integrity
+
+on:
+  push:
+    paths:
+      - "README.md"
+      - "PROJECT_CONTEXT.md"
+      - "AI_WORKING_CONTEXT.md"
+      - "DECISIONS.md"
+      - "DECISION_INDEX.md"
+      - "CHANGELOG.md"
+      - "ROADMAP.md"
+      - "COLLABORATION_STYLE.md"
+      - "foundation/**"
+      - "scripts/validate_foundation.py"
+      - ".github/workflows/foundation-integrity.yml"
+  pull_request:
+    paths:
+      - "README.md"
+      - "PROJECT_CONTEXT.md"
+      - "AI_WORKING_CONTEXT.md"
+      - "DECISIONS.md"
+      - "DECISION_INDEX.md"
+      - "CHANGELOG.md"
+      - "ROADMAP.md"
+      - "COLLABORATION_STYLE.md"
+      - "foundation/**"
+      - "scripts/validate_foundation.py"
+      - ".github/workflows/foundation-integrity.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate Foundation documentation
+        run: python scripts/validate_foundation.py
