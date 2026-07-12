@@ -27,7 +27,7 @@ def prepend(path: str, heading: str, marker: str, section: str) -> None:
 replace_required(
     "platforms/design/ROADMAP.md",
     "- [x] Part 16 — Canonical Specification Index and Implementation Package Plan.\n\n## Current / Ընթացիկ\n\n1. D-025 completeness audit and architecture gap analysis.\n2. Design Platform validator and CI implementation.\n3. Draft PR #3 review and Owner review.",
-    "- [x] Part 16 — Canonical Specification Index and Implementation Package Plan.\n- [x] D-025 completeness audit and architecture gap analysis.\n- [x] Design Platform D-025 conformance validator and CI coverage.\n- [x] Draft PR #3 architecture review record.\n\n## Current / Ընթացիկ\n\n1. Implementation Phase A — canonical specification registry, schemas, ownership, dependency graph, and package skeleton.\n2. Prepare two distinct real consumer candidates and bounded pilot scopes.\n3. Preserve Architecture GREEN / Implementation YELLOW until real evidence exists.",
+    "- [x] Part 16 — Canonical Specification Index and Implementation Package Plan.\n- [x] D-025 completeness audit and architecture gap analysis.\n- [x] Design Platform D-025 conformance validator and CI coverage.\n- [x] Draft PR #3 architecture review record.\n\n## Current / Ընթացիկ\n\n1. Implementation Phase A — canonical specification registry, schemas, ownership, dependency graph, and package skeleton.\n2. Select two distinct real consumer candidates and define bounded pilot scopes.\n3. Preserve Architecture GREEN / Implementation YELLOW until real evidence exists.",
 )
 
 for path in ["platforms/design/PROJECT_CONTEXT.md", "PROJECT_CONTEXT.md", "AI_WORKING_CONTEXT.md", "NEXT_CHAT_HANDOFF.md", "platforms/design/NEXT_CHAT_HANDOFF.md"]:
