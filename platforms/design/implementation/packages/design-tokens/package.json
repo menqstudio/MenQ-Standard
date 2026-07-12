@@ -4,6 +4,21 @@
   "private": true,
   "type": "module",
   "description": "Generated token artifacts and typed access.",
+  "exports": {
+    ".": {
+      "types": "./generated/tokens.d.ts",
+      "import": "./generated/tokens.js"
+    },
+    "./css": "./generated/tokens.css",
+    "./resolved": "./generated/tokens.resolved.json",
+    "./manifest": "./generated/manifest.json"
+  },
+  "files": [
+    "generated"
+  ],
+  "scripts": {
+    "build": "python ../../scripts/build_tokens.py"
+  },
   "dependencies": {
     "@menq/design-contracts": "workspace:*"
   }
