@@ -51,26 +51,21 @@ AI-ն աշխատում է որպես MenQ architect և engineering teammate։ Fi
 
 Բոլոր յոթ Foundation chapter-ները ունեն `README.md` և `PROJECT_CONTEXT.md`։
 
-### Remediation վիճակ
+### Remediation և validation վիճակ
 
-- Ստեղծվել է safe append-only `DECISION_INDEX.md`՝ `D-001–D-023` traceability-ի համար։
-- `DECISIONS.md` պահպանվել է որպես historical `D-001–D-021` registry և այլևս չի պահանջում վտանգավոր full rewrite։
-- Ստեղծվել են Documentation և AI Collaboration bilingual parity addenda-ները։
-- Ստեղծվել է `foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md`։
-- Ստեղծվել է `scripts/validate_foundation.py` validator-ը։
-- Ստեղծվել է `.github/workflows/foundation-integrity.yml` CI workflow-ը։
-- Ստեղծվել է `COLLABORATION_STYLE.md`, որը սահմանում է Գևորգի հետ բոլոր AI collaborators-ի միատեսակ communication mood-ը։
-
-### Integrity status
-
-Manual repository verification-ը հաստատել է required files-ի գոյությունը և critical ending markers-ը այն files-ում, որոնք այս transaction-ով ստեղծվել կամ թարմացվել են։ GitHub Actions CI run/status-ը դեռ evidence չի վերադարձրել և պետք է ստուգվի հաջորդ session-ում։ Մինչ CI GREEN evidence-ը Foundation release ZIP-ը չի ներկայացվում որպես validated release artifact։
+- Safe append-only `DECISION_INDEX.md`-ը պահպանում է `D-001–D-023` traceability-ն։
+- `DECISIONS.md`-ը historical `D-001–D-021` registry է և չի ենթարկվում մեծ full rewrite-ի։
+- Documentation և AI Collaboration bilingual parity addenda-ները առկա են։
+- Foundation normative metadata registry-ն, validator-ը և CI workflow-ը առկա են։
+- `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։
+- Validator output-ը՝ `FOUNDATION VALIDATION: GREEN` և `Validated 7 Foundation chapters and root controls.`
+- Foundation v1 release gate-ը GREEN է։
 
 ### Հաջորդ քայլ
 
-1. Կարդալ `NEXT_CHAT_HANDOFF.md`։
-2. Ստուգել Foundation Integrity workflow run-ը կամ local clone-ում գործարկել `python scripts/validate_foundation.py`։
-3. Եթե validator-ը RED է՝ ուղղել միայն reported defects-ը և կրկին verify անել։
-4. Եթե GREEN է՝ ստեղծել Foundation v1 complete repository ZIP snapshot և հետո բացել Platforms architecture formal decision-ը։
+1. Ստեղծել և verify անել complete Foundation v1 repository ZIP snapshot-ը՝ release README, version/date, manifest և missing-file verification-ով։
+2. ZIP-ը պահել որպես GitHub Release asset, ոչ main branch binary file։
+3. Հետո բացել Platforms architecture formal Decision System proposal-ը և սպասել Owner approval-ին։
 
 ---
 
@@ -117,25 +112,20 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 
 All seven Foundation chapters contain `README.md` and `PROJECT_CONTEXT.md`.
 
-### Remediation state
+### Remediation and validation state
 
-- A safe append-only `DECISION_INDEX.md` provides traceability for `D-001–D-023`.
-- `DECISIONS.md` is preserved as the historical `D-001–D-021` registry and no longer requires unsafe full rewrites.
+- The safe append-only `DECISION_INDEX.md` preserves `D-001–D-023` traceability.
+- `DECISIONS.md` is the historical `D-001–D-021` registry and is not subject to a large full rewrite.
 - Documentation and AI Collaboration bilingual parity addenda exist.
-- `foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md` exists.
-- `scripts/validate_foundation.py` exists.
-- `.github/workflows/foundation-integrity.yml` exists.
-- `COLLABORATION_STYLE.md` defines a consistent communication mood for all AI collaborators working with Gevorg.
-
-### Integrity status
-
-Manual repository verification confirms the required files and critical ending markers for files created or updated in this transaction. GitHub Actions has not yet returned CI run/status evidence and must be checked in the next session. Until CI GREEN evidence exists, the Foundation release ZIP must not be represented as a validated release artifact.
+- The Foundation normative metadata registry, validator, and CI workflow exist.
+- `Foundation Integrity` workflow run `#9` completed with a `success` conclusion.
+- Validator output: `FOUNDATION VALIDATION: GREEN` and `Validated 7 Foundation chapters and root controls.`
+- The Foundation v1 release gate is GREEN.
 
 ### Next step
 
-1. Read `NEXT_CHAT_HANDOFF.md`.
-2. Check the Foundation Integrity workflow run or run `python scripts/validate_foundation.py` in a local clone.
-3. If the validator is RED, fix only the reported defects and verify again.
-4. If GREEN, create the complete Foundation v1 repository ZIP snapshot and then open the formal Platforms architecture decision.
+1. Create and verify the complete Foundation v1 repository ZIP snapshot with a release README, version/date, manifest, and missing-file verification.
+2. Store the ZIP as a GitHub Release asset, not as a binary file in the main branch.
+3. Then open the formal Decision System proposal for Platforms architecture and await Owner approval.
 
 <!-- END: MENQ_STANDARD_AI_WORKING_CONTEXT -->
