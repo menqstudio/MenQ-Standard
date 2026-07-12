@@ -93,6 +93,22 @@ jobs:
           const section = m.sectionPatternProps({ variant: 'outlined', size: 'lg', labelledBy: 'section-title' });
           if (section['data-menq-pattern'] !== 'section' || section['data-menq-component'] !== 'card' || section['data-variant'] !== 'outlined') process.exit(1);
           NODE
+      - name: Smoke-test Design Assets public package API
+        working-directory: platforms/design/implementation
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('@menq/design-assets');
+          const registry = m.createAssetRegistry([{
+            id: 'menq.design.asset.icon.action.save',
+            kind: 'icon',
+            source: './icons/action-save.svg',
+            description: { hy: 'Պահպանման պատկերակ', en: 'Save icon' },
+            alt: { hy: 'Պահպանել', en: 'Save' },
+            provenance: { owner: 'MenQ', origin: 'MenQ Design Platform', license: 'MenQ Internal' },
+          }]);
+          const resolved = registry.resolve('menq.design.asset.icon.action.save', 'hy');
+          if (resolved.alt !== 'Պահպանել' || resolved.description !== 'Պահպանման պատկերակ' || registry.ids.length !== 1) process.exit(1);
+          NODE
       - name: Verify generated artifact checksums
         run: |
           python - <<'PY'
