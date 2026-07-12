@@ -16,7 +16,7 @@ TOKEN_DIR = WORKSPACE / "packages/design-tokens/generated"
 TOKEN_CSS = TOKEN_DIR / "tokens.css"
 TOKEN_MANIFEST = TOKEN_DIR / "manifest.json"
 SOURCE_FILES = (
-    SOURCE_DIR / "reset.css",
+    SOURCE_DIR / "base.css",
     SOURCE_DIR / "layout.css",
 )
 TOKEN_REFERENCE = re.compile(r"var\((--menq-[a-z0-9-]+)\)")
