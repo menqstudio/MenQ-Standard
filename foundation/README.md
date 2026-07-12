@@ -21,6 +21,16 @@ Foundation
 └── AI Collaboration
 ```
 
+### Ընթացիկ կարգավիճակ
+
+- [`Philosophy`](philosophy/README.md) — Locked
+- [`Principles`](principles/README.md) — Locked
+- Terminology — Pending
+- Governance — Pending
+- Decision System — Pending
+- Documentation — Pending
+- AI Collaboration — Pending
+
 ### Սահման
 
 Foundation-ը չի պարունակում product-specific կանոններ կամ implementation details։ Platforms-ը, Operating Standards-ը և Extensions-ը պետք է բխեն Foundation-ից և չհակասեն դրան։
@@ -55,6 +65,16 @@ Foundation
 ├── Documentation
 └── AI Collaboration
 ```
+
+### Current status
+
+- [`Philosophy`](philosophy/README.md) — Locked
+- [`Principles`](principles/README.md) — Locked
+- Terminology — Pending
+- Governance — Pending
+- Decision System — Pending
+- Documentation — Pending
+- AI Collaboration — Pending
 
 ### Boundary
 
