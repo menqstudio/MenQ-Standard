@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "menq.design.schema.token-source.v1",
+  "title": "MenQ Design Platform Token Source v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "sourceId",
+    "decision",
+    "status",
+    "canonicalLanguages",
+    "generatedOutputsAreCanonical",
+    "tokens"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "sourceId": { "type": "string", "pattern": "^menq\\.design\\.token-source\\.[a-z0-9.-]+\\.v[0-9]+$" },
+    "decision": { "const": "D-025" },
+    "status": { "const": "Approved — Implementing" },
+    "canonicalLanguages": { "const": ["hy", "en"] },
+    "generatedOutputsAreCanonical": { "const": false },
+    "tokens": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "layer", "type", "description", "ownerId", "lifecycle"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^menq\\.design\\.token\\.(reference|semantic|component|pattern|product-extension)\\.[a-z0-9.-]+$" },
+          "layer": { "enum": ["Reference", "Semantic", "Component", "Pattern", "Product Extension"] },
+          "type": { "enum": ["color", "dimension", "number", "duration", "cubic-bezier", "font-family", "font-weight", "line-height", "shadow", "string"] },
+          "description": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["hy", "en"],
+            "properties": {
+              "hy": { "type": "string", "minLength": 1 },
+              "en": { "type": "string", "minLength": 1 }
+            }
+          },
+          "ownerId": { "type": "string", "pattern": "^owner\\.[a-z0-9.-]+$" },
+          "lifecycle": { "enum": ["Draft", "Approved — Implementing", "Locked", "Deprecated"] },
+          "value": { "type": ["string", "number"] },
+          "reference": { "type": "string" }
+        },
+        "oneOf": [
+          { "required": ["value"], "not": { "required": ["reference"] } },
+          { "required": ["reference"], "not": { "required": ["value"] } }
+        ]
+      }
+    }
+  }
+}
