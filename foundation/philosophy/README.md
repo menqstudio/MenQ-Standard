@@ -31,6 +31,15 @@ Philosophy
 
 **Սահմանազատում:** MenQ Studio-ի company mission-ը առանձին է և չի պատկանում MenQ Standard-ի Philosophy chapter-ին։
 
+### Core Beliefs — Locked
+
+1. Մարդը բերում է նպատակը և պահում վերջնական իշխանությունը։
+2. AI-ն ուժեղացնում է մարդուն, չի վերցնում պատասխանատվությունը։
+3. Ստանդարտը պահպանում է որոշումները, գիտելիքն ու շարունակականությունը։
+4. Համակարգերը գերադասելի են մեկանգամյա լուծումներից։
+5. Թափանցիկությունն ու վերահսկելիությունը պարտադիր են։
+6. MenQ-ը զարգանում է ապացույցով, ոչ hype-ով։
+
 ### Համապատասխանության կանոն
 
 MenQ Standard-ի յուրաքանչյուր կարևոր որոշում պետք է ստուգվի հետևյալ հարցով՝
@@ -69,6 +78,15 @@ Philosophy
 > MenQ Standard's mission is to create a practical and evolving operating standard that helps people and AI systems think, decide, build, and preserve quality systems together.
 
 **Boundary:** MenQ Studio's company mission is separate and does not belong inside the Philosophy chapter of MenQ Standard.
+
+### Core Beliefs — Locked
+
+1. Humans bring the purpose and retain final authority.
+2. AI strengthens humans; it does not take responsibility away from them.
+3. Standards preserve decisions, knowledge, and continuity.
+4. Systems are preferred over one-time solutions.
+5. Transparency and controllability are mandatory.
+6. MenQ advances through evidence, not hype.
 
 ### Alignment rule
 
