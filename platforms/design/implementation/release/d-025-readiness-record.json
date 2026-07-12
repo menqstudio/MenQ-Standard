@@ -8,4 +8,58 @@
     "en": "D-025 implementation and adoption readiness evidence"
   },
   "evidenceSnapshot": {
-    "sourceCommit": "e98f44ccabcdd329
+    "sourceCommit": "e98f44ccabcdd3294b254105235e5f3e08c28ba1",
+    "workflowName": "Design Platform Preview Release Integrity",
+    "workflowRunId": 29210874292,
+    "workflowRunNumber": 12,
+    "workflowConclusion": "success",
+    "artifactId": 8265108086,
+    "artifactName": "menq-design-platform-0.1.0-next.0",
+    "artifactDigest": "sha256:54c736ed590ae521b24c0b0d58878ed72539a66f4edcdf5c1489996f176a8764",
+    "artifactSizeBytes": 40344,
+    "artifactExpired": false
+  },
+  "release": {
+    "version": "0.1.0-next.0",
+    "channel": "next",
+    "packageCount": 10,
+    "deterministicBuild": "GREEN",
+    "checksums": "GREEN",
+    "publicApiDiff": "GREEN",
+    "compatibilityMigrationRollback": "GREEN"
+  },
+  "consumers": [
+    {
+      "consumerId": "menq.design.consumer.catalog",
+      "name": "MenQ Design Catalog",
+      "maturity": "M3",
+      "verdict": "GREEN",
+      "purpose": {
+        "hy": "Բիլինգվալ documentation և component catalog consumer",
+        "en": "Bilingual documentation and component catalog consumer"
+      }
+    },
+    {
+      "consumerId": "menq.design.consumer.release-console",
+      "name": "MenQ Release Evidence Console",
+      "maturity": "M4",
+      "verdict": "GREEN",
+      "purpose": {
+        "hy": "Production-equivalent release evidence, health և rollback operational consumer",
+        "en": "Production-equivalent release evidence, health, and rollback operational consumer"
+      }
+    }
+  ],
+  "crossConsumerValidation": "GREEN",
+  "qualityAndAdoptionEvidence": "GREEN",
+  "authority": {
+    "readyForReviewAuthorized": false,
+    "mergeAuthorized": false,
+    "lockAuthorized": false,
+    "ownerApprovalStatus": "pending"
+  },
+  "remainingAction": {
+    "hy": "Canonical documentation synchronization-ից և GREEN validation-ից հետո Owner-ը առանձին որոշում է ready-for-review, merge և lock գործողությունները։",
+    "en": "After canonical documentation synchronization and GREEN validation, the Owner separately decides ready-for-review, merge, and lock actions."
+  }
+}
