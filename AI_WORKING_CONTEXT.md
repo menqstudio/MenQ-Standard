@@ -12,23 +12,15 @@
 
 ### Պարտադիր startup workflow
 
-Նոր AI collaborator-ը աշխատանքից առաջ կարդում է՝
+Յուրաքանչյուր նոր AI session մինչև որևէ substantive project աշխատանք սկսելը պարտավոր է՝
 
-1. `README.md`
-2. `PROJECT_CONTEXT.md`
-3. `COLLABORATION_STYLE.md`
-4. `AI_WORKING_CONTEXT.md`
-5. `DECISION_INDEX.md`
-6. `DECISIONS.md`
-7. `CHANGELOG.md`
-8. `ROADMAP.md`
-9. `foundation/README.md`
-10. `foundation/PROJECT_CONTEXT.md`
-11. `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`
-12. համապատասխան platform/chapter context-ը
-13. `NEXT_CHAT_HANDOFF.md`, եթե current է
+1. հաստատել canonical repository-ն և active branch/ref-ը,
+2. enumerate անել repository-ի բոլոր tracked `.md` ֆայլերը,
+3. յուրաքանչյուր `.md` file ամբողջությամբ կարդալ beginning-ից end-of-file կամ ending marker,
+4. active PR-ի դեպքում կարդալ metadata-ն, changed files-ը, diff-ը, review threads-ը և checks-ը,
+5. unresolved read failure կամ truncation-ի բացակայությունից հետո միայն հայտարարել startup gate-ը GREEN։
 
-Repository-ի հասցեն և արդեն documented persistent rules-ը Owner-ից կրկին չեն հարցվում։
+Պարտադիր օրենքը՝ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`։ Startup subset-ը, handoff-ը, summary-ն, partial range-ը կամ previous-session memory-ն complete-read evidence չեն։ Repository-ի հասցեն և արդեն documented persistent rules-ը Owner-ից կրկին չեն հարցվում։
 
 ### Human–AI սկզբունք
 
@@ -44,6 +36,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - Foundation v1 — Locked և GREEN։
 - `D-024 — Platforms Architecture v1` — merged և canonical։
 - `D-025 — MenQ Design Platform Architecture v1` — `Approved — Implementing`, ոչ `Locked`։
+- `D-026 — Canonical Session Read Law` — Locked։
 - Working branch — `d-025-design-platform-architecture-v1`։
 - Draft PR — `#3`, merge չի արվում մինչև completeness, synchronization, validation և Owner approval։
 
@@ -69,13 +62,14 @@ Theme, state, density, platform, locale, accessibility և motion preference-ը t
 
 ### Հաջորդ հստակ աշխատանք
 
-1. Կտոր 12 — Validation, CI, Conformance և Quality Gates Architecture։
-2. Documentation portal, catalog և design-tool integration։
-3. Governance, contribution, ownership և change-request lifecycle։
-4. Product adoption, maturity model և two-consumer validation plan։
-5. Canonical specification index և implementation package plan։
-6. D-025 completeness audit, validator design և Draft PR #3 review։
-7. Canonical synchronization, GREEN evidence և Owner review։
+1. Extend Foundation validation for D-026 session-read references.
+2. Կտոր 12 — Validation, CI, Conformance և Quality Gates Architecture։
+3. Documentation portal, catalog և design-tool integration։
+4. Governance, contribution, ownership և change-request lifecycle։
+5. Product adoption, maturity model և two-consumer validation plan։
+6. Canonical specification index և implementation package plan։
+7. D-025 completeness audit, validator design և Draft PR #3 review։
+8. Canonical synchronization, GREEN evidence և Owner review։
 
 ---
 
@@ -83,7 +77,15 @@ Theme, state, density, platform, locale, accessibility և motion preference-ը t
 
 ### Required startup workflow
 
-Before work, a new AI collaborator reads the root startup set, the relevant platform/chapter context, and the current `NEXT_CHAT_HANDOFF.md`. Do not ask the Owner again for the repository address or persistent rules already documented in the repository.
+Before beginning any substantive project work, every new AI session must:
+
+1. identify the canonical repository and active branch or ref;
+2. enumerate every tracked `.md` file in the repository;
+3. read each `.md` file completely from beginning to end-of-file or ending marker;
+4. when an active PR is involved, read its metadata, changed files, diff, review threads, and checks;
+5. declare the startup gate GREEN only after confirming there are no unresolved read failures or truncation.
+
+The mandatory law is `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. A startup subset, handoff, summary, partial range, or previous-session memory is not complete-read evidence. Do not ask the Owner again for the repository address or persistent rules already documented in the repository.
 
 ### Human–AI principle
 
@@ -99,6 +101,7 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 - Foundation v1 is Locked and GREEN.
 - `D-024 — Platforms Architecture v1` is merged and canonical.
 - `D-025 — MenQ Design Platform Architecture v1` is `Approved — Implementing`, not `Locked`.
+- `D-026 — Canonical Session Read Law` is Locked.
 - Working branch: `d-025-design-platform-architecture-v1`.
 - Draft PR: `#3`; it must remain unmerged until completeness, synchronization, validation, and Owner approval are complete.
 
@@ -110,12 +113,13 @@ Theme, state, density, platform, locale, accessibility, and motion preference ar
 
 ### Exact next work
 
-1. Part 12 — Validation, CI, Conformance, and Quality Gates Architecture.
-2. Documentation portal, catalog, and design-tool integration.
-3. Governance, contribution, ownership, and change-request lifecycle.
-4. Product adoption, maturity model, and two-consumer validation plan.
-5. Canonical specification index and implementation package plan.
-6. D-025 completeness audit, validator design, and Draft PR #3 review.
-7. Canonical synchronization, GREEN evidence, and Owner review.
+1. Extend Foundation validation for D-026 session-read references.
+2. Part 12 — Validation, CI, Conformance, and Quality Gates Architecture.
+3. Documentation portal, catalog, and design-tool integration.
+4. Governance, contribution, ownership, and change-request lifecycle.
+5. Product adoption, maturity model, and two-consumer validation plan.
+6. Canonical specification index and implementation package plan.
+7. D-025 completeness audit, validator design, and Draft PR #3 review.
+8. Canonical synchronization, GREEN evidence, and Owner review.
 
 <!-- END: MENQ_STANDARD_AI_WORKING_CONTEXT -->
