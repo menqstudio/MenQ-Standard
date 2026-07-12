@@ -1,0 +1,30 @@
+name: Design Platform Phase A Integrity
+
+on:
+  push:
+    branches:
+      - d-025-design-platform-architecture-v1
+    paths:
+      - "platforms/design/specifications/**"
+      - "platforms/design/validation/**"
+      - ".github/workflows/design-platform-phase-a.yml"
+  pull_request:
+    paths:
+      - "platforms/design/specifications/**"
+      - "platforms/design/validation/**"
+      - ".github/workflows/design-platform-phase-a.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-phase-a:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate Design Platform Phase A registry
+        run: python platforms/design/validation/validate_phase_a.py
