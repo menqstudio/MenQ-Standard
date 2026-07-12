@@ -1,6 +1,6 @@
 # Philosophy / Փիլիսոփայություն
 
-**Status / Կարգավիճակ:** Structure Locked, Content In Progress / Կառուցվածքը հաստատված է, բովանդակությունը մշակման փուլում է
+**Status / Կարգավիճակ:** Locked / Հաստատված
 
 ## Հայերեն
 
@@ -68,6 +68,12 @@ Philosophy
 > **Ապացույցներ, ոչ պնդումներ։ Պատեր, ոչ խոստումներ։**
 
 Engineering Philosophy-ի ամբողջական 15 սկզբունքները պահվում են [`ENGINEERING_PHILOSOPHY.md`](ENGINEERING_PHILOSOPHY.md)-ում։
+
+### Product Philosophy — Locked
+
+> **Մենք չենք կառուցում feature-ների հավաքածու։ Մենք լուծում ենք իրական խնդիրներ՝ ամբողջական, վստահելի և զարգացող պրոդուկտներով։**
+
+Product Philosophy-ի ամբողջական 13 սկզբունքները պահվում են [`PRODUCT_PHILOSOPHY.md`](PRODUCT_PHILOSOPHY.md)-ում։
 
 ### Համապատասխանության կանոն
 
@@ -145,6 +151,12 @@ In practice:
 > **Evidence over assertion. Walls over promises.**
 
 The complete 15 principles of Engineering Philosophy are preserved in [`ENGINEERING_PHILOSOPHY.md`](ENGINEERING_PHILOSOPHY.md).
+
+### Product Philosophy — Locked
+
+> **We do not build collections of features. We solve real problems through complete, trustworthy, and evolving products.**
+
+The complete 13 principles of Product Philosophy are preserved in [`PRODUCT_PHILOSOPHY.md`](PRODUCT_PHILOSOPHY.md).
 
 ### Alignment rule
 
