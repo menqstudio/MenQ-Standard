@@ -31,8 +31,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Install workspace links
+        working-directory: platforms/design/implementation
+        run: |
+          corepack enable
+          pnpm install --ignore-scripts
       - name: Validate Design Platform Phase A registry and workspace skeleton
         run: python platforms/design/validation/validate_phase_a.py
+      - name: Validate registry and package public API parity
+        run: python platforms/design/validation/validate_public_api.py
       - name: Smoke-test design contracts public API
         run: |
           node --input-type=module -e "import('./platforms/design/implementation/packages/design-contracts/src/index.js').then((m) => { m.assertCanonicalTokenId('menq.design.token.reference.color.neutral.0'); m.assertBilingualDescription({hy:'հայերեն',en:'English'}); if (m.TOKEN_SOURCE_SCHEMA_ID !== 'menq.design.schema.token-source.v1') process.exit(1); })"
@@ -65,6 +72,15 @@ jobs:
           if (disclosure.content.hidden !== true || disclosure.trigger['aria-controls'] !== 'content-a') process.exit(1);
           if (m.primitiveClass('visuallyHidden') !== 'menq-visually-hidden') process.exit(1);
           NODE
+      - name: Smoke-test internal Design Components contracts
+        run: |
+          node --input-type=module <<'NODE'
+          const m = await import('./platforms/design/implementation/packages/design-components/src/index.js');
+          const button = m.buttonComponentProps({ variant: 'primary', size: 'md', loading: true, controlsId: 'panel-a' });
+          if (button.disabled !== true || button['aria-busy'] !== true || button['data-menq-component'] !== 'button') process.exit(1);
+          const card = m.cardComponentProps({ variant: 'outlined', labelledBy: 'card-title' });
+          if (card['aria-labelledby'] !== 'card-title' || card['data-variant'] !== 'outlined') process.exit(1);
+          NODE
       - name: Verify generated artifact checksums
         run: |
           python - <<'PY'
@@ -87,5 +103,3 @@ jobs:
                   verified += 1
           print(f"Verified {verified} generated artifact checksums.")
           PY
-      - name: Validate registry and package public API parity
-        run: python platforms/design/validation/validate_public_api.py
