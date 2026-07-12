@@ -20,6 +20,8 @@
 - **D-026 Canonical Session Read Law:** Locked and machine-enforced / Locked և machine-enforced
 - **D-025 implementation merge:** `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`
 - **D-025 closure merge:** `9a833339b1d707d6cd8a792e031dd8ca2857d556`
+- **D-025 lock merge:** `261f85e5b20d726a0ab1f05da84a4dc45a248873`
+- **D-025 validated lock head:** `8ba2e987ff6dab2c25fda18744c7376953d0108f`
 - **D-025 lock date:** 2026-07-13
 - **Owner:** MenQ
 - **Languages:** Armenian + English
@@ -48,9 +50,9 @@ MenQ Ecosystem
 
 ## MenQ Design Platform status / MenQ Design Platform վիճակ
 
-**HY:** D-025-ի Parts 1–16 architecture-ը, canonical registry/schema/package implementation-ը, private `0.1.0-next.0` preview candidate-ը, deterministic release evidence-ը, երկու distinct consumers-ի M3/M4 evidence-ը, post-merge closure-ը և machine validation-ը GREEN են։ Owner-ը 2026-07-13-ին explicit հաստատել է lock-ը։ D-025-ը Locked է։
+**HY:** D-025-ի Parts 1–16 architecture-ը, canonical registry/schema/package implementation-ը, private `0.1.0-next.0` preview candidate-ը, deterministic release evidence-ը, երկու distinct consumers-ի M3/M4 evidence-ը, post-merge closure-ը, lock evidence-ը և machine validation-ը GREEN են։ Owner-ը 2026-07-13-ին explicit հաստատել է lock-ը։ D-025 transaction-ը փակված է։
 
-**EN:** D-025 Parts 1–16 architecture, canonical registry/schema/package implementation, the private `0.1.0-next.0` preview candidate, deterministic release evidence, M3/M4 evidence from two distinct consumers, post-merge closure, and machine validation are GREEN. On 2026-07-13, the Owner explicitly approved lock. D-025 is Locked.
+**EN:** D-025 Parts 1–16 architecture, canonical registry/schema/package implementation, the private `0.1.0-next.0` preview candidate, deterministic release evidence, M3/M4 evidence from two distinct consumers, post-merge closure, lock evidence, and machine validation are GREEN. On 2026-07-13, the Owner explicitly approved lock. The D-025 transaction is closed.
 
 ## Mandatory AI session startup / AI session-ի պարտադիր մեկնարկ
 
@@ -72,6 +74,7 @@ MenQ Ecosystem
 - [`platforms/design/PROJECT_CONTEXT.md`](platforms/design/PROJECT_CONTEXT.md) — Design Platform current state
 - [`platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md`](platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md) — closure evidence
 - [`platforms/design/D-025_LOCK_RECORD.md`](platforms/design/D-025_LOCK_RECORD.md) — lock evidence
+- [`platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`](platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md) — final audit and transaction closure
 - [`platforms/design/implementation/release/d-025-readiness-record.json`](platforms/design/implementation/release/d-025-readiness-record.json) — machine-readable lock evidence
 - [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md) — mandatory write integrity law
 
