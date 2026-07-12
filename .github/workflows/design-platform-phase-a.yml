@@ -28,5 +28,34 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
       - name: Validate Design Platform Phase A registry and workspace skeleton
         run: python platforms/design/validation/validate_phase_a.py
+      - name: Smoke-test design contracts public API
+        run: |
+          node --input-type=module -e "import('./platforms/design/implementation/packages/design-contracts/src/index.js').then((m) => { m.assertCanonicalTokenId('menq.design.token.reference.color.neutral.0'); m.assertBilingualDescription({hy:'հայերեն',en:'English'}); if (m.TOKEN_SOURCE_SCHEMA_ID !== 'menq.design.schema.token-source.v1') process.exit(1); })"
+      - name: Build deterministic token artifacts
+        run: python platforms/design/implementation/scripts/build_tokens.py
+      - name: Verify deterministic token rebuild
+        run: |
+          cp platforms/design/implementation/packages/design-tokens/generated/manifest.json /tmp/menq-token-manifest.json
+          python platforms/design/implementation/scripts/build_tokens.py
+          cmp /tmp/menq-token-manifest.json platforms/design/implementation/packages/design-tokens/generated/manifest.json
+      - name: Verify generated artifact checksums
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path('platforms/design/implementation/packages/design-tokens/generated')
+          manifest = json.loads((root / 'manifest.json').read_text(encoding='utf-8'))
+          for artifact in manifest['artifacts']:
+              path = root / artifact['path']
+              data = path.read_bytes()
+              assert len(data) == artifact['bytes'], artifact['path']
+              assert hashlib.sha256(data).hexdigest() == artifact['sha256'], artifact['path']
+          print(f"Verified {len(manifest['artifacts'])} generated artifact checksums.")
+          PY
