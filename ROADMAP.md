@@ -24,30 +24,32 @@
 - [x] Part 12 — Validation, CI, Conformance, and Quality Gates Architecture
 - [x] Part 13 — Documentation Portal, Component Catalog, and Design-Tool Integration Architecture
 - [x] Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle Architecture
+- [x] Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan
+- [x] Part 16 — Canonical Specification Index and Implementation Package Plan
+- [x] D-025 completeness audit and Draft PR architecture review
+- [x] D-025-aware Platforms validator and CI coverage
 
 ## Current / Ընթացիկ
 
 ### MenQ Design Platform D-025 implementation
 
-**HY:** D-025-ը `Approved — Implementing` է։ Working branch-ը `d-025-design-platform-architecture-v1` է, Draft PR-ը՝ `#3`։ PR-ը չի merge արվում մինչև architecture completeness, canonical synchronization, validator evidence, real consumer validation և Owner approval։
+**HY:** D-025-ը `Approved — Implementing` է։ Working branch-ը `d-025-design-platform-architecture-v1` է, Draft PR-ը՝ `#3`։ Architecture verdict-ը GREEN է, implementation/lock readiness-ը՝ YELLOW։
 
-**EN:** D-025 is `Approved — Implementing`. The working branch is `d-025-design-platform-architecture-v1`, and Draft PR `#3` remains unmerged until architecture completeness, canonical synchronization, validator evidence, real consumer validation, and Owner approval.
+**EN:** D-025 is `Approved — Implementing`. The working branch is `d-025-design-platform-architecture-v1`, and Draft PR `#3` remains open, Draft, and unmerged. Architecture is GREEN; implementation and lock readiness remain YELLOW.
 
 Current sequence:
 
-1. D-025 completeness audit and architecture gap analysis.
-2. Design Platform validator and CI implementation.
-3. Draft PR #3 review, GREEN evidence, and Owner review.
+1. Implementation Phase A — canonical specification registry, schemas, ownership, dependency graph, and package skeleton.
+2. Select two distinct real consumer candidates and define bounded pilot scopes.
+3. Preserve honest GREEN/YELLOW evidence until implementation and consumer proof exist.
 
 ## Next / Հաջորդը
 
-1. Create the controlled bilingual Design Platform specification set.
-2. Build the first versioned implementation package.
-3. Add Design Platform integrity validator and GitHub Actions workflow.
-4. Validate adoption with at least two distinct real MenQ products or systems.
-5. Record compatibility, migration, release, governance, portal/catalog/design-tool parity, and consumer evidence.
-6. Request explicit Owner decision on merge and later lock.
-7. Continue Operating Standards and Extensions architecture only after the active Platform transaction is properly closed.
+1. Build the token/foundation pipeline and first versioned package prototypes.
+2. Add deterministic build, checksum, public API, compatibility, migration, and release-manifest evidence.
+3. Validate two distinct real consumers, including at least one M4 operational path.
+4. Request explicit Owner decisions for ready-for-review, merge, and later lock.
+5. Continue Operating Standards and Extensions architecture only after the active Platform transaction is properly closed.
 
 ## History Rule / Պատմության կանոն
 
