@@ -2,7 +2,7 @@
   "schema_version": 1,
   "repository": "menqstudio/MenQ-Standard",
   "source": "git ls-files -- *.md *.MD",
-  "file_count": 61,
+  "file_count": 62,
   "files": [
     {
       "path": "AI_WORKING_CONTEXT.md",
@@ -248,6 +248,11 @@
       "path": "platforms/design/CONTRACTS.md",
       "bytes": 4386,
       "sha256": "4f7e9fd8f63f8aab19368b924b2e8b2a0d60d9f8ec89ffb149bdd975e2f992c9"
+    },
+    {
+      "path": "platforms/design/D-025_COMPLETENESS_AUDIT.md",
+      "bytes": 5217,
+      "sha256": "0dcbe32858aba1c7c946e38d417354d90eaea17f934ea0e27f0d1068bddd9e1e"
     },
     {
       "path": "platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md",
