@@ -11,48 +11,41 @@
 
 **EN:** A roadmap item is a future direction, not a locked commitment. It gains mandatory canonical authority only after approval and documentation through the MenQ Decision System.
 
----
+## Completed / Ավարտված
 
-## Current / Ընթացիկ
-
-### Foundation completion / Foundation-ի ավարտ
-
-- [x] Philosophy
-- [x] Principles
+- [x] Philosophy v1
+- [x] Principles v1
 - [x] Terminology v1
 - [x] Governance v1
 - [x] Decision System v1
 - [x] Documentation Standard v1
-- [x] AI Collaboration v1
+- [x] Canonical Write Integrity Law (`D-022`)
+- [x] AI Collaboration v1 (`D-023`)
+- [x] Foundation integrity audit
+- [x] Six missing chapter contexts
+- [x] Safe append-only decision index architecture
+- [x] Bilingual parity controls
+- [x] Foundation normative metadata registry
+- [x] Foundation integrity validator and CI workflow
+- [x] MenQ collaboration style standard
+- [x] Current working context synchronization
 
----
+## Current / Ընթացիկ
+
+### Final validation evidence
+
+**HY:** Repository-side remediation-ը կիրառված է։ Պետք է ստանալ `python scripts/validate_foundation.py` կամ Foundation Integrity workflow-ի իրական GREEN result-ը։ Local clone փորձը չաշխատեց execution environment-ի DNS սահմանափակման պատճառով, իսկ GitHub Actions status-ը դեռ չի վերադարձել։
+
+**EN:** Repository-side remediation has been applied. A real GREEN result is still required from `python scripts/validate_foundation.py` or the Foundation Integrity workflow. The local clone attempt failed because of DNS restrictions in the execution environment, and GitHub Actions status has not yet been returned.
 
 ## Next / Հաջորդը
 
-### Foundation integrity review
-
-**HY:** Կատարել Foundation-ի ամբողջական consistency, link, bilingual parity և documentation integrity review՝ բոլոր յոթ chapter-ների, context files-ի, decisions-ի և indexes-ի համար։
-
-**EN:** Perform a complete Foundation consistency, link, bilingual parity, and documentation integrity review across all seven chapters, context files, decisions, and indexes.
-
-### Foundation release readiness
-
-**HY:** Audit-ից հետո սահմանել Foundation v1 release status-ը և պատրաստել complete repository package/ZIP snapshot։
-
-**EN:** After the audit, define Foundation v1 release status and prepare a complete repository package/ZIP snapshot.
-
----
-
-## Later / Հետագայում
-
-1. Platforms architecture
-2. Operating Standards architecture
-3. Extensions architecture
-4. MenQ Standard release and versioning model
-5. Automated documentation integrity checks
-6. Complete repository package and ZIP snapshot
-
----
+1. Obtain validator GREEN evidence.
+2. Produce the complete Foundation v1 repository ZIP snapshot.
+3. Define Platforms architecture through a formal decision.
+4. Define Operating Standards architecture.
+5. Define Extensions architecture.
+6. Establish the MenQ Standard release/versioning model.
 
 ## History Rule / Պատմության կանոն
 
