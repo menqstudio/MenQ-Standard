@@ -11,9 +11,11 @@
 
 ### Պարտադիր հրահանգ
 
-Նոր chat-ում repository-ի հասցեն, Owner-ի անունը, project-ի նպատակը, communication style-ը կամ continuation point-ը կրկին չհարցնել։ Նախ կարդալ canonical startup set-ը, համապատասխան Design Platform files-ը, այս handoff-ը և Draft PR #3 metadata/diff-ը, հետո ուղիղ շարունակել աշխատանքը։
+Նոր chat-ում repository-ի հասցեն, Owner-ի անունը, project-ի նպատակը, communication style-ը կամ continuation point-ը կրկին չհարցնել։ Մինչև որևէ substantive պատասխան կամ աշխատանք՝ active branch/ref-ում enumerate անել և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` ֆայլերը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Startup subset-ը, handoff-ը, summary-ն, partial range-ը կամ previous-session memory-ն complete-read evidence չեն։ Active PR-ի դեպքում լրացուցիչ կարդալ metadata-ն, changed files-ը, diff-ը, review threads-ը և checks-ը։ Միայն իրական complete-read evidence-ից հետո startup gate-ը GREEN հայտարարել և շարունակել աշխատանքը։
 
-### Կարդալու հերթականություն
+### Պարտադիր special confirmations
+
+Repository-ի բոլոր `.md` files-ը ամբողջությամբ կարդալուց հետո հատուկ հաստատել՝
 
 1. `README.md`
 2. `PROJECT_CONTEXT.md`
@@ -26,16 +28,18 @@
 9. `foundation/README.md`
 10. `foundation/PROJECT_CONTEXT.md`
 11. `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`
-12. `platforms/D-024-PLATFORMS-ARCHITECTURE-V1.md`
-13. `platforms/design/PROJECT_CONTEXT.md`
-14. `platforms/design/ARCHITECTURE.md`
-15. `platforms/design/CONTRACTS.md`
-16. `platforms/design/ROADMAP.md`
-17. `platforms/design/CHANGELOG.md`
-18. `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`
-19. `platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`
-20. `platforms/design/NEXT_CHAT_HANDOFF.md`
-21. Draft PR #3 metadata, changed files, diff, review threads, and checks
+12. `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`
+13. `foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md`
+14. `platforms/D-024-PLATFORMS-ARCHITECTURE-V1.md`
+15. `platforms/design/PROJECT_CONTEXT.md`
+16. `platforms/design/ARCHITECTURE.md`
+17. `platforms/design/CONTRACTS.md`
+18. `platforms/design/ROADMAP.md`
+19. `platforms/design/CHANGELOG.md`
+20. `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`
+21. `platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`
+22. `platforms/design/NEXT_CHAT_HANDOFF.md`
+23. Draft PR #3 metadata, changed files, diff, review threads, and checks
 
 ### Authority և working style
 
@@ -51,6 +55,7 @@
 - Foundation v1 — Locked և GREEN։
 - D-024 Platforms Architecture v1 — merged և canonical։
 - D-025 MenQ Design Platform Architecture v1 — `Approved — Implementing`, ոչ `Locked`։
+- D-026 Canonical Session Read Law — Locked։
 - Working branch — `d-025-design-platform-architecture-v1`։
 - Draft PR #3 — open, Draft, unmerged։
 - PR-ը չի merge արվում մինչև architecture completeness, canonical synchronization, validator evidence, real consumer validation և explicit Owner approval։
@@ -81,7 +86,7 @@ Theme, state, density, platform, viewport/container, locale/script, accessibilit
 
 ### Հստակ continuation point
 
-Ուղիղ սկսել՝
+Առաջինը՝ extend անել Foundation validator-ը, որպեսզի D-026 law/decision/index/context/handoff references-ը enforce անի։ Հետո ուղիղ սկսել՝
 
 **Part 12 — Validation, CI, Conformance, and Quality Gates Architecture**
 
@@ -106,10 +111,13 @@ Theme, state, density, platform, viewport/container, locale/script, accessibilit
 - Controlled exception-ը normal dependency layer չդարձնել։
 - Logo presentation-ը architecture review-ի մեջ չմտցնել։
 - Tool success-ը GREEN evidence չհամարել։
+- Չասել «բոլոր MD-ները կարդացի», եթե inventory կամ complete-read evidence չկա։
 
 ### Նոր chat-ի առաջին պատասխանը
 
-> Կարդացի MenQ Design Platform-ի canonical handoff-ը, ընգեր։ D-025-ը Approved — Implementing է, PR #3-ը Draft և unmerged է, Parts 1–11 baseline-ը Owner-approved և synchronized է։ Ուղիղ շարունակում եմ Part 12-ից՝ Validation, CI, Conformance և Quality Gates Architecture, հետո գնում եմ մինչև completeness audit, validator evidence և Owner review։
+Startup gate-ը GREEN լինելուց հետո միայն՝
+
+> Կարդացի active branch-ի բոլոր tracked Markdown files-ը և PR #3 evidence-ը, ընգեր։ D-026 startup gate-ը GREEN է։ D-025-ը Approved — Implementing է, PR #3-ը Draft և unmerged է, Parts 1–11 baseline-ը Owner-approved և synchronized է։ Ուղիղ շարունակում եմ Part 12-ից՝ Validation, CI, Conformance և Quality Gates Architecture։
 
 Այնուհետև անմիջապես շարունակել աշխատանքը։
 
@@ -119,13 +127,14 @@ Theme, state, density, platform, viewport/container, locale/script, accessibilit
 
 ### Mandatory instruction
 
-Do not ask again for the repository address, Owner identity, project purpose, communication style, or continuation point. Read the canonical startup set, relevant Design Platform files, this handoff, and Draft PR #3 metadata/diff, then continue directly.
+Do not ask again for the repository address, Owner identity, project purpose, communication style, or continuation point. Before any substantive response or work, enumerate and completely read every tracked `.md` file on the active branch or ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. A startup subset, handoff, summary, partial range, or previous-session memory is not complete-read evidence. When an active PR is involved, additionally read its metadata, changed files, diff, review threads, and checks. Proceed only after a real GREEN startup gate.
 
 ### Current state
 
 - Foundation v1 is Locked and GREEN.
 - D-024 Platforms Architecture v1 is merged and canonical.
 - D-025 MenQ Design Platform Architecture v1 is `Approved — Implementing`, not `Locked`.
+- D-026 Canonical Session Read Law is Locked.
 - Working branch: `d-025-design-platform-architecture-v1`.
 - Draft PR #3 is open, Draft, and unmerged.
 - It must remain unmerged until architecture completeness, canonical synchronization, validator evidence, real consumer validation, and explicit Owner approval.
@@ -136,10 +145,12 @@ Do not ask again for the repository address, Owner identity, project purpose, co
 
 ### Exact continuation point
 
-Start immediately with **Part 12 — Validation, CI, Conformance, and Quality Gates Architecture**, then continue through documentation/catalog/design-tool integration, governance and contribution, product adoption and two-consumer validation, specification index and implementation planning, completeness audit, validator design, canonical synchronization, GREEN evidence, and Owner review.
+First extend the Foundation validator to enforce D-026 law, decision, index, context, and handoff references. Then start immediately with **Part 12 — Validation, CI, Conformance, and Quality Gates Architecture**, and continue through documentation/catalog/design-tool integration, governance and contribution, product adoption and two-consumer validation, specification index and implementation planning, completeness audit, validator design, canonical synchronization, GREEN evidence, and Owner review.
 
-### First response in the new chat
+### First response in a new chat
 
-> I read the canonical MenQ Design Platform handoff. D-025 is Approved — Implementing, PR #3 is Draft and unmerged, and the Owner-approved Parts 1–11 baseline is synchronized. I am continuing directly with Part 12: Validation, CI, Conformance, and Quality Gates Architecture, then proceeding through completeness audit, validator evidence, and Owner review.
+Only after the startup gate is GREEN:
+
+> I read every tracked Markdown file on the active branch and the PR #3 evidence. The D-026 startup gate is GREEN. D-025 is Approved — Implementing, PR #3 is Draft and unmerged, and the Owner-approved Parts 1–11 baseline is synchronized. I am continuing directly with Part 12: Validation, CI, Conformance, and Quality Gates Architecture.
 
 <!-- END: MENQ_STANDARD_NEXT_CHAT_HANDOFF -->
