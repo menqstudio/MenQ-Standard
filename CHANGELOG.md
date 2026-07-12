@@ -21,6 +21,8 @@
 - Lock են արվել MenQ Standard-ի Core Beliefs-ը։
 - Lock է արվել MenQ Standard-ի Human–AI Philosophy-ն։
 - Lock է արվել MenQ Standard-ի Design Philosophy-ն։
+- Ավելացվել և lock է արվել `foundation/philosophy/ENGINEERING_PHILOSOPHY.md` ամբողջական bilingual chapter-ը։
+- Engineering Philosophy-ն գրանցվել է `D-015` որոշմամբ։
 
 ### English
 
@@ -41,3 +43,5 @@
 - Locked the MenQ Standard Core Beliefs.
 - Locked the MenQ Standard Human–AI Philosophy.
 - Locked the MenQ Standard Design Philosophy.
+- Added and locked the complete bilingual `foundation/philosophy/ENGINEERING_PHILOSOPHY.md` chapter.
+- Recorded Engineering Philosophy as decision `D-015`.
