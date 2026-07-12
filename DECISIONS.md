@@ -339,3 +339,18 @@ MenQ Decision System-ի canonical v1.0 տարբերակը պահվում է [`fo
 ### English
 
 The canonical MenQ Decision System v1.0 is maintained in [`foundation/decision-system/README.md`](foundation/decision-system/README.md). It locks formal decision triggers, `C0–C4` decision classes, `R0–R4` risk levels, the complete lifecycle, decision statuses, the approval matrix, the required decision record, evidence and alternatives rules, assumptions, reversibility, seven decision gates, `GREEN/YELLOW/RED` outcomes, dissent, rejection, the history-preserving change rule, exceptions, emergency decisions, AI participation boundaries, KPIs, review triggers, and sequential decision IDs.
+
+---
+
+## D-021 — MenQ Documentation Standard v1 / MenQ փաստաթղթավորման ստանդարտ v1
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+
+MenQ Documentation Standard-ի canonical v1.0 տարբերակը պահվում է [`foundation/documentation/README.md`](foundation/documentation/README.md) ֆայլում։ Այն lock է անում canonical repository և single-source rules-ը, core file roles-ը, major-folder documentation requirements-ը, bilingual semantic equality-ն, document classes և metadata-ն, naming և path rules-ը, history-preserving change control-ը, update transaction-ը, post-write integrity verification-ը, safe full-file replacement-ը, no-silent-deletion կանոնը, source և generated-documentation rules-ը, complete package և ZIP delivery rule-ը, documentation ownership-ը, quality gates-ը և documentation KPIs-ը։
+
+### English
+
+The canonical MenQ Documentation Standard v1.0 is maintained in [`foundation/documentation/README.md`](foundation/documentation/README.md). It locks canonical repository and single-source rules, core file roles, major-folder documentation requirements, bilingual semantic equality, document classes and metadata, naming and path rules, history-preserving change control, the documentation update transaction, post-write integrity verification, safe full-file replacement, the no-silent-deletion rule, source and generated-documentation rules, the complete-package and ZIP delivery rule, documentation ownership, quality gates, and documentation KPIs.
