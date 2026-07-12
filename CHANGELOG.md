@@ -1,5 +1,29 @@
 # MenQ Standard — Changelog
 
+## 2026-07-12 — Foundation v1 validation and packaging
+
+### Հայերեն
+
+- `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։
+- Validator-ը վերադարձրել է `FOUNDATION VALIDATION: GREEN` և հաստատել է յոթ Foundation chapter-ներն ու root controls-ը։
+- `foundation/FOUNDATION_V1_VALIDATION_RUN.md` final validation record-ը թարմացվել է GREEN evidence-ով։
+- Root README-ը, project contexts-ը, AI working context-ը, Foundation index-ը և Roadmap-ը synchronized են GREEN release gate-ի հետ։
+- Ավելացվել է `release/FOUNDATION_V1_RELEASE_README.md`։
+- Ավելացվել է `.github/workflows/foundation-v1-package.yml`՝ validated ZIP snapshot, SHA-256 manifest և missing-file verification ստեղծելու համար։
+- Foundation v1 ZIP-ը սահմանվել է որպես GitHub Release asset, ոչ main branch binary file։
+- Հաջորդ architecture աշխատանքը Platforms formal Decision System proposal-ն է՝ Owner approval-ով։
+
+### English
+
+- `Foundation Integrity` workflow run `#9` completed with a `success` conclusion.
+- The validator returned `FOUNDATION VALIDATION: GREEN` and confirmed seven Foundation chapters and root controls.
+- The final validation record in `foundation/FOUNDATION_V1_VALIDATION_RUN.md` was updated with GREEN evidence.
+- The root README, project contexts, AI working context, Foundation index, and Roadmap were synchronized with the GREEN release gate.
+- Added `release/FOUNDATION_V1_RELEASE_README.md`.
+- Added `.github/workflows/foundation-v1-package.yml` to create the validated ZIP snapshot, SHA-256 manifest, and missing-file verification.
+- The Foundation v1 ZIP is defined as a GitHub Release asset, not a binary file in the main branch.
+- The next architecture work is a formal Decision System proposal for Platforms with Owner approval.
+
 ## 2026-07-12
 
 ### Հայերեն
