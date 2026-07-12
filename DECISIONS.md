@@ -195,3 +195,28 @@ The approved company mission of MenQ Studio is to create practical digital and A
 4. Systems are preferred over one-time solutions.
 5. Transparency and controllability are mandatory.
 6. MenQ advances through evidence, not hype.
+
+---
+
+## D-013 — Human–AI Philosophy / Մարդ–AI փիլիսոփայություն
+
+**Status:** Locked  
+**Date:** 2026-07-12
+
+### Հայերեն
+
+> Մարդը միտք է բերում։  
+> AI-ն օգնում է։  
+> Մարդը որոշում է։  
+> Ստանդարտը պահպանում է։
+
+Մարդը սահմանում է նպատակը և պահում վերջնական իշխանությունը։ AI-ն վերլուծում, առաջարկում և օգնում է իրականացնել։ Վերջնական որոշումն ու պատասխանատվությունը մարդունն են։ Հաստատված որոշումները, գիտելիքը և կանոնները պահպանվում են Standard-ում։
+
+### English
+
+> Humans bring ideas.  
+> AI assists.  
+> Humans decide.  
+> Standards preserve.
+
+Humans define the purpose and retain final authority. AI analyzes, proposes, and assists execution. Final decisions and responsibility remain human. Approved decisions, knowledge, and rules are preserved in the Standard.
