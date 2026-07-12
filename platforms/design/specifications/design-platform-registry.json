@@ -157,12 +157,7 @@
       "ownerId": "owner.design-platform-maintainer",
       "lifecycle": "Approved — Implementing",
       "sourcePath": "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",
-      "dependencies": [
-        "menq.design.spec.tokens.v1",
-        "menq.design.spec.components.v1",
-        "menq.design.spec.patterns.v1",
-        "menq.design.spec.locales.v1"
-      ],
+      "dependencies": ["menq.design.spec.tokens.v1", "menq.design.spec.components.v1", "menq.design.spec.patterns.v1", "menq.design.spec.locales.v1"],
       "validationProfile": "core-author",
       "packageMappings": ["@menq/design-validation"]
     },
@@ -220,25 +215,14 @@
       "sourcePath": "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md",
       "dependencies": ["menq.design.spec.validation.v1", "menq.design.spec.governance.v1"],
       "validationProfile": "core-author",
-      "packageMappings": [
-        "@menq/design-contracts",
-        "@menq/design-tokens",
-        "@menq/design-foundations",
-        "@menq/design-primitives",
-        "@menq/design-components",
-        "@menq/design-patterns",
-        "@menq/design-assets",
-        "@menq/design-motion",
-        "@menq/design-locales",
-        "@menq/design-validation"
-      ]
+      "packageMappings": ["@menq/design-contracts", "@menq/design-tokens", "@menq/design-foundations", "@menq/design-primitives", "@menq/design-components", "@menq/design-patterns", "@menq/design-assets", "@menq/design-motion", "@menq/design-locales", "@menq/design-validation"]
     }
   ],
   "packages": [
-    { "name": "@menq/design-contracts", "boundary": "Schemas, IDs, metadata, and shared types", "ownerId": "owner.design-platform-maintainer", "status": "Skeleton", "dependsOn": [], "publicApi": [] },
-    { "name": "@menq/design-tokens", "boundary": "Generated token artifacts and typed access", "ownerId": "owner.design-platform-maintainer", "status": "Planned", "dependsOn": ["@menq/design-contracts"], "publicApi": [] },
-    { "name": "@menq/design-foundations", "boundary": "Foundational runtime styles and utilities", "ownerId": "owner.design-platform-maintainer", "status": "Planned", "dependsOn": ["@menq/design-contracts", "@menq/design-tokens"], "publicApi": [] },
-    { "name": "@menq/design-primitives", "boundary": "Low-level behavior-first primitives", "ownerId": "owner.design-platform-maintainer", "status": "Planned", "dependsOn": ["@menq/design-foundations"], "publicApi": [] },
+    { "name": "@menq/design-contracts", "boundary": "Schemas, IDs, metadata, and shared types", "ownerId": "owner.design-platform-maintainer", "status": "Preview", "dependsOn": [], "publicApi": [".", "./schemas/token-source"] },
+    { "name": "@menq/design-tokens", "boundary": "Generated token artifacts and typed access", "ownerId": "owner.design-platform-maintainer", "status": "Preview", "dependsOn": ["@menq/design-contracts"], "publicApi": [".", "./css", "./resolved", "./manifest"] },
+    { "name": "@menq/design-foundations", "boundary": "Foundational runtime styles and utilities", "ownerId": "owner.design-platform-maintainer", "status": "Preview", "dependsOn": ["@menq/design-contracts", "@menq/design-tokens"], "publicApi": [".", "./css", "./manifest"] },
+    { "name": "@menq/design-primitives", "boundary": "Low-level behavior-first primitives", "ownerId": "owner.design-platform-maintainer", "status": "Preview", "dependsOn": ["@menq/design-foundations"], "publicApi": [".", "./css"] },
     { "name": "@menq/design-components", "boundary": "Reusable public components", "ownerId": "owner.design-platform-maintainer", "status": "Planned", "dependsOn": ["@menq/design-primitives"], "publicApi": [] },
     { "name": "@menq/design-patterns", "boundary": "Reusable compositions", "ownerId": "owner.design-platform-maintainer", "status": "Planned", "dependsOn": ["@menq/design-components"], "publicApi": [] },
     { "name": "@menq/design-assets", "boundary": "Governed asset metadata and resolvers", "ownerId": "owner.design-platform-maintainer", "status": "Planned", "dependsOn": ["@menq/design-contracts"], "publicApi": [] },
