@@ -1,11 +1,10 @@
 # MenQ Design Platform — Next Chat Handoff / MenQ Design Platform — Հաջորդ chat-ի handoff
 
 **Status / Կարգավիճակ:** Current / Ընթացիկ  
-**Prepared / Պատրաստվել է:** 2026-07-12  
+**Prepared / Պատրաստվել է:** 2026-07-13  
 **Owner / Պատասխանատու:** Gevorg Ohanyan  
 **Repository:** `https://github.com/menqstudio/MenQ-Standard`  
-**Working branch:** `d-025-design-platform-architecture-v1`  
-**Draft PR:** `https://github.com/menqstudio/MenQ-Standard/pull/3`
+**Working branch:** `d-025-post-merge-closure`
 
 ## Հայերեն
 
@@ -15,42 +14,28 @@
 
 ### Ընթացիկ վիճակ
 
-- Foundation v1 — GREEN և Locked։
-- D-024 — merged և canonical։
+- D-025 architecture, implementation և two-consumer evidence — GREEN։
+- PR #3 — merge է եղել `main`։
+- Merge commit — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
+- Merged head — `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`։
+- Post-merge closure branch — `d-025-post-merge-closure`։
 - D-025 — `Approved — Implementing`, ոչ `Locked`։
-- D-026 — Locked և machine-enforced։
-- Draft PR #3 — open, Draft և unmerged։
-- Parts 1–16 architecture set-ը canonical է։
-- `D-025_COMPLETENESS_AUDIT.md` և `D-025_DRAFT_PR_REVIEW_RECORD.md` canonical են։
-- Architecture verdict-ը GREEN է։
-- Implementation/lock readiness-ը YELLOW է։
-- D-025-aware Platforms validator-ը GREEN evidence է տվել։
-
-### Architecture invariants
-
-- Shared core-ը product-neutral է։
-- Canonical dependency model-ը՝ Reference → Semantic → Component → Pattern → Product Extension։
-- Generated output-ը source of truth չէ։
-- Armenian և English canonical languages են։
-- Merge-ը և lock-ը միայն explicit Owner decisions են։
+- Closure verdict — YELLOW մինչև canonical sync և automation evidence-ը GREEN լինեն։
 
 ### Շարունակելու ճշգրիտ կետը
 
-## Implementation Phase A
-
-1. Ստեղծել canonical specification registry-ի իրական machine-readable implementation-ը։
-2. Սահմանել schemas, canonical IDs, ownership records և dependency graph։
-3. Ստեղծել package/workspace skeleton-ը՝ contracts, tokens, foundations, primitives, components, patterns, assets, motion, locales և validation boundaries-ով։
-4. Ընտրել երկու distinct real consumer candidates և bounded pilot scopes։
-5. Չփոխել YELLOW implementation verdict-ը մինչև իրական package/consumer evidence։
+1. Ավարտել canonical documentation synchronization-ը։
+2. Regenerate անել Markdown inventory-ն։
+3. Ստանալ closure PR GREEN checks։
+4. Owner approval-ից հետո merge անել closure PR-ը։
+5. Ստանալ GREEN `main` push checks։
+6. Finalize անել post-merge closure record-ը։
+7. Առանձին խնդրել D-025 lock approval։
 
 ### Արգելված գործողություններ
 
-- PR #3-ը չmerge անել և ready-for-review չդարձնել առանց Owner instruction-ի։
-- D-025-ը `Locked` չանվանել։
-- Product-specific identity, logic կամ workflows shared core չմտցնել։
-- Generated artifacts-ը canonical source չհամարել։
-- Fake consumer կամ implementation evidence չստեղծել։
+- D-025-ը `Locked` չանվանել առանց առանձին Owner approval-ի։
+- Post-merge YELLOW state-ը GREEN չներկայացնել։
 
 ---
 
@@ -58,45 +43,31 @@
 
 ### Mandatory startup
 
-Before substantive work, enumerate and completely read every tracked `.md` file on the active branch/ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For the active PR, read metadata, changed files, diff, review threads, and checks.
+Before substantive work, enumerate and completely read every tracked `.md` file on the active branch/ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For an active PR, read metadata, changed files, diff, review threads, and checks.
 
 ### Current state
 
-- Foundation v1 is GREEN and Locked.
-- D-024 is merged and canonical.
+- D-025 architecture, implementation, and two-consumer evidence are GREEN.
+- PR #3 was merged into `main`.
+- Merge commit: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- Merged head: `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`.
+- Post-merge closure branch: `d-025-post-merge-closure`.
 - D-025 is `Approved — Implementing`, not `Locked`.
-- D-026 is Locked and machine-enforced.
-- Draft PR #3 is open, Draft, and unmerged.
-- The Parts 1–16 architecture set is canonical.
-- `D-025_COMPLETENESS_AUDIT.md` and `D-025_DRAFT_PR_REVIEW_RECORD.md` are canonical.
-- Architecture is GREEN.
-- Implementation and lock readiness remain YELLOW.
-- The D-025-aware Platforms validator has produced GREEN evidence.
-
-### Architecture invariants
-
-- Shared core is product-neutral.
-- Canonical dependency model: Reference → Semantic → Component → Pattern → Product Extension.
-- Generated output is not a source of truth.
-- Armenian and English are canonical languages.
-- Merge and lock require explicit Owner decisions.
+- Closure remains YELLOW until canonical synchronization and automation evidence are GREEN.
 
 ### Exact continuation point
 
-## Implementation Phase A
-
-1. Implement the machine-readable canonical specification registry.
-2. Define schemas, canonical IDs, ownership records, and the dependency graph.
-3. Create the package/workspace skeleton for contracts, tokens, foundations, primitives, components, patterns, assets, motion, locales, and validation.
-4. Select two distinct real consumer candidates and bounded pilot scopes.
-5. Preserve the YELLOW implementation verdict until real package and consumer evidence exists.
+1. Complete canonical documentation synchronization.
+2. Regenerate the Markdown inventory.
+3. Obtain GREEN closure PR checks.
+4. Merge the closure PR after Owner approval.
+5. Obtain GREEN `main` push checks.
+6. Finalize the post-merge closure record.
+7. Request separate D-025 lock approval.
 
 ### Prohibited actions
 
-- Do not merge PR #3 or mark it ready for review without Owner instruction.
-- Do not describe D-025 as Locked.
-- Do not move product-specific identity, logic, or workflows into shared core.
-- Do not treat generated artifacts as canonical source.
-- Do not fabricate implementation or consumer evidence.
+- Do not describe D-025 as `Locked` without separate Owner approval.
+- Do not represent the post-merge YELLOW state as GREEN.
 
 <!-- END: MENQ_DESIGN_PLATFORM_NEXT_CHAT_HANDOFF -->

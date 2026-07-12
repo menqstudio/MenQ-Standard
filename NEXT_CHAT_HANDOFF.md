@@ -1,57 +1,45 @@
 # MenQ Standard — Next Chat Handoff / Հաջորդ chat-ի handoff
 
 **Status / Կարգավիճակ:** Current / Ընթացիկ  
-**Prepared / Պատրաստվել է:** 2026-07-12  
+**Prepared / Պատրաստվել է:** 2026-07-13  
 **Owner / Պատասխանատու:** Gevorg Ohanyan  
 **Repository:** `https://github.com/menqstudio/MenQ-Standard`  
-**Working branch:** `d-025-design-platform-architecture-v1`  
-**Draft PR:** `https://github.com/menqstudio/MenQ-Standard/pull/3`
+**Working branch:** `d-025-post-merge-closure`
 
 ## Հայերեն
 
 ### Պարտադիր մեկնարկ
 
-Մինչև substantive աշխատանք՝ active branch/ref-ում enumerate և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` files-ը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Active PR-ի դեպքում կարդալ metadata, changed files, diff, review threads և checks։ Repository-ի հասցեն, Owner-ի անունը, project-ի նպատակը, communication style-ը կամ continuation point-ը կրկին չհարցնել։
+Մինչև substantive աշխատանք՝ active branch/ref-ում enumerate և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` files-ը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Active PR-ի դեպքում կարդալ metadata, changed files, diff, review threads և checks։
 
 ### Ընթացիկ վիճակ
 
-- Foundation v1 — Locked, բայց current branch integrity gate-ը RED է մինչև truncation remediation-ի CI GREEN evidence-ը։
+- Foundation v1 — Locked և GREEN։
 - D-024 — merged և canonical։
-- D-025 — `Approved — Implementing`, ոչ `Locked`։
+- D-025 — PR #3-ով merge է եղել, բայց `Locked` չէ։
 - D-026 — Locked և machine-enforced։
-- Draft PR #3 — open, Draft և unmerged։
-- Parts 1–16 architecture set-ը canonical է։
-- `D-025_COMPLETENESS_AUDIT.md` և `D-025_DRAFT_PR_REVIEW_RECORD.md` canonical են։
-- Architecture verdict-ը GREEN է։
-- Implementation/lock readiness-ը YELLOW է։
-- Root `NEXT_CHAT_HANDOFF.md` և `foundation/terminology/PROJECT_CONTEXT.md` truncation defects-ը remediation transaction-ի scope-ն են։
-
-### Architecture invariants
-
-- Shared core-ը product-neutral է։
-- Canonical dependency model-ը՝ Reference → Semantic → Component → Pattern → Product Extension։
-- Generated output-ը source of truth չէ։
-- Armenian և English canonical languages են։
-- Accessibility-ը release condition է։
-- Unowned canonical asset-ը RED governance defect է։
-- Merge-ը և lock-ը միայն explicit Owner decisions են։
+- PR #3 merge commit — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
+- Merged implementation head — `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`։
+- Closure branch — `d-025-post-merge-closure`։
+- Architecture, implementation և consumer evidence — GREEN։
+- Canonical synchronization և post-merge automation evidence — IN PROGRESS։
+- Overall closure verdict — YELLOW։
 
 ### Շարունակելու ճշգրիտ կետը
 
-1. Ավարտել confirmed truncation defects-ի remediation-ը։
+1. Ավարտել stale current-state documentation synchronization-ը։
 2. Regenerate անել canonical Markdown inventory-ն։
-3. Ստանալ GREEN Foundation, Markdown Inventory, Platforms և Foundation Package workflow evidence։
-4. Միայն դրանից հետո շարունակել Implementation Phase A-ն՝ machine-readable specification registry, schemas, canonical IDs, ownership records, dependency graph և package/workspace skeleton։
-5. Ընտրել երկու distinct real consumer candidates և bounded pilot scopes՝ առանց fake evidence-ի։
+3. Ստանալ closure PR-ի բոլոր պարտադիր GREEN checks-ը։
+4. Merge անել closure PR-ը միայն explicit Owner approval-ով։
+5. Ստանալ GREEN `main` push workflow evidence։
+6. Finalize անել `platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md`-ը։
+7. Առանձին ներկայացնել D-025 lock որոշումը Owner-ին։
 
 ### Արգելված գործողություններ
 
-- PR #3-ը չmerge անել և ready-for-review չդարձնել առանց Owner instruction-ի։
-- D-025-ը `Locked` չանվանել։
-- RED integrity gate-ը GREEN չներկայացնել։
-- Product-specific identity, logic կամ workflows shared core չմտցնել։
+- D-025-ը `Locked` չանվանել մինչև առանձին explicit Owner decision։
+- YELLOW closure-ը GREEN չներկայացնել։
 - Generated artifacts-ը canonical source չհամարել։
-- Fake consumer կամ implementation evidence չստեղծել։
 
 ---
 
@@ -59,46 +47,35 @@
 
 ### Mandatory startup
 
-Before substantive work, enumerate and completely read every tracked `.md` file on the active branch/ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For the active PR, read metadata, changed files, diff, review threads, and checks. Do not ask again for the repository address, Owner identity, project purpose, communication style, or continuation point.
+Before substantive work, enumerate and completely read every tracked `.md` file on the active branch/ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For an active PR, read metadata, changed files, diff, review threads, and checks.
 
 ### Current state
 
-- Foundation v1 is Locked, but the current branch integrity gate is RED until truncation remediation has GREEN CI evidence.
+- Foundation v1 is Locked and GREEN.
 - D-024 is merged and canonical.
-- D-025 is `Approved — Implementing`, not `Locked`.
+- D-025 was merged through PR #3 but is not `Locked`.
 - D-026 is Locked and machine-enforced.
-- Draft PR #3 is open, Draft, and unmerged.
-- The Parts 1–16 architecture set is canonical.
-- `D-025_COMPLETENESS_AUDIT.md` and `D-025_DRAFT_PR_REVIEW_RECORD.md` are canonical.
-- Architecture is GREEN.
-- Implementation and lock readiness remain YELLOW.
-- The root `NEXT_CHAT_HANDOFF.md` and `foundation/terminology/PROJECT_CONTEXT.md` truncation defects are the scope of the active remediation transaction.
-
-### Architecture invariants
-
-- Shared core is product-neutral.
-- Canonical dependency model: Reference → Semantic → Component → Pattern → Product Extension.
-- Generated output is not a source of truth.
-- Armenian and English are canonical languages.
-- Accessibility is a release condition.
-- An unowned canonical asset is a RED governance defect.
-- Merge and lock require explicit Owner decisions.
+- PR #3 merge commit: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- Merged implementation head: `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`.
+- Closure branch: `d-025-post-merge-closure`.
+- Architecture, implementation, and consumer evidence are GREEN.
+- Canonical synchronization and post-merge automation evidence are IN PROGRESS.
+- Overall closure verdict is YELLOW.
 
 ### Exact continuation point
 
-1. Complete remediation of the confirmed truncation defects.
+1. Complete stale current-state documentation synchronization.
 2. Regenerate the canonical Markdown inventory.
-3. Obtain GREEN evidence from Foundation, Markdown Inventory, Platforms, and Foundation Package workflows.
-4. Only then continue Implementation Phase A with the machine-readable specification registry, schemas, canonical IDs, ownership records, dependency graph, and package/workspace skeleton.
-5. Select two distinct real consumer candidates and bounded pilot scopes without fabricating evidence.
+3. Obtain all required GREEN closure PR checks.
+4. Merge the closure PR only with explicit Owner approval.
+5. Obtain GREEN `main` push workflow evidence.
+6. Finalize `platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md`.
+7. Present a separate D-025 lock decision to the Owner.
 
 ### Prohibited actions
 
-- Do not merge PR #3 or mark it ready for review without Owner instruction.
-- Do not describe D-025 as Locked.
-- Do not represent a RED integrity gate as GREEN.
-- Do not move product-specific identity, logic, or workflows into shared core.
+- Do not describe D-025 as `Locked` without a separate explicit Owner decision.
+- Do not represent YELLOW closure as GREEN.
 - Do not treat generated artifacts as canonical source.
-- Do not fabricate consumer or implementation evidence.
 
 <!-- END: MENQ_STANDARD_NEXT_CHAT_HANDOFF -->

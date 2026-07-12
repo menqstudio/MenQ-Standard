@@ -16,9 +16,11 @@
 
 - **Foundation v1:** Locked and GREEN / Locked և GREEN
 - **D-024 Platforms Architecture v1:** merged and canonical / merged և canonical
-- **D-025 MenQ Design Platform Architecture v1:** technical and adoption readiness GREEN; Owner authority pending / տեխնիկական և որդեգրման պատրաստականություն GREEN, Owner լիազորումը սպասման մեջ
+- **D-025 MenQ Design Platform Architecture v1:** merged; post-merge closure in progress; not Locked / merged է, post-merge closure-ը ընթացքի մեջ է, Locked չէ
 - **D-026 Canonical Session Read Law:** Locked and machine-enforced / Locked և machine-enforced
-- **Draft PR #3:** open, Draft, mergeable, and unmerged / open, Draft, mergeable և unmerged
+- **PR #3:** merged into `main` / merge է եղել `main`
+- **Merge commit:** `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`
+- **Closure branch:** `d-025-post-merge-closure`
 - **Owner:** MenQ
 - **Languages:** Armenian + English
 
@@ -46,9 +48,9 @@ MenQ Ecosystem
 
 ## MenQ Design Platform readiness / MenQ Design Platform պատրաստականություն
 
-**HY:** D-025-ի Parts 1–16 architecture-ը, canonical registry/schema/package implementation-ը, private `0.1.0-next.0` preview candidate-ը, deterministic release evidence-ը, երկու distinct consumers-ի M3/M4 evidence-ը և machine validation-ը GREEN են։ GREEN CI-ն ready-for-review, merge կամ lock authorization չէ։ Այդ գործողությունները պահանջում են explicit MenQ Owner decision։
+**HY:** D-025-ի Parts 1–16 architecture-ը, canonical registry/schema/package implementation-ը, private `0.1.0-next.0` preview candidate-ը, deterministic release evidence-ը, երկու distinct consumers-ի M3/M4 evidence-ը և machine validation-ը GREEN են։ PR #3-ը merge է եղել։ Closure-ը մնում է YELLOW մինչև canonical synchronization-ը, closure PR checks-ը և post-merge `main` checks-ը GREEN լինեն։ Lock-ը պահանջում է առանձին explicit MenQ Owner decision։
 
-**EN:** D-025 Parts 1–16 architecture, the canonical registry/schema/package implementation, the private `0.1.0-next.0` preview candidate, deterministic release evidence, M3/M4 evidence from two distinct consumers, and machine validation are GREEN. Green CI does not authorize ready-for-review, merge, or lock; those actions require an explicit MenQ Owner decision.
+**EN:** D-025 Parts 1–16 architecture, the canonical registry/schema/package implementation, the private `0.1.0-next.0` preview candidate, deterministic release evidence, M3/M4 evidence from two distinct consumers, and machine validation are GREEN. PR #3 is merged. Closure remains YELLOW until canonical synchronization, closure PR checks, and post-merge `main` checks are GREEN. Lock requires a separate explicit MenQ Owner decision.
 
 ## Mandatory AI session startup / AI session-ի պարտադիր մեկնարկ
 
@@ -68,8 +70,7 @@ MenQ Ecosystem
 - [`ROADMAP.md`](ROADMAP.md) — future direction
 - [`foundation/README.md`](foundation/README.md) — Foundation index
 - [`platforms/design/PROJECT_CONTEXT.md`](platforms/design/PROJECT_CONTEXT.md) — Design Platform current state
-- [`platforms/design/D-025_COMPLETENESS_AUDIT.md`](platforms/design/D-025_COMPLETENESS_AUDIT.md) — D-025 readiness audit
-- [`platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md`](platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md) — PR #3 review record
+- [`platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md`](platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md) — post-merge closure evidence
 - [`platforms/design/implementation/release/d-025-readiness-record.json`](platforms/design/implementation/release/d-025-readiness-record.json) — machine-readable readiness evidence
 - [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md) — mandatory write integrity law
 

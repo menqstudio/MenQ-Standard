@@ -3,7 +3,8 @@ name: Design Platform Phase A Integrity
 on:
   push:
     branches:
-      - d-025-design-platform-architecture-v1
+      - main
+      - d-025-post-merge-closure
     paths:
       - "platforms/design/specifications/**"
       - "platforms/design/implementation/**"

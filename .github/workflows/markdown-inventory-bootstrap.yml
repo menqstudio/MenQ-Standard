@@ -3,7 +3,8 @@ name: Markdown Inventory Integrity
 on:
   push:
     branches:
-      - d-025-design-platform-architecture-v1
+      - main
+      - d-025-post-merge-closure
     paths:
       - "**/*.md"
       - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
