@@ -20,12 +20,12 @@
 - [x] Part 12 — Validation, CI, Conformance, and Quality Gates Architecture.
 - [x] Part 13 — Documentation Portal, Component Catalog, and Design-Tool Integration Architecture.
 - [x] Part 14 — Governance, Contribution, Ownership, and Change-Request Lifecycle Architecture.
+- [x] Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
 
 ## Current / Ընթացիկ
 
-1. Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
-2. Canonical specification index and implementation package plan.
-3. D-025 completeness audit, validator design, and Draft PR #3 review.
+1. Part 16 — Canonical Specification Index and Implementation Package Plan.
+2. D-025 completeness audit, validator design, and Draft PR #3 review.
 
 ## Next / Հաջորդը
 

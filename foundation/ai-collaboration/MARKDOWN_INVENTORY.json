@@ -2,17 +2,17 @@
   "schema_version": 1,
   "repository": "menqstudio/MenQ-Standard",
   "source": "git ls-files -- *.md *.MD",
-  "file_count": 59,
+  "file_count": 60,
   "files": [
     {
       "path": "AI_WORKING_CONTEXT.md",
-      "bytes": 4973,
-      "sha256": "eefd7452a63962830b2000a072f54062bc01640efd14a8d6deb0c3d02ce3a839"
+      "bytes": 4963,
+      "sha256": "15ee4ee9c026d56ecc4ab03c43a591cef737963f41cd06cd83c529e4eaba1ec3"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 16307,
-      "sha256": "021b76031b7be05fc94c6fbcb0501027acabb872fd9a708b8a74451e5eac5e77"
+      "bytes": 17253,
+      "sha256": "67822c768bb4038a2753fccf27b3dbaa637f5b3916a7210bab2e1c3a6bfca86f"
     },
     {
       "path": "COLLABORATION_STYLE.md",
@@ -41,13 +41,13 @@
     },
     {
       "path": "NEXT_CHAT_HANDOFF.md",
-      "bytes": 4404,
-      "sha256": "d730f77bbd3496c27db25296d9ce222ea10881e9bed59a008bb65a62f0bf7de2"
+      "bytes": 4394,
+      "sha256": "3ad3c5881764bb927a49b125dc6df6a1376cfe08eb2ff2b54b3cc92371fa612b"
     },
     {
       "path": "PROJECT_CONTEXT.md",
-      "bytes": 7110,
-      "sha256": "b105d9c03f31cd9701c729e1bf4e38eb01d41ddb01a335330b40eff503272cea"
+      "bytes": 7206,
+      "sha256": "10cdc32d1d22754eb34ea680f5b54f00a9c277d175b93fdf333a209e3dce58c1"
     },
     {
       "path": "README.md",
@@ -56,8 +56,8 @@
     },
     {
       "path": "ROADMAP.md",
-      "bytes": 3576,
-      "sha256": "1483b73c4f06e3c1c5d56476177a80a03c3df0f6c81d55e1726dda7d79d8982a"
+      "bytes": 3505,
+      "sha256": "b1d1c2d22d8d1a7983e3767641e03f985ea6a0724811c2b16bc9e8536a5168fd"
     },
     {
       "path": "foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md",
@@ -236,8 +236,8 @@
     },
     {
       "path": "platforms/design/CHANGELOG.md",
-      "bytes": 7843,
-      "sha256": "510032e4de439df20b63ed5f1e7b4ba4e89bb433954dc7059a03e600d1846b1c"
+      "bytes": 8588,
+      "sha256": "518712d1bf6637cb1bb5c603fe9ac328af7257be7f3cf427dfca5b7676d7ed2a"
     },
     {
       "path": "platforms/design/CONTRACTS.md",
@@ -261,8 +261,8 @@
     },
     {
       "path": "platforms/design/NEXT_CHAT_HANDOFF.md",
-      "bytes": 5144,
-      "sha256": "99de7c93d0029b6a57955ac20dcc38c53d69e0418bf98890bc4b12627f13cdca"
+      "bytes": 5215,
+      "sha256": "f0893cb98d6712d0585f1ea24d2ff2cd1ec409a637a1d3eee5d176be0a4a2740"
     },
     {
       "path": "platforms/design/PLATFORM_CHARTER.md",
@@ -270,9 +270,14 @@
       "sha256": "e34f22b53d83041aff8f1ddd7a57777c4e28835558d95fa4ba0320807f61aaf9"
     },
     {
+      "path": "platforms/design/PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1.md",
+      "bytes": 13149,
+      "sha256": "11fb8fb5bae214f3f6a5a4173601367112ccfbfda48c5ce2d1081f5a08bd7082"
+    },
+    {
       "path": "platforms/design/PROJECT_CONTEXT.md",
-      "bytes": 7887,
-      "sha256": "9c288bb820b0ef2165cdf1dbd16b286f429637cc53a28859ca9c2a367d1fa268"
+      "bytes": 7929,
+      "sha256": "e7e45ca208fd57c153b46b3965b9b294f9bbf7dc0c793684d3e3d9adeef57dbf"
     },
     {
       "path": "platforms/design/README.md",
@@ -281,8 +286,8 @@
     },
     {
       "path": "platforms/design/ROADMAP.md",
-      "bytes": 2337,
-      "sha256": "5f782f5ff960213ed28a9a123448d274bdb1099302779d5dbb5695d08180b470"
+      "bytes": 2352,
+      "sha256": "91d1ab79fe1132dc6d612291cdfa8ce5450d03e655f846e4f0baf64dc4f473e9"
     },
     {
       "path": "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",

@@ -41,7 +41,7 @@
 
 Ուղիղ սկսել՝
 
-## Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan
+## Part 16 — Canonical Specification Index and Implementation Package Plan
 
 Հետո՝ canonical specification index, implementation package plan, completeness audit, validator design, GREEN evidence և Owner review։ Merge և lock-ը առանձին explicit decisions են։
 
@@ -76,7 +76,7 @@ Do not ask again for the repository address, Owner identity, project purpose, co
 
 Start immediately with:
 
-**Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.**
+**Part 16 — Canonical Specification Index and Implementation Package Plan.**
 
 Then continue with the canonical specification index, implementation package planning, completeness audit, validator design, GREEN evidence, and Owner review. Merge and lock remain separate explicit decisions.
 

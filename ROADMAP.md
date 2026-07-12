@@ -35,10 +35,9 @@
 
 Current sequence:
 
-1. Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
-2. Canonical specification index and implementation package plan.
-3. D-025 completeness audit, validator design, and Draft PR #3 review.
-4. GREEN evidence and Owner review.
+1. Part 16 — Canonical Specification Index and Implementation Package Plan.
+2. D-025 completeness audit, validator design, and Draft PR #3 review.
+3. GREEN evidence and Owner review.
 
 ## Next / Հաջորդը
 

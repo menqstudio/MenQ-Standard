@@ -47,7 +47,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 ### Հաջորդ հստակ աշխատանք
 
-1. Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan։
+1. Part 16 — Canonical Specification Index and Implementation Package Plan։
 2. Canonical specification index և implementation package plan։
 3. D-025 completeness audit, validator design և PR #3 review։
 4. GREEN evidence և Owner review։
@@ -93,7 +93,7 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 
 ### Exact next work
 
-1. Part 15 — Product Adoption, Maturity Model, and Two-Consumer Validation Plan.
+1. Part 16 — Canonical Specification Index and Implementation Package Plan.
 2. Canonical specification index and implementation package plan.
 3. D-025 completeness audit, validator design, and PR #3 review.
 4. GREEN evidence and Owner review.

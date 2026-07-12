@@ -1,5 +1,19 @@
 # MenQ Design Platform — Changelog / MenQ Design Platform — Փոփոխությունների պատմություն
 
+## 2026-07-12 — Part 15 product adoption and two-consumer validation architecture
+
+### Հայերեն
+
+- Ավելացվել է `PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1.md`։
+- Սահմանվել են M0–M5 maturity levels-ը և երկու genuinely distinct consumers-ի validation rule-ը։
+- Continuation point-ը տեղափոխվել է Part 16 — Canonical Specification Index and Implementation Package Plan։
+
+### English
+
+- Added `PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1.md`.
+- Defined M0–M5 maturity levels and the validation rule for two genuinely distinct consumers.
+- Advanced the continuation point to Part 16 — Canonical Specification Index and Implementation Package Plan.
+
 ## 2026-07-12 — Part 14 governance and change lifecycle architecture
 
 ### Հայերեն

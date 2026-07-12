@@ -1,5 +1,21 @@
 # MenQ Standard — Changelog
 
+## 2026-07-12 — Design Platform Part 15 adoption architecture
+
+### Հայերեն
+
+- Ավելացվել է product adoption, maturity model և two-consumer validation architecture v1-ը։
+- Adoption-ը սահմանվել է որպես governed contract consumption և operational evidence, ոչ package install։
+- Continuation point-ը տեղափոխվել է Part 16 — Canonical Specification Index and Implementation Package Plan։
+- D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը՝ open, Draft և unmerged։
+
+### English
+
+- Added Product Adoption, Maturity Model, and Two-Consumer Validation Architecture v1.
+- Defined adoption as governed contract consumption and operational evidence, not package installation.
+- Advanced the continuation point to Part 16 — Canonical Specification Index and Implementation Package Plan.
+- D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
+
 ## 2026-07-12 — Design Platform Part 14 governance architecture
 
 ### Հայերեն
