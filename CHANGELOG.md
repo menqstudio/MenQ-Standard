@@ -1,5 +1,25 @@
 # MenQ Standard — Changelog
 
+## 2026-07-12 — D-026 enforcement and Design Platform Part 12
+
+### Հայերեն
+
+- D-026 Canonical Session Read Law-ը դարձել է enforceable՝ canonical Markdown inventory, path/size/SHA drift validation և strict GitHub Actions gate-ով։
+- Ավելացվել է D-026 final GREEN validation record-ը՝ իրական workflow evidence-ով և truncation incident transparency-ով։
+- Ավելացվել է Design Platform Part 12 validation, CI, conformance և quality-gates architecture-ը։
+- Սահմանվել են յոթ sequential gates, GREEN/YELLOW/RED verdict semantics-ը, conformance profiles-ը, exception contract-ը և evidence contract-ը։
+- Root և Design Platform contexts, roadmaps, changelogs և handoffs-ը տեղափոխվել են Part 13 continuation point-ի վրա։
+- D-025-ը մնում է `Approved — Implementing`, Draft PR #3-ը մնում է open, Draft և unmerged։
+
+### English
+
+- Made D-026 Canonical Session Read Law enforceable through a canonical Markdown inventory, path/size/SHA drift validation, and a strict GitHub Actions gate.
+- Added the final GREEN D-026 validation record with real workflow evidence and transparent recording of the truncation incident.
+- Added Design Platform Part 12 validation, CI, conformance, and quality-gates architecture.
+- Defined seven sequential gates, GREEN/YELLOW/RED verdict semantics, conformance profiles, the exception contract, and the evidence contract.
+- Advanced root and Design Platform contexts, roadmaps, changelogs, and handoffs to the Part 13 continuation point.
+- D-025 remains `Approved — Implementing`; Draft PR #3 remains open, Draft, and unmerged.
+
 ## 2026-07-12 — D-025 Design Platform architecture baseline synchronization
 
 ### Հայերեն

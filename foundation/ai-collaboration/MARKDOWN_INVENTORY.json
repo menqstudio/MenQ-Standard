@@ -6,13 +6,13 @@
   "files": [
     {
       "path": "AI_WORKING_CONTEXT.md",
-      "bytes": 7083,
-      "sha256": "091154e6df2254320365a74fff13802c4bd98c589e02cf01a898852d3d107a7a"
+      "bytes": 6611,
+      "sha256": "265906d627d2e376ecad725a19f5c7631dee78647fc1467178ed2a83e32448b6"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 13154,
-      "sha256": "162d21e367395feeede6322081b6e758b8d9fafef90efdb5947ed6e3b83bb44a"
+      "bytes": 14816,
+      "sha256": "e8c6bbd9e518f2c0fe62ea0d428483877827c3cae0235119541408dd55f371ab"
     },
     {
       "path": "COLLABORATION_STYLE.md",
@@ -41,8 +41,8 @@
     },
     {
       "path": "NEXT_CHAT_HANDOFF.md",
-      "bytes": 9774,
-      "sha256": "32698f96b9cdd614ead1ca42de011e2a3460a451382bea665bb24ed0b93b2981"
+      "bytes": 5780,
+      "sha256": "61f374313dd7163710a0c86b13e4edc11e34e20d8c5a36aa2b1814cefc35f4c0"
     },
     {
       "path": "PROJECT_CONTEXT.md",
@@ -56,8 +56,8 @@
     },
     {
       "path": "ROADMAP.md",
-      "bytes": 3531,
-      "sha256": "2f95027fd157abb966b96a80fc1dc6635fd7f91b81a0babf8dca355b589e879b"
+      "bytes": 3658,
+      "sha256": "468a7f00664d7d1c99fa8b435779e158a97de4c2f806baf7872b2f7ec56ab581"
     },
     {
       "path": "foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md",
@@ -236,8 +236,8 @@
     },
     {
       "path": "platforms/design/CHANGELOG.md",
-      "bytes": 3707,
-      "sha256": "42f6b809b4ac3bffc2a199e84e31120f1ad5c907cbb0e54d237c52b406b95098"
+      "bytes": 5051,
+      "sha256": "39cc6949f978ff0339886a3f70fd5aff889a81f14173393aa6e7480ca084f5b9"
     },
     {
       "path": "platforms/design/CONTRACTS.md",
@@ -261,8 +261,8 @@
     },
     {
       "path": "platforms/design/PROJECT_CONTEXT.md",
-      "bytes": 6910,
-      "sha256": "75da55695b650ce64ae47e642f063f9fa9974ab7e63a50271cc07346b57353f5"
+      "bytes": 8124,
+      "sha256": "252e0751ec455b5b12e4ad252934048c28c1c7de0343b52dfbba188f6268a76c"
     },
     {
       "path": "platforms/design/README.md",
@@ -271,8 +271,8 @@
     },
     {
       "path": "platforms/design/ROADMAP.md",
-      "bytes": 2993,
-      "sha256": "c6ea7e785b217dff4870c60152f0a9a7d516ce591c852689e5db00d843382b11"
+      "bytes": 3104,
+      "sha256": "a9e38b13b30535ddd796d555ea16dc3a73327189bfa8706051ab669670562001"
     },
     {
       "path": "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",
