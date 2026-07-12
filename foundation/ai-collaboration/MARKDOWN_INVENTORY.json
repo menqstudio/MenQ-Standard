@@ -276,8 +276,8 @@
     },
     {
       "path": "platforms/design/NEXT_CHAT_HANDOFF.md",
-      "bytes": 5273,
-      "sha256": "c0798e73c438762039b97c6e4d6d37ee3fa82932afa77d221d1fea0b9d6fe2b1"
+      "bytes": 4778,
+      "sha256": "3643157cf9cf8fdb4298ec94908e188d184bd66756b5d8304edb04af8c7b41e9"
     },
     {
       "path": "platforms/design/PLATFORM_CHARTER.md",
@@ -291,8 +291,8 @@
     },
     {
       "path": "platforms/design/PROJECT_CONTEXT.md",
-      "bytes": 8068,
-      "sha256": "02965fd93be9530cf078db5d76f0abe29bdf24ec5e5c97ab739d400e37332b63"
+      "bytes": 7450,
+      "sha256": "a54071a62f07fcfe6b151060df1d7db0bea89eb3761ddbd68d9f3153da6171dd"
     },
     {
       "path": "platforms/design/README.md",
