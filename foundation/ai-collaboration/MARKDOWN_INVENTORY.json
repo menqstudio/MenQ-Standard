@@ -56,8 +56,8 @@
     },
     {
       "path": "ROADMAP.md",
-      "bytes": 3488,
-      "sha256": "8ad08fc6ff7dc0e1a323684528df6997b5f248e567e3615965c0b1d9e2f165e0"
+      "bytes": 3682,
+      "sha256": "8958c08fc19e7e69d977ddb22071e9a18ab408d62ed179cdacd8b305b9028060"
     },
     {
       "path": "foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md",
@@ -301,8 +301,8 @@
     },
     {
       "path": "platforms/design/ROADMAP.md",
-      "bytes": 2435,
-      "sha256": "5d3dea14c6841a428bf3094b9b5232f8b3cc97946abe70ddd2fec75d1d5d3585"
+      "bytes": 2706,
+      "sha256": "78dea5de621ca1694c6aa918d812592f9e716464e919d6bbc50baffdf1eeeda9"
     },
     {
       "path": "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",
