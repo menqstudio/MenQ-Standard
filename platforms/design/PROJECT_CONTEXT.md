@@ -1,6 +1,6 @@
 # MenQ Design Platform — Project Context / MenQ Design Platform — Նախագծի կոնտեքստ
 
-**Status / Կարգավիճակ:** Technical and adoption readiness GREEN — Owner authority pending / Տեխնիկական և որդեգրման պատրաստականություն GREEN — Owner լիազորումը սպասման մեջ  
+**Status / Կարգավիճակ:** Merged — post-merge closure in progress / Merged — post-merge closure-ը ընթացքի մեջ է  
 **Document class / Փաստաթղթի դաս:** Informative  
 **Owner / Պատասխանատու:** MenQ Owner  
 **Parent architecture:** [`../D-024-PLATFORMS-ARCHITECTURE-V1.md`](../D-024-PLATFORMS-ARCHITECTURE-V1.md)  
@@ -16,34 +16,30 @@ MenQ Design Platform-ը ամբողջ MenQ ecosystem-ի reusable, product-neutral
 
 - Foundation v1 — Locked և GREEN։
 - D-024 — merged և canonical։
-- D-025 — `Approved — Implementing`, ոչ `Locked`։
+- D-025 — PR #3-ով merge է եղել, բայց `Locked` չէ։
 - D-026 — Locked և machine-enforced։
-- Working branch — `d-025-design-platform-architecture-v1`։
-- PR #3 — open, Draft և unmerged։
-- Parts 1–11 baseline և Parts 12–16 architecture set-ը canonical են։
+- PR #3 merge commit — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
+- Merged implementation head — `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`։
+- Closure branch — `d-025-post-merge-closure`։
+- Parts 1–16 architecture set-ը canonical է։
 - Canonical registry, schemas, ownership, dependency graph և 10 package boundaries-ը implemented են։
 - Private preview release candidate-ը `0.1.0-next.0` է։
-- Deterministic build, checksums, public API diff, compatibility, migration և rollback evidence-ը GREEN են։
+- Deterministic build, checksums, public API, compatibility, migration և rollback evidence-ը GREEN են։
 - `MenQ Design Catalog` consumer-ը M3/GREEN է։
 - `MenQ Release Evidence Console` consumer-ը M4 operational/GREEN է։
 - Cross-consumer validation և quality/adoption evidence-ը GREEN են։
-- Owner authority pending է ready-for-review, merge և lock գործողությունների համար։
-
-### Canonical dependency model
-
-Reference → Semantic → Component → Pattern → Product Extension։ Theme, state, density, platform, viewport/container, locale/script, accessibility և motion preference-ը orthogonal resolution dimensions են։ Controlled exceptions-ը governed temporary bypass են։
+- Post-merge canonical synchronization և `main` automation evidence-ը դեռ closure gate են։
 
 ### Evidence
 
 - Readiness record՝ `implementation/release/d-025-readiness-record.json`։
-- Release workflow՝ `Design Platform Preview Release Integrity`, run `#12`, conclusion `success`։
-- Artifact՝ `8265108086`, digest `sha256:54c736ed590ae521b24c0b0d58878ed72539a66f4edcdf5c1489996f176a8764`։
+- Merge evidence՝ [`D-025_POST_MERGE_CLOSURE_RECORD.md`](D-025_POST_MERGE_CLOSURE_RECORD.md)։
 - Audit՝ `D-025_COMPLETENESS_AUDIT.md`։
 - PR review՝ `D-025_DRAFT_PR_REVIEW_RECORD.md`։
 
 ### Authority boundary և հաջորդ քայլ
 
-GREEN CI-ն merge կամ lock authorization չէ։ Հաջորդ գործողությունը MenQ Owner-ի explicit որոշումն է՝ նախ ready-for-review/merge, ապա merge-ից և post-merge validation-ից հետո առանձին lock որոշում։ Մինչ այդ D-025-ը մնում է `Approved — Implementing`։
+Merge-ը lock authorization չէ։ Closure PR-ի checks-ը և դրանից հետո `main` push checks-ը պետք է GREEN լինեն։ Միայն դրանից հետո Owner-ին ներկայացվում է առանձին D-025 lock որոշում։
 
 ---
 
@@ -57,33 +53,29 @@ The MenQ Design Platform is the reusable, product-neutral design capability syst
 
 - Foundation v1 is Locked and GREEN.
 - D-024 is merged and canonical.
-- D-025 is `Approved — Implementing`, not `Locked`.
+- D-025 was merged through PR #3 but is not `Locked`.
 - D-026 is Locked and machine-enforced.
-- Working branch: `d-025-design-platform-architecture-v1`.
-- PR #3 is open, Draft, and unmerged.
-- The Parts 1–11 baseline and Parts 12–16 architecture set are canonical.
+- PR #3 merge commit: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
+- Merged implementation head: `9c10c288c16ef319ce4d5aa91000f7b0a46ecf60`.
+- Closure branch: `d-025-post-merge-closure`.
+- The Parts 1–16 architecture set is canonical.
 - The canonical registry, schemas, ownership, dependency graph, and ten package boundaries are implemented.
 - The private preview release candidate is `0.1.0-next.0`.
-- Deterministic build, checksums, public API diff, compatibility, migration, and rollback evidence are GREEN.
+- Deterministic build, checksums, public API, compatibility, migration, and rollback evidence are GREEN.
 - The `MenQ Design Catalog` consumer is M3/GREEN.
 - The `MenQ Release Evidence Console` consumer is M4 operational/GREEN.
 - Cross-consumer validation and quality/adoption evidence are GREEN.
-- Owner authority pending applies to ready-for-review, merge, and lock actions.
-
-### Canonical dependency model
-
-Reference → Semantic → Component → Pattern → Product Extension. Theme, state, density, platform, viewport/container, locale/script, accessibility, and motion preference are orthogonal resolution dimensions. Controlled exceptions are governed temporary bypasses.
+- Post-merge canonical synchronization and `main` automation evidence remain closure gates.
 
 ### Evidence
 
 - Readiness record: `implementation/release/d-025-readiness-record.json`.
-- Release workflow: `Design Platform Preview Release Integrity`, run `#12`, conclusion `success`.
-- Artifact: `8265108086`, digest `sha256:54c736ed590ae521b24c0b0d58878ed72539a66f4edcdf5c1489996f176a8764`.
+- Merge evidence: [`D-025_POST_MERGE_CLOSURE_RECORD.md`](D-025_POST_MERGE_CLOSURE_RECORD.md).
 - Audit: `D-025_COMPLETENESS_AUDIT.md`.
 - PR review: `D-025_DRAFT_PR_REVIEW_RECORD.md`.
 
 ### Authority boundary and next step
 
-GREEN CI is not merge or lock authorization. The next action is an explicit MenQ Owner decision for ready-for-review and merge, followed after merge and post-merge validation by a separate lock decision. Until then, D-025 remains `Approved — Implementing`.
+Merge is not lock authorization. Closure PR checks and subsequent `main` push checks must be GREEN. Only then is a separate D-025 lock decision presented to the Owner.
 
 <!-- END: MENQ_DESIGN_PLATFORM_PROJECT_CONTEXT -->
