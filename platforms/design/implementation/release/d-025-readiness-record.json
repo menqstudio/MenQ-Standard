@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "recordId": "menq.design.d-025.readiness.2026-07-13",
+  "decision": "D-025",
+  "status": "Technical and adoption readiness GREEN; Owner authority pending",
+  "displayName": {
+    "hy": "D-025 ներդրման և որդեգրման պատրաստականության ապացույց",
+    "en": "D-025 implementation and adoption readiness evidence"
+  },
+  "evidenceSnapshot": {
+    "sourceCommit": "e98f44ccabcdd329
