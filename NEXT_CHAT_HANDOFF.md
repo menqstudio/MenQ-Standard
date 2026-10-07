@@ -15,7 +15,9 @@
 ### Ընթացիկ վիճակ
 
 - Foundation v1 — Locked և GREEN։
-- D-024 — merged և canonical։
+- D-024 — Locked (2026-10-07)։
+- Foundation v1.0.0 — հրապարակված՝ `foundation-v1.0.0` GitHub Release։
+- D-025 evidence — ուղղված. consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է։
 - D-025 — Locked և GREEN։
 - D-026 — Locked և machine-enforced։
 - D-027 — Approved — Implementing՝ [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md)։
@@ -52,7 +54,9 @@ Before substantive work, enumerate and completely read every tracked `.md` file 
 ### Current state
 
 - Foundation v1 is Locked and GREEN.
-- D-024 is merged and canonical.
+- D-024 is Locked (2026-10-07).
+- Foundation v1.0.0 is published as the `foundation-v1.0.0` GitHub Release.
+- D-025 evidence is corrected: the consumers are M2 pilots and the real-consumer obligation is open.
 - D-025 is Locked and GREEN.
 - D-026 is Locked and machine-enforced.
 - D-027 is Approved — Implementing: [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md).

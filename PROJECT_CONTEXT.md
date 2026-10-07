@@ -32,7 +32,9 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 ### Ընթացիկ canonical վիճակ
 
 - Foundation v1 — Locked և GREEN։
-- D-024 Platforms Architecture v1 — merged և canonical, կարգավիճակը՝ Approved — Implementing։
+- D-024 Platforms Architecture v1 — Locked (2026-10-07)։
+- Foundation v1.0.0 release՝ [`foundation-v1.0.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/foundation-v1.0.0)։
+- D-025 evidence-ը ուղղված է (2026-10-07)՝ repo-ի ներսի consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է ([`platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md`](platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md))։
 - D-025 MenQ Design Platform Architecture v1 — Locked և GREEN։
 - D-026 Canonical Session Read Law — Locked և machine-enforced։
 - D-027 MenQ Brand Expression Layer v1 — Approved — Implementing (`platforms/design/brand-expression/`, Bro product extension)։
@@ -79,7 +81,9 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 ### Current canonical state
 
 - Foundation v1 is Locked and GREEN.
-- D-024 Platforms Architecture v1 is merged and canonical; its status is Approved — Implementing.
+- D-024 Platforms Architecture v1 is Locked (2026-10-07).
+- Foundation v1.0.0 release: [`foundation-v1.0.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/foundation-v1.0.0).
+- D-025 evidence was corrected on 2026-10-07: the in-repo consumers are M2 pilots and the real-consumer obligation is open ([`platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md`](platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md)).
 - D-025 MenQ Design Platform Architecture v1 is Locked and GREEN.
 - D-026 Canonical Session Read Law is Locked and machine-enforced.
 - D-027 MenQ Brand Expression Layer v1 is Approved — Implementing (`platforms/design/brand-expression/`, Bro product extension).

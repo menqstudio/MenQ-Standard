@@ -15,7 +15,8 @@
 ## Status / Կարգավիճակ
 
 - **Foundation v1:** Locked and GREEN / Locked և GREEN
-- **D-024 Platforms Architecture v1:** merged and canonical / merged և canonical
+- **D-024 Platforms Architecture v1:** Locked / Locked (2026-10-07)
+- **Foundation v1.0.0 release:** [`foundation-v1.0.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/foundation-v1.0.0)
 - **D-025 MenQ Design Platform Architecture v1:** Locked and GREEN / Locked և GREEN
 - **D-026 Canonical Session Read Law:** Locked and machine-enforced / Locked և machine-enforced
 - **D-025 implementation merge:** `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`

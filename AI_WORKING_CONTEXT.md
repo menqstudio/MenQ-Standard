@@ -26,7 +26,9 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 ### Ընթացիկ canonical վիճակ
 
 - Foundation v1 — Locked և GREEN։
-- D-024 — merged և canonical։
+- D-024 — Locked (2026-10-07)։
+- Foundation v1.0.0 — հրապարակված՝ `foundation-v1.0.0` GitHub Release։
+- D-025 evidence — ուղղված. consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է։
 - D-025 — Locked և GREEN։
 - D-026 — Locked և machine-enforced։
 - D-027 — Approved — Implementing (brand expression layer + Bro product extension)։
@@ -70,7 +72,9 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 ### Current canonical state
 
 - Foundation v1 is Locked and GREEN.
-- D-024 is merged and canonical.
+- D-024 is Locked (2026-10-07).
+- Foundation v1.0.0 is published as the `foundation-v1.0.0` GitHub Release.
+- D-025 evidence is corrected: the consumers are M2 pilots and the real-consumer obligation is open.
 - D-025 is Locked and GREEN.
 - D-026 is Locked and machine-enforced.
 - D-027 is Approved — Implementing (brand expression layer + Bro product extension).

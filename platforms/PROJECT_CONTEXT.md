@@ -21,7 +21,7 @@
 
 ### Ընթացիկ վիճակ
 
-- `D-024` Owner-ի կողմից approved է և implementation/validation փուլում է։
+- `D-024`-ը Locked է (2026-10-07)։
 - Առաջին formally opened Platform-ը `Design Platform`-ն է։
 - Design Platform-ի մանրամասն architecture-ը `Locked` է D-025-ով (2026-07-13)։ Բրենդային արտահայտման շերտը և Bro product extension-ը կառավարվում են D-027-ով (Approved — Implementing)։
 
@@ -47,7 +47,7 @@ Platforms-ի հետ աշխատանքից առաջ կարդալ root startup set-
 
 ### Current state
 
-- `D-024` is Owner-approved and in implementation/validation.
+- `D-024` is Locked (2026-10-07).
 - The first formally opened Platform is the `Design Platform`.
 - Detailed Design Platform architecture is `Locked` under D-025 (2026-07-13). The brand expression layer and the Bro product extension are governed by D-027 (Approved — Implementing).
 

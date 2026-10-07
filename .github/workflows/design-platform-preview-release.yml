@@ -83,7 +83,7 @@ jobs:
         run: |
           pnpm build
           pnpm healthcheck
-      - name: Validate M3, M4 and cross-consumer quality evidence
+      - name: Validate reference-consumer pilots and cross-consumer evidence
         run: >-
           python platforms/design/validation/validate_consumers.py
           --catalog platforms/design/implementation/consumers/design-catalog/dist

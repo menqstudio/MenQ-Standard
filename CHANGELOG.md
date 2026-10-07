@@ -1,5 +1,21 @@
 # MenQ Standard — Changelog
 
+## 2026-10-07 — Audit phase 6a: D-024 lock, releases and D-025 evidence correction
+
+### Հայերեն
+
+- D-024 Platforms Architecture v1-ը `Locked` է Owner-ի հաստատմամբ. lock-ի երեք պայմանները գրանցված են decision-ում։
+- Հրապարակվեցին մշտական GitHub Release-ներ՝ `foundation-v1.0.0` (Foundation v1 ZIP + `SHA256SUMS.txt`) և `design-platform-v0.1.0-next.0` (preview bundle)։
+- D-025 evidence-ը ուղղվեց՝ առանց պատմությունը վերագրելու. ժամկետանց workflow artifact-ը փոխարինվեց մշտական release-ով, իսկ repo-ի ներսի երկու consumer-ը վերագնահատվեց M2 pilot (M3/M4-ը self-attested էր)։ D-025-ը մնում է Locked, իրական consumer-ի պարտավորությունը (MenQ Webpage) բաց է։
+- Consumer build-երը և `validate_consumers.py`-ը այլևս չեն հայտարարում M3/M4 կամ production equivalence։ Platforms validator-ը պահանջում է evidence correction-ը, մշտական release-ի digest-ը և M2-ից ոչ բարձր grade։
+
+### English
+
+- D-024 Platforms Architecture v1 is `Locked` with Owner approval; the three lock conditions are recorded in the decision.
+- Published permanent GitHub Releases: `foundation-v1.0.0` (Foundation v1 ZIP + `SHA256SUMS.txt`) and `design-platform-v0.1.0-next.0` (preview bundle).
+- Corrected D-025 evidence without rewriting history: the expired workflow artifact is replaced by the permanent release, and the two in-repo consumers are re-graded to M2 pilots (M3/M4 was self-attested). D-025 remains Locked; the real-consumer obligation (MenQ Webpage) is open.
+- Consumer builds and `validate_consumers.py` no longer claim M3/M4 or production equivalence. The Platforms validator requires the evidence correction, the permanent release digest and a grade no higher than M2.
+
 ## 2026-10-07 — Audit phase 6b: permanent release publishing
 
 ### Հայերեն

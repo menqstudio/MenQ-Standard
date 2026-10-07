@@ -41,10 +41,10 @@ const html = `<!doctype html><html lang="hy" data-theme="dark" data-density="com
 const evidence = {
   schemaVersion: 1, consumerId: "menq.consumer.release-evidence-console", name: { hy: "Թողարկման ապացույցների վահանակ", en: "Release Evidence Console" },
   consumerOwner: "MenQ Owner", technicalOwner: "MenQ Design Platform Maintainers", supportOwner: "MenQ Design Platform Maintainers",
-  purpose: "release-operations-and-evidence", maturity: "M4", conformanceProfile: "product-consumer", conformanceVerdict: conformance.verdict,
+  purpose: "release-operations-and-evidence", maturity: "M2", selfAttested: true, conformanceProfile: "product-consumer", conformanceVerdict: conformance.verdict,
   adoptedVersion: releaseManifest.version, packages: ["@menq/design-tokens", "@menq/design-foundations", "@menq/design-components", "@menq/design-patterns", "@menq/design-locales", "@menq/design-validation"],
   publicApiOnly: true, realWorkflow: "inspect-release-evidence-and-confirm-rollback-readiness", bilingualParity: true, accessibilityValidated: true,
-  rollbackReady: true, incidentReady: true, monitoring: "CI health probe plus artifact integrity validation", productionEquivalent: true,
+  rollbackReady: true, incidentReady: true, monitoring: "CI health probe plus artifact integrity validation", productionEquivalent: false,
   releaseLinkage: { releaseId: releaseManifest.releaseId, sourceCommit: releaseManifest.sourceCommit, evidenceSha256: releaseEvidence.releaseManifestSha256 },
   productExtensionBoundary: "operations-content-remains-consumer-local",
   dimensions: { purpose: "operations", density: "compact", workflow: "release-control", runtime: "static-web-production-equivalent", operationalConstraint: "integrity-and-rollback" },
