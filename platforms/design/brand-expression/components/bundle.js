@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"MenQ","components":[{"name":"BrandMark"},{"name":"Button"},{"name":"Card"},{"name":"Panel"},{"name":"PageHeader"},{"name":"SectionHeading"},{"name":"Badge"},{"name":"StatusDot"},{"name":"Avatar"},{"name":"Field"},{"name":"Input"},{"name":"Tabs"},{"name":"LocaleSwitch"},{"name":"ThemeSwitch"},{"name":"EmptyState"},{"name":"Skeleton"},{"name":"Toast"},{"name":"Modal"},{"name":"ConfirmDialog"},{"name":"Drawer"},{"name":"KpiStat"},{"name":"MetricBar"},{"name":"Table"},{"name":"ContrastSection"}]} */
+/* @ds-bundle: {"format":4,"namespace":"MenQ","components":[{"name":"BrandMark"},{"name":"Button"},{"name":"Card"},{"name":"Panel"},{"name":"PageHeader"},{"name":"SectionHeading"},{"name":"Badge"},{"name":"StatusDot"},{"name":"Avatar"},{"name":"Field"},{"name":"Input"},{"name":"Textarea"},{"name":"Select"},{"name":"FormRow"},{"name":"Checkbox"},{"name":"RadioGroup"},{"name":"Switch"},{"name":"Tabs"},{"name":"LocaleSwitch"},{"name":"ThemeSwitch"},{"name":"EmptyState"},{"name":"Skeleton"},{"name":"Toast"},{"name":"Modal"},{"name":"ConfirmDialog"},{"name":"Drawer"},{"name":"KpiStat"},{"name":"MetricBar"},{"name":"Table"},{"name":"ContrastSection"}]} */
 /* MenQ brand expression components (D-027). Core layer: product-neutral. Product extensions (e.g. Bro) live under platforms/design/product-extensions/. */
 (function () {
   var React = window.React;
@@ -41,10 +41,52 @@
     for (var i = 0; i < rows; i++) out.push(h('div', { key: i, className: 'skeleton', style: { height: 18, width: (90 - i * 8) + '%' } }));
     return h('div', { className: 'stack', 'aria-busy': 'true' }, out);
   }
-  function FormRow(p) { return h('label', { className: 'form-row' }, h('span', { className: 'field-label' }, p.label), p.children, p.error ? h('span', { className: 'form-error', style: { margin: 0 } }, p.error) : null); }
-  function Input(p) { var rest = Object.assign({}, p); delete rest.invalid; return h('input', Object.assign(rest, { className: cx('input', p.invalid && 'mq-invalid'), 'aria-invalid': p.invalid ? 'true' : undefined })); }
-  function Textarea(p) { return h('textarea', Object.assign({}, p, { className: 'textarea' })); }
-  function Select(p) { return h('select', Object.assign({}, p, { className: 'select input' })); }
+  var mqFieldSeq = 0;
+  function useFieldId(given) { var r = useRef(null); if (r.current === null) r.current = given || 'mq-f' + (++mqFieldSeq); return r.current; }
+  function withoutInvalid(p) { var rest = Object.assign({}, p); delete rest.invalid; return rest; }
+  // FormRow wires the label, hint and error to its single control: id, aria-describedby, aria-invalid.
+  function FormRow(p) {
+    var id = useFieldId(p.id), hintId = id + '-hint', errId = id + '-err';
+    var described = [p.hint ? hintId : null, p.error ? errId : null].filter(Boolean).join(' ') || undefined;
+    var child = React.Children.only(p.children);
+    var control = React.cloneElement(child, { id: child.props.id || id, 'aria-describedby': described, invalid: child.props.invalid || !!p.error, required: child.props.required || p.required });
+    return h('div', { className: 'form-row' },
+      h('label', { className: 'field-label', htmlFor: child.props.id || id }, p.label, p.required ? h('span', { className: 'mq-required', 'aria-hidden': 'true' }, ' *') : null),
+      control,
+      p.hint ? h('span', { id: hintId, className: 'form-hint' }, p.hint) : null,
+      p.error ? h('span', { id: errId, className: 'form-error', role: 'alert' }, p.error) : null);
+  }
+  function Input(p) { return h('input', Object.assign(withoutInvalid(p), { className: cx('input', p.invalid && 'mq-invalid', p.className), 'aria-invalid': p.invalid ? 'true' : undefined })); }
+  function Textarea(p) { return h('textarea', Object.assign(withoutInvalid(p), { className: cx('textarea', p.invalid && 'mq-invalid', p.className), 'aria-invalid': p.invalid ? 'true' : undefined })); }
+  function Select(p) { return h('select', Object.assign(withoutInvalid(p), { className: cx('select input', p.invalid && 'mq-invalid', p.className), 'aria-invalid': p.invalid ? 'true' : undefined })); }
+  // Native inputs keep keyboard, form submission and screen-reader semantics; the visual is CSS only.
+  function Checkbox(p) {
+    var rest = withoutInvalid(p); delete rest.label; delete rest.hint;
+    return h('label', { className: cx('mq-check', p.disabled && 'mq-check--disabled') },
+      h('input', Object.assign(rest, { type: 'checkbox', className: 'mq-check-input', 'aria-invalid': p.invalid ? 'true' : undefined })),
+      h('span', { className: 'mq-check-box', 'aria-hidden': 'true' }),
+      h('span', { className: 'mq-check-text' }, p.label, p.hint ? h('span', { className: 'form-hint' }, p.hint) : null));
+  }
+  function RadioGroup(p) {
+    var name = useFieldId(p.name), st = useState(p.defaultValue), cur = p.value !== undefined ? p.value : st[0], errId = name + '-err';
+    return h('fieldset', { className: 'mq-radio-group', 'aria-describedby': p.error ? errId : undefined, 'aria-invalid': p.error ? 'true' : undefined },
+      h('legend', { className: 'field-label' }, p.label),
+      p.options.map(function (o) {
+        return h('label', { key: o.value, className: cx('mq-check', 'mq-radio', (p.disabled || o.disabled) && 'mq-check--disabled') },
+          h('input', { type: 'radio', name: name, value: o.value, checked: cur === o.value, disabled: p.disabled || o.disabled, className: 'mq-check-input',
+            onChange: function () { st[1](o.value); if (p.onChange) p.onChange(o.value); } }),
+          h('span', { className: 'mq-check-box', 'aria-hidden': 'true' }),
+          h('span', { className: 'mq-check-text' }, o.label, o.hint ? h('span', { className: 'form-hint' }, o.hint) : null));
+      }),
+      p.error ? h('span', { id: errId, className: 'form-error', role: 'alert' }, p.error) : null);
+  }
+  function Switch(p) {
+    var st = useState(!!p.defaultChecked), on = p.checked !== undefined ? p.checked : st[0];
+    return h('label', { className: cx('mq-switch', p.disabled && 'mq-check--disabled') },
+      h('button', { type: 'button', role: 'switch', 'aria-checked': on ? 'true' : 'false', disabled: p.disabled, className: 'mq-switch-track',
+        onClick: function () { st[1](!on); if (p.onChange) p.onChange(!on); } }, h('span', { className: 'mq-switch-thumb', 'aria-hidden': 'true' })),
+      h('span', { className: 'mq-check-text' }, p.label, p.hint ? h('span', { className: 'form-hint' }, p.hint) : null));
+  }
   function useDialog(ref, active, onClose) {
     useEffect(function () {
       if (!active) return undefined;
@@ -210,6 +252,6 @@
   }
 
   window.MenQ = { BrandMark: BrandMark, Button: Button, Card: Card, Panel: Panel, PageHeader: PageHeader, SectionHeading: SectionHeading, Badge: Badge, StatusDot: StatusDot, Avatar: Avatar,
-    Field: Field, Input: Input, Textarea: Textarea, Select: Select, FormRow: FormRow, Tabs: Tabs, LocaleSwitch: LocaleSwitch, ThemeSwitch: ThemeSwitch, EmptyState: EmptyState, Skeleton: Skeleton,
+    Field: Field, Input: Input, Textarea: Textarea, Select: Select, FormRow: FormRow, Checkbox: Checkbox, RadioGroup: RadioGroup, Switch: Switch, Tabs: Tabs, LocaleSwitch: LocaleSwitch, ThemeSwitch: ThemeSwitch, EmptyState: EmptyState, Skeleton: Skeleton,
     Toast: Toast, Modal: Modal, ConfirmDialog: ConfirmDialog, Drawer: Drawer, KpiStat: KpiStat, MetricBar: MetricBar, Table: Table, ContrastSection: ContrastSection, applyTheme: applyTheme };
 })();

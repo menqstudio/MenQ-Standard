@@ -129,7 +129,37 @@ button { font: inherit; cursor: pointer; }
 .input:focus, .textarea:focus, .select:focus { outline: none; border-color: var(--color-focus-ring); box-shadow: 0 0 0 3px var(--color-selected); }
 .input::placeholder, .textarea::placeholder { color: var(--color-content-muted); }
 .textarea { height: auto; min-height: 6rem; padding: var(--space-3) var(--space-4); resize: vertical; }
-.input.mq-invalid { border-color: var(--color-danger-text); }
+.input.mq-invalid, .textarea.mq-invalid, .select.mq-invalid { border-color: var(--color-danger-text); }
+.input.mq-invalid:focus, .textarea.mq-invalid:focus, .select.mq-invalid:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-danger-text) 18%, transparent); }
+.form-hint { display: block; color: var(--color-content-muted); font-size: 0.75rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
+.mq-required { color: var(--color-danger-text); }
+.input:disabled, .textarea:disabled, .select:disabled { opacity: var(--opacity-disabled); cursor: not-allowed; }
+
+/* ── Checkbox / Radio / Switch: native inputs, CSS visuals; 24px hit area; control borders use
+   color-content-muted so they reach 3:1 against the surface (WCAG 1.4.11) in both themes ── */
+.mq-check { position: relative; display: flex; align-items: flex-start; gap: var(--space-3); min-height: 24px; cursor: pointer; color: var(--color-content-primary); font-size: 0.875rem; }
+.mq-check-input { position: absolute; opacity: 0; width: 20px; height: 20px; margin: 2px 0 0; cursor: inherit; }
+.mq-check-box { flex: none; width: 20px; height: 20px; margin-top: 2px; border: 1.5px solid var(--color-content-muted); border-radius: var(--radius-sm); background: var(--color-surface-primary);
+  display: inline-grid; place-items: center; transition: background var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard); }
+.mq-check-box::after { content: ""; width: 10px; height: 6px; border: 2px solid var(--color-content-inverse); border-top: 0; border-right: 0; transform: rotate(-45deg) translate(1px, -1px); opacity: 0; }
+.mq-check-input:checked + .mq-check-box { background: var(--color-action-primary); border-color: var(--color-action-primary); }
+.mq-check-input:checked + .mq-check-box::after { opacity: 1; }
+.mq-check-input:focus-visible + .mq-check-box { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+.mq-check-input[aria-invalid="true"] + .mq-check-box { border-color: var(--color-danger-text); }
+.mq-radio .mq-check-box { border-radius: var(--radius-pill); }
+.mq-radio .mq-check-box::after { width: 8px; height: 8px; border: 0; border-radius: var(--radius-pill); background: var(--color-content-inverse); transform: none; }
+.mq-check-text { display: flex; flex-direction: column; gap: 2px; padding-top: 2px; }
+.mq-check--disabled { opacity: var(--opacity-disabled); cursor: not-allowed; }
+.mq-radio-group { border: 0; padding: 0; margin: 0 0 var(--space-4); display: flex; flex-direction: column; gap: var(--space-3); }
+.mq-radio-group > legend { margin-bottom: var(--space-2); padding: 0; }
+.mq-switch { display: flex; align-items: center; gap: var(--space-3); cursor: pointer; font-size: 0.875rem; color: var(--color-content-primary); }
+.mq-switch-track { flex: none; position: relative; width: 44px; height: 24px; padding: 0; border-radius: var(--radius-pill); border: 1.5px solid var(--color-content-muted);
+  background: var(--color-surface-secondary); cursor: inherit; transition: background var(--duration-fast) var(--ease-standard); }
+.mq-switch-thumb { position: absolute; top: 2px; left: 2px; width: 17px; height: 17px; border-radius: var(--radius-pill); background: var(--color-content-muted);
+  transition: transform var(--duration-fast) var(--ease-standard), background var(--duration-fast) var(--ease-standard); }
+.mq-switch-track[aria-checked="true"] { background: var(--color-action-primary); border-color: var(--color-action-primary); }
+.mq-switch-track[aria-checked="true"] .mq-switch-thumb { transform: translateX(20px); background: var(--color-content-inverse); }
+@media (prefers-reduced-motion: reduce) { .mq-check-box, .mq-switch-track, .mq-switch-thumb { transition: none; } }
 
 /* ── Segmented: tabs, locale, theme ── */
 .mq-tabs { display: flex; gap: var(--space-1); border-bottom: 1px solid var(--color-border-subtle); }
