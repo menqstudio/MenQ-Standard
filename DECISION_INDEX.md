@@ -22,9 +22,9 @@
 
 ## Append Protocol / Ավելացման protocol
 
-1. Create and verify the dedicated decision file.
-2. Append one entry here without rewriting previous entries.
-3. Synchronize changelog, relevant context, index, and roadmap.
-4. Run integrity validation.
+1. Create and verify the dedicated decision file. / Ստեղծել և ստուգել dedicated decision file-ը։
+2. Append one entry here without rewriting previous entries. / Այստեղ ավելացնել մեկ entry՝ առանց նախորդ entry-ները վերագրելու։
+3. Synchronize changelog, relevant context, index, and roadmap. / Համաժամեցնել changelog-ը, համապատասխան context-ը, index-ը և roadmap-ը։
+4. Run integrity validation. / Գործարկել integrity validation-ը։
 
 <!-- END: MENQ_DECISION_INDEX -->

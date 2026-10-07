@@ -232,9 +232,37 @@ def validate_workflows(errors: list[str]) -> None:
             errors.append(f"{rel}: pnpm install must use --frozen-lockfile")
 
 
+def validate_label_parity(errors: list[str]) -> None:
+    """Within every section of tracked Markdown, **HY:** and **EN:** labelled blocks must pair up."""
+    result = subprocess.run(["git", "ls-files", "*.md"], cwd=ROOT, capture_output=True, text=True, check=False)
+    heading = re.compile(r"#{1,4}\s+(.*)")
+    labels = {lang: re.compile(rf"\s*(>\s*)?\*\*{lang}:?\*\*") for lang in ("HY", "EN")}
+    for rel in result.stdout.split():
+        in_code = False
+        section = "(top)"
+        counts: dict[str, list[int]] = {}
+        for line in (ROOT / rel).read_text(encoding="utf-8").split("\n"):
+            if line.startswith("```"):
+                in_code = not in_code
+                continue
+            if in_code:
+                continue
+            match = heading.match(line)
+            if match:
+                section = match.group(1)
+                continue
+            for index, lang in enumerate(("HY", "EN")):
+                if labels[lang].match(line):
+                    counts.setdefault(section, [0, 0])[index] += 1
+        for name, (hy, en) in counts.items():
+            if hy != en:
+                errors.append(f"bilingual label parity in {rel} section '{name}': HY={hy} EN={en}")
+
+
 def main() -> int:
     errors: list[str] = []
     validate_workflows(errors)
+    validate_label_parity(errors)
 
     for rel in (*REQUIRED_ROOT, *REQUIRED_FOUNDATION):
         path = ROOT / rel

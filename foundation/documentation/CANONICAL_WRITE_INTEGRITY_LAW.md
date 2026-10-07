@@ -15,7 +15,7 @@
 
 ## 2. Mandatory Pre-Write Gate / Պարտադիր pre-write gate
 
-Canonical file-ը փոփոխելուց առաջ պարտադիր է՝
+**HY:** Canonical file-ը փոփոխելուց առաջ պարտադիր է՝
 
 1. կարդալ ամբողջ ընթացիկ file-ը, ոչ միայն snippet կամ partial range,
 2. պահպանել current SHA կամ equivalent identifier-ը,
@@ -23,11 +23,19 @@ Canonical file-ը փոփոխելուց առաջ պարտադիր է՝
 4. պատրաստել ամբողջական replacement content-ը,
 5. արգելել partial read-ից full-file replacement-ը։
 
+**EN:** Before modifying a canonical file, it is mandatory to:
+
+1. read the entire current file, not only a snippet or partial range,
+2. preserve the current SHA or equivalent identifier,
+3. confirm the expected title, beginning marker, and ending marker,
+4. prepare the complete replacement content,
+5. prohibit full-file replacement from a partial read.
+
 Before modifying a canonical file, the complete current file must be read, its current SHA or equivalent identifier preserved, expected beginning and ending markers identified, the complete replacement prepared, and full-file replacement from a partial read prohibited.
 
 ## 3. Mandatory Post-Write Gate / Պարտադիր post-write gate
 
-Յուրաքանչյուր write-ից անմիջապես հետո պարտադիր է re-read անել և հաստատել՝
+**HY:** Յուրաքանչյուր write-ից անմիջապես հետո պարտադիր է re-read անել և հաստատել՝
 
 1. file-ը բացվում է,
 2. title-ը, status-ը և metadata-ն պահպանված են,
@@ -39,11 +47,23 @@ Before modifying a canonical file, the complete current file must be read, its c
 8. links, indexes, decisions, changelog և context files synchronized են,
 9. նոր SHA-ն համապատասխանում է սպասված փոփոխությանը։
 
+**EN:** Immediately after every write, it is mandatory to re-read and confirm that:
+
+1. the file opens,
+2. the title, status, and metadata are preserved,
+3. the expected beginning exists,
+4. the expected ending exists,
+5. the content is not truncated,
+6. the Armenian and English sections are complete,
+7. no unrelated canonical information has been lost,
+8. links, indexes, decisions, changelog, and context files are synchronized,
+9. the new SHA corresponds to the expected change.
+
 After every write, the file must be re-read and verified for readability, metadata, expected beginning and ending, absence of truncation, bilingual completeness, preservation of unrelated canonical information, synchronized references, and the expected new SHA.
 
 ## 4. RED Stop Rule / RED կանգառի կանոն
 
-Եթե verification-ի որևէ պարտադիր կետ FAIL կամ RED է՝
+**HY:** Եթե verification-ի որևէ պարտադիր կետ FAIL կամ RED է՝
 
 1. աշխատանքը անմիջապես կանգնում է,
 2. file-ը չի ներկայացվում որպես complete, locked կամ successful,
@@ -51,6 +71,15 @@ After every write, the file must be re-read and verified for readability, metada
 4. նոր write-ը կատարվում է միայն ամբողջական source-ից,
 5. verification-ը կրկնվում է,
 6. incident-ը բացահայտ գրանցվում է և չի թաքցվում։
+
+**EN:** If any mandatory verification point is FAIL or RED:
+
+1. work stops immediately,
+2. the file is not presented as complete, locked, or successful,
+3. the previous canonical version is restored from Git history or preserved content,
+4. a new write is performed only from a complete source,
+5. verification is repeated,
+6. the incident is recorded transparently and is not concealed.
 
 If any required verification check fails or is RED, work stops immediately; the file is not represented as complete, locked, or successful; the previous canonical version is restored; the write is repeated only from a complete source; verification is repeated; and the incident is recorded transparently.
 
@@ -68,7 +97,9 @@ If any required verification check fails or is RED, work stops immediately; the 
 
 ## 7. Completion Marker / Ավարտի marker
 
-Canonical write transaction-ը complete է միայն այս sequence-ից հետո՝
+**HY:** Canonical write transaction-ը complete է միայն այս sequence-ից հետո՝
+
+**EN:** A canonical write transaction is complete only after this sequence:
 
 ```text
 READ COMPLETE SOURCE

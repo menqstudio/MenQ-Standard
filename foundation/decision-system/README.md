@@ -42,6 +42,8 @@
 9. լուծում է կրկնվող կամ վիճելի հարց,
 10. պետք է հիշվի ապագա մարդկանց ու AI համակարգերի կողմից։
 
+Արդեն approved standard-ով կարգավորվող routine, reversible աշխատանքը կարող է շարունակվել առանց նոր formal decision-ի։
+
 **EN:** A formal decision is required when a change:
 
 1. affects Foundation,

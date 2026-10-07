@@ -26,12 +26,12 @@ This record confirms validator execution evidence. It does not replace Owner app
 
 ## Evidence / Ապացույց
 
-- Workflow name: `Foundation Integrity`
-- Workflow run: `#9`
-- Run ID: `29193345585`
-- Job: `validate`
-- Conclusion: `success`
-- Validator: `scripts/validate_foundation.py`
-- Validated commit: `21c48f50abd0e3cdd2c49fd0606db14cd5303055`
+- Workflow name / Workflow-ի անուն: `Foundation Integrity`
+- Workflow run / Workflow-ի գործարկում: `#9`
+- Run ID / Գործարկման ID: `29193345585`
+- Job / Job: `validate`
+- Conclusion / Եզրակացություն: `success`
+- Validator / Validator: `scripts/validate_foundation.py`
+- Validated commit / Ստուգված commit: `21c48f50abd0e3cdd2c49fd0606db14cd5303055`
 
 <!-- END: FOUNDATION_V1_VALIDATION_RUN -->

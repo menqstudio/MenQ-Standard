@@ -1,5 +1,21 @@
 # MenQ Standard — Changelog
 
+## 2026-10-07 — Audit phase 5: bilingual completion (R-05 reopened and closed)
+
+### Հայերեն
+
+- Documentation, AI Collaboration, Governance և Decision System chapter-ների, Canonical Write Integrity և Canonical Session Read օրենքների, D-024-ի, D-025-ի, D-026-ի, D-027-ի, audit/validation գրառումների, root README/ROADMAP/DECISION_INDEX-ի և Platforms փաստաթղթերի միալեզու բաժինները ստացան լիարժեք հայերեն կամ անգլերեն համարժեք։
+- Գոյություն ունեցող տեքստը չի ջնջվել կամ վերաձևակերպվել. ավելացվել են միայն թարգմանություններ և `**HY:**`/`**EN:**` label-ներ։ D-025-ում (Locked) փոփոխությունը միայն parity-ի ավելացում է, իմաստը չի փոխվել։
+- Օրենքների այն բաժիններում, որտեղ անգլերենը միայն կրճատ ամփոփում էր, ավելացվեց ամբողջական անգլերեն ցանկ։
+- R-05-ը վերաբացվեց և փակվեց (`foundation/FOUNDATION_V1_REAUDIT.md`)։ Foundation validator-ը ստուգում է `**HY:**`/`**EN:**` label parity-ն բոլոր tracked Markdown-ների յուրաքանչյուր բաժնում։
+
+### English
+
+- Single-language sections received complete Armenian or English counterparts in the Documentation, AI Collaboration, Governance and Decision System chapters, the Canonical Write Integrity and Canonical Session Read laws, D-024, D-025, D-026, D-027, the audit/validation records, the root README/ROADMAP/DECISION_INDEX and the Platforms documents.
+- No existing text was deleted or reworded; only translations and `**HY:**`/`**EN:**` labels were added. In D-025 (Locked) the change is parity-only and does not alter meaning.
+- Where the laws' English was only a condensed summary, a complete English list was added.
+- R-05 reopened and closed (`foundation/FOUNDATION_V1_REAUDIT.md`). The Foundation validator checks `**HY:**`/`**EN:**` label parity in every section of all tracked Markdown.
+
 ## 2026-10-07 — Audit phase 4: workflow security
 
 ### Հայերեն

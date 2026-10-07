@@ -11,7 +11,16 @@
 
 ## Boundary / Սահման
 
-A Platform is not:
+**HY:** Platform-ը չէ՝
+
+- MenQ Studio product;
+- service offering;
+- միայն documentation;
+- միայն component library;
+- Operating Standard;
+- product-specific business-logic container։
+
+**EN:** A Platform is not:
 
 - a MenQ Studio product;
 - a service offering;
@@ -30,15 +39,21 @@ Platforms
 MenQ Products / Services
 ```
 
-Operating Standards govern how work is performed across Platforms. Extensions add optional or domain-specific capability.
+**HY:** Operating Standards-ը կարգավորում են, թե ինչպես է աշխատանքը կատարվում Platforms-ի միջով։ Extensions-ը ավելացնում են optional կամ domain-specific capability։
+
+**EN:** Operating Standards govern how work is performed across Platforms. Extensions add optional or domain-specific capability.
 
 ## Qualification rule / Որակավորման կանոն
 
-A capability may enter the Platform registry only when it is reusable, bounded, contracted, human-owned, versioned, validated, Foundation-aligned, adoptable, and free of product-specific business logic in its core.
+**HY:** Capability-ն կարող է մտնել Platform registry միայն այն դեպքում, երբ այն reusable է, bounded, contracted, human-owned, versioned, validated, Foundation-aligned, adoptable է և իր core-ում զերծ է product-specific business logic-ից։
+
+**EN:** A capability may enter the Platform registry only when it is reusable, bounded, contracted, human-owned, versioned, validated, Foundation-aligned, adoptable, and free of product-specific business logic in its core.
 
 ## Registry / Registry
 
-See [`PLATFORM_REGISTRY.md`](PLATFORM_REGISTRY.md).
+**HY:** Տե՛ս [`PLATFORM_REGISTRY.md`](PLATFORM_REGISTRY.md)-ը։
+
+**EN:** See [`PLATFORM_REGISTRY.md`](PLATFORM_REGISTRY.md).
 
 ## Decisions / Որոշումներ
 
@@ -46,7 +61,7 @@ See [`PLATFORM_REGISTRY.md`](PLATFORM_REGISTRY.md).
 
 ## Active Platforms / Գործող Platform-ներ
 
-- [`Design Platform`](design/README.md) — architecture Locked under D-025; brand expression layer under D-027.
+- [`Design Platform`](design/README.md) — architecture Locked under D-025; brand expression layer under D-027. / architecture-ը Locked է D-025-ով, brand expression layer-ը՝ D-027-ով։
 
 ## Creation rule / Ստեղծման կանոն
 

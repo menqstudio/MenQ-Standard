@@ -15,18 +15,25 @@
 
 ## 2. Scope / Կիրառման սահման
 
-Այս օրենքը կիրառվում է՝
+**HY:** Այս օրենքը կիրառվում է՝
 
 1. MenQ Standard-ի յուրաքանչյուր նոր chat կամ AI session-ի նկատմամբ,
 2. ցանկացած AI collaborator, agent, orchestrator կամ specialist agent-ի նկատմամբ, որը MenQ Standard canonical repository-ի վրա աշխատում է,
 3. repository-ի բոլոր tracked `.md` ֆայլերի նկատմամբ՝ բոլոր directories-ում և active branch/ref-ում,
 4. նոր session-ից հետո առաջին substantive պատասխանից առաջ։
 
+**EN:** This law applies:
+
+1. to every new MenQ Standard chat or AI session,
+2. to any AI collaborator, agent, orchestrator, or specialist agent working on the MenQ Standard canonical repository,
+3. to all tracked `.md` files of the repository, in all directories and on the active branch/ref,
+4. before the first substantive response after a new session.
+
 This law applies to every new MenQ Standard chat or AI session, every AI collaborator, agent, orchestrator, or specialist working with the canonical repository, every tracked `.md` file in all directories on the active branch or ref, and before the first substantive response after session start.
 
 ## 3. Mandatory Startup Gate / Պարտադիր startup gate
 
-Նոր session-ը project աշխատանքի չի անցնում, մինչև բոլոր քայլերը GREEN չեն՝
+**HY:** Նոր session-ը project աշխատանքի չի անցնում, մինչև բոլոր քայլերը GREEN չեն՝
 
 1. հաստատել canonical repository-ն և active branch/ref-ը,
 2. enumerate անել repository-ի բոլոր tracked `.md` ֆայլերը,
@@ -35,6 +42,16 @@ This law applies to every new MenQ Standard chat or AI session, every AI collabo
 5. retry կամ alternate safe read method օգտագործել մինչև complete read,
 6. կարդալ active PR metadata, changed files, diff, review threads և checks, երբ աշխատանքը կապված է active PR-ի հետ,
 7. միայն իրական complete read-ից հետո հայտարարել startup gate-ը GREEN։
+
+**EN:** A new session does not proceed to project work until all steps are GREEN:
+
+1. confirm the canonical repository and the active branch/ref,
+2. enumerate all tracked `.md` files of the repository,
+3. read each `.md` file completely, from the beginning to the ending marker or end-of-file,
+4. detect truncation, unreadable content, an inaccessible file, or a failed fetch,
+5. use a retry or an alternate safe read method until the read is complete,
+6. read the active PR metadata, changed files, diff, review threads, and checks when the work is tied to an active PR,
+7. declare the startup gate GREEN only after a real complete read.
 
 A new session may not proceed to project work until it has identified the canonical repository and active branch or ref, enumerated all tracked `.md` files, read each file completely from beginning to ending marker or end-of-file, detected truncation or access failures, retried through a safe alternative method when needed, read active PR metadata and evidence when relevant, and established a real GREEN startup gate.
 
@@ -46,7 +63,7 @@ A new session may not proceed to project work until it has identified the canoni
 
 ## 5. RED Stop Rule / RED կանգառի կանոն
 
-Եթե որևէ `.md` file ամբողջությամբ չի կարդացվել, inaccessible է, truncated է կամ inventory-ն ամբողջական չէ՝
+**HY:** Եթե որևէ `.md` file ամբողջությամբ չի կարդացվել, inaccessible է, truncated է կամ inventory-ն ամբողջական չէ՝
 
 1. startup gate-ը RED է,
 2. AI-ն չի կարող ասել, որ ամբողջ repository-ն կարդացել է,
@@ -55,11 +72,20 @@ A new session may not proceed to project work until it has identified the canoni
 5. AI-ն բացահայտ հայտնում է կոնկրետ չկարդացված կամ չստուգված files-ը,
 6. աշխատանքը շարունակվում է միայն missing read-ը complete դարձնելուց հետո։
 
+**EN:** If any `.md` file has not been read completely, is inaccessible, is truncated, or the inventory is incomplete:
+
+1. the startup gate is RED,
+2. the AI may not say that it has read the entire repository,
+3. substantive project work stops,
+4. no canonical write, decision proposal, architecture verdict, or validation is performed,
+5. the AI explicitly discloses the specific unread or unverified files,
+6. work continues only after the missing read has been made complete.
+
 If any `.md` file has not been read completely, is inaccessible, is truncated, or the inventory is incomplete, the startup gate is RED; the AI may not claim the repository was fully read; substantive work stops; no canonical write, decision proposal, architecture verdict, or validation proceeds; the exact unread or unverified files are disclosed; and work resumes only after the missing reads are completed.
 
 ## 6. No Shortcut Rule / Կարճ ճանապարհի արգելք
 
-Այս օրենքը չի շրջանցվում՝
+**HY:** Այս օրենքը չի շրջանցվում՝
 
 - token կամ context limit-ով,
 - ժամանակ խնայելու պատճառաբանությամբ,
@@ -69,6 +95,17 @@ If any `.md` file has not been read completely, is inaccessible, is truncated, o
 - file count-ի մեծությամբ,
 - tool limitation-ով,
 - Owner-ի հայտնի instruction-ները հիշելու պատճառաբանությամբ։
+
+**EN:** This law may not be bypassed:
+
+- because of a token or context limit,
+- on the grounds of saving time,
+- through previous session memory,
+- through a handoff summary,
+- through a "relevant files only" approach,
+- because of the size of the file count,
+- because of a tool limitation,
+- on the grounds of remembering the Owner's known instructions.
 
 This law may not be bypassed because of token or context limits, speed, prior session memory, a handoff summary, a relevant-files-only approach, repository size, tool limitations, or remembered Owner instructions.
 
@@ -92,10 +129,19 @@ An orchestrator may not delegate the read obligation and declare GREEN without e
 
 ## 10. Relationship to Other Laws / Կապը այլ օրենքների հետ
 
+**HY:**
+
 - Այս օրենքը գործում է մինչև task execution-ը։
 - `CANONICAL_WRITE_INTEGRITY_LAW.md`-ը գործում է յուրաքանչյուր canonical write-ի ժամանակ։
 - Երկու օրենքներն էլ պարտադիր են և չեն փոխարինում միմյանց։
 - Complete repository read-ը write permission կամ human approval չի ստեղծում։
+
+**EN:**
+
+- This law operates before task execution.
+- `CANONICAL_WRITE_INTEGRITY_LAW.md` operates during every canonical write.
+- Both laws are mandatory and do not replace each other.
+- A complete repository read does not create write permission or human approval.
 
 This law governs pre-task session loading. `CANONICAL_WRITE_INTEGRITY_LAW.md` governs every canonical write. Both are mandatory and neither replaces the other. A complete repository read does not create write authority or human approval.
 

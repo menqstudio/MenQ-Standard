@@ -166,7 +166,9 @@ Document-ը պետք է պարզ ցույց տա իր class-ը, երբ ambiguity
 
 ## 9. Required Document Metadata / Պարտադիր metadata
 
-Normative և long-lived documents-ը պետք է հնարավորության դեպքում ներառեն՝
+**HY:** Normative և long-lived documents-ը պետք է հնարավորության դեպքում ներառեն՝
+
+**EN:** Normative and long-lived documents must, where possible, include:
 
 ```text
 Title:
@@ -190,6 +192,8 @@ Review trigger or cadence:
 
 ## 10. Naming and Path Rules / Անվանման և path-ի կանոններ
 
+**HY:**
+
 1. Root governance files-ը օգտագործում են stable uppercase names՝ `README.md`, `DECISIONS.md`, `CHANGELOG.md`։
 2. Directory names-ը օգտագործում են predictable lowercase kebab-case, եթե locked convention-ը այլ բան չի սահմանում։
 3. File name-ը նկարագրում է բովանդակությունը, ոչ ժամանակավոր task-ը։
@@ -197,9 +201,20 @@ Review trigger or cadence:
 5. Stable path-ը գերադասելի է հաճախակի rename-ից։
 6. Rename-ի դեպքում links-ը և references-ը թարմացվում են նույն change-ում։
 
+**EN:**
+
+1. Root governance files use stable uppercase names: `README.md`, `DECISIONS.md`, `CHANGELOG.md`.
+2. Directory names use predictable lowercase kebab-case unless a locked convention defines otherwise.
+3. A file name describes its content, not a temporary task.
+4. Ambiguous names such as `final.md`, `new.md`, `latest2.md`, `stuff.md` are not used in canonical documentation.
+5. A stable path is preferred over frequent renaming.
+6. When a rename occurs, links and references are updated in the same change.
+
 ---
 
 ## 11. Bilingual Documentation Rule / Երկլեզու documentation-ի կանոն
+
+**HY:**
 
 1. Հայերեն և անգլերեն բաժինները հավասար authoritative են։
 2. Երկու լեզուներում պարտադիր է նույն scope-ը, rules-ը, exceptions-ը և examples-ի իմաստը։
@@ -208,6 +223,16 @@ Review trigger or cadence:
 5. Technical term-ը կարող է մնալ անգլերեն, երբ forced translation-ը կորցնում է precision-ը։
 6. Material update-ը complete չէ, մինչև երկու լեզուներն էլ synchronized չեն։
 7. Language mismatch-ը documentation defect է։
+
+**EN:**
+
+1. Armenian and English sections are equally authoritative.
+2. Both languages must carry the same scope, rules, exceptions, and meaning of examples.
+3. A summary in only one language while the other language carries the complete rule is not permitted.
+4. Literal translation is not required; semantic equality is required.
+5. A technical term may remain in English when forced translation would lose precision.
+6. A material update is not complete until both languages are synchronized.
+7. A language mismatch is a documentation defect.
 
 ---
 
@@ -223,11 +248,15 @@ Review trigger or cadence:
 
 ### Editorial Change / Խմբագրական փոփոխություն
 
-Typo, grammar, formatting, broken link կամ wording clarification without semantic change։ Formal decision պարտադիր չէ, բայց change-ը traceable է։
+**HY:** Typo, grammar, formatting, broken link կամ wording clarification without semantic change։ Formal decision պարտադիր չէ, բայց change-ը traceable է։
+
+**EN:** A typo, grammar, formatting, broken link, or wording clarification without semantic change. A formal decision is not required, but the change is traceable.
 
 ### Material Change / Իմաստային փոփոխություն
 
-Rule-ի իմաստի, scope-ի, requirement-ի, authority-ի, status-ի, terminology-ի, architecture-ի կամ process-ի փոփոխություն։ Material change-ը պահանջում է Decision System-ի համապատասխան lifecycle։
+**HY:** Rule-ի իմաստի, scope-ի, requirement-ի, authority-ի, status-ի, terminology-ի, architecture-ի կամ process-ի փոփոխություն։ Material change-ը պահանջում է Decision System-ի համապատասխան lifecycle։
+
+**EN:** A change to a rule's meaning, scope, requirement, authority, status, terminology, architecture, or process. A material change requires the corresponding Decision System lifecycle.
 
 ---
 
@@ -241,7 +270,7 @@ Rule-ի իմաստի, scope-ի, requirement-ի, authority-ի, status-ի, termino
 
 ## 15. Integrity Protection / Integrity-ի պաշտպանություն
 
-Յուրաքանչյուր canonical write-ից հետո պարտադիր է verify անել՝
+**HY:** Յուրաքանչյուր canonical write-ից հետո պարտադիր է verify անել՝
 
 1. file-ը բացվում է,
 2. title-ը և status-ը պահպանված են,
@@ -278,6 +307,8 @@ Rule-ի իմաստի, scope-ի, requirement-ի, authority-ի, status-ի, termino
 
 ## 18. Link and Reference Rules / Link-երի և reference-ների կանոններ
 
+**HY:**
+
 1. Relative repository links-ը նախընտրելի են internal files-ի համար։
 2. Link text-ը նկարագրում է destination-ը։
 3. Canonical document-ը չի հղվում միայն chat message-ով։
@@ -285,6 +316,16 @@ Rule-ի իմաստի, scope-ի, requirement-ի, authority-ի, status-ի, termino
 5. Broken link-ը defect է։
 6. Renamed document-ը պետք է ունենա updated inbound references։
 7. Orphan normative document-ը՝ առանց parent index link-ի, documentation defect է։
+
+**EN:**
+
+1. Relative repository links are preferred for internal files.
+2. Link text describes the destination.
+3. A canonical document is not referenced only through a chat message.
+4. For an external source, the title, source, and access date are preserved when the material may change.
+5. A broken link is a defect.
+6. A renamed document must have updated inbound references.
+7. An orphan normative document, without a parent index link, is a documentation defect.
 
 ---
 
@@ -298,7 +339,9 @@ Rule-ի իմաստի, scope-ի, requirement-ի, authority-ի, status-ի, termino
 
 ## 20. Generated Documentation / Գեներացված documentation
 
-Generated document-ը պետք է նշի source data-ն, generator-ը կամ process-ը, generated date-ը, manual edit-ի թույլատրելիությունը, regeneration command կամ workflow-ը, և canonical է, թե derived artifact։
+**HY:** Generated document-ը պետք է նշի source data-ն, generator-ը կամ process-ը, generated date-ը, manual edit-ի թույլատրելիությունը, regeneration command կամ workflow-ը, և canonical է, թե derived artifact։
+
+**EN:** A generated document must state its source data, the generator or process, the generated date, whether manual edits are permitted, the regeneration command or workflow, and whether it is canonical or a derived artifact.
 
 **HY:** Generated output-ը canonical չի դառնում միայն այն պատճառով, որ automation-ն է այն ստեղծել։  
 **EN:** Generated output does not become canonical merely because automation produced it.
@@ -323,7 +366,9 @@ Generated document-ը պետք է նշի source data-ն, generator-ը կամ pro
 
 ## 23. Review Triggers / Վերանայման triggers
 
-Document-ը review է պահանջում, երբ related decision, implementation կամ terminology է փոխվում, contradiction է հայտնաբերվում, broken link կամ missing section կա, bilingual mismatch կա, Owner կամ steward-ը փոխվում է, review cadence-ը հասնում է, կամ incident-ը ցույց է տալիս, որ documentation-ը սխալ կամ անբավարար էր։
+**HY:** Document-ը review է պահանջում, երբ related decision, implementation կամ terminology է փոխվում, contradiction է հայտնաբերվում, broken link կամ missing section կա, bilingual mismatch կա, Owner կամ steward-ը փոխվում է, review cadence-ը հասնում է, կամ incident-ը ցույց է տալիս, որ documentation-ը սխալ կամ անբավարար էր։
+
+**EN:** A document requires review when a related decision, implementation, or terminology changes; a contradiction is discovered; a broken link or missing section exists; a bilingual mismatch exists; the Owner or steward changes; the review cadence is reached; or an incident shows that the documentation was incorrect or insufficient.
 
 ---
 
@@ -344,13 +389,17 @@ Required gate-ի `RED` վիճակում document-ը չի ստանում `Locked`
 
 ## 25. Documentation KPIs / Documentation KPI-ներ
 
-Documentation system-ը կարող է չափվել՝ missing required documents, stale document rate, broken internal links, bilingual mismatch count, undocumented locked decisions, documentation update lag, orphan normative documents, expired review dates, duplicate canonical rules, integrity կամ truncation incidents, AI sessions started from stale context և changes that updated implementation but not documentation։ KPI-ն պետք է չափի trust և continuity, ոչ միայն document count-ը։
+**HY:** Documentation system-ը կարող է չափվել՝ missing required documents, stale document rate, broken internal links, bilingual mismatch count, undocumented locked decisions, documentation update lag, orphan normative documents, expired review dates, duplicate canonical rules, integrity կամ truncation incidents, AI sessions started from stale context և changes that updated implementation but not documentation։ KPI-ն պետք է չափի trust և continuity, ոչ միայն document count-ը։
+
+**EN:** The documentation system may be measured by missing required documents, stale document rate, broken internal links, bilingual mismatch count, undocumented locked decisions, documentation update lag, orphan normative documents, expired review dates, duplicate canonical rules, integrity or truncation incidents, AI sessions started from stale context, and changes that updated implementation but not documentation. KPIs must measure trust and continuity, not only document count.
 
 ---
 
 ## 26. Minimum Project Documentation Set / Նվազագույն project documentation set
 
-Յուրաքանչյուր active MenQ project-ի minimum set-ը՝
+**HY:** Յուրաքանչյուր active MenQ project-ի minimum set-ը՝
+
+**EN:** The minimum set for every active MenQ project:
 
 ```text
 README.md
@@ -360,13 +409,17 @@ CHANGELOG.md
 ROADMAP.md
 ```
 
-AI-driven շարունակական աշխատանքի դեպքում ավելացվում է՝
+**HY:** AI-driven շարունակական աշխատանքի դեպքում ավելացվում է՝
+
+**EN:** For continuous AI-driven work, the following is added:
 
 ```text
 AI_WORKING_CONTEXT.md
 ```
 
-Յուրաքանչյուր major governed area ունի իր՝
+**HY:** Յուրաքանչյուր major governed area ունի իր՝
+
+**EN:** Every major governed area has its own:
 
 ```text
 README.md

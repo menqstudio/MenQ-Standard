@@ -23,12 +23,23 @@
 
 ## Architecture planes / Architecture planes
 
+**EN:**
+
 1. **Brand Core** — MenQ meaning, canonical marks, palette direction, typography direction, and identity contracts.
 2. **Tokens** — reference, semantic, component, pattern, and product-extension token concerns.
 3. **Primitives** — reusable foundations and low-level UI constructs.
 4. **Components** — reusable behavior, states, variants, accessibility, and stable APIs.
 5. **Patterns** — reusable interaction and composition contracts.
 6. **Delivery** — packages, documentation, tooling, adoption, migration, versioning, and validation.
+
+**HY:**
+
+1. **Brand Core** — MenQ-ի իմաստը, canonical marks, palette-ի ուղղություն, typography-ի ուղղություն և identity contracts։
+2. **Tokens** — reference, semantic, component, pattern և product-extension token concerns։
+3. **Primitives** — reusable foundations և low-level UI constructs։
+4. **Components** — reusable behavior, states, variants, accessibility և stable APIs։
+5. **Patterns** — reusable interaction և composition contracts։
+6. **Delivery** — packages, documentation, tooling, adoption, migration, versioning և validation։
 
 ## Dependency direction / Կախվածությունների ուղղություն
 
@@ -44,11 +55,13 @@ Packages, documentation, tooling, and validation
 Product Design Layers
 ```
 
-Dependency direction-ը միակողմանի է։ Product layer-ը կարող է consume, compose, theme և contract-ով extend անել Platform-ը, բայց չի կարող silently mutate կամ fork անել shared core-ը։
+**HY:** Dependency direction-ը միակողմանի է։ Product layer-ը կարող է consume, compose, theme և contract-ով extend անել Platform-ը, բայց չի կարող silently mutate կամ fork անել shared core-ը։
+
+**EN:** Dependency direction is one-way. A product layer may consume, compose, theme, and extend the Platform through contracts, but may not silently mutate or fork the shared core.
 
 ## Token architecture / Token architecture
 
-Canonical dependency layers՝
+**EN:** Canonical dependency layers՝
 
 1. **Reference** — raw canonical values.
 2. **Semantic** — meaning-based roles.
@@ -56,9 +69,21 @@ Canonical dependency layers՝
 4. **Pattern** — reusable composition mappings.
 5. **Product Extension** — controlled product-local extension.
 
-Theme, state, density, platform, viewport/container, locale/script, accessibility mode, motion preference և product expression-ը orthogonal resolution dimensions են, ոչ token layers։ Controlled exceptions-ը governed temporary bypass mechanism են, ոչ normal dependency layer։
+**HY:** Canonical dependency layers՝
 
-Canonical token source-ը structured JSON է՝ schema, bilingual descriptions, owner, lifecycle և version metadata-ով։ Generated CSS, TypeScript, design-tool exports և manifests-ը source of truth չեն։
+1. **Reference** — հում canonical արժեքներ։
+2. **Semantic** — իմաստի վրա հիմնված roles։
+3. **Component** — component contract mappings։
+4. **Pattern** — reusable composition mappings։
+5. **Product Extension** — վերահսկվող product-local extension։
+
+**HY:** Theme, state, density, platform, viewport/container, locale/script, accessibility mode, motion preference և product expression-ը orthogonal resolution dimensions են, ոչ token layers։ Controlled exceptions-ը governed temporary bypass mechanism են, ոչ normal dependency layer։
+
+**HY:** Canonical token source-ը structured JSON է՝ schema, bilingual descriptions, owner, lifecycle և version metadata-ով։ Generated CSS, TypeScript, design-tool exports և manifests-ը source of truth չեն։
+
+**EN:** Theme, state, density, platform, viewport/container, locale/script, accessibility mode, motion preference, and product expression are orthogonal resolution dimensions, not token layers. Controlled exceptions are a governed temporary bypass mechanism, not a normal dependency layer.
+
+**EN:** The canonical token source is structured JSON with schema, bilingual descriptions, owner, lifecycle, and version metadata. Generated CSS, TypeScript, design-tool exports, and manifests are not sources of truth.
 
 ## Approved architecture baseline / Հաստատված architecture baseline
 
@@ -77,9 +102,28 @@ Owner-approved baseline-ը պահպանված է [`../DESIGN_PLATFORM_ARCHITECTU
 - governed assets, icons, illustrations, media, and motion;
 - packages, SemVer, compatibility, deprecation, migration, rollback, and release evidence.
 
+**EN:** The Owner-approved baseline is preserved in [`../DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`](../DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md) and includes the items listed above.
+
+**HY:** Վերոնշյալ ցանկը հայերենով՝
+
+- Foundation → Brand Core → Design Platform Core → Product Design Layers boundary;
+- canonical token source/build pipeline;
+- primitives և design foundations;
+- behavior-first components;
+- reusable patterns;
+- theme-ի, mode-ի և product-expression-ի տարանջատում;
+- accessibility-ն որպես release condition;
+- հայերենը և անգլերենը՝ որպես հավասար canonical լեզուներ;
+- լրացուցիչ on-demand locale packs;
+- content architecture և terminology governance;
+- governed assets, icons, illustrations, media և motion;
+- packages, SemVer, compatibility, deprecation, migration, rollback և release evidence։
+
 ## Shared core boundary / Shared core սահման
 
 ### Included / Ներառված
+
+**EN:**
 
 - Brand contracts and canonical ownership boundaries;
 - token architecture, naming, dependency, and generation rules;
@@ -87,7 +131,17 @@ Owner-approved baseline-ը պահպանված է [`../DESIGN_PLATFORM_ARCHITECTU
 - theming, localization, content, motion, and asset contracts;
 - package, adoption, compatibility, migration, validation, and documentation systems.
 
+**HY:**
+
+- Brand contracts և canonical ownership boundaries;
+- token architecture, naming, dependency և generation rules;
+- primitives, components, patterns և accessibility behavior;
+- theming, localization, content, motion և asset contracts;
+- package, adoption, compatibility, migration, validation և documentation systems։
+
 ### Excluded / Չներառված
+
+**EN:**
 
 - product-specific identity and business logic;
 - domain workflows and one-off page anatomy;
@@ -95,17 +149,29 @@ Owner-approved baseline-ը պահպանված է [`../DESIGN_PLATFORM_ARCHITECTU
 - optional effects treated as mandatory MenQ identity;
 - silent source copies, forks, or private API access.
 
+**HY:**
+
+- product-specific identity և business logic;
+- domain workflows և one-off page anatomy;
+- product-specific visual grammar և campaign visuals;
+- optional effects, որոնք դիտարկվում են որպես պարտադիր MenQ identity;
+- silent source copies, forks կամ private API access։
+
 ## Localization rule / Լոկալիզացիայի կանոն
 
-Armenian and English are equal canonical languages with semantic parity. Additional languages are on-demand locale packs. A locale may be declared supported only when its approved scope is complete, including UI strings, pluralization, formatting, direction, font/script mapping, accessibility labels, validation messages, and fallback behavior.
+**EN:** Armenian and English are equal canonical languages with semantic parity. Additional languages are on-demand locale packs. A locale may be declared supported only when its approved scope is complete, including UI strings, pluralization, formatting, direction, font/script mapping, accessibility labels, validation messages, and fallback behavior.
+
+**HY:** Հայերենը և անգլերենը հավասար canonical լեզուներ են՝ semantic parity-ով։ Լրացուցիչ լեզուները on-demand locale packs են։ Locale-ը կարող է հայտարարվել supported միայն այն դեպքում, երբ դրա approved scope-ը ամբողջական է՝ ներառյալ UI strings, pluralization, formatting, direction, font/script mapping, accessibility labels, validation messages և fallback behavior։
 
 ## Component and pattern rule / Component և pattern կանոն
 
-Shared component-ի առաջնային արժեքը behavior contract-ն է՝ anatomy, slots, states, events, keyboard behavior, focus, semantics, accessibility, token surface, stable API և lifecycle։ Pattern-ը reusable interaction/composition contract է, ոչ product workflow։
+**HY:** Shared component-ի առաջնային արժեքը behavior contract-ն է՝ anatomy, slots, states, events, keyboard behavior, focus, semantics, accessibility, token surface, stable API և lifecycle։ Pattern-ը reusable interaction/composition contract է, ոչ product workflow։
+
+**EN:** The primary value of a shared component is its behavior contract: anatomy, slots, states, events, keyboard behavior, focus, semantics, accessibility, token surface, stable API, and lifecycle. A pattern is a reusable interaction/composition contract, not a product workflow.
 
 ## Validation and lock gate / Validation և lock gate
 
-D-025 reached `Locked` because all conditions are satisfied:
+**EN:** D-025 reached `Locked` because all conditions are satisfied:
 
 1. Complete canonical specification set exists and is synchronized.
 2. At least one versioned implementation package or equivalent delivery exists.
@@ -116,7 +182,20 @@ D-025 reached `Locked` because all conditions are satisfied:
 7. Required validators and GitHub Actions are GREEN.
 8. The human Owner explicitly approved lock on 2026-07-13.
 
+**HY:** D-025-ը հասել է `Locked` վիճակի, քանի որ բոլոր պայմանները բավարարված են՝
+
+1. Ամբողջական canonical specification set-ը առկա է և համաժամեցված է։
+2. Առկա է առնվազն մեկ versioned implementation package կամ համարժեք delivery։
+3. Առնվազն երկու distinct իրական MenQ consumers validate են անում adoption-ը։
+4. Token, accessibility, localization, visual, interaction, package, migration և compatibility checks-ը անցնում են approved scope-ում։
+5. Հայերեն և անգլերեն documentation-ը ունեն semantic parity։
+6. Release և migration evidence-ը գրանցված են։
+7. Պարտադիր validators-ը և GitHub Actions-ը GREEN են։
+8. Human Owner-ը 2026-07-13-ին explicit հաստատել է lock-ը։
+
 ## Alternatives rejected / Մերժված alternatives
+
+**EN:**
 
 - component library only;
 - one flat token list;
@@ -126,13 +205,29 @@ D-025 reached `Locked` because all conditions are satisfied:
 - mandatory visual-style family;
 - copy-paste delivery and silent forks.
 
+**HY:**
+
+- միայն component library;
+- մեկ հարթ token list;
+- theme/state/density-ն մոդելավորված որպես token layers;
+- controlled exceptions-ը մոդելավորված որպես normal layer;
+- մեկ product՝ որպես reference architecture;
+- պարտադիր visual-style family;
+- copy-paste delivery և silent forks։
+
 ## Risks and mitigations / Ռիսկեր և կանխարգելում
 
-Risks՝ premature abstraction, inventory growth without demand, brand/platform confusion, semantic bypass, documentation without implementation, and optional effects becoming mandatory by habit.
+**EN:** Risks՝ premature abstraction, inventory growth without demand, brand/platform confusion, semantic bypass, documentation without implementation, and optional effects becoming mandatory by habit.
 
-Mitigations՝ product-neutral boundaries, real consumer evidence, explicit token dependency rules, separate specifications, versioned packages, migration policy, conformance gates, named human ownership, and Owner approval.
+**EN:** Mitigations՝ product-neutral boundaries, real consumer evidence, explicit token dependency rules, separate specifications, versioned packages, migration policy, conformance gates, named human ownership, and Owner approval.
+
+**HY:** Ռիսկեր՝ վաղաժամ abstraction, inventory-ի աճ առանց պահանջարկի, brand/platform շփոթություն, semantic bypass, documentation առանց implementation-ի և optional effects-ի վերածվելը պարտադիրի՝ սովորության ուժով։
+
+**HY:** Կանխարգելում՝ product-neutral boundaries, իրական consumer evidence, explicit token dependency rules, առանձին specifications, versioned packages, migration policy, conformance gates, անվանված human ownership և Owner approval։
 
 ## Affected canonical files / Ազդվող canonical files
+
+**EN:**
 
 - `AI_WORKING_CONTEXT.md`
 - `PROJECT_CONTEXT.md`
@@ -148,7 +243,11 @@ Mitigations՝ product-neutral boundaries, real consumer evidence, explicit token
 - `platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`
 - detailed specifications, packages, validators, and evidence under `platforms/design/`
 
+**HY:** Վերջին կետը՝ մանրամասն specifications, packages, validators և evidence `platforms/design/`-ի ներքո։
+
 ## Evidence / Ապացույց
+
+**EN:**
 
 - Owner approval in the MenQ Standard project conversation on 2026-07-12.
 - D-024 Platforms Architecture v1.
@@ -158,6 +257,17 @@ Mitigations՝ product-neutral boundaries, real consumer evidence, explicit token
 - All six required PR-head workflows completed successfully on `b16e0211bb29355df43257847fce818765a4a747`.
 - The validated synthetic merge tree and the real `main` merge tree had zero file differences.
 - Explicit Owner lock approval was given on 2026-07-13.
+
+**HY:**
+
+- Owner approval-ը MenQ Standard project conversation-ում՝ 2026-07-12-ին։
+- D-024 Platforms Architecture v1։
+- Architecture workshop Parts 1–11-ի Owner approval։
+- PR #3-ը merged է `main`-ի մեջ `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc` commit-ով։
+- PR #4 post-merge closure-ը merged է `main`-ի մեջ `9a833339b1d707d6cd8a792e031dd8ca2857d556` commit-ով։
+- Բոլոր վեց պարտադիր PR-head workflows-ը հաջողությամբ ավարտվել են `b16e0211bb29355df43257847fce818765a4a747`-ի վրա։
+- Validated synthetic merge tree-ի և իրական `main` merge tree-ի միջև file differences-ը զրո էին։
+- Owner-ի explicit lock approval-ը տրվել է 2026-07-13-ին։
 
 ## Lock condition / Lock-ի պայման
 

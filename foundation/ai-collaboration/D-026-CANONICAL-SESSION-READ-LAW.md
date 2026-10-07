@@ -22,9 +22,24 @@
 
 ## Canonical law / Canonical օրենք
 
-The complete mandatory law is maintained in [`CANONICAL_SESSION_READ_LAW.md`](CANONICAL_SESSION_READ_LAW.md).
+**HY:** Ամբողջական պարտադիր օրենքը պահպանվում է [`CANONICAL_SESSION_READ_LAW.md`](CANONICAL_SESSION_READ_LAW.md)-ում։
+
+**EN:** The complete mandatory law is maintained in [`CANONICAL_SESSION_READ_LAW.md`](CANONICAL_SESSION_READ_LAW.md).
 
 ## Mandatory rules / Պարտադիր կանոններ
+
+**HY:**
+
+1. Յուրաքանչյուր նոր session read-ը կատարում է զրոյից՝ repository-ի ընթացիկ state-ի նկատմամբ։
+2. Ներառվում է յուրաքանչյուր directory-ի յուրաքանչյուր tracked `.md` file։
+3. Session read-ի համար authoritative է active working branch/ref-ը։
+4. Կիրառելի լինելու դեպքում կարդացվում են նաև active PR metadata-ն, changed files-ը, diff-ը, review threads-ը և checks-ը։
+5. Partial output-ը, snippets-ը, summaries-ը, search results-ը, prior memory-ն և tool success-ը complete-read evidence չեն։
+6. Ցանկացած missing կամ truncated read առաջացնում է RED և արգելափակում է substantive work-ը և canonical writes-ը։
+7. Օրենքը չի կարող շրջանցվել token limits-ի, արագության, repository-ի չափի կամ tool limitations-ի պատճառով։
+8. Complete reading-ը write authority չի տալիս և human approval-ը չի փոխարինում։
+
+**EN:**
 
 1. Every new session performs the read from zero against the current repository state.
 2. Every tracked `.md` file in every directory is included.
@@ -37,6 +52,15 @@ The complete mandatory law is maintained in [`CANONICAL_SESSION_READ_LAW.md`](CA
 
 ## Relationship to existing standards / Կապը գործող ստանդարտների հետ
 
+**HY:**
+
+- Այս որոշումը ընդլայնում է AI Collaboration-ի context-loading protocol-ը։
+- Այն չի փոխարինում Canonical Write Integrity Law-ին։
+- Session Read Law-ը կառավարում է pre-task loading-ը, իսկ Write Integrity Law-ը՝ յուրաքանչյուր canonical write-ը։
+- Երկուսն էլ պարտադիր Foundation controls են։
+
+**EN:**
+
 - This decision extends the AI Collaboration context-loading protocol.
 - It does not replace the Canonical Write Integrity Law.
 - The Session Read Law governs pre-task loading; the Write Integrity Law governs each canonical write.
@@ -44,13 +68,30 @@ The complete mandatory law is maintained in [`CANONICAL_SESSION_READ_LAW.md`](CA
 
 ## Evidence / Ապացույց
 
+**HY:**
+
+- Owner-ի instruction-ը MenQ Standard project-ի conversation-ում՝ 2026-07-12-ին։
+- Կրկնվող context-loading failure, որի ժամանակ աշխատանքը սկսվել է նախքան պահանջվող documentation set-ի ամբողջական ընթերցումը։
+- Գործող AI Collaboration, Documentation, Governance և Decision System կանոնները։
+
+**EN:**
+
 - Owner instruction in the MenQ Standard project conversation on 2026-07-12.
 - Repeated context-loading failure in which work began before the complete required documentation set was read.
 - Existing AI Collaboration, Documentation, Governance, and Decision System rules.
 
 ## Validation / Ստուգում
 
-Validation requires:
+**HY:** Validation-ը պահանջում է՝
+
+1. օրենքի file-ը գոյություն ունի և complete է,
+2. այս որոշումը indexed է `DECISION_INDEX.md`-ում,
+3. root և Foundation navigation-ը link են անում օրենքին,
+4. AI context և handoff documents-ը պահանջում են all-Markdown startup gate,
+5. երկլեզու իմաստը հավասար է,
+6. post-write integrity verification-ը անցնում է։
+
+**EN:** Validation requires:
 
 1. the law file exists and is complete;
 2. this decision is indexed in `DECISION_INDEX.md`;

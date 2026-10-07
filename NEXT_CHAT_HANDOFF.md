@@ -19,7 +19,7 @@
 - D-025 — Locked և GREEN։
 - D-026 — Locked և machine-enforced։
 - D-027 — Approved — Implementing՝ [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md)։
-- 2026-10-07 zero-trust audit — փուլ 1 (D-027), փուլ 2 (validator hardening), փուլ 3 (status sync) և փուլ 4 (workflow security) ավարտված են։
+- 2026-10-07 zero-trust audit — փուլ 1 (D-027), փուլ 2 (validator hardening), փուլ 3 (status sync), փուլ 4 (workflow security) և փուլ 5 (bilingual completion) ավարտված են։
 - D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
 - D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
 - D-025 lock merge — `261f85e5b20d726a0ab1f05da84a4dc45a248873`։
@@ -30,7 +30,7 @@
 
 ### Շարունակելու ճշգրիտ կետը
 
-1. Շարունակել audit remediation-ը՝ փուլ 5 (bilingual completion), փուլ 6 (Owner-ի որոշումներ)։
+1. Շարունակել audit remediation-ը՝ փուլ 6 (Owner-ի որոշումներ)։
 2. Ընտրել MenQ Standard-ի հաջորդ ecosystem priority-ն։
 3. Բացել առանձին decision transaction։
 4. D-025-ը փոխել միայն governed change request, impact analysis, compatibility/migration evidence, validators և explicit Owner approval ճանապարհով։
@@ -56,7 +56,7 @@ Before substantive work, enumerate and completely read every tracked `.md` file 
 - D-025 is Locked and GREEN.
 - D-026 is Locked and machine-enforced.
 - D-027 is Approved — Implementing: [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md).
-- 2026-10-07 zero-trust audit: phase 1 (D-027), phase 2 (validator hardening), phase 3 (status sync) and phase 4 (workflow security) are complete.
+- 2026-10-07 zero-trust audit: phase 1 (D-027), phase 2 (validator hardening), phase 3 (status sync), phase 4 (workflow security) and phase 5 (bilingual completion) are complete.
 - D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
 - D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
 - D-025 lock merge: `261f85e5b20d726a0ab1f05da84a4dc45a248873`.
@@ -67,7 +67,7 @@ Before substantive work, enumerate and completely read every tracked `.md` file 
 
 ### Exact continuation point
 
-1. Continue the audit remediation: phase 5 (bilingual completion), phase 6 (Owner decisions).
+1. Continue the audit remediation: phase 6 (Owner decisions).
 2. Select the next MenQ Standard ecosystem priority.
 3. Open a separate decision transaction.
 4. Change D-025 only through a governed change request, impact analysis, compatibility and migration evidence, validators, and explicit Owner approval.

@@ -62,23 +62,23 @@ MenQ Ecosystem
 
 ## Canonical navigation / Canonical նավիգացիա
 
-- [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) — stable project and AI context
-- [`AI_WORKING_CONTEXT.md`](AI_WORKING_CONTEXT.md) — current working continuity
-- [`COLLABORATION_STYLE.md`](COLLABORATION_STYLE.md) — communication mood and working style
-- [`NEXT_CHAT_HANDOFF.md`](NEXT_CHAT_HANDOFF.md) — current continuation handoff
-- [`DECISION_INDEX.md`](DECISION_INDEX.md) — active append-only decision registry
-- [`DECISIONS.md`](DECISIONS.md) — historical `D-001–D-021` registry
-- [`ECOSYSTEM_ARCHITECTURE.md`](ECOSYSTEM_ARCHITECTURE.md) — ecosystem hierarchy and ownership
-- [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md) — D-027 brand expression layer
-- [`CHANGELOG.md`](CHANGELOG.md) — history
-- [`ROADMAP.md`](ROADMAP.md) — future direction
-- [`foundation/README.md`](foundation/README.md) — Foundation index
-- [`platforms/design/PROJECT_CONTEXT.md`](platforms/design/PROJECT_CONTEXT.md) — Design Platform current state
-- [`platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md`](platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md) — closure evidence
-- [`platforms/design/D-025_LOCK_RECORD.md`](platforms/design/D-025_LOCK_RECORD.md) — lock evidence
-- [`platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`](platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md) — final audit and transaction closure
-- [`platforms/design/implementation/release/d-025-readiness-record.json`](platforms/design/implementation/release/d-025-readiness-record.json) — machine-readable lock evidence
-- [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md) — mandatory write integrity law
+- [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) — stable project and AI context / կայուն project և AI context
+- [`AI_WORKING_CONTEXT.md`](AI_WORKING_CONTEXT.md) — current working continuity / ընթացիկ աշխատանքային շարունակականություն
+- [`COLLABORATION_STYLE.md`](COLLABORATION_STYLE.md) — communication mood and working style / հաղորդակցության տրամադրություն և աշխատանքային ոճ
+- [`NEXT_CHAT_HANDOFF.md`](NEXT_CHAT_HANDOFF.md) — current continuation handoff / ընթացիկ շարունակության handoff
+- [`DECISION_INDEX.md`](DECISION_INDEX.md) — active append-only decision registry / գործող append-only decision registry
+- [`DECISIONS.md`](DECISIONS.md) — historical `D-001–D-021` registry / պատմական `D-001–D-021` registry
+- [`ECOSYSTEM_ARCHITECTURE.md`](ECOSYSTEM_ARCHITECTURE.md) — ecosystem hierarchy and ownership / ecosystem-ի hierarchy և ownership
+- [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md) — D-027 brand expression layer / D-027 brand expression layer
+- [`CHANGELOG.md`](CHANGELOG.md) — history / պատմություն
+- [`ROADMAP.md`](ROADMAP.md) — future direction / ապագա ուղղություն
+- [`foundation/README.md`](foundation/README.md) — Foundation index / Foundation-ի index
+- [`platforms/design/PROJECT_CONTEXT.md`](platforms/design/PROJECT_CONTEXT.md) — Design Platform current state / Design Platform-ի ընթացիկ վիճակ
+- [`platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md`](platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md) — closure evidence / closure-ի evidence
+- [`platforms/design/D-025_LOCK_RECORD.md`](platforms/design/D-025_LOCK_RECORD.md) — lock evidence / lock-ի evidence
+- [`platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`](platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md) — final audit and transaction closure / վերջնական audit և transaction-ի փակում
+- [`platforms/design/implementation/release/d-025-readiness-record.json`](platforms/design/implementation/release/d-025-readiness-record.json) — machine-readable lock evidence / մեքենայաընթեռնելի lock evidence
+- [`foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md) — mandatory write integrity law / պարտադիր write integrity law
 
 ## Canonical rule / Canonical կանոն
 
