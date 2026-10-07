@@ -1,5 +1,15 @@
 # MenQ Standard — Changelog
 
+## 2026-10-08 — CR-0008: app icon and favicon set
+
+### Հայերեն
+
+- Ավելացվեց `brand-expression/assets/Icons/`՝ favicon (ICO + SVG), Apple touch icon, PWA և maskable icon-ներ՝ պաշտոնական Q մարկից, asset record-ներով։
+
+### English
+
+- Added `brand-expression/assets/Icons/`: favicon (ICO + SVG), Apple touch icon, PWA and maskable icons made from the official Q mark, with asset records.
+
 ## 2026-10-08 — CR-0007: accessibility contract and form components
 
 ### Հայերեն
