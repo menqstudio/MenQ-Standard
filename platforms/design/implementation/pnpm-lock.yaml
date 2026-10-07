@@ -1,0 +1,125 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .: {}
+
+  consumers/design-catalog:
+    dependencies:
+      '@menq/design-assets':
+        specifier: workspace:*
+        version: link:../../packages/design-assets
+      '@menq/design-components':
+        specifier: workspace:*
+        version: link:../../packages/design-components
+      '@menq/design-contracts':
+        specifier: workspace:*
+        version: link:../../packages/design-contracts
+      '@menq/design-foundations':
+        specifier: workspace:*
+        version: link:../../packages/design-foundations
+      '@menq/design-locales':
+        specifier: workspace:*
+        version: link:../../packages/design-locales
+      '@menq/design-motion':
+        specifier: workspace:*
+        version: link:../../packages/design-motion
+      '@menq/design-patterns':
+        specifier: workspace:*
+        version: link:../../packages/design-patterns
+      '@menq/design-primitives':
+        specifier: workspace:*
+        version: link:../../packages/design-primitives
+      '@menq/design-tokens':
+        specifier: workspace:*
+        version: link:../../packages/design-tokens
+      '@menq/design-validation':
+        specifier: workspace:*
+        version: link:../../packages/design-validation
+
+  consumers/release-console:
+    dependencies:
+      '@menq/design-components':
+        specifier: workspace:*
+        version: link:../../packages/design-components
+      '@menq/design-foundations':
+        specifier: workspace:*
+        version: link:../../packages/design-foundations
+      '@menq/design-locales':
+        specifier: workspace:*
+        version: link:../../packages/design-locales
+      '@menq/design-patterns':
+        specifier: workspace:*
+        version: link:../../packages/design-patterns
+      '@menq/design-tokens':
+        specifier: workspace:*
+        version: link:../../packages/design-tokens
+      '@menq/design-validation':
+        specifier: workspace:*
+        version: link:../../packages/design-validation
+
+  packages/design-assets:
+    dependencies:
+      '@menq/design-contracts':
+        specifier: workspace:*
+        version: link:../design-contracts
+
+  packages/design-components:
+    dependencies:
+      '@menq/design-primitives':
+        specifier: workspace:*
+        version: link:../design-primitives
+
+  packages/design-contracts: {}
+
+  packages/design-foundations:
+    dependencies:
+      '@menq/design-contracts':
+        specifier: workspace:*
+        version: link:../design-contracts
+      '@menq/design-tokens':
+        specifier: workspace:*
+        version: link:../design-tokens
+
+  packages/design-locales:
+    dependencies:
+      '@menq/design-contracts':
+        specifier: workspace:*
+        version: link:../design-contracts
+
+  packages/design-motion:
+    dependencies:
+      '@menq/design-contracts':
+        specifier: workspace:*
+        version: link:../design-contracts
+      '@menq/design-tokens':
+        specifier: workspace:*
+        version: link:../design-tokens
+
+  packages/design-patterns:
+    dependencies:
+      '@menq/design-components':
+        specifier: workspace:*
+        version: link:../design-components
+
+  packages/design-primitives:
+    dependencies:
+      '@menq/design-foundations':
+        specifier: workspace:*
+        version: link:../design-foundations
+
+  packages/design-tokens:
+    dependencies:
+      '@menq/design-contracts':
+        specifier: workspace:*
+        version: link:../design-contracts
+
+  packages/design-validation:
+    dependencies:
+      '@menq/design-contracts':
+        specifier: workspace:*
+        version: link:../design-contracts
