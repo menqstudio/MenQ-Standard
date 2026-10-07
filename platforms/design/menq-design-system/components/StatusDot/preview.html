@@ -1,0 +1,6 @@
+<!-- @dsCard group="Status" height=80 -->
+<div id="root" style="padding:16px"></div>
+<script>
+const h = React.createElement, M = window.MenQ;
+ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'row',style:{gap:20}},h(M.StatusDot,{status:'online',label:'Online'}),h(M.StatusDot,{status:'busy',label:'Running'}),h(M.StatusDot,{status:'offline',label:'Idle'}),h(M.StatusDot,{status:'error',label:'Failed'})));
+</script>

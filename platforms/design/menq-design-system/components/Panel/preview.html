@@ -1,0 +1,6 @@
+<!-- @dsCard group="Surfaces" height=170 -->
+<div id="root" style="padding:16px"></div>
+<script>
+const h = React.createElement, M = window.MenQ;
+ReactDOM.createRoot(document.getElementById('root')).render(h(M.Panel,{title:'Վերջին ակտիվություն · Recent activity',actions:h(M.Button,{small:true},'Բոլորը · All')},h('div',{className:'list-row'},h('span',null,'Bro completed “Weekly report”'),h(M.Badge,{tone:'success'},'done')),h('div',{className:'list-row'},h('span',null,'Approval requested'),h(M.Badge,{tone:'warning'},'waiting'))));
+</script>

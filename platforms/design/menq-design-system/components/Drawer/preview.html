@@ -1,0 +1,6 @@
+<!-- @dsCard group="Overlays" height=280 -->
+<div id="root" style="padding:16px"></div>
+<script>
+const h = React.createElement, M = window.MenQ;
+ReactDOM.createRoot(document.getElementById('root')).render(h('div',{style:{display:'flex',justifyContent:'flex-end',height:260}},h(M.Drawer,{inline:true,title:'Մանրամասներ · Details'},h(M.Field,{label:'Գործակալ · Agent'},'Analyst'),h(M.Field,{label:'Կարգավիճակ · Status'},h(M.StatusDot,{status:'busy',label:'Running'})),h(M.Field,{label:'Սկսվել է · Started'},'05:42'))));
+</script>
