@@ -74,7 +74,6 @@
     "hy": "D-025-ի բաց action չկա։ Հետագա փոփոխությունները կառավարել locked change-control կանոններով։",
     "en": "No D-025 action remains open. Govern future changes under locked change-control rules."
   },
-
   "evidenceCorrections": [
     {
       "date": "2026-10-07",
@@ -107,7 +106,15 @@
       "realConsumerObligation": {
         "status": "open",
         "firstRealConsumer": "menqstudio/Webpage",
-        "secondRealConsumer": "to be selected by the Owner"
+        "secondRealConsumer": "to be selected by the Owner",
+        "progress": [
+          {
+            "date": "2026-10-08",
+            "consumer": "menqstudio/webpage",
+            "evidence": "PR #2: pinned brand layer (tokens.vars.css @ 493a3df), CI run 37680568760 GREEN (token parity 1632/1632, runtime 14 checks, axe 0 critical / 7 serious color-contrast)",
+            "maturity": "M1-candidate (promotion is an Owner decision)"
+          }
+        ]
       },
       "d025Status": "Locked"
     }

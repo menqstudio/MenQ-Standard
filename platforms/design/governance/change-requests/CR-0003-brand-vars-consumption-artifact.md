@@ -5,7 +5,7 @@
   "id": "CR-0003",
   "title": {"hy": "Brand custom property-ների consumption artifact", "en": "Brand custom-properties consumption artifact"},
   "class": "compatible-implementation",
-  "status": "approved",
+  "status": "closed",
   "proposer": "AI collaborator (Claude), MenQ Webpage adoption",
   "proposerOwnerId": null,
   "approvals": [
@@ -23,8 +23,8 @@
   "rollback": "Revert the implementing PR; consumers keep their pinned copy.",
   "evidencePlan": "build_brand_tokens.py --check covers the new output; brand expression and governance validators GREEN.",
   "targetRelease": "none (brand expression layer)",
-  "pullRequests": [],
-  "closure": null
+  "pullRequests": [18, 19],
+  "closure": {"date": "2026-10-08", "evidence": ["PR #18 merged at 493a3df with all CI checks GREEN", "menqstudio/webpage PR #2 vendors tokens.vars.css pinned to 493a3df (SHA-256 1e377a93…f3d7)", "Webpage CI run 37680568760 GREEN: token parity 1632/1632 in 8 contexts; runtime evidence 14 page×theme checks; axe 0 critical"]}
 }
 ```
 
