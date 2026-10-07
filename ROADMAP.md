@@ -14,6 +14,9 @@
 
 - [x] Foundation v1 chapters, controls, validation, and release packaging / Foundation v1-ի chapter-ներ, controls, validation և release packaging
 - [x] D-024 Platforms Architecture v1 merged and canonical / D-024 Platforms Architecture v1-ը merged և canonical է
+- [x] D-024 Locked (2026-10-07) / D-024-ը Locked է (2026-10-07)
+- [x] Foundation v1.0.0 published as a GitHub Release / Foundation v1.0.0-ը հրապարակված է որպես GitHub Release
+- [x] D-025 evidence corrected; permanent preview release / D-025 evidence-ը ուղղված է, preview release-ը մշտական է
 - [x] D-025 MenQ Design Platform Architecture v1 Parts 1–16 / D-025 MenQ Design Platform Architecture v1-ի Parts 1–16
 - [x] Product-neutral shared core and canonical dependency model / Product-neutral shared core և canonical dependency model
 - [x] Armenian + English canonical localization direction / Հայերեն + English canonical localization ուղղություն

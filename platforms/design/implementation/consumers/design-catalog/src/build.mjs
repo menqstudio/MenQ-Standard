@@ -43,7 +43,7 @@ const html = `<!doctype html><html lang="hy" data-theme="dark" data-density="com
 const evidence = {
   schemaVersion: 1, consumerId: "menq.consumer.design-catalog", name: { hy: "MenQ Design Catalog", en: "MenQ Design Catalog" },
   consumerOwner: "MenQ Owner", technicalOwner: "MenQ Design Platform Maintainers", purpose: "documentation-and-discovery",
-  maturity: "M3", conformanceProfile: "documentation-consumer", conformanceVerdict: conformance.verdict, adoptedVersion: version,
+  maturity: "M2", selfAttested: true, conformanceProfile: "documentation-consumer", conformanceVerdict: conformance.verdict, adoptedVersion: version,
   packages: packageNames, publicApiOnly: true, realWorkflow: "browse-package-contracts-and-switch-theme-density",
   bilingualParity: true, accessibilityValidated: true, rollbackReady: true, productExtensionBoundary: "no-product-identity-in-shared-core",
   dimensions: { purpose: "documentation", density: "comfortable", workflow: "discovery", runtime: "static-web", operationalConstraint: "content-parity" },

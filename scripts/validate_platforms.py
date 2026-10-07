@@ -26,6 +26,7 @@ REQUIRED_MARKERS = {
     "platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md": "<!-- END: D-025_POST_MERGE_CLOSURE_RECORD -->",
     "platforms/design/D-025_LOCK_RECORD.md": "<!-- END: D-025_LOCK_RECORD -->",
     "platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md": "<!-- END: D-025_FINAL_POST_LOCK_AUDIT -->",
+    "platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md": "<!-- END: D-025_EVIDENCE_CORRECTION_RECORD -->",
     "platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md": "<!-- END: D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1 -->",
     "platforms/design/ROADMAP.md": "<!-- END: MENQ_DESIGN_PLATFORM_ROADMAP -->",
     "platforms/design/CHANGELOG.md": "<!-- END: MENQ_DESIGN_PLATFORM_CHANGELOG -->",
@@ -147,10 +148,26 @@ if record:
         errors.append("D-025 readiness workflow evidence is not successful")
     if record.get("crossConsumerValidation") != "GREEN" or record.get("qualityAndAdoptionEvidence") != "GREEN":
         errors.append("D-025 cross-consumer or quality evidence is not GREEN")
-    if maturity.get("menq.design.consumer.catalog") != "M3":
-        errors.append("Design Catalog consumer is not M3")
-    if maturity.get("menq.design.consumer.release-console") != "M4":
-        errors.append("Release Evidence Console consumer is not M4")
+    corrections = record.get("evidenceCorrections", [])
+    latest = corrections[-1] if corrections else {}
+    release = latest.get("permanentRelease", {})
+    regrade = {item.get("consumerId"): item.get("maturity") for item in latest.get("consumerRegrade", [])}
+    if not latest:
+        errors.append("D-025 readiness record has no evidence correction (expired artifact, self-attested consumers)")
+    else:
+        if latest.get("artifactExpired") is not True:
+            errors.append("D-025 evidence correction must record the expired workflow artifact")
+        if not str(release.get("url", "")).startswith("https://github.com/menqstudio/MenQ-Standard/releases/tag/"):
+            errors.append("D-025 evidence correction must point to a permanent GitHub Release")
+        if not re.fullmatch(r"[0-9a-f]{64}", str(release.get("assetSha256", ""))):
+            errors.append("D-025 permanent release asset digest is missing")
+        for consumer_id in ("menq.design.consumer.catalog", "menq.design.consumer.release-console"):
+            if regrade.get(consumer_id) not in {"M0", "M1", "M2"}:
+                errors.append(f"{consumer_id} must stay re-graded at or below M2 until independent evidence exists")
+        if latest.get("realConsumerObligation", {}).get("status") not in {"open", "met"}:
+            errors.append("D-025 real-consumer obligation status is missing")
+        if not (ROOT / str(latest.get("record", ""))).is_file():
+            errors.append("D-025 evidence correction record file is missing")
     if merge_evidence.get("merged") is not True:
         errors.append("D-025 merge evidence does not confirm merge")
     if merge_evidence.get("implementationPullRequest") != 3:
@@ -189,5 +206,5 @@ if errors:
 print("PLATFORMS VALIDATION: GREEN")
 print(f"Validated {len(REQUIRED_MARKERS)} required Platforms and D-025 canonical files.")
 print("D-025 architecture: LOCKED")
-print("D-025 technical, adoption, closure, and lock evidence: GREEN")
+print("D-025 technical, closure, and lock evidence: GREEN; consumer evidence corrected (M2 pilots, real-consumer obligation tracked)")
 print("D-025 transaction: CLOSED")

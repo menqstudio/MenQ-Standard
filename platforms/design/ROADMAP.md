@@ -31,6 +31,7 @@
 1. Preserve D-025 `Locked` status through machine enforcement. / Պահպանել D-025-ի `Locked` status-ը machine enforcement-ի միջոցով։
 2. Maintain compatibility, migration, release, and adoption evidence for future changes. / Ապագա փոփոխությունների համար պահպանել compatibility, migration, release և adoption evidence։
 3. No open implementation, closure, or lock action remains. / Բաց implementation, closure կամ lock գործողություն չի մնացել։
+4. Restore two-real-consumer evidence: MenQ Webpage first, the second chosen by the Owner; the in-repo consumers are M2 pilots ([`D-025_EVIDENCE_CORRECTION_RECORD.md`](D-025_EVIDENCE_CORRECTION_RECORD.md)). / Վերականգնել երկու իրական consumer-ի evidence-ը՝ առաջինը MenQ Webpage-ը, երկրորդը՝ Owner-ի ընտրությամբ. repo-ի ներսի consumer-ները M2 pilot են։
 
 ## Later / Հետագայում
 

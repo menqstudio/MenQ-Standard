@@ -14,7 +14,7 @@
 
 | Platform | Status | Owner | Decision | Scope | Adoption path | Validation path |
 |---|---|---|---|---|---|---|
-| MenQ Design Platform | Active — architecture Locked | MenQ Owner | `D-024`, `D-025`, `D-027` | Shared design capability for MenQ products and systems | Product-level adoption through approved contracts | `platforms/design/validation/` validators and the Design Platform CI workflows |
+| MenQ Design Platform | Active — architecture Locked | MenQ Owner | `D-024` (Locked), `D-025`, `D-027` | Shared design capability for MenQ products and systems | Product-level adoption through approved contracts | `platforms/design/validation/` validators and the Design Platform CI workflows |
 
 ## Admission checklist / Ընդունման checklist
 

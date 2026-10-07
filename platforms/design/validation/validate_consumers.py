@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Validate the two MenQ Design Platform consumer pilots and M4 evidence."""
+"""Validate the two in-repository MenQ Design Platform reference consumers.
+
+Their conformance verdicts are self-attested by their own build scripts, so they
+are graded M2 (Pilot) at most. M3+ requires independent evidence from a real
+consumer (see platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md)."""
 from __future__ import annotations
 
 import argparse
@@ -42,6 +46,7 @@ def validate_common(label: str, root: Path, expected_maturity: str, errors: list
         "bilingualParity": True,
         "accessibilityValidated": True,
         "rollbackReady": True,
+        "selfAttested": True,
     }
     for key, value in expected.items():
         if evidence.get(key) != value:
@@ -73,8 +78,8 @@ def main() -> int:
     catalog_root = args.catalog.resolve()
     console_root = args.console.resolve()
     release_root = args.release_bundle.resolve()
-    catalog = validate_common("catalog", catalog_root, "M3", errors)
-    console = validate_common("release-console", console_root, "M4", errors)
+    catalog = validate_common("catalog", catalog_root, "M2", errors)
+    console = validate_common("release-console", console_root, "M2", errors)
 
     if catalog.get("consumerId") == console.get("consumerId"):
         errors.append("consumer IDs must be distinct")
@@ -85,12 +90,11 @@ def main() -> int:
     if len(differing_dimensions) < 3:
         errors.append("two-consumer diversity requires at least three differing dimensions")
 
-    for key, value in {"productionEquivalent": True, "incidentReady": True}.items():
-        if console.get(key) != value:
-            errors.append(f"release-console: {key} must be true for M4")
+    if console.get("productionEquivalent") is not False:
+        errors.append("release-console: a self-attested reference consumer may not claim production equivalence")
     for key in ("monitoring", "supportOwner", "releaseLinkage"):
         if not console.get(key):
-            errors.append(f"release-console: missing M4 field {key}")
+            errors.append(f"release-console: missing pilot field {key}")
 
     release_manifest = load_json(release_root / "release-manifest.json", errors)
     package_manifest = load_json(release_root / "package-manifest.json", errors)
@@ -105,7 +109,7 @@ def main() -> int:
         errors.append("release bundle must contain ten package records")
     console_linkage = console.get("releaseLinkage") if isinstance(console.get("releaseLinkage"), dict) else {}
     if console_linkage.get("releaseId") != release_manifest.get("releaseId") or console_linkage.get("sourceCommit") != release_manifest.get("sourceCommit"):
-        errors.append("M4 console release linkage mismatch")
+        errors.append("console release linkage mismatch")
 
     if errors:
         print("DESIGN PLATFORM TWO-CONSUMER VALIDATION: RED")
@@ -134,15 +138,15 @@ def main() -> int:
             "release authority remains separated from technical conformance",
         ],
         "remediation": {"openDefects": 0, "requiredBeforeOwnerApproval": []},
-        "quality": {"publicApiCoveragePercent": 100, "exceptions": 0, "escapedDefects": 0, "rollbackProof": "GREEN", "m4HealthProbe": "GREEN"},
+        "quality": {"publicApiCoveragePercent": 100, "exceptions": 0, "escapedDefects": 0, "rollbackProof": "GREEN", "consoleHealthProbe": "GREEN"},
         "ownerApprovalStatus": "pending",
         "mergeAuthorized": False,
         "lockAuthorized": False,
     }
     output.write_text(json.dumps(record, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     print("DESIGN PLATFORM TWO-CONSUMER VALIDATION: GREEN")
-    print("Consumer A: M3 GREEN")
-    print("Consumer B: M4 GREEN")
+    print("Consumer A: M2 pilot (self-attested reference consumer)")
+    print("Consumer B: M2 pilot (self-attested reference consumer)")
     print("Owner approval / merge / lock: NOT GRANTED")
     return 0
 

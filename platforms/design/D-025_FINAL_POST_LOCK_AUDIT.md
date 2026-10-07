@@ -6,6 +6,8 @@
 **Owner / Պատասխանատու:** Gevorg Ohanyan, MenQ Owner  
 **Audit base:** `261f85e5b20d726a0ab1f05da84a4dc45a248873`
 
+> **Correction notice / Ուղղման ծանուցում (2026-10-07):** Այս գրառման consumer maturity (M3/M4) և workflow artifact evidence-ը ուղղված է՝ տես [`D-025_EVIDENCE_CORRECTION_RECORD.md`](D-025_EVIDENCE_CORRECTION_RECORD.md)։ Artifact-ը ժամկետանց է, consumer-ները վերագնահատված են M2, մշտական release-ը՝ `design-platform-v0.1.0-next.0`։ / The consumer maturity (M3/M4) and workflow-artifact evidence in this record are corrected; see [`D-025_EVIDENCE_CORRECTION_RECORD.md`](D-025_EVIDENCE_CORRECTION_RECORD.md). The artifact has expired, the consumers are re-graded to M2, and the permanent release is `design-platform-v0.1.0-next.0`.
+
 ## Հայերեն
 
 ### Նպատակ

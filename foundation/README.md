@@ -45,7 +45,7 @@
 
 ## Next / Հաջորդը
 
-1. Կառուցել և ստուգել Foundation v1-ի ամբողջական ZIP snapshot-ը։ / Build and verify the complete Foundation v1 ZIP snapshot.
-2. ZIP-ը հրապարակել որպես GitHub Release asset, ոչ թե main branch-ի binary։ / Publish the ZIP as a GitHub Release asset; do not store it as a main-branch binary.
+1. Foundation v1.0.0-ը հրապարակված է՝ [`foundation-v1.0.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/foundation-v1.0.0) (ZIP + `SHA256SUMS.txt`)։ / Foundation v1.0.0 is published: [`foundation-v1.0.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/foundation-v1.0.0) (ZIP + `SHA256SUMS.txt`).
+2. Հետագա release-ները՝ `.github/workflows/publish-release.yml`-ով։ / Later releases go through `.github/workflows/publish-release.yml`.
 
 <!-- END: FOUNDATION_README_V1 -->

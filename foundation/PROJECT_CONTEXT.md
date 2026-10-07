@@ -47,7 +47,7 @@ D-026-ի համաձայն՝ ցանկացած substantive աշխատանքից ա
 
 ### Հաջորդ քայլ
 
-Ստեղծել և verify անել Foundation v1 complete repository ZIP snapshot-ը՝ release README, version/date, SHA-256 manifest և missing-file verification-ով։ ZIP-ը հրապարակվում է GitHub Release asset-ով և չի պահվում main branch-ում որպես binary։ Platforms architecture-ը արդեն բացված է D-024-ով, իսկ Design Platform-ը Locked է D-025-ով։
+Foundation v1.0.0-ի ZIP snapshot-ը հրապարակված է որպես `foundation-v1.0.0` GitHub Release՝ `SHA256SUMS.txt` manifest-ով (2026-10-07)։ Platforms architecture-ը արդեն բացված է D-024-ով, իսկ Design Platform-ը Locked է D-025-ով։
 
 ---
 
@@ -92,6 +92,6 @@ Under D-026, read every tracked `.md` file completely before any substantive wor
 
 ### Next step
 
-Create and verify the complete Foundation v1 repository ZIP snapshot with a release README, version/date, SHA-256 manifest, and missing-file verification. Publish the ZIP as a GitHub Release asset and do not store it as a binary in the main branch. Platforms architecture has since been opened by D-024, and the Design Platform is Locked under D-025.
+The Foundation v1.0.0 ZIP snapshot is published as the `foundation-v1.0.0` GitHub Release with the `SHA256SUMS.txt` manifest (2026-10-07). Platforms architecture has since been opened by D-024, and the Design Platform is Locked under D-025.
 
 <!-- END: FOUNDATION_PROJECT_CONTEXT -->

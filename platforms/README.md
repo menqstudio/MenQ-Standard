@@ -1,6 +1,6 @@
 # Platforms / Platform-ներ
 
-**Status / Կարգավիճակ:** Active architecture — D-024 implementing / Գործող architecture — D-024 իրականացվում է  
+**Status / Կարգավիճակ:** Active architecture — D-024 Locked / Գործող architecture — D-024-ը Locked է  
 **Owner / Պատասխանատու:** MenQ Owner
 
 ## Purpose / Նպատակ

@@ -7,5 +7,5 @@ const html = await readFile(path.join(dist, "index.html"), "utf8");
 const evidence = JSON.parse(await readFile(path.join(dist, "consumer-evidence.json"), "utf8"));
 const required = ["<html lang=\"hy\"", "lang=\"en\"", "Skip to content", "prefers-reduced-motion", "data-theme=\"dark\"", "data-density=\"comfortable\""];
 for (const marker of required) if (!html.includes(marker)) throw new Error(`missing catalog marker: ${marker}`);
-if (evidence.maturity !== "M3" || evidence.conformanceVerdict !== "GREEN" || evidence.packages.length !== 10) throw new Error("catalog evidence invalid");
+if (evidence.maturity !== "M2" || evidence.conformanceVerdict !== "GREEN" || evidence.packages.length !== 10) throw new Error("catalog evidence invalid");
 console.log("DESIGN CATALOG HEALTHCHECK: GREEN");

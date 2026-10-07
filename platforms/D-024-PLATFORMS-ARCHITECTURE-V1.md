@@ -1,7 +1,8 @@
 # D-024 — Platforms Architecture v1 / Platforms ճարտարապետություն v1
 
-**Status / Կարգավիճակ:** Approved — Implementing / Հաստատված — իրականացվում է  
+**Status / Կարգավիճակ:** Locked / Locked  
 **Date / Ամսաթիվ:** 2026-07-12  
+**Locked / Lock-ի ամսաթիվ:** 2026-10-07  
 **Decision class / Որոշման դաս:** `C4 — Foundation or Ecosystem`  
 **Risk level / Ռիսկի մակարդակ:** `R2 — Moderate`  
 **Owner / Պատասխանատու:** MenQ Owner  
@@ -284,5 +285,11 @@ Review when any of the following occurs:
 **HY:** Decision-ը `Locked` է դառնում միայն canonical package-ի implementation-ից, CI validation-ից և post-write synchronization verification-ից հետո։
 
 **EN:** The decision becomes `Locked` only after implementation of the canonical package, CI validation, and post-write synchronization verification.
+
+## Lock record / Lock-ի գրառում
+
+**HY:** Lock-ի երեք պայմանները կատարված են՝ (1) canonical package-ը (`platforms/README.md`, `platforms/PROJECT_CONTEXT.md`, `platforms/PLATFORM_REGISTRY.md`, այս decision-ը) implemented և merged է (`8d949f7`); (2) CI validation-ը GREEN է՝ `Platforms Integrity` run [`#279`](https://github.com/menqstudio/MenQ-Standard/actions/runs/37674248750)՝ `main`-ի վրա; (3) post-write synchronization-ը ստուգված է Foundation, Platforms և Markdown inventory validator-ներով։ Owner-ը՝ Գևորգ Օհանյանը, lock-ը հաստատել է project conversation-ում 2026-10-07-ին։ Հետագա փոփոխությունները պահանջում են governed change control և Owner-ի explicit հաստատում։
+
+**EN:** All three lock conditions are met: (1) the canonical package (`platforms/README.md`, `platforms/PROJECT_CONTEXT.md`, `platforms/PLATFORM_REGISTRY.md`, this decision) is implemented and merged (`8d949f7`); (2) CI validation is GREEN: `Platforms Integrity` run [`#279`](https://github.com/menqstudio/MenQ-Standard/actions/runs/37674248750) on `main`; (3) post-write synchronization is verified by the Foundation, Platforms and Markdown inventory validators. The Owner, Gevorg Ohanyan, approved the lock in the project conversation on 2026-10-07. Further changes require governed change control and explicit Owner approval.
 
 <!-- END: D-024-PLATFORMS-ARCHITECTURE-V1 -->

@@ -15,15 +15,15 @@ MenQ Design Platform-ը ամբողջ MenQ ecosystem-ի reusable, product-neutral
 ### Ընթացիկ canonical վիճակ
 
 - Foundation v1 — Locked և GREEN։
-- D-024 — merged և canonical։
+- D-024 — Locked (2026-10-07)։
 - D-025 — Locked և GREEN։
 - D-026 — Locked և machine-enforced։
 - Parts 1–16 architecture set-ը canonical է։
 - Canonical registry, schemas, ownership, dependency graph և 10 package boundaries-ը implemented են։
 - Private preview candidate-ը `0.1.0-next.0` է։
 - Deterministic build, checksums, public API, compatibility, migration և rollback evidence-ը GREEN են։
-- `MenQ Design Catalog` consumer-ը M3/GREEN է։
-- `MenQ Release Evidence Console` consumer-ը M4 operational/GREEN է։
+- `MenQ Design Catalog` և `MenQ Release Evidence Console` consumer-ները repository-ի ներսի reference pilot-ներ են՝ վերագնահատված M2 (2026-10-07), քանի որ նրանց M3/M4 verdict-ը self-attested էր։ Տես [`D-025_EVIDENCE_CORRECTION_RECORD.md`](D-025_EVIDENCE_CORRECTION_RECORD.md)։
+- Մշտական preview release՝ [`design-platform-v0.1.0-next.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/design-platform-v0.1.0-next.0)։
 - Cross-consumer validation և quality/adoption evidence-ը GREEN են։
 
 ### Merge և lock evidence
@@ -37,7 +37,7 @@ MenQ Design Platform-ը ամբողջ MenQ ecosystem-ի reusable, product-neutral
 
 ### Authority boundary և հաջորդ քայլ
 
-D-025 transaction-ը փակված է։ Architecture-ի հետագա փոփոխությունը պահանջում է governed change request, impact analysis, compatibility/migration evidence, validators և explicit Owner approval։
+D-025 transaction-ը փակված է։ Բաց պարտավորություն՝ առաջին իրական consumer-ը MenQ Webpage-ն է, երկրորդը ընտրում է Owner-ը։ Architecture-ի հետագա փոփոխությունը պահանջում է governed change request, impact analysis, compatibility/migration evidence, validators և explicit Owner approval։
 
 ---
 
@@ -50,15 +50,15 @@ The MenQ Design Platform is the reusable, product-neutral design capability syst
 ### Current canonical state
 
 - Foundation v1 is Locked and GREEN.
-- D-024 is merged and canonical.
+- D-024 is Locked (2026-10-07).
 - D-025 is Locked and GREEN.
 - D-026 is Locked and machine-enforced.
 - The Parts 1–16 architecture set is canonical.
 - The canonical registry, schemas, ownership, dependency graph, and ten package boundaries are implemented.
 - The private preview candidate is `0.1.0-next.0`.
 - Deterministic build, checksums, public API, compatibility, migration, and rollback evidence are GREEN.
-- The `MenQ Design Catalog` consumer is M3/GREEN.
-- The `MenQ Release Evidence Console` consumer is M4 operational/GREEN.
+- The `MenQ Design Catalog` and `MenQ Release Evidence Console` consumers are in-repository reference pilots, re-graded to M2 on 2026-10-07 because their M3/M4 verdicts were self-attested. See [`D-025_EVIDENCE_CORRECTION_RECORD.md`](D-025_EVIDENCE_CORRECTION_RECORD.md).
+- Permanent preview release: [`design-platform-v0.1.0-next.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/design-platform-v0.1.0-next.0).
 - Cross-consumer validation and quality/adoption evidence are GREEN.
 
 ### Merge and lock evidence
@@ -72,6 +72,6 @@ The MenQ Design Platform is the reusable, product-neutral design capability syst
 
 ### Authority boundary and next step
 
-The D-025 transaction is closed. Future architecture changes require a governed change request, impact analysis, compatibility and migration evidence, validators, and explicit Owner approval.
+The D-025 transaction is closed. Open obligation: MenQ Webpage is the first real consumer; the Owner selects the second. Future architecture changes require a governed change request, impact analysis, compatibility and migration evidence, validators, and explicit Owner approval.
 
 <!-- END: MENQ_DESIGN_PLATFORM_PROJECT_CONTEXT -->
