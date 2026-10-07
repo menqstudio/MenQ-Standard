@@ -262,3 +262,29 @@ button { font: inherit; cursor: pointer; }
 .mq-tip--bottom { bottom: auto; top: calc(100% + 8px); }
 .mq-tip--open { opacity: 1; visibility: visible; }
 @media (prefers-reduced-motion: reduce) { .mq-acc-chevron, .mq-tip, .mq-nav-link { transition: none; } }
+
+/* ── Motion (CR-0010) ── */
+/* Named entrance patterns. Content is visible by default; it is hidden only while a Reveal waits to enter. */
+@keyframes mq-fade { from { opacity: 0; } }
+@keyframes mq-rise { from { opacity: 0; transform: translateY(var(--motion-distance-md)); } }
+@keyframes mq-rise-sm { from { opacity: 0; transform: translateY(var(--motion-distance-sm)); } }
+@keyframes mq-scale { from { opacity: 0; transform: scale(0.96); } }
+.mq-reveal { --mq-i: 0; }
+.mq-reveal:not([data-mq-in]) { opacity: 0; }
+.mq-reveal[data-mq-in] { animation: none var(--duration-slow) var(--ease-out) calc(var(--mq-i) * var(--motion-stagger)) both; }
+.mq-reveal--fade[data-mq-in] { animation-name: mq-fade; }
+.mq-reveal--rise[data-mq-in] { animation-name: mq-rise; }
+.mq-reveal--rise-sm[data-mq-in] { animation-name: mq-rise-sm; }
+.mq-reveal--scale[data-mq-in] { animation-name: mq-scale; }
+/* Logo power-on: "Men" fades in, the Q ring draws, the stem lights, then the glow comes on. Plays once. */
+@keyframes mq-draw { from { stroke-dashoffset: 1; opacity: 0; } 8% { opacity: 1; } to { stroke-dashoffset: 0; } }
+@keyframes mq-glow-on { 0% { opacity: 0; } 40% { opacity: 1; } 55% { opacity: 0.3; } 70% { opacity: 1; } }
+.mq-brand--power-on .mq-q-arc, .mq-brand--power-on .mq-q-stem { stroke-dasharray: 1 1; }
+.mq-brand--power-on .mq-brand-men { animation: mq-fade calc(var(--duration-power-on) * 0.35) var(--ease-out) both; }
+.mq-brand--power-on .mq-q-arc { animation: mq-draw calc(var(--duration-power-on) * 0.5) var(--ease-in-out) calc(var(--duration-power-on) * 0.15) both; }
+.mq-brand--power-on .mq-q-stem { animation: mq-draw calc(var(--duration-power-on) * 0.2) var(--ease-out) calc(var(--duration-power-on) * 0.6) both; }
+.mq-brand--power-on .mq-brand-glow { animation: mq-glow-on calc(var(--duration-power-on) * 0.3) linear calc(var(--duration-power-on) * 0.7) both; }
+@media (prefers-reduced-motion: reduce) {
+  .mq-reveal:not([data-mq-in]) { opacity: 1; }
+  .mq-reveal[data-mq-in], .mq-brand--power-on .mq-brand-men, .mq-brand--power-on .mq-q-arc, .mq-brand--power-on .mq-q-stem, .mq-brand--power-on .mq-brand-glow { animation: none !important; }
+}

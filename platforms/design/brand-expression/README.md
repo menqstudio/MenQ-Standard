@@ -62,7 +62,29 @@ Dark թեմայի համար `<html>`-ին դնել `data-theme="dark"` կամ �
 - Միայն `space-*` քայլեր։ Քարտ՝ `space-6`, լռելյայն gap՝ `space-4`։
 - Կոճակներ և badge-եր՝ pill (`radius-button`, `radius-pill`), քարտեր՝ `radius-card`, դաշտեր՝ `radius-lg`։
 - Շերտեր՝ `z-raised` < `z-header` < `z-drawer` < `z-palette` < `z-modal` < `z-toast`։
-- Շարժում՝ `duration-fast` / `-base` / `-slow` / `-section`, `ease-standard`։ Շարժումը ցույց է տալիս վիճակ, ոչ զարդարանք։ Reduced motion-ը պարտադիր է։
+- Շարժում՝ տես «Շարժում և վիդեո» բաժինը։
+
+### Շարժում և վիդեո
+
+**Սկզբունքներ.** Շարժումը բացատրում է՝ ինչ փոխվեց, որտեղից եկավ, ինչ է հիմա ակտիվ։ Այն երբեք չի դանդաղեցնում գործողությունը և չի կրում միակ իմաստը։ `prefers-reduced-motion: reduce`-ի դեպքում մուտքի և լոգոյի անիմացիաներն անջատվում են, բովանդակությունը ցույց է տրվում անմիջապես։
+
+**Ժամանակներ.**
+- `duration-fast` (150ms)՝ hover, focus, toggle։ `duration-base` (240ms)՝ dropdown, tooltip, drawer, modal։ `duration-slow` (420ms)՝ տարրի կամ քարտի մուտք։ `duration-section` (700ms)՝ ամբողջ բաժնի փոխանցում։
+- Easing՝ `ease-standard` վիճակի փոփոխության համար, `ease-out` մուտքի համար, `ease-in-out` տեղաշարժի համար։ Linear՝ միայն progress-ի և spinner-ի համար։
+
+**Անվանված pattern-ներ** (`Reveal` կոմպոնենտ, մեկ անգամ, երբ տարրը մտնում է էկրան).
+- `fade`՝ միայն opacity։ `rise`՝ opacity + `motion-distance-md` վերև (քարտեր, բաժիններ)։ `rise-sm`՝ `motion-distance-sm` (փոքր տարրեր)։ `scale`՝ 0.96 → 1 (մեդիա, նկարներ)։
+- Stagger՝ `index` × `motion-stagger` (60ms), առավելագույնը 8 քայլ։
+- Hero-ի վերնագիրը, LCP տարրը և կարևոր CTA-ն `Reveal`-ով չթաքցնել։
+
+**Լոգոյի power-on.** `BrandMark powerOn`՝ «Men»-ը հայտնվում է, Q-ի օղակը գծվում է, գիծը վառվում է, glow-ը միանում է (`duration-power-on`, 1.2վ)։ Միայն hero-ում, splash-ում կամ loading-ում, մեկ անգամ session-ում։ Header-ում և կրկնվող տեղերում՝ ոչ։
+
+**Վիդեո.**
+- Autoplay՝ միայն `muted` + `playsinline` + `poster`, առանց ձայնի։ 5 վայրկյանից երկար շարժման համար պարտադիր է տեսանելի pause կոճակ (WCAG 2.2.2)։ Reduced motion-ի դեպքում autoplay չկա, ցույց է տրվում poster-ը։
+- Վայրկյանում 3-ից ավել բռնկում չի թույլատրվում (WCAG 2.3.1)։ Խոսքով վիդեոն ունի ենթագրեր (հայերեն, անգլերեն) և transcript։
+- Ֆորմատ՝ MP4 (H.264) + WebM, hero loop ≤ 3 MB, ≤ 1080p։ Գույնը՝ brand ֆոն (slate/ink) + ազուր/cyan շեշտեր, առանց այլ ապրանքանիշերի։
+
+**Shader-ներ.** Core շերտի մաս չեն։ Թույլատրվում են միայն որպես առանձին optional expression package՝ static fallback-ով, reduced motion-ի դեպքում անջատված, էկրանից դուրս՝ կանգնեցված։ Նման package ստեղծելու համար անհրաժեշտ է նոր CR։
 
 ### Լոգո
 
@@ -138,7 +160,29 @@ Set `data-theme="dark"` on `<html>` for Dark, or use `ThemeSwitch`.
 - `space-*` steps only. Cards `space-6`; default gap `space-4`.
 - Buttons and badges are pills (`radius-button`, `radius-pill`); cards `radius-card`; inputs `radius-lg`.
 - Layers: `z-raised` < `z-header` < `z-drawer` < `z-palette` < `z-modal` < `z-toast`.
-- Motion: `duration-fast` / `-base` / `-slow` / `-section`, `ease-standard`. Motion communicates state, never decoration. Reduced motion is mandatory.
+- Motion: see "Motion and video".
+
+### Motion and video
+
+**Principles.** Motion explains what changed, where it came from and what is active now. It never slows an action down and never carries the only meaning. Under `prefers-reduced-motion: reduce`, entrance and logo animations are switched off and content is shown at once.
+
+**Timing.**
+- `duration-fast` (150ms): hover, focus, toggles. `duration-base` (240ms): dropdowns, tooltips, drawers, modals. `duration-slow` (420ms): an element or card entering. `duration-section` (700ms): a whole-section transition.
+- Easing: `ease-standard` for state changes, `ease-out` for entrances, `ease-in-out` for movement. Linear only for progress and spinners.
+
+**Named patterns** (the `Reveal` component, played once when the element enters the viewport).
+- `fade`: opacity only. `rise`: opacity plus `motion-distance-md` upward (cards, sections). `rise-sm`: `motion-distance-sm` (small elements). `scale`: 0.96 → 1 (media, images).
+- Stagger: `index` × `motion-stagger` (60ms), at most 8 steps.
+- Never hide the hero heading, the LCP element or a primary CTA behind `Reveal`.
+
+**Logo power-on.** `BrandMark powerOn`: "Men" fades in, the Q ring draws, the stem lights, then the glow comes on (`duration-power-on`, 1.2s). Only in a hero, splash or loading state, once per session. Never in the header or in repeated places.
+
+**Video.**
+- Autoplay only with `muted` + `playsinline` + `poster`, never with sound. Motion longer than 5 seconds needs a visible pause control (WCAG 2.2.2). Under reduced motion there is no autoplay; the poster is shown.
+- No more than 3 flashes per second (WCAG 2.3.1). Video with speech has captions (Armenian, English) and a transcript.
+- Format: MP4 (H.264) + WebM, hero loop ≤ 3 MB, ≤ 1080p. Colour: brand grounds (slate/ink) with azure/cyan accents, no other brands.
+
+**Shaders.** Not part of the core layer. Allowed only as a separate optional expression package with a static fallback, switched off under reduced motion and paused off-screen. Creating such a package requires a new CR.
 
 ### Logo
 

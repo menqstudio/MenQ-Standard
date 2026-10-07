@@ -178,6 +178,10 @@
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-power-on: 1200ms;
+  --motion-stagger: 60ms;
+  --motion-distance-sm: 0.5rem;
+  --motion-distance-md: 1rem;
   --font-sans: "Inter", "Inter Cyrillic", "Noto Sans Armenian", "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-display: "Inter", "Inter Cyrillic", "Noto Sans Armenian", "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "JetBrains Mono Cyrillic", "Noto Sans Armenian", "Cascadia Code", ui-monospace, monospace;

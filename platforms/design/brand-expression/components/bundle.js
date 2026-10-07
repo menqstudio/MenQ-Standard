@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"MenQ","components":[{"name":"BrandMark"},{"name":"Button"},{"name":"Card"},{"name":"Panel"},{"name":"PageHeader"},{"name":"SectionHeading"},{"name":"Badge"},{"name":"StatusDot"},{"name":"Avatar"},{"name":"Field"},{"name":"Input"},{"name":"Textarea"},{"name":"Select"},{"name":"FormRow"},{"name":"Checkbox"},{"name":"RadioGroup"},{"name":"Switch"},{"name":"Icon"},{"name":"Accordion"},{"name":"Nav"},{"name":"Tooltip"},{"name":"Tabs"},{"name":"LocaleSwitch"},{"name":"ThemeSwitch"},{"name":"EmptyState"},{"name":"Skeleton"},{"name":"Toast"},{"name":"Modal"},{"name":"ConfirmDialog"},{"name":"Drawer"},{"name":"KpiStat"},{"name":"MetricBar"},{"name":"Table"},{"name":"ContrastSection"}]} */
+/* @ds-bundle: {"format":4,"namespace":"MenQ","components":[{"name":"BrandMark"},{"name":"Button"},{"name":"Card"},{"name":"Panel"},{"name":"PageHeader"},{"name":"SectionHeading"},{"name":"Badge"},{"name":"StatusDot"},{"name":"Avatar"},{"name":"Field"},{"name":"Input"},{"name":"Textarea"},{"name":"Select"},{"name":"FormRow"},{"name":"Checkbox"},{"name":"RadioGroup"},{"name":"Switch"},{"name":"Icon"},{"name":"Accordion"},{"name":"Nav"},{"name":"Tooltip"},{"name":"Reveal"},{"name":"Tabs"},{"name":"LocaleSwitch"},{"name":"ThemeSwitch"},{"name":"EmptyState"},{"name":"Skeleton"},{"name":"Toast"},{"name":"Modal"},{"name":"ConfirmDialog"},{"name":"Drawer"},{"name":"KpiStat"},{"name":"MetricBar"},{"name":"Table"},{"name":"ContrastSection"}]} */
 /* MenQ brand expression components (D-027). Core layer: product-neutral. Product extensions (e.g. Bro) live under platforms/design/product-extensions/. */
 (function () {
   var React = window.React;
@@ -160,6 +160,24 @@
       trigger,
       h('span', { id: id, role: 'tooltip', className: cx('mq-tip', 'mq-tip--' + (p.placement || 'top'), st[0] && 'mq-tip--open') }, p.content));
   }
+  /* ── Motion (CR-0010) ── */
+  // Reveal: plays a named entrance pattern once, when the element first enters the viewport.
+  // Reduced motion (or no IntersectionObserver) shows the content immediately, without animation.
+  function Reveal(p) {
+    var ref = useRef(null), st = useState(false), shown = st[0];
+    useEffect(function () {
+      if (shown) return undefined;
+      var el = ref.current;
+      if (!el || reducedMotion() || typeof IntersectionObserver === 'undefined') { st[1](true); return undefined; }
+      var io = new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) { st[1](true); io.disconnect(); }
+      }, { rootMargin: '0px 0px -10% 0px' });
+      io.observe(el);
+      return function () { io.disconnect(); };
+    }, [shown]);
+    var T = p.as || 'div', style = Object.assign({ '--mq-i': Math.min(p.index || 0, 8) }, p.style);
+    return h(T, { ref: ref, id: p.id, className: cx('mq-reveal', 'mq-reveal--' + (p.pattern || 'rise'), p.className), style: style, 'data-mq-in': shown ? 'true' : undefined }, p.children);
+  }
   function Modal(p) {
     var ref = useRef(null);
     useDialog(ref, !p.inline, p.onClose);
@@ -240,7 +258,7 @@
   function BrandMark(p) {
     var ref = useRef(null); if (ref.current === null) ref.current = 'mq' + (++mqSeq);
     var id = ref.current, ring = id + '-ring', glow = id + '-glow';
-    return h('span', { className: cx('mq-brand', p.compact && 'mq-brand--compact', p.className), 'aria-label': p.admin ? 'MenQ Admin' : 'MenQ', role: 'img' },
+    return h('span', { className: cx('mq-brand', p.compact && 'mq-brand--compact', p.powerOn && 'mq-brand--power-on', p.className), 'aria-label': p.admin ? 'MenQ Admin' : 'MenQ', role: 'img' },
       h('svg', { className: 'mq-brand-mark', viewBox: '60 80 1800 560', 'aria-hidden': 'true', focusable: 'false' },
         h('defs', null,
           h('linearGradient', { id: ring, gradientUnits: 'userSpaceOnUse', x1: 0, y1: 140, x2: 0, y2: 560 },
@@ -250,10 +268,10 @@
         h('g', { className: 'mq-brand-glow', filter: 'url(#' + glow + ')' },
           h('path', { d: MQ_ARC, fill: 'none', stroke: '#22d3ee', strokeWidth: 64, strokeLinecap: 'round' }),
           h('path', { d: MQ_STEM, stroke: '#22d3ee', strokeWidth: 48, strokeLinecap: 'round' })),
-        h('path', { d: MQ_ARC, fill: 'none', stroke: 'url(#' + ring + ')', strokeWidth: 56, strokeLinecap: 'round' }),
-        h('path', { d: MQ_ARC, fill: 'none', stroke: '#c4f1fd', strokeWidth: 14, strokeLinecap: 'round', opacity: 0.9 }),
-        h('path', { d: MQ_STEM, stroke: '#22d3ee', strokeWidth: 40, strokeLinecap: 'round' }),
-        h('path', { d: MQ_STEM, stroke: '#c4f5fe', strokeWidth: 12, strokeLinecap: 'round' })),
+        h('path', { className: 'mq-q-arc', pathLength: 1, d: MQ_ARC, fill: 'none', stroke: 'url(#' + ring + ')', strokeWidth: 56, strokeLinecap: 'round' }),
+        h('path', { className: 'mq-q-arc', pathLength: 1, d: MQ_ARC, fill: 'none', stroke: '#c4f1fd', strokeWidth: 14, strokeLinecap: 'round', opacity: 0.9 }),
+        h('path', { className: 'mq-q-stem', pathLength: 1, d: MQ_STEM, stroke: '#22d3ee', strokeWidth: 40, strokeLinecap: 'round' }),
+        h('path', { className: 'mq-q-stem', pathLength: 1, d: MQ_STEM, stroke: '#c4f5fe', strokeWidth: 12, strokeLinecap: 'round' })),
       p.admin ? h('span', { className: 'mq-brand-tag' }, p.tag || 'Admin') : null);
   }
   function SectionHeading(p) {
@@ -306,6 +324,6 @@
   }
 
   window.MenQ = { BrandMark: BrandMark, Button: Button, Card: Card, Panel: Panel, PageHeader: PageHeader, SectionHeading: SectionHeading, Badge: Badge, StatusDot: StatusDot, Avatar: Avatar,
-    Field: Field, Input: Input, Textarea: Textarea, Select: Select, FormRow: FormRow, Checkbox: Checkbox, RadioGroup: RadioGroup, Switch: Switch, Icon: Icon, Accordion: Accordion, Nav: Nav, Tooltip: Tooltip, Tabs: Tabs, LocaleSwitch: LocaleSwitch, ThemeSwitch: ThemeSwitch, EmptyState: EmptyState, Skeleton: Skeleton,
+    Field: Field, Input: Input, Textarea: Textarea, Select: Select, FormRow: FormRow, Checkbox: Checkbox, RadioGroup: RadioGroup, Switch: Switch, Icon: Icon, Accordion: Accordion, Nav: Nav, Tooltip: Tooltip, Reveal: Reveal, Tabs: Tabs, LocaleSwitch: LocaleSwitch, ThemeSwitch: ThemeSwitch, EmptyState: EmptyState, Skeleton: Skeleton,
     Toast: Toast, Modal: Modal, ConfirmDialog: ConfirmDialog, Drawer: Drawer, KpiStat: KpiStat, MetricBar: MetricBar, Table: Table, ContrastSection: ContrastSection, applyTheme: applyTheme };
 })();

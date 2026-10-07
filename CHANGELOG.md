@@ -1,5 +1,21 @@
 # MenQ Standard — Changelog
 
+## 2026-10-08 — CR-0010: motion, logo power-on, video and shader rules
+
+### Հայերեն
+
+- Շարժման կանոններ՝ սկզբունքներ, ժամանակներ, easing, անվանված pattern-ներ (`fade`, `rise`, `rise-sm`, `scale`) և նոր `Reveal` կոմպոնենտ։
+- `BrandMark powerOn`՝ լոգոյի power-on անիմացիա։ Նոր token-ներ՝ `duration-power-on`, `motion-stagger`, `motion-distance-sm/md`։ Reduced motion-ի դեպքում ամեն անիմացիա անջատված է։
+- Վիդեոյի կանոններ (autoplay, pause, ենթագրեր, ֆորմատ) և shader-ների սահման (միայն optional package, նոր CR-ով)։
+- `tokens.json` mirror-ը հիմա ներառում է `motion` խումբը և `icon-stroke`-ը, որոնք նախկինում բաց էին թողնված։
+
+### English
+
+- Motion rules: principles, timing, easing, named patterns (`fade`, `rise`, `rise-sm`, `scale`) and a new `Reveal` component.
+- `BrandMark powerOn`: the logo power-on animation. New tokens: `duration-power-on`, `motion-stagger`, `motion-distance-sm/md`. Every animation is switched off under reduced motion.
+- Video rules (autoplay, pause, captions, format) and the shader boundary (optional package only, through a new CR).
+- The `tokens.json` mirror now includes the `motion` group and `icon-stroke`, which were previously left out.
+
 ## 2026-10-08 — CR-0009: iconography, Accordion, Nav, Tooltip
 
 ### Հայերեն
