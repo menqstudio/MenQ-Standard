@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "menq.design.schema.brand-token-source.v1",
+  "title": "MenQ Brand Expression Token Source v1 (D-027)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "sourceId", "decision", "status", "canonicalLanguages", "generatedOutputsAreCanonical", "modes", "fonts", "typeStyles", "tokens"],
+  "properties": {
+    "$schema": { "type": "string", "minLength": 1 },
+    "schemaVersion": { "const": 1 },
+    "sourceId": { "type": "string", "pattern": "^menq\\.design\\.token-source\\.[a-z0-9.-]+\\.v[0-9]+$" },
+    "decision": { "const": "D-027" },
+    "status": { "enum": ["Approved — Implementing", "Locked"] },
+    "canonicalLanguages": { "const": ["hy", "en"] },
+    "generatedOutputsAreCanonical": { "const": false },
+    "modes": { "const": ["light", "dark"] },
+    "fonts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["family", "file", "weight", "style"],
+        "properties": {
+          "family": { "type": "string", "minLength": 1 },
+          "file": { "type": "string", "pattern": "^fonts/[A-Za-z0-9._-]+\\.woff2$" },
+          "weight": { "type": "string", "minLength": 1 },
+          "style": { "enum": ["normal", "italic"] }
+        }
+      }
+    },
+    "typeStyles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "group", "family", "fontSize", "lineHeight", "fontWeight", "description"],
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "group": { "type": "string", "minLength": 1 },
+          "family": { "enum": ["sans", "display", "mono"] },
+          "fontSize": { "type": "string", "pattern": "^[0-9.]+(px|rem)$" },
+          "lineHeight": { "type": "number" },
+          "fontWeight": { "type": "integer" },
+          "letterSpacing": { "type": "string" },
+          "description": { "$ref": "#/$defs/bilingual" }
+        }
+      }
+    },
+    "tokens": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "cssName", "layer", "type", "description", "ownerId", "lifecycle"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^menq\\.design\\.token\\.(reference|semantic|component|pattern|product-extension)\\.[a-z0-9.-]+$" },
+          "cssName": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+          "layer": { "enum": ["Reference", "Semantic", "Component", "Pattern", "Product Extension"] },
+          "type": { "enum": ["color", "dimension", "number", "duration", "cubic-bezier", "font-family", "font-weight", "line-height", "shadow", "string"] },
+          "description": { "$ref": "#/$defs/bilingual" },
+          "ownerId": { "type": "string", "pattern": "^owner\\.[a-z0-9.-]+$" },
+          "lifecycle": { "enum": ["Draft", "Approved — Implementing", "Locked", "Deprecated"] },
+          "value": { "type": ["string", "number"] },
+          "reference": { "type": "string" },
+          "modes": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["light", "dark"],
+            "properties": {
+              "light": { "$ref": "#/$defs/entry" },
+              "dark": { "$ref": "#/$defs/entry" }
+            }
+          }
+        },
+        "oneOf": [
+          { "required": ["value"], "not": { "anyOf": [{ "required": ["reference"] }, { "required": ["modes"] }] } },
+          { "required": ["reference"], "not": { "anyOf": [{ "required": ["value"] }, { "required": ["modes"] }] } },
+          { "required": ["modes"], "not": { "anyOf": [{ "required": ["value"] }, { "required": ["reference"] }] } }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "bilingual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hy", "en"],
+      "properties": {
+        "hy": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "oneOf": [
+        { "required": ["value"], "not": { "required": ["reference"] } },
+        { "required": ["reference"], "not": { "required": ["value"] } }
+      ],
+      "properties": {
+        "value": { "type": ["string", "number"] },
+        "reference": { "type": "string" }
+      }
+    }
+  }
+}

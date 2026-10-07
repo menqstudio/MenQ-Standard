@@ -22,6 +22,9 @@ Design Platform-ը չի պարունակում product-specific screens, busines
 - [`CONTRACTS.md`](CONTRACTS.md)
 - [`ROADMAP.md`](ROADMAP.md)
 - [`CHANGELOG.md`](CHANGELOG.md)
+- [`decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md) — բրենդային արտահայտման շերտ
+- [`brand-expression/`](brand-expression/) — MenQ բրենդային թոքեններ, լոգոներ, core կոմպոնենտներ
+- [`product-extensions/`](product-extensions/) — արտադրանքային ընդլայնումներ (Բրո)
 
 ## English
 
@@ -41,5 +44,8 @@ The Design Platform does not place product-specific screens, business logic, or 
 - [`CONTRACTS.md`](CONTRACTS.md)
 - [`ROADMAP.md`](ROADMAP.md)
 - [`CHANGELOG.md`](CHANGELOG.md)
+- [`decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md) — brand expression layer
+- [`brand-expression/`](brand-expression/) — MenQ brand tokens, logos, core components
+- [`product-extensions/`](product-extensions/) — product extensions (Bro)
 
 <!-- END: MENQ_DESIGN_PLATFORM_README -->

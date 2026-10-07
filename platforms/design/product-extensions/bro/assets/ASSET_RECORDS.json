@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "decision": "D-027",
+  "records": [
+    {
+      "id": "menq.design.asset.bro.avatar",
+      "kind": "avatar",
+      "file": "assets/bro-avatar.png",
+      "description": {
+        "hy": "Բրոյի avatar-ը",
+        "en": "Bro's avatar"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Supplied by the MenQ Owner (Gevorg Ohanyan), 2026-10-07",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "c27a8af3f8055fa56b7613fe4548d1c0c24fc1d722b2f308c3d5501c07b0f4f8"
+    }
+  ]
+}
