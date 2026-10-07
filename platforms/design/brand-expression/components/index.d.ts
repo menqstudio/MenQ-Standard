@@ -21,6 +21,12 @@ export interface FormRowProps { label: Node; hint?: Node; error?: Node; required
 export type CheckboxProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> & { label: Node; hint?: Node; invalid?: boolean };
 export interface RadioOption { value: string; label: Node; hint?: Node; disabled?: boolean; }
 export interface RadioGroupProps { label: Node; options: RadioOption[]; name?: string; value?: string; defaultValue?: string; onChange?: (value: string) => void; error?: Node; disabled?: boolean; }
+export interface IconProps { /** 24-grid stroke paths (e.g. Lucide) */ children?: Node; size?: 'sm' | 'md' | 'lg'; /** set when the icon carries meaning; otherwise it is aria-hidden */ label?: string; strokeWidth?: number; className?: string; }
+export interface AccordionItem { id: string; title: Node; content: Node; }
+export interface AccordionProps { items: AccordionItem[]; multiple?: boolean; open?: string[]; defaultOpen?: string[]; onChange?: (open: string[]) => void; headingLevel?: 2 | 3 | 4 | 5 | 6; id?: string; }
+export interface NavItem { href: string; label: Node; current?: boolean; icon?: Node; onClick?: (e: React.MouseEvent) => void; }
+export interface NavProps { label: string; items: NavItem[]; orientation?: 'horizontal' | 'vertical'; className?: string; }
+export interface TooltipProps { content: Node; /** exactly one focusable trigger */ children: React.ReactElement; placement?: 'top' | 'bottom'; delay?: number; id?: string; }
 export interface SwitchProps { label: Node; hint?: Node; checked?: boolean; defaultChecked?: boolean; onChange?: (checked: boolean) => void; disabled?: boolean; }
 export interface TabsProps { items: { value: string; label: Node; count?: number; id?: string; controls?: string }[]; label?: string; defaultValue?: string; value?: string; onChange?: (value: string) => void; }
 export interface LocaleSwitchProps { value?: 'hy' | 'en' | 'ru'; defaultValue?: 'hy' | 'en' | 'ru'; label?: string; onChange?: (locale: 'hy' | 'en' | 'ru') => void; }
@@ -39,7 +45,7 @@ export interface ContrastSectionProps { children?: Node; spotlight?: boolean; gr
 type C<P> = (props: P) => React.ReactElement | null;
 export interface MenQCore {
   BrandMark: C<BrandMarkProps>; Button: C<ButtonProps>; Card: C<CardProps>; Panel: C<PanelProps>; PageHeader: C<PageHeaderProps>; SectionHeading: C<SectionHeadingProps>;
-  Badge: C<BadgeProps>; StatusDot: C<StatusDotProps>; Avatar: C<AvatarProps>; Field: C<FieldProps>; Input: C<InputProps>; Textarea: C<TextareaProps>; Select: C<SelectProps>; FormRow: C<FormRowProps>; Checkbox: C<CheckboxProps>; RadioGroup: C<RadioGroupProps>; Switch: C<SwitchProps>;
+  Badge: C<BadgeProps>; StatusDot: C<StatusDotProps>; Avatar: C<AvatarProps>; Field: C<FieldProps>; Input: C<InputProps>; Textarea: C<TextareaProps>; Select: C<SelectProps>; FormRow: C<FormRowProps>; Checkbox: C<CheckboxProps>; RadioGroup: C<RadioGroupProps>; Switch: C<SwitchProps>; Icon: C<IconProps>; Accordion: C<AccordionProps>; Nav: C<NavProps>; Tooltip: C<TooltipProps>;
   Tabs: C<TabsProps>; LocaleSwitch: C<LocaleSwitchProps>; ThemeSwitch: C<ThemeSwitchProps>; EmptyState: C<EmptyStateProps>; Skeleton: C<SkeletonProps>; Toast: C<ToastProps>;
   Modal: C<ModalProps>; ConfirmDialog: C<ConfirmDialogProps>; Drawer: C<DrawerProps>; KpiStat: C<KpiStatProps>; MetricBar: C<MetricBarProps>; Table: C<TableProps>; ContrastSection: C<ContrastSectionProps>;
   applyTheme(pref: ThemePreference): void;

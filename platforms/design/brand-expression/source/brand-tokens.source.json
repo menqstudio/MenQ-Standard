@@ -1877,6 +1877,58 @@
       "value": "3.5rem"
     },
     {
+      "id": "menq.design.token.reference.brand.size.icon-size-sm",
+      "cssName": "icon-size-sm",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Փոքր իկոն՝ 16px, տեքստի մեջ, badge-երում։",
+        "en": "Small icon, 16px: inline with text, badges."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.size.icon-size-md",
+      "cssName": "icon-size-md",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Հիմնական իկոն՝ 20px, կոճակներ, nav։",
+        "en": "Default icon, 20px: buttons, navigation."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1.25rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.size.icon-size-lg",
+      "cssName": "icon-size-lg",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Մեծ իկոն՝ 24px, feature-ներ, empty state։",
+        "en": "Large icon, 24px: features, empty states."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.icon.icon-stroke",
+      "cssName": "icon-stroke",
+      "layer": "Reference",
+      "type": "number",
+      "description": {
+        "hy": "Իկոնի գծի հաստությունը (Lucide, 24 grid)։",
+        "en": "Icon stroke width (Lucide, 24 grid)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "2"
+    },
+    {
       "id": "menq.design.token.reference.brand.z-index.z-base",
       "cssName": "z-base",
       "layer": "Reference",

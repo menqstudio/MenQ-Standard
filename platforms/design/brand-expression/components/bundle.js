@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"MenQ","components":[{"name":"BrandMark"},{"name":"Button"},{"name":"Card"},{"name":"Panel"},{"name":"PageHeader"},{"name":"SectionHeading"},{"name":"Badge"},{"name":"StatusDot"},{"name":"Avatar"},{"name":"Field"},{"name":"Input"},{"name":"Textarea"},{"name":"Select"},{"name":"FormRow"},{"name":"Checkbox"},{"name":"RadioGroup"},{"name":"Switch"},{"name":"Tabs"},{"name":"LocaleSwitch"},{"name":"ThemeSwitch"},{"name":"EmptyState"},{"name":"Skeleton"},{"name":"Toast"},{"name":"Modal"},{"name":"ConfirmDialog"},{"name":"Drawer"},{"name":"KpiStat"},{"name":"MetricBar"},{"name":"Table"},{"name":"ContrastSection"}]} */
+/* @ds-bundle: {"format":4,"namespace":"MenQ","components":[{"name":"BrandMark"},{"name":"Button"},{"name":"Card"},{"name":"Panel"},{"name":"PageHeader"},{"name":"SectionHeading"},{"name":"Badge"},{"name":"StatusDot"},{"name":"Avatar"},{"name":"Field"},{"name":"Input"},{"name":"Textarea"},{"name":"Select"},{"name":"FormRow"},{"name":"Checkbox"},{"name":"RadioGroup"},{"name":"Switch"},{"name":"Icon"},{"name":"Accordion"},{"name":"Nav"},{"name":"Tooltip"},{"name":"Tabs"},{"name":"LocaleSwitch"},{"name":"ThemeSwitch"},{"name":"EmptyState"},{"name":"Skeleton"},{"name":"Toast"},{"name":"Modal"},{"name":"ConfirmDialog"},{"name":"Drawer"},{"name":"KpiStat"},{"name":"MetricBar"},{"name":"Table"},{"name":"ContrastSection"}]} */
 /* MenQ brand expression components (D-027). Core layer: product-neutral. Product extensions (e.g. Bro) live under platforms/design/product-extensions/. */
 (function () {
   var React = window.React;
@@ -12,6 +12,9 @@
     var v = p.variant || 'primary', size = p.small ? 'sm' : (p.size || 'md');
     var props = { title: p.title, onClick: p.onClick, 'aria-busy': p.loading ? 'true' : undefined,
       className: cx('btn', v !== 'secondary' && 'btn--' + v, size !== 'md' && 'btn--' + size, p.loading && 'btn--loading', p.className) };
+    // Forward ARIA and data attributes so wrappers (Tooltip, menus) can describe the button.
+    Object.keys(p).forEach(function (k) { if (k.indexOf('aria-') === 0 || k.indexOf('data-') === 0) props[k] = p[k]; });
+    if (p.loading) props['aria-busy'] = 'true';
     var kids = [p.loading ? h('span', { key: 's', className: 'mq-spinner', 'aria-hidden': 'true' }) : null, p.icon ? h('span', { key: 'i', 'aria-hidden': 'true', style: { display: 'inline-flex' } }, p.icon) : null, p.children];
     if (p.href) return h('a', Object.assign(props, { href: p.href }), kids);
     return h('button', Object.assign(props, { type: p.type || 'button', disabled: p.disabled || p.loading }), kids);
@@ -105,6 +108,57 @@
       document.addEventListener('keydown', onKey);
       return function () { document.removeEventListener('keydown', onKey); if (previous && previous.focus) previous.focus(); };
     }, [active, onClose]);
+  }
+  /* ── Iconography, disclosure, navigation, tooltip (CR-0009) ── */
+  // Icon: a 24-grid stroke icon (Lucide geometry). Decorative by default; pass `label` when it carries meaning.
+  function Icon(p) {
+    var size = { sm: 'var(--icon-size-sm)', md: 'var(--icon-size-md)', lg: 'var(--icon-size-lg)' }[p.size || 'md'];
+    return h('svg', { viewBox: '0 0 24 24', width: '1em', height: '1em', fill: 'none', stroke: 'currentColor', strokeWidth: p.strokeWidth || 'var(--icon-stroke)',
+      strokeLinecap: 'round', strokeLinejoin: 'round', className: cx('mq-icon', p.className), style: { fontSize: size },
+      role: p.label ? 'img' : undefined, 'aria-label': p.label, 'aria-hidden': p.label ? undefined : 'true', focusable: 'false' }, p.children);
+  }
+  // Accordion: WAI-ARIA disclosure buttons (aria-expanded / aria-controls) + labelled regions.
+  function Accordion(p) {
+    var base = useFieldId(p.id), st = useState(p.defaultOpen || []), open = p.open !== undefined ? p.open : st[0];
+    var Heading = 'h' + (p.headingLevel || 3);
+    function toggle(id) {
+      var isOpen = open.indexOf(id) >= 0;
+      var next = isOpen ? open.filter(function (x) { return x !== id; }) : (p.multiple ? open.concat([id]) : [id]);
+      st[1](next); if (p.onChange) p.onChange(next);
+    }
+    return h('div', { className: 'mq-accordion' }, p.items.map(function (it) {
+      var on = open.indexOf(it.id) >= 0, btn = base + '-' + it.id + '-btn', panel = base + '-' + it.id + '-panel';
+      return h('div', { key: it.id, className: cx('mq-acc-item', on && 'mq-acc-item--open') },
+        h(Heading, { className: 'mq-acc-heading' },
+          h('button', { type: 'button', id: btn, className: 'mq-acc-trigger', 'aria-expanded': on ? 'true' : 'false', 'aria-controls': panel, onClick: function () { toggle(it.id); } },
+            h('span', null, it.title),
+            h(Icon, { size: 'md', className: 'mq-acc-chevron' }, h('path', { d: 'm6 9 6 6 6-6' })))),
+        h('div', { id: panel, role: 'region', 'aria-labelledby': btn, className: 'mq-acc-panel', hidden: !on }, it.content));
+    }));
+  }
+  // Nav: a labelled navigation landmark; the current page gets aria-current="page".
+  function Nav(p) {
+    return h('nav', { className: cx('mq-nav', p.orientation === 'vertical' && 'mq-nav--vertical', p.className), 'aria-label': p.label },
+      h('ul', { className: 'mq-nav-list' }, p.items.map(function (it) {
+        return h('li', { key: it.href }, h('a', { href: it.href, className: 'mq-nav-link', 'aria-current': it.current ? 'page' : undefined, onClick: it.onClick }, it.icon ? h('span', { className: 'mq-nav-icon', 'aria-hidden': 'true' }, it.icon) : null, it.label));
+      })));
+  }
+  // Tooltip: supplementary text on hover and keyboard focus; Escape dismisses; linked with aria-describedby.
+  function Tooltip(p) {
+    var id = useFieldId(p.id), st = useState(false), timer = useRef(0);
+    function show() { clearTimeout(timer.current); timer.current = setTimeout(function () { st[1](true); }, p.delay != null ? p.delay : 300); }
+    function hide() { clearTimeout(timer.current); st[1](false); }
+    useEffect(function () {
+      if (!st[0]) return undefined;
+      function onKey(e) { if (e.key === 'Escape') hide(); }
+      document.addEventListener('keydown', onKey); return function () { document.removeEventListener('keydown', onKey); };
+    }, [st[0]]);
+    useEffect(function () { return function () { clearTimeout(timer.current); }; }, []);
+    var child = React.Children.only(p.children);
+    var trigger = React.cloneElement(child, { 'aria-describedby': cx(child.props['aria-describedby'], id) || undefined });
+    return h('span', { className: 'mq-tip-wrap', onMouseEnter: show, onMouseLeave: hide, onFocus: show, onBlur: hide },
+      trigger,
+      h('span', { id: id, role: 'tooltip', className: cx('mq-tip', 'mq-tip--' + (p.placement || 'top'), st[0] && 'mq-tip--open') }, p.content));
   }
   function Modal(p) {
     var ref = useRef(null);
@@ -252,6 +306,6 @@
   }
 
   window.MenQ = { BrandMark: BrandMark, Button: Button, Card: Card, Panel: Panel, PageHeader: PageHeader, SectionHeading: SectionHeading, Badge: Badge, StatusDot: StatusDot, Avatar: Avatar,
-    Field: Field, Input: Input, Textarea: Textarea, Select: Select, FormRow: FormRow, Checkbox: Checkbox, RadioGroup: RadioGroup, Switch: Switch, Tabs: Tabs, LocaleSwitch: LocaleSwitch, ThemeSwitch: ThemeSwitch, EmptyState: EmptyState, Skeleton: Skeleton,
+    Field: Field, Input: Input, Textarea: Textarea, Select: Select, FormRow: FormRow, Checkbox: Checkbox, RadioGroup: RadioGroup, Switch: Switch, Icon: Icon, Accordion: Accordion, Nav: Nav, Tooltip: Tooltip, Tabs: Tabs, LocaleSwitch: LocaleSwitch, ThemeSwitch: ThemeSwitch, EmptyState: EmptyState, Skeleton: Skeleton,
     Toast: Toast, Modal: Modal, ConfirmDialog: ConfirmDialog, Drawer: Drawer, KpiStat: KpiStat, MetricBar: MetricBar, Table: Table, ContrastSection: ContrastSection, applyTheme: applyTheme };
 })();
