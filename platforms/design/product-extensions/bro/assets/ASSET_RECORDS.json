@@ -15,6 +15,20 @@
       "license": "Proprietary — MenQ",
       "lifecycle": "Draft",
       "sha256": "c27a8af3f8055fa56b7613fe4548d1c0c24fc1d722b2f308c3d5501c07b0f4f8"
+    },
+    {
+      "id": "menq.design.asset.bro.avatar-1024",
+      "kind": "avatar",
+      "file": "assets/bro-avatar-1024.png",
+      "description": {
+        "hy": "Բրոյի avatar-ի բարձր լուծաչափի master (1024×1024)",
+        "en": "High-resolution master of Bro's avatar (1024×1024)"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Supplied by the MenQ Owner (Gevorg Ohanyan), 2026-10-08; the existing 512×512 avatar is a downscale of it",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "71fe93888d5886061133258aaa8dbcee029b78b5df74e9d91e84b951d970bd91"
     }
   ]
 }

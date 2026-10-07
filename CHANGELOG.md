@@ -1,5 +1,17 @@
 # MenQ Standard — Changelog
 
+## 2026-10-08 — CR-0005: official BrandMark
+
+### Հայերեն
+
+- `BrandMark`-ը և `menq-wordmark-*`/`menq-q-mark-*` SVG-ները փոխարինվեցին պաշտոնական լոգոյից պատրաստված վեկտոր մարկով (կլորացված «Men» + neon power-ring Q)։ Նախկին Inter «Men» + ազուր pill տարբերակը սխալ էր։
+- Ավելացվեց Բրոյի avatar-ի 1024×1024 master-ը։
+
+### English
+
+- `BrandMark` and the `menq-wordmark-*`/`menq-q-mark-*` SVGs are replaced by a vector mark made from the official logo (rounded "Men" + neon power-ring Q). The earlier Inter "Men" + azure pill version was wrong.
+- Added the 1024×1024 master of Bro's avatar.
+
 ## 2026-10-08 — CR-0004: neon logo high-resolution master
 
 ### Հայերեն

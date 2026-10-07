@@ -35,56 +35,56 @@
       "kind": "logo",
       "file": "assets/Logos/menq-wordmark-light.svg",
       "description": {
-        "hy": "BrandMark wordmark՝ բաց ֆոնի համար",
-        "en": "BrandMark wordmark for light grounds"
+        "hy": "Պաշտոնական MenQ մարկը (վեկտոր)՝ բաց ֆոնի համար. մուգ «Men» և neon power-ring Q",
+        "en": "Official MenQ mark (vector) for light grounds: ink \"Men\" and the neon power-ring Q"
       },
       "ownerId": "owner.menq",
-      "provenance": "Outlined from Inter Bold after Webpage BrandMark.tsx, 2026-10-07",
+      "provenance": "Vectorised on 2026-10-08 from the Owner-supplied official logo (menq-logo-neon-hires.png): \"Men\" traced, power-ring Q constructed to its measured geometry (CR-0005); replaces the earlier Inter-based BrandMark",
       "license": "Proprietary — MenQ (glyph outlines from Inter, OFL-1.1)",
       "lifecycle": "Draft",
-      "sha256": "6cc5d578d864f9146a9d08dd40777fb5038681a57f06dd114c6ebc178d649052"
+      "sha256": "bc7899efc133edabb0ee3f8acd1be144d6952325a8476423363e6a8e500f9173"
     },
     {
       "id": "menq.design.asset.brand.menq-wordmark-dark",
       "kind": "logo",
       "file": "assets/Logos/menq-wordmark-dark.svg",
       "description": {
-        "hy": "BrandMark wordmark՝ մուգ ֆոնի համար",
-        "en": "BrandMark wordmark for dark grounds"
+        "hy": "Պաշտոնական MenQ մարկը (վեկտոր)՝ մուգ ֆոնի համար. սպիտակ «Men» ստվերով և neon power-ring Q",
+        "en": "Official MenQ mark (vector) for dark grounds: white \"Men\" with shadow and the neon power-ring Q"
       },
       "ownerId": "owner.menq",
-      "provenance": "Outlined from Inter Bold after Webpage BrandMark.tsx, 2026-10-07",
+      "provenance": "Vectorised on 2026-10-08 from the Owner-supplied official logo (menq-logo-neon-hires.png): \"Men\" traced, power-ring Q constructed to its measured geometry (CR-0005); replaces the earlier Inter-based BrandMark",
       "license": "Proprietary — MenQ (glyph outlines from Inter, OFL-1.1)",
       "lifecycle": "Draft",
-      "sha256": "1d0454c6856f7de470f3ab3607bd01d70d57b1fc17c5100c79200120a84eea52"
+      "sha256": "470768c33b6b025c762f599df72e28ddd716516c93b4e7577dd193c7c10c69a6"
     },
     {
       "id": "menq.design.asset.brand.menq-q-mark-light",
       "kind": "logo",
       "file": "assets/Logos/menq-q-mark-light.svg",
       "description": {
-        "hy": "Q նշան՝ բաց ֆոնի համար",
-        "en": "Q mark for light grounds"
+        "hy": "Միայն neon power-ring Q-ն՝ բաց ֆոնի համար",
+        "en": "The neon power-ring Q alone, light grounds"
       },
       "ownerId": "owner.menq",
-      "provenance": "Drawn after Webpage BrandMark.tsx (power symbol path after lucide Power, ISC)",
+      "provenance": "Vectorised on 2026-10-08 from the Owner-supplied official logo (menq-logo-neon-hires.png): \"Men\" traced, power-ring Q constructed to its measured geometry (CR-0005); replaces the earlier Inter-based BrandMark",
       "license": "Proprietary — MenQ",
       "lifecycle": "Draft",
-      "sha256": "c4da99f3535612010ed24941796de5cb855859ffe61e5152e03c64ddba6231fb"
+      "sha256": "fce6b31450287104f3414db72d85475dcc886668ade97f34f780c777439e50d6"
     },
     {
       "id": "menq.design.asset.brand.menq-q-mark-dark",
       "kind": "logo",
       "file": "assets/Logos/menq-q-mark-dark.svg",
       "description": {
-        "hy": "Q նշան՝ մուգ ֆոնի համար",
-        "en": "Q mark for dark grounds"
+        "hy": "Միայն neon power-ring Q-ն՝ մուգ ֆոնի համար",
+        "en": "The neon power-ring Q alone, dark grounds"
       },
       "ownerId": "owner.menq",
-      "provenance": "Drawn after Webpage BrandMark.tsx (power symbol path after lucide Power, ISC)",
+      "provenance": "Vectorised on 2026-10-08 from the Owner-supplied official logo (menq-logo-neon-hires.png): \"Men\" traced, power-ring Q constructed to its measured geometry (CR-0005); replaces the earlier Inter-based BrandMark",
       "license": "Proprietary — MenQ",
       "lifecycle": "Draft",
-      "sha256": "3a15578b9dce21764092c8fefeed4e47260b4413d4edae3e6829f6bb82c8ed53"
+      "sha256": "aece362f77a169507bce67fbd32d7723bcda28d7ad0ebc7bbf4f26bf7eb4952d"
     },
     {
       "id": "menq.design.asset.brand.inter-latin-variable",
