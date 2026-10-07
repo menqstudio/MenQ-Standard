@@ -40,17 +40,19 @@ Extensions
 
 ## Platform qualification criteria / Platform որակավորման չափանիշներ
 
-A capability qualifies as a Platform only when all required criteria are satisfied:
+**HY:** Capability-ն որակավորվում է որպես Platform միայն այն դեպքում, երբ բավարարված են բոլոր պարտադիր չափանիշները՝
 
-1. **Reusable / Վերօգտագործելի** — useful to more than one product or system.
-2. **Bounded / Սահմանված** — has an explicit scope and exclusions.
-3. **Contracted / Contract-ներով** — exposes stable interfaces, rules, or contracts.
-4. **Owned / Owner-ով** — has a named human owner.
-5. **Versioned / Versioned** — changes are traceable and releasable.
-6. **Validated / Ստուգվող** — has tests, conformance checks, or equivalent validation.
-7. **Foundation-aligned / Foundation-ին համապատասխան** — does not contradict locked Foundation rules.
-8. **Adoptable / Կիրառելի** — has a documented adoption model for products or systems.
-9. **Core-pure / Core-ը մաքուր** — product-specific business logic does not live in the platform core.
+**EN:** A capability qualifies as a Platform only when all required criteria are satisfied:
+
+1. **Reusable / Վերօգտագործելի** — useful to more than one product or system. / օգտակար է մեկից ավելի product-ի կամ system-ի համար։
+2. **Bounded / Սահմանված** — has an explicit scope and exclusions. / ունի explicit scope և exclusions։
+3. **Contracted / Contract-ներով** — exposes stable interfaces, rules, or contracts. / տրամադրում է կայուն interfaces, rules կամ contracts։
+4. **Owned / Owner-ով** — has a named human owner. / ունի անվանված human owner։
+5. **Versioned / Versioned** — changes are traceable and releasable. / փոփոխությունները traceable և releasable են։
+6. **Validated / Ստուգվող** — has tests, conformance checks, or equivalent validation. / ունի tests, conformance checks կամ համարժեք validation։
+7. **Foundation-aligned / Foundation-ին համապատասխան** — does not contradict locked Foundation rules. / չի հակասում locked Foundation rules-ին։
+8. **Adoptable / Կիրառելի** — has a documented adoption model for products or systems. / ունի products-ի կամ systems-ի համար փաստաթղթավորված adoption model։
+9. **Core-pure / Core-ը մաքուր** — product-specific business logic does not live in the platform core. / product-specific business logic-ը չի գտնվում platform core-ում։
 
 ## Canonical repository architecture / Canonical repository կառուցվածք
 
@@ -87,6 +89,15 @@ platforms/
 
 ## Alternatives considered / Դիտարկված alternatives
 
+**HY:**
+
+1. **Platforms-ը թողնել անորոշ։** Մերժված է, քանի որ պահպանում է անորոշությունը և ապագա drift-ը։
+2. **Յուրաքանչյուր shared library համարել Platform։** Մերժված է, քանի որ ստեղծում է architecture inflation և թույլ ownership։
+3. **Միանգամից ստեղծել բոլոր հնարավոր platform folders-ը։** Մերժված է որպես architecture theatre՝ առանց ապացուցված reusable capability-ի։
+4. **Platforms-ը տեղադրել MenQ Studio Products-ի տակ։** Մերժված է, քանի որ Platforms-ը MenQ Standard-ի capability architecture է, իսկ products-ը մնում են MenQ Studio-ի outputs։
+
+**EN:**
+
 1. **Keep Platforms undefined.** Rejected because it preserves ambiguity and future drift.
 2. **Treat every shared library as a Platform.** Rejected because it creates architecture inflation and weak ownership.
 3. **Create all possible platform folders immediately.** Rejected as architecture theatre without proven reusable capability.
@@ -100,12 +111,31 @@ platforms/
 
 ## Expected outcome / Սպասվող արդյունք
 
+**HY:**
+
+- Հետևողական platform boundaries ամբողջ MenQ ecosystem-ում։
+- Reusable capabilities՝ առանց product coupling-ի։
+- Traceable platform ownership, versioning և validation։
+- Ոչ մի speculative platform taxonomy կամ դատարկ architecture։
+
+**EN:**
+
 - Consistent platform boundaries across the MenQ ecosystem.
 - Reusable capabilities without product coupling.
 - Traceable platform ownership, versioning, and validation.
 - No speculative platform taxonomy or empty architecture.
 
 ## KPI / Success criteria
+
+**HY:**
+
+1. `platforms/` root package-ը առկա է և անցնում է link/content validation։
+2. Յուրաքանչյուր գրանցված Platform ունի human owner, charter, boundary, version status և validation path։
+3. Ոչ մի Platform core չի պարունակում product-specific business logic։
+4. Նոր Platform proposals-ը օգտագործում են MenQ Decision System-ը։
+5. Platform-ը mature համարվելուց առաջ առնվազն երկու products կամ systems պետք է կարողանան այն adopt անել, եթե Owner-ը strategic exception չի հաստատում։
+
+**EN:**
 
 1. `platforms/` root package exists and passes link/content validation.
 2. Every registered Platform has a human owner, charter, boundary, version status, and validation path.
@@ -115,6 +145,16 @@ platforms/
 
 ## Risks / Ռիսկեր
 
+**HY:**
+
+- Վաղաժամ abstraction։
+- Platform-ի վերածվելը shared files-ի համար աղբանոցի։
+- Ownership-ի անորոշություն։
+- Product teams-ի կողմից contracts-ի շրջանցում։
+- Ավելորդ documentation՝ առանց աշխատող capability-ի։
+
+**EN:**
+
 - Premature abstraction.
 - Platform becoming a dumping ground for shared files.
 - Ownership ambiguity.
@@ -122,6 +162,17 @@ platforms/
 - Excess documentation without working capability.
 
 ## Mitigations / Կանխարգելում
+
+**HY:**
+
+- Պարտադիր qualification criteria և registry։
+- Formal decision trigger նոր Platforms-ի համար։
+- Անվանված human owner։
+- Adoption և validation պահանջներ։
+- Product-specific logic-ի բացառում։
+- Պարբերական architecture review։
+
+**EN:**
 
 - Mandatory qualification criteria and registry.
 - Formal decision trigger for new Platforms.
@@ -138,6 +189,16 @@ platforms/
 
 ## Dependencies / Կախվածություններ
 
+**HY:**
+
+- Locked վիճակում գտնվող Foundation v1։
+- MenQ Decision System v1։
+- Documentation Standard v1։
+- Canonical Write Integrity Law։
+- AI Collaboration Standard v1։
+
+**EN:**
+
 - Locked Foundation v1.
 - MenQ Decision System v1.
 - Documentation Standard v1.
@@ -146,9 +207,22 @@ platforms/
 
 ## Implementation owner / Իրականացման owner
 
-MenQ Owner, assisted by MenQ Architect AI.
+**HY:** MenQ Owner՝ MenQ Architect AI-ի աջակցությամբ։
+
+**EN:** MenQ Owner, assisted by MenQ Architect AI.
 
 ## Validation method / Validation մեթոդ
+
+**HY:**
+
+- Պարտադիր ֆայլերի առկայության checks։
+- Bilingual semantic parity review։
+- Internal links-ի verification։
+- Decision registry traceability։
+- Platform qualification checklist-ի validation։
+- GitHub Actions validation մինչև lock-ը։
+
+**EN:**
 
 - Required file existence checks.
 - Bilingual semantic parity review.
@@ -158,6 +232,18 @@ MenQ Owner, assisted by MenQ Architect AI.
 - GitHub Actions validation before lock.
 
 ## Review trigger / Վերանայման trigger
+
+**HY:**
+
+Վերանայել, երբ տեղի է ունենում հետևյալներից որևէ մեկը՝
+
+- առաջարկվում է երկրորդ Platform;
+- առաջին երկու products-ը adopt են անում Design Platform-ը;
+- Platform boundary-ն հակասում է Operating Standards-ին կամ Extensions-ին;
+- ownership-ը կամ versioning-ը դառնում է անհստակ;
+- Foundation-ի էական փոփոխությունն ազդում է Platforms-ի վրա։
+
+**EN:**
 
 Review when any of the following occurs:
 
@@ -180,6 +266,14 @@ Review when any of the following occurs:
 - `platforms/**`
 
 ## Evidence links / Evidence հղումներ
+
+**HY:**
+
+- Owner approval-ը MenQ Standard project conversation-ում՝ 2026-07-12-ին։
+- Locked Foundation և Decision System canonical documentation։
+- Foundation v1 GREEN validation evidence։
+
+**EN:**
 
 - Owner approval in the MenQ Standard project conversation on 2026-07-12.
 - Locked Foundation and Decision System canonical documentation.

@@ -16,6 +16,8 @@ This addendum does not change the meaning of Documentation Standard v1. It confi
 
 ## Precedence / Գերակայություն
 
-This addendum supplies equal-language interpretation where legacy wording is mixed or incomplete. It does not override a more specific bilingual rule in the parent standard.
+**HY:** Այս հավելվածը ապահովում է հավասար լեզվական interpretation այնտեղ, որտեղ legacy ձևակերպումը խառը կամ թերի է։ Այն չի գերակայում parent standard-ի ավելի կոնկրետ երկլեզու կանոնի նկատմամբ։
+
+**EN:** This addendum supplies equal-language interpretation where legacy wording is mixed or incomplete. It does not override a more specific bilingual rule in the parent standard.
 
 <!-- END: DOCUMENTATION_BILINGUAL_PARITY_ADDENDUM -->

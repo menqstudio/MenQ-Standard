@@ -16,6 +16,8 @@ This addendum does not change the meaning of AI Collaboration Standard v1. It co
 
 ## Precedence / Գերակայություն
 
-This addendum supplies equal-language interpretation where legacy wording is mixed or incomplete without overriding a more specific bilingual rule in the parent standard.
+**HY:** Այս հավելվածը տրամադրում է հավասար լեզվական interpretation այնտեղ, որտեղ legacy wording-ը խառը կամ ոչ ամբողջական է, առանց override անելու parent standard-ի ավելի կոնկրետ երկլեզու կանոնը։
+
+**EN:** This addendum supplies equal-language interpretation where legacy wording is mixed or incomplete without overriding a more specific bilingual rule in the parent standard.
 
 <!-- END: AI_COLLABORATION_BILINGUAL_PARITY_ADDENDUM -->

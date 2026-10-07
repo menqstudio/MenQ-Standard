@@ -18,15 +18,15 @@
 
 ## Admission checklist / Ընդունման checklist
 
-- Reusable across more than one product or system
-- Explicit boundary and exclusions
-- Stable contracts or interfaces
-- Named human owner
-- Versioning model
-- Validation model
-- Foundation alignment
-- Adoption model
-- No product-specific business logic in core
-- Formal Decision System approval
+- Reusable across more than one product or system / Վերօգտագործելի մեկից ավելի product-ում կամ system-ում
+- Explicit boundary and exclusions / Explicit boundary և exclusions
+- Stable contracts or interfaces / Կայուն contracts կամ interfaces
+- Named human owner / Անվանված human owner
+- Versioning model / Versioning-ի model
+- Validation model / Validation-ի model
+- Foundation alignment / Համապատասխանություն Foundation-ին
+- Adoption model / Adoption-ի model
+- No product-specific business logic in core / Core-ում product-specific business logic չկա
+- Formal Decision System approval / Decision System-ի formal approval
 
 <!-- END: PLATFORM_REGISTRY -->

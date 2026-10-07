@@ -140,7 +140,9 @@ Governance does not define the complete decision workflow. That belongs to the `
 
 # 4. Governance Roles / Governance-ի դերեր
 
-Roles-ը authority definitions են, ոչ պարտադիր job titles։
+**HY:** Roles-ը authority definitions են, ոչ պարտադիր job titles։
+
+**EN:** Roles are authority definitions, not mandatory job titles.
 
 ## 4.1 Owner
 
@@ -265,7 +267,9 @@ The Owner’s final authority does not mean that the Owner must personally appro
 
 # 7. Delegation Contract / Delegation-ի պայմանագիր
 
-Յուրաքանչյուր delegated authority պետք է ունենա առնվազն՝
+**HY:** Յուրաքանչյուր delegated authority պետք է ունենա առնվազն՝
+
+**EN:** Every delegated authority must have, at minimum:
 
 1. **Role / Դեր**
 2. **Authority holder / Authority կրող**
@@ -289,7 +293,7 @@ The Owner’s final authority does not mean that the Owner must personally appro
 
 # 8. Reserved Owner Decisions / Owner-ին վերապահված որոշումներ
 
-Հետևյալ որոշումները չեն փոխանցվում լուռ կամ ենթադրությամբ՝
+**HY:** Հետևյալ որոշումները չեն փոխանցվում լուռ կամ ենթադրությամբ՝
 
 - Foundation structure-ի փոփոխություն,
 - Philosophy կամ Core Principles-ի փոփոխություն,
@@ -300,11 +304,22 @@ The Owner’s final authority does not mean that the Owner must personally appro
 - canonical history-ի ջնջում կամ rewrite,
 - AI-ին final human authority փոխանցելու փորձ։
 
+**EN:** The following decisions are not delegated silently or by assumption:
+
+- a change to the Foundation structure,
+- a change to Philosophy or Core Principles,
+- a change to the canonical source of MenQ Standard,
+- a change to ownership or final authority,
+- a change to the locked ecosystem architecture,
+- approval of a new ecosystem-wide mandatory standard,
+- deletion or rewrite of canonical history,
+- any attempt to transfer final human authority to AI.
+
 ---
 
 # 9. High-Risk Governance / Բարձր ռիսկի governance
 
-High-risk է համարվում այն գործողությունը կամ որոշումը, որը կարող է՝
+**HY:** High-risk է համարվում այն գործողությունը կամ որոշումը, որը կարող է՝
 
 - irreversible փոփոխություն անել,
 - վնասել security-ին կամ privacy-ին,
@@ -327,11 +342,44 @@ High-risk գործողության համար պահանջվում է՝
 
 AI-ն չի կարող ինքնուրույն approve կամ թաքցնել high-risk գործողությունը։
 
+**EN:** An action or decision is considered high-risk if it may:
+
+- make an irreversible change,
+- harm security or privacy,
+- change permissions or authority,
+- affect production data,
+- create a financial or legal obligation,
+- affect multiple products or systems,
+- harm a customer or the ecosystem's reputation,
+- change the canonical Foundation.
+
+A high-risk action requires:
+
+1. a clear human owner,
+2. a defined approver,
+3. risk disclosed in advance,
+4. validation evidence,
+5. a rollback or containment plan, where possible,
+6. a traceable decision record,
+7. post-action verification.
+
+AI cannot independently approve or conceal a high-risk action.
+
 ---
 
 # 10. Conflict Resolution / Հակասությունների լուծում
 
-Authority conflict-ի դեպքում գործում է հետևյալ precedence-ը՝
+**HY:** Authority conflict-ի դեպքում գործում է հետևյալ precedence-ը՝
+
+1. **Foundation**
+2. **Locked canonical որոշում**
+3. **Owner-ի բացահայտ որոշում**
+4. **Վավեր delegated authority**
+5. **Հաստատված domain կամ product standard**
+6. **Draft կամ proposal**
+7. **AI-ի առաջարկ (recommendation)**
+
+**EN:** In an authority conflict, the following precedence applies:
 
 1. **Foundation**
 2. **Locked canonical decision**
@@ -379,7 +427,7 @@ Authority conflict-ի դեպքում գործում է հետևյալ precedence
 
 # 13. Emergency Authority / Արտակարգ authority
 
-Արտակարգ իրավիճակում թույլատրվում է նվազագույն անհրաժեշտ գործողություն՝ մարդկանց, տվյալների, հաճախորդների կամ համակարգի պաշտպանման համար։
+**HY:** Արտակարգ իրավիճակում թույլատրվում է նվազագույն անհրաժեշտ գործողություն՝ մարդկանց, տվյալների, հաճախորդների կամ համակարգի պաշտպանման համար։
 
 Emergency action-ը պետք է՝
 
@@ -391,11 +439,25 @@ Emergency action-ը պետք է՝
 
 Emergency authority-ն չի կարող օգտագործվել սովորական approval process-ը շրջանցելու համար։
 
+**EN:** In an emergency, the minimum necessary action is permitted to protect people, data, customers, or the system.
+
+Emergency action must:
+
+1. be limited to the necessary scope only,
+2. be preserved with evidence,
+3. be reported to the relevant Owner as quickly as possible,
+4. undergo post-action review,
+5. be ratified, corrected, or rolled back.
+
+Emergency authority may not be used to bypass the normal approval process.
+
 ---
 
 # 14. Governance Record / Governance record
 
-Յուրաքանչյուր կարևոր product, platform, operating standard, AI agent կամ system պետք է ունենա governance record՝
+**HY:** Յուրաքանչյուր կարևոր product, platform, operating standard, AI agent կամ system պետք է ունենա governance record՝
+
+**EN:** Every important product, platform, operating standard, AI agent, or system must have a governance record:
 
 ```text
 Name:
@@ -413,7 +475,9 @@ Review cadence:
 Canonical source:
 ```
 
-Առանց owner-ի և authority boundaries-ի կարևոր system-ը governance-ready չէ։
+**HY:** Առանց owner-ի և authority boundaries-ի կարևոր system-ը governance-ready չէ։
+
+**EN:** An important system without an owner and authority boundaries is not governance-ready.
 
 ---
 
