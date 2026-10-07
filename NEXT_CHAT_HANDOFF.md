@@ -32,7 +32,7 @@
 
 ### Շարունակելու ճշգրիտ կետը
 
-1. Շարունակել audit remediation-ը՝ փուլ 6 (Owner-ի որոշումներ)։
+1. Audit-ի բաց կետերը՝ Part 14 implementation-ի lock-ը (Owner-ի հաստատում), MenQ Webpage-ը որպես D-025-ի առաջին իրական consumer, երկրորդ consumer-ի ընտրությունը, Part 13-ը (backlog)։
 2. Ընտրել MenQ Standard-ի հաջորդ ecosystem priority-ն։
 3. Բացել առանձին decision transaction։
 4. D-025-ը փոխել միայն governed change request, impact analysis, compatibility/migration evidence, validators և explicit Owner approval ճանապարհով։
@@ -71,7 +71,7 @@ Before substantive work, enumerate and completely read every tracked `.md` file 
 
 ### Exact continuation point
 
-1. Continue the audit remediation: phase 6 (Owner decisions).
+1. Open audit items: Part 14 implementation lock (Owner approval), MenQ Webpage as D-025's first real consumer, choosing the second consumer, Part 13 (backlog).
 2. Select the next MenQ Standard ecosystem priority.
 3. Open a separate decision transaction.
 4. Change D-025 only through a governed change request, impact analysis, compatibility and migration evidence, validators, and explicit Owner approval.

@@ -31,13 +31,14 @@
 1. Preserve D-025 `Locked` status through machine enforcement. / Պահպանել D-025-ի `Locked` status-ը machine enforcement-ի միջոցով։
 2. Maintain compatibility, migration, release, and adoption evidence for future changes. / Ապագա փոփոխությունների համար պահպանել compatibility, migration, release և adoption evidence։
 3. No open implementation, closure, or lock action remains. / Բաց implementation, closure կամ lock գործողություն չի մնացել։
-4. Restore two-real-consumer evidence: MenQ Webpage first, the second chosen by the Owner; the in-repo consumers are M2 pilots ([`D-025_EVIDENCE_CORRECTION_RECORD.md`](D-025_EVIDENCE_CORRECTION_RECORD.md)). / Վերականգնել երկու իրական consumer-ի evidence-ը՝ առաջինը MenQ Webpage-ը, երկրորդը՝ Owner-ի ընտրությամբ. repo-ի ներսի consumer-ները M2 pilot են։
+4. Part 14 governance is implemented ([`governance/`](governance/README.md)); its implementation lock awaits Owner approval. / Part 14 governance-ը իրականացված է, implementation lock-ը սպասում է Owner-ի հաստատմանը։
+5. Restore two-real-consumer evidence: MenQ Webpage first, the second chosen by the Owner; the in-repo consumers are M2 pilots ([`D-025_EVIDENCE_CORRECTION_RECORD.md`](D-025_EVIDENCE_CORRECTION_RECORD.md)). / Վերականգնել երկու իրական consumer-ի evidence-ը՝ առաջինը MenQ Webpage-ը, երկրորդը՝ Owner-ի ընտրությամբ. repo-ի ներսի consumer-ները M2 pilot են։
 
 ## Later / Հետագայում
 
 - Broader real-product adoption and M5 evidence. / Իրական products-ում ավելի լայն adoption և M5 evidence։
 - Expanded components and patterns driven by proven demand. / Ապացուցված պահանջարկով պայմանավորված ընդլայնված components և patterns։
-- Documentation portal and design-tool automation. / Documentation portal և design-tool automation։
+- Part 13 implementation: documentation portal, component catalog and design-tool automation (backlog by Owner decision, 2026-10-07). / Part 13-ի իրականացում՝ documentation portal, component catalog և design-tool automation (backlog՝ Owner-ի որոշմամբ, 2026-10-07)։
 - Automated codemods and additional locale packs. / Automated codemods և լրացուցիչ locale packs։
 - New architecture versions only through a formal successor decision or governed amendment. / Նոր architecture versions՝ միայն formal successor decision-ի կամ governed amendment-ի միջոցով։
 
