@@ -216,6 +216,32 @@
       "dependencies": ["menq.design.spec.validation.v1", "menq.design.spec.governance.v1"],
       "validationProfile": "core-author",
       "packageMappings": ["@menq/design-contracts", "@menq/design-tokens", "@menq/design-foundations", "@menq/design-primitives", "@menq/design-components", "@menq/design-patterns", "@menq/design-assets", "@menq/design-motion", "@menq/design-locales", "@menq/design-validation"]
+    },
+    {
+      "id": "menq.design.spec.brand-expression.v1",
+      "title": "Brand Expression Layer",
+      "titleHy": "Բրենդային արտահայտման շերտ",
+      "domain": "brand-expression",
+      "plane": "Brand Core",
+      "class": "normative",
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "sourcePath": "platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md",
+      "dependencies": ["menq.design.spec.brand-core.v1", "menq.design.spec.tokens.v1"],
+      "validationProfile": "core-author"
+    },
+    {
+      "id": "menq.design.spec.product-extension.bro.v1",
+      "title": "Bro Product Extension",
+      "titleHy": "Բրոյի արտադրանքային ընդլայնում",
+      "domain": "product-extension",
+      "plane": "Components",
+      "class": "normative",
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "sourcePath": "platforms/design/product-extensions/bro/README.md",
+      "dependencies": ["menq.design.spec.brand-expression.v1"],
+      "validationProfile": "product-consumer"
     }
   ],
   "packages": [

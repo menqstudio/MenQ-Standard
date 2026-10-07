@@ -1,0 +1,2114 @@
+{
+  "$schema": "./brand-token-source.schema.json",
+  "schemaVersion": 1,
+  "sourceId": "menq.design.token-source.brand-expression.v1",
+  "decision": "D-027",
+  "status": "Approved — Implementing",
+  "canonicalLanguages": [
+    "hy",
+    "en"
+  ],
+  "generatedOutputsAreCanonical": false,
+  "modes": [
+    "light",
+    "dark"
+  ],
+  "fonts": [
+    {
+      "family": "Inter",
+      "file": "fonts/Inter-Latin-Variable.woff2",
+      "weight": "100 900",
+      "style": "normal"
+    },
+    {
+      "family": "Inter Cyrillic",
+      "file": "fonts/Inter-Cyrillic-Variable.woff2",
+      "weight": "100 900",
+      "style": "normal"
+    },
+    {
+      "family": "Noto Sans Armenian",
+      "file": "fonts/NotoSansArmenian-Variable.woff2",
+      "weight": "100 900",
+      "style": "normal"
+    },
+    {
+      "family": "JetBrains Mono",
+      "file": "fonts/JetBrainsMono-Latin-Variable.woff2",
+      "weight": "100 800",
+      "style": "normal"
+    },
+    {
+      "family": "JetBrains Mono Cyrillic",
+      "file": "fonts/JetBrainsMono-Cyrillic-Variable.woff2",
+      "weight": "100 800",
+      "style": "normal"
+    }
+  ],
+  "typeStyles": [
+    {
+      "name": "hero",
+      "fontSize": "3.75rem",
+      "lineHeight": 1.1,
+      "fontWeight": 700,
+      "letterSpacing": "-0.02em",
+      "family": "display",
+      "group": "Display",
+      "description": {
+        "hy": "Landing-ի գլխավոր վերնագիր։",
+        "en": "Landing hero headline (font-size-6xl)."
+      }
+    },
+    {
+      "name": "h1",
+      "fontSize": "3rem",
+      "lineHeight": 1.1,
+      "fontWeight": 700,
+      "letterSpacing": "-0.02em",
+      "family": "display",
+      "group": "Display",
+      "description": {
+        "hy": "Մարքեթինգային էջի վերնագիր։",
+        "en": "Page title on marketing pages (5xl)."
+      }
+    },
+    {
+      "name": "h2",
+      "fontSize": "2.25rem",
+      "lineHeight": 1.1,
+      "fontWeight": 700,
+      "letterSpacing": "-0.02em",
+      "family": "display",
+      "group": "Display",
+      "description": {
+        "hy": "Բաժնի վերնագիր։",
+        "en": "Section headings (4xl)."
+      }
+    },
+    {
+      "name": "h3",
+      "fontSize": "1.5rem",
+      "lineHeight": 1.25,
+      "fontWeight": 600,
+      "family": "display",
+      "group": "Display",
+      "description": {
+        "hy": "Քարտի և հավելվածի էջի վերնագիր։",
+        "en": "Card and app page titles (2xl)."
+      }
+    },
+    {
+      "name": "stat",
+      "fontSize": "1.875rem",
+      "lineHeight": 1.1,
+      "fontWeight": 700,
+      "letterSpacing": "-0.02em",
+      "family": "display",
+      "group": "Display",
+      "description": {
+        "hy": "KPI թվեր։",
+        "en": "KPI numbers, tabular figures (3xl)."
+      }
+    },
+    {
+      "name": "title",
+      "fontSize": "1.125rem",
+      "lineHeight": 1.25,
+      "fontWeight": 600,
+      "family": "sans",
+      "group": "Text",
+      "description": {
+        "hy": "Պանելի, մոդալի, drawer-ի վերնագիր։",
+        "en": "Panel, modal and drawer titles (lg)."
+      }
+    },
+    {
+      "name": "body-lg",
+      "fontSize": "1.125rem",
+      "lineHeight": 1.7,
+      "fontWeight": 400,
+      "family": "sans",
+      "group": "Text",
+      "description": {
+        "hy": "Ներածական պարբերություն։",
+        "en": "Lead paragraphs (lg, relaxed)."
+      }
+    },
+    {
+      "name": "body",
+      "fontSize": "1rem",
+      "lineHeight": 1.5,
+      "fontWeight": 400,
+      "family": "sans",
+      "group": "Text",
+      "description": {
+        "hy": "Հիմնական տեքստ։",
+        "en": "Default body (md)."
+      }
+    },
+    {
+      "name": "body-sm",
+      "fontSize": "0.875rem",
+      "lineHeight": 1.5,
+      "fontWeight": 400,
+      "family": "sans",
+      "group": "Text",
+      "description": {
+        "hy": "Հավելվածի UI տեքստ, աղյուսակներ, կոճակներ։",
+        "en": "App UI text, table cells, buttons (sm)."
+      }
+    },
+    {
+      "name": "caption",
+      "fontSize": "0.75rem",
+      "lineHeight": 1.5,
+      "fontWeight": 500,
+      "family": "sans",
+      "group": "Text",
+      "description": {
+        "hy": "Meta, ժամեր, badge-եր։",
+        "en": "Meta, timestamps, badges (xs)."
+      }
+    },
+    {
+      "name": "overline",
+      "fontSize": "0.7rem",
+      "lineHeight": 1.5,
+      "fontWeight": 600,
+      "letterSpacing": "0.12em",
+      "family": "sans",
+      "group": "Text",
+      "description": {
+        "hy": "Մեծատառ kicker-ներ և label-ներ։",
+        "en": "Uppercase kickers and field labels (2xs, wider)."
+      }
+    },
+    {
+      "name": "code",
+      "fontSize": "0.75rem",
+      "lineHeight": 1.6,
+      "fontWeight": 400,
+      "family": "mono",
+      "group": "Code",
+      "description": {
+        "hy": "Scope-եր, ID-ներ, shortcut-ներ։",
+        "en": "Agent scopes, IDs, shortcuts."
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.0",
+      "cssName": "neutral-0",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-0։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-0. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#ffffff"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.50",
+      "cssName": "neutral-50",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-50։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-50. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#f8fafc"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.100",
+      "cssName": "neutral-100",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-100։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-100. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#f1f5f9"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.200",
+      "cssName": "neutral-200",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-200։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-200. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#e2e8f0"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.300",
+      "cssName": "neutral-300",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-300։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-300. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#cbd5e1"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.400",
+      "cssName": "neutral-400",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-400։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-400. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#94a3b8"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.500",
+      "cssName": "neutral-500",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-500։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-500. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#64748b"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.600",
+      "cssName": "neutral-600",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-600։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-600. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#475569"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.700",
+      "cssName": "neutral-700",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-700։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-700. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#334155"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.800",
+      "cssName": "neutral-800",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-800։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-800. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#1e293b"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.900",
+      "cssName": "neutral-900",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-900։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-900. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#0f172a"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.neutral.950",
+      "cssName": "neutral-950",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն neutral-950։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour neutral-950. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#020617"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.blue.400",
+      "cssName": "blue-400",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն blue-400։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour blue-400. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#38bdf8"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.blue.500",
+      "cssName": "blue-500",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն blue-500։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour blue-500. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#0ea5e9"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.blue.600",
+      "cssName": "blue-600",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն blue-600։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour blue-600. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#0284c7"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.cyan.300",
+      "cssName": "cyan-300",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն cyan-300։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour cyan-300. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#67e8f9"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.cyan.400",
+      "cssName": "cyan-400",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն cyan-400։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour cyan-400. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#22d3ee"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.cyan.500",
+      "cssName": "cyan-500",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն cyan-500։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour cyan-500. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#06b6d4"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.violet.500",
+      "cssName": "violet-500",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն violet-500։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour violet-500. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#8b5cf6"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.green.500",
+      "cssName": "green-500",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն green-500։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour green-500. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#22c55e"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.amber.500",
+      "cssName": "amber-500",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն amber-500։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour amber-500. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#f59e0b"
+    },
+    {
+      "id": "menq.design.token.reference.brand.color.red.500",
+      "cssName": "red-500",
+      "layer": "Reference",
+      "type": "color",
+      "description": {
+        "hy": "Պրիմիտիվ գույն red-500։ Կոմպոնենտներում ուղղակի չի օգտագործվում։",
+        "en": "Primitive colour red-500. Never used directly in components."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "#ef4444"
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.page-bg",
+      "cssName": "color-page-bg",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Էջի ֆոն։",
+        "en": "Page background."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.0"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.950"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.surface-primary",
+      "cssName": "color-surface-primary",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Քարտեր, պանելներ, դաշտեր՝ հիմնական մակերես։",
+        "en": "Cards, panels, inputs — the main surface."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.0"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.900"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.surface-secondary",
+      "cssName": "color-surface-secondary",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Երկրորդային մակերեսներ՝ աղյուսակի վերնագիր, խորքային բլոկներ, segmented control-ներ։",
+        "en": "Secondary surfaces: table headers, task wells, segmented controls."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.50"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.800"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.surface-muted",
+      "cssName": "color-surface-muted",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Մեղմ լցոններ՝ metric track-եր, chip-եր։ Dark արժեքը աղբյուրի color-mix-ի հարթեցված տարբերակն է։",
+        "en": "Muted fills: metric tracks, chips. Dark value = neutral-900 72% + blue-600 28% (source color-mix, flattened)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.100"
+        },
+        "dark": {
+          "value": "#0b3656"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.surface-elevated",
+      "cssName": "color-surface-elevated",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Մոդալներ, drawer, popover-ներ՝ dark-ում surface-primary-ից մեկ աստիճան բարձր։",
+        "en": "Modals, drawer, popovers — one step above surface-primary in dark."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.0"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.800"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.surface-inverse",
+      "cssName": "color-surface-inverse",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Շրջված մակերեսներ (tooltip)։",
+        "en": "Inverse surfaces (tooltips)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.950"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.0"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.content-primary",
+      "cssName": "color-content-primary",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Հիմնական տեքստ և իկոններ ցանկացած մակերեսի վրա։",
+        "en": "Primary text and icons on any surface."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.950"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.0"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.content-secondary",
+      "cssName": "color-content-secondary",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Երկրորդային տեքստ, նկարագրություններ։",
+        "en": "Body copy that is not the main point; descriptions."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.700"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.200"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.content-muted",
+      "cssName": "color-content-muted",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Label-ներ, meta, placeholder։ Երկու թեմայում էլ 4.6:1 և ավելի։",
+        "en": "Labels, meta, placeholders. 4.6:1+ on page-bg and surface-secondary in both themes."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.400"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.content-inverse",
+      "cssName": "color-content-inverse",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Տեքստ color-action-primary-ի և շրջված մակերեսի վրա։ Light-ում 4.1:1 է՝ միայն 18.66px bold / 24px տեքստի համար։",
+        "en": "Text on color-action-primary and color-surface-inverse. Light pair is 4.1:1 — passes only at 18.66px bold / 24px; see color-action-primary."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.0"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.950"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.border-subtle",
+      "cssName": "color-border-subtle",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Լռելյայն եզրագծեր և բաժանարարներ։",
+        "en": "Default borders and dividers. Dark = neutral-0 at 12% (source color-mix, flattened)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.200"
+        },
+        "dark": {
+          "value": "rgba(255, 255, 255, 0.12)"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.border-strong",
+      "cssName": "color-border-strong",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Hover եզրագծեր, premium քարտի վերին գիծ, contrast պանելներ։",
+        "en": "Hover borders, premium-card top rule, contrast panels. Dark = cyan-400 at 32%."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.300"
+        },
+        "dark": {
+          "value": "rgba(34, 211, 238, 0.32)"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.action-primary",
+      "cssName": "color-action-primary",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Բրենդի ազուրը՝ հիմնական կոճակներ, ակտիվ վիճակներ, progress, BrandMark Q։ Light-ում սպիտակ տեքստով 4.1:1 է։",
+        "en": "THE brand azure: primary buttons, active states, progress, BrandMark Q. Light white-on-blue is 4.1:1 — keep primary button labels 16px semibold+ or use color-action-primary-strong for text."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.blue.600"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.blue.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.action-primary-hover",
+      "cssName": "color-action-primary-hover",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Հիմնական կոճակի hover։",
+        "en": "Primary button hover."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.blue.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.cyan.400"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.action-primary-strong",
+      "cssName": "color-action-primary-strong",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Ազուրը որպես տեքստ՝ հղումներ, ակտիվ tab-եր։ 5.9:1 light, 8.3:1 dark։",
+        "en": "Azure as TEXT: links, active tab labels, inline accents. 5.9:1 light, 8.3:1 dark."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "#0369a1"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.blue.400"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.action-secondary",
+      "cssName": "color-action-secondary",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Երկրորդային (մուգ) կոճակի լցոն։",
+        "en": "Secondary (solid ink) button fill."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.900"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.0"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.accent",
+      "cssName": "color-accent",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Cyan accent՝ գրադիենտներ, glow, ընդգծումներ։ Light-ում տեքստի համար չէ (2.4:1)։",
+        "en": "Cyan accent: gradients, glows, highlights, agent identity. Not for text in light (2.4:1)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.cyan.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.cyan.400"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.accent-text",
+      "cssName": "color-accent-text",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Cyan-ը որպես տեքստ։ 5.4:1 light, 9.9:1 dark։",
+        "en": "Cyan as TEXT on light surfaces. 5.4:1 light, 9.9:1 dark."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "#0e7490"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.cyan.400"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.accent-soft",
+      "cssName": "color-accent-soft",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Մեղմ cyan ֆոն իկոնների և բլոկների տակ։",
+        "en": "Soft cyan wash behind icons and agent bubbles (source color-mix, flattened)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "rgba(6, 182, 212, 0.14)"
+        },
+        "dark": {
+          "value": "rgba(34, 211, 238, 0.16)"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.success",
+      "cssName": "color-success",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Հաջողության լցոններ, կետեր, իկոններ։ Տեքստի համար՝ color-success-text։",
+        "en": "Success fills, dots, icons. Not for text in light (2.3:1) — use color-success-text."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.green.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.green.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.warning",
+      "cssName": "color-warning",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Զգուշացման լցոններ, կետեր, իկոններ։ Տեքստի համար՝ color-warning-text։",
+        "en": "Warning fills, dots, icons. Use color-warning-text for text."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.amber.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.amber.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.danger",
+      "cssName": "color-danger",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Վտանգի լցոններ, կետեր, իկոններ։ Տեքստի համար՝ color-danger-text։",
+        "en": "Danger fills, dots, icons. Use color-danger-text for text."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.red.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.red.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.info",
+      "cssName": "color-info",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Տեղեկատվական լցոններ, կետեր, իկոններ (ազուր)։",
+        "en": "Info fills, dots, icons (azure). Use color-action-primary-strong for info text."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.blue.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.blue.400"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.success-text",
+      "cssName": "color-success-text",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Հաջողության տեքստ և badge-եր։ 5.0:1 light, 10.3:1 dark։",
+        "en": "Success text and badges. 5.0:1 light, 10.3:1 dark."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "#15803d"
+        },
+        "dark": {
+          "value": "#4ade80"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.warning-text",
+      "cssName": "color-warning-text",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Զգուշացման տեքստ և badge-եր։ 5.0:1 light, 10.7:1 dark։",
+        "en": "Warning text and badges. 5.0:1 light, 10.7:1 dark."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "#b45309"
+        },
+        "dark": {
+          "value": "#fbbf24"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.danger-text",
+      "cssName": "color-danger-text",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Վտանգի տեքստ, ջնջման կոճակ, ֆորմի սխալներ։ 6.5:1 երկու թեմայում։",
+        "en": "Danger text, destructive button label and border, form errors. 6.5:1 light, 6.5:1 dark."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "#b91c1c"
+        },
+        "dark": {
+          "value": "#f87171"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.focus-ring",
+      "cssName": "color-focus-ring",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Focus-visible շրջանակ՝ 2px, 2px հեռավորությամբ։",
+        "en": "Focus-visible outline, 2px, offset 2px."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.blue.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.cyan.400"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.hover",
+      "cssName": "color-hover",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Hover լցոն ghost կոճակների, տողերի, ցուցակների վրա։",
+        "en": "Hover fill on ghost buttons, rows, list items."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "rgba(2, 132, 199, 0.08)"
+        },
+        "dark": {
+          "value": "rgba(14, 165, 233, 0.12)"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.selected",
+      "cssName": "color-selected",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Ընտրված/ակտիվ լցոն։",
+        "en": "Selected/active fill."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "rgba(2, 132, 199, 0.12)"
+        },
+        "dark": {
+          "value": "rgba(14, 165, 233, 0.18)"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.pressed",
+      "cssName": "color-pressed",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Սեղմված վիճակի լցոն։",
+        "en": "Pressed fill."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "rgba(2, 132, 199, 0.16)"
+        },
+        "dark": {
+          "value": "rgba(14, 165, 233, 0.24)"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.overlay",
+      "cssName": "color-overlay",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Մոդալների և drawer-ի տակի մուգ շերտ։",
+        "en": "Scrim behind modals and drawers. Light = source overlay-scrim; dark darkened (source inverts to white)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "rgba(2, 6, 23, 0.52)"
+        },
+        "dark": {
+          "value": "rgba(2, 6, 23, 0.72)"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.grid-line",
+      "cssName": "color-grid-line",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Hero և բաժինների ֆոնի ցանցի գծեր։",
+        "en": "Hero and section background grid lines."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "rgba(2, 6, 23, 0.06)"
+        },
+        "dark": {
+          "value": "rgba(255, 255, 255, 0.06)"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.status-online",
+      "cssName": "color-status-online",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Status կետ՝ online / արված։",
+        "en": "Status dot: online / done."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.green.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.green.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.status-busy",
+      "cssName": "color-status-busy",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Status կետ՝ ընթացքում / սպասում։",
+        "en": "Status dot: running / waiting."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.amber.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.amber.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.status-offline",
+      "cssName": "color-status-offline",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Status կետ՝ անգործ / offline։",
+        "en": "Status dot: idle / offline."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.neutral.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.neutral.400"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.status-error",
+      "cssName": "color-status-error",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Status կետ՝ ձախողված։",
+        "en": "Status dot: failed."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.red.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.red.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.product-extension.bro.color.chat-human-bg",
+      "cssName": "color-chat-human-bg",
+      "layer": "Product Extension",
+      "type": "color",
+      "description": {
+        "hy": "Մարդու հաղորդագրության ֆոն։",
+        "en": "Human chat bubble."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "reference": "menq.design.token.semantic.brand.color.surface-secondary"
+    },
+    {
+      "id": "menq.design.token.product-extension.bro.color.chat-bro-bg",
+      "cssName": "color-chat-bro-bg",
+      "layer": "Product Extension",
+      "type": "color",
+      "description": {
+        "hy": "Բրոյի հաղորդագրության ֆոն։",
+        "en": "Bro chat bubble."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "reference": "menq.design.token.semantic.brand.color.selected"
+    },
+    {
+      "id": "menq.design.token.product-extension.bro.color.chat-bro-accent",
+      "cssName": "color-chat-bro-accent",
+      "layer": "Product Extension",
+      "type": "color",
+      "description": {
+        "hy": "Բրոյի ինքնություն՝ եզրագիծ, avatar։",
+        "en": "Bro identity: bubble border, solid avatar."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "reference": "menq.design.token.semantic.brand.color.action-primary"
+    },
+    {
+      "id": "menq.design.token.product-extension.bro.color.chat-agent-bg",
+      "cssName": "color-chat-agent-bg",
+      "layer": "Product Extension",
+      "type": "color",
+      "description": {
+        "hy": "Մասնագետ գործակալի հաղորդագրության և avatar-ի ֆոն։",
+        "en": "Specialist-agent bubble and avatar wash."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "reference": "menq.design.token.semantic.brand.color.accent-soft"
+    },
+    {
+      "id": "menq.design.token.product-extension.bro.color.chat-agent-accent",
+      "cssName": "color-chat-agent-accent",
+      "layer": "Product Extension",
+      "type": "color",
+      "description": {
+        "hy": "Մասնագետ գործակալի ինքնության եզրագիծ։",
+        "en": "Specialist-agent identity border."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "reference": "menq.design.token.semantic.brand.color.accent"
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.chart-1",
+      "cssName": "color-chart-1",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Գրաֆիկի 1-րդ շարք։",
+        "en": "Chart series 1."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.blue.600"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.blue.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.chart-2",
+      "cssName": "color-chart-2",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Գրաֆիկի 2-րդ շարք։",
+        "en": "Chart series 2."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.cyan.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.cyan.400"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.chart-3",
+      "cssName": "color-chart-3",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Գրաֆիկի 3-րդ շարք։",
+        "en": "Chart series 3."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "reference": "menq.design.token.reference.brand.color.violet.500"
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.chart-4",
+      "cssName": "color-chart-4",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Գրաֆիկի 4-րդ շարք։",
+        "en": "Chart series 4."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.green.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.green.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.chart-5",
+      "cssName": "color-chart-5",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Գրաֆիկի 5-րդ շարք։",
+        "en": "Chart series 5."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.amber.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.amber.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.semantic.brand.color.chart-6",
+      "cssName": "color-chart-6",
+      "layer": "Semantic",
+      "type": "color",
+      "description": {
+        "hy": "Գրաֆիկի 6-րդ շարք։",
+        "en": "Chart series 6."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "reference": "menq.design.token.reference.brand.color.red.500"
+        },
+        "dark": {
+          "reference": "menq.design.token.reference.brand.color.red.500"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-0",
+      "cssName": "space-0",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-0։",
+        "en": "Spacing step."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-1",
+      "cssName": "space-1",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-1։",
+        "en": "Spacing step."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0.25rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-2",
+      "cssName": "space-2",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-2։",
+        "en": "Icon–label gaps, tight stacks."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-3",
+      "cssName": "space-3",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-3։",
+        "en": "Rows, list items."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0.75rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-4",
+      "cssName": "space-4",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-4։",
+        "en": "Default gap; panel internals."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-5",
+      "cssName": "space-5",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-5։",
+        "en": "Button padding-x (md)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1.25rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-6",
+      "cssName": "space-6",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-6։",
+        "en": "Card padding; page gutter (space-page-x)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-8",
+      "cssName": "space-8",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-8։",
+        "en": "Spacing step."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "2rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-10",
+      "cssName": "space-10",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-10։",
+        "en": "Spacing step."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "2.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-12",
+      "cssName": "space-12",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-12։",
+        "en": "Spacing step."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "3rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-16",
+      "cssName": "space-16",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-16։",
+        "en": "Section padding (sm)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "4rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-20",
+      "cssName": "space-20",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-20։",
+        "en": "Section padding (md)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-24",
+      "cssName": "space-24",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-24։",
+        "en": "Section padding (lg)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "6rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.space.space-32",
+      "cssName": "space-32",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Տարածության քայլ space-32։",
+        "en": "Section padding (xl)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "8rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.radius.radius-sm",
+      "cssName": "radius-sm",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Կլորացում radius-sm։",
+        "en": "Focus ring, kbd, agent avatar."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0.375rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.radius.radius-md",
+      "cssName": "radius-md",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Կլորացում radius-md։",
+        "en": "Small controls, tags."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.radius.radius-lg",
+      "cssName": "radius-lg",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Կլորացում radius-lg։",
+        "en": "Inputs, task wells, table cells."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0.75rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.radius.radius-xl",
+      "cssName": "radius-xl",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Կլորացում radius-xl։",
+        "en": "Inner panels, chat bubbles."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.radius.radius-2xl",
+      "cssName": "radius-2xl",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Կլորացում radius-2xl։",
+        "en": "= radius-card."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.radius.radius-3xl",
+      "cssName": "radius-3xl",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Կլորացում radius-3xl։",
+        "en": "Hero dashboard, large feature panels."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "2rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.radius.radius-pill",
+      "cssName": "radius-pill",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Կլորացում radius-pill։",
+        "en": "Buttons, badges, nav pills, BrandMark Q."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "999rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.radius.radius-card",
+      "cssName": "radius-card",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Կլորացում radius-card։",
+        "en": "Cards, modals, composer (alias of radius-2xl)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.radius.radius-button",
+      "cssName": "radius-button",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Կլորացում radius-button։",
+        "en": "Buttons are pills (alias of radius-pill)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "999rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.shadow.shadow-sm",
+      "cssName": "shadow-sm",
+      "layer": "Reference",
+      "type": "shadow",
+      "description": {
+        "hy": "Ստվեր shadow-sm։",
+        "en": "Inputs, small lifts."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0 1px 2px rgba(15, 23, 42, 0.08)"
+    },
+    {
+      "id": "menq.design.token.reference.brand.shadow.shadow-md",
+      "cssName": "shadow-md",
+      "layer": "Reference",
+      "type": "shadow",
+      "description": {
+        "hy": "Ստվեր shadow-md։",
+        "en": "= shadow-card."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0 12px 30px rgba(15, 23, 42, 0.1)"
+    },
+    {
+      "id": "menq.design.token.reference.brand.shadow.shadow-lg",
+      "cssName": "shadow-lg",
+      "layer": "Reference",
+      "type": "shadow",
+      "description": {
+        "hy": "Ստվեր shadow-lg։",
+        "en": "Modals, drawer, glass."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0 24px 70px rgba(15, 23, 42, 0.16)"
+    },
+    {
+      "id": "menq.design.token.reference.brand.shadow.shadow-card",
+      "cssName": "shadow-card",
+      "layer": "Reference",
+      "type": "shadow",
+      "description": {
+        "hy": "Ստվեր shadow-card։",
+        "en": "Cards at rest."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0 12px 30px rgba(15, 23, 42, 0.1)"
+    },
+    {
+      "id": "menq.design.token.reference.brand.shadow.shadow-premium",
+      "cssName": "shadow-premium",
+      "layer": "Reference",
+      "type": "shadow",
+      "description": {
+        "hy": "Ստվեր shadow-premium։",
+        "en": "Premium panels."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0 24px 70px rgba(15, 23, 42, 0.14)"
+    },
+    {
+      "id": "menq.design.token.reference.brand.shadow.shadow-glow",
+      "cssName": "shadow-glow",
+      "layer": "Reference",
+      "type": "shadow",
+      "description": {
+        "hy": "Ստվեր shadow-glow։",
+        "en": "BrandMark Q and primary highlights (accent at 24%)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "0 0 40px rgba(6, 182, 212, 0.24)"
+        },
+        "dark": {
+          "value": "0 0 40px rgba(34, 211, 238, 0.24)"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.reference.brand.shadow.shadow-hover",
+      "cssName": "shadow-hover",
+      "layer": "Reference",
+      "type": "shadow",
+      "description": {
+        "hy": "Ստվեր shadow-hover։",
+        "en": "Interactive premium-card hover."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "modes": {
+        "light": {
+          "value": "0 30px 84px rgba(6, 182, 212, 0.18)"
+        },
+        "dark": {
+          "value": "0 30px 84px rgba(34, 211, 238, 0.18)"
+        }
+      }
+    },
+    {
+      "id": "menq.design.token.reference.brand.size.container-narrow",
+      "cssName": "container-narrow",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Չափ container-narrow։",
+        "en": "Text-heavy pages."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "48rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.size.container-default",
+      "cssName": "container-default",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Չափ container-default։",
+        "en": "Default page width."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "72rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.size.container-wide",
+      "cssName": "container-wide",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Չափ container-wide։",
+        "en": "Dashboards, wide sections."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "84rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.size.size-header-height",
+      "cssName": "size-header-height",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Չափ size-header-height։",
+        "en": "Floating header."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "4.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.size.button-height-sm",
+      "cssName": "button-height-sm",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Չափ button-height-sm։",
+        "en": "Small button."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "2.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.size.button-height-md",
+      "cssName": "button-height-md",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Չափ button-height-md։",
+        "en": "Default button."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "3rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.size.button-height-lg",
+      "cssName": "button-height-lg",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Չափ button-height-lg։",
+        "en": "Hero CTA."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "3.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.z-index.z-base",
+      "cssName": "z-base",
+      "layer": "Reference",
+      "type": "number",
+      "description": {
+        "hy": "Շերտի կարգ z-base։",
+        "en": "Base."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0"
+    },
+    {
+      "id": "menq.design.token.reference.brand.z-index.z-raised",
+      "cssName": "z-raised",
+      "layer": "Reference",
+      "type": "number",
+      "description": {
+        "hy": "Շերտի կարգ z-raised։",
+        "en": "Raised cards, dropdowns."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "10"
+    },
+    {
+      "id": "menq.design.token.reference.brand.z-index.z-header",
+      "cssName": "z-header",
+      "layer": "Reference",
+      "type": "number",
+      "description": {
+        "hy": "Շերտի կարգ z-header։",
+        "en": "Floating header."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "50"
+    },
+    {
+      "id": "menq.design.token.reference.brand.z-index.z-drawer",
+      "cssName": "z-drawer",
+      "layer": "Reference",
+      "type": "number",
+      "description": {
+        "hy": "Շերտի կարգ z-drawer։",
+        "en": "Drawer and mobile nav."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "80"
+    },
+    {
+      "id": "menq.design.token.reference.brand.z-index.z-palette",
+      "cssName": "z-palette",
+      "layer": "Reference",
+      "type": "number",
+      "description": {
+        "hy": "Շերտի կարգ z-palette։",
+        "en": "Command palette. (Addition.)"
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "90"
+    },
+    {
+      "id": "menq.design.token.reference.brand.z-index.z-modal",
+      "cssName": "z-modal",
+      "layer": "Reference",
+      "type": "number",
+      "description": {
+        "hy": "Շերտի կարգ z-modal։",
+        "en": "Modals."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "100"
+    },
+    {
+      "id": "menq.design.token.reference.brand.z-index.z-toast",
+      "cssName": "z-toast",
+      "layer": "Reference",
+      "type": "number",
+      "description": {
+        "hy": "Շերտի կարգ z-toast։",
+        "en": "Toasts — top."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "120"
+    },
+    {
+      "id": "menq.design.token.reference.brand.opacity.opacity-disabled",
+      "cssName": "opacity-disabled",
+      "layer": "Reference",
+      "type": "number",
+      "description": {
+        "hy": "Թափանցիկություն opacity-disabled։",
+        "en": "Disabled controls, with aria-disabled. (Addition.)"
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0.5"
+    },
+    {
+      "id": "menq.design.token.reference.brand.motion.duration-fast",
+      "cssName": "duration-fast",
+      "layer": "Reference",
+      "type": "duration",
+      "description": {
+        "hy": "Արագ անցումներ՝ hover, focus։",
+        "en": "Fast transitions: hover, focus."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "150ms"
+    },
+    {
+      "id": "menq.design.token.reference.brand.motion.duration-base",
+      "cssName": "duration-base",
+      "layer": "Reference",
+      "type": "duration",
+      "description": {
+        "hy": "Լռելյայն անցումներ։",
+        "en": "Default transitions."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "240ms"
+    },
+    {
+      "id": "menq.design.token.reference.brand.motion.duration-slow",
+      "cssName": "duration-slow",
+      "layer": "Reference",
+      "type": "duration",
+      "description": {
+        "hy": "Քարտի բարձրացում, մեծ մակերեսներ։",
+        "en": "Card lift, larger surfaces."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "420ms"
+    },
+    {
+      "id": "menq.design.token.reference.brand.motion.duration-section",
+      "cssName": "duration-section",
+      "layer": "Reference",
+      "type": "duration",
+      "description": {
+        "hy": "Բաժինների հայտնվում, metric-ների լցում։",
+        "en": "Section reveals, metric fills."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "700ms"
+    },
+    {
+      "id": "menq.design.token.reference.brand.motion.ease-standard",
+      "cssName": "ease-standard",
+      "layer": "Reference",
+      "type": "cubic-bezier",
+      "description": {
+        "hy": "Լռելյայն easing։",
+        "en": "Default easing."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "cubic-bezier(0.2, 0, 0, 1)"
+    },
+    {
+      "id": "menq.design.token.reference.brand.motion.ease-out",
+      "cssName": "ease-out",
+      "layer": "Reference",
+      "type": "cubic-bezier",
+      "description": {
+        "hy": "Մուտքի անիմացիաներ։",
+        "en": "Entrances."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "cubic-bezier(0, 0, 0.2, 1)"
+    },
+    {
+      "id": "menq.design.token.reference.brand.motion.ease-in-out",
+      "cssName": "ease-in-out",
+      "layer": "Reference",
+      "type": "cubic-bezier",
+      "description": {
+        "hy": "Սիմետրիկ շարժում։",
+        "en": "Symmetric movement."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    {
+      "id": "menq.design.token.reference.brand.font-family.sans",
+      "cssName": "font-sans",
+      "layer": "Reference",
+      "type": "font-family",
+      "description": {
+        "hy": "Տառատեսակների stack՝ sans։",
+        "en": "Font stack: sans."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "\"Inter\", \"Inter Cyrillic\", \"Noto Sans Armenian\", \"Segoe UI\", system-ui, -apple-system, sans-serif"
+    },
+    {
+      "id": "menq.design.token.reference.brand.font-family.display",
+      "cssName": "font-display",
+      "layer": "Reference",
+      "type": "font-family",
+      "description": {
+        "hy": "Տառատեսակների stack՝ display։",
+        "en": "Font stack: display."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "\"Inter\", \"Inter Cyrillic\", \"Noto Sans Armenian\", \"Segoe UI\", system-ui, -apple-system, sans-serif"
+    },
+    {
+      "id": "menq.design.token.reference.brand.font-family.mono",
+      "cssName": "font-mono",
+      "layer": "Reference",
+      "type": "font-family",
+      "description": {
+        "hy": "Տառատեսակների stack՝ mono։",
+        "en": "Font stack: mono."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "\"JetBrains Mono\", \"JetBrains Mono Cyrillic\", \"Noto Sans Armenian\", \"Cascadia Code\", ui-monospace, monospace"
+    }
+  ]
+}

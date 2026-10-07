@@ -1,5 +1,23 @@
 # MenQ Standard — Changelog
 
+## 2026-10-07 — D-027 MenQ Brand Expression Layer v1
+
+### Հայերեն
+
+- PR #7-ով առանց governance մտած `platforms/design/menq-design-system/` փաթեթը բերվեց D-027-ի ներքո և վերանվանվեց `platforms/design/brand-expression/`։
+- Ավելացվեց canonical brand token source (`menq.design.token.*` ID-ներ, hy/en նկարագրություններ, owner, lifecycle, light/dark mode-եր) և generator՝ drift ստուգումով։
+- Բրոյի ինքնությունը և 5 գործակալային կոմպոնենտ տեղափոխվեցին `platforms/design/product-extensions/bro/`։
+- Ռուսերենը սահմանվեց որպես locale pack, canonical աղբյուրը՝ repository-ն։
+- Ավելացվեցին asset records, bilingual փաստաթղթեր, `validate_brand_expression.py` և `design-brand-expression.yml` workflow։
+
+### English
+
+- Brought the ungoverned PR #7 package `platforms/design/menq-design-system/` under D-027 and renamed it `platforms/design/brand-expression/`.
+- Added a canonical brand token source (`menq.design.token.*` IDs, hy/en descriptions, owner, lifecycle, light/dark modes) and a generator with a drift check.
+- Moved Bro's identity and five agent components to `platforms/design/product-extensions/bro/`.
+- Defined Russian as a locale pack and the repository as the canonical source.
+- Added asset records, bilingual documentation, `validate_brand_expression.py` and the `design-brand-expression.yml` workflow.
+
 ## 2026-07-12 — Design Platform Part 16 package architecture
 
 ### Հայերեն

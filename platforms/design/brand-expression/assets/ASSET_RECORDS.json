@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "decision": "D-027",
+  "records": [
+    {
+      "id": "menq.design.asset.brand.menq-logo-neon",
+      "kind": "logo",
+      "file": "assets/Logos/menq-logo-neon.png",
+      "description": {
+        "hy": "Պաշտոնական MenQ լոգո (neon), միայն մուգ ֆոնի համար",
+        "en": "Official MenQ logo (neon), dark grounds only"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Supplied by the MenQ Owner (Gevorg Ohanyan), 2026-10-07",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "461ed07165226f8bf6dbd758a4bc114980d357c979c5757a3e8e7d48ff63e6f1"
+    },
+    {
+      "id": "menq.design.asset.brand.menq-wordmark-light",
+      "kind": "logo",
+      "file": "assets/Logos/menq-wordmark-light.svg",
+      "description": {
+        "hy": "BrandMark wordmark՝ բաց ֆոնի համար",
+        "en": "BrandMark wordmark for light grounds"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Outlined from Inter Bold after Webpage BrandMark.tsx, 2026-10-07",
+      "license": "Proprietary — MenQ (glyph outlines from Inter, OFL-1.1)",
+      "lifecycle": "Draft",
+      "sha256": "6cc5d578d864f9146a9d08dd40777fb5038681a57f06dd114c6ebc178d649052"
+    },
+    {
+      "id": "menq.design.asset.brand.menq-wordmark-dark",
+      "kind": "logo",
+      "file": "assets/Logos/menq-wordmark-dark.svg",
+      "description": {
+        "hy": "BrandMark wordmark՝ մուգ ֆոնի համար",
+        "en": "BrandMark wordmark for dark grounds"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Outlined from Inter Bold after Webpage BrandMark.tsx, 2026-10-07",
+      "license": "Proprietary — MenQ (glyph outlines from Inter, OFL-1.1)",
+      "lifecycle": "Draft",
+      "sha256": "1d0454c6856f7de470f3ab3607bd01d70d57b1fc17c5100c79200120a84eea52"
+    },
+    {
+      "id": "menq.design.asset.brand.menq-q-mark-light",
+      "kind": "logo",
+      "file": "assets/Logos/menq-q-mark-light.svg",
+      "description": {
+        "hy": "Q նշան՝ բաց ֆոնի համար",
+        "en": "Q mark for light grounds"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Drawn after Webpage BrandMark.tsx (power symbol path after lucide Power, ISC)",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "c4da99f3535612010ed24941796de5cb855859ffe61e5152e03c64ddba6231fb"
+    },
+    {
+      "id": "menq.design.asset.brand.menq-q-mark-dark",
+      "kind": "logo",
+      "file": "assets/Logos/menq-q-mark-dark.svg",
+      "description": {
+        "hy": "Q նշան՝ մուգ ֆոնի համար",
+        "en": "Q mark for dark grounds"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Drawn after Webpage BrandMark.tsx (power symbol path after lucide Power, ISC)",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "3a15578b9dce21764092c8fefeed4e47260b4413d4edae3e6829f6bb82c8ed53"
+    },
+    {
+      "id": "menq.design.asset.brand.inter-latin-variable",
+      "kind": "font",
+      "file": "fonts/Inter-Latin-Variable.woff2",
+      "description": {
+        "hy": "Inter, լատինական, variable",
+        "en": "Inter, Latin, variable"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "npm @fontsource-variable/inter@5.3.0",
+      "license": "OFL-1.1 (fonts/LICENSE-Inter.txt)",
+      "lifecycle": "Draft",
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "id": "menq.design.asset.brand.inter-cyrillic-variable",
+      "kind": "font",
+      "file": "fonts/Inter-Cyrillic-Variable.woff2",
+      "description": {
+        "hy": "Inter, կիրիլյան, variable",
+        "en": "Inter, Cyrillic, variable"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "npm @fontsource-variable/inter@5.3.0",
+      "license": "OFL-1.1 (fonts/LICENSE-Inter.txt)",
+      "lifecycle": "Draft",
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075"
+    },
+    {
+      "id": "menq.design.asset.brand.notosansarmenian-variable",
+      "kind": "font",
+      "file": "fonts/NotoSansArmenian-Variable.woff2",
+      "description": {
+        "hy": "Noto Sans Armenian, variable",
+        "en": "Noto Sans Armenian, variable"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "npm @fontsource-variable/noto-sans-armenian@5.3.0",
+      "license": "OFL-1.1 (fonts/LICENSE-NotoSansArmenian.txt)",
+      "lifecycle": "Draft",
+      "sha256": "b1383deb37e5093907936b5e09cb92a3072f2a358b7bc1b555ccd520ce3d0969"
+    },
+    {
+      "id": "menq.design.asset.brand.jetbrainsmono-latin-variable",
+      "kind": "font",
+      "file": "fonts/JetBrainsMono-Latin-Variable.woff2",
+      "description": {
+        "hy": "JetBrains Mono, լատինական, variable",
+        "en": "JetBrains Mono, Latin, variable"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "npm @fontsource-variable/jetbrains-mono@5.3.0",
+      "license": "OFL-1.1 (fonts/LICENSE-JetBrainsMono.txt)",
+      "lifecycle": "Draft",
+      "sha256": "18be452724bfdc236c074ca94a249a7f41a86752c7d04ab258ce9ed5651f6a7e"
+    },
+    {
+      "id": "menq.design.asset.brand.jetbrainsmono-cyrillic-variable",
+      "kind": "font",
+      "file": "fonts/JetBrainsMono-Cyrillic-Variable.woff2",
+      "description": {
+        "hy": "JetBrains Mono, կիրիլյան, variable",
+        "en": "JetBrains Mono, Cyrillic, variable"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "npm @fontsource-variable/jetbrains-mono@5.3.0",
+      "license": "OFL-1.1 (fonts/LICENSE-JetBrainsMono.txt)",
+      "lifecycle": "Draft",
+      "sha256": "d274604c40757f98f07df623a8b8fb5194508a6fa4f5413a7a107f09e3b7452a"
+    }
+  ]
+}
