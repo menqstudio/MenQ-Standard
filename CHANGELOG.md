@@ -1,5 +1,17 @@
 # MenQ Standard — Changelog
 
+## 2026-10-08 — CR-0009: iconography, Accordion, Nav, Tooltip
+
+### Հայերեն
+
+- Իկոնագրության կանոն՝ Lucide, 24 grid, նոր token-ներ `--icon-size-sm/md/lg` և `--icon-stroke`, `Icon` կոմպոնենտ։
+- Նոր `Accordion` (WAI-ARIA disclosure), `Nav` (`aria-current`), `Tooltip` (focus, Escape, `aria-describedby`)։ `Button`-ը փոխանցում է `aria-*`/`data-*` ատրիբուտները։ axe՝ 0 violation երկու թեմայում։
+
+### English
+
+- Iconography rule: Lucide, 24 grid, new tokens `--icon-size-sm/md/lg` and `--icon-stroke`, and an `Icon` component.
+- New `Accordion` (WAI-ARIA disclosure), `Nav` (`aria-current`) and `Tooltip` (focus, Escape, `aria-describedby`). `Button` forwards `aria-*`/`data-*` attributes. axe: 0 violations in both themes.
+
 ## 2026-10-08 — CR-0008: app icon and favicon set
 
 ### Հայերեն

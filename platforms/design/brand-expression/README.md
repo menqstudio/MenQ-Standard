@@ -68,6 +68,10 @@ Dark թեմայի համար `<html>`-ին դնել `data-theme="dark"` կամ �
 
 - React-ում՝ `BrandMark`։ Այլ տեղերում՝ `assets/Logos/`-ի ֆայլերը (կանոնները՝ նրա README-ում)։
 
+### Իկոնագրություն
+
+- Մեկ ընտանիք՝ Lucide (ISC), 24 grid, `--icon-stroke` (2), կլոր ծայրեր։ Չափերը՝ `--icon-size-sm` (16px), `--icon-size-md` (20px), `--icon-size-lg` (24px)։ Գույնը՝ `currentColor`։ React-ում՝ `Icon` կոմպոնենտը։ App icon-ները և favicon-ը՝ `assets/Icons/`։
+
 ### Մատչելիություն
 
 - Տեքստ՝ 4.5:1, իկոններ և control-ների եզրեր՝ 3:1, երկու թեմայում։ Ամբողջական ստեղնաշարային կառավարում, տեսանելի focus (`color-focus-ring`)։
@@ -139,6 +143,10 @@ Set `data-theme="dark"` on `<html>` for Dark, or use `ThemeSwitch`.
 ### Logo
 
 - In React use `BrandMark`. Elsewhere use the files in `assets/Logos/` (rules in its README).
+
+### Iconography
+
+- One family: Lucide (ISC), 24 grid, `--icon-stroke` (2), round caps. Sizes: `--icon-size-sm` (16px), `--icon-size-md` (20px), `--icon-size-lg` (24px). Color is `currentColor`. In React use the `Icon` component. App icons and the favicon live in `assets/Icons/`.
 
 ### Accessibility
 
