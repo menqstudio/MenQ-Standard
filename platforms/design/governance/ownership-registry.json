@@ -1,0 +1,823 @@
+{
+  "$schema": "./ownership-registry.schema.json",
+  "schemaVersion": 1,
+  "registryId": "menq.design.governance.ownership.v1",
+  "part": "Part 14",
+  "canonicalSource": "platforms/design/governance/ownership-registry.json",
+  "escalation": {
+    "ownerId": "owner.menq",
+    "rule": {
+      "hy": "Owner-ի բացակայության կամ conflict-ի դեպքում որոշումը փոխանցվում է MenQ Owner-ին։",
+      "en": "If an owner is unavailable or in conflict, the decision escalates to the MenQ Owner."
+    }
+  },
+  "assets": [
+    {
+      "id": "menq.design.spec.brand-core.v1",
+      "kind": "specification",
+      "path": "platforms/design/ARCHITECTURE.md",
+      "ownerId": "owner.menq",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "owner",
+      "description": {
+        "hy": "Brand Core սահմաններ specification",
+        "en": "Brand Core Boundaries specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.tokens.v1",
+      "kind": "specification",
+      "path": "platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Token ճարտարապետություն specification",
+        "en": "Token Architecture specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.foundations.v1",
+      "kind": "specification",
+      "path": "platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Դիզայնի հիմքեր specification",
+        "en": "Design Foundations specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.primitives.v1",
+      "kind": "specification",
+      "path": "platforms/design/CONTRACTS.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "UI primitive-ներ specification",
+        "en": "UI Primitives specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.components.v1",
+      "kind": "specification",
+      "path": "platforms/design/CONTRACTS.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Component contract-ներ specification",
+        "en": "Component Contracts specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.patterns.v1",
+      "kind": "specification",
+      "path": "platforms/design/CONTRACTS.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Pattern contract-ներ specification",
+        "en": "Pattern Contracts specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.assets.v1",
+      "kind": "specification",
+      "path": "platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Asset governance specification",
+        "en": "Asset Governance specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.motion.v1",
+      "kind": "specification",
+      "path": "platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Motion contract-ներ specification",
+        "en": "Motion Contracts specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.locales.v1",
+      "kind": "specification",
+      "path": "platforms/design/CONTRACTS.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Լոկալիզացիայի contract-ներ specification",
+        "en": "Localization Contracts specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.validation.v1",
+      "kind": "specification",
+      "path": "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Validation և conformance specification",
+        "en": "Validation and Conformance specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.documentation.v1",
+      "kind": "specification",
+      "path": "platforms/design/DOCUMENTATION_PORTAL_COMPONENT_CATALOG_DESIGN_TOOL_INTEGRATION_ARCHITECTURE_V1.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Documentation և catalog specification",
+        "en": "Documentation and Catalog specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.governance.v1",
+      "kind": "specification",
+      "path": "platforms/design/GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md",
+      "ownerId": "owner.menq",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "owner",
+      "description": {
+        "hy": "Governance և change lifecycle specification",
+        "en": "Governance and Change Lifecycle specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.adoption.v1",
+      "kind": "specification",
+      "path": "platforms/design/PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1.md",
+      "ownerId": "owner.menq",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "owner",
+      "description": {
+        "hy": "Product adoption և consumer validation specification",
+        "en": "Product Adoption and Consumer Validation specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.packaging.v1",
+      "kind": "specification",
+      "path": "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Approved — Implementing",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Packaging և release specification",
+        "en": "Packaging and Release specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.brand-expression.v1",
+      "kind": "specification",
+      "path": "platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md",
+      "ownerId": "owner.menq",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Draft",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "owner",
+      "description": {
+        "hy": "Բրենդային արտահայտման շերտ specification",
+        "en": "Brand Expression Layer specification"
+      }
+    },
+    {
+      "id": "menq.design.spec.product-extension.bro.v1",
+      "kind": "specification",
+      "path": "platforms/design/product-extensions/bro/README.md",
+      "ownerId": "owner.menq",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Draft",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "owner",
+      "description": {
+        "hy": "Բրոյի արտադրանքային ընդլայնում specification",
+        "en": "Bro Product Extension specification"
+      }
+    },
+    {
+      "id": "menq.design.package.design-contracts",
+      "kind": "package",
+      "path": "platforms/design/implementation/packages/design-contracts",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Preview",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "@menq/design-contracts package",
+        "en": "@menq/design-contracts package"
+      }
+    },
+    {
+      "id": "menq.design.package.design-tokens",
+      "kind": "package",
+      "path": "platforms/design/implementation/packages/design-tokens",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Preview",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "@menq/design-tokens package",
+        "en": "@menq/design-tokens package"
+      }
+    },
+    {
+      "id": "menq.design.package.design-foundations",
+      "kind": "package",
+      "path": "platforms/design/implementation/packages/design-foundations",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Preview",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "@menq/design-foundations package",
+        "en": "@menq/design-foundations package"
+      }
+    },
+    {
+      "id": "menq.design.package.design-primitives",
+      "kind": "package",
+      "path": "platforms/design/implementation/packages/design-primitives",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Preview",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "@menq/design-primitives package",
+        "en": "@menq/design-primitives package"
+      }
+    },
+    {
+      "id": "menq.design.package.design-components",
+      "kind": "package",
+      "path": "platforms/design/implementation/packages/design-components",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Preview",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "@menq/design-components package",
+        "en": "@menq/design-components package"
+      }
+    },
+    {
+      "id": "menq.design.package.design-patterns",
+      "kind": "package",
+      "path": "platforms/design/implementation/packages/design-patterns",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Preview",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "@menq/design-patterns package",
+        "en": "@menq/design-patterns package"
+      }
+    },
+    {
+      "id": "menq.design.package.design-assets",
+      "kind": "package",
+      "path": "platforms/design/implementation/packages/design-assets",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Preview",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "@menq/design-assets package",
+        "en": "@menq/design-assets package"
+      }
+    },
+    {
+      "id": "menq.design.package.design-motion",
+      "kind": "package",
+      "path": "platforms/design/implementation/packages/design-motion",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Preview",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "@menq/design-motion package",
+        "en": "@menq/design-motion package"
+      }
+    },
+    {
+      "id": "menq.design.package.design-locales",
+      "kind": "package",
+      "path": "platforms/design/implementation/packages/design-locales",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Preview",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "@menq/design-locales package",
+        "en": "@menq/design-locales package"
+      }
+    },
+    {
+      "id": "menq.design.package.design-validation",
+      "kind": "package",
+      "path": "platforms/design/implementation/packages/design-validation",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Preview",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "@menq/design-validation package",
+        "en": "@menq/design-validation package"
+      }
+    },
+    {
+      "id": "menq.design.validator.validate-phase-a",
+      "kind": "validator",
+      "path": "platforms/design/validation/validate_phase_a.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Phase A registry-ի և workspace-ի validator",
+        "en": "Phase a registry and workspace validator"
+      }
+    },
+    {
+      "id": "menq.design.validator.validate-public-api",
+      "kind": "validator",
+      "path": "platforms/design/validation/validate_public_api.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "public API baseline-ի validator",
+        "en": "Public api baseline validator"
+      }
+    },
+    {
+      "id": "menq.design.validator.validate-release-candidate",
+      "kind": "validator",
+      "path": "platforms/design/validation/validate_release_candidate.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "release candidate-ի validator",
+        "en": "Release candidate validator"
+      }
+    },
+    {
+      "id": "menq.design.validator.validate-consumers",
+      "kind": "validator",
+      "path": "platforms/design/validation/validate_consumers.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "reference consumer-ների validator",
+        "en": "Reference-consumer validator"
+      }
+    },
+    {
+      "id": "menq.design.validator.validate-brand-expression",
+      "kind": "validator",
+      "path": "platforms/design/validation/validate_brand_expression.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "brand expression շերտի validator (D-027)",
+        "en": "Brand expression layer validator (d-027)"
+      }
+    },
+    {
+      "id": "menq.design.validator.validate-governance",
+      "kind": "validator",
+      "path": "platforms/design/validation/validate_governance.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "governance-ի, ownership-ի և change request-ների validator (Part 14)",
+        "en": "Governance, ownership and change-request validator (part 14)"
+      }
+    },
+    {
+      "id": "menq.design.build.build-tokens",
+      "kind": "build-script",
+      "path": "platforms/design/implementation/scripts/build_tokens.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "token build script",
+        "en": "Token build script"
+      }
+    },
+    {
+      "id": "menq.design.build.build-foundations",
+      "kind": "build-script",
+      "path": "platforms/design/implementation/scripts/build_foundations.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "foundations build script",
+        "en": "Foundations build script"
+      }
+    },
+    {
+      "id": "menq.design.build.build-release-candidate",
+      "kind": "build-script",
+      "path": "platforms/design/implementation/scripts/build_release_candidate.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "release candidate build script",
+        "en": "Release candidate build script"
+      }
+    },
+    {
+      "id": "menq.design.build.brand-tokens",
+      "kind": "build-script",
+      "path": "platforms/design/brand-expression/scripts/build_brand_tokens.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "brand token generator (D-027)",
+        "en": "Brand token generator (D-027)"
+      }
+    },
+    {
+      "id": "menq.design.generated.design-tokens",
+      "kind": "generated-surface",
+      "path": "platforms/design/implementation/packages/design-tokens/generated",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "design-tokens package-ի generated artifact-ներ",
+        "en": "Generated design-tokens package artifacts"
+      }
+    },
+    {
+      "id": "menq.design.generated.tokens-css",
+      "kind": "generated-surface",
+      "path": "platforms/design/brand-expression/tokens.css",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "գեներացված brand CSS custom property-ներ",
+        "en": "Generated brand CSS custom properties"
+      }
+    },
+    {
+      "id": "menq.design.generated.tokens-json",
+      "kind": "generated-surface",
+      "path": "platforms/design/brand-expression/tokens.json",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [
+        "menq.design.consumer.catalog",
+        "menq.design.consumer.release-console"
+      ],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "գեներացված brand token mirror",
+        "en": "Generated brand token mirror"
+      }
+    },
+    {
+      "id": "menq.design.workflow.design-platform-phase-a",
+      "kind": "workflow",
+      "path": ".github/workflows/design-platform-phase-a.yml",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Phase A CI workflow",
+        "en": "Phase A CI workflow"
+      }
+    },
+    {
+      "id": "menq.design.workflow.design-platform-preview-release",
+      "kind": "workflow",
+      "path": ".github/workflows/design-platform-preview-release.yml",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "preview release CI workflow",
+        "en": "Preview release CI workflow"
+      }
+    },
+    {
+      "id": "menq.design.workflow.design-brand-expression",
+      "kind": "workflow",
+      "path": ".github/workflows/design-brand-expression.yml",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "brand expression CI workflow",
+        "en": "Brand expression CI workflow"
+      }
+    },
+    {
+      "id": "menq.design.workflow.design-governance",
+      "kind": "workflow",
+      "path": ".github/workflows/design-governance.yml",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "governance CI workflow",
+        "en": "Governance CI workflow"
+      }
+    },
+    {
+      "id": "menq.design.workflow.publish-release",
+      "kind": "workflow",
+      "path": ".github/workflows/publish-release.yml",
+      "ownerId": "owner.menq",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "owner",
+      "description": {
+        "hy": "release publishing workflow",
+        "en": "Release publishing workflow"
+      }
+    },
+    {
+      "id": "menq.design.consumer.catalog",
+      "kind": "consumer",
+      "path": "platforms/design/implementation/consumers/design-catalog",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Pilot",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Design Catalog reference consumer (M2 pilot)",
+        "en": "Design Catalog reference consumer (M2 pilot)"
+      }
+    },
+    {
+      "id": "menq.design.consumer.release-console",
+      "kind": "consumer",
+      "path": "platforms/design/implementation/consumers/release-console",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Pilot",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "Release Evidence Console reference consumer (M2 pilot)",
+        "en": "Release Evidence Console reference consumer (M2 pilot)"
+      }
+    },
+    {
+      "id": "menq.design.extension.bro",
+      "kind": "product-extension",
+      "path": "platforms/design/product-extensions/bro",
+      "ownerId": "owner.menq",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Draft",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [],
+      "changeAuthority": "owner",
+      "description": {
+        "hy": "Bro product extension (D-027)",
+        "en": "Bro product extension (D-027)"
+      }
+    },
+    {
+      "id": "menq.design.integration.claude-design-system-mirror",
+      "kind": "integration-mapping",
+      "path": "platforms/design/brand-expression",
+      "ownerId": "owner.menq",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [],
+      "changeAuthority": "owner",
+      "description": {
+        "hy": "claude.ai Design System artifact-ը brand-expression շերտի mirror է, ոչ canonical աղբյուր (D-027)",
+        "en": "The claude.ai Design System artifact mirrors the brand-expression layer; it is not a canonical source (D-027)"
+      }
+    }
+  ]
+}

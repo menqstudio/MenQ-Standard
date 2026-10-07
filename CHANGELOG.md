@@ -1,5 +1,19 @@
 # MenQ Standard — Changelog
 
+## 2026-10-07 — Audit phase 6c: Part 14 governance implementation
+
+### Հայերեն
+
+- Part 14-ը իրականացվեց `platforms/design/governance/`-ում՝ ownership registry (48 canonical asset), approval matrix (5 class), change-request template և առաջին record-ները (`CR-0001` փակված, `CR-0002` հաստատված)։
+- `validate_governance.py`-ը և `design-governance.yml`-ը ստուգում են ownership coverage-ը, approval matrix-ը, self-approval-ի արգելքը և պահանջում են `Change-Request: CR-NNNN` կամ `Change-Class: editorial` Design Platform-ի ֆայլեր փոխող ամեն PR-ում։ Ավելացվեց PR template։
+- Part 13-ը backlog-ում է Owner-ի որոշմամբ։
+
+### English
+
+- Implemented Part 14 in `platforms/design/governance/`: ownership registry (48 canonical assets), approval matrix (5 classes), change-request template and the first records (`CR-0001` closed, `CR-0002` approved).
+- `validate_governance.py` and `design-governance.yml` check ownership coverage, the approval matrix and the self-approval ban, and require `Change-Request: CR-NNNN` or `Change-Class: editorial` on every PR that changes Design Platform files. Added a PR template.
+- Part 13 is in the backlog by Owner decision.
+
 ## 2026-10-07 — Audit phase 6a: D-024 lock, releases and D-025 evidence correction
 
 ### Հայերեն

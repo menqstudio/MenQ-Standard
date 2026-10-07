@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "menq.design.governance.ownership-registry.schema.v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "registryId",
+    "canonicalSource",
+    "escalation",
+    "assets"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "registryId": {
+      "type": "string"
+    },
+    "part": {
+      "type": "string"
+    },
+    "canonicalSource": {
+      "type": "string"
+    },
+    "escalation": {
+      "type": "object",
+      "required": [
+        "ownerId",
+        "rule"
+      ],
+      "properties": {
+        "ownerId": {
+          "type": "string"
+        },
+        "rule": {
+          "$ref": "#/$defs/bilingual"
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "path",
+          "ownerId",
+          "backupOwnerId",
+          "lifecycle",
+          "reviewCadence",
+          "affectedConsumers",
+          "changeAuthority",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^menq\\.design\\.[a-z0-9.-]+$"
+          },
+          "kind": {
+            "enum": [
+              "specification",
+              "package",
+              "validator",
+              "build-script",
+              "generated-surface",
+              "workflow",
+              "consumer",
+              "product-extension",
+              "integration-mapping"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ownerId": {
+            "type": "string"
+          },
+          "backupOwnerId": {
+            "type": "string"
+          },
+          "lifecycle": {
+            "enum": [
+              "Draft",
+              "Approved — Implementing",
+              "Locked",
+              "Preview",
+              "Pilot",
+              "Active",
+              "Deprecated",
+              "Superseded",
+              "Archived"
+            ]
+          },
+          "reviewCadence": {
+            "enum": [
+              "per-release",
+              "quarterly",
+              "annual"
+            ]
+          },
+          "affectedConsumers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "changeAuthority": {
+            "enum": [
+              "owner",
+              "maintainer"
+            ]
+          },
+          "description": {
+            "$ref": "#/$defs/bilingual"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "bilingual": {
+      "type": "object",
+      "required": [
+        "hy",
+        "en"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "hy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

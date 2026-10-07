@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "matrixId": "menq.design.governance.approval-matrix.v1",
+  "part": "Part 14",
+  "rules": {
+    "selfApprovalForbiddenFor": [
+      "contract-extension",
+      "breaking",
+      "emergency"
+    ],
+    "ownerSatisfiesAllRoles": "owner.menq",
+    "note": {
+      "hy": "MenQ Owner-ը վերջնական authority է և կարող է կատարել ցանկացած approval role։ Self-approval-ի արգելքը մնում է ուժի մեջ։",
+      "en": "The MenQ Owner is the final authority and may fulfil any approval role. The self-approval prohibition still applies."
+    }
+  },
+  "classes": {
+    "editorial": {
+      "title": {
+        "hy": "Խմբագրական",
+        "en": "Editorial"
+      },
+      "requiredApproverRoles": [
+        [
+          "domain-owner",
+          "maintainer"
+        ]
+      ],
+      "requiresChangeRequest": false,
+      "requiresDecision": false,
+      "requiresConsumerEvidencePlan": false,
+      "requiresMigrationPlan": false,
+      "requiresRetrospective": false
+    },
+    "compatible-implementation": {
+      "title": {
+        "hy": "Համատեղելի իրականացում",
+        "en": "Compatible implementation"
+      },
+      "requiredApproverRoles": [
+        [
+          "maintainer"
+        ],
+        [
+          "domain-owner"
+        ]
+      ],
+      "requiresChangeRequest": true,
+      "requiresDecision": false,
+      "requiresConsumerEvidencePlan": false,
+      "requiresMigrationPlan": false,
+      "requiresRetrospective": false
+    },
+    "contract-extension": {
+      "title": {
+        "hy": "Contract-ի ընդլայնում",
+        "en": "Contract extension"
+      },
+      "requiredApproverRoles": [
+        [
+          "owner"
+        ],
+        [
+          "domain-owner"
+        ]
+      ],
+      "requiresChangeRequest": true,
+      "requiresDecision": false,
+      "requiresConsumerEvidencePlan": true,
+      "requiresMigrationPlan": false,
+      "requiresRetrospective": false
+    },
+    "breaking": {
+      "title": {
+        "hy": "Breaking փոփոխություն",
+        "en": "Breaking change"
+      },
+      "requiredApproverRoles": [
+        [
+          "owner"
+        ]
+      ],
+      "requiresChangeRequest": true,
+      "requiresDecision": true,
+      "requiresConsumerEvidencePlan": true,
+      "requiresMigrationPlan": true,
+      "requiresRetrospective": false
+    },
+    "emergency": {
+      "title": {
+        "hy": "Արտակարգ ուղղում",
+        "en": "Emergency correction"
+      },
+      "requiredApproverRoles": [
+        [
+          "maintainer",
+          "owner"
+        ]
+      ],
+      "requiresChangeRequest": true,
+      "requiresDecision": false,
+      "requiresConsumerEvidencePlan": false,
+      "requiresMigrationPlan": false,
+      "requiresRetrospective": true
+    }
+  },
+  "roles": {
+    "owner": [
+      "owner.menq"
+    ],
+    "maintainer": [
+      "owner.design-platform-maintainer",
+      "owner.menq"
+    ],
+    "domain-owner": "ownerId of every affected asset in ownership-registry.json"
+  }
+}

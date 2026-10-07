@@ -179,4 +179,10 @@ Governance health is measured through lead time, review latency, escaped contrac
 
 Part 14 is architecture-complete, but governance implementation does not become Locked until the ownership registry, change-request template, approval-matrix enforcement, contribution automation, real lifecycle evidence, and explicit Owner approval are complete.
 
+## Implementation status / Իրականացման վիճակ
+
+**HY:** 2026-10-07-ից Part 14-ը իրականացված է [`governance/`](governance/README.md) թղթապանակում՝ ownership registry, approval matrix, change-request template և record-ներ (`CR-0001`, `CR-0002`), `validate_governance.py` և `design-governance.yml` PR gate։ Lock gate-ի մնացած կետը՝ Owner-ի explicit lock approval-ը։
+
+**EN:** Since 2026-10-07 Part 14 is implemented in [`governance/`](governance/README.md): ownership registry, approval matrix, change-request template and records (`CR-0001`, `CR-0002`), `validate_governance.py` and the `design-governance.yml` PR gate. The remaining lock-gate item is explicit Owner lock approval.
+
 <!-- END: DESIGN_PLATFORM_GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1 -->

@@ -1,0 +1,48 @@
+name: Design Governance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+  push:
+    branches:
+      - main
+    paths:
+      - "platforms/design/**"
+      - ".github/workflows/design-*.yml"
+      - ".github/workflows/publish-release.yml"
+      - "DECISION_INDEX.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: design-governance-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  governance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - name: Install validator dependency
+        run: python -m pip install "jsonschema==4.23.0"
+      - name: Validate ownership, approval matrix and change requests
+        run: python platforms/design/validation/validate_governance.py
+      - name: Pull-request change-request gate
+        if: github.event_name == 'pull_request'
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          git diff --name-only "$BASE_SHA"...HEAD > "$RUNNER_TEMP/changed-files.txt"
+          printf '%s' "$PR_BODY" > "$RUNNER_TEMP/pr-body.txt"
+          python platforms/design/validation/validate_governance.py \
+            --changed-files "$RUNNER_TEMP/changed-files.txt" \
+            --pr-body "$RUNNER_TEMP/pr-body.txt"
