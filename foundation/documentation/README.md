@@ -387,3 +387,5 @@ PROJECT_CONTEXT.md
 
 > **HY:** Chat-ը ստեղծում է գաղափար։ Decision-ը հաստատում է ուղղությունը։ Documentation-ը պահպանում է ճշմարտությունը։ Verification-ը ապացուցում է, որ այն չի կորել։  
 > **EN:** Conversation creates the idea. A decision approves the direction. Documentation preserves the truth. Verification proves that it was not lost.
+
+<!-- END: FOUNDATION_DOCUMENTATION_README -->

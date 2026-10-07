@@ -1,6 +1,6 @@
 # MenQ Design Platform Architecture Baseline v1 / MenQ Design Platform ճարտարապետական հիմք v1
 
-**Status / Կարգավիճակ:** Owner-approved workshop baseline — canonical specification work continues / Owner-ի հաստատած workshop baseline — canonical specification աշխատանքը շարունակվում է  
+**Status / Կարգավիճակ:** Locked baseline (D-025, 2026-07-13) / Locked baseline (D-025, 2026-07-13)  
 **Decision / Որոշում:** [`decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`](decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md)  
 **Date / Ամսաթիվ:** 2026-07-12
 
@@ -81,11 +81,11 @@ Packages-ը SemVer կամ approved equivalent policy են օգտագործում
 
 ### 10. Lock gate
 
-D-025-ը դեռ `Approved — Implementing` է։ Այն `Locked` է դառնում միայն ամբողջ canonical specification set-ից, implementation package-ից, առնվազն երկու տարբեր real consumer validation-ից, bilingual parity-ից, migration/release evidence-ից, Owner approval-ից և GREEN automation-ից հետո։
+D-025-ը `Locked` է 2026-07-13-ից ([`decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`](decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md))։ Lock-ի պայմաններն էին՝ canonical specification set, implementation package, առնվազն երկու տարբեր իրական consumer validation, bilingual parity, release/migration evidence, Owner approval և GREEN automation։ Հետագա փոփոխությունները ենթարկվում են change-control-ին և Owner-ի explicit հաստատմանը։
 
-### 11. Հաջորդ կտորները
+### 11. Workshop-ի հերթականությունը (ավարտված)
 
-Շարունակել նույն architecture workshop-ը հետևյալ հերթով՝
+Architecture workshop-ը անցել է հետևյալ հերթով, և բոլոր կետերը փակված են D-025 lock-ով՝
 
 1. Validation, CI, conformance և quality gates։
 2. Documentation portal, catalog և design-tool integration։
@@ -173,11 +173,11 @@ Packages use SemVer or an approved equivalent policy. Breaking change includes A
 
 ### 10. Lock gate
 
-D-025 remains `Approved — Implementing`. It becomes `Locked` only after the full canonical specification set, an implementation package, validation by at least two distinct real consumers, bilingual parity, migration/release evidence, Owner approval, and GREEN automation.
+D-025 has been `Locked` since 2026-07-13 ([`decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`](decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md)). The lock conditions were the canonical specification set, implementation package, validation by at least two distinct real consumers, bilingual parity, release and migration evidence, Owner approval, and GREEN automation. Further changes follow change control and explicit Owner approval.
 
-### 11. Next sections
+### 11. Workshop sequence (completed)
 
-Continue the architecture workshop in this order:
+The architecture workshop followed this order; every item was closed by the D-025 lock:
 
 1. Validation, CI, conformance, and quality gates.
 2. Documentation portal, catalog, and design-tool integration.

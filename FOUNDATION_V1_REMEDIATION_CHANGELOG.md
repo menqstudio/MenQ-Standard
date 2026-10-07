@@ -1,7 +1,8 @@
 # Foundation v1 Remediation Changelog / Foundation v1 remediation փոփոխությունների պատմություն
 
 **Date / Ամսաթիվ:** 2026-07-12  
-**Status / Կարգավիճակ:** Applied — validation evidence pending / Կիրառված — validation evidence-ը սպասվում է  
+**Status / Կարգավիճակ:** Applied — superseded by validation evidence / Կիրառված — փոխարինված է validation evidence-ով  
+**Note / Նշում:** Validation evidence-ը հետագայում ստացվեց (`Foundation Integrity` run `#9`, GREEN)՝ տես [`foundation/README.md`](foundation/README.md)։ / Validation evidence was later recorded (`Foundation Integrity` run `#9`, GREEN); see [`foundation/README.md`](foundation/README.md).  
 **Owner / Պատասխանատու:** MenQ Owner
 
 ## Հայերեն

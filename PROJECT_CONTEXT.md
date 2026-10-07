@@ -32,9 +32,10 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 ### Ընթացիկ canonical վիճակ
 
 - Foundation v1 — Locked և GREEN։
-- D-024 Platforms Architecture v1 — merged և canonical։
+- D-024 Platforms Architecture v1 — merged և canonical, կարգավիճակը՝ Approved — Implementing։
 - D-025 MenQ Design Platform Architecture v1 — Locked և GREEN։
 - D-026 Canonical Session Read Law — Locked և machine-enforced։
+- D-027 MenQ Brand Expression Layer v1 — Approved — Implementing (`platforms/design/brand-expression/`, Bro product extension)։
 - D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
 - D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
 - D-025 lock merge — `261f85e5b20d726a0ab1f05da84a4dc45a248873`։
@@ -47,7 +48,8 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 1. D-025 transaction-ը փակված է․ բաց implementation, closure կամ lock action չկա։
 2. Հետագա Design Platform փոփոխությունները կառավարել locked change-control կանոններով։
-3. Owner-ը ընտրում է MenQ Standard-ի հաջորդ ecosystem priority-ն՝ առանձին decision transaction-ով։
+3. D-027-ի բաց կետերը՝ D-025 token source-ի հետ mapping, առաջին իրական consumer (MenQ Webpage), ru locale pack-ի ձևակերպում։
+4. Owner-ը ընտրում է MenQ Standard-ի հաջորդ ecosystem priority-ն՝ առանձին decision transaction-ով։
 
 ---
 
@@ -77,9 +79,10 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 ### Current canonical state
 
 - Foundation v1 is Locked and GREEN.
-- D-024 Platforms Architecture v1 is merged and canonical.
+- D-024 Platforms Architecture v1 is merged and canonical; its status is Approved — Implementing.
 - D-025 MenQ Design Platform Architecture v1 is Locked and GREEN.
 - D-026 Canonical Session Read Law is Locked and machine-enforced.
+- D-027 MenQ Brand Expression Layer v1 is Approved — Implementing (`platforms/design/brand-expression/`, Bro product extension).
 - D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
 - D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
 - D-025 lock merge: `261f85e5b20d726a0ab1f05da84a4dc45a248873`.
@@ -92,6 +95,7 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 
 1. The D-025 transaction is closed; no implementation, closure, or lock action remains open.
 2. Govern future Design Platform changes under locked change-control rules.
-3. The Owner selects the next MenQ Standard ecosystem priority through a separate decision transaction.
+3. D-027 open items: mapping to the D-025 token source, the first real consumer (MenQ Webpage), formalising the ru locale pack.
+4. The Owner selects the next MenQ Standard ecosystem priority through a separate decision transaction.
 
 <!-- END: MENQ_STANDARD_PROJECT_CONTEXT -->

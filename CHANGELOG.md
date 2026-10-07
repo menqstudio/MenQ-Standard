@@ -1,5 +1,23 @@
 # MenQ Standard — Changelog
 
+## 2026-10-07 — Audit phase 3: status synchronization
+
+### Հայերեն
+
+- D-025-ի `Locked` կարգավիճակը համաժամեցվեց Design Platform-ի architecture, baseline, README, Platforms registry և context ֆայլերում։ Registry-ի `status`-ը այժմ `Locked` է, և Phase A validator-ը պահանջում է, որ այն համընկնի D-025 record-ի կարգավիճակի հետ։
+- `ECOSYSTEM_ARCHITECTURE.md`-ում Standard Mission-ը ցույց է տրվում որպես Locked (`D-011`), ֆայլը հղված է root README-ից։
+- Ավելացվեցին END marker-ներ `DECISIONS.md`, `ECOSYSTEM_ARCHITECTURE.md` և Foundation chapter-ների փաստաթղթերում։ Foundation validator-ը դրանք պահանջում է, պահանջում է `D-027`-ը ինդեքսում և RED է տալիս, եթե marker-ով կառավարվող ֆայլը բացակայում է։
+- D-027-ը և audit-ի վիճակը ավելացվեցին `PROJECT_CONTEXT.md`, `AI_WORKING_CONTEXT.md`, `NEXT_CHAT_HANDOFF.md`, `ROADMAP.md`-ում։ Հեռացվեց հնացած «D-026 validator-ը դեռ պետք է» տեքստը։
+- Lock-ից առաջ գրված D-025 audit/review գրառումները նշվեցին որպես historical snapshot, Foundation remediation changelog-ը՝ որպես փոխարինված validation evidence-ով։
+
+### English
+
+- Synchronized D-025's `Locked` status across the Design Platform architecture, baseline, README, Platforms registry and context files. The registry `status` is now `Locked`, and the Phase A validator requires it to mirror the D-025 record status.
+- `ECOSYSTEM_ARCHITECTURE.md` shows the Standard Mission as Locked (`D-011`) and is linked from the root README.
+- Added END markers to `DECISIONS.md`, `ECOSYSTEM_ARCHITECTURE.md` and the Foundation chapter documents. The Foundation validator requires them, requires `D-027` in the index, and goes RED when a marker-governed file is missing.
+- Added D-027 and the audit state to `PROJECT_CONTEXT.md`, `AI_WORKING_CONTEXT.md`, `NEXT_CHAT_HANDOFF.md` and `ROADMAP.md`. Removed the stale "D-026 validator still needed" text.
+- Marked the pre-lock D-025 audit and review records as historical snapshots, and the Foundation remediation changelog as superseded by validation evidence.
+
 ## 2026-10-07 — Audit phase 2: validator hardening
 
 ### Հայերեն

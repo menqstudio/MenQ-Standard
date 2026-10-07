@@ -354,3 +354,5 @@ MenQ Documentation Standard-ի canonical v1.0 տարբերակը պահվում 
 ### English
 
 The canonical MenQ Documentation Standard v1.0 is maintained in [`foundation/documentation/README.md`](foundation/documentation/README.md). It locks canonical repository and single-source rules, core file roles, major-folder documentation requirements, bilingual semantic equality, document classes and metadata, naming and path rules, history-preserving change control, the documentation update transaction, post-write integrity verification, safe full-file replacement, the no-silent-deletion rule, source and generated-documentation rules, the complete-package and ZIP delivery rule, documentation ownership, quality gates, and documentation KPIs.
+
+<!-- END: MENQ_DECISIONS_REGISTRY -->

@@ -6,6 +6,8 @@
 **Review date / Վերանայման ամսաթիվ:** 2026-07-13  
 **Owner / Պատասխանատու:** MenQ Owner
 
+> **Historical snapshot / Պատմական snapshot:** Այս գրառումը արտացոլում է 2026-07-13-ի lock-ից առաջ վիճակը։ D-025-ը հետագայում `Locked` դարձավ՝ տես [`D-025_LOCK_RECORD.md`](D-025_LOCK_RECORD.md)։ / This record reflects the state before the 2026-07-13 lock. D-025 was later `Locked`; see [`D-025_LOCK_RECORD.md`](D-025_LOCK_RECORD.md).
+
 ## Հայերեն
 
 ### 1. PR state

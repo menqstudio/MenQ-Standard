@@ -258,3 +258,5 @@ When the same class of error occurs a second time, the problem is no longer only
 A recurring failure must become a test, validation rule, lint rule, automation, checklist, or another enforcement mechanism.
 
 What has not been taught to the system has not been fully learned by the team.
+
+<!-- END: FOUNDATION_ENGINEERING_PHILOSOPHY -->

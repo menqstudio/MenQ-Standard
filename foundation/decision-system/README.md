@@ -386,3 +386,5 @@ Evidence links:
 
 > **HY:** Չփաստաթղթավորված approval-ը հիշողություն է, ոչ standard։ Չստուգված implementation-ը աշխատանք է, ոչ ապացուցված արդյունք։  
 > **EN:** Undocumented approval is memory, not a standard. Unvalidated implementation is work, not a proven outcome.
+
+<!-- END: FOUNDATION_DECISION_SYSTEM_README -->

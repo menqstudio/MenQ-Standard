@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -24,6 +25,15 @@ REQUIRED_TOP_LEVEL = {
     "packages",
     "constraints",
 }
+
+
+D025_RECORD = ROOT / "platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md"
+
+
+def d025_status() -> str | None:
+    """Return the English status token from the D-025 record header (the part before ' / ')."""
+    match = re.search(r"^\*\*Status / Կարգավիճակ:\*\*\s*(.+?)\s*/", D025_RECORD.read_text(encoding="utf-8"), re.M)
+    return match.group(1).strip() if match else None
 
 
 def load_json(path: Path, errors: list[str]) -> dict:
@@ -146,8 +156,9 @@ def main() -> int:
             errors.append("schemaVersion must be 1")
         if registry.get("decision") != "D-025":
             errors.append("decision must be D-025")
-        if registry.get("status") != "Approved — Implementing":
-            errors.append("status must remain Approved — Implementing")
+        decision_status = d025_status()
+        if registry.get("status") != decision_status:
+            errors.append(f"registry status {registry.get('status')!r} must mirror the D-025 record status {decision_status!r}")
         if registry.get("generatedOutputsAreCanonical") is not False:
             errors.append("generatedOutputsAreCanonical must be false")
 
@@ -255,7 +266,6 @@ def main() -> int:
         f"Validated {len(registry['owners'])} owners, {len(registry['specifications'])} specifications, "
         f"{len(registry['packages'])} package boundaries, and the workspace skeleton."
     )
-    print("Implementation/package readiness: YELLOW (expected until runtime and consumer evidence exist).")
     return 0
 
 
