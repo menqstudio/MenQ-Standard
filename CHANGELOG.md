@@ -1,5 +1,17 @@
 # MenQ Standard — Changelog
 
+## 2026-10-08 — CR-0007: accessibility contract and form components
+
+### Հայերեն
+
+- `validate_brand_expression.py`-ը ստուգում է 17 տեքստ/ֆոն զույգ երկու թեմայում (34 ստուգում, ≥ 4.5:1, WCAG AA)։
+- Ավելացվեցին `Checkbox`, `RadioGroup`, `Switch`, փաստաթղթավորվեցին `Textarea`, `Select`, `FormRow`։ `FormRow`-ը կապում է label-ը, hint-ը և error-ը control-ին։ Control-ների եզրերը 3:1 են։ axe՝ 0 violation երկու թեմայում։
+
+### English
+
+- `validate_brand_expression.py` checks 17 text/background pairs in both themes (34 checks, ≥ 4.5:1, WCAG AA).
+- Added `Checkbox`, `RadioGroup`, `Switch`; documented `Textarea`, `Select`, `FormRow`. `FormRow` links the label, hint and error to its control. Control borders reach 3:1. axe: 0 violations in both themes.
+
 ## 2026-10-08 — CR-0006: primary action contrast
 
 ### Հայերեն

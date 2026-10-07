@@ -1,0 +1,6 @@
+<!-- @dsCard group="Forms" height=260 -->
+<div id="root" style="padding:16px"></div>
+<script>
+const h = React.createElement, M = window.MenQ;
+ReactDOM.createRoot(document.getElementById('root')).render(h('div',null,h(M.FormRow,{label:'Անուն · Name',required:true},h(M.Input,{placeholder:'Գևորգ'})),h(M.FormRow,{label:'Էլ. փոստ · Email',hint:'Կպատասխանենք 24 ժամում · We reply within 24h',error:'Սխալ հասցե · Invalid address'},h(M.Input,{defaultValue:'gev@'}))));
+</script>

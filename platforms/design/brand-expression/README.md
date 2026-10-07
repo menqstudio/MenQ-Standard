@@ -70,8 +70,10 @@ Dark թեմայի համար `<html>`-ին դնել `data-theme="dark"` կամ �
 
 ### Մատչելիություն
 
-- Տեքստ՝ 4.5:1, իկոններ և եզրեր՝ 3:1, երկու թեմայում։ Ամբողջական ստեղնաշարային կառավարում։
-- Հայտնի աղբյուրային զույգ՝ light-ում gradient-ի վրա սպիտակ տեքստը 4.1:1 է․ primary label-ները 16px semibold։
+- Տեքստ՝ 4.5:1, իկոններ և control-ների եզրեր՝ 3:1, երկու թեմայում։ Ամբողջական ստեղնաշարային կառավարում, տեսանելի focus (`color-focus-ring`)։
+- `validate_brand_expression.py`-ը մեքենայորեն ստուգում է 17 տեքստ/ֆոն զույգ երկու թեմայում (34 ստուգում, ≥ 4.5:1)։ Token-ի փոփոխությունը, որը խախտում է զույգը, RED է։
+- Accent գույնը որպես տեքստ՝ միայն `color-accent-text`, ազուրը որպես տեքստ՝ `color-action-primary-strong`։ Սպիտակ տեքստ՝ միայն `color-action-primary`-ի վրա (5.9:1, CR-0006)։
+- Ձևեր՝ `FormRow`-ը կապում է label-ը, hint-ը և error-ը control-ին (`aria-describedby`, `aria-invalid`), error-ը `role="alert"` է։ Checkbox/Radio/Switch-ը native են կամ `role="switch"`։
 
 ---
 
@@ -140,7 +142,9 @@ Set `data-theme="dark"` on `<html>` for Dark, or use `ThemeSwitch`.
 
 ### Accessibility
 
-- Text 4.5:1, icons and borders 3:1, in both themes. Full keyboard operation.
-- Known source pair: white on the gradient is 4.1:1 in Light; keep primary labels 16px semibold.
+- Text 4.5:1, icons and control borders 3:1, in both themes. Full keyboard operation with a visible focus (`color-focus-ring`).
+- `validate_brand_expression.py` machine-checks 17 text/background pairs in both themes (34 checks, ≥ 4.5:1). A token change that breaks a pair is RED.
+- Accent as text uses only `color-accent-text`; azure as text uses `color-action-primary-strong`. White text only on `color-action-primary` (5.9:1, CR-0006).
+- Forms: `FormRow` links the label, hint and error to its control (`aria-describedby`, `aria-invalid`); the error has `role="alert"`. Checkbox/Radio are native inputs; Switch uses `role="switch"`.
 
 <!-- END: MENQ_BRAND_EXPRESSION_README -->

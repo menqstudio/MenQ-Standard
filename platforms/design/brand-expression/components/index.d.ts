@@ -15,9 +15,13 @@ export interface StatusDotProps { status: Status; label?: string; }
 export interface AvatarProps { name: string; src?: string; kind?: string; }
 export interface FieldProps { label: Node; children?: Node; }
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & { invalid?: boolean };
-export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
-export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement>;
-export interface FormRowProps { label: Node; error?: Node; children?: Node; }
+export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & { invalid?: boolean };
+export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & { invalid?: boolean };
+export interface FormRowProps { label: Node; hint?: Node; error?: Node; required?: boolean; id?: string; /** exactly one control; it receives id, aria-describedby and aria-invalid */ children: React.ReactElement; }
+export type CheckboxProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> & { label: Node; hint?: Node; invalid?: boolean };
+export interface RadioOption { value: string; label: Node; hint?: Node; disabled?: boolean; }
+export interface RadioGroupProps { label: Node; options: RadioOption[]; name?: string; value?: string; defaultValue?: string; onChange?: (value: string) => void; error?: Node; disabled?: boolean; }
+export interface SwitchProps { label: Node; hint?: Node; checked?: boolean; defaultChecked?: boolean; onChange?: (checked: boolean) => void; disabled?: boolean; }
 export interface TabsProps { items: { value: string; label: Node; count?: number; id?: string; controls?: string }[]; label?: string; defaultValue?: string; value?: string; onChange?: (value: string) => void; }
 export interface LocaleSwitchProps { value?: 'hy' | 'en' | 'ru'; defaultValue?: 'hy' | 'en' | 'ru'; label?: string; onChange?: (locale: 'hy' | 'en' | 'ru') => void; }
 export interface ThemeSwitchProps { value?: ThemePreference; defaultValue?: ThemePreference; label?: string; labels?: { system?: string; light?: string; dark?: string }; apply?: boolean; onChange?: (pref: ThemePreference) => void; }
@@ -35,7 +39,7 @@ export interface ContrastSectionProps { children?: Node; spotlight?: boolean; gr
 type C<P> = (props: P) => React.ReactElement | null;
 export interface MenQCore {
   BrandMark: C<BrandMarkProps>; Button: C<ButtonProps>; Card: C<CardProps>; Panel: C<PanelProps>; PageHeader: C<PageHeaderProps>; SectionHeading: C<SectionHeadingProps>;
-  Badge: C<BadgeProps>; StatusDot: C<StatusDotProps>; Avatar: C<AvatarProps>; Field: C<FieldProps>; Input: C<InputProps>; Textarea: C<TextareaProps>; Select: C<SelectProps>; FormRow: C<FormRowProps>;
+  Badge: C<BadgeProps>; StatusDot: C<StatusDotProps>; Avatar: C<AvatarProps>; Field: C<FieldProps>; Input: C<InputProps>; Textarea: C<TextareaProps>; Select: C<SelectProps>; FormRow: C<FormRowProps>; Checkbox: C<CheckboxProps>; RadioGroup: C<RadioGroupProps>; Switch: C<SwitchProps>;
   Tabs: C<TabsProps>; LocaleSwitch: C<LocaleSwitchProps>; ThemeSwitch: C<ThemeSwitchProps>; EmptyState: C<EmptyStateProps>; Skeleton: C<SkeletonProps>; Toast: C<ToastProps>;
   Modal: C<ModalProps>; ConfirmDialog: C<ConfirmDialogProps>; Drawer: C<DrawerProps>; KpiStat: C<KpiStatProps>; MetricBar: C<MetricBarProps>; Table: C<TableProps>; ContrastSection: C<ContrastSectionProps>;
   applyTheme(pref: ThemePreference): void;

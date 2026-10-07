@@ -162,9 +162,67 @@ def check_governance(errors: list[str]) -> None:
         errors.append("legacy platforms/design/menq-design-system/ must not exist")
 
 
+# WCAG 2.1 AA text pairs (4.5:1) that every theme must satisfy. A token change that breaks one is RED.
+CONTRAST_PAIRS = [(f, b) for f in ("color-content-primary", "color-content-secondary", "color-content-muted")
+                  for b in ("color-page-bg", "color-surface-primary", "color-surface-secondary")] + [
+    ("color-content-inverse", "color-action-primary"), ("color-content-inverse", "color-surface-inverse"),
+    ("color-action-primary-strong", "color-page-bg"), ("color-action-primary-strong", "color-surface-primary"),
+    ("color-accent-text", "color-page-bg"), ("color-success-text", "color-page-bg"),
+    ("color-warning-text", "color-page-bg"), ("color-danger-text", "color-page-bg"),
+]
+
+
+def check_contrast(errors: list[str]) -> None:
+    source = load_json(SOURCE, errors)
+    if source is None:
+        return
+    by_id = {t["id"]: t for t in source["tokens"]}
+    by_css = {t["cssName"]: t for t in source["tokens"]}
+
+    def resolve(key: str, mode: str, depth: int = 0) -> str:
+        token = by_css.get(key) or by_id[key]
+        entry = token["modes"][mode] if "modes" in token else token
+        if "reference" in entry:
+            if depth > 8:
+                raise ValueError(f"reference loop at {key}")
+            return resolve(entry["reference"], mode, depth + 1)
+        return entry["value"]
+
+    def rgba(value: str) -> tuple[float, float, float, float]:
+        value = value.strip()
+        if re.fullmatch(r"#[0-9a-fA-F]{6}", value):
+            return tuple(int(value[i:i + 2], 16) for i in (1, 3, 5)) + (1.0,)
+        match = re.fullmatch(r"rgba?\(([^)]*)\)", value)
+        if not match:
+            raise ValueError(f"unsupported color {value!r}")
+        parts = [float(x) for x in re.split(r"[,\s/]+", match.group(1).strip()) if x]
+        return (parts[0], parts[1], parts[2], parts[3] if len(parts) > 3 else 1.0)
+
+    def luminance(c) -> float:
+        def channel(x: float) -> float:
+            x /= 255
+            return x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4
+        return 0.2126 * channel(c[0]) + 0.7152 * channel(c[1]) + 0.0722 * channel(c[2])
+
+    for mode in ("light", "dark"):
+        for fg_name, bg_name in CONTRAST_PAIRS:
+            try:
+                bg = rgba(resolve(bg_name, mode))
+                fg = rgba(resolve(fg_name, mode))
+            except (KeyError, ValueError) as exc:
+                errors.append(f"contrast {mode} {fg_name} on {bg_name}: {exc}")
+                continue
+            a = fg[3]
+            fg = tuple(fg[i] * a + bg[i] * (1 - a) for i in range(3))
+            hi, lo = sorted([luminance(fg), luminance(bg)], reverse=True)
+            ratio = (hi + 0.05) / (lo + 0.05)
+            if ratio < 4.5:
+                errors.append(f"contrast {mode}: {fg_name} on {bg_name} is {ratio:.2f}:1 (< 4.5:1, WCAG AA)")
+
+
 def main() -> int:
     errors: list[str] = []
-    for check in (check_schema, check_generated, check_components, check_vars, check_markdown, check_assets, check_governance):
+    for check in (check_schema, check_generated, check_components, check_vars, check_contrast, check_markdown, check_assets, check_governance):
         try:
             check(errors)
         except Exception as exc:  # report, never traceback-green
@@ -175,7 +233,7 @@ def main() -> int:
             print("- " + error)
         return 1
     print("BRAND EXPRESSION VALIDATION: GREEN")
-    print("Validated token source schema, generated outputs, components, CSS variables, bilingual docs, asset records and D-027 registration.")
+    print(f"Validated token source schema, generated outputs, components, CSS variables, {len(CONTRAST_PAIRS) * 2} WCAG AA contrast pairs, bilingual docs, asset records and D-027 registration.")
     return 0
 
 
