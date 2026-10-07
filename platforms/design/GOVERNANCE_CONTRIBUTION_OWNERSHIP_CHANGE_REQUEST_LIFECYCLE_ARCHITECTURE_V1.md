@@ -181,8 +181,8 @@ Part 14 is architecture-complete, but governance implementation does not become 
 
 ## Implementation status / Իրականացման վիճակ
 
-**HY:** 2026-10-07-ից Part 14-ը իրականացված է [`governance/`](governance/README.md) թղթապանակում՝ ownership registry, approval matrix, change-request template և record-ներ (`CR-0001`, `CR-0002`), `validate_governance.py` և `design-governance.yml` PR gate։ Lock gate-ի մնացած կետը՝ Owner-ի explicit lock approval-ը։
+**HY:** 2026-10-07-ից Part 14-ը իրականացված է [`governance/`](governance/README.md) թղթապանակում՝ ownership registry, approval matrix, change-request template և record-ներ (`CR-0001`, `CR-0002`), `validate_governance.py` և `design-governance.yml` PR gate։ Owner-ը՝ Գևորգ Օհանյանը, Part 14-ի implementation-ը `Locked` հաստատել է 2026-10-07-ին. lock gate-ի բոլոր կետերը կատարված են (`CR-0002` փակված է)։ Հետագա փոփոխությունները անցնում են change-request lifecycle-ով։
 
-**EN:** Since 2026-10-07 Part 14 is implemented in [`governance/`](governance/README.md): ownership registry, approval matrix, change-request template and records (`CR-0001`, `CR-0002`), `validate_governance.py` and the `design-governance.yml` PR gate. The remaining lock-gate item is explicit Owner lock approval.
+**EN:** Since 2026-10-07 Part 14 is implemented in [`governance/`](governance/README.md): ownership registry, approval matrix, change-request template and records (`CR-0001`, `CR-0002`), `validate_governance.py` and the `design-governance.yml` PR gate. The Owner, Gevorg Ohanyan, approved the Part 14 implementation as `Locked` on 2026-10-07; every lock-gate item is met (`CR-0002` is closed). Further changes go through the change-request lifecycle.
 
 <!-- END: DESIGN_PLATFORM_GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1 -->

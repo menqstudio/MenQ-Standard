@@ -1,5 +1,15 @@
 # MenQ Standard — Changelog
 
+## 2026-10-07 — Part 14 governance implementation Locked
+
+### Հայերեն
+
+- Owner-ը Part 14-ի implementation-ը հաստատեց `Locked`։ `CR-0002`-ը փակված է, registry-ում `menq.design.spec.governance.v1`-ը `Locked` է։
+
+### English
+
+- The Owner approved the Part 14 implementation as `Locked`. `CR-0002` is closed, and `menq.design.spec.governance.v1` is `Locked` in the registry.
+
 ## 2026-10-07 — Audit phase 6c: Part 14 governance implementation
 
 ### Հայերեն

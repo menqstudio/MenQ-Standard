@@ -1,6 +1,6 @@
 # Design Platform Governance / Design Platform-ի governance
 
-**Status / Կարգավիճակ:** Implemented — Part 14 implementation lock pending Owner approval / Իրականացված — Part 14-ի implementation lock-ը սպասում է Owner-ի հաստատմանը  
+**Status / Կարգավիճակ:** Locked (Part 14 implementation, 2026-10-07) / Locked (Part 14-ի implementation, 2026-10-07)  
 **Owner / Պատասխանատու:** MenQ Owner  
 **Architecture / Ճարտարապետություն:** [`../GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md`](../GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md)
 
