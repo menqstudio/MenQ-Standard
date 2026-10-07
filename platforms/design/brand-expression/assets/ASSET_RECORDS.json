@@ -17,6 +17,20 @@
       "sha256": "461ed07165226f8bf6dbd758a4bc114980d357c979c5757a3e8e7d48ff63e6f1"
     },
     {
+      "id": "menq.design.asset.brand.menq-logo-neon-hires",
+      "kind": "logo",
+      "file": "assets/Logos/menq-logo-neon-hires.png",
+      "description": {
+        "hy": "Պաշտոնական MenQ neon լոգոյի բարձր լուծաչափի master (1913×720, թափանցիկ ֆոն), միայն մուգ ֆոնի համար",
+        "en": "High-resolution master of the official MenQ neon logo (1913×720, transparent), dark grounds only"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Supplied by the MenQ Owner (Gevorg Ohanyan), 2026-10-08; cropped to content with 40px padding, pixels unchanged",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "448d80e7b932edf827f8f2de4f7e333e451297e68eb46cbe175aa46d88d41ecc"
+    },
+    {
       "id": "menq.design.asset.brand.menq-wordmark-light",
       "kind": "logo",
       "file": "assets/Logos/menq-wordmark-light.svg",
