@@ -38,6 +38,8 @@ jobs:
       - name: Install workspace links
         working-directory: platforms/design/implementation
         run: pnpm install --no-frozen-lockfile --ignore-scripts
+      - name: Install validator dependency
+        run: python -m pip install "jsonschema==4.23.0"
       - name: Validate Phase A registry and workspace
         run: python platforms/design/validation/validate_phase_a.py
       - name: Build deterministic token artifacts

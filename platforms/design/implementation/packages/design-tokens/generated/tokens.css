@@ -1,0 +1,10 @@
+:root {
+  --menq-component-card-radius: 12px;
+  --menq-reference-color-neutral-0: #ffffff;
+  --menq-reference-color-neutral-1000: #0b0d10;
+  --menq-reference-dimension-radius-2: 12px;
+  --menq-reference-dimension-space-2: 8px;
+  --menq-semantic-content-primary: #0b0d10;
+  --menq-semantic-space-inline: 8px;
+  --menq-semantic-surface-canvas: #ffffff;
+}

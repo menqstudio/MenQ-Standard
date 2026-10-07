@@ -19,7 +19,8 @@ SOURCE_FILES = (
     SOURCE_DIR / "base.css",
     SOURCE_DIR / "layout.css",
 )
-TOKEN_REFERENCE = re.compile(r"var\((--menq-[a-z0-9-]+)\)")
+TOKEN_REFERENCE = re.compile(r"var\(\s*(--menq-[a-z0-9-]+)\s*[,)]")  # also catches var(--x, fallback)
+PACKAGE_CSS = sorted((WORKSPACE / "packages").glob("*/src/*.css"))
 TOKEN_DECLARATION = re.compile(r"^\s*(--menq-[a-z0-9-]+):", re.MULTILINE)
 
 
@@ -54,11 +55,14 @@ def main() -> int:
     declared_tokens = set(TOKEN_DECLARATION.findall(token_css))
     foundation_css = "\n".join(source_parts)
     referenced_tokens = set(TOKEN_REFERENCE.findall(foundation_css))
-    unresolved = sorted(referenced_tokens - declared_tokens)
+    unresolved = [f"unresolved token reference: {token}" for token in sorted(referenced_tokens - declared_tokens)]
+    for css_path in PACKAGE_CSS:
+        for token in sorted(set(TOKEN_REFERENCE.findall(css_path.read_text(encoding="utf-8"))) - declared_tokens):
+            unresolved.append(f"unresolved token reference in {css_path.relative_to(WORKSPACE)}: {token}")
     if unresolved:
         print("FOUNDATIONS BUILD: RED")
-        for token in unresolved:
-            print(f"- unresolved token reference: {token}")
+        for message in unresolved:
+            print(f"- {message}")
         return 1
 
     combined_css = (

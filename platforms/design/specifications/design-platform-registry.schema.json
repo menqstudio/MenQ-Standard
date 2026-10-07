@@ -17,6 +17,7 @@
     "constraints"
   ],
   "properties": {
+    "$schema": { "type": "string", "minLength": 1 },
     "schemaVersion": { "const": 1 },
     "registryId": { "type": "string", "minLength": 1 },
     "decision": { "const": "D-025" },

@@ -45,4 +45,6 @@ This policy defines compatibility rules for the MenQ Design Platform `Preview` p
 
 Compatibility evidence may be GREEN, YELLOW, or RED. The Stable compatibility promise remains `false` until the Owner separately approves the Stable lifecycle.
 
+<!-- END: MENQ_DESIGN_COMPATIBILITY_POLICY -->
+
 — End of document —

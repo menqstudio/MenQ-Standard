@@ -38,4 +38,6 @@ Every breaking or consumer-visible change must include the old contract, the new
 
 `0.1.0-next.0` is the first preview baseline. No previous Stable release or real consumer migration is claimed. Consumer pilot results remain required evidence.
 
+<!-- END: MENQ_DESIGN_MIGRATION_DEPRECATION_GUIDE -->
+
 — End of document —

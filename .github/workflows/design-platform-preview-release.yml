@@ -10,10 +10,10 @@ on:
       - "platforms/design/implementation/packages/**"
       - "platforms/design/implementation/consumers/**"
       - "platforms/design/implementation/release/**"
-      - "platforms/design/implementation/scripts/build_release_candidate.py"
       - "platforms/design/implementation/pnpm-workspace.yaml"
-      - "platforms/design/validation/validate_release_candidate.py"
-      - "platforms/design/validation/validate_consumers.py"
+      - "platforms/design/implementation/package.json"
+      - "platforms/design/implementation/scripts/**"
+      - "platforms/design/validation/**"
       - ".github/workflows/design-platform-preview-release.yml"
   pull_request:
     paths:
@@ -21,10 +21,10 @@ on:
       - "platforms/design/implementation/packages/**"
       - "platforms/design/implementation/consumers/**"
       - "platforms/design/implementation/release/**"
-      - "platforms/design/implementation/scripts/build_release_candidate.py"
       - "platforms/design/implementation/pnpm-workspace.yaml"
-      - "platforms/design/validation/validate_release_candidate.py"
-      - "platforms/design/validation/validate_consumers.py"
+      - "platforms/design/implementation/package.json"
+      - "platforms/design/implementation/scripts/**"
+      - "platforms/design/validation/**"
       - ".github/workflows/design-platform-preview-release.yml"
   workflow_dispatch:
 

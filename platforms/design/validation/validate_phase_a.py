@@ -108,6 +108,29 @@ def validate_workspace(packages: list[dict], errors: list[str]) -> None:
             if dependency in expected_dependencies and version != "workspace:*":
                 errors.append(f"workspace dependency {dependency} in {name} must use workspace:*")
 
+    registered = {p.get("name", "").removeprefix("@menq/") for p in packages if isinstance(p, dict)}
+    for manifest_path in sorted((WORKSPACE / "packages").glob("*/package.json")):
+        if manifest_path.parent.name not in registered:
+            errors.append(f"unregistered workspace package on disk: {manifest_path.parent.relative_to(ROOT)}")
+
+
+def validate_schemas(registry: dict, errors: list[str]) -> None:
+    """Apply the JSON Schemas the registry and token source declare (previously loaded but never enforced)."""
+    try:
+        import jsonschema
+    except ImportError:
+        errors.append("jsonschema is required for Phase A validation (pip install jsonschema)")
+        return
+    schema = load_json(SCHEMA, errors)
+    if schema:
+        for error in jsonschema.Draft202012Validator(schema).iter_errors(registry):
+            errors.append(f"registry schema: {'/'.join(map(str, error.path)) or '<root>'}: {error.message}")
+    token_schema = load_json(WORKSPACE / "packages/design-contracts/schemas/token-source.schema.json", errors)
+    token_source = load_json(WORKSPACE / "packages/design-tokens/source/tokens.json", errors)
+    if token_schema and token_source:
+        for error in jsonschema.Draft202012Validator(token_schema).iter_errors(token_source):
+            errors.append(f"token source schema: {'/'.join(map(str, error.path)) or '<root>'}: {error.message}")
+
 
 def main() -> int:
     errors: list[str] = []
@@ -219,6 +242,7 @@ def main() -> int:
             errors.append("Phase A may not claim Stable packages")
 
         validate_workspace(packages, errors)
+        validate_schemas(registry, errors)
 
     if errors:
         print("DESIGN PLATFORM PHASE A VALIDATION: RED")

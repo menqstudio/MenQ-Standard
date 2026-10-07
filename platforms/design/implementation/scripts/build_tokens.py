@@ -73,6 +73,8 @@ def main() -> int:
         tokens = []
 
     by_id: dict[str, dict] = {}
+
+    css_names: dict[str, str] = {}
     for token in tokens:
         if not isinstance(token, dict):
             errors.append("every token must be an object")
@@ -84,6 +86,10 @@ def main() -> int:
         if token_id in by_id:
             errors.append(f"duplicate token id: {token_id}")
         by_id[token_id] = token
+        emitted = css_name(token_id)
+        if emitted in css_names:
+            errors.append(f"CSS custom property collision: {token_id} and {css_names[emitted]} both emit {emitted}")
+        css_names[emitted] = token_id
         if token.get("layer") not in LAYER_ORDER:
             errors.append(f"invalid layer for {token_id}")
         description = token.get("description")

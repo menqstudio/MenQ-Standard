@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "menq.design.token-source.core.v1",
+  "tokens": {
+    "menq.design.token.component.card.radius": "12px",
+    "menq.design.token.reference.color.neutral.0": "#ffffff",
+    "menq.design.token.reference.color.neutral.1000": "#0b0d10",
+    "menq.design.token.reference.dimension.radius.2": "12px",
+    "menq.design.token.reference.dimension.space.2": "8px",
+    "menq.design.token.semantic.content.primary": "#0b0d10",
+    "menq.design.token.semantic.space.inline": "8px",
+    "menq.design.token.semantic.surface.canvas": "#ffffff"
+  }
+}

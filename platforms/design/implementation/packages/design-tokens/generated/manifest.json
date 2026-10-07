@@ -1,0 +1,29 @@
+{
+  "artifacts": [
+    {
+      "bytes": 353,
+      "path": "tokens.css",
+      "sha256": "becff3a26a1b527cf3849b07fa0a86da6facec4920e4a883e23daf8fd0e5ff28"
+    },
+    {
+      "bytes": 72,
+      "path": "tokens.d.ts",
+      "sha256": "63fd298d19d0b883855690a395f6f0405cc311c09c990d082d15ee306743c7da"
+    },
+    {
+      "bytes": 486,
+      "path": "tokens.js",
+      "sha256": "7f983b5210cba85d1be2aabb20ae720293f8958b4f47196b839a1c2f1250337f"
+    },
+    {
+      "bytes": 572,
+      "path": "tokens.resolved.json",
+      "sha256": "f2f6f0332f22ab2637d99613a39e5a34d0727c5b0564e9cacff0bb09d68af799"
+    }
+  ],
+  "generatedOutputsAreCanonical": false,
+  "schemaVersion": 1,
+  "source": "packages/design-tokens/source/tokens.json",
+  "sourceSha256": "08aa3d1da2bd9d3f4ebea80771021e5ecf5f978acdb7af167b267242963ddc7c",
+  "tokenCount": 8
+}

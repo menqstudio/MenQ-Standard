@@ -1,5 +1,25 @@
 # MenQ Standard — Changelog
 
+## 2026-10-07 — Audit phase 2: validator hardening
+
+### Հայերեն
+
+- Foundation validator-ը ստուգում է բոլոր tracked Markdown-ների relative հղումները և որ ամեն `D-0xx` decision ֆայլ գրանցված է `DECISION_INDEX.md`-ում։ Ուղղվեց D-023-ի կոտրված հղումը։
+- Platforms validator-ը `platforms/**/*.md`-ի բոլոր ֆայլերից պահանջում է հայերեն և անգլերեն բաժին և END marker։ Ավելացվեցին բացակայող END marker-ները release փաստաթղթերում։
+- Phase A validator-ը կիրառում է registry-ի և token source-ի JSON Schema-ները և հայտնաբերում է չգրանցված package-ները։ Registry schema-ն ընդունում է `$schema`։
+- Token build-ը արգելում է CSS custom property-ի բախումները, foundations build-ը ստուգում է `var(--x, fallback)`-ը և բոլոր package-ների CSS-ը։
+- Public API validator-ը ստուգում է `index.js`/`index.d.ts` export parity-ն և դատարկ baseline-ը։ Baseline-ը սառեցված է `0.1.0-next.0` preview-ի վրա։
+- Workflow-ների path filter-ները ծածկում են validator-ներն ու build script-երը։
+
+### English
+
+- The Foundation validator checks every relative link in tracked Markdown and that every `D-0xx` decision file is registered in `DECISION_INDEX.md`. Fixed the broken D-023 link.
+- The Platforms validator requires Armenian and English sections and an END marker in every `platforms/**/*.md` file. Added the missing END markers to the release documents.
+- The Phase A validator enforces the registry and token-source JSON Schemas and detects unregistered packages. The registry schema accepts `$schema`.
+- The token build rejects CSS custom-property collisions; the foundations build checks `var(--x, fallback)` and every package's CSS.
+- The public API validator checks `index.js`/`index.d.ts` export parity and an empty baseline. The baseline is frozen at the `0.1.0-next.0` preview.
+- Workflow path filters cover the validators and build scripts.
+
 ## 2026-10-07 — D-027 MenQ Brand Expression Layer v1
 
 ### Հայերեն
