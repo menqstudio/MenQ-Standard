@@ -1,5 +1,15 @@
 # MenQ Standard — Changelog
 
+## 2026-10-08 — CR-0006: primary action contrast
+
+### Հայերեն
+
+- Light theme-ում `color-action-primary`-ը դարձավ `#0369a1` (սպիտակ տեքստով 5.9:1), hover-ը՝ `#075985`, որ հիմնական կոճակները ցանկացած չափի դեպքում անցնեն WCAG AA-ն։ Dark theme-ը չի փոխվել։
+
+### English
+
+- In the light theme `color-action-primary` is now `#0369a1` (5.9:1 with white text) and its hover `#075985`, so primary buttons pass WCAG AA at any size. The dark theme is unchanged.
+
 ## 2026-10-08 — CR-0005: official BrandMark
 
 ### Հայերեն

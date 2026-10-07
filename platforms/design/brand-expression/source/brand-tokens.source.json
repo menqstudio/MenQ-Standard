@@ -669,8 +669,8 @@
       "layer": "Semantic",
       "type": "color",
       "description": {
-        "hy": "Տեքստ color-action-primary-ի և շրջված մակերեսի վրա։ Light-ում 4.1:1 է՝ միայն 18.66px bold / 24px տեքստի համար։",
-        "en": "Text on color-action-primary and color-surface-inverse. Light pair is 4.1:1 — passes only at 18.66px bold / 24px; see color-action-primary."
+        "hy": "Տեքստ color-action-primary-ի և շրջված մակերեսի վրա։ Երկու թեմայում էլ ≥ 5.9:1 է (AA ցանկացած չափի համար)։",
+        "en": "Text on color-action-primary and color-surface-inverse. ≥ 5.9:1 in both themes (AA at any size)."
       },
       "ownerId": "owner.menq",
       "lifecycle": "Draft",
@@ -729,14 +729,14 @@
       "layer": "Semantic",
       "type": "color",
       "description": {
-        "hy": "Բրենդի ազուրը՝ հիմնական կոճակներ, ակտիվ վիճակներ, progress, BrandMark Q։ Light-ում սպիտակ տեքստով 4.1:1 է։",
-        "en": "THE brand azure: primary buttons, active states, progress, BrandMark Q. Light white-on-blue is 4.1:1 — keep primary button labels 16px semibold+ or use color-action-primary-strong for text."
+        "hy": "Բրենդի ազուրը՝ հիմնական կոճակներ, ակտիվ վիճակներ, progress։ Light-ում `#0369a1` է, որ սպիտակ տեքստը ցանկացած չափի դեպքում անցնի AA-ն (5.9:1). dark-ում՝ blue-500 մուգ տեքստով (7.5:1)։",
+        "en": "THE brand azure: primary buttons, active states, progress. Light is `#0369a1` so white text passes AA at any size (5.9:1); dark is blue-500 with dark text (7.5:1)."
       },
       "ownerId": "owner.menq",
       "lifecycle": "Draft",
       "modes": {
         "light": {
-          "reference": "menq.design.token.reference.brand.color.blue.600"
+          "value": "#0369a1"
         },
         "dark": {
           "reference": "menq.design.token.reference.brand.color.blue.500"
@@ -749,14 +749,14 @@
       "layer": "Semantic",
       "type": "color",
       "description": {
-        "hy": "Հիմնական կոճակի hover։",
-        "en": "Primary button hover."
+        "hy": "Հիմնական կոճակի hover։ Light-ում ավելի մուգ (`#075985`, սպիտակ տեքստով 7.5:1), dark-ում՝ cyan-400։",
+        "en": "Primary button hover. Darker in light (`#075985`, 7.5:1 with white text); cyan-400 in dark."
       },
       "ownerId": "owner.menq",
       "lifecycle": "Draft",
       "modes": {
         "light": {
-          "reference": "menq.design.token.reference.brand.color.blue.500"
+          "value": "#075985"
         },
         "dark": {
           "reference": "menq.design.token.reference.brand.color.cyan.400"
