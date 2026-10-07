@@ -155,6 +155,104 @@
       "license": "OFL-1.1 (fonts/LICENSE-JetBrainsMono.txt)",
       "lifecycle": "Draft",
       "sha256": "d274604c40757f98f07df623a8b8fb5194508a6fa4f5413a7a107f09e3b7452a"
+    },
+    {
+      "id": "menq.design.asset.brand.icon.menq-icon",
+      "kind": "icon",
+      "file": "assets/Icons/menq-icon.svg",
+      "description": {
+        "hy": "App icon-ի վեկտոր master՝ neon Q navy (`neutral-950`) կլորացված քառակուսու վրա",
+        "en": "Vector master of the app icon: neon Q on a rounded navy (`neutral-950`) tile"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Generated 2026-10-08 from the official power-ring Q (CR-0005 geometry) for CR-0008",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "bde520751eec3a0346fd762a345785d0bbfcf8943011d044721f273722250c99"
+    },
+    {
+      "id": "menq.design.asset.brand.icon.menq-icon-maskable",
+      "kind": "icon",
+      "file": "assets/Icons/menq-icon-maskable.svg",
+      "description": {
+        "hy": "Maskable app icon-ի վեկտոր master՝ full-bleed navy, Q-ն 80% safe zone-ի ներսում",
+        "en": "Vector master of the maskable app icon: full-bleed navy, Q inside the 80% safe zone"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Generated 2026-10-08 from the official power-ring Q (CR-0005 geometry) for CR-0008",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "9baa668a19b3b8a714a5c4b013ca306a1d8f0e54c9d823b62e1b0845c3144103"
+    },
+    {
+      "id": "menq.design.asset.brand.icon.favicon",
+      "kind": "icon",
+      "file": "assets/Icons/favicon.ico",
+      "description": {
+        "hy": "Favicon (16, 32, 48 px)",
+        "en": "Favicon (16, 32, 48 px)"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Generated 2026-10-08 from the official power-ring Q (CR-0005 geometry) for CR-0008",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "6e7a7cf83454e025d3b2a8bedd403f42eec4433d24f81136f41465ca4426806f"
+    },
+    {
+      "id": "menq.design.asset.brand.icon.apple-touch-icon",
+      "kind": "icon",
+      "file": "assets/Icons/apple-touch-icon.png",
+      "description": {
+        "hy": "Apple touch icon 180×180, անթափանց",
+        "en": "Apple touch icon 180×180, opaque"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Generated 2026-10-08 from the official power-ring Q (CR-0005 geometry) for CR-0008",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "f750481bcfc53c3b0c3672e61bd3446a0ecc5e1a5769427e681e7d20d14ce1e8"
+    },
+    {
+      "id": "menq.design.asset.brand.icon.menq-icon-192",
+      "kind": "icon",
+      "file": "assets/Icons/menq-icon-192.png",
+      "description": {
+        "hy": "PWA icon 192×192",
+        "en": "PWA icon 192×192"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Generated 2026-10-08 from the official power-ring Q (CR-0005 geometry) for CR-0008",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "0f92560144e1ba43213eeeec14b336d308e9b8abec8566ad7f23a897cd5c47ee"
+    },
+    {
+      "id": "menq.design.asset.brand.icon.menq-icon-512",
+      "kind": "icon",
+      "file": "assets/Icons/menq-icon-512.png",
+      "description": {
+        "hy": "PWA icon 512×512",
+        "en": "PWA icon 512×512"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Generated 2026-10-08 from the official power-ring Q (CR-0005 geometry) for CR-0008",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "0e591612ae2f67714682ce38d1fe795670793f91751ebbb68a6c72338b01942e"
+    },
+    {
+      "id": "menq.design.asset.brand.icon.menq-icon-maskable-512",
+      "kind": "icon",
+      "file": "assets/Icons/menq-icon-maskable-512.png",
+      "description": {
+        "hy": "PWA maskable icon 512×512",
+        "en": "PWA maskable icon 512×512"
+      },
+      "ownerId": "owner.menq",
+      "provenance": "Generated 2026-10-08 from the official power-ring Q (CR-0005 geometry) for CR-0008",
+      "license": "Proprietary — MenQ",
+      "lifecycle": "Draft",
+      "sha256": "8c91501c8dc1fd8d213fb0d982fe6652e8d76ef3d576fc34b0cf50fba55abb6f"
     }
   ]
 }
