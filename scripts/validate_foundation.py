@@ -211,8 +211,30 @@ def validate_links(errors: list[str]) -> None:
                 errors.append(f"broken relative link in {rel}: {target}")
 
 
+def validate_workflows(errors: list[str]) -> None:
+    """Every workflow must declare top-level permissions and pin third-party actions to a commit SHA."""
+    workflows = sorted((ROOT / ".github/workflows").glob("*.y*ml"))
+    if not workflows:
+        errors.append("no GitHub workflows found")
+    uses = re.compile(r"^\s*(?:-\s*)?uses:\s*([^\s#]+)", re.M)
+    pinned = re.compile(r"^[\w.-]+/[\w./-]+@[0-9a-f]{40}$")
+    for path in workflows:
+        rel = path.relative_to(ROOT).as_posix()
+        text = path.read_text(encoding="utf-8")
+        if not re.search(r"^permissions:", text, re.M):
+            errors.append(f"{rel}: missing top-level permissions block")
+        for ref in uses.findall(text):
+            if ref.startswith("./"):
+                continue
+            if not pinned.match(ref):
+                errors.append(f"{rel}: action {ref} is not pinned to a full commit SHA")
+        if "--no-frozen-lockfile" in text:
+            errors.append(f"{rel}: pnpm install must use --frozen-lockfile")
+
+
 def main() -> int:
     errors: list[str] = []
+    validate_workflows(errors)
 
     for rel in (*REQUIRED_ROOT, *REQUIRED_FOUNDATION):
         path = ROOT / rel

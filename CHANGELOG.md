@@ -1,5 +1,23 @@
 # MenQ Standard — Changelog
 
+## 2026-10-07 — Audit phase 4: workflow security
+
+### Հայերեն
+
+- Բոլոր 7 workflow-ները ունեն top-level `permissions: contents: read`։
+- Բոլոր third-party action-ները pin են արված ամբողջական commit SHA-ով (major tag-ը մեկնաբանությունում)։
+- Design Platform workspace-ը ունի `pnpm-lock.yaml`, CI-ը տեղադրում է `--frozen-lockfile`-ով։
+- Ավելացվեցին `.gitignore` և `.gitattributes` (LF line ending-ներ, binary ֆայլեր, generated lockfile)։
+- Foundation validator-ը RED է տալիս, եթե workflow-ը չունի `permissions`, action-ը pin չէ SHA-ով կամ օգտագործվում է `--no-frozen-lockfile`։ Foundation Integrity-ն գործարկվում է ցանկացած workflow-ի փոփոխության դեպքում։
+
+### English
+
+- All 7 workflows declare top-level `permissions: contents: read`.
+- Every third-party action is pinned to a full commit SHA (major tag kept as a comment).
+- The Design Platform workspace has a `pnpm-lock.yaml`; CI installs with `--frozen-lockfile`.
+- Added `.gitignore` and `.gitattributes` (LF line endings, binary files, generated lockfile).
+- The Foundation validator goes RED when a workflow lacks `permissions`, an action is not SHA-pinned, or `--no-frozen-lockfile` is used. Foundation Integrity runs on any workflow change.
+
 ## 2026-10-07 — Audit phase 3: status synchronization
 
 ### Հայերեն

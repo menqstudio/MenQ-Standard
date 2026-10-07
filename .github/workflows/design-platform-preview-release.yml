@@ -35,21 +35,21 @@ jobs:
   release-candidate-and-consumers:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
         with:
           version: "10"
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "24"
       - name: Install workspace links
         working-directory: platforms/design/implementation
-        run: pnpm install --no-frozen-lockfile --ignore-scripts
+        run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Rebuild generated package inputs
         run: |
           python platforms/design/implementation/scripts/build_tokens.py
@@ -96,7 +96,7 @@ jobs:
           cp -R platforms/design/implementation/consumers/design-catalog/dist/. /tmp/menq-release-a/consumers/design-catalog/
           cp -R platforms/design/implementation/consumers/release-console/dist/. /tmp/menq-release-a/consumers/release-console/
       - name: Upload release and consumer evidence bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: menq-design-platform-0.1.0-next.0
           path: /tmp/menq-release-a
