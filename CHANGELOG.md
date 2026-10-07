@@ -1,5 +1,15 @@
 # MenQ Standard — Changelog
 
+## 2026-10-07 — CR-0003: brand custom-properties artifact
+
+### Հայերեն
+
+- Brand generator-ը արտադրում է նաև `tokens.vars.css`՝ միայն custom property-ներ, առանց class-երի և `@font-face`-ի, որպեսզի արտադրանքները (առաջինը՝ MenQ Webpage) կարողանան pinned copy օգտագործել առանց class-ների բախման։
+
+### English
+
+- The brand generator also emits `tokens.vars.css`: custom properties only, without classes or `@font-face`, so products (first MenQ Webpage) can use a pinned copy without class collisions.
+
 ## 2026-10-07 — Part 14 governance implementation Locked
 
 ### Հայերեն

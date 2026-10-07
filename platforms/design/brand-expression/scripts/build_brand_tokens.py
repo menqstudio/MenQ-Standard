@@ -2,10 +2,11 @@
 """Build the MenQ brand expression token outputs (D-027) from the canonical source.
 
 Reads  source/brand-tokens.source.json
-Writes tokens.css   — CSS custom properties for consumers
-       tokens.json  — design-tool mirror (claude.ai Design System format)
+Writes tokens.css       — CSS custom properties, type-style classes and @font-face (self-hosted pages)
+       tokens.vars.css  — CSS custom properties only, for consuming products (no classes, no fonts)
+       tokens.json      — design-tool mirror (claude.ai Design System format)
 
-Both outputs are generated and non-canonical. `--check` fails if either is out of date.
+All outputs are generated and non-canonical. `--check` fails if either is out of date.
 """
 
 from __future__ import annotations
@@ -19,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "source/brand-tokens.source.json"
 OUT_CSS = ROOT / "tokens.css"
 OUT_JSON = ROOT / "tokens.json"
+OUT_VARS = ROOT / "tokens.vars.css"
 LAYER_ORDER = {"Reference": 0, "Semantic": 1, "Component": 2, "Pattern": 3, "Product Extension": 4}
 MODES = ("light", "dark")
 HEADER = "/* MenQ brand expression (D-027) — GENERATED from source/brand-tokens.source.json. Do not edit. */"
@@ -85,7 +87,7 @@ def css_value(entry: dict, by_id: dict[str, dict]) -> str:
     return str(entry["value"])
 
 
-def build_css(source: dict) -> str:
+def build_css(source: dict, presentation: bool = True) -> str:
     by_id = {token["id"]: token for token in source["tokens"]}
     themed = [t for t in source["tokens"] if t["type"] in ("color", "shadow")]
     rooted = [t for t in source["tokens"] if t["type"] not in ("color", "shadow")]
@@ -98,6 +100,8 @@ def build_css(source: dict) -> str:
     lines += ["}", ":root {"]
     lines += [f"  --{t['cssName']}: {css_value(entry_of(t, 'light'), by_id)};" for t in rooted]
     lines += ["}"]
+    if not presentation:
+        return "\n".join(lines) + "\n"
     for style in source["typeStyles"]:
         props = [f"font-family: var(--font-{style['family']})", f"font-size: {style['fontSize']}", f"line-height: {style['lineHeight']}", f"font-weight: {style['fontWeight']}"]
         if "letterSpacing" in style:
@@ -163,7 +167,7 @@ def main() -> int:
     errors = check(source)
     if errors:
         return fail(errors)
-    outputs = {OUT_CSS: build_css(source), OUT_JSON: build_mirror(source)}
+    outputs = {OUT_CSS: build_css(source), OUT_VARS: build_css(source, presentation=False), OUT_JSON: build_mirror(source)}
     if mode_check:
         stale = [p.name for p, text in outputs.items() if not p.is_file() or p.read_text(encoding="utf-8") != text]
         if stale:

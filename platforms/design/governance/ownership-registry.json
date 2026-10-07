@@ -685,6 +685,21 @@
       }
     },
     {
+      "id": "menq.design.generated.tokens-vars-css",
+      "kind": "generated-surface",
+      "path": "platforms/design/brand-expression/tokens.vars.css",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "գեներացված brand custom property-ներ՝ առանց class-երի և font-երի, արտադրանքների համար",
+        "en": "Generated brand custom properties without classes or fonts, for consuming products"
+      }
+    },
+    {
       "id": "menq.design.workflow.design-platform-phase-a",
       "kind": "workflow",
       "path": ".github/workflows/design-platform-phase-a.yml",
