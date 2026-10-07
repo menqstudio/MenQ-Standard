@@ -1,5 +1,15 @@
 # MenQ Standard — Changelog
 
+## 2026-10-07 — Audit phase 6b: permanent release publishing
+
+### Հայերեն
+
+- Ավելացվեց `publish-release.yml` workflow-ը. `foundation-v*` և `design-platform-v*` tag-երը `main`-ի վրա կառուցում և հրապարակում են GitHub Release՝ մշտական asset-ով և SHA-256-ով։ Սա փոխարինում է 30/90 օրում ջնջվող workflow artifact-ները որպես release evidence։
+
+### English
+
+- Added the `publish-release.yml` workflow: `foundation-v*` and `design-platform-v*` tags on `main` build and publish a GitHub Release with a permanent asset and SHA-256. This replaces 30/90-day workflow artifacts as release evidence.
+
 ## 2026-10-07 — Audit phase 5: bilingual completion (R-05 reopened and closed)
 
 ### Հայերեն

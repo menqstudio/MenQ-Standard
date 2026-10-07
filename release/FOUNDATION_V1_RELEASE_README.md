@@ -17,4 +17,10 @@ This package is the delivery snapshot of MenQ Standard Foundation v1. It is crea
 
 The snapshot contains the repository's tracked content without the `.git` directory or generated ZIP files. The package build creates a SHA-256 manifest and verifies the presence of required Foundation root and chapter files.
 
+## Publishing / Հրապարակում
+
+**HY:** Release-ը հրապարակվում է `foundation-v<version>` tag-ով `main`-ի commit-ի վրա։ `.github/workflows/publish-release.yml`-ը ստուգում է, որ tag-ը `main`-ում է, գործարկում է Foundation validator-ը, կառուցում է ZIP-ը `SHA256SUMS.txt` manifest-ով և այն կցում է GitHub Release-ին որպես մշտական asset՝ `.sha256` ֆայլի հետ։ Workflow artifact-ի retention-ը release evidence չէ։
+
+**EN:** A release is published by pushing a `foundation-v<version>` tag on a `main` commit. `.github/workflows/publish-release.yml` verifies that the tag is on `main`, runs the Foundation validator, builds the ZIP with the `SHA256SUMS.txt` manifest, and attaches it to a GitHub Release as a permanent asset together with a `.sha256` file. Workflow-artifact retention is not release evidence.
+
 <!-- END: FOUNDATION_V1_RELEASE_README -->
