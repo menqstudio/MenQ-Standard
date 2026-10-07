@@ -84,9 +84,11 @@ Philosophy
 
 > MenQ Standard-ի տեսլականն է դառնալ Human–AI collaboration-ի reference standard։
 
-### Standard Mission — Open
+### Standard Mission — Locked (D-011)
 
-MenQ Standard-ի mission-ը դեռ հաստատված չէ։ Այն առանձին է MenQ Studio-ի company mission-ից։
+> MenQ Standard-ի առաքելությունն է ստեղծել կիրառելի և զարգացող operating standard, որը մարդկանց ու AI համակարգերին օգնում է միասին մտածել, որոշել, կառուցել և պահպանել որակյալ համակարգեր։
+
+Այն առանձին է MenQ Studio-ի company mission-ից։ Աղբյուր՝ [`DECISIONS.md`](DECISIONS.md) `D-011`։
 
 ## Ownership rule
 
@@ -199,9 +201,11 @@ Philosophy
 
 > MenQ Standard's vision is to become the reference standard for Human–AI collaboration.
 
-### Standard Mission — Open
+### Standard Mission — Locked (D-011)
 
-The mission of MenQ Standard is not yet approved. It is separate from the company mission of MenQ Studio.
+> MenQ Standard's mission is to create a practical and evolving operating standard that helps people and AI systems think, decide, build, and preserve quality systems together.
+
+It is separate from the company mission of MenQ Studio. Source: [`DECISIONS.md`](DECISIONS.md) `D-011`.
 
 ## Ownership rule
 
@@ -227,3 +231,5 @@ Documentation
 ```
 
 Chat is the workshop. GitHub is the canonical source. Only approved architecture and decisions enter GitHub.
+
+<!-- END: MENQ_ECOSYSTEM_ARCHITECTURE -->

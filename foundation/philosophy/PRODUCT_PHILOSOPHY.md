@@ -196,3 +196,5 @@ Users and real usage evidence help reveal reality.
 AI assists analysis, proposals, and execution.
 
 MenQ Standard preserves approved thinking and continuity.
+
+<!-- END: FOUNDATION_PRODUCT_PHILOSOPHY -->

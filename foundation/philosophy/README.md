@@ -165,3 +165,5 @@ Every important MenQ Standard decision must be tested against this question:
 > Does this move us closer to becoming the reference standard for Human–AI collaboration?
 
 If not, the idea, scope, or priority must be reconsidered.
+
+<!-- END: FOUNDATION_PHILOSOPHY_README -->

@@ -53,7 +53,7 @@ AI Collaboration-ի հետ աշխատանքից առաջ ամբողջ repository
 - Related decisions — `D-023`, `D-026`։
 - `CANONICAL_SESSION_READ_LAW.md` — Locked v1։
 - Foundation-ի բոլոր յոթ chapter-ները կառուցված են։
-- D-026 automation validation-ը պետք է ավելացվի Foundation validator-ին։
+- D-026-ը մեքենայորեն ստուգվում է Foundation validator-ով և Markdown inventory-ով։
 
 ---
 
@@ -105,6 +105,6 @@ After reading every `.md` file in the complete repository, specifically confirm:
 - Related decisions — `D-023`, `D-026`.
 - `CANONICAL_SESSION_READ_LAW.md` — Locked v1.
 - All seven Foundation chapters are built.
-- D-026 automation validation still needs to be added to the Foundation validator.
+- D-026 is machine-checked by the Foundation validator and the Markdown inventory.
 
 <!-- END: AI_COLLABORATION_PROJECT_CONTEXT -->

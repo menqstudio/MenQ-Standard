@@ -1,6 +1,6 @@
 # MenQ Design Platform Architecture / MenQ Design Platform ճարտարապետություն
 
-**Status / Կարգավիճակ:** Approved — Implementing / Հաստատված — իրականացվում է  
+**Status / Կարգավիճակ:** Locked (D-025, 2026-07-13) / Locked (D-025, 2026-07-13)  
 **Decision / Որոշում:** [`decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`](decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md)  
 **Detailed baseline / Մանրամասն հիմք:** [`DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md`](DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md)
 
@@ -53,7 +53,7 @@ Theme-ը semantic mapping է։ Mode-ը capability կամ preference dimension է
 
 ### Lock gate
 
-D-025-ը մնում է `Approved — Implementing`։ Այն `Locked` է դառնում միայն canonical specification set-ից, implementation package-ից, առնվազն երկու տարբեր իրական consumer validation-ից, bilingual parity-ից, release/migration evidence-ից, Owner approval-ից և GREEN automation-ից հետո։
+D-025-ը `Locked` է 2026-07-13-ից ([`decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`](decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md))։ Lock-ի պայմաններն էին՝ canonical specification set, implementation package, առնվազն երկու տարբեր իրական consumer validation, bilingual parity, release/migration evidence, Owner approval և GREEN automation։ Հետագա փոփոխությունները ենթարկվում են change-control-ին և Owner-ի explicit հաստատմանը։
 
 ## English
 
@@ -104,6 +104,6 @@ A theme maps semantics. A mode represents a capability or preference dimension. 
 
 ### Lock gate
 
-D-025 remains `Approved — Implementing`. It becomes `Locked` only after the canonical specification set, implementation package, validation by at least two distinct real consumers, bilingual parity, release and migration evidence, Owner approval, and GREEN automation are complete.
+D-025 has been `Locked` since 2026-07-13 ([`decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`](decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md)). The lock conditions were the canonical specification set, implementation package, validation by at least two distinct real consumers, bilingual parity, release and migration evidence, Owner approval, and GREEN automation. Further changes follow change control and explicit Owner approval.
 
 <!-- END: MENQ_DESIGN_PLATFORM_ARCHITECTURE -->

@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "registryId": "menq.design.registry.phase-a.v1",
   "decision": "D-025",
-  "status": "Approved — Implementing",
+  "status": "Locked",
   "canonicalSource": "platforms/design/specifications/design-platform-registry.json",
   "generatedOutputsAreCanonical": false,
   "owners": [

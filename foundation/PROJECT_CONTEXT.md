@@ -33,12 +33,12 @@
 
 ### Startup workflow
 
-Foundation-ի հետ աշխատանքից առաջ կարդալ՝ root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, այս file-ը, Canonical Write Integrity Law-ը և համապատասխան chapter-ը։
+D-026-ի համաձայն՝ ցանկացած substantive աշխատանքից առաջ ամբողջությամբ կարդալ բոլոր tracked `.md` ֆայլերը ([`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md))։ Foundation-ի համար առանցքայինն են՝ root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, այս file-ը, Canonical Write Integrity Law-ը և համապատասխան chapter-ը։
 
 ### Integrity և decisions
 
 - `DECISIONS.md` պահպանում է historical `D-001–D-021` registry-ն։
-- `DECISION_INDEX.md`-ը active append-only registry է և կապում է dedicated `D-022`, `D-023` records-ը։
+- `DECISION_INDEX.md`-ը active append-only registry է և կապում է dedicated `D-022`–`D-027` records-ը։
 - Canonical writes-ը ենթարկվում են `documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`-ին։
 - Integrity validator-ը պահվում է `scripts/validate_foundation.py`-ում և գործարկվում է CI workflow-ով։
 - `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։
@@ -47,7 +47,7 @@ Foundation-ի հետ աշխատանքից առաջ կարդալ՝ root `README.m
 
 ### Հաջորդ քայլ
 
-Ստեղծել և verify անել Foundation v1 complete repository ZIP snapshot-ը՝ release README, version/date, SHA-256 manifest և missing-file verification-ով։ ZIP-ը հրապարակվում է GitHub Release asset-ով և չի պահվում main branch-ում որպես binary։ Դրանից հետո Platforms architecture-ը բացվում է միայն formal Decision System proposal-ով և Owner approval-ով։
+Ստեղծել և verify անել Foundation v1 complete repository ZIP snapshot-ը՝ release README, version/date, SHA-256 manifest և missing-file verification-ով։ ZIP-ը հրապարակվում է GitHub Release asset-ով և չի պահվում main branch-ում որպես binary։ Platforms architecture-ը արդեն բացված է D-024-ով, իսկ Design Platform-ը Locked է D-025-ով։
 
 ---
 
@@ -78,12 +78,12 @@ Every major chapter contains `README.md` and `PROJECT_CONTEXT.md`. Legacy metada
 
 ### Startup workflow
 
-Before Foundation work, read the root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, this file, the Canonical Write Integrity Law, and the relevant chapter.
+Under D-026, read every tracked `.md` file completely before any substantive work ([`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md)). For Foundation the key files are the root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, this file, the Canonical Write Integrity Law, and the relevant chapter.
 
 ### Integrity and decisions
 
 - `DECISIONS.md` preserves the historical `D-001–D-021` registry.
-- `DECISION_INDEX.md` is the active append-only registry and links dedicated `D-022` and `D-023` records.
+- `DECISION_INDEX.md` is the active append-only registry and links the dedicated `D-022`–`D-027` records.
 - Canonical writes follow `documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`.
 - The integrity validator is stored in `scripts/validate_foundation.py` and runs through CI.
 - `Foundation Integrity` workflow run `#9` completed with a `success` conclusion.
@@ -92,6 +92,6 @@ Before Foundation work, read the root `README.md`, `PROJECT_CONTEXT.md`, `DECISI
 
 ### Next step
 
-Create and verify the complete Foundation v1 repository ZIP snapshot with a release README, version/date, SHA-256 manifest, and missing-file verification. Publish the ZIP as a GitHub Release asset and do not store it as a binary in the main branch. After that, open Platforms architecture only through a formal Decision System proposal and Owner approval.
+Create and verify the complete Foundation v1 repository ZIP snapshot with a release README, version/date, SHA-256 manifest, and missing-file verification. Publish the ZIP as a GitHub Release asset and do not store it as a binary in the main branch. Platforms architecture has since been opened by D-024, and the Design Platform is Locked under D-025.
 
 <!-- END: FOUNDATION_PROJECT_CONTEXT -->

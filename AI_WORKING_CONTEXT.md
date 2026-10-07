@@ -29,6 +29,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - D-024 — merged և canonical։
 - D-025 — Locked և GREEN։
 - D-026 — Locked և machine-enforced։
+- D-027 — Approved — Implementing (brand expression layer + Bro product extension)։
 - D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
 - D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
 - D-025 lock merge — `261f85e5b20d726a0ab1f05da84a4dc45a248873`։
@@ -47,7 +48,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 ### Հաջորդ հստակ աշխատանք
 
-Owner-ը ընտրում է MenQ Standard-ի հաջորդ ecosystem priority-ն և բացում առանձին decision transaction։
+2026-10-07 zero-trust audit-ի remediation-ը շարունակվում է փուլերով (workflow security, bilingual completion, Owner-ի որոշումներ)։ D-027-ը Locked դառնալու համար պետք է D-025 mapping-ը և առաջին իրական consumer-ը։ Դրանից հետո Owner-ը ընտրում է հաջորդ ecosystem priority-ն։
 
 ---
 
@@ -72,6 +73,7 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 - D-024 is merged and canonical.
 - D-025 is Locked and GREEN.
 - D-026 is Locked and machine-enforced.
+- D-027 is Approved — Implementing (brand expression layer + Bro product extension).
 - D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
 - D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
 - D-025 lock merge: `261f85e5b20d726a0ab1f05da84a4dc45a248873`.
@@ -90,6 +92,6 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 
 ### Exact next work
 
-The Owner selects the next MenQ Standard ecosystem priority and opens a separate decision transaction.
+Remediation of the 2026-10-07 zero-trust audit continues in phases (workflow security, bilingual completion, Owner decisions). D-027 needs the D-025 mapping and its first real consumer before it can lock. After that, the Owner selects the next ecosystem priority.
 
 <!-- END: MENQ_STANDARD_AI_WORKING_CONTEXT -->

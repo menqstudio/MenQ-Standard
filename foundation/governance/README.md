@@ -447,3 +447,5 @@ Specific governance KPIs and review cadence are defined in the relevant Operatin
 
 > **HY:** Ոչ ոք՝ մարդ, AI կամ system, չի կարող ունենալ ավելի մեծ authority, քան իրեն բացահայտ տրված է։  
 > **EN:** No human, AI, or system may exercise more authority than has been explicitly granted.
+
+<!-- END: FOUNDATION_GOVERNANCE_README -->

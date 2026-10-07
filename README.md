@@ -68,6 +68,8 @@ MenQ Ecosystem
 - [`NEXT_CHAT_HANDOFF.md`](NEXT_CHAT_HANDOFF.md) — current continuation handoff
 - [`DECISION_INDEX.md`](DECISION_INDEX.md) — active append-only decision registry
 - [`DECISIONS.md`](DECISIONS.md) — historical `D-001–D-021` registry
+- [`ECOSYSTEM_ARCHITECTURE.md`](ECOSYSTEM_ARCHITECTURE.md) — ecosystem hierarchy and ownership
+- [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md) — D-027 brand expression layer
 - [`CHANGELOG.md`](CHANGELOG.md) — history
 - [`ROADMAP.md`](ROADMAP.md) — future direction
 - [`foundation/README.md`](foundation/README.md) — Foundation index

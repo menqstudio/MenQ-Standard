@@ -46,7 +46,7 @@ See [`PLATFORM_REGISTRY.md`](PLATFORM_REGISTRY.md).
 
 ## Active Platforms / Գործող Platform-ներ
 
-- [`Design Platform`](design/README.md) — formally opened; detailed architecture pending separate approval.
+- [`Design Platform`](design/README.md) — architecture Locked under D-025; brand expression layer under D-027.
 
 ## Creation rule / Ստեղծման կանոն
 

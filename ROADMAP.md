@@ -26,11 +26,13 @@
 - [x] PR #5 D-025 lock transaction
 - [x] D-025 Locked and GREEN
 - [x] Final post-lock audit and continuity synchronization
+- [x] D-027 Brand Expression Layer v1 approved; package governed (audit phase 1)
+- [x] Validator hardening (audit phase 2) and status synchronization (audit phase 3)
 
 ## Current / Ընթացիկ
 
-**HY:** D-025 transaction-ը փակված է։ MenQ Standard-ի հաջորդ ecosystem priority-ն դեռ Owner-ի ընտրության փուլում է։  
-**EN:** The D-025 transaction is closed. The next MenQ Standard ecosystem priority awaits Owner selection.
+**HY:** D-025 transaction-ը փակված է։ D-027-ը Approved — Implementing է։ 2026-10-07 zero-trust audit-ի remediation-ը շարունակվում է՝ workflow security, bilingual completion, Owner-ի որոշումներ։  
+**EN:** The D-025 transaction is closed. D-027 is Approved — Implementing. Remediation of the 2026-10-07 zero-trust audit continues: workflow security, bilingual completion, Owner decisions.
 
 ## Candidate next directions / Հաջորդ հնարավոր ուղղություններ
 

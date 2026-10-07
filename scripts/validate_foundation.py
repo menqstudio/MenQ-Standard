@@ -57,6 +57,16 @@ EXPECTED_MARKERS = {
     "foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md": "<!-- END: CANONICAL_WRITE_INTEGRITY_LAW_V1 -->",
     "foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md": "<!-- END: CANONICAL_SESSION_READ_LAW_V1 -->",
     "foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md": "<!-- END: D-026-CANONICAL-SESSION-READ-LAW -->",
+    "DECISIONS.md": "<!-- END: MENQ_DECISIONS_REGISTRY -->",
+    "ECOSYSTEM_ARCHITECTURE.md": "<!-- END: MENQ_ECOSYSTEM_ARCHITECTURE -->",
+    "foundation/decision-system/README.md": "<!-- END: FOUNDATION_DECISION_SYSTEM_README -->",
+    "foundation/documentation/README.md": "<!-- END: FOUNDATION_DOCUMENTATION_README -->",
+    "foundation/governance/README.md": "<!-- END: FOUNDATION_GOVERNANCE_README -->",
+    "foundation/philosophy/ENGINEERING_PHILOSOPHY.md": "<!-- END: FOUNDATION_ENGINEERING_PHILOSOPHY -->",
+    "foundation/philosophy/PRODUCT_PHILOSOPHY.md": "<!-- END: FOUNDATION_PRODUCT_PHILOSOPHY -->",
+    "foundation/philosophy/README.md": "<!-- END: FOUNDATION_PHILOSOPHY_README -->",
+    "foundation/principles/README.md": "<!-- END: FOUNDATION_PRINCIPLES_README -->",
+    "foundation/terminology/README.md": "<!-- END: FOUNDATION_TERMINOLOGY_README -->",
 }
 
 D026_REQUIRED_REFERENCES = {
@@ -217,13 +227,15 @@ def main() -> int:
 
     for rel, marker in EXPECTED_MARKERS.items():
         path = ROOT / rel
-        if path.is_file() and marker not in read_text(rel):
+        if not path.is_file():
+            errors.append(f"marker-governed file is missing: {rel}")
+        elif marker not in read_text(rel):
             errors.append(f"missing ending marker in {rel}: {marker}")
 
     decision_index = ROOT / "DECISION_INDEX.md"
     if decision_index.is_file():
         text = read_text("DECISION_INDEX.md")
-        for decision_id in ("D-022", "D-023", "D-024", "D-025", "D-026"):
+        for decision_id in ("D-022", "D-023", "D-024", "D-025", "D-026", "D-027"):
             if decision_id not in text:
                 errors.append(f"decision index missing {decision_id}")
         for path in sorted(ROOT.glob("**/D-0[2-9][0-9]-*.md")) + sorted(ROOT.glob("**/D-0[2-9][0-9]_*.md")):

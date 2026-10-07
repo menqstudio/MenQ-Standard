@@ -12,7 +12,7 @@
 | Governance | Locked | 1.0 | Normative | `foundation/governance/README.md` | `D-019` | Authority model change |
 | Decision System | Locked | 1.0 | Normative | `foundation/decision-system/README.md` | `D-020` | Lifecycle or gate change |
 | Documentation | Locked | 1.0 | Normative | `foundation/documentation/README.md` | `D-021`, `D-022` | Documentation or integrity change |
-| AI Collaboration | Locked | 1.0 | Normative | `foundation/ai-collaboration/README.md` | `D-023` | AI authority or workflow change |
+| AI Collaboration | Locked | 1.0 | Normative | `foundation/ai-collaboration/README.md` | `D-023`, `D-026` | AI authority or workflow change |
 
 **HY:** Registry-ն լրացնում է legacy chapter headers-ի metadata gaps-ը՝ առանց locked history-ն rewrite անելու։
 

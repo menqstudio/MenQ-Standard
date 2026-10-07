@@ -346,3 +346,5 @@
 **HY:** MenQ canonical documentation-ում մեծատառով գրված հատուկ տերմինները՝ `Owner`, `Foundation`, `Locked`, `Platform`, `Product` և մյուսները, օգտագործվում են այս glossary-ի իմաստով, եթե փաստաթուղթը բացահայտ այլ՝ ավելի նեղ սահմանում չի նշում։
 
 **EN:** In MenQ canonical documentation, capitalized defined terms such as `Owner`, `Foundation`, `Locked`, `Platform`, and `Product` carry the meanings established by this glossary unless a document explicitly specifies a narrower definition.
+
+<!-- END: FOUNDATION_TERMINOLOGY_README -->

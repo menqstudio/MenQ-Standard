@@ -21,7 +21,7 @@
     "schemaVersion": { "const": 1 },
     "registryId": { "type": "string", "minLength": 1 },
     "decision": { "const": "D-025" },
-    "status": { "enum": ["Approved — Implementing"] },
+    "status": { "enum": ["Approved — Implementing", "Locked"] },
     "canonicalSource": { "type": "string", "minLength": 1 },
     "generatedOutputsAreCanonical": { "const": false },
     "owners": {

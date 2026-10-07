@@ -1,6 +1,6 @@
 # MenQ Design Platform / MenQ դիզայնի հարթակ
 
-**Status / Կարգավիճակ:** Opened — Architecture pending / Բացված — architecture-ը սպասվում է  
+**Status / Կարգավիճակ:** Active — Architecture Locked (D-025) / Գործող — architecture-ը Locked է (D-025)  
 **Platform owner / Հարթակի պատասխանատու:** MenQ Owner  
 **Platform class / Հարթակի դաս:** Reusable ecosystem capability
 

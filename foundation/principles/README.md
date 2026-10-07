@@ -119,3 +119,5 @@
 **HY:** Հայերեն և անգլերեն canonical տարբերակները հավասարապես կարևոր են և պետք է փոխանցեն նույն ամբողջական իմաստը։
 
 **EN:** Armenian and English canonical versions are equally authoritative and must carry the same complete meaning.
+
+<!-- END: FOUNDATION_PRINCIPLES_README -->
