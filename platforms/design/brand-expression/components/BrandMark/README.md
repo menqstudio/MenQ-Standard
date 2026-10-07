@@ -7,12 +7,13 @@
 
 Պաշտոնական MenQ մարկը՝ կլորացված «Men» և neon power-ring Q (օղակ՝ ներքևում բացվածքով և ուղղահայաց գծով), inline SVG-ով։
 
-**Ինչ է տալիս օգտագործողը.** Ոչինչ։ Ըստ ցանկության՝ `compact`, `admin`, `tag`։
+**Ինչ է տալիս օգտագործողը.** Ոչինչ։ Ըստ ցանկության՝ `compact`, `admin`, `tag`, `powerOn`։
 
 **Props**
 - `compact` — խիտ header-ների համար փոքր չափ
 - `admin` — մարկից հետո ցույց է տալիս ADMIN պիտակը
 - `tag` — պիտակի տեքստը
+- `powerOn` — մեկ անգամ power-on անիմացիա (միայն hero, splash, loading, CR-0010)
 
 **Կանոններ**
 - «Men»-ը վերցնում է `color-content-primary`-ն. բաց ֆոնին մուգ է, մուգ ֆոնին և contrast բաժիններում՝ սպիտակ։ Q-ի գրադիենտը (`#0ea5e9` → `#67e8f9`) և glow-ը ֆիքսված են. չվերաներկել, «Men»-ը Q-ից չանջատել, չձգել։
@@ -27,12 +28,13 @@ _Աղբյուր՝ պաշտոնական լոգո `assets/Logos/menq-logo-neon-hir
 
 The official MenQ mark: a rounded "Men" and the neon power-ring Q (a ring open at the bottom with a vertical stem), as inline SVG.
 
-**The consumer provides:** Nothing. Optional `compact`, `admin`, `tag`.
+**The consumer provides:** Nothing. Optional `compact`, `admin`, `tag`, `powerOn`.
 
 **Props**
 - `compact` — smaller size for dense headers
 - `admin` — shows the uppercase tag after the mark
 - `tag` — custom tag text
+- `powerOn` — plays the power-on animation once (hero, splash or loading only, CR-0010)
 
 **Rules**
 - "Men" takes `color-content-primary`: ink on light grounds, white on dark grounds and inside contrast sections. The Q gradient (`#0ea5e9` → `#67e8f9`) and glow are fixed; never recolour, separate "Men" from the Q, or stretch it.

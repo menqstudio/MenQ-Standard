@@ -2124,6 +2124,58 @@
       "value": "cubic-bezier(0.4, 0, 0.2, 1)"
     },
     {
+      "id": "menq.design.token.reference.brand.motion.duration-power-on",
+      "cssName": "duration-power-on",
+      "layer": "Reference",
+      "type": "duration",
+      "description": {
+        "hy": "Լոգոյի power-on հաջորդականություն (մեկ անգամ session-ում)։",
+        "en": "Logo power-on sequence (once per session)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1200ms"
+    },
+    {
+      "id": "menq.design.token.reference.brand.motion.motion-stagger",
+      "cssName": "motion-stagger",
+      "layer": "Reference",
+      "type": "duration",
+      "description": {
+        "hy": "Հաջորդական reveal-ում հարևան տարրերի միջև ուշացման քայլը։",
+        "en": "Delay step between siblings in a staggered reveal."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "60ms"
+    },
+    {
+      "id": "menq.design.token.reference.brand.motion.motion-distance-sm",
+      "cssName": "motion-distance-sm",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Reveal-ի տեղաշարժ փոքր տարրերի համար (8px)։",
+        "en": "Reveal offset for small elements (8px)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "0.5rem"
+    },
+    {
+      "id": "menq.design.token.reference.brand.motion.motion-distance-md",
+      "cssName": "motion-distance-md",
+      "layer": "Reference",
+      "type": "dimension",
+      "description": {
+        "hy": "Reveal-ի տեղաշարժ բաժինների և քարտերի համար (16px)։",
+        "en": "Reveal offset for sections and cards (16px)."
+      },
+      "ownerId": "owner.menq",
+      "lifecycle": "Draft",
+      "value": "1rem"
+    },
+    {
       "id": "menq.design.token.reference.brand.font-family.sans",
       "cssName": "font-sans",
       "layer": "Reference",
