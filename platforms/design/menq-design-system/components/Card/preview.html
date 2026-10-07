@@ -1,0 +1,6 @@
+<!-- @dsCard group="Surfaces" height=260 -->
+<div id="root" style="padding:16px"></div>
+<script>
+const h = React.createElement, M = window.MenQ;
+ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'grid grid-3'},h(M.Card,null,h('div',{className:'field-label'},'Solid'),h('div',{className:'stat'},'1 284')),h(M.Card,{variant:'elevated',interactive:true},h('div',{className:'field-label'},'Elevated · hover me'),h('div',{className:'stat'},'37')),h(M.Card,{variant:'brand'},h('div',{className:'field-label'},'Brand'),h('div',{className:'stat'},'+12%')),h(M.Card,{variant:'outline'},h('div',{className:'field-label'},'Outline'),h('div',{className:'muted'},'Transparent fill')),h(M.Card,{variant:'glass'},h('div',{className:'field-label'},'Glass'),h('div',{className:'muted'},'Blurred surface')),h(M.Card,{variant:'premium'},h('div',{className:'field-label'},'Premium'),h('div',{className:'muted'},'Panel gradient'))));
+</script>

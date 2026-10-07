@@ -1,0 +1,6 @@
+<!-- @dsCard group="Overlays" height=190 -->
+<div id="root" style="padding:16px"></div>
+<script>
+const h = React.createElement, M = window.MenQ;
+ReactDOM.createRoot(document.getElementById('root')).render(h(M.Modal,{inline:true,title:'Վերանվանել · Rename'},h(M.FormRow,{label:'Անուն · Name'},h(M.Input,{defaultValue:'Weekly report'})),h('div',{className:'form-actions'},h(M.Button,{variant:'ghost'},'Չեղարկել · Cancel'),h(M.Button,{variant:'primary'},'Պահպանել · Save'))));
+</script>

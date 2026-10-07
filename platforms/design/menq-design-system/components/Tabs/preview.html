@@ -1,0 +1,6 @@
+<!-- @dsCard group="Navigation" height=80 -->
+<div id="root" style="padding:16px"></div>
+<script>
+const h = React.createElement, M = window.MenQ;
+ReactDOM.createRoot(document.getElementById('root')).render(h(M.Tabs,{items:[{value:'all',label:'Բոլորը · All',count:24},{value:'run',label:'Running',count:3},{value:'appr',label:'Approvals',count:2},{value:'done',label:'Done'}]}));
+</script>

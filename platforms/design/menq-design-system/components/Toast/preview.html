@@ -1,0 +1,6 @@
+<!-- @dsCard group="Feedback" height=150 -->
+<div id="root" style="padding:16px"></div>
+<script>
+const h = React.createElement, M = window.MenQ;
+ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'stack',style:{maxWidth:360}},h(M.Toast,{tone:'success'},'Պահպանված է · Saved'),h(M.Toast,{tone:'info'},'Bro started the weekly report'),h(M.Toast,{tone:'error'},'Չհաջողվեց · Could not connect')));
+</script>

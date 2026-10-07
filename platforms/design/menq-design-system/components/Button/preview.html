@@ -1,0 +1,6 @@
+<!-- @dsCard group="Actions" height=150 -->
+<div id="root" style="padding:16px"></div>
+<script>
+const h = React.createElement, M = window.MenQ;
+ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'stack'},h('div',{className:'row',style:{flexWrap:'wrap'}},h(M.Button,{variant:'primary'},'Ամրագրել զանգ · Book a call'),h(M.Button,{variant:'secondary'},'Իմանալ ավելին'),h(M.Button,{variant:'outline'},'Outline'),h(M.Button,{variant:'ghost'},'Ghost'),h(M.Button,{variant:'danger'},'Ջնջել · Delete')),h('div',{className:'row',style:{flexWrap:'wrap'}},h(M.Button,{size:'lg'},'Large CTA'),h(M.Button,{size:'sm',variant:'secondary'},'Small'),h(M.Button,{size:'sm',loading:true},'Saving'),h(M.Button,{size:'sm',variant:'secondary',disabled:true},'Disabled'))));
+</script>

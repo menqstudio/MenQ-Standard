@@ -1,0 +1,6 @@
+<!-- @dsCard group="Data" height=240 -->
+<div id="root" style="padding:16px"></div>
+<script>
+const h = React.createElement, M = window.MenQ;
+ReactDOM.createRoot(document.getElementById('root')).render(h(M.Table,{caption:'Վերջին պայմանագրեր · Recent contracts',columns:[{key:'id',label:'ID'},{key:'name',label:'Բաժանորդ'},{key:'tariff',label:'Սակագին'},{key:'status',label:'Status',render:r=>h(M.Badge,{tone:r.tone},r.status)},{key:'sum',label:'֏',align:'right'}],rows:[{id:'0412',name:'Ա. Հակոբյան',tariff:'Fiber 100',status:'active',tone:'success',sum:'9 900'},{id:'0413',name:'Մ. Սարգսյան',tariff:'Fiber 300',status:'pending',tone:'warning',sum:'14 900'},{id:'0414',name:'Ն. Պետրոսյան',tariff:'Fiber 100',status:'cancelled',tone:'danger',sum:'—'}]}));
+</script>
