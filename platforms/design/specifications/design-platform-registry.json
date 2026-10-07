@@ -183,7 +183,7 @@
       "plane": "Delivery",
       "class": "normative",
       "ownerId": "owner.menq",
-      "lifecycle": "Approved — Implementing",
+      "lifecycle": "Locked",
       "sourcePath": "platforms/design/GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md",
       "dependencies": ["menq.design.spec.validation.v1"],
       "validationProfile": "core-author",

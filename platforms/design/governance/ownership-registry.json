@@ -216,7 +216,7 @@
       "path": "platforms/design/GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md",
       "ownerId": "owner.menq",
       "backupOwnerId": "owner.menq",
-      "lifecycle": "Approved — Implementing",
+      "lifecycle": "Locked",
       "reviewCadence": "per-release",
       "affectedConsumers": [
         "menq.design.consumer.catalog",
