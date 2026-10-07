@@ -5,7 +5,7 @@
 
 ## Հայերեն
 
-MenQ լոգոն՝ «Men» բառը display տառատեսակով, իսկ Q-ն power նշան է ազուր pill-ի մեջ։
+Պաշտոնական MenQ մարկը՝ կլորացված «Men» և neon power-ring Q (օղակ՝ ներքևում բացվածքով և ուղղահայաց գծով), inline SVG-ով։
 
 **Ինչ է տալիս օգտագործողը.** Ոչինչ։ Ըստ ցանկության՝ `compact`, `admin`, `tag`։
 
@@ -15,17 +15,17 @@ MenQ լոգոն՝ «Men» բառը display տառատեսակով, իսկ Q-ն p
 - `tag` — պիտակի տեքստը
 
 **Կանոններ**
-- Q pill-ը միշտ `color-action-primary` է, power նշանը՝ `color-content-inverse`, `shadow-glow`-ով։ Չվերաներկել, «Men»-ը Q-ից չանջատել։
+- «Men»-ը վերցնում է `color-content-primary`-ն. բաց ֆոնին մուգ է, մուգ ֆոնին և contrast բաժիններում՝ սպիտակ։ Q-ի գրադիենտը (`#0ea5e9` → `#67e8f9`) և glow-ը ֆիքսված են. չվերաներկել, «Men»-ը Q-ից չանջատել, չձգել։
 - Ազատ տարածք՝ առնվազն Q-ի տրամագիծը։ Նվազագույն լայնությունը՝ 96px։
 - React-ից դուրս՝ `assets/Logos/`-ի ֆայլերը (տես ASSET_RECORDS.json)։
 
-_Աղբյուր՝ Webpage src/components/brand/BrandMark.tsx։_
+_Աղբյուր՝ պաշտոնական լոգո `assets/Logos/menq-logo-neon-hires.png` (CR-0005)։ Նախկին «Men» + ազուր pill տարբերակը սխալ էր։_
 
 ---
 
 ## English
 
-The MenQ logo: "Men" in the display face, with the Q drawn as a power symbol inside an azure pill.
+The official MenQ mark: a rounded "Men" and the neon power-ring Q (a ring open at the bottom with a vertical stem), as inline SVG.
 
 **The consumer provides:** Nothing. Optional `compact`, `admin`, `tag`.
 
@@ -35,10 +35,10 @@ The MenQ logo: "Men" in the display face, with the Q drawn as a power symbol ins
 - `tag` — custom tag text
 
 **Rules**
-- The Q pill is always `color-action-primary` with a `color-content-inverse` symbol and `shadow-glow`. Never recolour it; never separate "Men" from the Q.
+- "Men" takes `color-content-primary`: ink on light grounds, white on dark grounds and inside contrast sections. The Q gradient (`#0ea5e9` → `#67e8f9`) and glow are fixed; never recolour, separate "Men" from the Q, or stretch it.
 - Clear space: at least the Q diameter. Minimum width 96px.
 - Outside React, use the files in `assets/Logos/` (see ASSET_RECORDS.json).
 
-_Source: Webpage src/components/brand/BrandMark.tsx._
+_Source: the official logo `assets/Logos/menq-logo-neon-hires.png` (CR-0005). The earlier "Men" + azure pill version was wrong._
 
 <!-- END: MENQ_COMPONENT_BRANDMARK -->

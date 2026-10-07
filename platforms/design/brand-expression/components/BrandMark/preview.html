@@ -1,6 +1,6 @@
-<!-- @dsCard group="Brand" height=110 -->
+<!-- @dsCard group="Brand" height=130 -->
 <div id="root" style="padding:16px"></div>
 <script>
 const h = React.createElement, M = window.MenQ;
-ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'row',style:{gap:32,flexWrap:'wrap'}},h(M.BrandMark),h(M.BrandMark,{compact:true}),h(M.BrandMark,{admin:true})));
+ReactDOM.createRoot(document.getElementById('root')).render(h('div',{className:'row',style:{gap:32,flexWrap:'wrap'}},h(M.BrandMark),h(M.BrandMark,{compact:true}),h(M.BrandMark,{admin:true}),h('div',{className:'section-contrast',style:{padding:'12px 16px',borderRadius:12}},h(M.BrandMark))));
 </script>
