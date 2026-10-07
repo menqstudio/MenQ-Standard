@@ -1,6 +1,6 @@
 name: Publish Release
 
-# Builds a release from a tag on main and publishes it as a permanent
+# Builds a release from a tag on main (pushed, or created by workflow_dispatch) and publishes it as a permanent
 # GitHub Release asset, so release evidence does not expire with
 # workflow-artifact retention.
 #   foundation-v<semver>       -> MenQ Standard Foundation snapshot ZIP + SHA256SUMS
@@ -11,6 +11,15 @@ on:
     tags:
       - "foundation-v*"
       - "design-platform-v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to create on the selected main commit (foundation-vX.Y.Z or design-platform-vX.Y.Z[-pre])"
+        required: true
+        type: string
+
+env:
+  RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
 
 permissions:
   contents: read
@@ -26,15 +35,16 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           fetch-depth: 0
-      - name: Tag must point to a commit on main
+      - name: Tag name and commit must be valid
         run: |
           set -euo pipefail
+          [[ "$RELEASE_TAG" =~ ^(foundation-v[0-9]+\.[0-9]+\.[0-9]+|design-platform-v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.]+)?)$ ]] || { echo "Invalid release tag: $RELEASE_TAG"; exit 1; }
           git fetch --no-tags origin main
-          git merge-base --is-ancestor "$GITHUB_SHA" origin/main || { echo "Tag $GITHUB_REF_NAME is not on main"; exit 1; }
+          git merge-base --is-ancestor "$GITHUB_SHA" origin/main || { echo "$RELEASE_TAG target $GITHUB_SHA is not on main"; exit 1; }
 
   foundation:
     needs: guard
-    if: startsWith(github.ref_name, 'foundation-v')
+    if: startsWith(inputs.tag || github.ref_name, 'foundation-v')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -49,7 +59,7 @@ jobs:
         id: build
         run: |
           set -euo pipefail
-          version="${GITHUB_REF_NAME#foundation-v}"
+          version="${RELEASE_TAG#foundation-v}"
           root="MenQ-Standard-Foundation-v${version}"
           mkdir -p dist
           git archive --format=tar --prefix="${root}/" HEAD | tar -x -C dist
@@ -73,12 +83,12 @@ jobs:
           - ZIP SHA-256: \`${DIGEST}\`
           - Built by run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
           EOF
-          gh release create "$GITHUB_REF_NAME" "dist/${ROOT}.zip" "dist/${ROOT}.zip.sha256" \
-            --title "MenQ Standard Foundation ${GITHUB_REF_NAME#foundation-}" --notes-file notes.md --verify-tag
+          gh release create "$RELEASE_TAG" "dist/${ROOT}.zip" "dist/${ROOT}.zip.sha256" \
+            --target "$GITHUB_SHA" --title "MenQ Standard Foundation ${RELEASE_TAG#foundation-}" --notes-file notes.md
 
   design-platform:
     needs: guard
-    if: startsWith(github.ref_name, 'design-platform-v')
+    if: startsWith(inputs.tag || github.ref_name, 'design-platform-v')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -113,7 +123,7 @@ jobs:
         id: build
         run: |
           set -euo pipefail
-          name="menq-design-platform-${GITHUB_REF_NAME#design-platform-v}"
+          name="menq-design-platform-${RELEASE_TAG#design-platform-v}"
           mkdir -p dist
           (cd /tmp && cp -R menq-release-a "$name" && zip -qrX "$GITHUB_WORKSPACE/dist/${name}.zip" "$name")
           (cd dist && unzip -tq "${name}.zip" && sha256sum "${name}.zip" > "${name}.zip.sha256")
@@ -135,5 +145,5 @@ jobs:
           - Bundle SHA-256: \`${DIGEST}\`
           - Built by run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
           EOF
-          gh release create "$GITHUB_REF_NAME" "dist/${NAME}.zip" "dist/${NAME}.zip.sha256" \
-            --title "MenQ Design Platform ${GITHUB_REF_NAME#design-platform-}" --notes-file notes.md --prerelease --verify-tag
+          gh release create "$RELEASE_TAG" "dist/${NAME}.zip" "dist/${NAME}.zip.sha256" \
+            --target "$GITHUB_SHA" --title "MenQ Design Platform ${RELEASE_TAG#design-platform-}" --notes-file notes.md --prerelease
