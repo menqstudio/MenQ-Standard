@@ -1,3 +1,29 @@
+<!-- FRONT:START -->
+<p align="center"><picture><source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="docs/assets/front/cover-narrow-dark.svg"><source media="(max-width: 600px)" srcset="docs/assets/front/cover-narrow-light.svg"><source media="(prefers-color-scheme: dark)" srcset="docs/assets/front/cover-dark.svg"><img src="docs/assets/front/cover-light.svg" alt="MenQ Standard: The rules, design platform and brand every MenQ product is built on." width="960"></picture></p>
+
+<p align="center"><b>Start here</b> · [Project context](PROJECT_CONTEXT.md) · [Decisions](DECISION_INDEX.md) · [Design platform](platforms/design/README.md) · [Brand](platforms/design/brand-expression/README.md) · [Changelog](CHANGELOG.md)</p>
+
+| | |
+| :-- | :-- |
+| **What it is** | The operating standard of the MenQ ecosystem: how we think, decide, design, build, validate and document |
+| **Who it serves** | Every MenQ Studio product and the people and AI sessions that build them |
+| **State** | Foundation v1 and the D-025 Design Platform are Locked; the D-027 brand layer is active (see Status below) |
+| **Built with** | Markdown and JSON specifications, Python validators, GitHub Actions |
+
+<details><summary><b>Հայերեն</b></summary>
+
+| | |
+| :-- | :-- |
+| **Ինչ է** | MenQ էկոհամակարգի գործառնական ստանդարտը. ինչպես ենք մտածում, որոշում, նախագծում, կառուցում, ստուգում և փաստաթղթավորում |
+| **Ում համար** | MenQ Studio-ի ամեն արտադրանքի և դրանք կառուցող մարդկանց ու AI session-ների |
+| **Վիճակ** | Foundation v1-ը և D-025 Design Platform-ը Locked են. D-027 բրենդի շերտը գործում է (տես ներքևի Status-ը) |
+| **Կառուցված է** | Markdown և JSON սպեցիֆիկացիաներ, Python ստուգիչներ, GitHub Actions |
+
+</details>
+
+<sub>MenQ Studio · Standard · repository front page standard v1</sub>
+<!-- FRONT:END -->
+
 # MenQ Standard
 
 > **HY**  

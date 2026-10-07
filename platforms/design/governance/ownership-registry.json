@@ -833,6 +833,21 @@
         "hy": "claude.ai Design System artifact-ը brand-expression շերտի mirror է, ոչ canonical աղբյուր (D-027)",
         "en": "The claude.ai Design System artifact mirrors the brand-expression layer; it is not a canonical source (D-027)"
       }
+    },
+    {
+      "id": "menq.design.build.repository-front",
+      "kind": "build-script",
+      "path": "platforms/design/repository-front",
+      "ownerId": "owner.menq",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Draft",
+      "reviewCadence": "per-release",
+      "affectedConsumers": [],
+      "changeAuthority": "owner",
+      "description": {
+        "hy": "Repository-ի առաջին էջի ստանդարտ v1. շապիկի նկարների և README-ի առաջին բլոկի generator (CR-0011)",
+        "en": "Repository front page standard v1: generator of the cover pictures and the README front block (CR-0011)"
+      }
     }
   ]
 }

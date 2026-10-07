@@ -1,0 +1,72 @@
+{
+ "name": "MenQ Standard",
+ "brand": "menq",
+ "family": {
+  "en": "MenQ Studio · Standard",
+  "hy": "MenQ Studio · Ստանդարտ"
+ },
+ "tagline": {
+  "en": "The rules, design platform and brand every MenQ product is built on.",
+  "hy": "Կանոնները, դիզայն հարթակը և բրենդը, որոնց վրա կառուցվում է MenQ-ի ամեն արտադրանք։"
+ },
+ "start": [
+  [
+   "Project context",
+   "PROJECT_CONTEXT.md"
+  ],
+  [
+   "Decisions",
+   "DECISION_INDEX.md"
+  ],
+  [
+   "Design platform",
+   "platforms/design/README.md"
+  ],
+  [
+   "Brand",
+   "platforms/design/brand-expression/README.md"
+  ],
+  [
+   "Changelog",
+   "CHANGELOG.md"
+  ]
+ ],
+ "facts": {
+  "en": [
+   [
+    "What it is",
+    "The operating standard of the MenQ ecosystem: how we think, decide, design, build, validate and document"
+   ],
+   [
+    "Who it serves",
+    "Every MenQ Studio product and the people and AI sessions that build them"
+   ],
+   [
+    "State",
+    "Foundation v1 and the D-025 Design Platform are Locked; the D-027 brand layer is active (see Status below)"
+   ],
+   [
+    "Built with",
+    "Markdown and JSON specifications, Python validators, GitHub Actions"
+   ]
+  ],
+  "hy": [
+   [
+    "Ինչ է",
+    "MenQ էկոհամակարգի գործառնական ստանդարտը. ինչպես ենք մտածում, որոշում, նախագծում, կառուցում, ստուգում և փաստաթղթավորում"
+   ],
+   [
+    "Ում համար",
+    "MenQ Studio-ի ամեն արտադրանքի և դրանք կառուցող մարդկանց ու AI session-ների"
+   ],
+   [
+    "Վիճակ",
+    "Foundation v1-ը և D-025 Design Platform-ը Locked են. D-027 բրենդի շերտը գործում է (տես ներքևի Status-ը)"
+   ],
+   [
+    "Կառուցված է",
+    "Markdown և JSON սպեցիֆիկացիաներ, Python ստուգիչներ, GitHub Actions"
+   ]
+  ]
+ }
+}
