@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -105,6 +106,20 @@ for rel in BILINGUAL_SECTION_FILES:
     text = path.read_text(encoding="utf-8")
     if "## Հայերեն" not in text or "## English" not in text:
         errors.append(f"Missing bilingual canonical sections: {rel}")
+
+# Every Markdown file under platforms/ (not only the allowlist above) must carry both canonical
+# languages and an END marker, so new files cannot merge English-only or unterminated.
+HY_MARK = re.compile(r"^(#{2,3} Հայերեն|\*\*HY:?\*\*)", re.M)
+EN_MARK = re.compile(r"^(#{2,3} English|\*\*EN:?\*\*)", re.M)
+for path in sorted((ROOT / "platforms").rglob("*.md")):
+    if "node_modules" in path.parts:
+        continue
+    rel = path.relative_to(ROOT).as_posix()
+    text = path.read_text(encoding="utf-8")
+    if not HY_MARK.search(text) or not EN_MARK.search(text):
+        errors.append(f"Missing Armenian or English section: {rel}")
+    if not re.search(r"<!-- END: [A-Za-z0-9_.-]+ -->\s*(— End of document —\s*)?$", text):
+        errors.append(f"Missing ending marker: {rel}")
 
 for rel, terms in REQUIRED_TERMS.items():
     text = (ROOT / rel).read_text(encoding="utf-8")

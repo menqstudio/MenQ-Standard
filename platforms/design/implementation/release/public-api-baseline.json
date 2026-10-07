@@ -1,8 +1,101 @@
 {
   "schemaVersion": 1,
-  "baselineId": "menq.design.public-api.pre-release-empty.v1",
-  "status": "Pre-release baseline",
-  "coverage": ["package-export-map", "export-target-paths"],
+  "baselineId": "menq.design.public-api.0.1.0-next.0.v1",
+  "status": "Frozen at the 0.1.0-next.0 private preview (2026-10-07)",
+  "coverage": [
+    "package-export-map",
+    "export-target-paths"
+  ],
   "stableCompatibilityPromise": false,
-  "packages": {}
+  "packages": {
+    "@menq/design-assets": {
+      "exports": {
+        ".": {
+          "import": "./src/index.js",
+          "types": "./src/index.d.ts"
+        }
+      }
+    },
+    "@menq/design-components": {
+      "exports": {
+        ".": {
+          "import": "./src/index.js",
+          "types": "./src/index.d.ts"
+        },
+        "./css": "./src/components.css"
+      }
+    },
+    "@menq/design-contracts": {
+      "exports": {
+        ".": {
+          "import": "./src/index.js",
+          "types": "./src/index.d.ts"
+        },
+        "./schemas/token-source": "./schemas/token-source.schema.json"
+      }
+    },
+    "@menq/design-foundations": {
+      "exports": {
+        ".": {
+          "import": "./src/index.js",
+          "types": "./src/index.d.ts"
+        },
+        "./css": "./generated/foundations.css",
+        "./manifest": "./generated/manifest.json"
+      }
+    },
+    "@menq/design-locales": {
+      "exports": {
+        ".": {
+          "import": "./src/index.js",
+          "types": "./src/index.d.ts"
+        }
+      }
+    },
+    "@menq/design-motion": {
+      "exports": {
+        ".": {
+          "import": "./src/index.js",
+          "types": "./src/index.d.ts"
+        }
+      }
+    },
+    "@menq/design-patterns": {
+      "exports": {
+        ".": {
+          "import": "./src/index.js",
+          "types": "./src/index.d.ts"
+        },
+        "./css": "./src/patterns.css"
+      }
+    },
+    "@menq/design-primitives": {
+      "exports": {
+        ".": {
+          "import": "./src/index.js",
+          "types": "./src/index.d.ts"
+        },
+        "./css": "./src/primitives.css"
+      }
+    },
+    "@menq/design-tokens": {
+      "exports": {
+        ".": {
+          "import": "./generated/tokens.js",
+          "types": "./generated/tokens.d.ts"
+        },
+        "./css": "./generated/tokens.css",
+        "./manifest": "./generated/manifest.json",
+        "./resolved": "./generated/tokens.resolved.json"
+      }
+    },
+    "@menq/design-validation": {
+      "exports": {
+        ".": {
+          "import": "./src/index.js",
+          "types": "./src/index.d.ts"
+        }
+      }
+    }
+  }
 }

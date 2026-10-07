@@ -1,0 +1,26 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1929,
+      "path": "foundations.css",
+      "sha256": "df9ddcc979820941779a093f3fad4b3bded358346e576f5287083fbb7a4ca91b"
+    }
+  ],
+  "generatedOutputsAreCanonical": false,
+  "package": "@menq/design-foundations",
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "bytes": 637,
+      "path": "packages/design-foundations/source/base.css",
+      "sha256": "0adb6f863ac6f178b427f7dfc46cbcefa133b7bcfbe5fb4a622332f31c369526"
+    },
+    {
+      "bytes": 834,
+      "path": "packages/design-foundations/source/layout.css",
+      "sha256": "10915e6b48b0137394f6678870028fbe3bc6fb4e860652c3479778f143464137"
+    }
+  ],
+  "tokenManifestSha256": "c1d8daab0916e39f92dc61320015d7a49b5884c54d6dbcd18687a2771901bb03",
+  "tokenSourceSha256": "08aa3d1da2bd9d3f4ebea80771021e5ecf5f978acdb7af167b267242963ddc7c"
+}

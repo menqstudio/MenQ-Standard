@@ -180,6 +180,27 @@ def validate_inventory(errors: list[str]) -> int:
     return len(actual_paths)
 
 
+LINK = re.compile(r"\]\(([^)\s]+)\)")
+FENCE = re.compile(r"```.*?```", re.S)
+
+
+def validate_links(errors: list[str]) -> None:
+    """Every relative Markdown link in a tracked file must resolve (Documentation Standard §18.5)."""
+    try:
+        tracked = subprocess.run(["git", "ls-files", "*.md", "*.MD"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split()
+    except (OSError, subprocess.CalledProcessError) as exc:
+        errors.append(f"cannot enumerate Markdown for link check: {exc}")
+        return
+    for rel in tracked:
+        text = FENCE.sub("", (ROOT / rel).read_text(encoding="utf-8"))
+        for target in LINK.findall(text):
+            if re.match(r"^(https?:|mailto:|#)", target):
+                continue
+            resolved = (ROOT / rel).parent / target.split("#", 1)[0]
+            if not resolved.exists():
+                errors.append(f"broken relative link in {rel}: {target}")
+
+
 def main() -> int:
     errors: list[str] = []
 
@@ -202,9 +223,13 @@ def main() -> int:
     decision_index = ROOT / "DECISION_INDEX.md"
     if decision_index.is_file():
         text = read_text("DECISION_INDEX.md")
-        for decision_id in ("D-022", "D-023", "D-026"):
+        for decision_id in ("D-022", "D-023", "D-024", "D-025", "D-026"):
             if decision_id not in text:
                 errors.append(f"decision index missing {decision_id}")
+        for path in sorted(ROOT.glob("**/D-0[2-9][0-9]-*.md")) + sorted(ROOT.glob("**/D-0[2-9][0-9]_*.md")):
+            match = re.match(r"(D-0\d\d)[-_]", path.name)
+            if match and "VALIDATION_RECORD" not in path.name and match.group(1) not in text:
+                errors.append(f"decision index missing {match.group(1)} ({path.relative_to(ROOT)})")
 
     for rel, references in D026_REQUIRED_REFERENCES.items():
         path = ROOT / rel
@@ -233,6 +258,8 @@ def main() -> int:
             text = path.read_text(encoding="utf-8")
             if "## Հայերեն" not in text or "## English" not in text:
                 errors.append(f"bilingual sections missing in {rel}")
+
+    validate_links(errors)
 
     markdown_count = validate_inventory(errors)
 

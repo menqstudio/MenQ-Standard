@@ -42,4 +42,6 @@ Rollback is a mandatory candidate action when an artifact checksum mismatches, a
 
 AI may recommend or technically prepare a rollback, but it cannot independently publish, merge, remove Draft status, or lock. The Owner retains final authority.
 
+<!-- END: MENQ_DESIGN_ROLLBACK_CONTRACT -->
+
 — End of document —
