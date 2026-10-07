@@ -1,5 +1,15 @@
 # MenQ Standard — Changelog
 
+## 2026-10-08 — CR-0004: neon logo high-resolution master
+
+### Հայերեն
+
+- Ավելացվեց պաշտոնական neon լոգոյի բարձր լուծաչափի master-ը՝ `brand-expression/assets/Logos/menq-logo-neon-hires.png` (1913×720, թափանցիկ ֆոն), asset record-ով և SHA-256-ով։
+
+### English
+
+- Added the high-resolution master of the official neon logo, `brand-expression/assets/Logos/menq-logo-neon-hires.png` (1913×720, transparent), with an asset record and SHA-256.
+
 ## 2026-10-07 — CR-0003: brand custom-properties artifact
 
 ### Հայերեն
