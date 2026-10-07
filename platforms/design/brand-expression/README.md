@@ -15,6 +15,7 @@ MenQ-ի բրենդային արտահայտման շերտն է՝ ազուր և 
 
 - `source/brand-tokens.source.json` — **միակ canonical աղբյուրը**։ Ամեն թոքեն ունի `menq.design.token.*` ID, շերտ, տեսակ, հայերեն և անգլերեն նկարագրություն, պատասխանատու և lifecycle։ Schema՝ `source/brand-token-source.schema.json`։
 - `tokens.css` և `tokens.json` — **գեներացված** են `scripts/build_brand_tokens.py`-ով։ Ձեռքով չխմբագրել։ `tokens.json`-ը design-tool mirror է։
+- `tokens.vars.css` — **գեներացված**, միայն CSS custom property-ներ (առանց type-style class-երի և `@font-face`-ի)։ Սա է արտադրանքների (օր.՝ MenQ Webpage) համար consumption artifact-ը, որպեսզի class-երը չբախվեն արտադրանքի սեփական class-երի հետ։
 - `components/bundle.js`, `components/bundle.css`, `components/index.d.ts` — core կոմպոնենտներ (`window.MenQ`)։
 - `assets/ASSET_RECORDS.json` — լոգոների և ֆոնտերի owner, provenance, license, sha256։
 
@@ -84,6 +85,7 @@ MenQ's brand expression layer: azure and cyan on slate, type, spacing, radii, sh
 
 - `source/brand-tokens.source.json` — **the only canonical source**. Every token has a `menq.design.token.*` ID, layer, type, Armenian and English description, owner and lifecycle. Schema: `source/brand-token-source.schema.json`.
 - `tokens.css` and `tokens.json` — **generated** by `scripts/build_brand_tokens.py`. Never edit by hand. `tokens.json` is a design-tool mirror.
+- `tokens.vars.css` — **generated**, CSS custom properties only (no type-style classes, no `@font-face`). This is the consumption artifact for products (e.g. MenQ Webpage), so its classes cannot collide with a product's own classes.
 - `components/bundle.js`, `components/bundle.css`, `components/index.d.ts` — core components (`window.MenQ`).
 - `assets/ASSET_RECORDS.json` — owner, provenance, license and sha256 for logos and fonts.
 
