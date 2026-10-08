@@ -1,5 +1,15 @@
 # MenQ Standard — Changelog
 
+## 2026-10-08 — CR-0011: repository front page standard v1
+
+### Հայերեն
+
+- Repo-ի առաջին էջի ստանդարտ՝ շապիկի նկարներ (light, dark, հեռախոս) և README-ի առաջին բլոկ («Start here» և չորս տողանոց ամփոփում HY/EN)։ Generator՝ `platforms/design/repository-front/make_front.py`։ Կիրառված է MenQ Studio-ի բոլոր repo-ներում և Scout client նախագծում։
+
+### English
+
+- Repository front page standard: cover pictures (light, dark, phone) and a README front block (Start here and a four-row summary in HY/EN). Generator: `platforms/design/repository-front/make_front.py`. Applied to every MenQ Studio repository and to the Scout client project.
+
 ## 2026-10-08 — CR-0010: motion, logo power-on, video and shader rules
 
 ### Հայերեն
