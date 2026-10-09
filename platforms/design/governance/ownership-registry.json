@@ -556,6 +556,21 @@
       }
     },
     {
+      "id": "menq.design.validator.test-validate-brand-expression",
+      "kind": "validator",
+      "path": "platforms/design/validation/test_validate_brand_expression.py",
+      "ownerId": "owner.design-platform-maintainer",
+      "backupOwnerId": "owner.menq",
+      "lifecycle": "Active",
+      "reviewCadence": "quarterly",
+      "affectedConsumers": [],
+      "changeAuthority": "maintainer",
+      "description": {
+        "hy": "brand expression validator-ի կոնտրաստի ստուգումների թեստեր (CR-0013)",
+        "en": "Tests for the contrast checks of the brand expression validator (CR-0013)"
+      }
+    },
+    {
       "id": "menq.design.validator.validate-governance",
       "kind": "validator",
       "path": "platforms/design/validation/validate_governance.py",

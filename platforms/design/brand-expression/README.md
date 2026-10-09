@@ -98,7 +98,8 @@ Dark թեմայի համար `<html>`-ին դնել `data-theme="dark"` կամ �
 
 - Տեքստ՝ 4.5:1, իկոններ և control-ների եզրեր՝ 3:1, երկու թեմայում։ Ամբողջական ստեղնաշարային կառավարում, տեսանելի focus (`color-focus-ring`)։
 - `validate_brand_expression.py`-ը մեքենայորեն ստուգում է 17 տեքստ/ֆոն զույգ երկու թեմայում (34 ստուգում, ≥ 4.5:1)։ Token-ի փոփոխությունը, որը խախտում է զույգը, RED է։
-- Accent գույնը որպես տեքստ՝ միայն `color-accent-text`, ազուրը որպես տեքստ՝ `color-action-primary-strong`։ Սպիտակ տեքստ՝ միայն `color-action-primary`-ի վրա (5.9:1, CR-0006)։
+- `CR-0013`-ից սկսած validator-ը կարդում է նաև `components/bundle.css`-ը և Բրոյի `bro.css`-ը. ամեն կանոն, որը տեքստի գույնի տակ ֆոն է ներկում, լուծվում է token source-ով երեք scope-ում (Light, Dark, `ContrastSection`) և պետք է հասնի 4.5:1-ի, իսկ gradient-ի դեպքում՝ նրա ամեն գունային stop-ում։ Stop-ը, որը չի լուծվում մեկ անթափանց գույնի, RED է։ Validator-ը չի չափում կիսաթափանց ֆոները և այն տեքստը, որի գույնն ու ֆոնը տարբեր կոմպոնենտներից են գալիս։
+- Accent գույնը որպես տեքստ՝ միայն `color-accent-text`, ազուրը որպես տեքստ՝ `color-action-primary-strong`։ Սպիտակ տեքստ՝ միայն `color-action-primary`-ի վրա (5.9:1, CR-0006)։ Շրջված տեքստը երբեք ուղիղ `--gradient-brand`-ի վրա չի դրվում. կոմպոնենտները օգտագործում են `--fill-action-primary`-ը, որը Light-ում միագույն `color-action-primary` է, իսկ գրադիենտ է միայն dark scope-երում (CR-0013)։
 - Ձևեր՝ `FormRow`-ը կապում է label-ը, hint-ը և error-ը control-ին (`aria-describedby`, `aria-invalid`), error-ը `role="alert"` է։ Checkbox/Radio/Switch-ը native են կամ `role="switch"`։
 
 ---
@@ -196,7 +197,8 @@ Set `data-theme="dark"` on `<html>` for Dark, or use `ThemeSwitch`.
 
 - Text 4.5:1, icons and control borders 3:1, in both themes. Full keyboard operation with a visible focus (`color-focus-ring`).
 - `validate_brand_expression.py` machine-checks 17 text/background pairs in both themes (34 checks, ≥ 4.5:1). A token change that breaks a pair is RED.
-- Accent as text uses only `color-accent-text`; azure as text uses `color-action-primary-strong`. White text only on `color-action-primary` (5.9:1, CR-0006).
+- Since `CR-0013` the validator also reads `components/bundle.css` and Bro's `bro.css`: every rule that paints a background under a text colour is resolved through the token source in three scopes (Light, Dark, `ContrastSection`) and must reach 4.5:1, and when the background is a gradient, at every one of its colour stops. A stop that does not resolve to one opaque colour is RED. The validator does not measure translucent fills, or text whose colour and background come from different components.
+- Accent as text uses only `color-accent-text`; azure as text uses `color-action-primary-strong`. White text only on `color-action-primary` (5.9:1, CR-0006). Inverse text is never put directly on `--gradient-brand`: components use `--fill-action-primary`, which is solid `color-action-primary` in Light and the gradient only in the dark scopes (CR-0013).
 - Forms: `FormRow` links the label, hint and error to its control (`aria-describedby`, `aria-invalid`); the error has `role="alert"`. Checkbox/Radio are native inputs; Switch uses `role="switch"`.
 
 <!-- END: MENQ_BRAND_EXPRESSION_README -->

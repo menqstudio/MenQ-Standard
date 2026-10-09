@@ -2,6 +2,27 @@
 
 > **How to read this / Ինչպես կարդալ:** Ամեն գրառում թվագրված է merge commit-ի ամսաթվով՝ commit-ի գրանցած ժամային գոտում (+04:00), և ասում է, թե ինչ պետք է իմանա հին commit-ին pin արված consumer-ը։ 2026-07-13-ից 2026-10-08-ի գրառումները ավելացվել են 2026-10-09-ին `CR-0012`-ով՝ change request-ներից և merge diff-երից։ / Every entry is dated by its merge commit, in the time zone the commit records (+04:00), and says what a consumer pinned to an older commit needs to know. The entries for 2026-07-13 through 2026-10-08 were added on 2026-10-09 by `CR-0012`, from the change requests and the merge diffs.
 
+## 2026-10-09 — CR-0013: inverse text taken off the brand gradient in Light (proposed; in effect when merged)
+
+### Հայերեն
+
+- **Տեսանելի փոփոխություն է `components/bundle.css` բեռնող consumer-ի համար. change request-ը դասակարգված է `breaking`։** Light theme-ում հիմնական Button-ը այլևս բրենդի gradient չէ, այլ միագույն `color-action-primary` (`#0369a1`). hover-ի և սեղմման ժամանակ՝ `color-action-primary-hover` (`#075985`)։ Dark-ում և `.section-contrast`-ի ներսում gradient-ը մնում է։ Նույնը՝ Բրոյի `bro.css`-ի `.mq-avatar--bro`-ի համար։
+- **Ինչու.** Light-ում սպիտակ տեքստը gradient-ի ազուր ծայրում 5.93:1 էր, cyan ծայրում՝ 2.43:1 (կանոնը՝ 4.5:1)։ Հիմա՝ 5.93:1, hover-ի ժամանակ՝ 7.56:1։ Dark-ը չի փոխվել՝ 7.28:1 և 11.16:1։ Սեղմված հիմնական կոճակը նախկինում տեքստը դնում էր `color-pressed`-ի վրա (1.23:1 Light-ում, 1.41:1 Dark-ում). դա նույնպես ուղղված է։
+- **Ինչ անել.** Token ֆայլ re-pin անել պետք չէ. ոչ մի token-ի արժեք չի փոխվել, `tokens.css`-ը, `tokens.vars.css`-ը և `tokens.json`-ը նույնն են։ `bundle.css`-ը պատճենած consumer-ը նորից վերցնում է այն։ Նոր `bro.css`-ը հին `bundle.css`-ի հետ avatar-ին տալիս է միագույն ազուր բոլոր թեմաներում։ API, prop և class չեն փոխվել։ MenQ Webpage-ը չի ազդվում. այն pin է արել միայն `tokens.vars.css`-ը։
+- Նոր custom property-ներ `bundle.css`-ում՝ `--fill-action-primary` և `--fill-action-primary-hover` (միայն հղումներ token-ներին)։ Շրջված տեքստը դրվում է դրանց վրա, ոչ թե ուղիղ `--gradient-brand`-ի։
+- `validate_brand_expression.py`-ը հիմա կարդում է `bundle.css`-ը և `bro.css`-ը և պահանջում 4.5:1 տեքստի տակ ներկված ամեն ֆոնի համար՝ gradient-ի ամեն stop-ում, երեք scope-ում (Light, Dark, `.section-contrast`). չլուծվող stop-ը RED է։ 17 token զույգը մնում է։ Նոր՝ `validation/test_validate_brand_expression.py` (44 թեստ)։ `design-brand-expression.yml` workflow-ը գործարկում է նոր թեստը, և քայլը հայտարարված է `scripts/validate_foundation.py`-ի `REQUIRED_WORKFLOW_RUNS`-ում։
+- **Չուղղված.** `color-content-muted` տեքստը `card--brand`-ի վրա Light-ում 3.64:1 է (ազուր ծայր) և 4.34:1 (cyan ծայր). գրանցված է `CR-0013`-ում։
+- Այս գրառումը հաստատում չի հայտարարում. `CR-0013`-ը `proposed` է, և Owner-ի հաստատումը նրա pull request-ի merge-ն է։
+
+### English
+
+- **A visible change for a consumer that loads `components/bundle.css`; the change request is classed `breaking`.** In the light theme the primary Button is no longer the brand gradient but solid `color-action-primary` (`#0369a1`), and `color-action-primary-hover` (`#075985`) on hover and while pressed. In Dark and inside `.section-contrast` the gradient stays. The same holds for `.mq-avatar--bro` in Bro's `bro.css`.
+- **Why.** In Light, white text was 5.93:1 at the azure end of the gradient and 2.43:1 at the cyan end (the rule is 4.5:1). It is now 5.93:1, and 7.56:1 on hover. Dark did not change: 7.28:1 and 11.16:1. A pressed primary button used to put its text on `color-pressed` (1.23:1 in Light, 1.41:1 in Dark); that is fixed as well.
+- **What to do.** No token file needs re-pinning: no token value changed, and `tokens.css`, `tokens.vars.css` and `tokens.json` are the same. A consumer that copied `bundle.css` takes it again. The new `bro.css` with an old `bundle.css` gives the avatar solid azure in every theme. No API, prop or class changed. MenQ Webpage is not affected: it pinned only `tokens.vars.css`.
+- New custom properties in `bundle.css`: `--fill-action-primary` and `--fill-action-primary-hover` (references to tokens only). Inverse text goes on these, not directly on `--gradient-brand`.
+- `validate_brand_expression.py` now reads `bundle.css` and `bro.css` and requires 4.5:1 for every background painted under text, at every stop of a gradient, in three scopes (Light, Dark, `.section-contrast`); a stop it cannot resolve is RED. The 17 token pairs stay. New: `validation/test_validate_brand_expression.py` (44 tests). The `design-brand-expression.yml` workflow runs the new test, and the step is declared in `REQUIRED_WORKFLOW_RUNS` of `scripts/validate_foundation.py`.
+- **Not fixed.** `color-content-muted` text on `card--brand` is 3.64:1 (azure end) and 4.34:1 (cyan end) in Light; recorded in `CR-0013`.
+- This entry claims no approval: `CR-0013` is `proposed`, and the Owner's approval is the merge of its pull request.
 ## 2026-10-09 — CR-0012 completed: the readiness record separates the 2026-07-13 snapshot from the current state (proposed; in effect when merged)
 
 ### Հայերեն

@@ -133,6 +133,7 @@ REQUIRED_WORKFLOW_RUNS = {
         "validate": (
             "platforms/design/brand-expression/scripts/build_brand_tokens.py --check",
             "platforms/design/validation/validate_brand_expression.py",
+            "platforms/design/validation/test_validate_brand_expression.py",
         ),
     },
     "design-governance.yml": {

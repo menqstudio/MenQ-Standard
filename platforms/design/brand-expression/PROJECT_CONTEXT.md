@@ -14,7 +14,7 @@
 
 **Validation.** `platforms/design/validation/validate_brand_expression.py`։
 
-**Հաջորդ քայլեր.** (1) D-025 token source-ի հետ mapping-ի որոշում, (2) MenQ Webpage-ը որպես առաջին իրական consumer. գրանցված է միայն `tokens.vars.css`-ի առաջին pin-ը (`493a3df`), (3) ru locale pack-ի ձևակերպում, (4) lifecycle-ը Draft-ից Approved՝ consumer evidence-ից հետո, (5) `CR-0005`…`CR-0010`-ի պակասող evidence-ը, (6) բաց թերություն. հիմնական Button-ի սպիտակ տեքստը light theme-ում gradient-ի cyan ծայրում 2.43:1 է։
+**Հաջորդ քայլեր.** (1) D-025 token source-ի հետ mapping-ի որոշում, (2) MenQ Webpage-ը որպես առաջին իրական consumer. գրանցված է միայն `tokens.vars.css`-ի առաջին pin-ը (`493a3df`), (3) ru locale pack-ի ձևակերպում, (4) lifecycle-ը Draft-ից Approved՝ consumer evidence-ից հետո, (5) `CR-0005`…`CR-0010`-ի պակասող evidence-ը, (6) հիմնական Button-ի և Բրոյի avatar-ի թերությունը (սպիտակ տեքստը light theme-ում gradient-ի cyan ծայրում 2.43:1 էր) ուղղված է `CR-0013`-ով, որը առաջարկված է և ուժի մեջ է մտնում, երբ Owner-ը merge անի նրա pull request-ը։
 
 ## English
 
@@ -26,6 +26,6 @@
 
 **Validation.** `platforms/design/validation/validate_brand_expression.py`.
 
-**Next steps.** (1) Decide the mapping with the D-025 token source, (2) MenQ Webpage as the first real consumer: only its first pin of `tokens.vars.css` (`493a3df`) is recorded, (3) formalise the ru locale pack, (4) move lifecycle from Draft to Approved after consumer evidence, (5) the missing evidence for `CR-0005`…`CR-0010`, (6) an open defect: the primary Button's white text is 2.43:1 at the cyan end of the gradient in the light theme.
+**Next steps.** (1) Decide the mapping with the D-025 token source, (2) MenQ Webpage as the first real consumer: only its first pin of `tokens.vars.css` (`493a3df`) is recorded, (3) formalise the ru locale pack, (4) move lifecycle from Draft to Approved after consumer evidence, (5) the missing evidence for `CR-0005`…`CR-0010`, (6) the defect of the primary Button and the Bro avatar (white text was 2.43:1 at the cyan end of the gradient in the light theme) is fixed by `CR-0013`, which is proposed and takes effect when the Owner merges its pull request.
 
 <!-- END: MENQ_BRAND_EXPRESSION_PROJECT_CONTEXT -->

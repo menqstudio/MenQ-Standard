@@ -1,5 +1,5 @@
 /* MenQ product extension: Bro (D-027). Load after brand-expression tokens.css and components/bundle.css. */
-.mq-avatar--bro { background: var(--gradient-brand); color: var(--color-content-inverse); box-shadow: var(--shadow-glow); }
+.mq-avatar--bro { background: var(--fill-action-primary, var(--color-action-primary)); color: var(--color-content-inverse); box-shadow: var(--shadow-glow); }
 .mq-avatar--bro.avatar--img { padding: 2px; }
 .mq-avatar--agent { background: var(--color-chat-agent-bg); color: var(--color-accent-text); border-radius: var(--radius-sm); border: 1px solid var(--color-border-strong); }
 

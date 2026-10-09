@@ -8,6 +8,15 @@
   --gradient-brand-soft: linear-gradient(135deg, color-mix(in srgb, var(--color-action-primary) 18%, transparent), color-mix(in srgb, var(--color-accent) 10%, transparent));
   --gradient-panel: linear-gradient(145deg, color-mix(in srgb, var(--color-surface-primary) 94%, transparent), color-mix(in srgb, var(--color-surface-secondary) 84%, transparent));
   --glass-bg: color-mix(in srgb, var(--color-surface-primary) 72%, transparent);
+  /* The fill under inverse text (color-content-inverse). Solid color-action-primary here, because in Light
+     white on the cyan end of gradient-brand is 2.43:1 (CR-0013); the dark scopes below take the gradient back. */
+  --fill-action-primary: var(--color-action-primary);
+  --fill-action-primary-hover: var(--color-action-primary-hover);
+}
+/* Dark scopes: gradient-brand carries inverse text at 7.28:1 (azure end) and 11.16:1 (cyan end). */
+[data-theme="dark"], .section-contrast {
+  --fill-action-primary: var(--gradient-brand);
+  --fill-action-primary-hover: var(--gradient-brand);
 }
 
 /* ── Base ── */
@@ -49,8 +58,9 @@ button { font: inherit; cursor: pointer; }
   transition: transform var(--duration-base) var(--ease-standard), box-shadow var(--duration-base) var(--ease-standard), background var(--duration-base) var(--ease-standard), border-color var(--duration-base) var(--ease-standard); }
 .btn:hover { transform: translateY(-2px); border-color: var(--color-border-strong); }
 .btn:active { transform: none; background: var(--color-pressed); }
-.btn--primary { background: var(--gradient-brand); color: var(--color-content-inverse); border-color: transparent; box-shadow: none; }
-.btn--primary:hover { box-shadow: var(--shadow-glow); border-color: transparent; }
+.btn--primary { background: var(--fill-action-primary); color: var(--color-content-inverse); border-color: transparent; box-shadow: none; }
+.btn--primary:hover { background: var(--fill-action-primary-hover); box-shadow: var(--shadow-glow); border-color: transparent; }
+.btn--primary:active { background: var(--fill-action-primary-hover); }
 .btn--outline { background: transparent; border-color: var(--color-border-strong); box-shadow: none; }
 .btn--outline:hover { background: var(--color-surface-secondary); }
 .btn--ghost { background: transparent; border-color: transparent; box-shadow: none; }
