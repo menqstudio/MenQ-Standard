@@ -28,9 +28,12 @@ from pathlib import Path
 DEFAULT_ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_REL = "foundation/ai-collaboration/SESSION_READ_MANIFEST.json"
 SCHEMA_VERSION = 1
-# The ceiling the Owner decided (D-028). The manifest may declare less, never
-# more: raising the budget is an edit here, next to the decision that allows it.
-DECIDED_TOTAL_BYTES_MAX = 120_000
+# One number for every MenQ repository (Owner, 2026-10-09, D-028): the universal
+# maximum, taken from the largest read set in the ecosystem. A repository declares
+# its own total_bytes_max in its manifest, at or below this; MenQ Standard declares
+# 120,000. This script is the same file in every repository, so the number that
+# differs lives in the manifest and the number that does not lives here.
+UNIVERSAL_TOTAL_BYTES_MAX = 350_000
 ROOT_AREA = "."
 
 
@@ -175,10 +178,10 @@ def check(root: Path, manifest_rel: str = MANIFEST_REL) -> tuple[list[str], list
             tracked_dirs.add("/".join(parts[:depth]))
 
     total_max = data["total_bytes_max"]
-    if total_max > DECIDED_TOTAL_BYTES_MAX:
+    if total_max > UNIVERSAL_TOTAL_BYTES_MAX:
         errors.append(
-            f"total_bytes_max is {total_max}, above the decided ceiling {DECIDED_TOTAL_BYTES_MAX} (D-028); "
-            "the ceiling moves only with a decision"
+            f"total_bytes_max is {total_max}, above the universal ceiling {UNIVERSAL_TOTAL_BYTES_MAX} (D-028); "
+            "that ceiling moves only with a decision"
         )
 
     core_paths = [entry["path"] for entry in data["core"]]

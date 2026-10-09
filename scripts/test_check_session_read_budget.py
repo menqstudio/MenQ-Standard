@@ -136,7 +136,7 @@ class PositiveControl(GateTestCase):
     def test_this_repository_is_green_and_inside_the_decided_ceiling(self):
         errors, report = gate.check(gate.DEFAULT_ROOT)
         self.assertEqual(errors, [])
-        self.assertEqual(gate.DECIDED_TOTAL_BYTES_MAX, 120_000)
+        self.assertEqual(gate.UNIVERSAL_TOTAL_BYTES_MAX, 350_000)
         manifest = json.loads((gate.DEFAULT_ROOT / MANIFEST_REL).read_text(encoding="utf-8"))
         self.assertEqual(manifest["total_bytes_max"], 120_000)
         self.assertTrue(report[0].startswith("core: "))
@@ -274,12 +274,12 @@ class CoreChecks(GateTestCase):
         self.assertEqual(repo.errors(), [])
 
     def test_budget_above_the_decided_ceiling(self):
-        repo = self.mutated(lambda m: m.update(total_bytes_max=gate.DECIDED_TOTAL_BYTES_MAX + 1))
-        errors = self.assert_red(repo, "total_bytes_max is 120001, above the decided ceiling 120000 (D-028)")
+        repo = self.mutated(lambda m: m.update(total_bytes_max=gate.UNIVERSAL_TOTAL_BYTES_MAX + 1))
+        errors = self.assert_red(repo, "total_bytes_max is 350001, above the universal ceiling 350000 (D-028)")
         self.assertEqual(len(errors), 1, errors)
 
     def test_budget_exactly_at_the_decided_ceiling_is_green(self):
-        repo = self.mutated(lambda m: m.update(total_bytes_max=gate.DECIDED_TOTAL_BYTES_MAX))
+        repo = self.mutated(lambda m: m.update(total_bytes_max=gate.UNIVERSAL_TOTAL_BYTES_MAX))
         self.assertEqual(repo.errors(), [])
 
     def test_core_path_listed_twice(self):
