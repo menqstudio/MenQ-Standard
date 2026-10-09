@@ -70,6 +70,15 @@
     ".github": [
       ".github/pull_request_template.md",
       "platforms/design/governance/README.md",
+      "foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md",
+      "foundation/ai-collaboration/D-029-CONSUMER-ADOPTION-LAYER.md",
+      "consumer/CONSUMER_CONTRACT.md"
+    ],
+    "consumer": [
+      "consumer/CONSUMER_CONTRACT.md",
+      "consumer/ADOPTION.md",
+      "consumer/SYNC_FACTS.md",
+      "foundation/ai-collaboration/D-029-CONSUMER-ADOPTION-LAYER.md",
       "foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md"
     ],
     "docs": [
@@ -92,6 +101,7 @@
       "foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md",
       "foundation/ai-collaboration/D-026_VALIDATION_RECORD.md",
       "foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md",
+      "foundation/ai-collaboration/D-029-CONSUMER-ADOPTION-LAYER.md",
       "foundation/ai-collaboration/PROJECT_CONTEXT.md",
       "foundation/ai-collaboration/README.md"
     ],
@@ -501,6 +511,8 @@
     ],
     "scripts": [
       "foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md",
+      "foundation/ai-collaboration/D-029-CONSUMER-ADOPTION-LAYER.md",
+      "consumer/CONSUMER_CONTRACT.md",
       "foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md",
       "foundation/ai-collaboration/D-026_VALIDATION_RECORD.md",
       "foundation/FOUNDATION_V1_VALIDATION_RUN.md"

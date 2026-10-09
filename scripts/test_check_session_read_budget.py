@@ -522,5 +522,87 @@ class Environment(GateTestCase):
         self.assertIn("SESSION READ BUDGET: RED", result.stdout)
 
 
+class OneImplementation(GateTestCase):
+    """This file tests the gate through MenQ Standard's entry point.  The implementation is the
+    consumer-kit file; these tests hold the two together and test the kit's own defaults (D-029)."""
+
+    KIT_GATE = Path(gate.__file__).resolve().parents[1] / "consumer" / "check_session_read_budget.py"
+
+    def kit_repo(self) -> TempRepo:
+        """A repository laid out as a product repository: the manifest at its root."""
+        repo = self.repo(manifest=False)
+        repo.write(gate.kit.MANIFEST_REL, json.dumps(base_manifest(), ensure_ascii=False).encode("utf-8"))
+        repo.add()
+        return repo
+
+    def run_kit(self, cwd: Path, *args: str) -> subprocess.CompletedProcess:
+        return subprocess.run([sys.executable, str(self.KIT_GATE), *args], cwd=cwd, capture_output=True, text=True, encoding="utf-8")
+
+    def test_the_entry_point_holds_the_kits_objects_not_copies(self):
+        self.assertEqual(Path(gate.kit.__file__).resolve(), self.KIT_GATE)
+        for name in ("Refusal", "normalised", "tracked_files", "is_positive_int", "path_problem", "load_manifest", "shape_errors", "core_measurements", "area_bytes"):
+            with self.subTest(name=name):
+                self.assertIs(getattr(gate, name), getattr(gate.kit, name))
+        self.assertEqual((gate.UNIVERSAL_TOTAL_BYTES_MAX, gate.SCHEMA_VERSION, gate.ROOT_AREA), (gate.kit.UNIVERSAL_TOTAL_BYTES_MAX, gate.kit.SCHEMA_VERSION, gate.kit.ROOT_AREA))
+
+    def test_the_entry_point_defines_nothing_but_its_two_defaults(self):
+        source = Path(gate.__file__).read_text(encoding="utf-8")
+        self.assertNotIn("git ls-files", source)
+        self.assertNotIn("hashlib", source)
+        self.assertNotIn("350", source)
+        self.assertEqual(gate.MANIFEST_REL, "foundation/ai-collaboration/SESSION_READ_MANIFEST.json")
+        self.assertEqual(gate.DEFAULT_ROOT, Path(gate.__file__).resolve().parents[1])
+
+    def test_the_kits_default_manifest_is_at_the_repository_root(self):
+        self.assertEqual(gate.kit.MANIFEST_REL, "SESSION_READ_MANIFEST.json")
+        repo = self.kit_repo()
+        self.assertEqual(gate.kit.check(repo.root), ([], gate.kit.check(repo.root)[1]))
+        self.assertEqual(gate.kit.receipt(repo.root), gate.receipt(self.repo().root))
+        errors, _ = gate.kit.check(self.repo().root)
+        self.assertEqual(errors, ["manifest is missing: SESSION_READ_MANIFEST.json"])
+
+    def test_the_kit_run_as_a_script_checks_the_current_directory(self):
+        repo = self.kit_repo()
+        result = self.run_kit(repo.root)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("SESSION READ BUDGET: GREEN", result.stdout)
+        self.assertIn("core: 2 files, 35 bytes of 1000", result.stdout)
+        elsewhere = self.repo(manifest=False)
+        result = self.run_kit(elsewhere.root, "--root", str(repo.root))
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        result = self.run_kit(elsewhere.root)
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn("manifest is missing: SESSION_READ_MANIFEST.json", result.stdout)
+
+    def test_the_kit_takes_the_manifest_path_as_a_parameter(self):
+        repo = self.repo()
+        result = self.run_kit(repo.root, "--manifest", MANIFEST_REL)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        result = self.run_kit(repo.root, "--manifest", "config/no-such.json")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("manifest is missing: config/no-such.json", result.stdout)
+
+    def test_the_universal_ceiling_binds_a_product_repository_too(self):
+        repo = self.repo(manifest=False)
+        manifest = base_manifest()
+        manifest["total_bytes_max"] = 350_001
+        repo.write(gate.kit.MANIFEST_REL, json.dumps(manifest, ensure_ascii=False).encode("utf-8"))
+        repo.add()
+        result = self.run_kit(repo.root)
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("total_bytes_max is 350001, above the universal ceiling 350000 (D-028)", result.stdout)
+
+    def test_an_entry_point_without_its_implementation_is_red_not_green(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            scripts = Path(tmp) / "scripts"
+            scripts.mkdir()
+            (scripts / "check_session_read_budget.py").write_bytes(Path(gate.__file__).read_bytes())
+            result = subprocess.run([sys.executable, str(scripts / "check_session_read_budget.py")], capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertEqual(result.stdout.splitlines()[0], "SESSION READ BUDGET: RED")
+        self.assertIn("the gate's implementation cannot be loaded: consumer/check_session_read_budget.py", result.stdout)
+        self.assertNotIn("Traceback", result.stdout + result.stderr)
+
+
 if __name__ == "__main__":
     unittest.main()

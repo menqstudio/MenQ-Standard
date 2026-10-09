@@ -1,0 +1,48 @@
+name: Consumer Conformance
+
+# The reusable half of the consumer layer (decision D-029). A repository that follows MenQ
+# Standard calls this workflow pinned to a full commit SHA:
+#
+#   jobs:
+#     conformance:
+#       uses: menqstudio/MenQ-Standard/.github/workflows/consumer-conformance.yml@<40-hex SHA>
+#
+# It checks out the standard, checks out the calling repository beside it, moves the standard to
+# the commit the caller's pin names (only when that commit is on main), and runs the STANDARD's
+# copy of the checker. A caller cannot pass by editing its own copy.
+#
+# A caller's rendered workflow keeps the SHA it was rendered with, so the two command lines below
+# are an interface: changing their arguments breaks every repository that already calls this.
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out MenQ Standard with full history
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: menqstudio/MenQ-Standard
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check out the calling repository beside it
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: consumer-repo
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - name: Move the standard to the commit the pin names
+        run: |
+          set -euo pipefail
+          commit="$(python consumer/check_conformance.py pin-commit --consumer consumer-repo --standard . --standard-ref origin/main)"
+          git checkout --quiet --detach "$commit"
+      - name: Conformance, judged by the standard's own copy of the checker
+        run: python consumer/check_conformance.py check --consumer consumer-repo --standard . --standard-ref origin/main

@@ -129,6 +129,12 @@ EMPTY_LABEL_EXEMPT = (".github/pull_request_template.md",)
 # The workflows that must exist, the job in each that must run, and the commands that job must
 # run unconditionally.  Replacing a command with "echo ok" is RED.
 REQUIRED_WORKFLOW_RUNS = {
+    # The reusable workflow a product repository calls (D-029).  It must run the standard's own
+    # copy of the checker, against the standard: "--standard" is what makes the pin's commit and
+    # hashes be compared with this repository instead of believed.
+    "consumer-conformance.yml": {
+        "conformance": ("consumer/check_conformance.py check --consumer --standard --standard-ref",),
+    },
     "design-brand-expression.yml": {
         "validate": (
             "platforms/design/brand-expression/scripts/build_brand_tokens.py --check",
@@ -163,6 +169,16 @@ REQUIRED_WORKFLOW_RUNS = {
             "scripts/test_validate_platforms.py",
             "scripts/test_check_session_read_budget.py",
             "scripts/check_session_read_budget.py",
+            # The consumer layer (D-029): the kit manifest, the version gate, the template policy,
+            # and the tests of each, of the checker and of sync_facts.
+            "scripts/generate_kit_manifest.py --check",
+            "scripts/check_standard_version.py",
+            "scripts/check_consumer_templates.py",
+            "scripts/test_generate_kit_manifest.py",
+            "scripts/test_check_standard_version.py",
+            "scripts/test_check_consumer_templates.py",
+            "scripts/test_check_conformance.py",
+            "consumer/test_sync_facts.py",
         ),
     },
     "platforms-integrity.yml": {"validate-platforms": ("scripts/validate_platforms.py",)},
@@ -176,8 +192,9 @@ REQUIRED_WORKFLOW_RUNS = {
 }
 # The only jobs that may hold "contents: write", and the only jobs that may carry a job-level "if".
 PUBLISHING_JOBS = (("publish-release.yml", "foundation"), ("publish-release.yml", "design-platform"))
-# publish-release.yml runs on a tag push; every other required workflow must run on pull requests.
-REQUIRED_TRIGGER = {"publish-release.yml": "push"}
+# publish-release.yml runs on a tag push, and consumer-conformance.yml runs only when a product
+# repository calls it; every other required workflow must run on pull requests.
+REQUIRED_TRIGGER = {"publish-release.yml": "push", "consumer-conformance.yml": "workflow_call"}
 DEFAULT_REQUIRED_TRIGGER = "pull_request"
 
 PINNED_ACTION = re.compile(r"^[\w.-]+/[\w./-]+@[0-9a-f]{40}$")

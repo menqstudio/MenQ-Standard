@@ -143,6 +143,8 @@ class Case(unittest.TestCase):
 # ------------------------------------------------------------------------------------------------
 
 FI, PI, PH, PUB = WF + "foundation-integrity.yml", WF + "platforms-integrity.yml", WF + "design-platform-phase-a.yml", WF + "publish-release.yml"
+CC, MI = WF + "consumer-conformance.yml", WF + "markdown-inventory-bootstrap.yml"
+RUN_CC = "run: python consumer/check_conformance.py check --consumer consumer-repo --standard . --standard-ref origin/main"
 RUN_F = "        run: python scripts/validate_foundation.py"
 CHECKOUT = "      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4"
 PERMS = "permissions:\n  contents: read"
@@ -283,6 +285,30 @@ RED_CASES = [
     ("workflow_run_not_a_script", lambda r: r.sub(PI, "run: python scripts/validate_platforms.py", "run: [python, scripts/validate_platforms.py]"), [PI + ": job 'validate-platforms' step 3 has a 'run' that is not a script"], {"regen": False}),
     ("workflow_step_neither_uses_nor_run", lambda r: r.sub(PI, "        run: python scripts/validate_platforms.py", "        with:\n          x: y"), [PI + ": job 'validate-platforms' step 3 is neither 'uses' nor 'run'"], {"regen": False}),
     ("workflow_deleted_from_disk", lambda r: (r.root / PI).unlink(), [PI + ": workflow is missing from the checkout"], {"regen": False, "add": False}),
+    # --- the consumer layer (D-029): the reusable workflow and the gates of the kit ---
+    ("reusable_workflow_no_longer_callable", lambda r: r.sub(CC, "  workflow_call:", "  workflow_dispatch:"), [CC + ": required workflow no longer runs on 'workflow_call'"], {"regen": False}),
+    ("reusable_workflow_deleted", lambda r: r.git("rm", "-q", "-f", CC), ["missing required workflow: " + CC], {"regen": False}),
+    ("reusable_workflow_judges_without_the_standard", lambda r: r.sub(CC, RUN_CC, "run: python consumer/check_conformance.py check --consumer consumer-repo"), [CC + ": job 'conformance' does not run 'python consumer/check_conformance.py check --consumer --standard --standard-ref' unconditionally"], {"regen": False}),
+    ("reusable_workflow_checker_replaced_by_echo", lambda r: r.sub(CC, RUN_CC, "run: echo consumer/check_conformance.py check --consumer --standard --standard-ref"), [CC + ": job 'conformance' does not run 'python consumer/check_conformance.py check --consumer --standard --standard-ref' unconditionally"], {"regen": False}),
+    ("reusable_workflow_checker_conditional", lambda r: r.sub(CC, "        " + RUN_CC, "        if: github.event_name == 'push'\n        " + RUN_CC), [CC + ": job 'conformance' does not run 'python consumer/check_conformance.py check --consumer --standard --standard-ref' unconditionally"], {"regen": False}),
+    ("reusable_workflow_given_write", lambda r: r.sub(CC, PERMS, "permissions:\n  contents: write"), [CC + ": top-level permissions must be exactly 'contents: read'"], {"regen": False}),
+    ("reusable_workflow_action_unpinned", lambda r: r.sub(CC, "uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5", "uses: actions/setup-python@v5"), [CC + ": action actions/setup-python@v5 is not pinned to a full commit SHA"], {"regen": False}),
+    ("kit_checker_not_tracked", lambda r: r.git("rm", "-q", "--cached", "consumer/check_conformance.py"), [CC + ": required command names a script that is not tracked: consumer/check_conformance.py"], {"regen": False, "add": False}),
+    *[
+        ("consumer_gate_replaced_by_echo_" + str(number), lambda r, command=command: r.sub(MI, "run: python " + command + "\n", "run: echo ok\n"), [MI + ": job 'validate' does not run 'python " + command + "' unconditionally"], {"regen": False})
+        for number, command in enumerate(
+            (
+                "scripts/generate_kit_manifest.py --check",
+                "scripts/check_standard_version.py",
+                "scripts/check_consumer_templates.py",
+                "scripts/test_generate_kit_manifest.py",
+                "scripts/test_check_standard_version.py",
+                "scripts/test_check_consumer_templates.py",
+                "scripts/test_check_conformance.py",
+                "consumer/test_sync_facts.py",
+            )
+        )
+    ],
     ("no_workflows_at_all", lambda r: r.git("rm", "-q", "-r", "-f", ".github/workflows"), ["no GitHub workflows found", "missing required workflow: " + FI], {"regen": False}),
 ]
 
@@ -329,7 +355,7 @@ class GreenControls(Case):
                             seen += 1
                             with self.subTest(workflow=path.name, job=job_id, command=" ".join(words[1:3])):
                                 self.assertTrue(any(d[0] == words[1] and set(d[1:]) <= set(words[2:]) for d in declared))
-        self.assertGreaterEqual(seen, 20)
+        self.assertGreaterEqual(seen, 29)
 
     def test_names_with_a_space_non_ascii_and_upper_case_extension_are_green(self) -> None:
         # Items 8 and 9: these were a traceback, a traceback, and a state no inventory satisfied.
@@ -410,7 +436,7 @@ class YamlSubset(unittest.TestCase):
         except ImportError:
             self.skipTest("PyYAML is not installed; CI installs no YAML library")
         workflows = sorted((REPO / ".github/workflows").glob("*.yml"))
-        self.assertGreaterEqual(len(workflows), 9)
+        self.assertGreaterEqual(len(workflows), 10)
         for path in workflows:
             text = path.read_bytes().decode("utf-8").replace("\r\n", "\n")
             with self.subTest(workflow=path.name):
@@ -434,6 +460,38 @@ class YamlSubset(unittest.TestCase):
                 "last": "it's",
             },
         )
+
+    def test_reusable_workflow_forms(self) -> None:
+        # What a workflow_call workflow needs, in the forms the strict subset already accepts:
+        # the bare trigger this repository uses, and inputs, should one ever be added.
+        self.assertEqual(vf.workflow_triggers(vf.parse_workflow_yaml("on: workflow_call\n")["on"]), {"workflow_call"})
+        self.assertEqual(vf.parse_workflow_yaml("on:\n  workflow_call:\n")["on"], {"workflow_call": ""})
+        text = (
+            "on:\n  workflow_call:\n    inputs:\n      pin:\n        description: \"Path of the pin\"\n"
+            "        required: false\n        type: string\n        default: .menq-standard.json\n"
+            "    secrets:\n      token:\n        required: false\n"
+            "jobs:\n  call:\n    uses: menqstudio/MenQ-Standard/.github/workflows/consumer-conformance.yml@" + "a" * 40 + "\n"
+            "    with:\n      pin: ${{ inputs.pin }}\n"
+        )
+        tree = vf.parse_workflow_yaml(text)
+        self.assertEqual(vf.workflow_triggers(tree["on"]), {"workflow_call"})
+        self.assertEqual(
+            tree["on"]["workflow_call"],
+            {
+                "inputs": {"pin": {"description": "Path of the pin", "required": "false", "type": "string", "default": ".menq-standard.json"}},
+                "secrets": {"token": {"required": "false"}},
+            },
+        )
+        self.assertEqual(tree["jobs"]["call"]["with"], {"pin": "${{ inputs.pin }}"})
+        try:
+            import yaml
+        except ImportError:
+            return
+        self.assertEqual(tree, yaml.load(text, Loader=yaml.BaseLoader))
+
+    def test_required_trigger_of_each_workflow(self) -> None:
+        self.assertEqual(vf.REQUIRED_TRIGGER, {"publish-release.yml": "push", "consumer-conformance.yml": "workflow_call"})
+        self.assertEqual(vf.DEFAULT_REQUIRED_TRIGGER, "pull_request")
 
     def test_refused_forms(self) -> None:
         refused = {
