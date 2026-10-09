@@ -1,12 +1,13 @@
 # D-026 — Canonical Session Read Law / Canonical session-ի ընթերցման օրենք
 
-**Status / Կարգավիճակ:** Locked / Հաստատված  
+**Status / Կարգավիճակ:** Locked; superseded in part by `D-028` / Հաստատված. մասամբ փոխարինված է `D-028`-ով  
 **Date / Ամսաթիվ:** 2026-07-12  
 **Decision class / Որոշման դաս:** `C4 — Foundation or Ecosystem`  
 **Risk level / Ռիսկի մակարդակ:** `R2 — Moderate`  
 **Owner / Պատասխանատու:** MenQ Owner  
 **Approver / Հաստատող:** Gevorg Ohanyan, MenQ Owner  
-**Scope / Scope:** Every new MenQ Standard AI session
+**Scope / Scope:** Every new MenQ Standard AI session  
+**Superseded by / Փոխարինված է:** in part by [`D-028`](D-028-BOUNDED-SESSION-READ-LAW.md), from the Owner's merge of the D-028 pull request / մասամբ՝ [`D-028`](D-028-BOUNDED-SESSION-READ-LAW.md)-ով, Owner-ի կողմից D-028-ի pull request-ի merge-ի պահից
 
 ## Problem / Խնդիր
 
@@ -105,5 +106,11 @@
 **HY:** Չկարդացած repository-ից սկսված AI աշխատանքը MenQ Standard-ում վավեր աշխատանք չէ։
 
 **EN:** AI work started from an unread repository is not valid work in MenQ Standard.
+
+## Partial supersession by D-028 / Մասնակի փոխարինում D-028-ով
+
+**HY:** Այս բաժինը ավելացվել է 2026-10-09-ին՝ D-028-ի հետ միասին։ Վերևի տեքստը չի փոխվել և մնում է որպես 2026-07-12-ի որոշման պատմական գրառում։ D-028-ը փոխարինում է՝ `Decision` բաժնի «բոլոր tracked `.md` ֆայլերը» պահանջը, պարտադիր կանոններ 2-ը և 7-ը (7-րդը այժմ արգելում է core-ի ընթերցման շրջանցումը) և `Validation` բաժնի 4-րդ կետը («all-Markdown startup gate»)։ Ուժի մեջ են մնում՝ պարտադիր կանոններ 1, 3, 4, 5, 6 և 8-ը՝ core-ի և area-ի նկատմամբ, Canonical Write Integrity Law-ի հետ կապը, ինչպես նաև `MARKDOWN_INVENTORY.json`-ը և նրա drift check-ը։ Փոխարինումը գործում է միայն Owner-ի կողմից D-028-ի pull request-ի merge-ից հետո։
+
+**EN:** This section was added on 2026-10-09 together with D-028. The text above is unchanged and remains the historical record of the 2026-07-12 decision. D-028 supersedes: the requirement of the `Decision` section to read “every tracked `.md` file”, mandatory rules 2 and 7 (rule 7 now forbids bypassing the core read), and item 4 of the `Validation` section (the “all-Markdown startup gate”). Still in force: mandatory rules 1, 3, 4, 5, 6 and 8, applied to the core and the area, the relationship to the Canonical Write Integrity Law, and `MARKDOWN_INVENTORY.json` with its drift check. The supersession takes effect only from the Owner's merge of the D-028 pull request.
 
 <!-- END: D-026-CANONICAL-SESSION-READ-LAW -->

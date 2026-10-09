@@ -8,7 +8,10 @@ on:
     paths:
       - "**/*.md"
       - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
+      - "foundation/ai-collaboration/SESSION_READ_MANIFEST.json"
       - "scripts/generate_markdown_inventory.py"
+      - "scripts/check_session_read_budget.py"
+      - "scripts/test_check_session_read_budget.py"
       - "scripts/validate_foundation.py"
       - "scripts/validate_platforms.py"
       - ".github/workflows/markdown-inventory-bootstrap.yml"
@@ -16,7 +19,10 @@ on:
     paths:
       - "**/*.md"
       - "foundation/ai-collaboration/MARKDOWN_INVENTORY.json"
+      - "foundation/ai-collaboration/SESSION_READ_MANIFEST.json"
       - "scripts/generate_markdown_inventory.py"
+      - "scripts/check_session_read_budget.py"
+      - "scripts/test_check_session_read_budget.py"
       - "scripts/validate_foundation.py"
       - "scripts/validate_platforms.py"
       - ".github/workflows/markdown-inventory-bootstrap.yml"
@@ -54,3 +60,7 @@ jobs:
         run: python scripts/validate_foundation.py
       - name: Validate Platforms and D-025 integrity
         run: python scripts/validate_platforms.py
+      - name: Test the session-read budget gate
+        run: python scripts/test_check_session_read_budget.py
+      - name: Validate session-read manifest and core byte budget (D-028)
+        run: python scripts/check_session_read_budget.py

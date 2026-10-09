@@ -19,6 +19,7 @@
 - `D-025` — [`platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md`](platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md)
 - `D-026` — [`foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md`](foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md)
 - `D-027` — [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md)
+- `D-028` — [`foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md`](foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md) — Proposed (proposed; the Owner's merge of its pull request is the approval); supersedes `D-026` in part / Proposed (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է)․ մասամբ փոխարինում է `D-026`-ը
 
 ## Append Protocol / Ավելացման protocol
 

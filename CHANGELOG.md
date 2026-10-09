@@ -1,5 +1,27 @@
 # MenQ Standard — Changelog
 
+## 2026-10-09 — D-028 proposed: bounded session read
+
+### Հայերեն
+
+- Ավելացվեց `D-028` Bounded Session Read Law-ը՝ status-ը `Proposed`։ Հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է․ այս գրառումը հաստատում չի հայտարարում։ D-028-ը մասամբ փոխարինում է `D-026`-ը․ «բոլոր tracked `.md` ֆայլերը» (133 ֆայլ, 684,725 բայթ `c61608a`-ում, առանց վերին սահմանի) պահանջի փոխարեն պարտադիր ընթերցումը դառնում է սահմանափակ core՝ 120,000 բայթից ոչ ավելի, իսկ մնացածը կարդացվում է ըստ directory-ի area-ի։
+- Ավելացվեց `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`՝ core-ի 10 ֆայլ (107,705 բայթ այս draft-ում) per-file սահմաններով և 65 area։
+- Ավելացվեց `scripts/check_session_read_budget.py` gate-ը և նրա թեստերը․ gate-ը RED է, երբ manifest-ը բացակայում կամ անվավեր է, core ֆայլը բացակայում է կամ գերազանցում է իր սահմանը, core-ի ընդհանուր չափը կամ per-file սահմանների գումարը գերազանցում է budget-ը, path-ը կրկնվում է, area-ն նշում է գոյություն չունեցող directory կամ ֆայլ, կամ tracked Markdown ֆայլը հասանելի չէ ո՛չ core-ից, ո՛չ որևէ area-ից։ Բայթերը հաշվվում են CRLF-ը LF դարձնելուց հետո։ Gate-ը ավելացվեց `Markdown Inventory Integrity` workflow-ին։
+- `CANONICAL_SESSION_READ_LAW.md`-ը դարձավ v2՝ core և area կանոնով։ Այն հստակ ասում է, որ receipt-ը ապացուցում է core-ի փոխանցումը տվյալ content hash-ով, բայց ոչ հասկանալը, և որ ոչ մի ծրագիր չի ստուգում session-ի ընթերցումը։ Հեռացվեցին §2, §3, §5, §6 և §10 բաժինների կրկնվող կրճատ անգլերեն պարբերությունները, որոնք կրկնում էին հին կանոնը։
+- `README.md`, `PROJECT_CONTEXT.md`, `AI_WORKING_CONTEXT.md`, `NEXT_CHAT_HANDOFF.md`, `foundation/README.md`, `foundation/PROJECT_CONTEXT.md`, `foundation/ai-collaboration/PROJECT_CONTEXT.md`, `platforms/design/PROJECT_CONTEXT.md` և `platforms/design/NEXT_CHAT_HANDOFF.md` փաստաթղթերում հին կանոնի կրկնությունը և D-026-ի մասին «machine-enforced» պնդումը փոխարինվեցին նրանով, ինչ իրականում ստուգվում է։
+- Բոլոր MenQ repository-ների համար մեկ ընդհանուր առավելագույն սահման՝ 350,000 բայթ, gate-ի կոդում․ MenQ Standard-ը իր manifest-ում հայտարարում է 120,000։
+- `MARKDOWN_INVENTORY.json`-ը և նրա drift check-ը մնում են։ Consumer repository-ների համար նույն կանոնը պահանջվում է D-028-ով, բայց adoption մեխանիզմ դեռ չկա․ դա հետագա որոշում է։
+
+### English
+
+- Added `D-028` Bounded Session Read Law with status `Proposed`. The approval is the Owner's merge of its pull request; this entry claims no approval. D-028 supersedes `D-026` in part: instead of “every tracked `.md` file” (133 files and 684,725 bytes at `c61608a`, with no upper bound), the mandatory read becomes a bounded core of at most 120,000 bytes, and everything else is read by the area of a directory.
+- Added `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`: 10 core files (107,705 bytes in this draft) with per-file ceilings, and 65 areas.
+- Added the `scripts/check_session_read_budget.py` gate and its tests. The gate is RED when the manifest is missing or malformed, a core file is absent or exceeds its ceiling, the core total or the sum of the per-file ceilings exceeds the budget, a path is listed twice, an area names a directory or file that does not exist, or a tracked Markdown file is reachable from neither the core nor any area. Bytes are counted after CRLF is folded to LF. The gate was added to the `Markdown Inventory Integrity` workflow.
+- `CANONICAL_SESSION_READ_LAW.md` became v2 with the core and area rule. It states plainly that a receipt proves delivery of the core at a given content hash but not comprehension, and that no program checks a session's read. Removed the duplicate condensed English paragraphs of §2, §3, §5, §6 and §10, which restated the old rule.
+- In `README.md`, `PROJECT_CONTEXT.md`, `AI_WORKING_CONTEXT.md`, `NEXT_CHAT_HANDOFF.md`, `foundation/README.md`, `foundation/PROJECT_CONTEXT.md`, `foundation/ai-collaboration/PROJECT_CONTEXT.md`, `platforms/design/PROJECT_CONTEXT.md` and `platforms/design/NEXT_CHAT_HANDOFF.md`, the restatement of the old rule and the “machine-enforced” claim about D-026 were replaced with what is actually checked.
+- One universal maximum for every MenQ repository, 350,000 bytes, in the gate's code; MenQ Standard declares 120,000 in its manifest.
+- `MARKDOWN_INVENTORY.json` and its drift check remain. D-028 requires the same rule of consumer repositories, but no adoption mechanism exists yet; that is a later decision.
+
 ## 2026-10-08 — CR-0011: repository front page standard v1
 
 ### Հայերեն

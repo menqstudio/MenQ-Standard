@@ -23,8 +23,11 @@
 - [`documentation/BILINGUAL_PARITY_ADDENDUM.md`](documentation/BILINGUAL_PARITY_ADDENDUM.md) — Documentation parity control / Documentation-ի parity control
 - [`ai-collaboration/BILINGUAL_PARITY_ADDENDUM.md`](ai-collaboration/BILINGUAL_PARITY_ADDENDUM.md) — AI Collaboration parity control / AI Collaboration-ի parity control
 - [`documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`](documentation/CANONICAL_WRITE_INTEGRITY_LAW.md) — mandatory safe-write law / պարտադիր safe-write law
-- [`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md) — mandatory all-Markdown session startup law / պարտադիր all-Markdown session startup law
-- [`ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md`](ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md) — dedicated locked decision / dedicated locked decision
+- [`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md) — mandatory session startup law: bounded core plus area read / պարտադիր session startup law՝ սահմանափակ core և area-ի ընթերցում
+- [`ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md`](ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md) — dedicated locked decision, superseded in part by D-028 / dedicated locked decision, մասամբ փոխարինված D-028-ով
+- [`ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md`](ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md) — bounded session read decision (proposed; the Owner's merge of its pull request is the approval) / սահմանափակ session read-ի որոշում (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է)
+- [`ai-collaboration/SESSION_READ_MANIFEST.json`](ai-collaboration/SESSION_READ_MANIFEST.json) — session-read core and areas / session-read core և area-ներ
+- [`../scripts/check_session_read_budget.py`](../scripts/check_session_read_budget.py) — session-read budget gate / session-read budget-ի gate
 - [`../DECISION_INDEX.md`](../DECISION_INDEX.md) — active append-only decision registry / գործող append-only decision registry
 - [`../scripts/validate_foundation.py`](../scripts/validate_foundation.py) — integrity validator / integrity validator
 - [`../.github/workflows/foundation-integrity.yml`](../.github/workflows/foundation-integrity.yml) — CI enforcement / CI enforcement
@@ -39,9 +42,9 @@
 
 ## Current gate / Ընթացիկ gate
 
-**HY:** `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։ Validator-ը վերադարձրել է `FOUNDATION VALIDATION: GREEN` և հաստատել է յոթ Foundation chapter-ներն ու root controls-ը։ Foundation v1 release gate-ը GREEN է։ `D-026`-ով ավելացվել է նոր session-ի պարտադիր all-Markdown read gate-ը, և Foundation validator-ը մեքենայորեն ստուգում է D-026-ի հղումներն ու startup reference-ները։
+**HY:** `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։ Validator-ը վերադարձրել է `FOUNDATION VALIDATION: GREEN` և հաստատել է յոթ Foundation chapter-ներն ու root controls-ը։ Foundation v1 release gate-ը GREEN է։ `D-026`-ով ավելացվել էր նոր session-ի պարտադիր all-Markdown read gate-ը․ `D-028`-ը (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է) այն փոխարինում է սահմանափակ core-ի և area-ի ընթերցմամբ։ Foundation validator-ը մեքենայորեն ստուգում է D-026-ի հղումներն ու startup reference-ները, իսկ `scripts/check_session_read_budget.py`-ը՝ session-read manifest-ը և core-ի բայթերի սահմանը։ Ոչ մեկը չի ստուգում, որ session-ը որևէ բան կարդացել է։
 
-**EN:** `Foundation Integrity` workflow run `#9` completed with a `success` conclusion. The validator returned `FOUNDATION VALIDATION: GREEN` and confirmed seven Foundation chapters and root controls. The Foundation v1 release gate is GREEN. `D-026` adds the mandatory all-Markdown read gate for every new session; the Foundation validator machine-checks the D-026 links and startup references.
+**EN:** `Foundation Integrity` workflow run `#9` completed with a `success` conclusion. The validator returned `FOUNDATION VALIDATION: GREEN` and confirmed seven Foundation chapters and root controls. The Foundation v1 release gate is GREEN. `D-026` added the mandatory all-Markdown read gate for every new session; `D-028` (proposed; the Owner's merge of its pull request is the approval) replaces it with the bounded core and area read. The Foundation validator machine-checks the D-026 links and startup references, and `scripts/check_session_read_budget.py` checks the session-read manifest and the core byte ceiling. Neither checks that a session read anything.
 
 ## Next / Հաջորդը
 

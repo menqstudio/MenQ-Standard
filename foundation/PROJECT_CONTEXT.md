@@ -33,12 +33,12 @@
 
 ### Startup workflow
 
-D-026-ի համաձայն՝ ցանկացած substantive աշխատանքից առաջ ամբողջությամբ կարդալ բոլոր tracked `.md` ֆայլերը ([`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md))։ Foundation-ի համար առանցքայինն են՝ root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, այս file-ը, Canonical Write Integrity Law-ը և համապատասխան chapter-ը։
+D-026-ի և D-028-ի (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է) համաձայն՝ ցանկացած substantive աշխատանքից առաջ ամբողջությամբ կարդալ session-read core-ը՝ [`ai-collaboration/SESSION_READ_MANIFEST.json`](ai-collaboration/SESSION_READ_MANIFEST.json)-ի `core` ցանկը, իսկ Foundation-ի որևէ directory-ում աշխատելուց առաջ՝ նաև այդ directory-ի area-ի ֆայլերը ([`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md))։ Foundation-ի համար առանցքայինն են՝ root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, այս file-ը, Canonical Write Integrity Law-ը և համապատասխան chapter-ը։
 
 ### Integrity և decisions
 
 - `DECISIONS.md` պահպանում է historical `D-001–D-021` registry-ն։
-- `DECISION_INDEX.md`-ը active append-only registry է և կապում է dedicated `D-022`–`D-027` records-ը։
+- `DECISION_INDEX.md`-ը active append-only registry է և կապում է dedicated `D-022`–`D-028` records-ը։
 - Canonical writes-ը ենթարկվում են `documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`-ին։
 - Integrity validator-ը պահվում է `scripts/validate_foundation.py`-ում և գործարկվում է CI workflow-ով։
 - `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։
@@ -78,12 +78,12 @@ Every major chapter contains `README.md` and `PROJECT_CONTEXT.md`. Legacy metada
 
 ### Startup workflow
 
-Under D-026, read every tracked `.md` file completely before any substantive work ([`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md)). For Foundation the key files are the root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, this file, the Canonical Write Integrity Law, and the relevant chapter.
+Under D-026 and D-028 (proposed; the Owner's merge of its pull request is the approval), read the session-read core completely before any substantive work: the `core` list of [`ai-collaboration/SESSION_READ_MANIFEST.json`](ai-collaboration/SESSION_READ_MANIFEST.json); before working in a Foundation directory, also read the files of that directory's area ([`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md)). For Foundation the key files are the root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, this file, the Canonical Write Integrity Law, and the relevant chapter.
 
 ### Integrity and decisions
 
 - `DECISIONS.md` preserves the historical `D-001–D-021` registry.
-- `DECISION_INDEX.md` is the active append-only registry and links the dedicated `D-022`–`D-027` records.
+- `DECISION_INDEX.md` is the active append-only registry and links the dedicated `D-022`–`D-028` records.
 - Canonical writes follow `documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`.
 - The integrity validator is stored in `scripts/validate_foundation.py` and runs through CI.
 - `Foundation Integrity` workflow run `#9` completed with a `success` conclusion.
