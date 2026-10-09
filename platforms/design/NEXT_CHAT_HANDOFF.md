@@ -1,7 +1,7 @@
 # MenQ Design Platform — Next Chat Handoff / MenQ Design Platform — Հաջորդ chat-ի handoff
 
 **Status / Կարգավիճակ:** Current / Ընթացիկ  
-**Prepared / Պատրաստվել է:** 2026-10-09 (`CR-0012`. ուժի մեջ է merge-ից հետո / in effect when merged)  
+**Prepared / Պատրաստվել է:** 2026-10-09 (`CR-0012`, `CR-0013`)  
 **Owner / Պատասխանատու:** Gevorg Ohanyan  
 **Repository:** `https://github.com/menqstudio/MenQ-Standard`  
 **Canonical ref:** `main`
@@ -35,14 +35,14 @@
 
 - Փակված՝ `CR-0001`, `CR-0002`, `CR-0003`, `CR-0004`։
 - Բաց՝ `CR-0005`…`CR-0011`. աշխատանքը merge է եղել, բայց ամեն մեկի `closureBlockedBy`-ում անվանված evidence-ը չկա։
-- Իրականացման փուլում՝ `CR-0012` (այս համաժամեցումը). Owner-ը այն հաստատել է pull request #33-ի merge-ով (2026-10-09). փակված չէ, մինչև Owner-ը merge չանի նրա ավարտման pull request-ը։ Առաջարկված է `CR-0013`-ը (հիմնական Button-ի և Բրոյի avatar-ի կոնտրաստը)։
+- Փակված՝ `CR-0012` (այս համաժամեցումը). Owner-ը merge է արել pull request #33-ը և #34-ը (2026-10-09)։ Իրականացման փուլում՝ `CR-0013` (հիմնական Button-ի և Բրոյի avatar-ի կոնտրաստը). Owner-ը այն հաստատել է pull request #35-ի merge-ով (2026-10-09), փակմանը պակասում է axe-ի արդյունքը։
 
 ### Շարունակելու ճշգրիտ կետը
 
 1. **Իրական consumer-ի պարտավորությունը բաց է։** Առաջինը MenQ Webpage-ն է, երկրորդը ընտրում է Owner-ը։ Գրանցված ընթացքը՝ Webpage-ը pin է արել `tokens.vars.css`-ը և «M1-candidate» է. բարձրացումը Owner-ի որոշում է։ Չլուծված հարց. `tokens.vars.css`-ը D-027 շերտի ֆայլ է, ոչ D-025 package, ուստի Owner-ը պետք է որոշի՝ դա հաշվվո՞ւմ է որպես D-025 adoption։
 2. **D-025 ↔ D-027 token mapping-ը որոշված չէ։** D-027-ը պահանջում է այն որոշել նախքան Locked դառնալը։
 3. **`CR-0005`…`CR-0011`-ի evidence-ը հավաքել** (Webpage-ի re-pin և axe արդյունքներ, Chromium test-երի գրառումներ, մյուս repository-ների front page PR-ները), հետո փակել։
-4. **Accessibility թերությունը ուղղված է `CR-0013`-ով (առաջարկված. ուժի մեջ է merge-ից հետո).** հիմնական Button-ը և Բրոյի avatar-ը light theme-ում սպիտակ տեքստը դնում էին gradient-ի վրա, որի cyan ծայրում կոնտրաստը 2.43:1 էր (պահանջը՝ 4.5:1)։ Light-ում դրանք հիմա միագույն `color-action-primary` են (5.93:1), և validator-ը stylesheet-ներում ստուգում է gradient-ի ամեն stop-ը։ Մնում է բաց՝ `card--brand`-ի վրա `color-content-muted` տեքստը light-ում 3.64:1 է (գրանցված է `CR-0013`-ում, չի ուղղվել)։
+4. **Accessibility թերությունը ուղղված է `CR-0013`-ով (merge է եղել pull request #35-ով, 2026-10-09).** հիմնական Button-ը և Բրոյի avatar-ը light theme-ում սպիտակ տեքստը դնում էին gradient-ի վրա, որի cyan ծայրում կոնտրաստը 2.43:1 էր (պահանջը՝ 4.5:1)։ Light-ում դրանք հիմա միագույն `color-action-primary` են (5.93:1), և validator-ը stylesheet-ներում ստուգում է gradient-ի ամեն stop-ը։ Մնում է բաց՝ `card--brand`-ի վրա `color-content-muted` տեքստը light-ում 3.64:1 է (գրանցված է `CR-0013`-ում, չի ուղղվել)։
 5. **Status պիտակների հակասությունները** թվարկված են `CR-0012`-ում. դրանք լուծում է միայն Owner-ը։
 6. `ru` locale pack-ի ձևակերպումը (D-027-ի review trigger)։
 7. Backlog (տես [`ROADMAP.md`](ROADMAP.md))՝ Part 13 (portal, catalog, design-tool), M5 evidence, codemod-ներ, լրացուցիչ locale pack-եր։
@@ -86,14 +86,14 @@ Before substantive work, read in full, on the active branch/ref, the session-rea
 
 - Closed: `CR-0001`, `CR-0002`, `CR-0003`, `CR-0004`.
 - Open: `CR-0005`…`CR-0011`. Their work is merged, but the evidence each names in `closureBlockedBy` does not exist yet.
-- Implementing: `CR-0012` (this synchronisation). The Owner approved it by merging pull request #33 (2026-10-09); it is not closed until the Owner merges its completing pull request. `CR-0013` (contrast of the primary Button and the Bro avatar) is proposed.
+- Closed: `CR-0012` (this synchronisation); the Owner merged pull requests #33 and #34 (2026-10-09). Implementing: `CR-0013` (contrast of the primary Button and the Bro avatar); the Owner approved it by merging pull request #35 (2026-10-09), and an axe result is still missing for closure.
 
 ### Exact continuation point
 
 1. **The real-consumer obligation is open.** MenQ Webpage is the first; the Owner selects the second. Recorded progress: Webpage pinned `tokens.vars.css` and is an "M1-candidate"; promotion is an Owner decision. Unresolved question: `tokens.vars.css` is a file of the D-027 layer, not a D-025 package, so the Owner has to decide whether that counts as D-025 adoption.
 2. **The D-025 ↔ D-027 token mapping is not decided.** D-027 requires it to be decided before it can be Locked.
 3. **Collect the evidence for `CR-0005`…`CR-0011`** (Webpage re-pin and axe results, records of the Chromium tests, the front-page pull requests in the other repositories), then close them.
-4. **The accessibility defect is fixed by `CR-0013` (proposed; in effect when merged):** in the light theme the primary Button and the Bro avatar put white text on a gradient whose cyan end gave 2.43:1 (the rule is 4.5:1). In Light they are now solid `color-action-primary` (5.93:1), and the validator checks every gradient stop in the stylesheets. Still open: `color-content-muted` text on `card--brand` is 3.64:1 in Light (recorded in `CR-0013`, not fixed).
+4. **The accessibility defect is fixed by `CR-0013` (merged as pull request #35, 2026-10-09):** in the light theme the primary Button and the Bro avatar put white text on a gradient whose cyan end gave 2.43:1 (the rule is 4.5:1). In Light they are now solid `color-action-primary` (5.93:1), and the validator checks every gradient stop in the stylesheets. Still open: `color-content-muted` text on `card--brand` is 3.64:1 in Light (recorded in `CR-0013`, not fixed).
 5. **The status-label conflicts** are listed in `CR-0012`; only the Owner can settle them.
 6. Formalising the `ru` locale pack (a D-027 review trigger).
 7. Backlog (see [`ROADMAP.md`](ROADMAP.md)): Part 13 (portal, catalog, design-tool), M5 evidence, codemods, additional locale packs.
