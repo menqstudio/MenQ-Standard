@@ -1,5 +1,37 @@
 # MenQ Standard — Changelog
 
+## 2026-10-09 — Root and Foundation status statements synchronized
+
+### Հայերեն
+
+- 2026-10-09-ի review-ի ութ կետից յուրաքանչյուրը նախ ստուգվեց ֆայլերում, հետո ուղղվեց։ Փոխվել են միայն պնդումներ․ ոչ մի պատմական գրառում չի ջնջվել, ոչ մի tag չի փոխվել, և այս գրառումը հաստատում չի հայտարարում։ Owner-ի հաստատումը այս փոփոխությունների pull request-ի merge-ն է։
+- Ընթացիկ վիճակի ցանկը այժմ մեկ տեղում է՝ `README.md`-ի `Status` բաժնում։ `PROJECT_CONTEXT.md`-ը, `AI_WORKING_CONTEXT.md`-ը և `NEXT_CHAT_HANDOFF.md`-ը այն այլևս չեն կրկնում և հղվում են այնտեղ։ Ցանկին ավելացվեց `D-027`-ի տողը, որը մյուս երեք ֆայլերում կար, իսկ այստեղ՝ ոչ։ Session-read core-ը 107,581 բայթից դարձավ 103,847։
+- `README.md`-ի «MenQ Design Platform status» պարբերությունը, `PROJECT_CONTEXT.md`-ի «two-consumer evidence-ը GREEN է» տողը և `ROADMAP.md`-ի «Երկու distinct consumer՝ M3 և M4» ավարտված կետը դեռ պնդում էին այն maturity evidence-ը, որը 2026-10-07-ի գրառումը հետ էր վերցրել։ Այժմ բոլորը ասում են՝ repo-ի ներսի երկու consumer-ը M2 pilot են, իրական consumer-ի պարտավորությունը բաց է։ `ROADMAP.md`-ի կետը պահպանում է նախկին ձևակերպումը և ուղղման ամսաթիվը։
+- `AI_WORKING_CONTEXT.md`-ը և `ROADMAP.md`-ը ասում էին, որ audit-ի remediation-ը «շարունակվում է (workflow security, bilingual completion, Owner-ի որոշումներ)», մինչդեռ այս changelog-ը 4-րդ, 5-րդ և 6-րդ փուլերը գրանցում է ավարտված։ Երկուսն էլ ուղղվեցին։
+- `NEXT_CHAT_HANDOFF.md`-ը վերագրվեց 2026-10-09-ի դրությամբ՝ ինչն է ճիշտ հիմա, յոթ բաց հարց և առաջին քայլը։
+- «Last synchronized» ամսաթիվը 2026-10-09 է այն ֆայլերում, որոնք ամբողջությամբ ստուգվեցին՝ `PROJECT_CONTEXT.md`, `AI_WORKING_CONTEXT.md`, `ROADMAP.md`, `ECOSYSTEM_ARCHITECTURE.md`, `foundation/README.md`, `foundation/PROJECT_CONTEXT.md`, `foundation/ai-collaboration/PROJECT_CONTEXT.md`, `release/FOUNDATION_V1_RELEASE_README.md`։ Governance, Documentation և Decision System chapter context-ները ստացան այդ տողը առաջին անգամ։ Philosophy, Principles և Terminology context-ները չեն ստուգվել և մնում են 2026-07-12։
+- `foundation/README.md`-ի `Current gate` բաժինը այլևս չի նշում 2026-07-ի workflow run `#9`-ը որպես ընթացիկ evidence, այլ մեջբերում է validator-ի 2026-10-09-ի local output-ը։ `foundation/PROJECT_CONTEXT.md`-ը այլևս չի մեջբերում տող, որը validator-ը չի տպում։
+- `DECISIONS.md`-ում `D-009`-ի տակ ավելացվեց 2026-10-09-ի երկլեզու նշում՝ քայլերի հերթականությունը և «GitHub գնում է միայն հաստատված…» նախադասությունը մասամբ փոխարինված են `D-020`-ով։ `D-009`-ի տեքստը և status-ը չեն փոխվել։ Նույն հղումը ավելացվեց `ECOSYSTEM_ARCHITECTURE.md`-ին, որը կրկնում է այդ workflow-ը։
+- `ECOSYSTEM_ARCHITECTURE.md`-ը ստացավ metadata header՝ Owner, canonical path, related decisions, last synchronized։ `Status`, `Version`, `Document class` և `Review trigger` դաշտերը չեն լրացվել, քանի որ դրանք որոշող գրառում չկա։
+- `release/FOUNDATION_V1_RELEASE_README.md`-ը այժմ գրում է ստուգված փաստերը՝ `foundation-v1.0.0` tag-ը ցույց է տալիս նույն `3793b3c` commit-ը (2026-10-07), ինչ `design-platform-v0.1.0-next.0`-ը, և snapshot-ը ամբողջ repository-ն է։
+- `DECISION_INDEX.md`-ի `D-028` տողի հայերեն կեսը գրում էր `Proposed`, անգլերենը՝ `Approved`․ հայերենը ուղղվեց։
+- Սահմաններ․ ստուգումները կատարվել են local clone-ում առանց ցանցի, ուստի ոչ մի GitHub Actions run, Release էջ կամ asset չի կարդացվել։ `platforms/`, `scripts/` և `.github/` directory-ներում ոչինչ չի փոխվել։ `MARKDOWN_INVENTORY.json`-ը վերագեներացվեց։
+
+### English
+
+- Each of the eight items of the review of 2026-10-09 was checked in the files first and corrected after. Only statements changed: no historical record was deleted, no tag was changed, and this entry claims no approval. The Owner's approval is the merge of the pull request that carries these changes.
+- The list of the current state now lives in one place, the `Status` section of `README.md`. `PROJECT_CONTEXT.md`, `AI_WORKING_CONTEXT.md` and `NEXT_CHAT_HANDOFF.md` no longer restate it and point there. The list gained the `D-027` line, which the other three files had and this one lacked. The session-read core went from 107,581 bytes to 103,847.
+- The “MenQ Design Platform status” paragraph of `README.md`, the line “two-consumer evidence is GREEN” of `PROJECT_CONTEXT.md` and the completed item “Two distinct consumers: M3 and M4” of `ROADMAP.md` still asserted the maturity evidence that the entry of 2026-10-07 had withdrawn. All now say that the two in-repo consumers are M2 pilots and that the real-consumer obligation is open. The `ROADMAP.md` item keeps the earlier wording and the date of the correction.
+- `AI_WORKING_CONTEXT.md` and `ROADMAP.md` said that remediation of the audit “continues (workflow security, bilingual completion, Owner decisions)”, while this changelog records phases 4, 5 and 6 as complete. Both were corrected.
+- `NEXT_CHAT_HANDOFF.md` was rewritten as of 2026-10-09: what is true now, seven open matters, and the first step.
+- The “Last synchronized” date is 2026-10-09 in the files that were verified in full: `PROJECT_CONTEXT.md`, `AI_WORKING_CONTEXT.md`, `ROADMAP.md`, `ECOSYSTEM_ARCHITECTURE.md`, `foundation/README.md`, `foundation/PROJECT_CONTEXT.md`, `foundation/ai-collaboration/PROJECT_CONTEXT.md`, `release/FOUNDATION_V1_RELEASE_README.md`. The Governance, Documentation and Decision System chapter contexts received that line for the first time. The Philosophy, Principles and Terminology contexts were not verified and stay at 2026-07-12.
+- The `Current gate` section of `foundation/README.md` no longer names workflow run `#9` of July 2026 as the current evidence; it quotes the validator's local output of 2026-10-09. `foundation/PROJECT_CONTEXT.md` no longer quotes a line the validator does not print.
+- In `DECISIONS.md` a bilingual note dated 2026-10-09 was added under `D-009`: the order of the steps and the sentence “Only approved architecture and decisions enter GitHub” are superseded in part by `D-020`. The text and the status of `D-009` are unchanged. The same pointer was added to `ECOSYSTEM_ARCHITECTURE.md`, which repeats that workflow.
+- `ECOSYSTEM_ARCHITECTURE.md` received a metadata header: Owner, canonical path, related decisions, last synchronized. The fields `Status`, `Version`, `Document class` and `Review trigger` were not filled in, because no record determines them.
+- `release/FOUNDATION_V1_RELEASE_README.md` now states the checked facts: the tag `foundation-v1.0.0` points at the same commit `3793b3c` (2026-10-07) as `design-platform-v0.1.0-next.0`, and the snapshot is the whole repository.
+- The Armenian half of the `D-028` line of `DECISION_INDEX.md` read `Proposed` while the English half read `Approved`; the Armenian was corrected.
+- Limits: the checks were made in a local clone without network access, so no GitHub Actions run, Release page or asset was read. Nothing was changed in the `platforms/`, `scripts/` or `.github/` directories. `MARKDOWN_INVENTORY.json` was regenerated.
+
 ## 2026-10-09 — Validators check content, and the validators are tested
 
 ### Հայերեն

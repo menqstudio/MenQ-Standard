@@ -4,6 +4,7 @@
 **Document class / Փաստաթղթի դաս:** Informative
 **Canonical scope / Շրջանակ:** `foundation/governance/`
 **Owner / Պատասխանատու:** MenQ Owner
+**Last synchronized / Վերջին համաժամեցում:** 2026-10-09
 
 ## Հայերեն
 Governance-ը սահմանում է authority-ն, scope-ը, accountability-ն, delegation-ը և revocation-ը։ Final authority-ն մարդկային է, AI-ն self-approve չի անում։ Աշխատանքից առաջ կարդալ root canonical files-ը, Foundation context-ը, Governance README-ն, Decision System-ը և AI Collaboration-ը։ Material փոփոխությունը պահանջում է Owner approval և traceable decision։

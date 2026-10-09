@@ -3,7 +3,7 @@
 **Status / Կարգավիճակ:** Active / Գործող  
 **Document class / Փաստաթղթի դաս:** Informative  
 **Canonical scope / Canonical scope:** `foundation/ai-collaboration/`  
-**Last synchronized / Վերջին համաժամեցում:** 2026-07-12
+**Last synchronized / Վերջին համաժամեցում:** 2026-10-09
 
 ## Հայերեն
 

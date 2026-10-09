@@ -1,5 +1,10 @@
 # MenQ Ecosystem Architecture
 
+**Owner / Պատասխանատու:** MenQ Owner  
+**Canonical path / Canonical ուղի:** `ECOSYSTEM_ARCHITECTURE.md`  
+**Related decisions / Կապված որոշումներ:** `D-004`, `D-005`, `D-006`, `D-007`, `D-008`, `D-009`, `D-010`, `D-011` ([`DECISIONS.md`](DECISIONS.md))  
+**Last synchronized / Վերջին համաժամեցում:** 2026-10-09
+
 ## Հայերեն
 
 ### Հիմնական բաժանում
@@ -114,6 +119,8 @@ Documentation
 ```
 
 Chat-ը workshop-ն է։ GitHub-ը canonical source-ն է։ GitHub գնում է միայն հաստատված architecture-ը և որոշումները։
+
+Այս workflow-ը `D-009`-ի տեքստն է։ Քայլերի հերթականությունը և վերջին նախադասությունը մասամբ փոխարինված են `D-020`-ով․ տես [`DECISIONS.md`](DECISIONS.md)-ում `D-009`-ի տակի 2026-10-09-ի նշումը, որը Owner-ի հաստատում չունի, մինչև Owner-ը merge չանի այն պարունակող pull request-ը։
 
 ---
 
@@ -231,5 +238,7 @@ Documentation
 ```
 
 Chat is the workshop. GitHub is the canonical source. Only approved architecture and decisions enter GitHub.
+
+This workflow is the text of `D-009`. The order of the steps and the last sentence are superseded in part by `D-020`; see the note of 2026-10-09 under `D-009` in [`DECISIONS.md`](DECISIONS.md), which has no Owner approval until the Owner merges the pull request that contains it.
 
 <!-- END: MENQ_ECOSYSTEM_ARCHITECTURE -->
