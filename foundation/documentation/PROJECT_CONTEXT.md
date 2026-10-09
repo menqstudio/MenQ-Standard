@@ -4,6 +4,7 @@
 **Document class / Փաստաթղթի դաս:** Informative
 **Canonical scope / Շրջանակ:** `foundation/documentation/`
 **Owner / Պատասխանատու:** MenQ Owner
+**Last synchronized / Վերջին համաժամեցում:** 2026-10-09
 
 ## Հայերեն
 Documentation chapter-ը սահմանում է canonical source-ը, file roles-ը, bilingual equality-ն, metadata-ն, change control-ը, safe writes-ը և integrity verification-ը։ Canonical write-ի համար պարտադիր է ամբողջ source-ը կարդալ, SHA-ն պահել, write-ից հետո սկիզբն ու վերջը re-read անել և միայն verification-ից հետո GREEN հայտարարել։

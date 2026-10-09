@@ -1,7 +1,7 @@
 # MenQ Standard — Next Chat Handoff / Հաջորդ chat-ի handoff
 
 **Status / Կարգավիճակ:** Current / Ընթացիկ  
-**Prepared / Պատրաստվել է:** 2026-10-07  
+**Prepared / Պատրաստվել է:** 2026-10-09  
 **Owner / Պատասխանատու:** Gevorg Ohanyan  
 **Repository:** `https://github.com/menqstudio/MenQ-Standard`  
 **Canonical ref:** `main`
@@ -10,33 +10,27 @@
 
 ### Պարտադիր մեկնարկ
 
-Մինչև substantive աշխատանք՝ active branch/ref-ում ամբողջությամբ կարդալ session-read core-ը՝ `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`-ի `core` ցանկը, իսկ որևէ directory-ում աշխատելուց առաջ՝ նաև այդ directory-ի area-ի ֆայլերը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Active PR-ի դեպքում կարդալ metadata, changed files, diff, review threads և checks։
+Մինչև substantive աշխատանք՝ ամբողջությամբ կարդալ session-read core-ը և աշխատանքի directory-ի area-ն՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի (`D-026`, `D-028`)։
 
-### Ընթացիկ վիճակ
+### Ինչն է ճիշտ հիմա
 
-- Foundation v1 — Locked և GREEN։
-- D-024 — Locked (2026-10-07)։
-- Foundation v1.0.0 — հրապարակված՝ `foundation-v1.0.0` GitHub Release։
-- D-025 evidence — ուղղված. consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է։
-- D-025 — Locked և GREEN։
-- D-026 — Locked. մասամբ փոխարինված է D-028-ով։ CI-ը ստուգում է Markdown inventory-ն, ոչ թե session-ի ընթերցումը։
-- D-028 — Approved (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին)՝ `foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md`։ Gate-ը core-ը պահում է 120,000 բայթի սահմանում։
-- D-027 — Approved — Implementing՝ [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md)։
-- 2026-10-07 zero-trust audit — փուլ 1 (D-027), փուլ 2 (validator hardening), փուլ 3 (status sync), փուլ 4 (workflow security) և փուլ 5 (bilingual completion) ավարտված են։
-- D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
-- D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
-- D-025 lock merge — `261f85e5b20d726a0ab1f05da84a4dc45a248873`։
-- Validated lock head — `8ba2e987ff6dab2c25fda18744c7376953d0108f`։
-- Architecture, implementation, consumer, closure և lock evidence — GREEN։
-- Final post-lock audit record — `platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`։
-- D-025 transaction-ը փակված է։
+Ընթացիկ վիճակի միակ ցանկը [`README.md`](README.md)-ի `Status` բաժինն է։ 2026-10-07-ի handoff-ից հետո [`CHANGELOG.md`](CHANGELOG.md)-ում գրանցվել են՝ `CR-0004`–`CR-0011` (2026-10-08), `D-028`-ի առաջարկը և հաստատումը (pull request #29, 2026-10-09), validator-ների content ստուգումները և թեստերը (2026-10-09), և root փաստաթղթերի այս համաժամեցումը (2026-10-09)։ Audit-ի remediation-ի 1–6 փուլերը գրանցված են ավարտված։
 
-### Շարունակելու ճշգրիտ կետը
+### Ինչն է բաց
 
-1. Audit-ի բաց կետերը (Part 14-ը Locked է)՝ MenQ Webpage-ը որպես D-025-ի առաջին իրական consumer, երկրորդ consumer-ի ընտրությունը, Part 13-ը (backlog)։
-2. Ընտրել MenQ Standard-ի հաջորդ ecosystem priority-ն։
-3. Բացել առանձին decision transaction։
-4. D-025-ը փոխել միայն governed change request, impact analysis, compatibility/migration evidence, validators և explicit Owner approval ճանապարհով։
+1. D-025-ի իրական consumer-ի պարտավորությունը․ առաջինը MenQ Webpage-ն է, երկրորդը ընտրում է Owner-ը։
+2. D-028-ի consumer repository-ների պահանջը adoption մեխանիզմ չունի․ դա հետագա որոշում է։
+3. Area-ները բայթերի սահման չունեն (ամենամեծը՝ `platforms/design`, ամբողջ core-ից մեծ)․ հարցը Owner-ինն է։
+4. `CR-0004`–`CR-0011`-ը իրականացված են․ դրանց record-ները փակվում են առանձին pull request-ով։
+5. D-025 readiness record-ի վերին մակարդակի դաշտերը դեռ ցույց են տալիս փոխարինված M3/M4-ը․ Platforms validator-ը տպում է `KNOWN INCONSISTENCY`։ Record-ը ուղղելը Owner-ի որոշում է։
+6. D-027-ը Locked դառնալու համար՝ D-025 token source-ի mapping, առաջին իրական consumer, ru locale pack։ Part 13-ը backlog-ում է։
+7. Այս համաժամեցումը և `DECISIONS.md`-ի `D-009`-ի տակի նշումը Owner-ի հաստատում չունեն, մինչև Owner-ը merge չանի դրանց pull request-ը։
+
+### Առաջին քայլը
+
+1. `git log -1` և գործարկել `scripts/validate_foundation.py`, `scripts/validate_platforms.py`, `scripts/check_session_read_budget.py`։
+2. Ստուգել՝ merge եղե՞լ են այս համաժամեցման և CR-ների փակման pull request-ները, և ըստ դրա թարմացնել այս ցանկը։
+3. Հետո Owner-ը ընտրում է հաջորդ priority-ն՝ առանձին decision transaction-ով։
 
 ### Արգելված գործողություններ
 
@@ -50,33 +44,27 @@
 
 ### Mandatory startup
 
-Before substantive work, read in full, on the active branch/ref, the session-read core, which is the `core` list of `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`, and, before working in a directory, the files of that directory's area, under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For an active PR, read metadata, changed files, diff, review threads, and checks.
+Before substantive work, read in full the session-read core and the area of the working directory, under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md` (`D-026`, `D-028`).
 
-### Current state
+### What is true now
 
-- Foundation v1 is Locked and GREEN.
-- D-024 is Locked (2026-10-07).
-- Foundation v1.0.0 is published as the `foundation-v1.0.0` GitHub Release.
-- D-025 evidence is corrected: the consumers are M2 pilots and the real-consumer obligation is open.
-- D-025 is Locked and GREEN.
-- D-026 is Locked and superseded in part by D-028. CI checks the Markdown inventory, not a session's read.
-- D-028 is Approved (approved; the Owner merged pull request #29 on 2026-10-09): `foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md`. The gate holds the core to 120,000 bytes.
-- D-027 is Approved — Implementing: [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md).
-- 2026-10-07 zero-trust audit: phase 1 (D-027), phase 2 (validator hardening), phase 3 (status sync), phase 4 (workflow security) and phase 5 (bilingual completion) are complete.
-- D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
-- D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
-- D-025 lock merge: `261f85e5b20d726a0ab1f05da84a4dc45a248873`.
-- Validated lock head: `8ba2e987ff6dab2c25fda18744c7376953d0108f`.
-- Architecture, implementation, consumer, closure, and lock evidence are GREEN.
-- Final post-lock audit record: `platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`.
-- The D-025 transaction is closed.
+The one list of the current state is the `Status` section of [`README.md`](README.md). Since the handoff of 2026-10-07, [`CHANGELOG.md`](CHANGELOG.md) records: `CR-0004`–`CR-0011` (2026-10-08), the proposal and approval of `D-028` (pull request #29, 2026-10-09), the validators' content checks and tests (2026-10-09), and this synchronisation of the root documents (2026-10-09). Remediation phases 1–6 of the audit are recorded complete.
 
-### Exact continuation point
+### What is open
 
-1. Open audit items (Part 14 is Locked): MenQ Webpage as D-025's first real consumer, choosing the second consumer, Part 13 (backlog).
-2. Select the next MenQ Standard ecosystem priority.
-3. Open a separate decision transaction.
-4. Change D-025 only through a governed change request, impact analysis, compatibility and migration evidence, validators, and explicit Owner approval.
+1. The real-consumer obligation of D-025: MenQ Webpage is the first, and the Owner selects the second.
+2. D-028's requirement of consumer repositories has no adoption mechanism; that is a later decision.
+3. Areas have no byte ceiling (the largest is `platforms/design`, larger than the whole core); the question is the Owner's.
+4. `CR-0004`–`CR-0011` are implemented; their records are being closed in a separate pull request.
+5. The top-level fields of the D-025 readiness record still show the superseded M3/M4; the Platforms validator prints `KNOWN INCONSISTENCY`. Correcting the record is an Owner decision.
+6. For D-027 to become Locked: the mapping to the D-025 token source, the first real consumer, the ru locale pack. Part 13 is in the backlog.
+7. This synchronisation and the note under `D-009` in `DECISIONS.md` have no Owner approval until the Owner merges their pull request.
+
+### First step
+
+1. `git log -1`, then run `scripts/validate_foundation.py`, `scripts/validate_platforms.py` and `scripts/check_session_read_budget.py`.
+2. Check whether the pull requests of this synchronisation and of the CR closure have merged, and update this list accordingly.
+3. Then the Owner selects the next priority through a separate decision transaction.
 
 ### Prohibited actions
 

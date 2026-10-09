@@ -4,7 +4,7 @@
 **Document class / Փաստաթղթի դաս:** Informative  
 **Owner / Պատասխանատու:** Gevorg Ohanyan  
 **Canonical repository:** `https://github.com/menqstudio/MenQ-Standard`  
-**Last synchronized / Վերջին համաժամեցում:** 2026-07-13
+**Last synchronized / Վերջին համաժամեցում:** 2026-10-09
 
 ## Հայերեն
 
@@ -31,28 +31,13 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 ### Ընթացիկ canonical վիճակ
 
-- Foundation v1 — Locked և GREEN։
-- D-024 Platforms Architecture v1 — Locked (2026-10-07)։
-- Foundation v1.0.0 release՝ [`foundation-v1.0.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/foundation-v1.0.0)։
-- D-025 evidence-ը ուղղված է (2026-10-07)՝ repo-ի ներսի consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է ([`platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md`](platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md))։
-- D-025 MenQ Design Platform Architecture v1 — Locked և GREEN։
-- D-026 Canonical Session Read Law — Locked. մասամբ փոխարինված է D-028-ով։ CI-ը ստուգում է Markdown inventory-ն, ոչ թե որևէ session-ի ընթերցումը։
-- D-028 Bounded Session Read Law — Approved (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին)։ `scripts/check_session_read_budget.py` gate-ը core-ը պահում է 120,000 բայթի սահմանում։
-- D-027 MenQ Brand Expression Layer v1 — Approved — Implementing (`platforms/design/brand-expression/`, Bro product extension)։
-- D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
-- D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
-- D-025 lock merge — `261f85e5b20d726a0ab1f05da84a4dc45a248873`։
-- Validated lock head — `8ba2e987ff6dab2c25fda18744c7376953d0108f`։
-- Parts 1–16 architecture, implementation packages, private preview candidate և two-consumer evidence-ը GREEN են։
-- Explicit Owner lock approval — 2026-07-13։
-- Final post-lock audit — [`platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`](platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md)։
+Ընթացիկ վիճակի միակ ամբողջական ցանկը [`README.md`](README.md)-ի `Status` բաժինն է։ Այս ֆայլը այն չի կրկնում․ Documentation Standard §6.2-ի համաձայն `PROJECT_CONTEXT.md`-ը կայուն context է, ոչ թե արագ փոփոխվող status։ Որոշումները գտնվում են [`DECISION_INDEX.md`](DECISION_INDEX.md)-ից, փոփոխությունների պատմությունը՝ [`CHANGELOG.md`](CHANGELOG.md)-ում։
 
 ### Հաջորդ աշխատանք
 
-1. D-025 transaction-ը փակված է․ բաց implementation, closure կամ lock action չկա։
-2. Հետագա Design Platform փոփոխությունները կառավարել locked change-control կանոններով։
-3. D-027-ի բաց կետերը՝ D-025 token source-ի հետ mapping, առաջին իրական consumer (MenQ Webpage), ru locale pack-ի ձևակերպում։
-4. Owner-ը ընտրում է MenQ Standard-ի հաջորդ ecosystem priority-ն՝ առանձին decision transaction-ով։
+1. Բաց հարցերը և հաջորդ session-ի առաջին քայլը [`NEXT_CHAT_HANDOFF.md`](NEXT_CHAT_HANDOFF.md)-ում են։
+2. Locked որոշումը (օրինակ՝ D-025) փոխվում է միայն governed change control-ով և Owner-ի explicit հաստատմամբ։
+3. MenQ Standard-ի հաջորդ ecosystem priority-ն ընտրում է Owner-ը՝ առանձին decision transaction-ով։
 
 ---
 
@@ -81,27 +66,12 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 
 ### Current canonical state
 
-- Foundation v1 is Locked and GREEN.
-- D-024 Platforms Architecture v1 is Locked (2026-10-07).
-- Foundation v1.0.0 release: [`foundation-v1.0.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/foundation-v1.0.0).
-- D-025 evidence was corrected on 2026-10-07: the in-repo consumers are M2 pilots and the real-consumer obligation is open ([`platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md`](platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md)).
-- D-025 MenQ Design Platform Architecture v1 is Locked and GREEN.
-- D-026 Canonical Session Read Law is Locked and superseded in part by D-028. CI checks the Markdown inventory, not any session's read.
-- D-028 Bounded Session Read Law is Approved (approved; the Owner merged pull request #29 on 2026-10-09). The `scripts/check_session_read_budget.py` gate holds the core to 120,000 bytes.
-- D-027 MenQ Brand Expression Layer v1 is Approved — Implementing (`platforms/design/brand-expression/`, Bro product extension).
-- D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
-- D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
-- D-025 lock merge: `261f85e5b20d726a0ab1f05da84a4dc45a248873`.
-- Validated lock head: `8ba2e987ff6dab2c25fda18744c7376953d0108f`.
-- Parts 1–16 architecture, implementation packages, the private preview candidate, and two-consumer evidence are GREEN.
-- Explicit Owner lock approval: 2026-07-13.
-- Final post-lock audit: [`platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`](platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md).
+The one complete list of the current state is the `Status` section of [`README.md`](README.md). This file does not restate it: under Documentation Standard §6.2, `PROJECT_CONTEXT.md` is stable context, not rapidly changing status. Decisions are found from [`DECISION_INDEX.md`](DECISION_INDEX.md), and the history of changes is in [`CHANGELOG.md`](CHANGELOG.md).
 
 ### Next work
 
-1. The D-025 transaction is closed; no implementation, closure, or lock action remains open.
-2. Govern future Design Platform changes under locked change-control rules.
-3. D-027 open items: mapping to the D-025 token source, the first real consumer (MenQ Webpage), formalising the ru locale pack.
-4. The Owner selects the next MenQ Standard ecosystem priority through a separate decision transaction.
+1. Open matters and the first step of the next session are in [`NEXT_CHAT_HANDOFF.md`](NEXT_CHAT_HANDOFF.md).
+2. A Locked decision (for example D-025) changes only through governed change control and explicit Owner approval.
+3. The Owner selects the next MenQ Standard ecosystem priority through a separate decision transaction.
 
 <!-- END: MENQ_STANDARD_PROJECT_CONTEXT -->

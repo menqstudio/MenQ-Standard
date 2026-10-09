@@ -4,7 +4,7 @@
 **Document class / Փաստաթղթի դաս:** Informative  
 **Canonical scope / Canonical scope:** `foundation/`  
 **Owner / Պատասխանատու:** MenQ Owner  
-**Last synchronized / Վերջին համաժամեցում:** 2026-07-12
+**Last synchronized / Վերջին համաժամեցում:** 2026-10-09
 
 ## Հայերեն
 
@@ -41,9 +41,8 @@ D-026-ի և D-028-ի (հաստատված. Owner-ը merge է արել pull reques
 - `DECISION_INDEX.md`-ը active append-only registry է և կապում է dedicated `D-022`–`D-028` records-ը։
 - Canonical writes-ը ենթարկվում են `documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`-ին։
 - Integrity validator-ը պահվում է `scripts/validate_foundation.py`-ում և գործարկվում է CI workflow-ով։
-- `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։
-- Validator output-ը՝ `FOUNDATION VALIDATION: GREEN` և `Validated 7 Foundation chapters and root controls.`
-- Foundation v1 release gate-ը GREEN է։
+- Validator-ի ընթացիկ output-ը և դրա ամսաթիվը գրված են [`README.md`](README.md)-ի `Current gate` բաժնում․ այս ֆայլը այն չի կրկնում։ Մինչև 2026-10-09 այստեղ մեջբերված էր `Validated 7 Foundation chapters and root controls.` տողը, որը validator-ը այլևս չի տպում։
+- 2026-07-12-ի validation-ի պատմական գրառումը՝ [`FOUNDATION_V1_VALIDATION_RUN.md`](FOUNDATION_V1_VALIDATION_RUN.md)։
 
 ### Հաջորդ քայլ
 
@@ -86,9 +85,8 @@ Under D-026 and D-028 (approved; the Owner merged pull request #29 on 2026-10-09
 - `DECISION_INDEX.md` is the active append-only registry and links the dedicated `D-022`–`D-028` records.
 - Canonical writes follow `documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`.
 - The integrity validator is stored in `scripts/validate_foundation.py` and runs through CI.
-- `Foundation Integrity` workflow run `#9` completed with a `success` conclusion.
-- Validator output: `FOUNDATION VALIDATION: GREEN` and `Validated 7 Foundation chapters and root controls.`
-- The Foundation v1 release gate is GREEN.
+- The validator's current output and its date are written in the `Current gate` section of [`README.md`](README.md); this file does not restate it. Until 2026-10-09 this file quoted the line `Validated 7 Foundation chapters and root controls.`, which the validator no longer prints.
+- The historical record of the 2026-07-12 validation: [`FOUNDATION_V1_VALIDATION_RUN.md`](FOUNDATION_V1_VALIDATION_RUN.md).
 
 ### Next step
 

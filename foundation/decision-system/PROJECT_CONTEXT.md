@@ -4,6 +4,7 @@
 **Document class / Փաստաթղթի դաս:** Informative
 **Canonical scope / Շրջանակ:** `foundation/decision-system/`
 **Owner / Պատասխանատու:** MenQ Owner
+**Last synchronized / Վերջին համաժամեցում:** 2026-10-09
 
 ## Հայերեն
 Decision System-ը սահմանում է formal decision trigger-ները, `C0–C4` classes-ը, `R0–R4` risk levels-ը, lifecycle-ը, gates-ը և history-preserving change-ը։ Այն չի փոխարինում Governance authority-ին կամ Documentation storage rules-ին։ Material փոփոխությունը պահանջում է Owner approval և traceable decision։

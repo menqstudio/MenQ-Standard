@@ -5,14 +5,14 @@
 
 **Status / Կարգավիճակ:** Active / Գործող  
 **Document class / Փաստաթղթի դաս:** Working  
-**Last synchronized / Վերջին համաժամեցում:** 2026-07-13  
+**Last synchronized / Վերջին համաժամեցում:** 2026-10-09  
 **Canonical repository:** `https://github.com/menqstudio/MenQ-Standard`
 
 ## Հայերեն
 
 ### Պարտադիր startup workflow
 
-Յուրաքանչյուր նոր AI session մինչև substantive աշխատանք պարտավոր է active branch/ref-ում ամբողջությամբ կարդալ session-read core-ը՝ `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`-ի `core` ցանկը, որևէ directory-ում աշխատելուց առաջ՝ նաև այդ directory-ի area-ի ֆայլերը, իսկ active PR-ի դեպքում՝ metadata, changed files, diff, review threads և checks։ Պարտադիր օրենքը՝ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`։
+Յուրաքանչյուր նոր AI session մինչև substantive աշխատանք պարտավոր է active branch/ref-ում ամբողջությամբ կարդալ session-read core-ը՝ `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`-ի `core` ցանկը, որևէ directory-ում աշխատելուց առաջ՝ նաև այդ directory-ի area-ի ֆայլերը, իսկ active PR-ի դեպքում՝ metadata, changed files, diff, review threads և checks։ Պարտադիր օրենքը՝ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md` (`D-026`, `D-028`)։
 
 ### Human–AI սկզբունք
 
@@ -25,19 +25,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 ### Ընթացիկ canonical վիճակ
 
-- Foundation v1 — Locked և GREEN։
-- D-024 — Locked (2026-10-07)։
-- Foundation v1.0.0 — հրապարակված՝ `foundation-v1.0.0` GitHub Release։
-- D-025 evidence — ուղղված. consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է։
-- D-025 — Locked և GREEN։
-- D-026 — Locked. մասամբ փոխարինված է D-028-ով։ CI-ը ստուգում է Markdown inventory-ն, ոչ թե session-ի ընթերցումը։
-- D-028 — Approved (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին)։ Gate-ը core-ը պահում է 120,000 բայթի սահմանում։
-- D-027 — Approved — Implementing (brand expression layer + Bro product extension)։
-- D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
-- D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
-- D-025 lock merge — `261f85e5b20d726a0ab1f05da84a4dc45a248873`։
-- Final audit — `platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`։
-- D-025 transaction-ը փակված է։
+Ընթացիկ վիճակի միակ ամբողջական ցանկը [`README.md`](README.md)-ի `Status` բաժինն է․ այս ֆայլը այն չի կրկնում։
 
 ### Locked invariants
 
@@ -49,9 +37,9 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - Armenian և English canonical languages են։
 - D-025 փոփոխությունը պահանջում է governed change control և explicit Owner approval։
 
-### Հաջորդ հստակ աշխատանք
+### Բաց հարցեր և հաջորդ քայլ
 
-2026-10-07 zero-trust audit-ի remediation-ը շարունակվում է փուլերով (workflow security, bilingual completion, Owner-ի որոշումներ)։ D-027-ը Locked դառնալու համար պետք է D-025 mapping-ը և առաջին իրական consumer-ը։ Դրանից հետո Owner-ը ընտրում է հաջորդ ecosystem priority-ն։
+2026-10-07 zero-trust audit-ի remediation-ի 1–6 փուլերը [`CHANGELOG.md`](CHANGELOG.md)-ում գրանցված են ավարտված․ այս ֆայլը մինչև 2026-10-09 ասում էր, որ remediation-ը շարունակվում է։ Բաց հարցերի միակ ցանկը և հաջորդ session-ի առաջին քայլը [`NEXT_CHAT_HANDOFF.md`](NEXT_CHAT_HANDOFF.md)-ում են։
 
 ---
 
@@ -59,7 +47,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 ### Required startup workflow
 
-Before substantive work, every AI session must read in full, on the active branch/ref, the session-read core, which is the `core` list of `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`; before working in a directory, also the files of that directory's area; and, for an active PR, metadata, changed files, diff, review threads, and checks. The mandatory law is `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`.
+Before substantive work, every AI session must read in full, on the active branch/ref, the session-read core, which is the `core` list of `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`; before working in a directory, also the files of that directory's area; and, for an active PR, metadata, changed files, diff, review threads, and checks. The mandatory law is `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md` (`D-026`, `D-028`).
 
 ### Human–AI principle
 
@@ -72,19 +60,7 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 
 ### Current canonical state
 
-- Foundation v1 is Locked and GREEN.
-- D-024 is Locked (2026-10-07).
-- Foundation v1.0.0 is published as the `foundation-v1.0.0` GitHub Release.
-- D-025 evidence is corrected: the consumers are M2 pilots and the real-consumer obligation is open.
-- D-025 is Locked and GREEN.
-- D-026 is Locked and superseded in part by D-028. CI checks the Markdown inventory, not a session's read.
-- D-028 is Approved (approved; the Owner merged pull request #29 on 2026-10-09). The gate holds the core to 120,000 bytes.
-- D-027 is Approved — Implementing (brand expression layer + Bro product extension).
-- D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
-- D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.
-- D-025 lock merge: `261f85e5b20d726a0ab1f05da84a4dc45a248873`.
-- Final audit: `platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md`.
-- The D-025 transaction is closed.
+The one complete list of the current state is the `Status` section of [`README.md`](README.md); this file does not restate it.
 
 ### Locked invariants
 
@@ -96,8 +72,8 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 - Armenian and English are canonical languages.
 - Changes to D-025 require governed change control and explicit Owner approval.
 
-### Exact next work
+### Open matters and next step
 
-Remediation of the 2026-10-07 zero-trust audit continues in phases (workflow security, bilingual completion, Owner decisions). D-027 needs the D-025 mapping and its first real consumer before it can lock. After that, the Owner selects the next ecosystem priority.
+Remediation phases 1–6 of the 2026-10-07 zero-trust audit are recorded complete in [`CHANGELOG.md`](CHANGELOG.md); until 2026-10-09 this file said that remediation continues. The one list of open matters and the first step of the next session are in [`NEXT_CHAT_HANDOFF.md`](NEXT_CHAT_HANDOFF.md).
 
 <!-- END: MENQ_STANDARD_AI_WORKING_CONTEXT -->

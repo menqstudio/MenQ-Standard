@@ -1,11 +1,12 @@
 # Foundation / Հիմք
 
 **Status / Կարգավիճակ:** Locked v1 — Validated GREEN / Հաստատված v1 — ստուգված GREEN  
-**Owner / Պատասխանատու:** MenQ Owner
+**Owner / Պատասխանատու:** MenQ Owner  
+**Last synchronized / Վերջին համաժամեցում:** 2026-10-09
 
-**HY:** Տե՛ս [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md)-ը՝ կայուն context-ի համար, [`FOUNDATION_V1_INTEGRITY_AUDIT.md`](FOUNDATION_V1_INTEGRITY_AUDIT.md)-ը՝ սկզբնական RED audit-ի համար, [`FOUNDATION_V1_REAUDIT.md`](FOUNDATION_V1_REAUDIT.md)-ը՝ YELLOW remediation re-audit-ի համար, և [`FOUNDATION_V1_VALIDATION_RUN.md`](FOUNDATION_V1_VALIDATION_RUN.md)-ը՝ վերջնական GREEN execution evidence-ի համար։
+**HY:** Տե՛ս [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md)-ը՝ կայուն context-ի համար, [`FOUNDATION_V1_INTEGRITY_AUDIT.md`](FOUNDATION_V1_INTEGRITY_AUDIT.md)-ը՝ սկզբնական RED audit-ի համար, [`FOUNDATION_V1_REAUDIT.md`](FOUNDATION_V1_REAUDIT.md)-ը՝ YELLOW remediation re-audit-ի համար, և [`FOUNDATION_V1_VALIDATION_RUN.md`](FOUNDATION_V1_VALIDATION_RUN.md)-ը՝ 2026-07-12-ի GREEN execution evidence-ի համար։ Ընթացիկ gate-ը՝ ներքևում։
 
-**EN:** See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable context, [`FOUNDATION_V1_INTEGRITY_AUDIT.md`](FOUNDATION_V1_INTEGRITY_AUDIT.md) for the original RED audit, [`FOUNDATION_V1_REAUDIT.md`](FOUNDATION_V1_REAUDIT.md) for the YELLOW remediation re-audit, and [`FOUNDATION_V1_VALIDATION_RUN.md`](FOUNDATION_V1_VALIDATION_RUN.md) for final GREEN execution evidence.
+**EN:** See [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) for stable context, [`FOUNDATION_V1_INTEGRITY_AUDIT.md`](FOUNDATION_V1_INTEGRITY_AUDIT.md) for the original RED audit, [`FOUNDATION_V1_REAUDIT.md`](FOUNDATION_V1_REAUDIT.md) for the YELLOW remediation re-audit, and [`FOUNDATION_V1_VALIDATION_RUN.md`](FOUNDATION_V1_VALIDATION_RUN.md) for the GREEN execution evidence of 2026-07-12. The current gate is below.
 
 ## Chapters / Chapter-ներ
 
@@ -42,9 +43,9 @@
 
 ## Current gate / Ընթացիկ gate
 
-**HY:** `Foundation Integrity` workflow run `#9`-ը ավարտվել է `success` conclusion-ով։ Validator-ը վերադարձրել է `FOUNDATION VALIDATION: GREEN` և հաստատել է յոթ Foundation chapter-ներն ու root controls-ը։ Foundation v1 release gate-ը GREEN է։ `D-026`-ով ավելացվել էր նոր session-ի պարտադիր all-Markdown read gate-ը․ `D-028`-ը (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին) այն փոխարինում է սահմանափակ core-ի և area-ի ընթերցմամբ։ Foundation validator-ը մեքենայորեն ստուգում է D-026-ի հղումներն ու startup reference-ները, իսկ `scripts/check_session_read_budget.py`-ը՝ session-read manifest-ը և core-ի բայթերի սահմանը։ Ոչ մեկը չի ստուգում, որ session-ը որևէ բան կարդացել է։
+**HY:** 2026-10-09-ին `python3 scripts/validate_foundation.py`-ը, գործարկված local clone-ում `main`-ի `7b5d0ca` commit-ի վրա հիմնված working tree-ում, տպել է `FOUNDATION VALIDATION: GREEN` և `Validated 7 Foundation chapters, root controls, D-026 synchronization, 9 workflows, and 134 tracked Markdown files.`։ Սա local գործարկում է, ոչ թե CI run․ այս պարբերության համար ոչ մի workflow run չի կարդացվել։ 2026-07-12-ի workflow run `#9`-ը, որը այս պարբերությունը մինչև 2026-10-09 նշում էր որպես ընթացիկ evidence, մնում է պատմական գրառում [`FOUNDATION_V1_VALIDATION_RUN.md`](FOUNDATION_V1_VALIDATION_RUN.md)-ում։ `D-026`-ով ավելացվել էր նոր session-ի պարտադիր all-Markdown read gate-ը․ `D-028`-ը (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին) այն փոխարինում է սահմանափակ core-ի և area-ի ընթերցմամբ։ Foundation validator-ը մեքենայորեն ստուգում է D-026-ի հղումներն ու startup reference-ները, իսկ `scripts/check_session_read_budget.py`-ը՝ session-read manifest-ը և core-ի բայթերի սահմանը։ Ոչ մեկը չի ստուգում, որ session-ը որևէ բան կարդացել է։
 
-**EN:** `Foundation Integrity` workflow run `#9` completed with a `success` conclusion. The validator returned `FOUNDATION VALIDATION: GREEN` and confirmed seven Foundation chapters and root controls. The Foundation v1 release gate is GREEN. `D-026` added the mandatory all-Markdown read gate for every new session; `D-028` (approved; the Owner merged pull request #29 on 2026-10-09) replaces it with the bounded core and area read. The Foundation validator machine-checks the D-026 links and startup references, and `scripts/check_session_read_budget.py` checks the session-read manifest and the core byte ceiling. Neither checks that a session read anything.
+**EN:** On 2026-10-09 `python3 scripts/validate_foundation.py`, run in a local clone on a working tree based on `main` commit `7b5d0ca`, printed `FOUNDATION VALIDATION: GREEN` and `Validated 7 Foundation chapters, root controls, D-026 synchronization, 9 workflows, and 134 tracked Markdown files.` This is a local run, not a CI run; no workflow run was read for this paragraph. Workflow run `#9` of 2026-07-12, which this paragraph named as the current evidence until 2026-10-09, remains the historical record in [`FOUNDATION_V1_VALIDATION_RUN.md`](FOUNDATION_V1_VALIDATION_RUN.md). `D-026` added the mandatory all-Markdown read gate for every new session; `D-028` (approved; the Owner merged pull request #29 on 2026-10-09) replaces it with the bounded core and area read. The Foundation validator machine-checks the D-026 links and startup references, and `scripts/check_session_read_budget.py` checks the session-read manifest and the core byte ceiling. Neither checks that a session read anything.
 
 ## Next / Հաջորդը
 

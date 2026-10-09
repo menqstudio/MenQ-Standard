@@ -40,10 +40,14 @@
 
 ## Status / Կարգավիճակ
 
+**HY:** Ընթացիկ վիճակի միակ ամբողջական ցանկը․ context և handoff ֆայլերը հղվում են այստեղ։ Բաց հարցերը՝ [`NEXT_CHAT_HANDOFF.md`](NEXT_CHAT_HANDOFF.md)։  
+**EN:** The one complete list of the current state; the context and handoff files point here. Open matters: [`NEXT_CHAT_HANDOFF.md`](NEXT_CHAT_HANDOFF.md).
+
 - **Foundation v1:** Locked and GREEN / Locked և GREEN
 - **D-024 Platforms Architecture v1:** Locked / Locked (2026-10-07)
 - **Foundation v1.0.0 release:** [`foundation-v1.0.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/foundation-v1.0.0)
-- **D-025 MenQ Design Platform Architecture v1:** Locked and GREEN / Locked և GREEN
+- **D-025 MenQ Design Platform Architecture v1:** Locked; in-repo consumers are M2 pilots, real-consumer obligation open / Locked. repo-ի ներսի consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է
+- **D-027 MenQ Brand Expression Layer v1:** Approved — Implementing / Approved — Implementing
 - **D-026 Canonical Session Read Law:** Locked; superseded in part by D-028. CI checks the Markdown inventory, not any session's read / Locked. մասամբ փոխարինված է D-028-ով։ CI-ը ստուգում է Markdown inventory-ն, ոչ թե որևէ session-ի ընթերցումը
 - **D-028 Bounded Session Read Law:** Approved (approved; the Owner merged pull request #29 on 2026-10-09). A CI gate holds the session-read core to 120,000 bytes / Approved (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին)։ CI gate-ը session-read core-ը պահում է 120,000 բայթի սահմանում
 - **D-025 implementation merge:** `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`
@@ -78,9 +82,9 @@ MenQ Ecosystem
 
 ## MenQ Design Platform status / MenQ Design Platform վիճակ
 
-**HY:** D-025-ի Parts 1–16 architecture-ը, canonical registry/schema/package implementation-ը, private `0.1.0-next.0` preview candidate-ը, deterministic release evidence-ը, երկու distinct consumers-ի M3/M4 evidence-ը, post-merge closure-ը, lock evidence-ը և machine validation-ը GREEN են։ Owner-ը 2026-07-13-ին explicit հաստատել է lock-ը։ D-025 transaction-ը փակված է։
+**HY:** D-025-ը Locked է․ Owner-ը lock-ը explicit հաստատել է 2026-07-13-ին, և transaction-ը փակված է։ Parts 1–16 architecture-ը, registry/schema/package implementation-ը և `0.1.0-next.0` preview-ն առկա են։ Repo-ի ներսի երկու consumer-ը M2 pilot են, իսկ իրական consumer-ի պարտավորությունը բաց է՝ առաջինը MenQ Webpage-ն է, երկրորդը ընտրում է Owner-ը ([ուղղման գրառում](platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md), 2026-10-07)։
 
-**EN:** D-025 Parts 1–16 architecture, canonical registry/schema/package implementation, the private `0.1.0-next.0` preview candidate, deterministic release evidence, M3/M4 evidence from two distinct consumers, post-merge closure, lock evidence, and machine validation are GREEN. On 2026-07-13, the Owner explicitly approved lock. The D-025 transaction is closed.
+**EN:** D-025 is Locked: the Owner explicitly approved lock on 2026-07-13, and the transaction is closed. The Parts 1–16 architecture, the registry/schema/package implementation and the `0.1.0-next.0` preview exist. The two in-repo consumers are M2 pilots, and the real-consumer obligation is open: MenQ Webpage is the first, and the Owner selects the second ([correction record](platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md), 2026-10-07).
 
 ## Mandatory AI session startup / AI session-ի պարտադիր մեկնարկ
 
