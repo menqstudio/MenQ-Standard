@@ -2,6 +2,44 @@
   "schemaVersion": 1,
   "recordId": "menq.design.d-025.readiness.2026-07-13",
   "decision": "D-025",
+  "snapshotNotice": {
+    "snapshotDate": "2026-07-13",
+    "supersededBy": "evidenceCorrections",
+    "snapshotFields": [
+      "status",
+      "evidenceSnapshot",
+      "consumers",
+      "crossConsumerValidation",
+      "qualityAndAdoptionEvidence",
+      "finalAudit",
+      "remainingAction"
+    ],
+    "hy": "snapshotFields-ում թվարկված top-level դաշտերը 2026-07-13-ի lock-ի պահին գրանցված արժեքներն են։ Դրանք պահվում են անփոփոխ՝ որպես պատմություն, և ընթացիկ վիճակը ՉԵՆ։ Որտեղ դրանք տարբերվում են evidenceCorrections-ի վերջին գրառումից, ուժի մեջ է ուղղումը։ Այսօրվա վիճակի համար կարդալ `current`-ը։",
+    "en": "The top-level fields listed in snapshotFields are the values recorded at the 2026-07-13 lock. They are kept unchanged as history and are NOT the current state. Where they differ from the latest entry of evidenceCorrections, the correction is in force. Read `current` for the state today."
+  },
+  "current": {
+    "asOf": "2026-10-09",
+    "derivedFrom": "the latest entry of evidenceCorrections (2026-10-07)",
+    "decisionStatus": "Locked",
+    "twoRealConsumerCondition": "not evidenced",
+    "consumers": [
+      {
+        "consumerId": "menq.design.consumer.catalog",
+        "maturity": "M2"
+      },
+      {
+        "consumerId": "menq.design.consumer.release-console",
+        "maturity": "M2"
+      }
+    ],
+    "realConsumerObligation": "open",
+    "workflowArtifactExpired": true,
+    "permanentReleaseTag": "design-platform-v0.1.0-next.0",
+    "remainingAction": {
+      "hy": "Բաց է՝ երկու distinct իրական MenQ consumer-ի adoption-ի evidence-ը։ Առաջինը menqstudio/Webpage-ն է (ընթացքը գրանցված է evidenceCorrections-ում), երկրորդը ընտրում է Owner-ը։ Բոլոր փոփոխությունները կառավարել locked change-control կանոններով։",
+      "en": "Open: evidence of adoption by two distinct real MenQ consumers. menqstudio/Webpage is the first (progress is recorded in evidenceCorrections); the Owner selects the second. Govern every change under locked change-control rules."
+    }
+  },
   "status": "Locked and GREEN",
   "displayName": {
     "hy": "D-025 ներդրման, որդեգրման, closure, merge և lock authority ապացույց",

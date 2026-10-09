@@ -229,6 +229,12 @@
       "platforms/design/brand-expression/components/ContrastSection/README.md",
       "platforms/design/governance/README.md"
     ],
+    "platforms/design/brand-expression/components/Cover": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Cover/README.md",
+      "platforms/design/governance/README.md"
+    ],
     "platforms/design/brand-expression/components/Drawer": [
       "platforms/design/brand-expression/README.md",
       "platforms/design/brand-expression/PROJECT_CONTEXT.md",
@@ -411,7 +417,8 @@
       "platforms/design/governance/change-requests/CR-0008-app-icon-set.md",
       "platforms/design/governance/change-requests/CR-0009-iconography-accordion-nav-tooltip.md",
       "platforms/design/governance/change-requests/CR-0010-motion-video-shaders.md",
-      "platforms/design/governance/change-requests/CR-0011-repository-front-page-standard.md"
+      "platforms/design/governance/change-requests/CR-0011-repository-front-page-standard.md",
+      "platforms/design/governance/change-requests/CR-0012-design-records-sync.md"
     ],
     "platforms/design/implementation": [
       "platforms/design/README.md",

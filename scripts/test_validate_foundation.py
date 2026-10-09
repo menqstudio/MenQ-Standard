@@ -334,12 +334,17 @@ class GreenControls(Case):
     def test_names_with_a_space_non_ascii_and_upper_case_extension_are_green(self) -> None:
         # Items 8 and 9: these were a traceback, a traceback, and a state no inventory satisfied.
         repo = self.fresh()
+        # Counted here, not written down: this said "137" and went red the day the repository
+        # gained two Markdown files, with nothing wrong in the validator.
+        counted = re.search(r"(\d+) tracked Markdown files", self.verdict(repo).stdout)
+        self.assertIsNotNone(counted)
+        before = int(counted.group(1))
         note = "# Note / Նշում\n\n**HY:** Հայերեն տեքստ։\n\n**EN:** English text.\n\n<!-- END: NOTE -->\n"
         for rel in ("docs/my note.md", "docs/նշում.md", "docs/NOTE.MD"):
             repo.write(rel, note)
         result = self.verdict(repo)
         self.assertGreen(result)
-        self.assertIn("137 tracked Markdown files", result.stdout)
+        self.assertIn(f"{before + 3} tracked Markdown files", result.stdout)
 
     def test_valid_link_forms_are_green(self) -> None:
         repo = self.fresh()
