@@ -37,7 +37,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - D-025 evidence-ը ուղղված է (2026-10-07)՝ repo-ի ներսի consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է ([`platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md`](platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md))։
 - D-025 MenQ Design Platform Architecture v1 — Locked և GREEN։
 - D-026 Canonical Session Read Law — Locked. մասամբ փոխարինված է D-028-ով։ CI-ը ստուգում է Markdown inventory-ն, ոչ թե որևէ session-ի ընթերցումը։
-- D-028 Bounded Session Read Law — Proposed (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է)։ `scripts/check_session_read_budget.py` gate-ը core-ը պահում է 120,000 բայթի սահմանում։
+- D-028 Bounded Session Read Law — Approved (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին)։ `scripts/check_session_read_budget.py` gate-ը core-ը պահում է 120,000 բայթի սահմանում։
 - D-027 MenQ Brand Expression Layer v1 — Approved — Implementing (`platforms/design/brand-expression/`, Bro product extension)։
 - D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
 - D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
@@ -87,7 +87,7 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 - D-025 evidence was corrected on 2026-10-07: the in-repo consumers are M2 pilots and the real-consumer obligation is open ([`platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md`](platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md)).
 - D-025 MenQ Design Platform Architecture v1 is Locked and GREEN.
 - D-026 Canonical Session Read Law is Locked and superseded in part by D-028. CI checks the Markdown inventory, not any session's read.
-- D-028 Bounded Session Read Law is Proposed (proposed; the Owner's merge of its pull request is the approval). The `scripts/check_session_read_budget.py` gate holds the core to 120,000 bytes.
+- D-028 Bounded Session Read Law is Approved (approved; the Owner merged pull request #29 on 2026-10-09). The `scripts/check_session_read_budget.py` gate holds the core to 120,000 bytes.
 - D-027 MenQ Brand Expression Layer v1 is Approved — Implementing (`platforms/design/brand-expression/`, Bro product extension).
 - D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
 - D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.

@@ -1,14 +1,14 @@
 # D-028 — Bounded Session Read Law / Սահմանափակ session-ի ընթերցման օրենք
 
 **Decision ID:** `D-028`  
-**Status / Կարգավիճակ:** Proposed — awaiting Owner approval on the pull request; the Owner's merge of that pull request is the approval / Առաջարկված — սպասում է Owner-ի հաստատմանը pull request-ում. հաստատումը Owner-ի կողմից այդ pull request-ի merge-ն է  
+**Status / Կարգավիճակ:** Approved — the Owner merged pull request #29 on 2026-10-09 (merge commit `ed91149`); not `Locked` / Approved — Owner-ը merge է արել pull request #29-ը 2026-10-09-ին (merge commit `ed91149`). `Locked` չէ  
 **Date / Ամսաթիվ:** 2026-10-09  
 **Decision class / Որոշման դաս:** `C4 — Foundation or Ecosystem`  
 **Risk level / Ռիսկի մակարդակ:** `R2 — Moderate`  
 **Owner / Պատասխանատու:** MenQ Owner  
 **Proposer / Առաջարկող:** AI collaborator (Claude), writing down two decisions the Owner made in the project conversation on 2026-10-09  
 **Reviewer / Վերանայող:** MenQ Owner, on the pull request. Reviewer and Approver are the same person; the overlap is disclosed under Governance §3.7  
-**Approver / Հաստատող:** Gevorg Ohanyan, MenQ Owner — approval not yet given. This text records no approval of itself  
+**Approver / Հաստատող:** Gevorg Ohanyan, MenQ Owner — approved by merging pull request #29 from the `menqstudio` account at 2026-10-09T02:45:29Z. The evidence is that merge on GitHub, not a conversation. The body below is unchanged from the text that was merged and still reads as a proposal  
 **Scope / Scope:** Every new MenQ Standard AI session; every MenQ product repository that follows the standard (see Consumer requirement)  
 **Supersedes / Փոխարինում է:** `D-026` in part (see Supersession)  
 **Superseded by / Փոխարինված է:** —
