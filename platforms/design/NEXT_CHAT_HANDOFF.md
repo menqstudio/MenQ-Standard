@@ -10,7 +10,7 @@
 
 ### Պարտադիր մեկնարկ
 
-Մինչև substantive աշխատանք՝ active branch/ref-ում enumerate և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` files-ը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Active PR-ի դեպքում կարդալ metadata, changed files, diff, review threads և checks։
+Մինչև substantive աշխատանք՝ active branch/ref-ում ամբողջությամբ կարդալ session-read core-ը՝ `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`-ի `core` ցանկը, իսկ որևէ directory-ում աշխատելուց առաջ՝ նաև այդ directory-ի area-ի ֆայլերը՝ ըստ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`-ի։ Active PR-ի դեպքում կարդալ metadata, changed files, diff, review threads և checks։
 
 ### Ընթացիկ վիճակ
 
@@ -40,7 +40,7 @@
 
 ### Mandatory startup
 
-Before substantive work, enumerate and completely read every tracked `.md` file on the active branch/ref under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For an active PR, read metadata, changed files, diff, review threads, and checks.
+Before substantive work, read in full, on the active branch/ref, the session-read core, which is the `core` list of `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`, and, before working in a directory, the files of that directory's area, under `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`. For an active PR, read metadata, changed files, diff, review threads, and checks.
 
 ### Current state
 

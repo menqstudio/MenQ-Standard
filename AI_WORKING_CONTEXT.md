@@ -12,7 +12,7 @@
 
 ### Պարտադիր startup workflow
 
-Յուրաքանչյուր նոր AI session մինչև substantive աշխատանք պարտավոր է active branch/ref-ում enumerate և ամբողջությամբ կարդալ բոլոր tracked `.md` files-ը, իսկ active PR-ի դեպքում՝ metadata, changed files, diff, review threads և checks։ Պարտադիր օրենքը՝ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`։
+Յուրաքանչյուր նոր AI session մինչև substantive աշխատանք պարտավոր է active branch/ref-ում ամբողջությամբ կարդալ session-read core-ը՝ `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`-ի `core` ցանկը, որևէ directory-ում աշխատելուց առաջ՝ նաև այդ directory-ի area-ի ֆայլերը, իսկ active PR-ի դեպքում՝ metadata, changed files, diff, review threads և checks։ Պարտադիր օրենքը՝ `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`։
 
 ### Human–AI սկզբունք
 
@@ -30,7 +30,8 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - Foundation v1.0.0 — հրապարակված՝ `foundation-v1.0.0` GitHub Release։
 - D-025 evidence — ուղղված. consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է։
 - D-025 — Locked և GREEN։
-- D-026 — Locked և machine-enforced։
+- D-026 — Locked. մասամբ փոխարինված է D-028-ով։ CI-ը ստուգում է Markdown inventory-ն, ոչ թե session-ի ընթերցումը։
+- D-028 — Proposed (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է)։ Gate-ը core-ը պահում է 120,000 բայթի սահմանում։
 - D-027 — Approved — Implementing (brand expression layer + Bro product extension)։
 - D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
 - D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
@@ -58,7 +59,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 
 ### Required startup workflow
 
-Before substantive work, every AI session must enumerate and completely read all tracked `.md` files on the active branch/ref and, for an active PR, read metadata, changed files, diff, review threads, and checks. The mandatory law is `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`.
+Before substantive work, every AI session must read in full, on the active branch/ref, the session-read core, which is the `core` list of `foundation/ai-collaboration/SESSION_READ_MANIFEST.json`; before working in a directory, also the files of that directory's area; and, for an active PR, metadata, changed files, diff, review threads, and checks. The mandatory law is `foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`.
 
 ### Human–AI principle
 
@@ -76,7 +77,8 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 - Foundation v1.0.0 is published as the `foundation-v1.0.0` GitHub Release.
 - D-025 evidence is corrected: the consumers are M2 pilots and the real-consumer obligation is open.
 - D-025 is Locked and GREEN.
-- D-026 is Locked and machine-enforced.
+- D-026 is Locked and superseded in part by D-028. CI checks the Markdown inventory, not a session's read.
+- D-028 is Proposed (proposed; the Owner's merge of its pull request is the approval). The gate holds the core to 120,000 bytes.
 - D-027 is Approved — Implementing (brand expression layer + Bro product extension).
 - D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
 - D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.

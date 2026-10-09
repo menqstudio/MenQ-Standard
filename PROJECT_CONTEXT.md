@@ -14,7 +14,7 @@ MenQ Standard-ի միակ canonical source of truth-ը GitHub repository-ն է։
 
 ### Պարտադիր startup workflow
 
-Յուրաքանչյուր նոր AI session մինչև substantive աշխատանք պարտավոր է active branch/ref-ում enumerate և ամբողջությամբ կարդալ repository-ի բոլոր tracked `.md` files-ը՝ ըստ [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md)-ի։ Active PR-ի դեպքում նաև կարդացվում են metadata-ն, changed files-ը, diff-ը, review threads-ը և checks-ը։
+Յուրաքանչյուր նոր AI session մինչև substantive աշխատանք պարտավոր է active branch/ref-ում ամբողջությամբ կարդալ session-read core-ը՝ [`foundation/ai-collaboration/SESSION_READ_MANIFEST.json`](foundation/ai-collaboration/SESSION_READ_MANIFEST.json)-ի `core` ցանկը, իսկ որևէ directory-ում աշխատելուց առաջ՝ նաև այդ directory-ի area-ի ֆայլերը՝ ըստ [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md)-ի։ Active PR-ի դեպքում նաև կարդացվում են metadata-ն, changed files-ը, diff-ը, review threads-ը և checks-ը։
 
 ### Human–AI և authority
 
@@ -36,7 +36,8 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - Foundation v1.0.0 release՝ [`foundation-v1.0.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/foundation-v1.0.0)։
 - D-025 evidence-ը ուղղված է (2026-10-07)՝ repo-ի ներսի consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է ([`platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md`](platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md))։
 - D-025 MenQ Design Platform Architecture v1 — Locked և GREEN։
-- D-026 Canonical Session Read Law — Locked և machine-enforced։
+- D-026 Canonical Session Read Law — Locked. մասամբ փոխարինված է D-028-ով։ CI-ը ստուգում է Markdown inventory-ն, ոչ թե որևէ session-ի ընթերցումը։
+- D-028 Bounded Session Read Law — Proposed (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է)։ `scripts/check_session_read_budget.py` gate-ը core-ը պահում է 120,000 բայթի սահմանում։
 - D-027 MenQ Brand Expression Layer v1 — Approved — Implementing (`platforms/design/brand-expression/`, Bro product extension)։
 - D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
 - D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
@@ -63,7 +64,7 @@ The GitHub repository is the single canonical source of truth for MenQ Standard.
 
 ### Required startup workflow
 
-Before substantive work, every AI session must enumerate and completely read every tracked `.md` file on the active branch/ref under [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md). For an active PR, metadata, changed files, diff, review threads, and checks must also be read.
+Before substantive work, every AI session must read in full, on the active branch/ref, the session-read core, which is the `core` list of [`foundation/ai-collaboration/SESSION_READ_MANIFEST.json`](foundation/ai-collaboration/SESSION_READ_MANIFEST.json), and, before working in a directory, the files of that directory's area, under [`foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md). For an active PR, metadata, changed files, diff, review threads, and checks must also be read.
 
 ### Human–AI and authority
 
@@ -85,7 +86,8 @@ Every write follows `foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md`:
 - Foundation v1.0.0 release: [`foundation-v1.0.0`](https://github.com/menqstudio/MenQ-Standard/releases/tag/foundation-v1.0.0).
 - D-025 evidence was corrected on 2026-10-07: the in-repo consumers are M2 pilots and the real-consumer obligation is open ([`platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md`](platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md)).
 - D-025 MenQ Design Platform Architecture v1 is Locked and GREEN.
-- D-026 Canonical Session Read Law is Locked and machine-enforced.
+- D-026 Canonical Session Read Law is Locked and superseded in part by D-028. CI checks the Markdown inventory, not any session's read.
+- D-028 Bounded Session Read Law is Proposed (proposed; the Owner's merge of its pull request is the approval). The `scripts/check_session_read_budget.py` gate holds the core to 120,000 bytes.
 - D-027 MenQ Brand Expression Layer v1 is Approved — Implementing (`platforms/design/brand-expression/`, Bro product extension).
 - D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
 - D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.

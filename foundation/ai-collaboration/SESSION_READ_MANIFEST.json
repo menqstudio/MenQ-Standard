@@ -1,0 +1,501 @@
+{
+  "schema_version": 1,
+  "repository": "menqstudio/MenQ-Standard",
+  "decision": "D-028",
+  "law": "foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md",
+  "gate": "scripts/check_session_read_budget.py",
+  "byte_counting": "bytes of each file after CRLF is folded to LF",
+  "area_rule": "The area of a path is the nearest directory listed in areas, at the path's own directory or above it; when none is nearer, the root area '.' applies. Area files are read in addition to the core.",
+  "total_bytes_max": 120000,
+  "core": [
+    {
+      "path": "foundation/ai-collaboration/CANONICAL_SESSION_READ_LAW.md",
+      "bytes_max": 17480,
+      "why": "The read law itself: what the core and an area are, and when work must stop."
+    },
+    {
+      "path": "README.md",
+      "bytes_max": 12260,
+      "why": "Front page: what the repository is, current status, canonical navigation and the canonical rule."
+    },
+    {
+      "path": "PROJECT_CONTEXT.md",
+      "bytes_max": 8470,
+      "why": "Stable project context: canonical source, authority, current canonical state, next work."
+    },
+    {
+      "path": "AI_WORKING_CONTEXT.md",
+      "bytes_max": 6670,
+      "why": "Working continuity for AI collaborators: current state, locked invariants, exact next work."
+    },
+    {
+      "path": "NEXT_CHAT_HANDOFF.md",
+      "bytes_max": 6310,
+      "why": "The live handoff: exact continuation point and prohibited actions."
+    },
+    {
+      "path": "DECISION_INDEX.md",
+      "bytes_max": 3110,
+      "why": "The index of every decision record; a session finds any decision from here."
+    },
+    {
+      "path": "COLLABORATION_STYLE.md",
+      "bytes_max": 3530,
+      "why": "How every collaborator, human or AI, communicates with the Owner and reports work."
+    },
+    {
+      "path": "foundation/governance/README.md",
+      "bytes_max": 24990,
+      "why": "Authority: who may decide, G0-G4 levels, reserved Owner decisions, AI cannot self-approve."
+    },
+    {
+      "path": "foundation/decision-system/README.md",
+      "bytes_max": 23110,
+      "why": "How a decision is made, recorded, approved, changed and superseded; required record fields."
+    },
+    {
+      "path": "foundation/documentation/CANONICAL_WRITE_INTEGRITY_LAW.md",
+      "bytes_max": 7190,
+      "why": "The law every canonical write obeys: full read, write, re-read, verify."
+    }
+  ],
+  "areas": {
+    ".": [
+      "CHANGELOG.md",
+      "DECISIONS.md",
+      "ECOSYSTEM_ARCHITECTURE.md",
+      "FOUNDATION_V1_REMEDIATION_CHANGELOG.md",
+      "ROADMAP.md"
+    ],
+    ".github": [
+      ".github/pull_request_template.md",
+      "platforms/design/governance/README.md",
+      "foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md"
+    ],
+    "docs": [
+      "platforms/design/repository-front/README.md"
+    ],
+    "foundation": [
+      "foundation/FOUNDATION_NORMATIVE_METADATA_REGISTRY.md",
+      "foundation/FOUNDATION_V1_INTEGRITY_AUDIT.md",
+      "foundation/FOUNDATION_V1_REAUDIT.md",
+      "foundation/FOUNDATION_V1_VALIDATION_RUN.md",
+      "foundation/PROJECT_CONTEXT.md",
+      "foundation/README.md",
+      "DECISIONS.md"
+    ],
+    "foundation/ai-collaboration": [
+      "foundation/README.md",
+      "foundation/PROJECT_CONTEXT.md",
+      "foundation/ai-collaboration/BILINGUAL_PARITY_ADDENDUM.md",
+      "foundation/ai-collaboration/D-023_AI_COLLABORATION_STANDARD_V1.md",
+      "foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md",
+      "foundation/ai-collaboration/D-026_VALIDATION_RECORD.md",
+      "foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md",
+      "foundation/ai-collaboration/PROJECT_CONTEXT.md",
+      "foundation/ai-collaboration/README.md"
+    ],
+    "foundation/decision-system": [
+      "foundation/README.md",
+      "foundation/PROJECT_CONTEXT.md",
+      "foundation/decision-system/PROJECT_CONTEXT.md",
+      "DECISIONS.md"
+    ],
+    "foundation/documentation": [
+      "foundation/README.md",
+      "foundation/PROJECT_CONTEXT.md",
+      "foundation/documentation/BILINGUAL_PARITY_ADDENDUM.md",
+      "foundation/documentation/D-022-CANONICAL_WRITE_INTEGRITY_LAW.md",
+      "foundation/documentation/PROJECT_CONTEXT.md",
+      "foundation/documentation/README.md"
+    ],
+    "foundation/governance": [
+      "foundation/README.md",
+      "foundation/PROJECT_CONTEXT.md",
+      "foundation/governance/PROJECT_CONTEXT.md"
+    ],
+    "foundation/philosophy": [
+      "foundation/README.md",
+      "foundation/PROJECT_CONTEXT.md",
+      "foundation/philosophy/ENGINEERING_PHILOSOPHY.md",
+      "foundation/philosophy/PRODUCT_PHILOSOPHY.md",
+      "foundation/philosophy/PROJECT_CONTEXT.md",
+      "foundation/philosophy/README.md"
+    ],
+    "foundation/principles": [
+      "foundation/README.md",
+      "foundation/PROJECT_CONTEXT.md",
+      "foundation/principles/PROJECT_CONTEXT.md",
+      "foundation/principles/README.md"
+    ],
+    "foundation/terminology": [
+      "foundation/README.md",
+      "foundation/PROJECT_CONTEXT.md",
+      "foundation/terminology/PROJECT_CONTEXT.md",
+      "foundation/terminology/README.md"
+    ],
+    "platforms": [
+      "platforms/D-024-PLATFORMS-ARCHITECTURE-V1.md",
+      "platforms/PLATFORM_REGISTRY.md",
+      "platforms/PROJECT_CONTEXT.md",
+      "platforms/README.md"
+    ],
+    "platforms/design": [
+      "platforms/README.md",
+      "platforms/PROJECT_CONTEXT.md",
+      "platforms/design/ARCHITECTURE.md",
+      "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md",
+      "platforms/design/CHANGELOG.md",
+      "platforms/design/CONTRACTS.md",
+      "platforms/design/D-025_COMPLETENESS_AUDIT.md",
+      "platforms/design/D-025_DRAFT_PR_REVIEW_RECORD.md",
+      "platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md",
+      "platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md",
+      "platforms/design/D-025_LOCK_RECORD.md",
+      "platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md",
+      "platforms/design/DESIGN_PLATFORM_ARCHITECTURE_BASELINE_V1.md",
+      "platforms/design/DOCUMENTATION_PORTAL_COMPONENT_CATALOG_DESIGN_TOOL_INTEGRATION_ARCHITECTURE_V1.md",
+      "platforms/design/GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md",
+      "platforms/design/NEXT_CHAT_HANDOFF.md",
+      "platforms/design/PLATFORM_CHARTER.md",
+      "platforms/design/PRODUCT_ADOPTION_MATURITY_MODEL_TWO_CONSUMER_VALIDATION_PLAN_V1.md",
+      "platforms/design/PROJECT_CONTEXT.md",
+      "platforms/design/README.md",
+      "platforms/design/ROADMAP.md",
+      "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",
+      "platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md"
+    ],
+    "platforms/design/brand-expression": [
+      "platforms/design/README.md",
+      "platforms/design/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/assets/Icons/README.md",
+      "platforms/design/brand-expression/assets/Logos/README.md",
+      "platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Accordion": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Accordion/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Avatar": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Avatar/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Badge": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Badge/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/BrandMark": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/BrandMark/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Button": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Button/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Card": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Card/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Checkbox": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Checkbox/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/ConfirmDialog": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/ConfirmDialog/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/ContrastSection": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/ContrastSection/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Drawer": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Drawer/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/EmptyState": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/EmptyState/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Field": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Field/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/FormRow": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/FormRow/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Icon": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Icon/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Input": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Input/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/KpiStat": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/KpiStat/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/LocaleSwitch": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/LocaleSwitch/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/MetricBar": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/MetricBar/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Modal": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Modal/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Nav": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Nav/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/PageHeader": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/PageHeader/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Panel": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Panel/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/RadioGroup": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/RadioGroup/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Reveal": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Reveal/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/SectionHeading": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/SectionHeading/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Select": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Select/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Skeleton": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Skeleton/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/StatusDot": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/StatusDot/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Switch": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Switch/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Table": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Table/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Tabs": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Tabs/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Textarea": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Textarea/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/ThemeSwitch": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/ThemeSwitch/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Toast": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Toast/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/brand-expression/components/Tooltip": [
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/brand-expression/components/Tooltip/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/decisions": [
+      "platforms/design/README.md",
+      "platforms/design/PROJECT_CONTEXT.md",
+      "platforms/design/decisions/D-025-MENQ-DESIGN-PLATFORM-ARCHITECTURE-V1.md",
+      "platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md"
+    ],
+    "platforms/design/governance": [
+      "platforms/design/README.md",
+      "platforms/design/PROJECT_CONTEXT.md",
+      "platforms/design/governance/CHANGE_REQUEST_TEMPLATE.md",
+      "platforms/design/governance/README.md",
+      "platforms/design/GOVERNANCE_CONTRIBUTION_OWNERSHIP_CHANGE_REQUEST_LIFECYCLE_ARCHITECTURE_V1.md"
+    ],
+    "platforms/design/governance/change-requests": [
+      "platforms/design/governance/README.md",
+      "platforms/design/governance/CHANGE_REQUEST_TEMPLATE.md",
+      "platforms/design/governance/change-requests/CR-0001-d025-evidence-correction.md",
+      "platforms/design/governance/change-requests/CR-0002-part-14-governance-implementation.md",
+      "platforms/design/governance/change-requests/CR-0003-brand-vars-consumption-artifact.md",
+      "platforms/design/governance/change-requests/CR-0004-neon-logo-hires-master.md",
+      "platforms/design/governance/change-requests/CR-0005-official-brandmark.md",
+      "platforms/design/governance/change-requests/CR-0006-action-primary-contrast.md",
+      "platforms/design/governance/change-requests/CR-0007-accessibility-contract-and-forms.md",
+      "platforms/design/governance/change-requests/CR-0008-app-icon-set.md",
+      "platforms/design/governance/change-requests/CR-0009-iconography-accordion-nav-tooltip.md",
+      "platforms/design/governance/change-requests/CR-0010-motion-video-shaders.md",
+      "platforms/design/governance/change-requests/CR-0011-repository-front-page-standard.md"
+    ],
+    "platforms/design/implementation": [
+      "platforms/design/README.md",
+      "platforms/design/PROJECT_CONTEXT.md",
+      "platforms/design/ARCHITECTURE.md",
+      "platforms/design/CONTRACTS.md",
+      "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md",
+      "platforms/design/implementation/release/COMPATIBILITY_POLICY.md",
+      "platforms/design/implementation/release/MIGRATION_DEPRECATION_GUIDE.md",
+      "platforms/design/implementation/release/ROLLBACK_CONTRACT.md"
+    ],
+    "platforms/design/product-extensions": [
+      "platforms/design/README.md",
+      "platforms/design/PROJECT_CONTEXT.md",
+      "platforms/design/product-extensions/README.md",
+      "platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/product-extensions/bro": [
+      "platforms/design/product-extensions/README.md",
+      "platforms/design/product-extensions/bro/PROJECT_CONTEXT.md",
+      "platforms/design/product-extensions/bro/README.md",
+      "platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/product-extensions/bro/components/AgentCard": [
+      "platforms/design/product-extensions/bro/PROJECT_CONTEXT.md",
+      "platforms/design/product-extensions/bro/README.md",
+      "platforms/design/product-extensions/bro/components/AgentCard/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/product-extensions/bro/components/ApprovalCard": [
+      "platforms/design/product-extensions/bro/PROJECT_CONTEXT.md",
+      "platforms/design/product-extensions/bro/README.md",
+      "platforms/design/product-extensions/bro/components/ApprovalCard/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/product-extensions/bro/components/ChatMessage": [
+      "platforms/design/product-extensions/bro/PROJECT_CONTEXT.md",
+      "platforms/design/product-extensions/bro/README.md",
+      "platforms/design/product-extensions/bro/components/ChatMessage/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/product-extensions/bro/components/CommandComposer": [
+      "platforms/design/product-extensions/bro/PROJECT_CONTEXT.md",
+      "platforms/design/product-extensions/bro/README.md",
+      "platforms/design/product-extensions/bro/components/CommandComposer/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/product-extensions/bro/components/Timeline": [
+      "platforms/design/product-extensions/bro/PROJECT_CONTEXT.md",
+      "platforms/design/product-extensions/bro/README.md",
+      "platforms/design/product-extensions/bro/components/Timeline/README.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/repository-front": [
+      "platforms/design/repository-front/README.md",
+      "platforms/design/brand-expression/README.md",
+      "platforms/design/brand-expression/PROJECT_CONTEXT.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/specifications": [
+      "platforms/design/README.md",
+      "platforms/design/PROJECT_CONTEXT.md",
+      "platforms/design/CONTRACTS.md",
+      "platforms/design/CANONICAL_SPECIFICATION_INDEX_IMPLEMENTATION_PACKAGE_PLAN_V1.md",
+      "platforms/design/governance/README.md"
+    ],
+    "platforms/design/validation": [
+      "platforms/design/README.md",
+      "platforms/design/PROJECT_CONTEXT.md",
+      "platforms/design/VALIDATION_CI_CONFORMANCE_QUALITY_GATES_ARCHITECTURE_V1.md",
+      "platforms/design/governance/README.md"
+    ],
+    "release": [
+      "release/FOUNDATION_V1_RELEASE_README.md",
+      "foundation/README.md",
+      "foundation/PROJECT_CONTEXT.md"
+    ],
+    "scripts": [
+      "foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md",
+      "foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md",
+      "foundation/ai-collaboration/D-026_VALIDATION_RECORD.md",
+      "foundation/FOUNDATION_V1_VALIDATION_RUN.md"
+    ]
+  }
+}
