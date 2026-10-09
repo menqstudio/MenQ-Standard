@@ -1,9 +1,22 @@
-from pathlib import Path
+#!/usr/bin/env python3
+"""Validate the MenQ Platforms documents and the D-025 readiness record.
+
+Every check here must be able to give both answers; ``scripts/test_validate_platforms.py`` breaks
+each subject once and asserts the RED line.  The validator never answers with a traceback: a
+missing, malformed or surprising input is a RED line that names the file and the reason.
+"""
+
+from __future__ import annotations
+
 import json
 import re
+import subprocess
 import sys
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+RECORD_REL = "platforms/design/implementation/release/d-025-readiness-record.json"
+REGISTRY_REL = "platforms/PLATFORM_REGISTRY.md"
 
 REQUIRED_MARKERS = {
     "platforms/README.md": "<!-- END: PLATFORMS_ROOT_README -->",
@@ -89,85 +102,214 @@ REQUIRED_TERMS = {
     ],
 }
 
-errors = []
+# --- Content minimums for a required Platforms document (2026-10-09) ----------------------------
+# Measured over the 25 documents in REQUIRED_MARKERS on 2026-10-09 with document_body() below.
+# The smallest was platforms/PLATFORM_REGISTRY.md: 1847 body bytes, 1053 Latin letters; the fewest
+# Armenian letters were 167, in platforms/design/PLATFORM_CHARTER.md.  Each floor is set below the
+# smallest real value, so no existing document was edited to meet it.
+MIN_BODY_BYTES = 1200
+MIN_ARMENIAN_LETTERS = 100
+MIN_LATIN_LETTERS = 600
+# The one required Platforms document with no "**Status ...:**" metadata line today.
+STATUS_METADATA_EXEMPT = ("platforms/design/CHANGELOG.md",)
 
-for rel, marker in REQUIRED_MARKERS.items():
-    path = ROOT / rel
-    if not path.is_file():
-        errors.append(f"Missing required file: {rel}")
-        continue
-    text = path.read_text(encoding="utf-8")
-    if not text.rstrip().endswith(marker):
-        errors.append(f"Missing or misplaced ending marker: {rel}")
+CONSUMER_IDS = ("menq.design.consumer.catalog", "menq.design.consumer.release-console")
+MATURITY_LEVELS = ("M0", "M1", "M2", "M3", "M4")
+RELEASE_URL_BASE = "https://github.com/menqstudio/MenQ-Standard/releases/tag/"
+REAL_CONSUMER = re.compile(r"^menqstudio/[A-Za-z0-9._-]+$")
 
-for rel in BILINGUAL_SECTION_FILES:
-    path = ROOT / rel
-    if not path.is_file():
-        continue
-    text = path.read_text(encoding="utf-8")
-    if "## Հայերեն" not in text or "## English" not in text:
-        errors.append(f"Missing bilingual canonical sections: {rel}")
-
+ARMENIAN = re.compile(r"[Ա-֏]")
+LATIN = re.compile(r"[A-Za-z]")
+STATUS_LINE = re.compile(r"^\*\*Status\b[^*\n]*:\*\*[ \t]*\S", re.M)
 # Every Markdown file under platforms/ (not only the allowlist above) must carry both canonical
 # languages and an END marker, so new files cannot merge English-only or unterminated.
 HY_MARK = re.compile(r"^(#{2,3} Հայերեն|\*\*HY:?\*\*)", re.M)
 EN_MARK = re.compile(r"^(#{2,3} English|\*\*EN:?\*\*)", re.M)
-for path in sorted((ROOT / "platforms").rglob("*.md")):
-    if "node_modules" in path.parts:
-        continue
-    rel = path.relative_to(ROOT).as_posix()
-    text = path.read_text(encoding="utf-8")
-    if not HY_MARK.search(text) or not EN_MARK.search(text):
-        errors.append(f"Missing Armenian or English section: {rel}")
-    if not re.search(r"<!-- END: [A-Za-z0-9_.-]+ -->\s*(— End of document —\s*)?$", text):
-        errors.append(f"Missing ending marker: {rel}")
 
-for rel, terms in REQUIRED_TERMS.items():
-    text = (ROOT / rel).read_text(encoding="utf-8")
-    for term in terms:
-        if term not in text:
-            errors.append(f"{rel} missing required term: {term}")
+_TEXT_CACHE: dict[str, tuple[str | None, str]] = {}
 
-record_path = ROOT / "platforms/design/implementation/release/d-025-readiness-record.json"
-try:
-    record = json.loads(record_path.read_text(encoding="utf-8"))
-except (OSError, json.JSONDecodeError) as exc:
-    errors.append(f"Invalid D-025 readiness record: {exc}")
-    record = {}
 
-if record:
-    evidence = record.get("evidenceSnapshot", {})
-    merge_evidence = record.get("mergeEvidence", {})
-    authority = record.get("authority", {})
-    final_audit = record.get("finalAudit", {})
-    consumers = record.get("consumers", [])
-    maturity = {item.get("consumerId"): item.get("maturity") for item in consumers}
+def load(rel: str) -> tuple[str | None, str]:
+    """Return (text with LF line endings, "") or (None, reason).  Never raises."""
+    if rel not in _TEXT_CACHE:
+        path = ROOT / rel
+        try:
+            if not path.is_file():
+                _TEXT_CACHE[rel] = (None, "is missing from the checkout")
+            else:
+                _TEXT_CACHE[rel] = (path.read_bytes().decode("utf-8").replace("\r\n", "\n"), "")
+        except UnicodeDecodeError:
+            _TEXT_CACHE[rel] = (None, "is not valid UTF-8")
+        except OSError as exc:
+            _TEXT_CACHE[rel] = (None, f"cannot be read ({exc.strerror or exc})")
+    return _TEXT_CACHE[rel]
+
+
+def tracked_files(errors: list[str]) -> list[str]:
+    """Every tracked path, from ``git ls-files -z`` so a space or a non-ASCII name is one path."""
+    try:
+        result = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, check=True, capture_output=True)
+        return sorted(part for part in result.stdout.decode("utf-8").split("\0") if part)
+    except (OSError, subprocess.CalledProcessError, UnicodeDecodeError) as exc:
+        errors.append(f"cannot enumerate tracked files with git ls-files -z: {exc}")
+        return []
+
+
+def document_body(text: str) -> list[str]:
+    """The lines that carry a document's content: not blank, not a heading, not a comment, not code."""
+    body: list[str] = []
+    in_code = False
+    for line in text.split("\n"):
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            in_code = not in_code
+            continue
+        if not in_code and stripped and not stripped.startswith(("#", "<!--")):
+            body.append(stripped)
+    return body
+
+
+def validate_documents(errors: list[str], tracked: list[str]) -> None:
+    for rel, marker in REQUIRED_MARKERS.items():
+        text, reason = load(rel)
+        if text is None:
+            errors.append(f"Missing required file: {rel}" if "missing" in reason else f"Required file {reason}: {rel}")
+            continue
+        if not text.rstrip().endswith(marker):
+            errors.append(f"Missing or misplaced ending marker: {rel}")
+        # A required document must be a real document, not merely exist (2026-10-09 review, item 16).
+        body = document_body(text)
+        joined = " ".join(body)
+        body_bytes = sum(len(line.encode("utf-8")) for line in body)
+        if not re.search(r"^# \S", text, re.M):
+            errors.append(f"Required document has no level-1 title: {rel}")
+        if rel not in STATUS_METADATA_EXEMPT and not STATUS_LINE.search(text):
+            errors.append(f"Required document has no Status metadata line: {rel}")
+        if body_bytes < MIN_BODY_BYTES:
+            errors.append(f"Required document is too small: {rel} has {body_bytes} body bytes, minimum {MIN_BODY_BYTES}")
+        if len(ARMENIAN.findall(joined)) < MIN_ARMENIAN_LETTERS:
+            errors.append(f"Required document has too little Armenian text: {rel} (minimum {MIN_ARMENIAN_LETTERS} letters)")
+        if len(LATIN.findall(joined)) < MIN_LATIN_LETTERS:
+            errors.append(f"Required document has too little English text: {rel} (minimum {MIN_LATIN_LETTERS} letters)")
+
+    for rel in BILINGUAL_SECTION_FILES:
+        text = load(rel)[0]
+        if text is None:
+            continue  # every file in this list is also in REQUIRED_MARKERS, which reports it
+        if not re.search(r"^## Հայերեն", text, re.M) or not re.search(r"^## English", text, re.M):
+            errors.append(f"Missing bilingual canonical sections: {rel}")
+
+    for rel in tracked:
+        if not rel.startswith("platforms/") or not rel.lower().endswith(".md") or "node_modules" in rel.split("/"):
+            continue
+        text, reason = load(rel)
+        if text is None:
+            errors.append(f"Tracked Markdown file {reason}: {rel}")
+            continue
+        if not HY_MARK.search(text) or not EN_MARK.search(text):
+            errors.append(f"Missing Armenian or English section: {rel}")
+        if not re.search(r"<!-- END: [A-Za-z0-9_.-]+ -->\s*(— End of document —\s*)?$", text):
+            errors.append(f"Missing ending marker: {rel}")
+
+    for rel, terms in REQUIRED_TERMS.items():
+        text, reason = load(rel)
+        if text is None:
+            errors.append(f"Cannot check required terms, file {reason}: {rel}")
+            continue
+        for term in terms:
+            if term not in text:
+                errors.append(f"{rel} missing required term: {term}")
+
+
+def validate_registry(errors: list[str], tracked: list[str]) -> None:
+    """Every platform directory that exists must have a row in the registry table."""
+    text = load(REGISTRY_REL)[0]
+    if text is None:
+        return  # reported as a missing required file
+    rows = [line for line in text.split("\n") if line.startswith("|")]
+    data_rows = [row for row in rows[2:] if row.strip("|").strip()]
+    if len(rows) < 3 or not data_rows:
+        errors.append(f"{REGISTRY_REL} registers no Platform (the registry table has no row)")
+    platforms = sorted({rel.split("/")[1] for rel in tracked if rel.startswith("platforms/") and rel.count("/") >= 2})
+    for name in platforms:
+        if not any(f"platforms/{name}/" in row for row in data_rows):
+            errors.append(f"{REGISTRY_REL} has no row for the platform directory platforms/{name}/")
+
+
+def as_object(parent: dict, key: str, errors: list[str]) -> dict:
+    value = parent.get(key)
+    if isinstance(value, dict):
+        return value
+    errors.append(f"D-025 readiness record field '{key}' must be an object")
+    return {}
+
+
+def maturity_by_consumer(items: object, field: str) -> dict:
+    if not isinstance(items, list):
+        return {}
+    return {item.get("consumerId"): item.get(field) for item in items if isinstance(item, dict)}
+
+
+def validate_record(errors: list[str], notes: list[str]) -> dict:
+    """Validate the readiness record; return the facts the final summary is printed from."""
+    try:
+        record = json.loads((ROOT / RECORD_REL).read_bytes().decode("utf-8"))
+    except (OSError, ValueError) as exc:
+        errors.append(f"Invalid D-025 readiness record: {exc}")
+        return {}
+    if not isinstance(record, dict) or not record:
+        errors.append("D-025 readiness record must be a non-empty JSON object")
+        return {}
+
+    evidence = as_object(record, "evidenceSnapshot", errors)
+    merge_evidence = as_object(record, "mergeEvidence", errors)
+    authority = as_object(record, "authority", errors)
+    final_audit = as_object(record, "finalAudit", errors)
+    release_facts = as_object(record, "release", errors)
     if record.get("status") != "Locked and GREEN":
         errors.append("D-025 readiness record is not Locked and GREEN")
     if evidence.get("workflowConclusion") != "success":
         errors.append("D-025 readiness workflow evidence is not successful")
     if record.get("crossConsumerValidation") != "GREEN" or record.get("qualityAndAdoptionEvidence") != "GREEN":
         errors.append("D-025 cross-consumer or quality evidence is not GREEN")
-    corrections = record.get("evidenceCorrections", [])
-    latest = corrections[-1] if corrections else {}
-    release = latest.get("permanentRelease", {})
-    regrade = {item.get("consumerId"): item.get("maturity") for item in latest.get("consumerRegrade", [])}
+
+    corrections = record.get("evidenceCorrections")
+    latest = corrections[-1] if isinstance(corrections, list) and corrections and isinstance(corrections[-1], dict) else {}
+    declared = maturity_by_consumer(record.get("consumers"), "maturity")
+    regrade = maturity_by_consumer(latest.get("consumerRegrade"), "maturity")
+    previous = maturity_by_consumer(latest.get("consumerRegrade"), "previousMaturity")
+    obligation = latest.get("realConsumerObligation") if isinstance(latest.get("realConsumerObligation"), dict) else {}
     if not latest:
         errors.append("D-025 readiness record has no evidence correction (expired artifact, self-attested consumers)")
     else:
         if latest.get("artifactExpired") is not True:
             errors.append("D-025 evidence correction must record the expired workflow artifact")
-        if not str(release.get("url", "")).startswith("https://github.com/menqstudio/MenQ-Standard/releases/tag/"):
-            errors.append("D-025 evidence correction must point to a permanent GitHub Release")
-        if not re.fullmatch(r"[0-9a-f]{64}", str(release.get("assetSha256", ""))):
-            errors.append("D-025 permanent release asset digest is missing")
-        for consumer_id in ("menq.design.consumer.catalog", "menq.design.consumer.release-console"):
+        validate_permanent_release(errors, latest, release_facts)
+        for consumer_id in CONSUMER_IDS:
             if regrade.get(consumer_id) not in {"M0", "M1", "M2"}:
                 errors.append(f"{consumer_id} must stay re-graded at or below M2 until independent evidence exists")
-        if latest.get("realConsumerObligation", {}).get("status") not in {"open", "met"}:
-            errors.append("D-025 real-consumer obligation status is missing")
-        if not (ROOT / str(latest.get("record", ""))).is_file():
-            errors.append("D-025 evidence correction record file is missing")
+        validate_obligation(errors, obligation)
+
+    # The top-level consumers[].maturity is the grade the correction superseded.  It is held to the
+    # correction's own "previousMaturity", so it cannot be set to anything; and because the record
+    # still shows it beside the corrected grade, the difference is printed on every run rather than
+    # hidden.  The record itself is not this validator's to edit.
+    for consumer_id in CONSUMER_IDS:
+        value = declared.get(consumer_id)
+        if value not in MATURITY_LEVELS:
+            errors.append(f"D-025 readiness record top-level maturity of {consumer_id} is not one of M0-M4: {value!r}")
+        elif latest and value != previous.get(consumer_id):
+            errors.append(
+                f"D-025 readiness record top-level maturity of {consumer_id} ({value}) is not the grade the latest "
+                f"evidence correction superseded ({previous.get(consumer_id)})"
+            )
+        elif latest and value != regrade.get(consumer_id):
+            notes.append(
+                f"KNOWN INCONSISTENCY: {RECORD_REL} still shows {consumer_id} at {value} in its top-level "
+                f"'consumers' list; the evidence correction of {latest.get('date')} re-graded it to "
+                f"{regrade.get(consumer_id)}, and that is the grade in force."
+            )
+
     if merge_evidence.get("merged") is not True:
         errors.append("D-025 merge evidence does not confirm merge")
     if merge_evidence.get("implementationPullRequest") != 3:
@@ -184,7 +326,7 @@ if record:
         errors.append("D-025 lock merge commit evidence is incorrect")
     if merge_evidence.get("validatedLockHead") != "8ba2e987ff6dab2c25fda18744c7376953d0108f":
         errors.append("D-025 validated lock head evidence is incorrect")
-    if merge_evidence.get("treeDifferenceCount") != 0:
+    if merge_evidence.get("treeDifferenceCount") != 0 or merge_evidence.get("treeDifferenceCount") is False:
         errors.append("D-025 lock tree equivalence is not exact")
     if authority.get("readyForReviewAuthorized") is not True or authority.get("mergeAuthorized") is not True:
         errors.append("D-025 readiness record does not preserve Owner ready/merge authority")
@@ -197,14 +339,104 @@ if record:
     if final_audit.get("verdict") != "GREEN" or final_audit.get("transactionClosed") is not True:
         errors.append("D-025 final post-lock audit is not GREEN and closed")
 
-if errors:
-    print("PLATFORMS VALIDATION: RED")
-    for error in errors:
-        print(f"- {error}")
-    sys.exit(1)
+    return {
+        "status": record.get("status"),
+        "approval": authority.get("ownerApprovalStatus"),
+        "audit": final_audit.get("verdict"),
+        "closed": final_audit.get("transactionClosed"),
+        "maturity": ", ".join(f"{consumer_id.rsplit('.', 1)[-1]}={regrade.get(consumer_id)}" for consumer_id in CONSUMER_IDS),
+        "obligation": obligation.get("status"),
+    }
 
-print("PLATFORMS VALIDATION: GREEN")
-print(f"Validated {len(REQUIRED_MARKERS)} required Platforms and D-025 canonical files.")
-print("D-025 architecture: LOCKED")
-print("D-025 technical, closure, and lock evidence: GREEN; consumer evidence corrected (M2 pilots, real-consumer obligation tracked)")
-print("D-025 transaction: CLOSED")
+
+def validate_permanent_release(errors: list[str], latest: dict, release_facts: dict) -> None:
+    """The release evidence must agree with itself, with the release version, and with its record.
+
+    Whether the tag exists on GitHub cannot be checked offline and is NOT checked here.  What is
+    checked is everything that can be: the URL is the tag's URL, the tag and asset are the ones
+    publish-release.yml produces for the recorded version, and the digest, URL and source commit
+    are the ones the correction record document states.
+    """
+    release = latest.get("permanentRelease") if isinstance(latest.get("permanentRelease"), dict) else {}
+    url, tag, digest = str(release.get("url", "")), str(release.get("tag", "")), str(release.get("assetSha256", ""))
+    version = str(release_facts.get("version", ""))
+    if not url.startswith(RELEASE_URL_BASE):
+        errors.append("D-025 evidence correction must point to a permanent GitHub Release")
+    elif not tag or url != RELEASE_URL_BASE + tag:
+        errors.append("D-025 permanent release URL is not the URL of its recorded tag")
+    if not version or tag != f"design-platform-v{version}":
+        errors.append(f"D-025 permanent release tag is not the tag of the recorded release version ({version or 'none'})")
+    if not version or release.get("asset") != f"menq-design-platform-{version}.zip":
+        errors.append("D-025 permanent release asset is not the bundle of the recorded release version")
+    if not re.fullmatch(r"[0-9a-f]{64}", digest):
+        errors.append("D-025 permanent release asset digest is missing")
+    record_rel = str(latest.get("record", ""))
+    record_text = load(record_rel)[0] if record_rel.endswith(".md") and not record_rel.startswith(("/", "..")) else None
+    if record_text is None:
+        errors.append("D-025 evidence correction record file is missing")
+        return
+    for name, value in (("asset digest", digest), ("URL", url), ("source commit", str(release.get("sourceCommit", "")))):
+        if not value or value not in record_text:
+            errors.append(f"D-025 permanent release {name} is not the one stated in {record_rel}")
+
+
+def validate_obligation(errors: list[str], obligation: dict) -> None:
+    """"met" is a claim: it needs two named, distinct real consumers that each have recorded evidence."""
+    status = obligation.get("status")
+    if status not in {"open", "met"}:
+        errors.append("D-025 real-consumer obligation status is missing")
+        return
+    if status == "open":
+        return
+    consumers = [str(obligation.get(key, "")) for key in ("firstRealConsumer", "secondRealConsumer")]
+    progress = obligation.get("progress") if isinstance(obligation.get("progress"), list) else []
+    evidenced = {
+        str(item.get("consumer", "")).lower()
+        for item in progress
+        if isinstance(item, dict)
+        and str(item.get("evidence", "")).strip()
+        and re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(item.get("date", "")))
+    }
+    named = all(REAL_CONSUMER.match(consumer) for consumer in consumers)
+    if not named or consumers[0].lower() == consumers[1].lower() or not all(c.lower() in evidenced for c in consumers):
+        errors.append(
+            "D-025 real-consumer obligation is marked met without two distinct named real consumers "
+            "that each have dated evidence"
+        )
+
+
+def main() -> int:
+    errors: list[str] = []
+    notes: list[str] = []
+    facts: dict = {}
+    try:
+        tracked = tracked_files(errors)
+        validate_documents(errors, tracked)
+        validate_registry(errors, tracked)
+        facts = validate_record(errors, notes)
+    except Exception as exc:  # a validator answers RED, never with a traceback
+        errors.append(f"internal validator error: {type(exc).__name__}: {exc}")
+
+    if errors:
+        print("PLATFORMS VALIDATION: RED")
+        for error in errors:
+            print(f"- {error}")
+        return 1
+
+    print("PLATFORMS VALIDATION: GREEN")
+    print(f"Validated {len(REQUIRED_MARKERS)} required Platforms and D-025 canonical files.")
+    # Each value below is read from the record the checks above just passed; none is a literal.
+    print(f"D-025 readiness record: {facts['status']}; Owner approval: {facts['approval']}")
+    print(f"D-025 final post-lock audit: {facts['audit']}; transaction closed: {facts['closed']}")
+    print(f"D-025 consumer maturity in force: {facts['maturity']}; real-consumer obligation: {facts['obligation']}")
+    for note in notes:
+        print(note)
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except (AttributeError, ValueError):
+        pass
+    sys.exit(main())
