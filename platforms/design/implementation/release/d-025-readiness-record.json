@@ -1,22 +1,7 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "recordId": "menq.design.d-025.readiness.2026-07-13",
   "decision": "D-025",
-  "snapshotNotice": {
-    "snapshotDate": "2026-07-13",
-    "supersededBy": "evidenceCorrections",
-    "snapshotFields": [
-      "status",
-      "evidenceSnapshot",
-      "consumers",
-      "crossConsumerValidation",
-      "qualityAndAdoptionEvidence",
-      "finalAudit",
-      "remainingAction"
-    ],
-    "hy": "snapshotFields-ում թվարկված top-level դաշտերը 2026-07-13-ի lock-ի պահին գրանցված արժեքներն են։ Դրանք պահվում են անփոփոխ՝ որպես պատմություն, և ընթացիկ վիճակը ՉԵՆ։ Որտեղ դրանք տարբերվում են evidenceCorrections-ի վերջին գրառումից, ուժի մեջ է ուղղումը։ Այսօրվա վիճակի համար կարդալ `current`-ը։",
-    "en": "The top-level fields listed in snapshotFields are the values recorded at the 2026-07-13 lock. They are kept unchanged as history and are NOT the current state. Where they differ from the latest entry of evidenceCorrections, the correction is in force. Read `current` for the state today."
-  },
   "current": {
     "asOf": "2026-10-09",
     "derivedFrom": "the latest entry of evidenceCorrections (2026-10-07)",
@@ -40,22 +25,9 @@
       "en": "Open: evidence of adoption by two distinct real MenQ consumers. menqstudio/Webpage is the first (progress is recorded in evidenceCorrections); the Owner selects the second. Govern every change under locked change-control rules."
     }
   },
-  "status": "Locked and GREEN",
   "displayName": {
     "hy": "D-025 ներդրման, որդեգրման, closure, merge և lock authority ապացույց",
     "en": "D-025 implementation, adoption, closure, merge, and lock-authority evidence"
-  },
-  "evidenceSnapshot": {
-    "sourceCommit": "e98f44ccabcdd3294b254105235e5f3e08c28ba1",
-    "workflowName": "Design Platform Preview Release Integrity",
-    "workflowRunId": 29210874292,
-    "workflowRunNumber": 12,
-    "workflowConclusion": "success",
-    "artifactId": 8265108086,
-    "artifactName": "menq-design-platform-0.1.0-next.0",
-    "artifactDigest": "sha256:54c736ed590ae521b24c0b0d58878ed72539a66f4edcdf5c1489996f176a8764",
-    "artifactSizeBytes": 40344,
-    "artifactExpired": false
   },
   "mergeEvidence": {
     "implementationPullRequest": 3,
@@ -79,22 +51,6 @@
     "publicApiDiff": "GREEN",
     "compatibilityMigrationRollback": "GREEN"
   },
-  "consumers": [
-    {
-      "consumerId": "menq.design.consumer.catalog",
-      "name": "MenQ Design Catalog",
-      "maturity": "M3",
-      "verdict": "GREEN"
-    },
-    {
-      "consumerId": "menq.design.consumer.release-console",
-      "name": "MenQ Release Evidence Console",
-      "maturity": "M4",
-      "verdict": "GREEN"
-    }
-  ],
-  "crossConsumerValidation": "GREEN",
-  "qualityAndAdoptionEvidence": "GREEN",
   "authority": {
     "readyForReviewAuthorized": true,
     "mergeAuthorized": true,
@@ -103,14 +59,45 @@
     "owner": "Gevorg Ohanyan",
     "approvedAt": "2026-07-13"
   },
-  "finalAudit": {
-    "record": "platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md",
-    "verdict": "GREEN",
-    "transactionClosed": true
-  },
-  "remainingAction": {
-    "hy": "D-025-ի բաց action չկա։ Հետագա փոփոխությունները կառավարել locked change-control կանոններով։",
-    "en": "No D-025 action remains open. Govern future changes under locked change-control rules."
+  "snapshot2026-07-13": {
+    "status": "Locked and GREEN",
+    "evidenceSnapshot": {
+      "sourceCommit": "e98f44ccabcdd3294b254105235e5f3e08c28ba1",
+      "workflowName": "Design Platform Preview Release Integrity",
+      "workflowRunId": 29210874292,
+      "workflowRunNumber": 12,
+      "workflowConclusion": "success",
+      "artifactId": 8265108086,
+      "artifactName": "menq-design-platform-0.1.0-next.0",
+      "artifactDigest": "sha256:54c736ed590ae521b24c0b0d58878ed72539a66f4edcdf5c1489996f176a8764",
+      "artifactSizeBytes": 40344,
+      "artifactExpired": false
+    },
+    "consumers": [
+      {
+        "consumerId": "menq.design.consumer.catalog",
+        "name": "MenQ Design Catalog",
+        "maturity": "M3",
+        "verdict": "GREEN"
+      },
+      {
+        "consumerId": "menq.design.consumer.release-console",
+        "name": "MenQ Release Evidence Console",
+        "maturity": "M4",
+        "verdict": "GREEN"
+      }
+    ],
+    "crossConsumerValidation": "GREEN",
+    "qualityAndAdoptionEvidence": "GREEN",
+    "finalAudit": {
+      "record": "platforms/design/D-025_FINAL_POST_LOCK_AUDIT.md",
+      "verdict": "GREEN",
+      "transactionClosed": true
+    },
+    "remainingAction": {
+      "hy": "D-025-ի բաց action չկա։ Հետագա փոփոխությունները կառավարել locked change-control կանոններով։",
+      "en": "No D-025 action remains open. Govern future changes under locked change-control rules."
+    }
   },
   "evidenceCorrections": [
     {

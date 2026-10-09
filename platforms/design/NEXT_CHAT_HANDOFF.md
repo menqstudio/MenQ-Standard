@@ -23,7 +23,7 @@
 
 - D-025-ի evidence-ը ուղղվել է 2026-10-07-ին ([`D-025_EVIDENCE_CORRECTION_RECORD.md`](D-025_EVIDENCE_CORRECTION_RECORD.md)). repository-ի ներսի երկու consumer-ը M2 pilot են, M3/M4-ը ապացուցված չէ, workflow artifact-ը ժամկետանց է, մշտական release-ը `design-platform-v0.1.0-next.0`-ն է։
 - 2026-07-13-ի «two-consumer evidence — GREEN» պնդումը այլևս ուժի մեջ չէ։ D-025 որոշման ֆայլը, lock, closure և final-audit գրառումները կրում են ուղղման ծանուցում։
-- `implementation/release/d-025-readiness-record.json`-ի top-level դաշտերը 2026-07-13-ի snapshot են. ընթացիկ վիճակը նրա `current` և `evidenceCorrections` դաշտերում է։
+- `implementation/release/d-025-readiness-record.json`-ում 2026-07-13-ի արժեքները `snapshot2026-07-13` դաշտի տակ են. ընթացիկ վիճակը նրա `current` և `evidenceCorrections` դաշտերում է։
 
 **Draft և իրականացման փուլում**
 
@@ -35,7 +35,7 @@
 
 - Փակված՝ `CR-0001`, `CR-0002`, `CR-0003`, `CR-0004`։
 - Բաց՝ `CR-0005`…`CR-0011`. աշխատանքը merge է եղել, բայց ամեն մեկի `closureBlockedBy`-ում անվանված evidence-ը չկա։
-- Առաջարկված՝ `CR-0012` (այս համաժամեցումը). սպասում է Owner-ի հաստատմանը։
+- Իրականացման փուլում՝ `CR-0012` (այս համաժամեցումը). Owner-ը այն հաստատել է pull request #33-ի merge-ով (2026-10-09). փակված չէ, մինչև Owner-ը merge չանի նրա ավարտման pull request-ը։
 
 ### Շարունակելու ճշգրիտ կետը
 
@@ -74,7 +74,7 @@ Before substantive work, read in full, on the active branch/ref, the session-rea
 
 - D-025's evidence was corrected on 2026-10-07 ([`D-025_EVIDENCE_CORRECTION_RECORD.md`](D-025_EVIDENCE_CORRECTION_RECORD.md)): the two in-repository consumers are M2 pilots, M3/M4 is not evidenced, the workflow artifact has expired, and the permanent release is `design-platform-v0.1.0-next.0`.
 - The 2026-07-13 claim "two-consumer evidence is GREEN" is no longer in force. The D-025 decision file and the lock, closure and final-audit records carry a correction notice.
-- The top-level fields of `implementation/release/d-025-readiness-record.json` are a 2026-07-13 snapshot; the current state is in its `current` and `evidenceCorrections` fields.
+- In `implementation/release/d-025-readiness-record.json` the 2026-07-13 values are under its `snapshot2026-07-13` field; the current state is in its `current` and `evidenceCorrections` fields.
 
 **Draft and implementing**
 
@@ -86,7 +86,7 @@ Before substantive work, read in full, on the active branch/ref, the session-rea
 
 - Closed: `CR-0001`, `CR-0002`, `CR-0003`, `CR-0004`.
 - Open: `CR-0005`…`CR-0011`. Their work is merged, but the evidence each names in `closureBlockedBy` does not exist yet.
-- Proposed: `CR-0012` (this synchronisation), awaiting the Owner's approval.
+- Implementing: `CR-0012` (this synchronisation). The Owner approved it by merging pull request #33 (2026-10-09); it is not closed until the Owner merges its completing pull request.
 
 ### Exact continuation point
 

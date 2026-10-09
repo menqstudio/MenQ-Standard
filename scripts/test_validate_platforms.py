@@ -130,6 +130,7 @@ CORRECTION = "platforms/design/D-025_EVIDENCE_CORRECTION_RECORD.md"
 DESIGN_ROADMAP = "platforms/design/ROADMAP.md"
 CHARTER = "platforms/design/PLATFORM_CHARTER.md"
 LOCK = "platforms/design/D-025_LOCK_RECORD.md"
+CLOSURE = "platforms/design/D-025_POST_MERGE_CLOSURE_RECORD.md"
 URL = "https://github.com/menqstudio/MenQ-Standard/releases/tag/"
 
 
@@ -143,7 +144,9 @@ def record(*assignments: tuple[str, object]):
             keys = [int(key) if key.lstrip("-").isdigit() else key for key in dotted.split(".")]
             for key in keys[:-1]:
                 node = node[key]
-            assert value is DELETE or repr(node[keys[-1]]) != repr(value), f"{dotted} already holds {value!r}: the mutation would change nothing"
+            present = isinstance(node, list) or keys[-1] in node
+            assert present or value is not DELETE, f"{dotted} is absent: the deletion would change nothing"
+            assert value is DELETE or not present or repr(node[keys[-1]]) != repr(value), f"{dotted} already holds {value!r}: the mutation would change nothing"
             if value is DELETE:
                 del node[keys[-1]]
             else:
@@ -154,17 +157,25 @@ def record(*assignments: tuple[str, object]):
 
 
 DELETE = object()
+SNAPSHOT_KEY = vp.SNAPSHOT_KEY
+SNAP = SNAPSHOT_KEY + "."
+CURRENT = "current."
+CONFUSED = vp.CONFUSED
 LATEST = "evidenceCorrections.-1."
 RELEASE = LATEST + "permanentRelease."
 OBLIGATION = LATEST + "realConsumerObligation."
 
 def met(second: str = "menqstudio/Scout", evidence: str = "PR #9, CI run GREEN", date: str = "2026-10-09"):
+    """The correction records the obligation as met, and the current block restates it."""
+
     def apply(r: Repo) -> None:
         data = json.loads(r.read(RECORD))
         obligation = data["evidenceCorrections"][-1]["realConsumerObligation"]
         obligation["status"] = "met"
         obligation["secondRealConsumer"] = second
         obligation["progress"].append({"date": date, "consumer": second, "evidence": evidence})
+        data["current"]["realConsumerObligation"] = "met"
+        data["current"]["twoRealConsumerCondition"] = "evidenced"
         r.write(RECORD, json.dumps(data, ensure_ascii=False, indent=2))
 
     return apply
@@ -178,6 +189,24 @@ def registry(armenian: int, english: int, row: str = "| MenQ Design Platform | `
     )
 
 
+def both(*mutations):
+    def apply(r: Repo) -> None:
+        for mutate in mutations:
+            mutate(r)
+
+    return apply
+
+
+def third_consumer(r: Repo) -> None:
+    data = json.loads(r.read(RECORD))
+    data["current"]["consumers"].append({"consumerId": "menqstudio/Webpage", "maturity": "M1"})
+    r.write(RECORD, json.dumps(data, ensure_ascii=False, indent=2))
+
+
+JULY_ACTION = "No D-025 action remains open. Govern future changes under locked change-control rules."
+AGREE = "does not agree with the latest evidence correction"
+IN_FORCE = "D-025 readiness record 'current.consumers' is not the list of consumers and maturities in force under the latest evidence correction"
+
 NEW_DOC = "# New / Նոր\n\n**HY:** Հայերեն տեքստ։\n\n**EN:** English text.\n\n<!-- END: NEW_DOC -->\n"
 MERGE = "D-025 "
 
@@ -189,11 +218,47 @@ RED_CASES = [
     ("record_non_empty_list", lambda r: r.write(RECORD, '[{"status": "Locked and GREEN"}]'), ["D-025 readiness record must be a non-empty JSON object"], False),
     ("record_not_json", lambda r: r.write(RECORD, "{not json"), ["Invalid D-025 readiness record:"], False),
     ("record_missing", lambda r: (r.root / RECORD).unlink(), ["Invalid D-025 readiness record:"], True),
-    ("record_section_not_an_object", record(("evidenceSnapshot", 5)), ["D-025 readiness record field 'evidenceSnapshot' must be an object"], False),
-    ("record_status", record(("status", "Draft")), ["D-025 readiness record is not Locked and GREEN"], False),
-    ("record_workflow_conclusion", record(("evidenceSnapshot.workflowConclusion", "failure")), ["D-025 readiness workflow evidence is not successful"], False),
-    ("record_cross_consumer", record(("crossConsumerValidation", "RED")), ["D-025 cross-consumer or quality evidence is not GREEN"], False),
-    ("record_quality", record(("qualityAndAdoptionEvidence", "RED")), ["D-025 cross-consumer or quality evidence is not GREEN"], False),
+    ("record_section_not_an_object", record(("mergeEvidence", 5)), ["D-025 readiness record field 'mergeEvidence' must be an object"], False),
+    ("record_schema_version", record(("schemaVersion", 1)), ["D-025 readiness record schemaVersion must be 2"], False),
+    ("record_schema_version_wrong_type", record(("schemaVersion", 2.0)), ["D-025 readiness record schemaVersion must be 2"], False),
+    # --- the 2026-07-13 snapshot: present, complete, unchanged, and what the correction superseded ---
+    ("snapshot_absent", record((SNAPSHOT_KEY, DELETE)), [f"D-025 readiness record field '{SNAPSHOT_KEY}' must be an object"], False),
+    ("snapshot_field_missing", record((SNAP + "remainingAction", DELETE)), [f"D-025 readiness record '{SNAPSHOT_KEY}' is missing the field recorded on 2026-07-13: 'remainingAction'"], False),
+    ("snapshot_rewritten", record((SNAP + "remainingAction.en", "Nothing to see.")), [f"D-025 readiness record '{SNAPSHOT_KEY}' is not the snapshot recorded on 2026-07-13 (its content hash differs)"], False),
+    ("snapshot_section_not_an_object", record((SNAP + "evidenceSnapshot", 5)), [f"D-025 readiness record field '{SNAP}evidenceSnapshot' must be an object"], False),
+    ("snapshot_status", record((SNAP + "status", "Draft")), [f"D-025 readiness record '{SNAP}status' is not the status recorded at lock ('Locked and GREEN')"], False),
+    ("snapshot_workflow_conclusion", record((SNAP + "evidenceSnapshot.workflowConclusion", "failure")), ["D-025 readiness workflow evidence is not successful"], False),
+    ("snapshot_cross_consumer", record((SNAP + "crossConsumerValidation", "RED")), [f"D-025 readiness record '{SNAPSHOT_KEY}' does not carry the cross-consumer and quality verdicts recorded at lock (GREEN)"], False),
+    ("snapshot_quality", record((SNAP + "qualityAndAdoptionEvidence", "RED")), [f"D-025 readiness record '{SNAPSHOT_KEY}' does not carry the cross-consumer and quality verdicts recorded at lock (GREEN)"], False),
+    ("snapshot_artifact_is_not_the_expired_one", record((LATEST + "expiredArtifactId", 1)), [f"D-025 evidence correction names an expired artifact (1) that is not the artifact of '{SNAPSHOT_KEY}' (8265108086)"], False),
+    # --- the snapshot and the current block confused with each other ---
+    ("confused_snapshot_field_at_top_level", record(("status", "Locked and GREEN")), [CONFUSED + "'status' is at the top level"], False),
+    ("confused_current_field_inside_snapshot", record((SNAP + "decisionStatus", "Locked")), [CONFUSED + f"'decisionStatus' is inside '{SNAPSHOT_KEY}'"], False),
+    ("confused_snapshot_field_inside_current", record((CURRENT + "crossConsumerValidation", "not evidenced")), [CONFUSED + "'crossConsumerValidation' is inside 'current'"], False),
+    ("confused_current_action_is_the_july_text", record((CURRENT + "remainingAction.en", JULY_ACTION)), [CONFUSED + "'current.remainingAction.en' repeats the text recorded on 2026-07-13"], False),
+    # --- the current block agrees with the latest correction ---
+    ("current_absent", record(("current", DELETE)), ["D-025 readiness record field 'current' must be an object"], False),
+    ("current_field_missing", record((CURRENT + "permanentReleaseTag", DELETE)), ["D-025 readiness record 'current' is missing the field 'permanentReleaseTag'"], False),
+    ("current_unknown_field", record((CURRENT + "note", "x")), ["D-025 readiness record 'current' has the field 'note', which no rule ties to the latest evidence correction"], False),
+    ("current_decision_status", record((CURRENT + "decisionStatus", "Draft")), ["'current.decisionStatus' ('Draft') " + AGREE + " (d025Status: 'Locked')"], False),
+    ("current_obligation_lags_the_correction", both(met(), record((CURRENT + "realConsumerObligation", "open"))), ["'current.realConsumerObligation' ('open') " + AGREE], False),
+    ("current_condition_lags_the_correction", both(met(), record((CURRENT + "twoRealConsumerCondition", "not evidenced"))), ["'current.twoRealConsumerCondition' ('not evidenced') " + AGREE], False),
+    ("current_artifact_expiry", record((CURRENT + "workflowArtifactExpired", False)), ["'current.workflowArtifactExpired' (False) " + AGREE + " (artifactExpired: True)"], False),
+    ("current_artifact_expiry_wrong_type", record((CURRENT + "workflowArtifactExpired", 1)), ["'current.workflowArtifactExpired' (1) " + AGREE], False),
+    ("current_release_tag", record((CURRENT + "permanentReleaseTag", "design-platform-v9.9.9")), ["'current.permanentReleaseTag' ('design-platform-v9.9.9') " + AGREE], False),
+    ("current_maturity_not_in_force", record((CURRENT + "consumers.0.maturity", "M1")), [IN_FORCE], False),
+    ("current_lists_a_third_consumer", third_consumer, [IN_FORCE], False),
+    ("current_consumer_carries_a_verdict", record((CURRENT + "consumers.0.verdict", "PASS")), [IN_FORCE], False),
+    ("current_as_of_before_the_correction", record((CURRENT + "asOf", "2026-10-06")), ["D-025 readiness record 'current.asOf' ('2026-10-06') must be a date on or after the latest evidence correction (2026-10-07)"], False),
+    ("current_as_of_not_a_date", record((CURRENT + "asOf", "today")), ["D-025 readiness record 'current.asOf' ('today') must be a date"], False),
+    ("current_derived_from_elsewhere", record((CURRENT + "derivedFrom", "the correction record of 2026-10-07")), ["D-025 readiness record 'current.derivedFrom' does not name the latest entry of evidenceCorrections (2026-10-07)"], False),
+    ("current_derived_from_an_older_correction", record((CURRENT + "derivedFrom", "the entry of evidenceCorrections dated 2026-09-01")), ["D-025 readiness record 'current.derivedFrom' does not name the latest entry of evidenceCorrections (2026-10-07)"], False),
+    ("current_remaining_action_empty", record((CURRENT + "remainingAction.hy", " ")), ["D-025 readiness record 'current.remainingAction' must carry a non-empty 'hy' and 'en' text"], False),
+    # --- the current block claims what the latest correction does not support ---
+    ("current_claims_green", record((CURRENT + "remainingAction.en", "Everything is GREEN.")), ["D-025 readiness record 'current.remainingAction.en' claims GREEN; the latest evidence correction supports no GREEN verdict"], False),
+    ("current_claims_the_obligation_is_met", record((CURRENT + "realConsumerObligation", "met")), ["D-025 readiness record 'current' claims the real-consumer obligation is met; the latest evidence correction records it as 'open'"], False),
+    ("current_claims_the_condition_is_evidenced", record((CURRENT + "twoRealConsumerCondition", "evidenced")), ["D-025 readiness record 'current' claims the two-real-consumer condition is evidenced"], False),
+    ("current_claims_m4", record((CURRENT + "consumers.1.maturity", "M4")), ["D-025 readiness record 'current' claims M4 for menq.design.consumer.release-console; the latest evidence correction supports M2"], False),
     # --- the evidence correction ---
     ("correction_absent", record(("evidenceCorrections", [])), ["D-025 readiness record has no evidence correction"], False),
     ("correction_artifact_not_expired", record((LATEST + "artifactExpired", False)), ["D-025 evidence correction must record the expired workflow artifact"], False),
@@ -215,10 +280,10 @@ RED_CASES = [
     ("obligation_met_with_an_unnamed_consumer", met(second="a team to be selected"), ["D-025 real-consumer obligation is marked met without two distinct named real consumers"], False),
     ("obligation_met_without_evidence", met(evidence=" "), ["D-025 real-consumer obligation is marked met without two distinct named real consumers"], False),
     ("obligation_met_without_a_date", met(date="soon"), ["D-025 real-consumer obligation is marked met without two distinct named real consumers"], False),
-    # --- the top-level consumer maturity (item 13) ---
-    ("maturity_not_a_level", record(("consumers.0.maturity", "M9-BANANA")), ["D-025 readiness record top-level maturity of menq.design.consumer.catalog is not one of M0-M4: 'M9-BANANA'"], False),
-    ("maturity_not_the_superseded_grade", record(("consumers.1.maturity", "M3")), ["D-025 readiness record top-level maturity of menq.design.consumer.release-console (M3) is not the grade the latest evidence correction superseded (M4)"], False),
-    ("maturity_consumer_missing", record(("consumers", [])), ["D-025 readiness record top-level maturity of menq.design.consumer.catalog is not one of M0-M4: None"], False),
+    # --- the snapshot's consumer maturity is the grade the correction superseded (item 13) ---
+    ("snapshot_maturity_not_a_level", record((SNAP + "consumers.0.maturity", "M9-BANANA")), [f"D-025 readiness record '{SNAPSHOT_KEY}' maturity of menq.design.consumer.catalog is not one of M0-M4: 'M9-BANANA'"], False),
+    ("snapshot_maturity_not_the_superseded_grade", record((LATEST + "consumerRegrade.1.previousMaturity", "M3")), [f"D-025 readiness record '{SNAPSHOT_KEY}' maturity of menq.design.consumer.release-console (M4) is not the grade the latest evidence correction superseded (M3)"], False),
+    ("snapshot_maturity_consumer_missing", record((SNAP + "consumers", [])), [f"D-025 readiness record '{SNAPSHOT_KEY}' maturity of menq.design.consumer.catalog is not one of M0-M4: None"], False),
     # --- merge, authority and audit evidence ---
     ("merge_not_merged", record(("mergeEvidence.merged", False)), [MERGE + "merge evidence does not confirm merge"], False),
     ("merge_implementation_pr", record(("mergeEvidence.implementationPullRequest", 9)), [MERGE + "implementation merge evidence does not identify PR #3"], False),
@@ -235,10 +300,10 @@ RED_CASES = [
     ("authority_lock", record(("authority.lockAuthorized", False)), [MERGE + "readiness record does not preserve Owner lock authority"], False),
     ("authority_approval_status", record(("authority.ownerApprovalStatus", "pending")), [MERGE + "Owner approval state is not Locked"], False),
     ("authority_owner", record(("authority.owner", "Someone Else")), [MERGE + "lock owner is not recorded"], False),
-    ("audit_verdict", record(("finalAudit.verdict", "RED")), [MERGE + "final post-lock audit is not GREEN and closed"], False),
-    ("audit_transaction_open", record(("finalAudit.transactionClosed", False)), [MERGE + "final post-lock audit is not GREEN and closed"], False),
+    ("audit_verdict", record((SNAP + "finalAudit.verdict", "RED")), [MERGE + "final post-lock audit is not GREEN and closed"], False),
+    ("audit_transaction_open", record((SNAP + "finalAudit.transactionClosed", False)), [MERGE + "final post-lock audit is not GREEN and closed"], False),
     # --- required documents (items 16 and 17) ---
-    ("required_file_deleted_from_disk", lambda r: (r.root / DESIGN_ROADMAP).unlink(), ["Missing required file: " + DESIGN_ROADMAP, "Cannot check required terms, file is missing from the checkout: " + DESIGN_ROADMAP], True),
+    ("required_file_deleted_from_disk", lambda r: (r.root / CLOSURE).unlink(), ["Missing required file: " + CLOSURE, "Cannot check required terms, file is missing from the checkout: " + CLOSURE], True),
     ("required_file_not_utf8", lambda r: r.write(CHARTER, b"# caf\xe9\n"), ["Required file is not valid UTF-8: " + CHARTER], False),
     ("ending_marker_misplaced", lambda r: r.write(CHARTER, r.read(CHARTER) + "\ntrailing text\n"), ["Missing or misplaced ending marker: " + CHARTER], False),
     ("registry_reduced_to_three_lines", lambda r: r.write(REGISTRY, "**HY:** x\n**EN:** x\n<!-- END: PLATFORM_REGISTRY -->\n"), ["Required document is too small: " + REGISTRY + " has 18 body bytes, minimum 1200"], False),
@@ -253,7 +318,7 @@ RED_CASES = [
     ("platforms_markdown_without_english", lambda r: r.write("platforms/design/NEW.md", NEW_DOC.replace("**EN:** English text.\n\n", "")), ["Missing Armenian or English section: platforms/design/NEW.md"], False),
     ("platforms_markdown_without_armenian", lambda r: r.write("platforms/design/NEW.md", NEW_DOC.replace("**HY:** Հայերեն տեքստ։\n\n", "")), ["Missing Armenian or English section: platforms/design/NEW.md"], False),
     ("platforms_markdown_without_end_marker", lambda r: r.write("platforms/design/my new.md", NEW_DOC.replace("<!-- END: NEW_DOC -->\n", "")), ["Missing ending marker: platforms/design/my new.md"], False),
-    ("required_term_missing", lambda r: r.sub(DESIGN_ROADMAP, "M4 operational", "M4 planned", 99), [DESIGN_ROADMAP + " missing required term: M4 operational"], False),
+    ("required_term_missing", lambda r: r.sub(CLOSURE, "Overall closure verdict — GREEN", "Overall closure verdict — pending", 99), [CLOSURE + " missing required term: Overall closure verdict — GREEN"], False),
     ("tracked_markdown_deleted_from_disk", lambda r: (r.root / "platforms/design/brand-expression/components/Field/README.md").unlink(), ["Tracked Markdown file is missing from the checkout: platforms/design/brand-expression/components/Field/README.md"], True),
     ("not_a_git_repository", lambda r: shutil.rmtree(r.root / ".git", onerror=_force_remove), ["cannot enumerate tracked files with git ls-files -z"], True),
 ]
@@ -281,45 +346,75 @@ class GreenControls(Case):
     def test_real_repository_is_green_and_its_summary_is_read_from_the_record(self) -> None:
         result = self.verdict(self.fresh())
         self.assertGreen(result)
-        self.assertIn(f"Validated {len(vp.REQUIRED_MARKERS)} required Platforms and D-025 canonical files.", result.stdout)
-        self.assertIn("D-025 readiness record: Locked and GREEN; Owner approval: locked", result.stdout)
-        self.assertIn("D-025 final post-lock audit: GREEN; transaction closed: True", result.stdout)
-        self.assertIn("D-025 consumer maturity in force: catalog=M2, release-console=M2; real-consumer obligation: open", result.stdout)
+        self.assertEqual(
+            result.stdout.splitlines()[1:],
+            [
+                f"Validated {len(vp.REQUIRED_MARKERS)} required Platforms and D-025 canonical files.",
+                "D-025 decision status: Locked; Owner approval: locked",
+                "D-025 consumer maturity in force: catalog=M2, release-console=M2; real-consumer obligation: open; "
+                "two-real-consumer condition: not evidenced",
+                f"D-025 {SNAPSHOT_KEY} (history, not the state in force): status 'Locked and GREEN'; "
+                "final post-lock audit: GREEN; transaction closed: True",
+            ],
+        )
 
-    def test_known_inconsistency_is_printed_while_the_record_contradicts_itself(self) -> None:
-        # Item 13, the part that is NOT fixed: the committed record shows M3/M4 at the top level
-        # and M2/M2 in the correction.  The validator says so on every run instead of hiding it.
+    def test_a_consistent_record_prints_no_known_inconsistency(self) -> None:
+        # Until 2026-10-09 the committed record showed M3/M4 at the top level beside M2/M2 in the
+        # correction, and every run printed two KNOWN INCONSISTENCY lines.  The record no longer
+        # contradicts itself, so nothing is printed; a record that does is RED (the cases above).
         result = self.verdict(self.fresh())
         self.assertGreen(result)
-        notes = [line for line in result.stdout.splitlines() if line.startswith("KNOWN INCONSISTENCY: ")]
-        self.assertEqual(len(notes), 2, result.stdout)
-        self.assertIn("still shows menq.design.consumer.catalog at M3", notes[0])
-        self.assertIn("re-graded it to M2", notes[0])
-        self.assertIn("still shows menq.design.consumer.release-console at M4", notes[1])
-
-    def test_no_inconsistency_line_once_the_record_agrees_with_itself(self) -> None:
-        repo = self.fresh()
-        record(
-            ("consumers.0.maturity", "M2"), ("consumers.1.maturity", "M2"),
-            (LATEST + "consumerRegrade.0.previousMaturity", "M2"), (LATEST + "consumerRegrade.1.previousMaturity", "M2"),
-        )(repo)
-        result = self.verdict(repo)
-        self.assertGreen(result)
         self.assertNotIn("KNOWN INCONSISTENCY", result.stdout)
+        self.assertNotIn("INCONSISTEN", result.stdout.upper())
+
+    def test_the_snapshot_holds_the_july_values_and_the_current_block_the_corrected_ones(self) -> None:
+        data = json.loads(self.fresh().read(RECORD))
+        snapshot, current, latest = data[SNAPSHOT_KEY], data["current"], data["evidenceCorrections"][-1]
+        self.assertEqual(sorted(snapshot), sorted(vp.SNAPSHOT_FIELDS))
+        self.assertEqual(vp.snapshot_digest(snapshot), vp.SNAPSHOT_SHA256)
+        self.assertEqual(vp.snapshot_digest(dict(reversed(list(snapshot.items())))), vp.SNAPSHOT_SHA256)
+        self.assertEqual(snapshot["status"], "Locked and GREEN")
+        self.assertEqual([item["maturity"] for item in snapshot["consumers"]], [item["previousMaturity"] for item in latest["consumerRegrade"]])
+        self.assertEqual([item["maturity"] for item in current["consumers"]], [item["maturity"] for item in latest["consumerRegrade"]])
+        self.assertEqual(sorted(current), sorted(vp.CURRENT_FIELDS))
+        for name in vp.SNAPSHOT_FIELDS:
+            self.assertNotIn(name, data)
 
     def test_summary_follows_the_record(self) -> None:
         repo = self.fresh()
-        record((LATEST + "consumerRegrade.0.maturity", "M1"))(repo)
+        record((LATEST + "consumerRegrade.0.maturity", "M1"), (CURRENT + "consumers.0.maturity", "M1"))(repo)
         result = self.verdict(repo)
         self.assertGreen(result)
         self.assertIn("D-025 consumer maturity in force: catalog=M1, release-console=M2", result.stdout)
+
+    def test_summary_status_is_the_current_block_not_a_literal(self) -> None:
+        repo = self.fresh()
+        record((LATEST + "d025Status", "Locked (amended)"), (CURRENT + "decisionStatus", "Locked (amended)"))(repo)
+        result = self.verdict(repo)
+        self.assertGreen(result)
+        self.assertIn("D-025 decision status: Locked (amended); Owner approval: locked", result.stdout)
 
     def test_obligation_met_with_two_evidenced_consumers_is_green(self) -> None:
         repo = self.fresh()
         met()(repo)
         result = self.verdict(repo)
         self.assertGreen(result)
-        self.assertIn("real-consumer obligation: met", result.stdout)
+        self.assertIn("real-consumer obligation: met; two-real-consumer condition: evidenced", result.stdout)
+
+    def test_a_later_as_of_date_is_green(self) -> None:
+        repo = self.fresh()
+        record((CURRENT + "asOf", "2027-01-01"))(repo)
+        self.assertGreen(self.verdict(repo))
+
+    def test_roadmap_is_no_longer_required_to_quote_what_was_corrected(self) -> None:
+        # The three phrases were required terms of platforms/design/ROADMAP.md until 2026-10-09.
+        repo = self.fresh()
+        text = repo.read(DESIGN_ROADMAP)
+        for phrase in ("M4 operational", "D-025 Locked and GREEN", "No open implementation, closure, or lock action remains"):
+            text = text.replace(phrase, "[withdrawn]")
+        repo.write(DESIGN_ROADMAP, text)
+        self.assertNotIn(DESIGN_ROADMAP, vp.REQUIRED_TERMS)
+        self.assertGreen(self.verdict(repo))
 
     def test_registered_second_platform_is_green(self) -> None:
         repo = self.fresh()

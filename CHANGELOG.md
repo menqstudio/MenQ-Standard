@@ -1,5 +1,27 @@
 # MenQ Standard — Changelog
 
+## 2026-10-09 — D-025 readiness record: the snapshot and the current state separated; CR-0012 approval recorded
+
+### Հայերեն
+
+- D-025 readiness record-ը (`platforms/design/implementation/release/d-025-readiness-record.json`) անցավ `schemaVersion` 2-ի։ 2026-07-13-ի lock-ի պահին գրանցված յոթ դաշտը (`status`, `evidenceSnapshot`, `consumers`, `crossConsumerValidation`, `qualityAndAdoptionEvidence`, `finalAudit`, `remainingAction`) նույն արժեքներով տեղափոխվեց մեկ դաշտի՝ `snapshot2026-07-13`-ի տակ։ `current`-ը ընթացիկ վիճակի միակ բլոկն է։ `snapshotNotice`-ը հանվեց։ `evidenceCorrections`-ը չի փոխվել։
+- `scripts/validate_platforms.py`-ը այլևս չի պահանջում հուլիսի արժեքները վերին մակարդակում։ Այն պահանջում է, որ snapshot-ը լինի, ամբողջական լինի և չփոխվի (content hash), և որ նրա maturity-ն հավասար լինի վերջին ուղղման `previousMaturity`-ին։ `current`-ի ամեն դաշտ պետք է հավասար լինի վերջին ուղղմանը։ `current`-ը, որը պնդում է GREEN, `met`, `evidenced` կամ M3 և բարձր առանց ուղղման հիմքի, RED է։ Snapshot-ի և `current`-ի դաշտերի խառնումը RED է՝ անունով։ `KNOWN INCONSISTENCY` տողը այլևս չի տպվում, և վերջին տողերը կարդացվում են `current`-ից։
+- Validator-ից հանվեցին երեք պարտադիր արտահայտությունները, որոնք `platforms/design/ROADMAP.md`-ին ստիպում էին մեջբերել ուղղվածը։ Roadmap-ի տեքստը չի փոխվել։
+- `scripts/test_validate_platforms.py`․ 112 թեստ։ Նոր կամ փոխված յուրաքանչյուր կանոն մեկ անգամ թուլացվեց՝ 42 mutant, բոլորի դեպքում առնվազն մեկ թեստ կարմրեց։
+- `CR-0012`-ի status-ը դարձավ `implementing`, և գրանցվեց մեկ approval, որի evidence-ը Owner-ի կողմից pull request #33-ի merge-ն է (merge commit `391ff55`, 2026-10-09)։ Change request-ը փակված չէ․ այս փոփոխությունը այն ավարտում է և հաստատված է միայն իր pull request-ի merge-ով։ Այս գրառումը հաստատում չի հայտարարում։
+- `DECISIONS.md`-ում `D-009`-ի տակի 2026-10-09-ի նշման վերջին նախադասությունը այժմ գրում է փաստը՝ Owner-ը merge է արել pull request #32-ը (merge commit `b24de94`)։ Նշման մնացած մասը չի փոխվել։ `NEXT_CHAT_HANDOFF.md`-ի 5-րդ կետը թարմացվեց։
+- Սահմաններ․ ստուգումները կատարվել են local clone-ում առանց ցանցի, ուստի GitHub-ից ոչինչ չի կարդացվել, և այս փոփոխությունը GitHub Actions-ում դեռ չի գործարկվել։ `ECOSYSTEM_ARCHITECTURE.md`-ը և `NEXT_CHAT_HANDOFF.md`-ի 7-րդ կետը դեռ ասում են, որ `D-009`-ի նշումը հաստատում չունի․ դրանք չեն փոխվել։
+
+### English
+
+- The D-025 readiness record (`platforms/design/implementation/release/d-025-readiness-record.json`) moved to `schemaVersion` 2. The seven fields recorded at the 2026-07-13 lock (`status`, `evidenceSnapshot`, `consumers`, `crossConsumerValidation`, `qualityAndAdoptionEvidence`, `finalAudit`, `remainingAction`) moved, with the same values, under one field, `snapshot2026-07-13`. `current` is the one block for the current state. `snapshotNotice` was removed. `evidenceCorrections` is unchanged.
+- `scripts/validate_platforms.py` no longer requires the July values at the top level. It requires the snapshot to exist, to be complete and to be unchanged (a content hash), and its maturity to equal the latest correction's `previousMaturity`. Every field of `current` must equal the latest correction. A `current` that claims GREEN, `met`, `evidenced` or M3 and above without the correction's support is RED. Mixing the fields of the snapshot and of `current` is RED by name. The `KNOWN INCONSISTENCY` line is no longer printed, and the last lines are read from `current`.
+- The three required phrases that made `platforms/design/ROADMAP.md` quote what was corrected were removed from the validator. The roadmap's text was not changed.
+- `scripts/test_validate_platforms.py`: 112 tests. Every new or changed rule was weakened once: 42 mutants, and for each at least one test went red.
+- The status of `CR-0012` became `implementing`, and one approval was recorded whose evidence is the Owner's merge of pull request #33 (merge commit `391ff55`, 2026-10-09). The change request is not closed: this change completes it and is approved only by the merge of its own pull request. This entry claims no approval.
+- In `DECISIONS.md` the last sentence of the 2026-10-09 note under `D-009` now states the fact: the Owner merged pull request #32 (merge commit `b24de94`). The rest of the note is unchanged. Item 5 of `NEXT_CHAT_HANDOFF.md` was updated.
+- Limits: the checks were made in a local clone without network access, so nothing was read from GitHub, and this change has not yet run in GitHub Actions. `ECOSYSTEM_ARCHITECTURE.md` and item 7 of `NEXT_CHAT_HANDOFF.md` still say that the note under `D-009` has no approval; they were not changed.
+
 ## 2026-10-09 — Root and Foundation status statements synchronized
 
 ### Հայերեն

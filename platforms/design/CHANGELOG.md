@@ -2,6 +2,24 @@
 
 > **How to read this / Ինչպես կարդալ:** Ամեն գրառում թվագրված է merge commit-ի ամսաթվով՝ commit-ի գրանցած ժամային գոտում (+04:00), և ասում է, թե ինչ պետք է իմանա հին commit-ին pin արված consumer-ը։ 2026-07-13-ից 2026-10-08-ի գրառումները ավելացվել են 2026-10-09-ին `CR-0012`-ով՝ change request-ներից և merge diff-երից։ / Every entry is dated by its merge commit, in the time zone the commit records (+04:00), and says what a consumer pinned to an older commit needs to know. The entries for 2026-07-13 through 2026-10-08 were added on 2026-10-09 by `CR-0012`, from the change requests and the merge diffs.
 
+## 2026-10-09 — CR-0012 completed: the readiness record separates the 2026-07-13 snapshot from the current state (proposed; in effect when merged)
+
+### Հայերեն
+
+- **Consumer-ի համար՝ անելիք չկա։** Token, կոմպոնենտ, bundle, asset կամ build script չի փոխվել։
+- **Record-ը կարդացողի համար փոխվում է.** `implementation/release/d-025-readiness-record.json`-ը անցավ `schemaVersion` 2-ի։ `status`, `evidenceSnapshot`, `consumers`, `crossConsumerValidation`, `qualityAndAdoptionEvidence`, `finalAudit` և `remainingAction` դաշտերը այլևս top-level-ում չեն. նույն արժեքներով դրանք `snapshot2026-07-13` դաշտի տակ են։ Ընթացիկ վիճակը `current`-ում է։ `snapshotNotice`-ը հանվեց, `evidenceCorrections`-ը չի փոխվել։
+- `scripts/validate_platforms.py`-ը snapshot-ը պահում է անփոփոխ, `current`-ը՝ վերջին evidence correction-ին հավասար, և այլևս չի տպում `KNOWN INCONSISTENCY`։ `ROADMAP.md`-ի երեք պարտադիր արտահայտությունները հանվեցին validator-ից. `ROADMAP.md`-ի տեքստը չի փոխվել։
+- `CR-0012`-ի status-ը `implementing` է. գրանցված approval-ի evidence-ը Owner-ի կողմից pull request #33-ի merge-ն է (`391ff55`)։ Այն փակված չէ։ `NEXT_CHAT_HANDOFF.md`-ը և `PROJECT_CONTEXT.md`-ը թարմացվեցին ըստ դրա։
+- Այս գրառումը հաստատում չի հայտարարում։
+
+### English
+
+- **Nothing for a consumer to do.** No token, component, bundle, asset or build script changed.
+- **What changes for a reader of the record:** `implementation/release/d-025-readiness-record.json` moved to `schemaVersion` 2. The fields `status`, `evidenceSnapshot`, `consumers`, `crossConsumerValidation`, `qualityAndAdoptionEvidence`, `finalAudit` and `remainingAction` are no longer at the top level; with the same values they are under the `snapshot2026-07-13` field. The current state is in `current`. `snapshotNotice` was removed; `evidenceCorrections` is unchanged.
+- `scripts/validate_platforms.py` holds the snapshot unchanged and `current` equal to the latest evidence correction, and no longer prints `KNOWN INCONSISTENCY`. The three required phrases of `ROADMAP.md` were removed from the validator; the text of `ROADMAP.md` was not changed.
+- The status of `CR-0012` is `implementing`; the evidence of the recorded approval is the Owner's merge of pull request #33 (`391ff55`). It is not closed. `NEXT_CHAT_HANDOFF.md` and `PROJECT_CONTEXT.md` were updated to match.
+- This entry claims no approval.
+
 ## 2026-10-09 — CR-0012: Design Platform records brought to the present (proposed; in effect when merged)
 
 ### Հայերեն
