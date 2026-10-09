@@ -9,6 +9,8 @@
 **Approver / Հաստատող:** Gevorg Ohanyan, MenQ Owner  
 **Scope / Scope:** MenQ Design Platform architecture
 
+> **Correction notice / Ուղղման ծանուցում (2026-10-09, ուղղումը՝ 2026-10-07 / correction of 2026-10-07):** Ստորև՝ «Validation և lock gate» բաժնում, գրված է, որ lock-ի 3-րդ պայմանը («առնվազն երկու distinct իրական MenQ consumers validate են անում adoption-ը») բավարարված է։ Այդ պնդումը ուղղված է [`../D-025_EVIDENCE_CORRECTION_RECORD.md`](../D-025_EVIDENCE_CORRECTION_RECORD.md)-ով․ երկու consumer-ն էլ repository-ի ներսի pilot են՝ վերագնահատված M2, նրանց M3/M4 verdict-ը self-attested էր, և երկու իրական consumer-ի պայմանը ապացուցված չէ․ այդ պարտավորությունը բաց է։ D-025-ը մնում է `Locked`՝ Owner-ի որոշմամբ։ Այս որոշման տեքստը չի փոխվել․ ավելացվել է միայն այս ծանուցումը։ / The "Validation and lock gate" section below states that lock condition 3 ("At least two distinct real MenQ consumers validate adoption") is satisfied. That statement is corrected by [`../D-025_EVIDENCE_CORRECTION_RECORD.md`](../D-025_EVIDENCE_CORRECTION_RECORD.md): both consumers are in-repository pilots re-graded to M2, their M3/M4 verdicts were self-attested, and the two-real-consumer condition is not evidenced; that obligation is open. D-025 remains `Locked` by Owner decision. The body of this decision is unchanged; only this notice was added.
+
 ## Problem / Խնդիր
 
 **HY:** D-024-ը formally բացել էր MenQ Design Platform-ը, բայց detailed planes-ը, dependency direction-ը, token model-ը, product-extension սահմանները, delivery, migration և validation gates-ը canonical չէին։ Առանց այդ սահմանների shared design capability-ն կարող էր վերածվել component dump-ի, brand archive-ի կամ մեկ product-ի UI grammar-ի։
