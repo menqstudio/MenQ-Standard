@@ -63,6 +63,10 @@
 
 **EN:** Every MenQ product repository that follows the standard must have: (a) a session-read manifest with an ordered core list, (b) a declared byte budget for that core, (c) a gate running in CI that goes RED when the core exceeds the budget or the manifest is invalid. This is the Owner's second decision. The honest state: no adoption mechanism for consumer repositories exists yet. There is no list of consumers against which this requirement is checked, the gate is not distributed as a package, and no other repository was examined while drafting this decision. On 2026-10-09 the Owner decided that one number applies to all: the universal maximum of 350,000 bytes. It is taken from the largest read set in the ecosystem, the OS repository, whose canonical read was 207,623 bytes that day under a 350,000 ceiling OS has held since August 2026. A repository declares its own budget at or below that number. The OS figures come from the OS repository's own gate output and are not checked from this repository. The adoption mechanism and the deadline are the subject of a separate, later decision. Until then this section is a requirement without a check and must not be represented as fulfilled.
 
+**HY:** Նշում՝ ավելացված 2026-10-09-ին `D-029`-ի հետ միասին։ Վերևի տեքստը չի փոխվել։ Այս բաժնում հիշատակված «առանձին, հետագա որոշումը» adoption մեխանիզմի մասով [`D-029`](D-029-CONSUMER-ADOPTION-LAYER.md)-ն է, որը առաջարկված է և ուժի մեջ է միայն Owner-ի կողմից իր pull request-ի merge-ից հետո։ `D-029`-ը ժամկետ չի սահմանում, և ոչ մի repository այն դեռ չի ընդունել, ուստի այս բաժնի պահանջը դեռ չպետք է ներկայացվի որպես կատարված։
+
+**EN:** Note added on 2026-10-09 together with `D-029`. The text above is unchanged. For the adoption mechanism, the “separate, later decision” this section names is [`D-029`](D-029-CONSUMER-ADOPTION-LAYER.md), which is proposed and takes effect only from the Owner's merge of its pull request. `D-029` sets no deadline and no repository has adopted it yet, so the requirement of this section must still not be represented as fulfilled.
+
 ## Alternatives considered / Դիտարկված այլընտրանքներ
 
 **HY:**

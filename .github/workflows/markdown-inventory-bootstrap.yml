@@ -17,6 +17,16 @@ on:
       - "scripts/test_generate_markdown_inventory.py"
       - "scripts/test_validate_foundation.py"
       - "scripts/test_validate_platforms.py"
+      - "VERSION"
+      - "CHANGELOG.md"
+      - "consumer/**"
+      - "scripts/generate_kit_manifest.py"
+      - "scripts/check_standard_version.py"
+      - "scripts/check_consumer_templates.py"
+      - "scripts/test_generate_kit_manifest.py"
+      - "scripts/test_check_standard_version.py"
+      - "scripts/test_check_consumer_templates.py"
+      - "scripts/test_check_conformance.py"
       - ".github/workflows/**"
       - ".github/workflows/markdown-inventory-bootstrap.yml"
   pull_request:
@@ -32,6 +42,16 @@ on:
       - "scripts/test_generate_markdown_inventory.py"
       - "scripts/test_validate_foundation.py"
       - "scripts/test_validate_platforms.py"
+      - "VERSION"
+      - "CHANGELOG.md"
+      - "consumer/**"
+      - "scripts/generate_kit_manifest.py"
+      - "scripts/check_standard_version.py"
+      - "scripts/check_consumer_templates.py"
+      - "scripts/test_generate_kit_manifest.py"
+      - "scripts/test_check_standard_version.py"
+      - "scripts/test_check_consumer_templates.py"
+      - "scripts/test_check_conformance.py"
       - ".github/workflows/**"
       - ".github/workflows/markdown-inventory-bootstrap.yml"
   workflow_dispatch:
@@ -78,3 +98,19 @@ jobs:
         run: python scripts/test_check_session_read_budget.py
       - name: Validate session-read manifest and core byte budget (D-028)
         run: python scripts/check_session_read_budget.py
+      - name: Validate the consumer kit manifest (D-029)
+        run: python scripts/generate_kit_manifest.py --check
+      - name: Validate the standard's version against the base (D-029)
+        run: python scripts/check_standard_version.py
+      - name: Validate the consumer workflow templates and the reusable workflow (D-029)
+        run: python scripts/check_consumer_templates.py
+      - name: Test the kit manifest generator
+        run: python scripts/test_generate_kit_manifest.py
+      - name: Test the version gate
+        run: python scripts/test_check_standard_version.py
+      - name: Test the template policy
+        run: python scripts/test_check_consumer_templates.py
+      - name: Test the conformance checker, end to end in temporary repositories
+        run: python scripts/test_check_conformance.py
+      - name: Test sync_facts
+        run: python consumer/test_sync_facts.py
