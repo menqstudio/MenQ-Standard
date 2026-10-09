@@ -1,5 +1,17 @@
 # MenQ Standard — Changelog
 
+## 2026-10-09 — D-028 approved
+
+### Հայերեն
+
+- Owner-ը 2026-10-09-ին `menqstudio` հաշվից merge արեց pull request #29-ը (merge commit `ed91149`)․ դա `D-028`-ի հաստատումն է։ `D-028`-ի status-ը դարձավ `Approved`, ոչ `Locked`։ `CANONICAL_SESSION_READ_LAW.md` v2-ը ուժի մեջ է։
+- Այն փաստաթղթերը, որոնք `D-028`-ը անվանում էին առաջարկված, այժմ նշում են հաստատումը և pull request-ի համարը։ Ներքևի «D-028 proposed» գրառումը մնում է անփոփոխ՝ որպես այն, ինչ ճիշտ էր գրելու պահին։
+
+### English
+
+- On 2026-10-09 the Owner merged pull request #29 from the `menqstudio` account (merge commit `ed91149`); that is the approval of `D-028`. The status of `D-028` became `Approved`, not `Locked`. `CANONICAL_SESSION_READ_LAW.md` v2 is in force.
+- The documents that called `D-028` proposed now state the approval and the pull request number. The “D-028 proposed” entry below stays unchanged, as what was true when it was written.
+
 ## 2026-10-09 — D-028 proposed: bounded session read
 
 ### Հայերեն

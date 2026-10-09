@@ -17,7 +17,7 @@ MenQ Design Platform-ը ամբողջ MenQ ecosystem-ի reusable, product-neutral
 - Foundation v1 — Locked և GREEN։
 - D-024 — Locked (2026-10-07)։
 - D-025 — Locked և GREEN։
-- D-026 — Locked. մասամբ փոխարինված է D-028-ով (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է)։ CI-ը ստուգում է Markdown inventory-ն և session-read core-ի բայթերի սահմանը, ոչ թե session-ի ընթերցումը։
+- D-026 — Locked. մասամբ փոխարինված է D-028-ով (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին)։ CI-ը ստուգում է Markdown inventory-ն և session-read core-ի բայթերի սահմանը, ոչ թե session-ի ընթերցումը։
 - Parts 1–16 architecture set-ը canonical է։
 - Canonical registry, schemas, ownership, dependency graph և 10 package boundaries-ը implemented են։
 - Private preview candidate-ը `0.1.0-next.0` է։
@@ -52,7 +52,7 @@ The MenQ Design Platform is the reusable, product-neutral design capability syst
 - Foundation v1 is Locked and GREEN.
 - D-024 is Locked (2026-10-07).
 - D-025 is Locked and GREEN.
-- D-026 is Locked and superseded in part by D-028 (proposed; the Owner's merge of its pull request is the approval). CI checks the Markdown inventory and the session-read core byte ceiling, not a session's read.
+- D-026 is Locked and superseded in part by D-028 (approved; the Owner merged pull request #29 on 2026-10-09). CI checks the Markdown inventory and the session-read core byte ceiling, not a session's read.
 - The Parts 1–16 architecture set is canonical.
 - The canonical registry, schemas, ownership, dependency graph, and ten package boundaries are implemented.
 - The private preview candidate is `0.1.0-next.0`.

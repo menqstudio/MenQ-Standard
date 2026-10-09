@@ -33,7 +33,7 @@
 
 ### Startup workflow
 
-D-026-ի և D-028-ի (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է) համաձայն՝ ցանկացած substantive աշխատանքից առաջ ամբողջությամբ կարդալ session-read core-ը՝ [`ai-collaboration/SESSION_READ_MANIFEST.json`](ai-collaboration/SESSION_READ_MANIFEST.json)-ի `core` ցանկը, իսկ Foundation-ի որևէ directory-ում աշխատելուց առաջ՝ նաև այդ directory-ի area-ի ֆայլերը ([`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md))։ Foundation-ի համար առանցքայինն են՝ root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, այս file-ը, Canonical Write Integrity Law-ը և համապատասխան chapter-ը։
+D-026-ի և D-028-ի (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին) համաձայն՝ ցանկացած substantive աշխատանքից առաջ ամբողջությամբ կարդալ session-read core-ը՝ [`ai-collaboration/SESSION_READ_MANIFEST.json`](ai-collaboration/SESSION_READ_MANIFEST.json)-ի `core` ցանկը, իսկ Foundation-ի որևէ directory-ում աշխատելուց առաջ՝ նաև այդ directory-ի area-ի ֆայլերը ([`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md))։ Foundation-ի համար առանցքայինն են՝ root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, այս file-ը, Canonical Write Integrity Law-ը և համապատասխան chapter-ը։
 
 ### Integrity և decisions
 
@@ -78,7 +78,7 @@ Every major chapter contains `README.md` and `PROJECT_CONTEXT.md`. Legacy metada
 
 ### Startup workflow
 
-Under D-026 and D-028 (proposed; the Owner's merge of its pull request is the approval), read the session-read core completely before any substantive work: the `core` list of [`ai-collaboration/SESSION_READ_MANIFEST.json`](ai-collaboration/SESSION_READ_MANIFEST.json); before working in a Foundation directory, also read the files of that directory's area ([`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md)). For Foundation the key files are the root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, this file, the Canonical Write Integrity Law, and the relevant chapter.
+Under D-026 and D-028 (approved; the Owner merged pull request #29 on 2026-10-09), read the session-read core completely before any substantive work: the `core` list of [`ai-collaboration/SESSION_READ_MANIFEST.json`](ai-collaboration/SESSION_READ_MANIFEST.json); before working in a Foundation directory, also read the files of that directory's area ([`ai-collaboration/CANONICAL_SESSION_READ_LAW.md`](ai-collaboration/CANONICAL_SESSION_READ_LAW.md)). For Foundation the key files are the root `README.md`, `PROJECT_CONTEXT.md`, `DECISION_INDEX.md`, `DECISIONS.md`, `CHANGELOG.md`, `ROADMAP.md`, `foundation/README.md`, this file, the Canonical Write Integrity Law, and the relevant chapter.
 
 ### Integrity and decisions
 

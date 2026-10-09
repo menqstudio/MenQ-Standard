@@ -52,7 +52,7 @@ AI Collaboration-ի հետ աշխատանքից առաջ core-ը և այս folde
 
 - `README.md` — Locked v1։
 - Related decisions — `D-023`, `D-026`, `D-028`։
-- `CANONICAL_SESSION_READ_LAW.md` — v2՝ ըստ D-028-ի (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է)։ v1-ը Locked էր D-026-ով։
+- `CANONICAL_SESSION_READ_LAW.md` — v2՝ ըստ D-028-ի (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին)։ v1-ը Locked էր D-026-ով։
 - Foundation-ի բոլոր յոթ chapter-ները կառուցված են։
 - Մեքենայորեն ստուգվում են Markdown inventory-ի drift-ը (Foundation validator) և session-read manifest-ն ու core-ի 120,000 բայթի սահմանը (`scripts/check_session_read_budget.py`)։ Ոչ մի ծրագիր չի ստուգում, որ session-ը որևէ բան կարդացել է։
 
@@ -105,7 +105,7 @@ After reading the core and this folder's area, specifically confirm:
 
 - `README.md` — Locked v1.
 - Related decisions — `D-023`, `D-026`, `D-028`.
-- `CANONICAL_SESSION_READ_LAW.md` — v2 under D-028 (proposed; the Owner's merge of its pull request is the approval). v1 was Locked under D-026.
+- `CANONICAL_SESSION_READ_LAW.md` — v2 under D-028 (approved; the Owner merged pull request #29 on 2026-10-09). v1 was Locked under D-026.
 - All seven Foundation chapters are built.
 - Machine-checked: Markdown inventory drift (Foundation validator), and the session-read manifest and the 120,000-byte core ceiling (`scripts/check_session_read_budget.py`). No program checks that a session read anything.
 

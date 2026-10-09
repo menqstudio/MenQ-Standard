@@ -31,7 +31,7 @@ AI-ն MenQ architect և engineering teammate է։ Final authority-ն և accounta
 - D-025 evidence — ուղղված. consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է։
 - D-025 — Locked և GREEN։
 - D-026 — Locked. մասամբ փոխարինված է D-028-ով։ CI-ը ստուգում է Markdown inventory-ն, ոչ թե session-ի ընթերցումը։
-- D-028 — Proposed (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է)։ Gate-ը core-ը պահում է 120,000 բայթի սահմանում։
+- D-028 — Approved (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին)։ Gate-ը core-ը պահում է 120,000 բայթի սահմանում։
 - D-027 — Approved — Implementing (brand expression layer + Bro product extension)։
 - D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
 - D-025 closure merge — `9a833339b1d707d6cd8a792e031dd8ca2857d556`։
@@ -78,7 +78,7 @@ AI works as the MenQ architect and engineering teammate. Final authority and acc
 - D-025 evidence is corrected: the consumers are M2 pilots and the real-consumer obligation is open.
 - D-025 is Locked and GREEN.
 - D-026 is Locked and superseded in part by D-028. CI checks the Markdown inventory, not a session's read.
-- D-028 is Proposed (proposed; the Owner's merge of its pull request is the approval). The gate holds the core to 120,000 bytes.
+- D-028 is Approved (approved; the Owner merged pull request #29 on 2026-10-09). The gate holds the core to 120,000 bytes.
 - D-027 is Approved — Implementing (brand expression layer + Bro product extension).
 - D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.
 - D-025 closure merge: `9a833339b1d707d6cd8a792e031dd8ca2857d556`.

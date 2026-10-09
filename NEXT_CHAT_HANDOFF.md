@@ -20,7 +20,7 @@
 - D-025 evidence — ուղղված. consumer-ները M2 pilot են, իրական consumer-ի պարտավորությունը բաց է։
 - D-025 — Locked և GREEN։
 - D-026 — Locked. մասամբ փոխարինված է D-028-ով։ CI-ը ստուգում է Markdown inventory-ն, ոչ թե session-ի ընթերցումը։
-- D-028 — Proposed (առաջարկված. հաստատումը Owner-ի կողմից նրա pull request-ի merge-ն է)՝ `foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md`։ Gate-ը core-ը պահում է 120,000 բայթի սահմանում։
+- D-028 — Approved (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին)՝ `foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md`։ Gate-ը core-ը պահում է 120,000 բայթի սահմանում։
 - D-027 — Approved — Implementing՝ [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md)։
 - 2026-10-07 zero-trust audit — փուլ 1 (D-027), փուլ 2 (validator hardening), փուլ 3 (status sync), փուլ 4 (workflow security) և փուլ 5 (bilingual completion) ավարտված են։
 - D-025 implementation merge — `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`։
@@ -60,7 +60,7 @@ Before substantive work, read in full, on the active branch/ref, the session-rea
 - D-025 evidence is corrected: the consumers are M2 pilots and the real-consumer obligation is open.
 - D-025 is Locked and GREEN.
 - D-026 is Locked and superseded in part by D-028. CI checks the Markdown inventory, not a session's read.
-- D-028 is Proposed (proposed; the Owner's merge of its pull request is the approval): `foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md`. The gate holds the core to 120,000 bytes.
+- D-028 is Approved (approved; the Owner merged pull request #29 on 2026-10-09): `foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md`. The gate holds the core to 120,000 bytes.
 - D-027 is Approved — Implementing: [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md).
 - 2026-10-07 zero-trust audit: phase 1 (D-027), phase 2 (validator hardening), phase 3 (status sync), phase 4 (workflow security) and phase 5 (bilingual completion) are complete.
 - D-025 implementation merge: `2682c99cdcbb058b66ab0cd4ee82d923e5c2a7cc`.

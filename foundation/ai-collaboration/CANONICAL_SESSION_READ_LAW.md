@@ -1,6 +1,6 @@
 # Canonical Session Read Law / Canonical session-ի ընթերցման օրենք
 
-**Status / Կարգավիճակ:** v2 — proposed under `D-028`; in force from the Owner's merge of the D-028 pull request. v1 (Locked, `D-026`) is superseded in part. / v2 — առաջարկված `D-028`-ով. ուժի մեջ է մտնում, երբ Owner-ը merge է անում D-028-ի pull request-ը։ v1-ը (Locked, `D-026`) մասամբ փոխարինված է։  
+**Status / Կարգավիճակ:** v2 — approved under `D-028`; in force since the Owner merged pull request #29 on 2026-10-09. v1 (Locked, `D-026`) is superseded in part. / v2 — հաստատված `D-028`-ով. ուժի մեջ է այն պահից, երբ Owner-ը 2026-10-09-ին merge արեց pull request #29-ը։ v1-ը (Locked, `D-026`) մասամբ փոխարինված է։  
 **Version / Տարբերակ:** 2.0  
 **Owner / Պատասխանատու:** MenQ Owner  
 **Document class / Փաստաթղթի դաս:** Normative  
