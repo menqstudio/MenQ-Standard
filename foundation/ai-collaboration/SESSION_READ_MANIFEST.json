@@ -418,7 +418,8 @@
       "platforms/design/governance/change-requests/CR-0009-iconography-accordion-nav-tooltip.md",
       "platforms/design/governance/change-requests/CR-0010-motion-video-shaders.md",
       "platforms/design/governance/change-requests/CR-0011-repository-front-page-standard.md",
-      "platforms/design/governance/change-requests/CR-0012-design-records-sync.md"
+      "platforms/design/governance/change-requests/CR-0012-design-records-sync.md",
+      "platforms/design/governance/change-requests/CR-0013-primary-button-gradient-contrast.md"
     ],
     "platforms/design/implementation": [
       "platforms/design/README.md",

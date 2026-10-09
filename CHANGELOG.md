@@ -1,5 +1,21 @@
 # MenQ Standard — Changelog
 
+## 2026-10-09 — CR-0013 proposed: primary Button contrast, and the validator reads the stylesheets
+
+### Հայերեն
+
+- Light theme-ում հիմնական Button-ը և Բրոյի avatar-ը սպիտակ տեքստը դնում էին բրենդի gradient-ի վրա, որի cyan ծայրում կոնտրաստը 2.43:1 էր (կանոնը՝ 4.5:1)։ Light-ում դրանք այժմ միագույն `color-action-primary` են (5.93:1). Dark-ում gradient-ը մնում է (7.28:1 և 11.16:1)։ Token-ի արժեք չի փոխվել։
+- `validate_brand_expression.py`-ը GREEN էր այդ թերության վրա, քանի որ ստուգում էր 17 token զույգի ցանկ։ Այժմ այն կարդում է կոմպոնենտների stylesheet-ները և պահանջում 4.5:1 տեքստի տակ ներկված ամեն ֆոնի համար՝ gradient-ի ամեն stop-ում. չլուծվող stop-ը RED է։ Ավելացվեց `platforms/design/validation/test_validate_brand_expression.py`-ը (44 թեստ)։
+- Change request-ը՝ `CR-0013`, class-ը՝ `breaking`, status-ը՝ `proposed`։ Այս գրառումը հաստատում չի հայտարարում. Owner-ի հաստատումը pull request-ի merge-ն է։ Մանրամասները՝ `platforms/design/CHANGELOG.md`-ում։
+- Սահմաններ․ ստուգումները կատարվել են local clone-ում առանց ցանցի, և այս փոփոխությունը GitHub Actions-ում դեռ չի գործարկվել։ `design-brand-expression.yml` workflow-ը գործարկում է նոր թեստը, և քայլը հայտարարված է `scripts/validate_foundation.py`-ի `REQUIRED_WORKFLOW_RUNS`-ում։
+
+### English
+
+- In the light theme the primary Button and the Bro avatar put white text on the brand gradient, whose cyan end gave 2.43:1 (the rule is 4.5:1). In Light they are now solid `color-action-primary` (5.93:1); in Dark the gradient stays (7.28:1 and 11.16:1). No token value changed.
+- `validate_brand_expression.py` was GREEN on that defect, because it checked a list of 17 token pairs. It now reads the component stylesheets and requires 4.5:1 for every background painted under text, at every stop of a gradient; a stop it cannot resolve is RED. Added `platforms/design/validation/test_validate_brand_expression.py` (44 tests).
+- The change request is `CR-0013`, class `breaking`, status `proposed`. This entry claims no approval: the Owner's approval is the merge of the pull request. Details are in `platforms/design/CHANGELOG.md`.
+- Limits: the checks were made in a local clone without network access, and this change has not yet run in GitHub Actions. The `design-brand-expression.yml` workflow runs the new test, and the step is declared in `REQUIRED_WORKFLOW_RUNS` of `scripts/validate_foundation.py`.
+
 ## 2026-10-09 — D-025 readiness record: the snapshot and the current state separated; CR-0012 approval recorded
 
 ### Հայերեն

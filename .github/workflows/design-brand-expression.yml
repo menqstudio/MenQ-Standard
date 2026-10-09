@@ -6,6 +6,7 @@ on:
       - "platforms/design/brand-expression/**"
       - "platforms/design/product-extensions/**"
       - "platforms/design/validation/validate_brand_expression.py"
+      - "platforms/design/validation/test_validate_brand_expression.py"
       - "platforms/design/specifications/design-platform-registry.json"
       - "DECISION_INDEX.md"
       - ".github/workflows/design-brand-expression.yml"
@@ -16,6 +17,7 @@ on:
       - "platforms/design/brand-expression/**"
       - "platforms/design/product-extensions/**"
       - "platforms/design/validation/validate_brand_expression.py"
+      - "platforms/design/validation/test_validate_brand_expression.py"
       - "platforms/design/specifications/design-platform-registry.json"
       - "DECISION_INDEX.md"
       - ".github/workflows/design-brand-expression.yml"
@@ -45,3 +47,5 @@ jobs:
         run: python platforms/design/brand-expression/scripts/build_brand_tokens.py --check
       - name: Validate brand expression layer (D-027)
         run: python platforms/design/validation/validate_brand_expression.py
+      - name: Test the brand expression contrast checks
+        run: python platforms/design/validation/test_validate_brand_expression.py
