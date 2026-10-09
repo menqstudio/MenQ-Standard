@@ -5,10 +5,12 @@
   "id": "CR-0012",
   "title": {"hy": "Design Platform-ի գրառումների համաժամեցում իրական վիճակի հետ", "en": "Design Platform records brought to the present"},
   "class": "contract-extension",
-  "status": "proposed",
+  "status": "implementing",
   "proposer": "AI collaborator (Claude), from the 2026-10-09 review of the Design Platform records",
   "proposerOwnerId": null,
-  "approvals": [],
+  "approvals": [
+    {"ownerId": "owner.menq", "name": "Gevorg Ohanyan", "date": "2026-10-09", "evidence": "The Owner merged pull request #33 from the menqstudio account: merge commit 391ff55486321dde38b9d392b07cefa5258f6802, commit date 2026-10-09T04:54:56Z; GitHub reports the merge at 2026-10-09T04:54:57Z by `menqstudio` (read from the pull request with `gh pr view 33` on 2026-10-09). This approval covers what pull request #33 contained; the completing pull request is approved only by its own merge."}
+  ],
   "affectedAssets": [
     "menq.design.spec.brand-core.v1",
     "menq.design.spec.primitives.v1",
@@ -21,13 +23,15 @@
   ],
   "decision": "D-025",
   "risk": "R1",
-  "consumerEvidencePlan": "No product consumer is affected: no token, component, bundle, asset, build script or validator changes. The consumers of these records are the validators and the next session. Evidence: the eight repository gates run GREEN on the working tree, and the pull-request gate passes with 'Change-Request: CR-0012'. Nothing outside this repository is promised.",
-  "migrationPlan": "None. Two optional metadata fields are added to change-request records (mergeEvidence, closureBlockedBy) and two top-level fields to d-025-readiness-record.json (snapshotNotice, current); no existing field of any record is changed or removed.",
-  "rollback": "Revert the implementing pull request. Records return to their earlier text; no consumer holds a pinned copy of anything this change touches.",
-  "evidencePlan": "generate_markdown_inventory.py --check, validate_foundation.py, validate_platforms.py, check_session_read_budget.py, validate_governance.py, validate_brand_expression.py and validate_phase_a.py GREEN; the governance pull-request gate GREEN with 'Change-Request: CR-0012'; every merge hash recorded in CR-0004…CR-0011 exists in the repository (git cat-file).",
+  "consumerEvidencePlan": "No product consumer is affected: no token, component, bundle, asset, build script or validator changes. The consumers of these records are the validators and the next session. Evidence: the eight repository gates run GREEN on the working tree, and the pull-request gate passes with 'Change-Request: CR-0012'. Nothing outside this repository is promised. Completion pull request (2026-10-09): scripts/validate_platforms.py and scripts/test_validate_platforms.py change; they are outside platforms/design/ and are not assets of the ownership registry, and still no product consumer is affected.",
+  "migrationPlan": "Pull request #33: none. Two optional metadata fields are added to change-request records (mergeEvidence, closureBlockedBy) and two top-level fields to d-025-readiness-record.json (snapshotNotice, current); no existing field of any record is changed or removed. Completion pull request (2026-10-09): d-025-readiness-record.json moves to schemaVersion 2. The seven top-level fields recorded on 2026-07-13 (status, evidenceSnapshot, consumers, crossConsumerValidation, qualityAndAdoptionEvidence, finalAudit, remainingAction) move, values unchanged, under 'snapshot2026-07-13'; 'snapshotNotice' is removed; 'current' stays as the one current block; 'evidenceCorrections' is untouched. A reader of the old top-level keys reads 'snapshot2026-07-13' for history and 'current' for the state in force. The only program in this repository that reads the record, scripts/validate_platforms.py, changes in the same pull request.",
+  "rollback": "Revert the implementing pull request (the completion pull request reverts on its own: the record layout, the validator rules and their tests go back together). Records return to their earlier text; no consumer holds a pinned copy of anything this change touches.",
+  "evidencePlan": "generate_markdown_inventory.py --check, validate_foundation.py, validate_platforms.py, check_session_read_budget.py, validate_governance.py, validate_brand_expression.py and validate_phase_a.py GREEN; the governance pull-request gate GREEN with 'Change-Request: CR-0012'; every merge hash recorded in CR-0004…CR-0011 exists in the repository (git cat-file). Completion pull request (2026-10-09): scripts/test_validate_platforms.py GREEN with one test per new or changed validator rule plus green controls on the real record; every new or changed rule weakened once to confirm that a test fails; validate_platforms.py GREEN on the working tree with no KNOWN INCONSISTENCY line; the seven snapshot values compared equal to the top-level values at 391ff55.",
   "targetRelease": "none (records only)",
-  "pullRequests": [],
-  "closure": null
+  "pullRequests": [33],
+  "mergeEvidence": ["PR #33 merged at 391ff55 on 2026-10-09 08:54 +04:00 (2026-10-09 04:54 UTC)"],
+  "closure": null,
+  "closureBlockedBy": ["the completing pull request (readiness-record layout, scripts/validate_platforms.py rules and tests, this record's status) is not merged; closure is recorded only after the Owner merges it"]
 }
 ```
 
@@ -86,6 +90,21 @@
 
 Migration պետք չէ։ Rollback՝ իրականացնող PR-ի revert։
 
+### Լրացում՝ հաստատում և ավարտման pull request (2026-10-09)
+
+**Հաստատում.** Owner-ը 2026-10-09-ին `menqstudio` հաշվից merge է արել pull request #33-ը (merge commit `391ff55`). դա այս change request-ի հաստատումն է, և այն գրանցված է `approvals`-ում՝ որպես evidence նշելով հենց այդ merge-ը։ Status-ը `implementing` է, ոչ `closed`. աշխատանքը ավարտվում է երկրորդ pull request-ով, որը հաստատված չէ, մինչև Owner-ը այն merge չանի։
+
+**Ինչ է անում ավարտման pull request-ը.**
+
+1. `d-025-readiness-record.json`-ը անցնում է `schemaVersion` 2-ի։ 2026-07-13-ին գրանցված յոթ դաշտը (`status`, `evidenceSnapshot`, `consumers`, `crossConsumerValidation`, `qualityAndAdoptionEvidence`, `finalAudit`, `remainingAction`) նույն արժեքներով տեղափոխվում է մեկ դաշտի՝ `snapshot2026-07-13`-ի տակ։ `current`-ը մնում է ընթացիկ վիճակի միակ բլոկը։ `snapshotNotice`-ը հանվում է, քանի որ այն ասում էր, որ snapshot-ը top-level դաշտերն են, իսկ դա այլևս ճիշտ չէ։ `evidenceCorrections`-ը չի փոխվում։
+2. `scripts/validate_platforms.py`-ը այլևս չի պահանջում հուլիսի արժեքները top-level-ում։ Այն պահանջում է, որ snapshot-ը լինի, ամբողջական լինի և չփոխվի (content hash), և որ նրա maturity-ն հավասար լինի վերջին ուղղման `previousMaturity`-ին։ `current`-ի ամեն դաշտ պետք է հավասար լինի վերջին ուղղմանը։ `current`-ը, որը պնդում է GREEN, `met`, `evidenced` կամ M3 և բարձր առանց ուղղման հիմքի, RED է։ Snapshot-ի դաշտը top-level-ում կամ `current`-ի ներսում, կամ `current`-ի դաշտը snapshot-ի ներսում՝ անունով RED է։ `KNOWN INCONSISTENCY` տողը այլևս չի տպվում։
+3. Validator-ից հանվում են երեք պարտադիր արտահայտությունները, որոնք `ROADMAP.md`-ին ստիպում էին մեջբերել ուղղվածը։ `ROADMAP.md`-ի տեքստը չի փոխվել։
+4. `NEXT_CHAT_HANDOFF.md`-ում և `PROJECT_CONTEXT.md`-ում թարմացվում են record-ը նկարագրող նախադասությունները և `CR-0012`-ի status-ը։
+
+**Այս record-ի որ պնդումներն է փոխարինում.** «Չի փոխվում. … validator»՝ ճիշտ էր pull request #33-ի համար. ավարտման pull request-ը փոխում է `scripts/validate_platforms.py`-ը և նրա թեստերը։ «Readiness record-ի top-level արժեքները փոխել ընթացիկի՝ մերժվեց»՝ մերժման պատճառը validator-ի կանոնն էր. կանոնը փոխվել է, իսկ պատմությունը չի վերագրվում, քանի որ հուլիսի արժեքները անփոփոխ մնում են `snapshot2026-07-13`-ի տակ։ Status-ի հակասությունների 7-րդ կետից record-ի `status`-ի մասը այլևս հակասություն չէ. «Locked and GREEN»-ը record-ում նշված է որպես 2026-07-13-ի արժեք։ Նույն կետի մյուս երկու մասը (`PROJECT_CONTEXT.md`-ի վերնագիրը և `D-025_FINAL_POST_LOCK_AUDIT.md`-ը) մնում է Owner-ին։
+
+**Ինչ է պակասում փակման համար.** Ավարտման pull request-ի merge-ը Owner-ի կողմից։ `closure`-ը մնում է `null`։
+
 ## English
 
 ### Problem
@@ -140,5 +159,20 @@ The records say what the repository really holds: what is Locked, what is Draft,
 ### Migration and rollback
 
 No migration is needed. Rollback: revert the implementing PR.
+
+### Completion: the approval and the completing pull request (2026-10-09)
+
+**Approval.** On 2026-10-09 the Owner merged pull request #33 from the `menqstudio` account (merge commit `391ff55`); that is the approval of this change request, and it is recorded in `approvals` with that merge as its evidence. The status is `implementing`, not `closed`: the work is completed by a second pull request, which is not approved until the Owner merges it.
+
+**What the completing pull request does.**
+
+1. `d-025-readiness-record.json` moves to `schemaVersion` 2. The seven fields recorded on 2026-07-13 (`status`, `evidenceSnapshot`, `consumers`, `crossConsumerValidation`, `qualityAndAdoptionEvidence`, `finalAudit`, `remainingAction`) move, with the same values, under one field, `snapshot2026-07-13`. `current` stays as the one block for the current state. `snapshotNotice` is removed, because it said the snapshot is the top-level fields, and that is no longer true. `evidenceCorrections` does not change.
+2. `scripts/validate_platforms.py` no longer requires the July values at the top level. It requires the snapshot to exist, to be complete and to be unchanged (a content hash), and its maturity to equal the latest correction's `previousMaturity`. Every field of `current` must equal the latest correction. A `current` that claims GREEN, `met`, `evidenced` or M3 and above without the correction's support is RED. A snapshot field at the top level or inside `current`, or a field of `current` inside the snapshot, is RED by name. The `KNOWN INCONSISTENCY` line is no longer printed.
+3. The three required phrases that made `ROADMAP.md` quote what was corrected are removed from the validator. The text of `ROADMAP.md` was not changed.
+4. In `NEXT_CHAT_HANDOFF.md` and `PROJECT_CONTEXT.md` the sentences that describe the record and the status of `CR-0012` are updated.
+
+**Which statements of this record it supersedes.** "Not changed: … validator" was true of pull request #33; the completing pull request changes `scripts/validate_platforms.py` and its tests. "Changing the readiness record's top-level values to the current ones was rejected": the reason for the rejection was the validator's rule; the rule has changed, and history is not rewritten, because the July values stay unchanged under `snapshot2026-07-13`. Of status conflict 7, the part about the record's `status` is no longer a conflict: the record marks "Locked and GREEN" as a 2026-07-13 value. The other two parts of that item (the header of `PROJECT_CONTEXT.md` and `D-025_FINAL_POST_LOCK_AUDIT.md`) stay with the Owner.
+
+**What closure still lacks.** The Owner's merge of the completing pull request. `closure` stays `null`.
 
 <!-- END: CR-0012 -->

@@ -8,6 +8,7 @@ missing, malformed or surprising input is a RED line that names the file and the
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import subprocess
@@ -95,12 +96,10 @@ REQUIRED_TERMS = {
         "No open D-025 implementation, closure, or lock action remains",
         "261f85e5b20d726a0ab1f05da84a4dc45a248873",
     ],
-    "platforms/design/ROADMAP.md": [
-        "M4 operational",
-        "D-025 Locked and GREEN",
-        "No open implementation, closure, or lock action remains",
-    ],
 }
+# platforms/design/ROADMAP.md had three required terms until 2026-10-09 ("M4 operational",
+# "D-025 Locked and GREEN", "No open implementation, closure, or lock action remains").  They forced
+# the roadmap to keep quoting what the 2026-10-07 evidence correction withdrew, so they were removed.
 
 # --- Content minimums for a required Platforms document (2026-10-09) ----------------------------
 # Measured over the 25 documents in REQUIRED_MARKERS on 2026-10-09 with document_body() below.
@@ -114,6 +113,38 @@ MIN_LATIN_LETTERS = 600
 STATUS_METADATA_EXEMPT = ("platforms/design/CHANGELOG.md",)
 
 CONSUMER_IDS = ("menq.design.consumer.catalog", "menq.design.consumer.release-console")
+
+# --- Layout of the readiness record (schemaVersion 2, 2026-10-09, CR-0012) ----------------------
+# The values recorded at the 2026-07-13 lock live under SNAPSHOT_KEY and nowhere else; the state in
+# force lives under "current" and must agree with the latest entry of "evidenceCorrections".
+RECORD_SCHEMA_VERSION = 2
+SNAPSHOT_KEY = "snapshot2026-07-13"
+SNAPSHOT_FIELDS = (
+    "status",
+    "evidenceSnapshot",
+    "consumers",
+    "crossConsumerValidation",
+    "qualityAndAdoptionEvidence",
+    "finalAudit",
+    "remainingAction",
+)
+# SHA-256 of the snapshot block as canonical JSON (snapshot_digest below), taken on 2026-10-09 from
+# the seven top-level values the record carried at 391ff55.  History is corrected by adding an entry
+# to "evidenceCorrections"; a snapshot whose content changes is RED.
+SNAPSHOT_SHA256 = "70fb3afdba8c8e56f1400749f7b09797b85f9c4b0a3d48442fdf62e8aba9df82"
+CURRENT_FIELDS = (
+    "asOf",
+    "derivedFrom",
+    "decisionStatus",
+    "twoRealConsumerCondition",
+    "consumers",
+    "realConsumerObligation",
+    "workflowArtifactExpired",
+    "permanentReleaseTag",
+    "remainingAction",
+)
+CONFUSED = "D-025 readiness record confuses the 2026-07-13 snapshot with the current block: "
+ISO_DATE = re.compile(r"\d{4}-\d{2}-\d{2}")
 MATURITY_LEVELS = ("M0", "M1", "M2", "M3", "M4")
 RELEASE_URL_BASE = "https://github.com/menqstudio/MenQ-Standard/releases/tag/"
 REAL_CONSUMER = re.compile(r"^menqstudio/[A-Za-z0-9._-]+$")
@@ -236,12 +267,22 @@ def validate_registry(errors: list[str], tracked: list[str]) -> None:
             errors.append(f"{REGISTRY_REL} has no row for the platform directory platforms/{name}/")
 
 
-def as_object(parent: dict, key: str, errors: list[str]) -> dict:
+def as_object(parent: dict, key: str, errors: list[str], prefix: str = "") -> dict:
     value = parent.get(key)
     if isinstance(value, dict):
         return value
-    errors.append(f"D-025 readiness record field '{key}' must be an object")
+    errors.append(f"D-025 readiness record field '{prefix}{key}' must be an object")
     return {}
+
+
+def snapshot_digest(snapshot: dict) -> str:
+    canonical = json.dumps(snapshot, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
+def same(left: object, right: object) -> bool:
+    """Equal in value and in type, so that True is not 1 and "M2" is not ["M2"]."""
+    return type(left) is type(right) and left == right
 
 
 def maturity_by_consumer(items: object, field: str) -> dict:
@@ -250,7 +291,7 @@ def maturity_by_consumer(items: object, field: str) -> dict:
     return {item.get("consumerId"): item.get(field) for item in items if isinstance(item, dict)}
 
 
-def validate_record(errors: list[str], notes: list[str]) -> dict:
+def validate_record(errors: list[str]) -> dict:
     """Validate the readiness record; return the facts the final summary is printed from."""
     try:
         record = json.loads((ROOT / RECORD_REL).read_bytes().decode("utf-8"))
@@ -261,21 +302,20 @@ def validate_record(errors: list[str], notes: list[str]) -> dict:
         errors.append("D-025 readiness record must be a non-empty JSON object")
         return {}
 
-    evidence = as_object(record, "evidenceSnapshot", errors)
+    if not same(record.get("schemaVersion"), RECORD_SCHEMA_VERSION):
+        errors.append(
+            f"D-025 readiness record schemaVersion must be {RECORD_SCHEMA_VERSION}: the 2026-07-13 values under "
+            f"'{SNAPSHOT_KEY}' and the state in force under 'current'"
+        )
     merge_evidence = as_object(record, "mergeEvidence", errors)
     authority = as_object(record, "authority", errors)
-    final_audit = as_object(record, "finalAudit", errors)
     release_facts = as_object(record, "release", errors)
-    if record.get("status") != "Locked and GREEN":
-        errors.append("D-025 readiness record is not Locked and GREEN")
-    if evidence.get("workflowConclusion") != "success":
-        errors.append("D-025 readiness workflow evidence is not successful")
-    if record.get("crossConsumerValidation") != "GREEN" or record.get("qualityAndAdoptionEvidence") != "GREEN":
-        errors.append("D-025 cross-consumer or quality evidence is not GREEN")
+    snapshot = as_object(record, SNAPSHOT_KEY, errors)
+    current = as_object(record, "current", errors)
+    final_audit = snapshot.get("finalAudit") if isinstance(snapshot.get("finalAudit"), dict) else {}
 
     corrections = record.get("evidenceCorrections")
     latest = corrections[-1] if isinstance(corrections, list) and corrections and isinstance(corrections[-1], dict) else {}
-    declared = maturity_by_consumer(record.get("consumers"), "maturity")
     regrade = maturity_by_consumer(latest.get("consumerRegrade"), "maturity")
     previous = maturity_by_consumer(latest.get("consumerRegrade"), "previousMaturity")
     obligation = latest.get("realConsumerObligation") if isinstance(latest.get("realConsumerObligation"), dict) else {}
@@ -290,25 +330,12 @@ def validate_record(errors: list[str], notes: list[str]) -> dict:
                 errors.append(f"{consumer_id} must stay re-graded at or below M2 until independent evidence exists")
         validate_obligation(errors, obligation)
 
-    # The top-level consumers[].maturity is the grade the correction superseded.  It is held to the
-    # correction's own "previousMaturity", so it cannot be set to anything; and because the record
-    # still shows it beside the corrected grade, the difference is printed on every run rather than
-    # hidden.  The record itself is not this validator's to edit.
-    for consumer_id in CONSUMER_IDS:
-        value = declared.get(consumer_id)
-        if value not in MATURITY_LEVELS:
-            errors.append(f"D-025 readiness record top-level maturity of {consumer_id} is not one of M0-M4: {value!r}")
-        elif latest and value != previous.get(consumer_id):
-            errors.append(
-                f"D-025 readiness record top-level maturity of {consumer_id} ({value}) is not the grade the latest "
-                f"evidence correction superseded ({previous.get(consumer_id)})"
-            )
-        elif latest and value != regrade.get(consumer_id):
-            notes.append(
-                f"KNOWN INCONSISTENCY: {RECORD_REL} still shows {consumer_id} at {value} in its top-level "
-                f"'consumers' list; the evidence correction of {latest.get('date')} re-graded it to "
-                f"{regrade.get(consumer_id)}, and that is the grade in force."
-            )
+    # The record has two blocks that must never be read for each other.  The snapshot is history: it
+    # is held to what the latest correction says it superseded and to its own content hash.  The
+    # current block is a restatement of the latest correction and is held equal to it, so it cannot
+    # drift and cannot claim more than the correction supports.
+    validate_snapshot(errors, record, snapshot, latest, previous)
+    validate_current(errors, record, current, snapshot, latest, regrade, obligation)
 
     if merge_evidence.get("merged") is not True:
         errors.append("D-025 merge evidence does not confirm merge")
@@ -339,14 +366,164 @@ def validate_record(errors: list[str], notes: list[str]) -> dict:
     if final_audit.get("verdict") != "GREEN" or final_audit.get("transactionClosed") is not True:
         errors.append("D-025 final post-lock audit is not GREEN and closed")
 
+    in_force = maturity_by_consumer(current.get("consumers"), "maturity")
     return {
-        "status": record.get("status"),
+        "status": current.get("decisionStatus"),
         "approval": authority.get("ownerApprovalStatus"),
+        "maturity": ", ".join(f"{consumer_id.rsplit('.', 1)[-1]}={in_force.get(consumer_id)}" for consumer_id in CONSUMER_IDS),
+        "obligation": current.get("realConsumerObligation"),
+        "condition": current.get("twoRealConsumerCondition"),
+        "snapshot_status": snapshot.get("status"),
         "audit": final_audit.get("verdict"),
         "closed": final_audit.get("transactionClosed"),
-        "maturity": ", ".join(f"{consumer_id.rsplit('.', 1)[-1]}={regrade.get(consumer_id)}" for consumer_id in CONSUMER_IDS),
-        "obligation": obligation.get("status"),
     }
+
+
+def validate_snapshot(errors: list[str], record: dict, snapshot: dict, latest: dict, previous: dict) -> None:
+    """The values recorded on 2026-07-13: all seven, nothing else, unchanged, and nowhere but here."""
+    for name in SNAPSHOT_FIELDS:
+        if name in record:
+            errors.append(
+                CONFUSED + f"'{name}' is at the top level; the value recorded on 2026-07-13 belongs under "
+                f"'{SNAPSHOT_KEY}' and the value in force under 'current'"
+            )
+    if not isinstance(record.get(SNAPSHOT_KEY), dict):
+        return  # as_object() reported it
+    for name in SNAPSHOT_FIELDS:
+        if name not in snapshot:
+            errors.append(f"D-025 readiness record '{SNAPSHOT_KEY}' is missing the field recorded on 2026-07-13: '{name}'")
+    for name in sorted(set(snapshot) - set(SNAPSHOT_FIELDS)):
+        errors.append(CONFUSED + f"'{name}' is inside '{SNAPSHOT_KEY}', which holds only the fields recorded on 2026-07-13")
+    if snapshot_digest(snapshot) != SNAPSHOT_SHA256:
+        errors.append(
+            f"D-025 readiness record '{SNAPSHOT_KEY}' is not the snapshot recorded on 2026-07-13 (its content hash "
+            "differs): history is corrected in 'evidenceCorrections', never rewritten"
+        )
+
+    evidence = as_object(snapshot, "evidenceSnapshot", errors, SNAPSHOT_KEY + ".")
+    if snapshot.get("status") != "Locked and GREEN":
+        errors.append(f"D-025 readiness record '{SNAPSHOT_KEY}.status' is not the status recorded at lock ('Locked and GREEN')")
+    if evidence.get("workflowConclusion") != "success":
+        errors.append("D-025 readiness workflow evidence is not successful")
+    if snapshot.get("crossConsumerValidation") != "GREEN" or snapshot.get("qualityAndAdoptionEvidence") != "GREEN":
+        errors.append(f"D-025 readiness record '{SNAPSHOT_KEY}' does not carry the cross-consumer and quality verdicts recorded at lock (GREEN)")
+
+    # The snapshot's maturity is the grade the correction superseded.  It is held to the correction's
+    # own "previousMaturity", so the two halves of the record cannot tell different histories.
+    declared = maturity_by_consumer(snapshot.get("consumers"), "maturity")
+    for consumer_id in CONSUMER_IDS:
+        value = declared.get(consumer_id)
+        if value not in MATURITY_LEVELS:
+            errors.append(f"D-025 readiness record '{SNAPSHOT_KEY}' maturity of {consumer_id} is not one of M0-M4: {value!r}")
+        elif latest and value != previous.get(consumer_id):
+            errors.append(
+                f"D-025 readiness record '{SNAPSHOT_KEY}' maturity of {consumer_id} ({value}) is not the grade the latest "
+                f"evidence correction superseded ({previous.get(consumer_id)})"
+            )
+    if latest and not same(evidence.get("artifactId"), latest.get("expiredArtifactId")):
+        errors.append(
+            f"D-025 evidence correction names an expired artifact ({latest.get('expiredArtifactId')!r}) that is not the "
+            f"artifact of '{SNAPSHOT_KEY}' ({evidence.get('artifactId')!r})"
+        )
+
+
+def strings_in(value: object, path: str):
+    """Every string inside a JSON value, with the dotted path that leads to it."""
+    if isinstance(value, str):
+        yield path, value
+    elif isinstance(value, dict):
+        for key, item in value.items():
+            yield from strings_in(item, f"{path}.{key}")
+    elif isinstance(value, list):
+        for index, item in enumerate(value):
+            yield from strings_in(item, f"{path}.{index}")
+
+
+def validate_current(
+    errors: list[str], record: dict, current: dict, snapshot: dict, latest: dict, regrade: dict, obligation: dict
+) -> None:
+    """The state in force.  Every field restates the latest evidence correction and must equal it."""
+    if not isinstance(record.get("current"), dict):
+        return  # as_object() reported it
+    for name in CURRENT_FIELDS:
+        if name not in current:
+            errors.append(f"D-025 readiness record 'current' is missing the field '{name}'")
+    for name in sorted(set(current) - set(CURRENT_FIELDS)):
+        if name in SNAPSHOT_FIELDS:
+            errors.append(CONFUSED + f"'{name}' is inside 'current'; it is a field recorded on 2026-07-13 and belongs under '{SNAPSHOT_KEY}'")
+        else:
+            errors.append(f"D-025 readiness record 'current' has the field '{name}', which no rule ties to the latest evidence correction")
+    if not latest:
+        return  # reported: with no correction there is nothing for the current block to agree with
+
+    def agree(field: str, expected: object, source: str) -> None:
+        if field in current and not same(current[field], expected):
+            errors.append(
+                f"D-025 readiness record 'current.{field}' ({current[field]!r}) does not agree with the latest evidence "
+                f"correction ({source}: {expected!r})"
+            )
+
+    met = obligation.get("status") == "met"
+    release = latest.get("permanentRelease") if isinstance(latest.get("permanentRelease"), dict) else {}
+    agree("decisionStatus", latest.get("d025Status"), "d025Status")
+    agree("realConsumerObligation", obligation.get("status"), "realConsumerObligation.status")
+    agree("twoRealConsumerCondition", "evidenced" if met else "not evidenced", "realConsumerObligation.status " + repr(obligation.get("status")))
+    agree("workflowArtifactExpired", latest.get("artifactExpired"), "artifactExpired")
+    agree("permanentReleaseTag", release.get("tag"), "permanentRelease.tag")
+
+    regraded = latest.get("consumerRegrade") if isinstance(latest.get("consumerRegrade"), list) else []
+    in_force = [{"consumerId": item.get("consumerId"), "maturity": item.get("maturity")} for item in regraded if isinstance(item, dict)]
+    listed = current.get("consumers")
+    key = lambda item: json.dumps(item, sort_keys=True, ensure_ascii=False)  # noqa: E731
+    if "consumers" in current and (not isinstance(listed, list) or sorted(map(key, listed)) != sorted(map(key, in_force))):
+        errors.append(
+            "D-025 readiness record 'current.consumers' is not the list of consumers and maturities in force under the "
+            f"latest evidence correction: expected {json.dumps(in_force)}, found {json.dumps(listed)}"
+        )
+
+    as_of, correction_date = current.get("asOf"), str(latest.get("date", ""))
+    if "asOf" in current and (not isinstance(as_of, str) or not ISO_DATE.fullmatch(as_of) or as_of < correction_date):
+        errors.append(f"D-025 readiness record 'current.asOf' ({as_of!r}) must be a date on or after the latest evidence correction ({correction_date})")
+    derived = current.get("derivedFrom")
+    if "derivedFrom" in current and (not isinstance(derived, str) or "evidenceCorrections" not in derived or not correction_date or correction_date not in derived):
+        errors.append(f"D-025 readiness record 'current.derivedFrom' does not name the latest entry of evidenceCorrections ({correction_date})")
+
+    action = current.get("remainingAction")
+    if "remainingAction" in current:
+        texts = [action.get(language) for language in ("hy", "en")] if isinstance(action, dict) else []
+        if len(texts) != 2 or not all(isinstance(text, str) and text.strip() for text in texts):
+            errors.append("D-025 readiness record 'current.remainingAction' must carry a non-empty 'hy' and 'en' text")
+        else:
+            historical = snapshot.get("remainingAction") if isinstance(snapshot.get("remainingAction"), dict) else {}
+            for language, text in zip(("hy", "en"), texts):
+                if text == historical.get(language):
+                    errors.append(CONFUSED + f"'current.remainingAction.{language}' repeats the text recorded on 2026-07-13")
+
+    # A claim the latest correction does not support is refused by name, whatever else disagrees.
+    for path, text in strings_in(current, "current"):
+        if re.search(r"\bGREEN\b", text):
+            errors.append(f"D-025 readiness record '{path}' claims GREEN; the latest evidence correction supports no GREEN verdict")
+    if current.get("realConsumerObligation") == "met" and not met:
+        errors.append(
+            "D-025 readiness record 'current' claims the real-consumer obligation is met; the latest evidence correction "
+            f"records it as {obligation.get('status')!r}"
+        )
+    if current.get("twoRealConsumerCondition") == "evidenced" and not met:
+        errors.append(
+            "D-025 readiness record 'current' claims the two-real-consumer condition is evidenced; the latest evidence "
+            f"correction records the obligation as {obligation.get('status')!r}"
+        )
+    levels = MATURITY_LEVELS + ("M5",)
+    for item in listed if isinstance(listed, list) else []:
+        claimed = item.get("maturity") if isinstance(item, dict) else None
+        if claimed not in levels[3:]:
+            continue
+        supported = regrade.get(item.get("consumerId"))
+        if supported not in levels or levels.index(supported) < levels.index(claimed):
+            errors.append(
+                f"D-025 readiness record 'current' claims {item.get('maturity')} for {item.get('consumerId')}; the latest "
+                f"evidence correction supports {supported or 'no grade for it'}"
+            )
 
 
 def validate_permanent_release(errors: list[str], latest: dict, release_facts: dict) -> None:
@@ -407,13 +584,12 @@ def validate_obligation(errors: list[str], obligation: dict) -> None:
 
 def main() -> int:
     errors: list[str] = []
-    notes: list[str] = []
     facts: dict = {}
     try:
         tracked = tracked_files(errors)
         validate_documents(errors, tracked)
         validate_registry(errors, tracked)
-        facts = validate_record(errors, notes)
+        facts = validate_record(errors)
     except Exception as exc:  # a validator answers RED, never with a traceback
         errors.append(f"internal validator error: {type(exc).__name__}: {exc}")
 
@@ -425,12 +601,17 @@ def main() -> int:
 
     print("PLATFORMS VALIDATION: GREEN")
     print(f"Validated {len(REQUIRED_MARKERS)} required Platforms and D-025 canonical files.")
-    # Each value below is read from the record the checks above just passed; none is a literal.
-    print(f"D-025 readiness record: {facts['status']}; Owner approval: {facts['approval']}")
-    print(f"D-025 final post-lock audit: {facts['audit']}; transaction closed: {facts['closed']}")
-    print(f"D-025 consumer maturity in force: {facts['maturity']}; real-consumer obligation: {facts['obligation']}")
-    for note in notes:
-        print(note)
+    # Each value below is read from the record the checks above just passed; none is a literal.  The
+    # first two lines are the state in force (the record's "current" block); the third is history.
+    print(f"D-025 decision status: {facts['status']}; Owner approval: {facts['approval']}")
+    print(
+        f"D-025 consumer maturity in force: {facts['maturity']}; real-consumer obligation: {facts['obligation']}; "
+        f"two-real-consumer condition: {facts['condition']}"
+    )
+    print(
+        f"D-025 {SNAPSHOT_KEY} (history, not the state in force): status {facts['snapshot_status']!r}; "
+        f"final post-lock audit: {facts['audit']}; transaction closed: {facts['closed']}"
+    )
     return 0
 
 

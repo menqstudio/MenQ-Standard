@@ -120,7 +120,7 @@ Documentation
 
 Chat-ը workshop-ն է։ GitHub-ը canonical source-ն է։ GitHub գնում է միայն հաստատված architecture-ը և որոշումները։
 
-Այս workflow-ը `D-009`-ի տեքստն է։ Քայլերի հերթականությունը և վերջին նախադասությունը մասամբ փոխարինված են `D-020`-ով․ տես [`DECISIONS.md`](DECISIONS.md)-ում `D-009`-ի տակի 2026-10-09-ի նշումը, որը Owner-ի հաստատում չունի, մինչև Owner-ը merge չանի այն պարունակող pull request-ը։
+Այս workflow-ը `D-009`-ի տեքստն է։ Քայլերի հերթականությունը և վերջին նախադասությունը մասամբ փոխարինված են `D-020`-ով․ տես [`DECISIONS.md`](DECISIONS.md)-ում `D-009`-ի տակի 2026-10-09-ի նշումը, որը Owner-ը հաստատել է՝ 2026-10-09-ին merge անելով pull request #32-ը (merge commit `b24de94`)։
 
 ---
 
@@ -239,6 +239,6 @@ Documentation
 
 Chat is the workshop. GitHub is the canonical source. Only approved architecture and decisions enter GitHub.
 
-This workflow is the text of `D-009`. The order of the steps and the last sentence are superseded in part by `D-020`; see the note of 2026-10-09 under `D-009` in [`DECISIONS.md`](DECISIONS.md), which has no Owner approval until the Owner merges the pull request that contains it.
+This workflow is the text of `D-009`. The order of the steps and the last sentence are superseded in part by `D-020`; see the note of 2026-10-09 under `D-009` in [`DECISIONS.md`](DECISIONS.md), which the Owner approved by merging pull request #32 on 2026-10-09 (merge commit `b24de94`).
 
 <!-- END: MENQ_ECOSYSTEM_ARCHITECTURE -->
