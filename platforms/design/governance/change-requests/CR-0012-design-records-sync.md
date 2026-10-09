@@ -5,11 +5,12 @@
   "id": "CR-0012",
   "title": {"hy": "Design Platform-ի գրառումների համաժամեցում իրական վիճակի հետ", "en": "Design Platform records brought to the present"},
   "class": "contract-extension",
-  "status": "implementing",
+  "status": "closed",
   "proposer": "AI collaborator (Claude), from the 2026-10-09 review of the Design Platform records",
   "proposerOwnerId": null,
   "approvals": [
-    {"ownerId": "owner.menq", "name": "Gevorg Ohanyan", "date": "2026-10-09", "evidence": "The Owner merged pull request #33 from the menqstudio account: merge commit 391ff55486321dde38b9d392b07cefa5258f6802, commit date 2026-10-09T04:54:56Z; GitHub reports the merge at 2026-10-09T04:54:57Z by `menqstudio` (read from the pull request with `gh pr view 33` on 2026-10-09). This approval covers what pull request #33 contained; the completing pull request is approved only by its own merge."}
+    {"ownerId": "owner.menq", "name": "Gevorg Ohanyan", "date": "2026-10-09", "evidence": "The Owner merged pull request #33 from the menqstudio account: merge commit 391ff55486321dde38b9d392b07cefa5258f6802, commit date 2026-10-09T04:54:56Z; GitHub reports the merge at 2026-10-09T04:54:57Z by `menqstudio` (read from the pull request with `gh pr view 33` on 2026-10-09). This approval covers what pull request #33 contained; the completing pull request is approved only by its own merge."},
+    {"ownerId": "owner.menq", "name": "Gevorg Ohanyan", "date": "2026-10-09", "evidence": "The Owner merged the completing pull request #34 from the menqstudio account: merge commit ab229005fe27d89e25577821aef0f0115eb28443; GitHub reports the merge at 2026-10-09T05:18:48Z by `menqstudio` (read with `gh pr view 34` on 2026-10-09). This approval covers what pull request #34 contains."}
   ],
   "affectedAssets": [
     "menq.design.spec.brand-core.v1",
@@ -28,10 +29,9 @@
   "rollback": "Revert the implementing pull request (the completion pull request reverts on its own: the record layout, the validator rules and their tests go back together). Records return to their earlier text; no consumer holds a pinned copy of anything this change touches.",
   "evidencePlan": "generate_markdown_inventory.py --check, validate_foundation.py, validate_platforms.py, check_session_read_budget.py, validate_governance.py, validate_brand_expression.py and validate_phase_a.py GREEN; the governance pull-request gate GREEN with 'Change-Request: CR-0012'; every merge hash recorded in CR-0004…CR-0011 exists in the repository (git cat-file). Completion pull request (2026-10-09): scripts/test_validate_platforms.py GREEN with one test per new or changed validator rule plus green controls on the real record; every new or changed rule weakened once to confirm that a test fails; validate_platforms.py GREEN on the working tree with no KNOWN INCONSISTENCY line; the seven snapshot values compared equal to the top-level values at 391ff55.",
   "targetRelease": "none (records only)",
-  "pullRequests": [33],
-  "mergeEvidence": ["PR #33 merged at 391ff55 on 2026-10-09 08:54 +04:00 (2026-10-09 04:54 UTC)"],
-  "closure": null,
-  "closureBlockedBy": ["the completing pull request (readiness-record layout, scripts/validate_platforms.py rules and tests, this record's status) is not merged; closure is recorded only after the Owner merges it"]
+  "pullRequests": [33, 34],
+  "mergeEvidence": ["PR #33 merged at 391ff55 on 2026-10-09 08:54 +04:00 (2026-10-09 04:54 UTC)", "PR #34 merged at ab22900 on 2026-10-09 09:18 +04:00 (2026-10-09 05:18 UTC)"],
+  "closure": {"date": "2026-10-09", "evidence": ["PR #33 merged at 391ff55 with all 9 GitHub Actions checks passed", "PR #34 merged at ab22900 with all 8 GitHub Actions checks passed, including scripts/test_validate_platforms.py (112 tests) in the Markdown Inventory workflow", "scripts/validate_platforms.py on main at ab22900 prints PLATFORMS VALIDATION: GREEN with the maturity in force (M2, M2), the obligation open and no KNOWN INCONSISTENCY line", "No consumer evidence was promised: the change touches records and one validator only"]}
 }
 ```
 

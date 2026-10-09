@@ -5,10 +5,12 @@
   "id": "CR-0013",
   "title": {"hy": "Շրջված տեքստը Light-ում հանվում է բրենդի gradient-ի վրայից (հիմնական Button, Բրոյի avatar)", "en": "Inverse text taken off the brand gradient in Light (primary Button, Bro avatar)"},
   "class": "breaking",
-  "status": "proposed",
+  "status": "implementing",
   "proposer": "AI collaborator (Claude). In the project conversation on 2026-10-09 the Owner delegated the choice of fix to the AI collaborator (\"you decide the button\"); that delegation is not an approval of this change",
   "proposerOwnerId": null,
-  "approvals": [],
+  "approvals": [
+    {"ownerId": "owner.menq", "name": "Gevorg Ohanyan", "date": "2026-10-09", "evidence": "The Owner merged pull request #35 from the menqstudio account: merge commit f664ec304d7d2257ea061e74d49350d15f665685; GitHub reports the merge at 2026-10-09T08:49:54Z by `menqstudio` (read with `gh pr view 35` on 2026-10-09). Before the pull request was opened the Owner was shown a before/after preview with the measured ratios."}
+  ],
   "affectedAssets": [
     "menq.design.spec.brand-expression.v1",
     "menq.design.extension.bro",
@@ -22,8 +24,10 @@
   "rollback": "Revert the implementing pull request. The gradient returns to the Light primary Button and Bro avatar, and validate_brand_expression.py returns to the 34 token-pair checks only. A consumer that already took the new bundle.css pins the previous commit.",
   "evidencePlan": "validate_brand_expression.py GREEN on the changed tree and RED on the old .btn--primary and .mq-avatar--bro rules, naming the selector, the theme scope, the stop and the ratio; platforms/design/validation/test_validate_brand_expression.py (44 tests) GREEN, with each new check mutated once and every mutant caught (49 mutants, 0 survivors, local run of 2026-10-09); build_brand_tokens.py --check GREEN (no token changed); validate_governance.py, validate_phase_a.py, scripts/validate_foundation.py, scripts/validate_platforms.py, scripts/check_session_read_budget.py and the Markdown inventory check GREEN; the governance pull-request gate GREEN with 'Change-Request: CR-0013'. Not yet evidenced on 2026-10-09: any GitHub Actions run of this change, a screenshot, an axe result. The workflow step is added in this change: design-brand-expression.yml runs the new test file and REQUIRED_WORKFLOW_RUNS of scripts/validate_foundation.py declares it.",
   "targetRelease": "none (brand expression layer)",
-  "pullRequests": [],
-  "closure": null
+  "pullRequests": [35],
+  "mergeEvidence": ["PR #35 merged at f664ec3 on 2026-10-09 12:49 +04:00 (2026-10-09 08:49 UTC), with all 9 GitHub Actions checks passed, including the new test file in design-brand-expression.yml"],
+  "closure": null,
+  "closureBlockedBy": ["evidencePlan: no axe result and no screenshot of the Button and ChatMessage previews in Light and Dark is recorded in this repository", "muted text on card--brand in Light (3.64:1) is recorded here as not fixed and has no change request of its own yet"]
 }
 ```
 

@@ -2,6 +2,18 @@
 
 > **How to read this / Ինչպես կարդալ:** Ամեն գրառում թվագրված է merge commit-ի ամսաթվով՝ commit-ի գրանցած ժամային գոտում (+04:00), և ասում է, թե ինչ պետք է իմանա հին commit-ին pin արված consumer-ը։ 2026-07-13-ից 2026-10-08-ի գրառումները ավելացվել են 2026-10-09-ին `CR-0012`-ով՝ change request-ներից և merge diff-երից։ / Every entry is dated by its merge commit, in the time zone the commit records (+04:00), and says what a consumer pinned to an older commit needs to know. The entries for 2026-07-13 through 2026-10-08 were added on 2026-10-09 by `CR-0012`, from the change requests and the merge diffs.
 
+## 2026-10-09 — CR-0012 closed; CR-0013 approved
+
+### Հայերեն
+
+- `CR-0012`-ը փակված է. Owner-ը merge է արել pull request #33-ը (`391ff55`) և #34-ը (`ab22900`) 2026-10-09-ին։ Consumer-ի համար փոփոխություն չկա։
+- `CR-0013`-ը հաստատված է Owner-ի կողմից pull request #35-ի merge-ով (`f664ec3`, 2026-10-09) և `implementing` է. փակմանը պակասում է axe-ի արդյունքը և screenshot-ը։ Consumer-ը, որը բեռնում է `components/bundle.css`-ը կամ `bro.css`-ը, Light-ում տեսնում է միագույն հիմնական Button և Բրոյի avatar։
+
+### English
+
+- `CR-0012` is closed: the Owner merged pull requests #33 (`391ff55`) and #34 (`ab22900`) on 2026-10-09. Nothing changes for a consumer.
+- `CR-0013` is approved by the Owner's merge of pull request #35 (`f664ec3`, 2026-10-09) and is `implementing`: an axe result and a screenshot are still missing for closure. A consumer that loads `components/bundle.css` or `bro.css` sees a solid primary Button and Bro avatar in Light.
+
 ## 2026-10-09 — CR-0013: inverse text taken off the brand gradient in Light (proposed; in effect when merged)
 
 ### Հայերեն
