@@ -19,7 +19,7 @@
 ### Ինչն է բաց
 
 1. D-025-ի իրական consumer-ի պարտավորությունը․ առաջինը MenQ Webpage-ն է, երկրորդը ընտրում է Owner-ը։
-2. D-028-ի consumer repository-ների պահանջի adoption մեխանիզմը առաջարկված է `D-029`-ով (Proposed․ ուժի մեջ է, երբ Owner-ը merge անի նրա pull request-ը)․ ոչ մի repository այն դեռ չի ընդունել, ժամկետ չկա, և այն GitHub Actions-ում չի գործարկվել։
+2. D-028-ի consumer repository-ների պահանջի adoption մեխանիզմը `D-029`-ն է (Approved)․ առաջինը ընդունել է OS-ը (conformance-ը GitHub-ում GREEN է)․ ժամկետ չկա, և update workflow-ը դեռ չի գործարկվել։
 3. Area-ները բայթերի սահման չունեն (ամենամեծը՝ `platforms/design`, ամբողջ core-ից մեծ)․ հարցը Owner-ինն է։
 4. `CR-0004`–`CR-0011`-ը իրականացված են․ դրանց record-ները փակվում են առանձին pull request-ով։
 5. D-025 readiness record-ը ուղղված է `CR-0012`-ով (ուժի մեջ է, երբ Owner-ը merge անի նրա ավարտման pull request-ը)․ 2026-07-13-ի արժեքները `snapshot2026-07-13`-ի տակ են, ընթացիկ վիճակը՝ `current`-ում։ Platforms validator-ը `current`-ը պահում է վերջին evidence correction-ին հավասար և այլևս չի տպում `KNOWN INCONSISTENCY`։
@@ -53,7 +53,7 @@ The one list of the current state is the `Status` section of [`README.md`](READM
 ### What is open
 
 1. The real-consumer obligation of D-025: MenQ Webpage is the first, and the Owner selects the second.
-2. The adoption mechanism for D-028's requirement of consumer repositories is proposed by `D-029` (Proposed; in effect when the Owner merges its pull request); no repository has adopted it yet, there is no deadline, and it has not run in GitHub Actions.
+2. The adoption mechanism for D-028's requirement of consumer repositories is `D-029` (Approved); OS adopted it first (conformance is GREEN on GitHub); there is no deadline, and the update workflow has not run yet.
 3. Areas have no byte ceiling (the largest is `platforms/design`, larger than the whole core); the question is the Owner's.
 4. `CR-0004`–`CR-0011` are implemented; their records are being closed in a separate pull request.
 5. The D-025 readiness record is corrected by `CR-0012` (in effect when the Owner merges its completing pull request): the 2026-07-13 values are under `snapshot2026-07-13`, and the current state is in `current`. The Platforms validator holds `current` equal to the latest evidence correction and no longer prints `KNOWN INCONSISTENCY`.

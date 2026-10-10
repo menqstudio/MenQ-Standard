@@ -14,6 +14,7 @@ Modes, messages and exit codes are the kit's:
     (default)                check the manifest and the budget
     --receipt                print one sha256 over the ordered core content
     --verify-receipt DIGEST  exit non-zero unless DIGEST is the current receipt
+    --sync-areas             repair the manifest's "areas" from the tracked Markdown files
 
 The gate does NOT check that any session read anything: no program in this
 repository can. A receipt is a digest of the core content, nothing more.
@@ -60,6 +61,9 @@ load_manifest = kit.load_manifest
 shape_errors = kit.shape_errors
 core_measurements = kit.core_measurements
 area_bytes = kit.area_bytes
+is_markdown = kit.is_markdown
+own_area = kit.own_area
+repaired_areas = kit.repaired_areas
 
 
 def check(root: Path, manifest_rel: str = MANIFEST_REL) -> tuple[list[str], list[str]]:
@@ -70,6 +74,11 @@ def check(root: Path, manifest_rel: str = MANIFEST_REL) -> tuple[list[str], list
 def receipt(root: Path, manifest_rel: str = MANIFEST_REL) -> str:
     """The kit's receipt, with this repository's manifest as the default."""
     return kit.receipt(root, manifest_rel)
+
+
+def sync_areas(root: Path, manifest_rel: str = MANIFEST_REL) -> tuple[list[str], list[str]]:
+    """The kit's repair of "areas", with this repository's manifest as the default."""
+    return kit.sync_areas(root, manifest_rel)
 
 
 def main(argv: list[str] | None = None) -> int:

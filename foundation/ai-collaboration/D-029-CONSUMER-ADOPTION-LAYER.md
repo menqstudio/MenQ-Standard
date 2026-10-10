@@ -1,7 +1,7 @@
 # D-029 — Consumer Adoption Layer / Consumer-ների ընդունման շերտ
 
 **Decision ID:** `D-029`  
-**Status / Կարգավիճակ:** Proposed — not approved. The approval is the Owner's merge of the pull request that carries this record, and nothing else / Proposed — հաստատված չէ. Հաստատումը Owner-ի կողմից այս record-ը պարունակող pull request-ի merge-ն է, և ուրիշ ոչինչ  
+**Status / Կարգավիճակ:** Approved — the Owner merged pull request #37 on 2026-10-09 (merge commit `d6eeb19`); not `Locked` / Approved — Owner-ը merge է արել pull request #37-ը 2026-10-09-ին (merge commit `d6eeb19`). `Locked` չէ  
 **Date / Ամսաթիվ:** 2026-10-09  
 **Decision class / Որոշման դաս:** `C4 — Foundation or Ecosystem`  
 **Risk level / Ռիսկի մակարդակ:** `R2 — Moderate`  

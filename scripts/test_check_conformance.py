@@ -470,7 +470,7 @@ class SessionRead(Case):
         product = self.world()
         product.write("docs/ORPHAN.md", b"# orphan\n")
         product.add()
-        self.assert_red(product, "session-read budget gate is RED: tracked Markdown file is in neither the core nor any area: docs/ORPHAN.md", standard=False)
+        self.assert_red(product, "session-read budget gate is RED: tracked Markdown file is in neither the core nor any area: docs/ORPHAN.md; list it in an area, or run this gate with --sync-areas", standard=False)
 
     def test_manifest_that_is_not_json(self) -> None:
         product = self.world()

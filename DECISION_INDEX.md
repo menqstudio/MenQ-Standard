@@ -20,7 +20,7 @@
 - `D-026` — [`foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md`](foundation/ai-collaboration/D-026-CANONICAL-SESSION-READ-LAW.md)
 - `D-027` — [`platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md`](platforms/design/decisions/D-027-MENQ-BRAND-EXPRESSION-LAYER-V1.md)
 - `D-028` — [`foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md`](foundation/ai-collaboration/D-028-BOUNDED-SESSION-READ-LAW.md) — Approved (approved; the Owner merged pull request #29 on 2026-10-09); supersedes `D-026` in part / Approved (հաստատված. Owner-ը merge է արել pull request #29-ը 2026-10-09-ին)․ մասամբ փոխարինում է `D-026`-ը
-- `D-029` — [`foundation/ai-collaboration/D-029-CONSUMER-ADOPTION-LAYER.md`](foundation/ai-collaboration/D-029-CONSUMER-ADOPTION-LAYER.md) — Proposed; not approved / Առաջարկված. հաստատված չէ
+- `D-029` — [`foundation/ai-collaboration/D-029-CONSUMER-ADOPTION-LAYER.md`](foundation/ai-collaboration/D-029-CONSUMER-ADOPTION-LAYER.md) — Approved (the Owner merged #37, 2026-10-09) / Approved (Owner-ը merge է արել #37-ը, 2026-10-09)
 
 ## Append Protocol / Ավելացման protocol
 
